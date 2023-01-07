@@ -25,7 +25,7 @@ class Passenger extends Controller{
                 'mobileNo_err' => '',
                 'password_err' => '',
                 'confirmPassword_err' => '',
-                'agree_err' => '',
+                'agree_err' => ''
             ];
 
             // validate
