@@ -25,7 +25,7 @@ class Passenger extends Controller{
                 'mobileNo_err' => '',
                 'password_err' => '',
                 'confirmPassword_err' => '',
-                'agree_err' => '',
+                'agree_err' => ''
             ];
 
             // validate
@@ -65,6 +65,8 @@ class Passenger extends Controller{
                     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
                     // register user
+
+                    die('Passenger register ok');
 
             }else{
                 // load view with errors

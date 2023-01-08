@@ -1,16 +1,16 @@
 <?php
 
-class Common extends Controller{
+class Pages extends Controller{
     public function __construct(){
         //
     }
 
     public function index(){
-        $this->view('common/index');
+        $this->view('pages/index');
     }
 
     public function terms_conditions(){
-        $this->view('common/terms_conditions');
+        $this->view('pages/terms_conditions');
     }
 
     public function contact_us(){
@@ -29,6 +29,7 @@ class Common extends Controller{
             ];
 
             // validate
+            
             // validate name
             if(! preg_match("/^[A-Za-z]+( [A-Za-z]+)*$/", $data['name']) || strlen($data['name']) < 3){
                 $data['name_err'] = "A valid name is required";
@@ -65,7 +66,7 @@ class Common extends Controller{
 
             }else{
                 // load view with errors
-                $this->view('common/contact_us', $data);
+                $this->view('pages/contact_us', $data);
             }
         }else{
             // initialize default values
@@ -82,45 +83,7 @@ class Common extends Controller{
             ];
 
             // load the view with the default data
-            $this->view('common/contact_us', $data);
+            $this->view('pages/contact_us', $data);
         }
-    }
-
-    public function register_type(){
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $data = [
-                'type' => '',
-                'type_err' => ''
-            ];
-
-            // validate
-            if(isset($_POST['type'])){
-                $data['type'] = $_POST['type'];
-                
-                if($data['type'] == 'passenger'){
-                    // direct to the passenger register form
-                    direct('passenger/register');
-                }elseif($data['type'] == 'owner'){
-                    // direct to the owner register form
-                    direct('owner/register');
-                }
-            }else{
-                $data['type_err'] = 'Please select your type';
-                // load the view with error
-                $this->view('common/register_type', $data);
-            }
-        }else{
-            // initialize default values
-            $data = [
-                'type' => '',
-                'type_err' => ''
-            ];
-
-            $this->view('common/register_type', $data);
-        }
-    }
-
-    public function login(){
-        $this->view('common/login');
     }
 }

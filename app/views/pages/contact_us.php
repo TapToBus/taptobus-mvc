@@ -1,9 +1,9 @@
 <?php require APPROOT . '/views/inc/header.php' ?>
-<?php require APPROOT . '/views/common/navbar.php' ?>
+<?php require APPROOT . '/views/inc/pages_navbar.php' ?>
 
 <h1>Contact Us</h1>
 
-<form action="<?php echo URLROOT; ?>/common/contact_us" method="POST">
+<form action="<?php echo URLROOT; ?>/pages/contact_us" method="POST">
     <div class="name">
         <label for="name">Name:<sup>*</sup></label> <br>
         <input type="text" name="name" placeholder="Enter your name"
