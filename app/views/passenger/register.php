@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php' ?>
 
 <div class="left">
-    <h2><a href="<?php echo URLROOT; ?>/common/index">TapToBus</a></h2>
+    <h2><a href="<?php echo URLROOT; ?>/pages/index">TapToBus</a></h2>
 </div>
 
 <div class="right">
@@ -56,7 +56,7 @@
         </form>
 
         <div class="login-link">
-            <p>Already have an account? <a href="<?php echo URLROOT; ?>/common/login">Log in</a></p>
+            <p>Already have an account? <a href="<?php echo URLROOT; ?>/users/login">Log in</a></p>
         </div>
     </div>
 </div>

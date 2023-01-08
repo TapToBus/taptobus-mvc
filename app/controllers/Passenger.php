@@ -66,6 +66,8 @@ class Passenger extends Controller{
 
                     // register user
 
+                    die('Passenger register ok');
+
             }else{
                 // load view with errors
                 $this->view('passenger/register', $data);
