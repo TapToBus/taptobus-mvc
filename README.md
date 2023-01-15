@@ -14,3 +14,7 @@
 * Couldn't add the .htaccess files
 * Mail function isn't implemented
 * Did simple changes for the framework
+* Implemented passenger register form without email verification
+* Implemented login page
+* But it didn't direct to any home page of users
+* Create home pages for each user and modify user controller and user model
