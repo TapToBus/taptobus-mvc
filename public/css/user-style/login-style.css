@@ -1,0 +1,175 @@
+@import url(../main.css);
+
+.left{
+    width: 50%;
+    height: 100vh;
+    background-image: linear-gradient(
+                    rgba(0,0,0,0.65), 
+                    rgba(0,0,0,0.65)
+                    ), 
+                    url(../../img/login-img.jpg);
+    background-size: cover;
+    background-position: left;
+}
+
+.left a{
+    text-decoration: none;
+    color: white;
+}
+
+.left a:hover{
+    color: #00BFFF;
+    transition: 0.3s;
+}
+
+.left h2{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.right{
+    width: 50%;
+    background-color: rgb(240, 240, 240);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100vh;
+}
+
+.box{
+    background: white;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px 25px 20px 25px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* border: 1px solid black; */
+}
+
+.box h2{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.box label{
+    /* font-weight: bold; */
+    font-weight: 550;
+    font-size: 16px;
+    padding-left: 10px;
+
+}
+
+.box sup{
+    color: red;
+}
+
+.box input{
+    width: 100%;
+    /* border: 1px solid white; */
+    border: white;
+    border-radius: 5px;
+    background: rgb(240, 240, 240);
+    height: 40px;
+    color: black;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.box input:focus{
+    outline: 2px solid #00BFFF;
+    border: 2px solid transparent;
+}
+
+.username, .password{
+    margin-bottom: 10px;
+}
+
+.forgot-password{
+    text-align: right;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+}
+
+.forgot-password a:hover{
+    color: red;
+}
+
+/* .username, .password span{
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+    margin-left: 8px;
+} */
+
+.btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* position: relative;
+    left: 50%;
+    transform: translateX(-25%); */ 
+}
+
+.btn button{
+    width: 100%;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.btn span{
+    background: black;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn button:hover span{
+    width: 100%;
+}
+
+.btn button:hover{
+    border: 2px solid transparent;
+    color: white;
+}
+
+.register-link{
+    font-size: 14px;
+    text-align: center;
+}
+
+.register-link a{
+    text-decoration: none;
+    color: blue;
+}
+
+.register-link a:hover{
+    color: red;
+}
