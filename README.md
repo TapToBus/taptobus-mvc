@@ -18,3 +18,6 @@
 * Implemented login page
 * But it didn't direct to any home page of users
 * Create home pages for each user and modify user controller and user model
+* Removed header.php and footer.php from inc folder in views
+* Uploaded the database(for 6 actors)
+* Feel free to change relevant table if necessary
