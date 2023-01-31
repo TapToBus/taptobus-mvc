@@ -140,4 +140,9 @@ class Users extends Controller{
     public function forgot_password(){
         die('Forgot password page');
     }
+
+
+    public function error_404(){
+        $this->view('users/error_404');
+    }
 }

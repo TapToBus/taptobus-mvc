@@ -1,0 +1,17 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.main{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+}
+
+.main p{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.main h1{
+    margin-bottom: 5px;
+}
