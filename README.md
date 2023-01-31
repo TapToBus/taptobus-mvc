@@ -21,4 +21,4 @@
 * Removed header.php and footer.php from inc folder in views
 * Uploaded the database(for 6 actors)
 * Feel free to change relevant table if necessary
-* Added navigation bar
+* Added navigation bar to the passenger
