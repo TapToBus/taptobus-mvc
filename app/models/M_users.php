@@ -39,7 +39,10 @@ class M_users{
 
         // check password
         $hashed_password = $row->password;
+
         if(password_verify($password, $hashed_password)){
+            /* write code to get full record of the user */
+            
             /*switch($row->type){
                 case 'passenger': {
                     $this->db->query('SELECT * FROM passenger WHERE email = :username');
@@ -62,7 +65,7 @@ class M_users{
     }
 
 
-    // find user by username
+    // find user by username(email)
     public function findUserByUsername($username){
         // prepare query
         $this->db->query('SELECT * FROM user WHERE username = :username');

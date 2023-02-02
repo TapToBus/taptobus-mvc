@@ -12,14 +12,6 @@ define('URLROOT', 'http://localhost/taptobus');
 define('SITENAME', 'TapToBus');
 
 
-// copyright
-define('COPYRIGHT', '(C) 2023 Copyright: TapToBus');
-
-
-// app version
-define('APPVERSION', '1.0.0');
-
-
 // database params
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');

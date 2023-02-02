@@ -8,8 +8,10 @@
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>
+	<!-- navigation bar -->
 	<?php require APPROOT . '/views/inc/pages_navbar.php' ?>
 
+	<!-- content of index page -->
 	<div class="content">
 		<h1>BOOK YOUR SEATS</h1>
 

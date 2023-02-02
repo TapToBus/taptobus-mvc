@@ -25,25 +25,24 @@ form{
 }
 
 form label{
-    font-weight: bold;
+    font-weight: 500;
     font-size: 16px;
     color: white;
-    padding-left: 5px;
+    padding-left: 8px;
     font-style: normal;
 }
 
-form sup{
-    color: #00BFFF;
-}
-
-.name, .email, .mobileNo, .subject, .message{
+form .name, .email, .mobileNo, .subject, .message{
     margin-bottom: 15px;
     width: 35%;
+
+    /* background-color: red; */
 }
 
 .btn{
-    padding-bottom: 15px;   /* 27px */
-    padding-top: 5px;
+    /* padding-bottom: 15px;
+    padding-top: 5px; */
+    margin-bottom: 15px;
 }
 
 form input{
@@ -54,9 +53,10 @@ form input{
     height: 35px;
     color: white;
     font-size: 15px;
-    padding: 6px;
-    margin-top: 5px;
-    margin-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 3px;
+    /* margin-bottom: 2px; */
 }
 
 form select{
@@ -67,9 +67,9 @@ form select{
     height: 35px;
     color: white;
     font-size: 15px;
-    padding-left: 2px;
-    margin-top: 5px;
-    margin-bottom: 3px;
+    padding-left: 6px;
+    margin-top: 3px;
+    /* margin-bottom: 2px; */
     cursor: pointer;
 }
 
@@ -83,38 +83,40 @@ form textarea{
     border: 1px solid white;
     border-radius: 5px;
     background: transparent;
-    height: 107px;
+    height: 100px;
     color: white;
     font-size: 15px;
     padding: 8px;
-    margin-top: 5px;
-    /* margin-bottom: 3px; */
+    margin-top: 3px;
+    /* margin-bottom: 2px; */
 }
 
 form input:focus{
-    outline: 2px solid #00BFFF;
+    outline: 2px solid #335c7d;
     border: 2px solid transparent;
 }
 
 form select:focus{
-    outline: 2px solid #00BFFF;
+    outline: 2px solid #335c7d;
     border: 2px solid transparent;
 }
 
 form textarea:focus{
-    outline: 2px solid #00BFFF;
+    outline: 2px solid #335c7d;
     border: 2px solid transparent;
 }
 
-.name, .email, .mobileNo, .subject, .message span{
-    font-size: 14px;
+form > .name span, .email span, .mobileNo span, .subject span, .message span{
+    font-size: 13px;
     color: #00BFFF;
     font-style: italic;
+
+    /* background-color: blue; */
 }
 
-.btn button{
+form .btn button{
     width: 150px;
-    padding: 14px 0 14px 0;
+    padding: 12px 0 12px 0;
     text-align: center;
     border-radius: 25px;
     font-weight: bold;
@@ -127,7 +129,7 @@ form textarea:focus{
     font-size: 16px;
 }
 
-.btn span{
+form .btn span{
     background: #00BFFF;
     height: 100%;
     width: 0;
@@ -139,15 +141,10 @@ form textarea:focus{
     transition: 0.5s;
 }
 
-.btn button:hover span{
+form .btn button:hover span{
     width: 100%;
 }
 
-.btn button:hover{
+form .btn button:hover{
     border: 2px solid transparent;
-}
-
-.error{
-    border: none;
-    outline: 2px solid red;
 }

@@ -57,22 +57,20 @@ class Users extends Controller{
                 'password_err' => ''
             ];
 
-            // validate
+
+            // validate data
 
             // validate username
             if(empty($data['username'])){
                 $data['username_err'] = "Username is required";
+            }elseif(! $this->userModel->findUserByUsername($data['username'])){
+                // user not found
+                $data['username_err'] = 'User doesn\'t exist';
             }
 
             // validate password
             if(empty($data['password'])){
                 $data['password_err'] = "Password is required";
-            }
-
-            // check for user email
-            if(! $this->userModel->findUserByUsername($data['username'])){
-                // user not found
-                $data['username_err'] = 'User doesn\'t exist';
             }
 
             // make sure errors are empty
@@ -124,6 +122,7 @@ class Users extends Controller{
         unset($_SESSION['user_email']);
         session_destroy();
         
+        // direct to the login page
         direct('users/login');
     }
 

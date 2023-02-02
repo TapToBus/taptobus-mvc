@@ -8,15 +8,25 @@
     color: white;
 }
 
-.navbar h2{
+/* .navbar h2{
     font-size: 20px;
 }
 
 .navbar h2:hover{
     color: #00BFFF;
-    transition: 0.3s;
+    transition: 0.5s;
+    cursor: pointer;
+} */
+
+.navbar img{
+    height: 30px;
+    width: auto;
     cursor: pointer;
 }
+
+/* .navbar img:hover{
+
+} */
 
 .navbar ul li{
     list-style: none;
