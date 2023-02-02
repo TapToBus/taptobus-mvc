@@ -22,6 +22,7 @@ class Controller{
             require_once '../app/views/' . $view . '.php';
         }else{
             die('View does not exist');
+            // require_once '../app/views/users/error_404.php';
         }
     }
 }

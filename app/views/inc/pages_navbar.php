@@ -1,5 +1,5 @@
 <div class="navbar">
-    <h2>TapToBus</h2>
+    <img src="<?php echo URLROOT; ?>/img/logo.png" alt="Logo">
 
     <ul>
         <li><a href="<?php echo URLROOT; ?>/pages/index">Home</a></li>

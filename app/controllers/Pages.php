@@ -6,16 +6,19 @@ class Pages extends Controller{
     }
 
 
+    // landing page
     public function index(){
         $this->view('pages/index');
     }
 
 
+    // terms & conditions page
     public function terms_conditions(){
         $this->view('pages/terms_conditions');
     }
 
     
+    // contact us page
     public function contact_us(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
              // initialize data
@@ -32,7 +35,8 @@ class Pages extends Controller{
                 'message_err' => '' 
             ];
 
-            // validate
+            
+            // validate data
             
             // validate name
             if(! preg_match("/^[A-Za-z]+( [A-Za-z]+)*$/", $data['name']) || strlen($data['name']) < 3){

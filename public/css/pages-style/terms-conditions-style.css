@@ -9,7 +9,6 @@ body{
                         rgba(0,0,0,0.65)
                     ), 
                     url(../../img/terms-conditions-background.jpg);
-    /* background-color: black; */
     background-size: cover;
     /* background-position: center; */
 }
@@ -22,7 +21,6 @@ body{
 
 .details h1{
     font-size: 30px;
-    /* margin-bottom: 15px; */
 }
 
 .details h2{
@@ -33,10 +31,11 @@ body{
 
 .details ul{
     padding-left: 15px;
+    padding-bottom: 10px;
 }
 
 .details li{
-    padding-bottom: 5px;
+    padding-bottom: 8px;
     /* font-size: 15px; */
 }
 
@@ -46,8 +45,8 @@ body{
 
 .details table{
     border-collapse: collapse;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    /* margin-top: 8px; */
+    margin-bottom: 20px;
     margin-left: 15px;
 }
 

@@ -4,32 +4,56 @@
     width: 50%;
     height: 100vh;
     background-image: linear-gradient(
-                    rgba(0,0,0,0.65), 
-                    rgba(0,0,0,0.65)
+                    rgba(0,0,0,0.7), 
+                    rgba(0,0,0,0.7)
                     ), 
                     url(../../img/login-img.jpg);
     background-size: cover;
     background-position: left;
 }
 
-.left a{
+/* .left a{
     text-decoration: none;
     color: white;
 }
 
 .left a:hover{
     color: #00BFFF;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .left h2{
     text-align: center;
     padding: 20px 0 20px 0;
+} */
+
+.left .logo{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+
+    /* background-color: red; */
 }
+
+.left img{
+    height: 60px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.left p{
+    color: white;
+    text-align: center;
+    font-weight: 600px;
+    font-size: 20px;
+}
+
 
 .right{
     width: 50%;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(230, 230, 230);
     position: absolute;
     top: 0;
     left: 50%;
@@ -38,50 +62,46 @@
 
 .box{
     background: white;
-    width: 50%;
+    width: 60%;
     height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    padding: 20px 25px 20px 25px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /* border: 1px solid black; */
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .box h2{
     text-align: center;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.box .username, .password{
+    width: 100%;
+    margin-bottom: 15px;
+    
+    /* background-color: gray; */
 }
 
 .box label{
-    /* font-weight: bold; */
-    font-weight: 550;
+    font-weight: 500;
     font-size: 16px;
     padding-left: 10px;
-
-}
-
-.box sup{
-    color: red;
+    font-style: normal;
 }
 
 .box input{
     width: 100%;
-    /* border: 1px solid white; */
     border: white;
     border-radius: 5px;
-    background: rgb(240, 240, 240);
+    background: rgb(230, 230, 230);
     height: 40px;
     color: black;
     font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-top: 8px;
-    margin-bottom: 3px;
+    margin-top: 2px;
+    /* margin-bottom: 2px; */
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -91,43 +111,28 @@
     border: 2px solid transparent;
 }
 
-.username, .password{
-    margin-bottom: 10px;
-}
-
-.forgot-password{
+.box .forgot-password{
     text-align: right;
 }
 
-.forgot-password a{
+.box .forgot-password a{
     text-decoration: none;
     color: blue;
     font-size: 14px;
 }
 
-.forgot-password a:hover{
+.box .forgot-password a:hover{
     color: red;
 }
 
-/* .username, .password span{
-    font-size: 14px;
-    color: red;
-    font-style: italic;
-    margin-left: 8px;
-} */
-
-.btn{
+.box .btn{
     margin-top: 20px;
     margin-bottom: 20px;
-    /* position: relative;
-    left: 50%;
-    transform: translateX(-25%); */ 
 }
 
-.btn button{
+.box .btn button{
     width: 100%;
-    padding: 10px 0 10px 0;
-    text-align: center;
+    padding: 8px 0 8px 0;
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid black;
@@ -139,7 +144,7 @@
     font-size: 16px;
 }
 
-.btn span{
+.box .btn span{
     background: black;
     height: 100%;
     width: 0;
@@ -151,25 +156,34 @@
     transition: 0.5s;
 }
 
-.btn button:hover span{
+.box .btn button:hover span{
     width: 100%;
 }
 
-.btn button:hover{
+.box .btn button:hover{
     border: 2px solid transparent;
     color: white;
 }
 
-.register-link{
+.box .register-link{
     font-size: 14px;
     text-align: center;
 }
 
-.register-link a{
+.box .register-link a{
     text-decoration: none;
     color: blue;
 }
 
-.register-link a:hover{
+.box .register-link a:hover{
     color: red;
+}
+
+.box .username span, .password span{
+    color: red;
+    font-size: 13px;
+    font-style: italic;
+    /* padding-left: 10px; */ /*don't add padding to span*/
+    
+    /* background-color: blue; */
 }

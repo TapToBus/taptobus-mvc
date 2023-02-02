@@ -8,8 +8,10 @@
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>
+    <!-- navigation bar -->
     <?php require APPROOT . '/views/inc/pages_navbar.php' ?>
 
+    <!-- terms & conditions -->
     <div class="details">
         <h1>Terms & Conditions</h1>
 
@@ -35,6 +37,7 @@
             <li>Cancellation can be done according to the below-mentioned time periods 
                 prior to the relevant bus departure.</li>
         </ul>
+
         <table>
             <tr>
                 <td class="col1">Time condition</td>
@@ -49,6 +52,7 @@
                 <td class="col4">0%</td>
             </tr>
         </table>
+        
         <ul>
             <li>The refund percentage will be calculated without considering the service charge.</li>
             <li>There is a limit to the number of cancellations per month.</li>

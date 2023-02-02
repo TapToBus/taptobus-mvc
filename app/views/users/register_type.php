@@ -8,17 +8,25 @@
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>
+    <!-- left side of the register type page -->
     <div class="left">
-        <h2><a href="<?php echo URLROOT; ?>/pages/index">TapToBus</a></h2>
+        <a href="<?php echo URLROOT; ?>/pages/index">
+            <div class="logo">
+                <img src="<?php echo URLROOT; ?>/img/logo.png" alt="Logo">
+                <p>Expressway buses are now at<br>your fingertips</p>
+            </div>
+        </a>
     </div>
 
+    <!-- right side of the register type page -->
     <div class="right">
         <div class="box">
             <h2>Register As</h2>
 
+            <!-- register type form -->
             <form action="<?php echo URLROOT; ?>/users/register_type" method="POST">
                 <div class="type">
-                    <label for="type">Type:<sup>*</sup></label> <br>
+                    <label for="type">Type</label> <br>
                     <select name="type">
                         <option value="default">Select your type</option>
                         <option value="passenger">Passenger</option>

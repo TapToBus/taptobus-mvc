@@ -6,7 +6,7 @@ class Owner_register extends Controller{
     }
 
     
-    // owner register
+    // register owner
     public function register(){
         $this->view('owner/register');
     }
