@@ -1,0 +1,255 @@
+@import url(../variable.css);
+/* 
+:root {
+    --clr-bg: #141E61;
+    --clr-sidebar:#E6E6E6;
+    --clr-text: #fff;
+    --clr-sidetext:#141E61;
+    --clr-icon: #fff;
+    --sidebar-area: clamp(100px, 22%, 200px);
+    --hover-sidebar: #C8C8C8;
+    --hover-actionbtn: rgba(255, 255, 255, 0.2);
+    --hover-picon:  2px solid #00BFFF;
+    --box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+} */
+
+/* top */
+
+#menu {
+    display: none;
+}
+
+.topbar {
+    background-color: var(--clr-bg);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    color: var(--clr-text);
+    position: fixed;
+    z-index: 1000;
+    margin-bottom: 3rem;
+}
+
+.logo {
+   /* border: red solid; */
+   width: 8%;
+   height: 80%;
+   overflow: hidden;
+}
+
+.logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-bar {
+    display: none;
+}
+
+.action-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.action-btn:hover {
+    background-color:var(--hover-actionbtn);
+}
+
+.menu-bar i { 
+    font-size: 1rem;
+    color: var(--clr-icon);
+}
+
+.topright {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+}
+
+.topright .picon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--clr-text);
+    overflow: hidden;
+}
+
+.topright .picon:hover{
+    border:var(--hover-picon);
+    transition: 0.3s;
+}
+
+.topright .picon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.side-heading {
+    display: none;
+}
+
+
+/* side */
+
+.side-menu {
+    background-color: var(--clr-sidebar);
+    line-height: 2rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    padding-top: 5rem;
+    padding-inline: 0.8rem;
+    font-size: .96rem;
+    font-weight: 600;
+
+    /* min-width: 150px;
+    max-width: 300px;
+    width: 20%; */
+
+    width: var(--sidebar-area);
+    margin-top: 0;
+}
+
+.side-menu > .side-heading{
+    background-color: var(--clr-sidebar);
+    border-radius: .5rem;
+    width: 100%;
+}
+.side-menu > .side-heading > img{
+    width: 20%;
+    height: 50%;
+    object-fit: cover;
+
+}
+.side-menu a {
+    padding: 0.2rem 0.8rem;
+    color: var(--clr-sidetext);
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.side-menu a:last-of-type {
+    margin-block: auto;
+}
+
+.side-menu a:hover {
+    background-color:var(--hover-sidebar);
+    color: var(--clr-sidetext);
+    /* font-weight: 800; */
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-left: 3px;
+}
+
+.side-menu a i {
+    width: 2rem;
+    color:var(--clr-sidetext);
+}
+
+.side-menu span {
+    margin-left: 10px;
+}
+
+.side-menu .active{
+    background-color: var(--clr-bg);
+    color: #fff;
+    border-radius: 0.5rem;
+}
+.side-menu .active i{
+    color: #fff;
+}
+
+
+.container {
+    margin-left: var(--sidebar-area);
+
+}
+
+
+@media screen and (max-width: 768px) {
+    :root {
+        --sidebar-area: 5rem;
+    }
+
+    .side-menu span {
+        display: none;
+    }
+
+    .side-menu a {
+        padding: auto;
+    }
+
+    .side-menu .active{
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    :root {
+        --sidebar-area: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu-bar {
+        display: grid;
+        place-items: center;
+    }
+
+    .side-menu {
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        box-shadow: var(--box-shadow);
+        z-index: 9999;
+        transition: all 0.5s ease-in-out;
+        opacity: 0.98;
+        /* backdrop-filter: blur(10px); */
+        }
+
+    #menu:checked~.side-menu {
+        left: 0;
+        padding-top: 5px;
+    }
+
+    .side-menu a {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .side-menu span {
+        display: block;
+    }
+
+    .side-menu .side-heading {
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--clr-sidetext);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        margin-bottom: 2rem;
+    }
+
+    .close-btn {
+        display: grid;
+        place-items: center;
+        color: var(--clr-bg);
+    }
+
+  }

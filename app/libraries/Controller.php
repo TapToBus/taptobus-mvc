@@ -15,7 +15,7 @@ class Controller{
     }
 
 
-    // load the view
+    // load the view   // pass the default para meter call data as associative array to display the passed data inside the view
     public function view($view, $data = []){
         // check for the view files
         if(file_exists('../app/views/' . $view . '.php')){
