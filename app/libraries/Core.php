@@ -9,7 +9,7 @@
 class Core{
     protected $currentController = 'Pages';
     protected $currentMethod = 'index';
-    protected $params = [];
+    protected $params = []; // Associative array
 
 
     public function __construct(){

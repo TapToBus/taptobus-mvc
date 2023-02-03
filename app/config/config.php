@@ -20,7 +20,7 @@ define('COPYRIGHT', '(C) 2023 Copyright: TapToBus');
 define('APPVERSION', '1.0.0');
 
 
-// database params
+// database params  // databse configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');

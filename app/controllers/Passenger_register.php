@@ -6,6 +6,12 @@ class Passenger_register extends Controller{
 
 
     public function __construct(){
+        /* 1. instantiate the model inside the controller
+           2. model itself instantiates the database class
+           3. database class instantiates the PDO
+           4. PDO is capable of deling with mysql data object
+           (PDO is some sort of worker , that work intermedially that connects php stuffs and mysql stuffs )
+        */ 
         $this->passengerModel = $this->model('m_passenger_register');
         $this->userModel = $this->model('m_users');
     }

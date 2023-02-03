@@ -1,0 +1,49 @@
+@import url(../variable.css);
+.container{
+    padding: 1rem 3.75rem;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 78%;
+    width: 94%;
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+ 
+}
+.grid-container > a {
+    text-decoration: none;
+    color: #000;
+}
+
+.grid-container > a > i {
+    color: #000;
+    font-size: 30px;
+    padding: 0.5rem;
+}
+
+.grid-items{
+    background-color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight:600;
+    align-items: center;
+    margin: 1.5rem;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 1, 0.1);
+    border-radius: 1.5rem;
+    width: 70%;
+    height: 40%;
+    padding: 2rem;
+    display: flex;
+}
+
+
+@media screen and(max-width:1024px){    
+    .grid-container {
+        height: 50%;
+        width: 75%;    
+    }
+}

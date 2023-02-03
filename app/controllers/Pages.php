@@ -92,3 +92,14 @@ class Pages extends Controller{
         }
     }
 }
+
+// .................. example ...............................
+
+// public function about($name, $age){
+//     $data = [
+//         'username' => $name,
+//         'userAge' => $age
+//     ];
+
+//     $this->view('v_about', $data);  
+// }
