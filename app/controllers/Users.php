@@ -105,39 +105,77 @@ class Users extends Controller{
 
 
     public function createSession($user){
-        $_SESSION['user_username'] = $user->username;   // set username(email) as session user_username
-        $_SESSION['user_type'] = $user->type;
-        
-        // direct to the relevant user home page
+        $record = $this->userModel->findUserFullRecord($user->username, $user->type);
 
         switch($user->type){
             case 'passenger': {
+                // init session variables
+                $_SESSION['user_id'] = $record->nic;
+                $_SESSION['user_fname'] = $record->fname;
+                $_SESSION['user_type'] = $user->type;
+                $_SESSION['user_pic'] = $record->pic;
+
+                // direc to the passenger first page
+                //die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
+                //print_r($record);
                 direct('Passenger_book_seats/journey_details');
-            }
+
+                break;
+            };
 
             case 'driver': {
-                // driver home page
-            }
+                /*$_SESSION['user_id'] = ;
+                $_SESSION['user_fname'] = $record->fname;
+                $_SESSION['user_type'] = $user->type;
+                $_SESSION['user_pic'] = $record->pic;
+
+                direct('');*/
+
+                break;
+            };
 
             case 'conductor': {
-                // conductor home page
-            }
+                /*$_SESSION['user_id'] = ;
+                $_SESSION['user_fname'] = $record->fname;
+                $_SESSION['user_type'] = $user->type;
+                $_SESSION['user_pic'] = $record->pic;
+
+                direct('');*/
+
+                break;
+            };
 
             case 'owner': {
-                // owner home page
-            }
+                /*$_SESSION['user_id'] = ;
+                $_SESSION['user_fname'] = $record->fname;
+                $_SESSION['user_type'] = $user->type;
+                $_SESSION['user_pic'] = $record->pic;
+
+                direct('');*/
+
+                break;
+            };
 
             case 'staff': {
-                // staff home page
-            }
+                $_SESSION['user_id'] = $record->staff_no;
+                $_SESSION['user_fname'] = $record->first_name;
+                $_SESSION['user_type'] = $user->type;
+                $_SESSION['user_pic'] = $record->pic;
+
+                // die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
+                print_r($record);
+
+                break;
+            };
         }
     }
 
 
     public function logout(){
         unset($_SESSION['user_id']);
-        unset($_SESSION['user_name']);
-        unset($_SESSION['user_email']);
+        unset($_SESSION['user_fname']);
+        unset($_SESSION['user_type']);
+        unset($_SESSION['user_pic']);
         session_destroy();
         
         // direct to the login page

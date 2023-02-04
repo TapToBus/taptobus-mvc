@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2023 at 05:42 PM
+-- Generation Time: Feb 04, 2023 at 02:39 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -132,27 +132,58 @@ CREATE TABLE `passenger` (
 
 INSERT INTO `passenger` (`nic`, `fname`, `lname`, `email`, `mobileNo`, `password`, `pic`, `otp`, `verified`) VALUES
 ('200000000012', 'Kasun', 'Gunawardhana', 'kasun@gmail.com', '0779243568', '$2y$10$pwsV0iUxIqX785QcllwCGOklzVY0NgGRKRwerluRNLfWlfKgb.guC', NULL, 0, 0),
+('991255394V', 'Saman', 'Kumara', 'saman@gmail.com', '0771883291', '$2y$10$HCiy6j8bgrfKlutXnxH41.8o8sxptr4SaMTpCgak34zQeL50xyn3.', NULL, 0, 0),
 ('993136298V', 'Adheesha', 'Chamod', 'adheesha@gmail.com', '0779393562', '$2y$10$9Rhho3cXv6nIE5RjAsVqs.UsrsAPsLMBAQVDVTw2DogOvRa3j9wti', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `staff`
+-- Table structure for table `special_notices`
 --
 
-CREATE TABLE `staff` (
-  `emp_id` varchar(8) NOT NULL COMMENT 'ex: staff001',
+CREATE TABLE `special_notices` (
+  `notice_id` int(11) NOT NULL,
+  `staff_no` varchar(8) NOT NULL COMMENT 'staff001',
+  `title` varchar(30) NOT NULL,
+  `description` text NOT NULL,
+  `time_stamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `date_from` date NOT NULL,
+  `date_to` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `special_notices`
+--
+
+INSERT INTO `special_notices` (`notice_id`, `staff_no`, `title`, `description`, `time_stamp`, `date_from`, `date_to`) VALUES
+(1, 'staff001', 'sample text 1', 'this is the first sample notice\r\n', '2023-02-04 00:39:07', '2023-02-10', '2023-02-19'),
+(2, 'staff001', 'sample text 2', 'this is the second sample notice', '2023-02-04 00:49:20', '2023-02-22', '2023-03-01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staffmember`
+--
+
+CREATE TABLE `staffmember` (
+  `staff_no` varchar(8) NOT NULL COMMENT 'ex:staff001',
+  `first_name` varchar(25) NOT NULL,
+  `last_name` varchar(25) NOT NULL,
   `nic` varchar(12) NOT NULL,
-  `fname` varchar(25) NOT NULL,
-  `lname` varchar(25) NOT NULL,
   `dob` date NOT NULL,
-  `address` varchar(255) NOT NULL,
+  `mobile_no` int(10) NOT NULL,
+  `tele_no` int(10) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mobileNo` varchar(10) NOT NULL,
-  `telNo` varchar(10) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
   `pic` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `staffmember`
+--
+
+INSERT INTO `staffmember` (`staff_no`, `first_name`, `last_name`, `nic`, `dob`, `mobile_no`, `tele_no`, `email`, `password_hash`, `pic`) VALUES
+('staff001', 'Dasuni', 'Dewani', '992389765V', '1998-12-08', 776541297, 916541297, 'dasuni@gmail.com', '$2y$10$gXX3KS3QOOJCnzp.S3z/2ORgyqp/WbingkwD5TjFIavk8sZbxs8w2', NULL);
 
 -- --------------------------------------------------------
 
@@ -172,7 +203,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`username`, `type`, `password`) VALUES
 ('adheesha@gmail.com', 'passenger', '$2y$10$9Rhho3cXv6nIE5RjAsVqs.UsrsAPsLMBAQVDVTw2DogOvRa3j9wti'),
-('kasun@gmail.com', 'passenger', '$2y$10$pwsV0iUxIqX785QcllwCGOklzVY0NgGRKRwerluRNLfWlfKgb.guC');
+('dasuni@gmail.com', 'staff', '$2y$10$gXX3KS3QOOJCnzp.S3z/2ORgyqp/WbingkwD5TjFIavk8sZbxs8w2'),
+('kasun@gmail.com', 'passenger', '$2y$10$pwsV0iUxIqX785QcllwCGOklzVY0NgGRKRwerluRNLfWlfKgb.guC'),
+('saman@gmail.com', 'passenger', '$2y$10$HCiy6j8bgrfKlutXnxH41.8o8sxptr4SaMTpCgak34zQeL50xyn3.');
 
 --
 -- Indexes for dumped tables
@@ -225,19 +258,35 @@ ALTER TABLE `passenger`
   ADD UNIQUE KEY `mobileNo` (`mobileNo`);
 
 --
--- Indexes for table `staff`
+-- Indexes for table `special_notices`
 --
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`emp_id`),
+ALTER TABLE `special_notices`
+  ADD PRIMARY KEY (`notice_id`),
+  ADD KEY `special_staff_fk` (`staff_no`);
+
+--
+-- Indexes for table `staffmember`
+--
+ALTER TABLE `staffmember`
+  ADD PRIMARY KEY (`staff_no`),
   ADD UNIQUE KEY `nic` (`nic`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `mobileNo` (`mobileNo`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `special_notices`
+--
+ALTER TABLE `special_notices`
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -254,6 +303,12 @@ ALTER TABLE `conductor`
 --
 ALTER TABLE `driver`
   ADD CONSTRAINT `driver_works_under` FOREIGN KEY (`owner_nic`) REFERENCES `owner` (`nic`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `special_notices`
+--
+ALTER TABLE `special_notices`
+  ADD CONSTRAINT `special_staff_fk` FOREIGN KEY (`staff_no`) REFERENCES `staffmember` (`staff_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

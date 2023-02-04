@@ -41,23 +41,6 @@ class M_users{
         $hashed_password = $row->password;
 
         if(password_verify($password, $hashed_password)){
-            /* write code to get full record of the user */
-            
-            /*switch($row->type){
-                case 'passenger': {
-                    $this->db->query('SELECT * FROM passenger WHERE email = :username');
-                }
-
-                // other user queries goes here
-            }
-
-            // bind values
-            $this->db->bind(':username', $username);
-
-            $result = $this->db->single();
-            
-            return $result;*/
-
             return $row;
         }else{
             return false;
@@ -81,5 +64,52 @@ class M_users{
         }else{
             return false;
         }
+    }
+
+    // find full record of user
+    public function findUserFullRecord($email, $type){
+        switch($type){
+            case 'passenger': {
+                // prepare relevant query
+                $this->db->query('SELECT * FROM passenger WHERE email = :email');
+
+                break;
+            };
+
+            case 'driver': {
+                // prepare relevant query
+                $this->db->query('SELECT * FROM driver WHERE email = :email');
+
+                break;
+            };
+
+            case 'conductor': {
+                // prepare relevant query
+                $this->db->query('SELECT * FROM conductor WHERE email = :email');
+
+                break;
+            };
+
+            case 'owner': {
+                // prepare relevant query
+                $this->db->query('SELECT * FROM owner WHERE email = :email');
+
+                break;
+            };
+
+            case 'staff': {
+                // prepare relevant query
+                $this->db->query('SELECT * FROM staffmember WHERE email = :email');
+
+                break;
+            };
+        }
+
+        // bind values
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->single();
+
+        return $row;
     }
 }

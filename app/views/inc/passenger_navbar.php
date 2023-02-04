@@ -12,10 +12,14 @@
     </label>
     
     <div class="topright">
-        <small><b>Hi! Adheesh</b></small>
+        <small><b>Hi! <?php echo $_SESSION['user_fname'] ?></b></small>
         
         <div class="picon">
-            <img src="<?php echo URLROOT; ?>/img/profile-pic.jpg" alt="Profile Pic">
+            <?php if(isset($_SESSION['user_pic'])): ?>
+                <!--  -->
+            <?php else: ?>
+                <img src="<?php echo URLROOT; ?>/img/default-profile-pic.jpg" alt="Profile Pic">
+            <?php endif; ?>
         </div>
     </div>
 </div>
