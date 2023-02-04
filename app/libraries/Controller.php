@@ -21,8 +21,8 @@ class Controller{
         if(file_exists('../app/views/' . $view . '.php')){
             require_once '../app/views/' . $view . '.php';
         }else{
-            die('View does not exist');
-            // require_once '../app/views/users/error_404.php';
+            // die('View does not exist');
+            require_once '../app/views/users/error_404.php';
         }
     }
 }

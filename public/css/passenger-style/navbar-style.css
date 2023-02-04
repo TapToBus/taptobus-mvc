@@ -31,13 +31,14 @@
 }
 
 .logo {
-   /* border: red solid; */
-   width: 8%;
-   height: 80%;
+   height: 30px;
+   width: auto;
    overflow: hidden;
+
+   /* border: 1px solid red; */
 }
 
-.logo > img {
+.logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -125,7 +126,7 @@
     border-radius: .5rem;
     width: 100%;
 }
-.side-menu > .side-heading > img{
+.side-menu .side-heading img{
     width: 20%;
     height: 50%;
     object-fit: cover;

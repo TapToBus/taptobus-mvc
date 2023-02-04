@@ -105,14 +105,32 @@ class Users extends Controller{
 
 
     public function createSession($user){
-        /*$_SESSION['user_id'] = $user->nic;
-        $_SESSION['user_name'] = $user->fname;*/
-        $_SESSION['user_email'] = $user->username;
+        $_SESSION['user_username'] = $user->username;   // set username(email) as session user_username
         $_SESSION['user_type'] = $user->type;
         
-        // direct to the user home page
-        //die('Login Success' . '<br>User id: ' . $_SESSION['user_id'] . '<br>User name: ' . $_SESSION['user_name'] . '<br>User email: ' . $_SESSION['user_email']);
-        die('Login Success' . '<br>User email: ' . $_SESSION['user_email'] . '<br>User type: ' . $_SESSION['user_type']);
+        // direct to the relevant user home page
+
+        switch($user->type){
+            case 'passenger': {
+                direct('Passenger_book_seats/journey_details');
+            }
+
+            case 'driver': {
+                // driver home page
+            }
+
+            case 'conductor': {
+                // conductor home page
+            }
+
+            case 'owner': {
+                // owner home page
+            }
+
+            case 'staff': {
+                // staff home page
+            }
+        }
     }
 
 
@@ -127,13 +145,7 @@ class Users extends Controller{
     }
 
     
-    public function isLoggedIn(){
-        if(isset($_SESSION['user_id'])){
-            return true;
-        }else{
-            return false;
-        }
-    }
+    
 
 
     public function forgot_password(){
