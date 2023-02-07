@@ -1,0 +1,120 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.main{
+    /* padding: 4.345rem 1rem 1rem 1rem; */
+    padding: 5.345rem 1rem 1rem 1rem;
+}
+
+.main h2{
+    color: #141E61;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.result{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.result .head-row{
+    background-color: rgb(200, 200, 200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+.result .head-row span{
+    align-items: center;
+}
+
+.result .row{
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 16px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.result a{
+    text-decoration: none;
+    color: black;
+}
+
+.result .row:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+.main button{
+    width: 12%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    /* background: #141E61; */
+    border: 1px solid #141E61;
+    color: #141E61;
+    font-size: 15px;
+    cursor: pointer;
+
+    position: relative;
+    left: 88%;
+}
+
+.main button:hover{
+    background: #C8C8C8;
+    transition: 0.3s;
+}
+
+.main .btn{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.main .fill-star{
+    color: gold;
+    font-size: 20px;
+}
+
+.main .unfill-star{
+    color: rgb(200, 200, 200);
+    font-size: 20px;
+}
+
+.result .row .col1{
+    padding-left: 30px;
+}
+
+.result .row .col6{
+    padding-right: 30px;
+}
+
+
+.result .head-row .col2{
+    margin-left: 110px;
+    margin-right: 20px;
+}
+
+.result .head-row .col3{
+    margin-left: 85px;
+}
+
+.result .head-row .col4{
+    margin-left: 80px;
+}
+

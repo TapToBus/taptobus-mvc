@@ -1,0 +1,194 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.main{
+    /* padding: 4.345rem 1rem 1rem 1rem; */
+    padding: 5.345rem 1rem 1rem 1rem;
+}
+
+.main h2{
+    color: #141E61;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+
+.container{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.bus-img{
+    width: 56%;
+    height: auto;
+    margin-right: 20px;
+
+    /* display: inline-block; */
+}
+
+.bus-img img{
+   width: 100%;
+   height: auto;
+   border-radius: 5px;
+
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+.details{
+    width: 41%;
+
+    display: inline-block;
+    /* background-color: gray; */
+}
+
+
+.field1{
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.field1 .col1{
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+
+.field2{
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.field2 .row1{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.field2 .row2, .field2 .row3, .field2 .row4{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    /* background-color: red; */
+}
+
+.field2 .col1{
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.field3{
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    padding-left: 90px;
+    padding-right: 90px;
+    font-size: 16px;
+    /* margin-bottom: 15px; */
+}
+
+.field3 .row1{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.field3 .row2, .field3 .row3{
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #000;
+}
+
+/* .field3 .col1, .field3 .col2, .field3 .col3, .field3 .col4, .field3 .col5{
+    margin-right: 40px;
+    
+    background-color: red;
+} */
+
+.field3 .row2, .field3 .row3{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.container .fill-star{
+    color: gold;
+    font-size: 20px;
+}
+
+.container .unfill-star{
+    color: rgb(200, 200, 200);
+    font-size: 20px;
+}
+
+
+.main .btn{
+    /* width: 100%; */
+    position: relative;
+    left: 73.25%;
+}
+
+.main .btn button{
+    width: 12%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #141E61;
+    font-size: 15px;
+    cursor: pointer;
+
+    /* position: relative;
+    left: 73.25%; */
+}
+
+.main .btn .left{
+    color: #141E61;
+    margin-right: 15px;
+}
+
+.main .btn .left:hover{
+    background: #C8C8C8;
+    transition: 0.3s;
+}
+
+.main .btn .right{
+    color: #fff;
+    background-color: #141E61;
+}
+
+.main .btn .right:hover{
+    background: #303b86;
+    border: 1px solid #303b86;
+    transition: 0.3s;
+}
+
+/* .main .btn{
+    position: relative;
+    left: 73%;
+} */
+
+
+

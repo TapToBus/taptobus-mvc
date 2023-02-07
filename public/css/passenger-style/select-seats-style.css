@@ -1,0 +1,22 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.main{
+    /* padding: 4.345rem 1rem 1rem 1rem; */
+    padding: 5.345rem 1rem 1rem 1rem;
+}
+
+.main h2{
+    color: #141E61;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.container{
+    margin-left: 10px;
+    margin-right: 10px;
+    /* margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-evenly; */
+}
