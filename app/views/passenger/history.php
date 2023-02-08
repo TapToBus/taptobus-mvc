@@ -21,95 +21,66 @@
             <!-- hedings of the table -->
             <div class="head-row">
                 <span class="col1">Bus No</span>
-                <span class="col2">Ratings</span>
-                <span class="col3">Date</span>
-                <span class="col4">Booked Seats</span>
-                <span class="col5">Ticket Price</span>
+                <span class="col2">From</span>
+                <span class="col3">To</span>
+                <span class="col4">Date</span>
+                <span class="col5">Booked Seats</span>
+                <span class="col6">Ticket Price</span>
             </div>
 
             <!-- content of the table -->
             <div class="row">
                 <span class="col1">NC - 7845</span>
-                <span class="col2">
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                </span>
-                <span class="col3">2022-12-19</span>
-                <span class="col4">4</span>
-                <span class="col5">LKR 4600.00</span>
+                <span class="col2">Galle</span>
+                <span class="col3">Hambantota</span>
+                <span class="col4">2022-12-19</span>
+                <span class="col5">4</span>
+                <span class="col6">LKR 4600.00</span>
             </div>
 
             <div class="row">
                 <span class="col1">NC - 7845</span>
-                <span class="col2">
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                </span>
-                <span class="col3">2022-12-19</span>
-                <span class="col4">4</span>
-                <span class="col5">LKR 4600.00</span>
+                <span class="col2">Galle</span>
+                <span class="col3">Hambantota</span>
+                <span class="col4">2022-12-19</span>
+                <span class="col5">4</span>
+                <span class="col6">LKR 4600.00</span>
             </div>
 
             <div class="row">
                 <span class="col1">NC - 7845</span>
-                <span class="col2">
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                </span>
-                <span class="col3">2022-12-19</span>
-                <span class="col4">4</span>
-                <span class="col5">LKR 4600.00</span>
+                <span class="col2">Galle</span>
+                <span class="col3">Hambantota</span>
+                <span class="col4">2022-12-19</span>
+                <span class="col5">4</span>
+                <span class="col6">LKR 4600.00</span>
             </div>
 
             <div class="row">
                 <span class="col1">NC - 7845</span>
-                <span class="col2">
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                </span>
-                <span class="col3">2022-12-19</span>
-                <span class="col4">4</span>
-                <span class="col5">LKR 4600.00</span>
+                <span class="col2">Galle</span>
+                <span class="col3">Hambantota</span>
+                <span class="col4">2022-12-19</span>
+                <span class="col5">4</span>
+                <span class="col6">LKR 4600.00</span>
             </div>
 
             <div class="row">
                 <span class="col1">NC - 7845</span>
-                <span class="col2">
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                </span>
-                <span class="col3">2022-12-19</span>
-                <span class="col4">4</span>
-                <span class="col5">LKR 4600.00</span>
+                <span class="col2">Galle</span>
+                <span class="col3">Hambantota</span>
+                <span class="col4">2022-12-19</span>
+                <span class="col5">4</span>
+                <span class="col6">LKR 4600.00</span>
             </div>
 
             <div class="row">
                 <span class="col1">NC - 7845</span>
-                <span class="col2">
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star fill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                    <i class="fa-solid fa-star unfill-star"></i>
-                </span>
-                <span class="col3">2022-12-19</span>
-                <span class="col4">4</span>
-                <span class="col5">LKR 4600.00</span>
+                <span class="col2">Galle</span>
+                <span class="col3">Hambantota</span>
+                <span class="col4">2022-12-19</span>
+                <span class="col5">4</span>
+                <span class="col6">LKR 4600.00</span>
             </div>
         </div>
     </div>
