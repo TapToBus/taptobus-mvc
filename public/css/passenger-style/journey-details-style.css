@@ -1,0 +1,104 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.main{
+    /* padding: 4.345rem 1rem 1rem 1rem; */
+    padding: 5.345rem 1rem 1rem 1rem;
+}
+
+.form{
+    background: rgb(230, 230, 230);
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px 25px 25px 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.form h2{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #141E61;
+}
+
+.form .from, .to, .date, .count{
+    margin-bottom: 12px;
+    width: 100%;        
+    
+    /* background: gray; */
+}
+
+.form label{
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 10px;
+    /* font-style: normal; */
+}
+
+.form select{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.form input{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.form input:focus, select:focus{
+    outline: 2px solid #00BFFF;
+}
+
+.form button{
+    width: 30%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    background: #141E61;
+    border: 1px solid #141E61;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form button:hover{
+    background: #303b86;
+    border: 1px solid #303b86;
+    transition: 0.3s;
+}
+
+.form .btn{
+    /* align-items: center; */
+    position: relative;
+    left: 70%;
+    margin-top: 8px;
+}
+
+.form span{
+    color: red;
+    font-size: 13px;
+    font-style: italic;
+    /* padding-left: 10px;
+    margin-left: 10px; */
+
+    /* background-color: blue; */
+}

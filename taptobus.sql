@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2023 at 10:16 AM
+-- Generation Time: Feb 04, 2023 at 02:39 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -133,7 +133,6 @@ CREATE TABLE `passenger` (
 INSERT INTO `passenger` (`nic`, `fname`, `lname`, `email`, `mobileNo`, `password`, `pic`, `otp`, `verified`) VALUES
 ('200000000012', 'Kasun', 'Gunawardhana', 'kasun@gmail.com', '0779243568', '$2y$10$pwsV0iUxIqX785QcllwCGOklzVY0NgGRKRwerluRNLfWlfKgb.guC', NULL, 0, 0),
 ('991255394V', 'Saman', 'Kumara', 'saman@gmail.com', '0771883291', '$2y$10$HCiy6j8bgrfKlutXnxH41.8o8sxptr4SaMTpCgak34zQeL50xyn3.', NULL, 0, 0),
-('992548398V', 'Hasantha', 'Kariyawasam', 'hasantha@gmail.com', '0772316541', '$2y$10$csB/LQO2U9OE6RwczJ3O/.Q9ugyeMOloMPEtx1hANOXK9HUcsY3w6', NULL, 0, 0),
 ('993136298V', 'Adheesha', 'Chamod', 'adheesha@gmail.com', '0779393562', '$2y$10$9Rhho3cXv6nIE5RjAsVqs.UsrsAPsLMBAQVDVTw2DogOvRa3j9wti', NULL, 0, 0);
 
 -- --------------------------------------------------------
@@ -189,42 +188,6 @@ INSERT INTO `staffmember` (`staff_no`, `first_name`, `last_name`, `nic`, `dob`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `temp_bus`
---
-
-CREATE TABLE `temp_bus` (
-  `bus_no` varchar(10) NOT NULL,
-  `rating` int(2) NOT NULL,
-  `driver_rating` int(2) NOT NULL,
-  `conductor_rating` int(2) NOT NULL,
-  `arrival` time NOT NULL,
-  `departure` time NOT NULL,
-  `date` date NOT NULL,
-  `from` varchar(20) NOT NULL,
-  `to` varchar(20) NOT NULL,
-  `available_seats` int(2) NOT NULL,
-  `ticket_price` decimal(6,2) NOT NULL,
-  `pic` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `temp_bus`
---
-
-INSERT INTO `temp_bus` (`bus_no`, `rating`, `driver_rating`, `conductor_rating`, `arrival`, `departure`, `date`, `from`, `to`, `available_seats`, `ticket_price`, `pic`) VALUES
-('ND - 2319', 4, 4, 5, '12:40:00', '13:00:00', '2023-02-11', 'galle', 'hambantota', 23, '1030.00', ''),
-('ND - 2350', 2, 4, 3, '10:20:00', '10:40:00', '2023-02-11', 'galle', 'hambantota', 34, '1030.00', ''),
-('ND - 2387', 5, 2, 5, '08:30:00', '08:50:00', '2023-02-12', 'galle', 'hambantota', 45, '930.00', ''),
-('ND - 3456', 3, 3, 3, '09:10:00', '09:30:00', '2023-02-11', 'galle', 'hambantota', 13, '1030.00', ''),
-('ND - 5602', 4, 2, 5, '10:00:00', '10:20:00', '2023-02-12', 'galle', 'hambantota', 40, '930.00', ''),
-('ND - 6710', 5, 3, 4, '13:30:00', '13:50:00', '2023-02-11', 'galle', 'hambantota', 13, '1030.00', ''),
-('ND - 7629', 3, 4, 4, '14:20:00', '14:40:00', '2023-02-12', 'galle', 'hambantota', 50, '1030.00', ''),
-('ND - 8712', 3, 4, 2, '16:00:00', '16:20:00', '2023-02-11', 'galle', 'hambantota', 27, '1030.00', ''),
-('ND - 8973', 3, 4, 4, '12:30:00', '12:50:00', '2023-02-12', 'galle', 'hambantota', 5, '930.00', '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -241,7 +204,6 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`username`, `type`, `password`) VALUES
 ('adheesha@gmail.com', 'passenger', '$2y$10$9Rhho3cXv6nIE5RjAsVqs.UsrsAPsLMBAQVDVTw2DogOvRa3j9wti'),
 ('dasuni@gmail.com', 'staff', '$2y$10$gXX3KS3QOOJCnzp.S3z/2ORgyqp/WbingkwD5TjFIavk8sZbxs8w2'),
-('hasantha@gmail.com', 'passenger', '$2y$10$csB/LQO2U9OE6RwczJ3O/.Q9ugyeMOloMPEtx1hANOXK9HUcsY3w6'),
 ('kasun@gmail.com', 'passenger', '$2y$10$pwsV0iUxIqX785QcllwCGOklzVY0NgGRKRwerluRNLfWlfKgb.guC'),
 ('saman@gmail.com', 'passenger', '$2y$10$HCiy6j8bgrfKlutXnxH41.8o8sxptr4SaMTpCgak34zQeL50xyn3.');
 
@@ -309,12 +271,6 @@ ALTER TABLE `staffmember`
   ADD PRIMARY KEY (`staff_no`),
   ADD UNIQUE KEY `nic` (`nic`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `temp_bus`
---
-ALTER TABLE `temp_bus`
-  ADD PRIMARY KEY (`bus_no`);
 
 --
 -- Indexes for table `user`
