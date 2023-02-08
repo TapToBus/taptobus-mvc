@@ -38,7 +38,7 @@
 
 }
 
-.card>h1 {
+.card>h3 {
     padding-bottom: 1rem;
     color: var(--clr-bg);
 }

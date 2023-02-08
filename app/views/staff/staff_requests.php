@@ -17,22 +17,22 @@
             <h1>Pending Requests</h1>
                 <div class="grid-container">
                   
-                    <a href= "<?php echo URLROOT; ?>/Staff_view_requests/owner_requests" class="grid-items">
+                    <a href= "<?php echo URLROOT; ?>/Staff_view_users/view_bus_owner" class="grid-items">
                         <span class = "icon-button__badge">12</span>
                         <i class="fa-solid fa-person"></i>
                         <p>Bus owners</p> 
                     </a>
-                    <a href= "<?php echo URLROOT; ?>/Staff_view_requests/driver_requests" class="grid-items">
+                    <a href= "<?php echo URLROOT; ?>/Staff_view_users/view_driver" class="grid-items">
                         <span class = "icon-button__badge">32</span>
                         <i class="fa-solid fa-user"></i>
                         <p>Drivers</p> 
                     </a>
-                    <a href= "<?php echo URLROOT; ?>/Staff_view_requests/conductor_requests" class="grid-items">
+                    <a href= "<?php echo URLROOT; ?>/Staff_view_users/view_conductor" class="grid-items">
                         <i class="fa-regular fa-user"></i>
                         <p>Conductors</p> 
                     </a>
                 
-                    <a href= "<?php echo URLROOT; ?>/Staff_view_requests/bus_requests" class="grid-items">
+                    <a href= "<?php echo URLROOT; ?>/Staff_view_users/view_bus" class="grid-items">
                         <span class = "icon-button__badge">5</span>
                         <i class="fa-solid fa-bus"></i>
                         <p>Buses</p> 

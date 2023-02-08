@@ -24,32 +24,30 @@
         <div class="content-table">
             <table class="full-table">
                 <tr>
+                    <th>NTC no</th>
                     <th>First name</th>
                     <th>Last name</th>
                     <th>NIC</th>
                     <th>DOB</th>
+                    <th>Address</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
-                    <th>Email</th>   
+                    <th>Email</th>
+                    <th class="delete-button"></th>
                 </tr>
                 <tr>
-                    <td>Umesha</td>
-                    <td>Sandunika</td>
-                    <td>988267542v</td>
-                    <td>1998/12/2</td>
-                    <td>0765654342</td>
-                    <td>0412345432</td>
-                    <td>sanduni123@gmail.com</td>               
-                </tr> 
-                <tr>
-                    <td>Janith</td>
-                    <td>Madarasingha</td>
-                    <td>988334492v</td>
-                    <td>1998/12/2</td>
-                    <td>0775434542</td>
-                    <td>0412345432</td>
-                    <td>janith@gmail.com</td>               
-                </tr> 
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                   
+                    <td class="delete-button"><button class="delete-btn">Remove</button></td>
+                </tr>
             </table>
         </div>
     </div>
