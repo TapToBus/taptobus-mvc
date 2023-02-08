@@ -163,7 +163,8 @@ class Users extends Controller{
                 $_SESSION['user_pic'] = $record->pic;
 
                 // die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
-                print_r($record);
+                // print_r($record);
+                direct('Staff_home/staffhome');
 
                 break;
             };
