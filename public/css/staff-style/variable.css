@@ -1,0 +1,13 @@
+
+:root {
+    --clr-bg: #141E61;
+    --clr-sidebar:#E6E6E6;
+    --clr-text: #fff;
+    --clr-sidetext:#141E61;
+    --clr-icon: #fff;
+    --sidebar-area: clamp(100px, 22%, 200px);
+    --hover-sidebar: #C8C8C8;
+    --hover-actionbtn: rgba(255, 255, 255, 0.2);
+    --hover-picon:  2px solid #00BFFF;
+    --box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+}
