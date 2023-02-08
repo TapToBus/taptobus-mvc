@@ -54,11 +54,11 @@
     font-weight: 550;
 }
 
-.main .btn{
-    /* width: 100%; */
+/* .main .btn{
+    width: 100%;
     position: relative;
     left: 73.25%;
-}
+} */
 
 .main .btn button{
     width: 12%;
@@ -69,8 +69,8 @@
     font-size: 15px;
     cursor: pointer;
 
-    /* position: relative;
-    left: 73.25%; */
+    position: relative;
+    left: 73.25%;
 }
 
 .main .btn .left{

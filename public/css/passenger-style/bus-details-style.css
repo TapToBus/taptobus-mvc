@@ -24,10 +24,13 @@
 
 
 .bus-img{
+    /* width: 56%; */
     width: 56%;
-    height: auto;
+    /* height: ; */
     margin-right: 20px;
+    border-radius: 5px;
 
+    /* background-color: red; */
     /* display: inline-block; */
 }
 
@@ -144,11 +147,10 @@
 }
 
 
-.main .btn{
-    /* width: 100%; */
+/* .main .btn{
     position: relative;
     left: 73.25%;
-}
+} */
 
 .main .btn button{
     width: 12%;
@@ -160,8 +162,8 @@
     font-size: 15px;
     cursor: pointer;
 
-    /* position: relative;
-    left: 73.25%; */
+    position: relative;
+    left: 73.25%;
 }
 
 .main .btn .left{
