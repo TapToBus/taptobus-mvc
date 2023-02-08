@@ -22,8 +22,7 @@
                         <!-- <label for="file" id="uploadBtn"><i class="fa-solid fa-pen-to-square"></i></label>
                         <input type="file" id="file"> -->
                     </div>
-                    <p class="usr_name"><?php echo $_SESSION['user_fname'] ;
-                    // ." ". $_SESSION['user_lname']?></p>
+                    <p class="usr_name"><?php echo $_SESSION['user_fname'] ;?></p>
                         <hr>
                     <div class="info">
                         <label for=""><b>Staff No:&nbsp </b> staff001</label>
@@ -34,6 +33,7 @@
                 </div>
                 <div class="main_right">
                     <div class="right_top">
+                        
 
                     </div>
                     <div class="right_bottom">

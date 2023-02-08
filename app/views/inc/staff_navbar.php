@@ -15,7 +15,7 @@
             <?php if(isset($_SESSION['user_pic'])): ?>
                 <!--  -->
             <?php else: ?>
-                <img src="<?php echo URLROOT; ?>/img/default-profile-pic.jpg" alt="Profile Pic">
+                <img src="<?php echo URLROOT; ?>/img/profile.jpeg" alt="Profile Pic">
             <?php endif; ?>
         </div>
     </div>
@@ -35,7 +35,7 @@
     <a href="#"><i class="fa-solid fa-calendar-days"></i><span>Calender</span></a>
     <a href="#"><i class="fa-solid fa-table-list"></i><span>Shedule</span></a>
     <a href="<?php echo URLROOT; ?>/Staff_requests/view_requests"><i class="fa-solid fa-user-plus"></i><span>Requests</span></a>
-    <a href="#"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
+    <!-- <a href="#"><i class="fa-solid fa-bell"></i><span>Notifications</span></a> -->
     <a href="<?php echo URLROOT; ?>/Staff_profile/viewprofile"><i class="fa-solid fa-user"></i><span>Profile</span></a>
     <a href="<?php echo URLROOT; ?>/Users/logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 </div>
