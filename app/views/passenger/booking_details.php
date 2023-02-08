@@ -63,7 +63,7 @@
 
                     <div class="row4">
                         <span class="inner-col1">Ticket Price:</span>
-                        <span class="inner-col2">1d : 23h : 56m</span>
+                        <span class="inner-col2">LKR 4060.00</span>
                     </div>
                 </div>
             </div>

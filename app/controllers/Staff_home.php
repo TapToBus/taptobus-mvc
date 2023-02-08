@@ -54,8 +54,6 @@
                     'result' => $result
                 ];
 
-
-
                $this->view('staff/staffhome', $data);
 
             }

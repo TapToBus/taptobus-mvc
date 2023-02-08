@@ -37,7 +37,7 @@
     
     <a href="<?php echo URLROOT; ?>/passenger_book_seats/journey_details"><i class="fa-solid fa-magnifying-glass-arrow-right"></i><span>Book Seats</span></a>
     <a href="<?php echo URLROOT; ?>/passenger_bookings/bookings"><i class="fa-solid fa-ticket-simple"></i><span>Bookings</span></a>
-    <a href="#"><i class="fa-solid fa-clock-rotate-left"></i><span>History</span></a>
+    <a href="<?php echo URLROOT; ?>/passenger_history/history"><i class="fa-solid fa-clock-rotate-left"></i><span>History</span></a>
     <a href="#"><i class="fa-solid fa-credit-card"></i><span>Bank Cards</span></a>
     <a href="#"><i class="fa-solid fa-location-dot"></i><span>Map</span></a>
     <a href="#"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>

@@ -24,10 +24,13 @@
 
 
 .bus-img{
+    /* width: 56%; */
     width: 56%;
-    height: auto;
+    /* height: ; */
     margin-right: 20px;
+    border-radius: 5px;
 
+    /* background-color: red; */
     /* display: inline-block; */
 }
 
@@ -72,8 +75,8 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     padding-top: 13px;
     padding-bottom: 5px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 100px;
+    padding-right: 100px;
     font-size: 16px;
     margin-bottom: 20px;
 }
@@ -144,9 +147,10 @@
 }
 
 
-.main .btn{
-    width: 100%;
-}
+/* .main .btn{
+    position: relative;
+    left: 73.25%;
+} */
 
 .main .btn button{
     width: 12%;
