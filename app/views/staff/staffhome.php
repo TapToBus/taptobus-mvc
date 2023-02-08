@@ -21,7 +21,7 @@
             <div class="container1">
                 <div class="notice-container">
                     <div class="card">
-                        <h1>SPECIAL NOTICES</h1>
+                        <h2>SPECIAL NOTICES</h2>
                         <div class="add-notice">
                             <button id="addnotice" class="addnotice" onclick="openModal()"><i class="fa-solid fa-circle-plus"></i> Add Notice</button>
                         </div>

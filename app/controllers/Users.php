@@ -168,6 +168,19 @@ class Users extends Controller{
 
                 break;
             };
+
+            case 'admin': {
+                $_SESSION['user_id'] = $record->admin_id;
+                $_SESSION['user_fname'] = $record->fname;
+                $_SESSION['user_type'] = $user->type;
+                $_SESSION['user_pic'] = $record->pic;
+
+                // die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
+                //print_r($record);
+                direct('Admin_remove_user_dashboard/remove_user_dashboard');
+
+                break;
+            };
         }
     }
 

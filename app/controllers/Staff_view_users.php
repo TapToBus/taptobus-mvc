@@ -5,8 +5,7 @@
         {
             if(! isLoggedIn()){
                 direct('users/login');
-            }            
-
+            }
         }
 
         public function view_users(){

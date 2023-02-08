@@ -103,6 +103,13 @@ class M_users{
 
                 break;
             };
+
+            case 'admin': {
+                // prepare relevant query
+                $this->db->query('SELECT * FROM admin WHERE email = :email');
+
+                break;
+            };
         }
 
         // bind values
