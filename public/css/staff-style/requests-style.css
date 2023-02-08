@@ -1,0 +1,84 @@
+
+.container{
+    padding-left: calc(var(--sidebar-area) + 1rem);
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+    height: 100vh;
+}
+
+.container p{
+    text-align: justify;
+    margin-bottom: 10px;
+    margin-top: 2rem;
+}
+.container h2{
+    color: var(--clr-bg);
+    margin-bottom: 1rem;
+    padding-left: 2rem;  
+}
+
+
+.result{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+/* .result .head-row{
+    background-color: rgb(200, 200, 200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+.result .head-row span{
+    align-items: center;
+} */
+
+.result .row{
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.result .row:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+
+.result > .row > .data > .row1{
+    padding-left: 40px;
+}
+
+.data > .date{
+    margin: 4rem;
+}
+
+.Vbutton{
+    background-color: var(--clr-bg);
+    padding: 0.3rem 1.5rem;
+    border-radius: .4rem;
+    margin-right: 20px;
+}
+.Vbutton > a{
+    text-decoration: none; 
+    color: #fff; 
+}
+
+
+

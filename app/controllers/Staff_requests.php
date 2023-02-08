@@ -6,6 +6,7 @@ class Staff_requests extends Controller{
         if(! isLoggedIn()){
             direct('users/login');
         }
+
     }
 
     public function view_requests(){
