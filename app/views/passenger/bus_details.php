@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="row4">
-                        <span class="col1">Driver:</span>
+                        <span class="col1">Conductor:</span>
                         <span class="col2">
                             <i class="fa-solid fa-star fill-star"></i>
                             <i class="fa-solid fa-star fill-star"></i>
@@ -91,7 +91,7 @@
 
         <div class="btn">
             <button class="left" onclick="window.history.back()">Back</button>
-            <a href="<?php echo URLROOT; ?>/passenger_book_seats/select_seats"><button class="right" >Next</button></a>
+            <a href="<?php echo URLROOT; ?>/passenger_book_seats/select_seats"><button class="right">Next</button></a>
         </div>
     </div>
 </body>

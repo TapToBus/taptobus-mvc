@@ -1,10 +1,15 @@
 <?php
 
 class Passenger_book_seats extends Controller{
+    private $busModel;
+
+
     public function __construct(){
         if(! isLoggedIn()){
             direct('users/login');
         }
+
+        $this->busModel = $this->model('m_temp');
     }
 
     public function journey_details(){
@@ -22,7 +27,6 @@ class Passenger_book_seats extends Controller{
             ];
 
             //print_r($data);
-
 
             // validate data
 
@@ -55,7 +59,6 @@ class Passenger_book_seats extends Controller{
             if(empty($data['from_err']) && empty($data['to_err']) && 
             empty($data['date_err']) && empty($data['count_err'])){
                 // direct to the available buses page         
-                
                 direct('passenger_book_seats/available_buses');
             }else{
                 // load the view with errors
@@ -80,10 +83,16 @@ class Passenger_book_seats extends Controller{
     }
 
     public function available_buses(){
+        //$data = ;
+
+        //$result = $this->busModel->findBus($from, $to, $date, $count);
         $this->view('passenger/available_buses');
     }
 
     public function bus_details(){
+        //$data = ;
+
+        //$result = $this->busModel->findBusRecord();
         $this->view('passenger/bus_details');
     }
 

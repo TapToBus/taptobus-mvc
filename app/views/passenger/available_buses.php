@@ -133,6 +133,7 @@
         </div>
 
         <div class="btn">
+            <!-- <a href="<?php //echo URLROOT; ?>/passenger_book_seats/journey_details"><button>Reset</button></a> -->
             <button onclick="window.history.back()">Reset</button>
         </div>
     </div>

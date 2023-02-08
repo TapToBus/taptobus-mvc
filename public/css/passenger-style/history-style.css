@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* justify-content: space-around; */
     border-radius: 5px;
     height: 50px;
     font-size: 17px;
@@ -51,39 +52,69 @@
     cursor: pointer;
 }
 
-.result a{
+/* .result a{
     text-decoration: none;
     color: black;
-}
+} */
 
 .result .row:hover{
     background-color: rgb(230, 230, 230);
+}
+
+.main button{
+    width: 12%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    /* background: #141E61; */
+    border: 1px solid #141E61;
+    color: #141E61;
+    font-size: 15px;
+    cursor: pointer;
+
+    position: relative;
+    left: 88%;
+}
+
+.main button:hover{
+    background: #C8C8C8;
+    transition: 0.3s;
+}
+
+.main .btn{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.main .fill-star{
+    color: gold;
+    font-size: 20px;
+}
+
+.main .unfill-star{
+    color: rgb(200, 200, 200);
+    font-size: 20px;
 }
 
 .result .row .col1{
     padding-left: 30px;
 }
 
-.result .row .col6{
+.result .row .col5{
     padding-right: 30px;
 }
 
 
 .result .head-row .col2{
-    padding-left: 150px;
+    margin-left: 100px;
 }
 
 .result .head-row .col3{
-    padding-left: 150px;
-    padding-right: 50px;
+    margin-left: 100px;
 }
 
 .result .head-row .col4{
-    padding-left: 80px;
-    padding-right: 30px;
+    margin-left: 50px;
 }
 
-.result .head-row .col5{
-    padding-left: 30px;
-    padding-right: 20px;
-}

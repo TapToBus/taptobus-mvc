@@ -30,7 +30,7 @@
 .field1{
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding-left: 110px;
 }
 
@@ -50,29 +50,15 @@
     margin-bottom: 20px;
 }
 
-
-
-
 .field2 .inner-col1{
-    font-weight: bold;
+    font-weight: 550;
 }
 
-
-
-/* .container .fill-star{
-    color: gold;
-    font-size: 20px;
-}
-
-.container .unfill-star{
-    color: rgb(200, 200, 200);
-    font-size: 20px;
-} */
-
-
-.main .btn{
+/* .main .btn{
     width: 100%;
-}
+    position: relative;
+    left: 73.25%;
+} */
 
 .main .btn button{
     width: 12%;
@@ -80,7 +66,6 @@
     padding-bottom: 8px;
     border-radius: 5px;
     font-weight: bold;
-    border: 1px solid #141E61;
     font-size: 15px;
     cursor: pointer;
 
@@ -90,6 +75,7 @@
 
 .main .btn .left{
     color: #141E61;
+    border: 1px solid #141E61;
     margin-right: 15px;
 }
 
@@ -100,16 +86,12 @@
 
 .main .btn .right{
     color: #fff;
-    background-color: #141E61;
+    background-color: red;
+    border: 1px solid red;
 }
 
 .main .btn .right:hover{
-    background: #303b86;
-    border: 1px solid #303b86;
+    background: #ff4343;
+    border: 1px solid #ff6464;
     transition: 0.3s;
 }
-
-/* .main .btn{
-    position: relative;
-    left: 73%;
-} */

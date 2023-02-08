@@ -159,7 +159,6 @@ class Users extends Controller{
             case 'staff': {
                 $_SESSION['user_id'] = $record->staff_no;
                 $_SESSION['user_fname'] = $record->first_name;
-                // $_SESSION['user_lname'] = $record->last_name;
                 $_SESSION['user_type'] = $user->type;
                 $_SESSION['user_pic'] = $record->pic;
 
@@ -185,9 +184,6 @@ class Users extends Controller{
     }
 
     
-    
-
-
     public function forgot_password(){
         die('Forgot password page');
     }
@@ -196,8 +192,4 @@ class Users extends Controller{
     public function error_404(){
         $this->view('users/error_404');
     }
-
-    // public function error(){
-    //     $this->view('users/error');
-    // }
 }
