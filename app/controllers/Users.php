@@ -5,6 +5,7 @@ class Users extends Controller{
 
 
     public function __construct(){
+        
         $this->userModel = $this->model('m_users');
     }
 
@@ -146,12 +147,12 @@ class Users extends Controller{
             };
 
             case 'owner': {
-                /*$_SESSION['user_id'] = ;
+                $_SESSION['user_id'] = $record->nic ;
                 $_SESSION['user_fname'] = $record->fname;
                 $_SESSION['user_type'] = $user->type;
                 $_SESSION['user_pic'] = $record->pic;
 
-                direct('');*/
+                direct('owner_dashboard/view_dashboard');
 
                 break;
             };

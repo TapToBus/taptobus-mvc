@@ -1,0 +1,191 @@
+@import url(../main.css);
+@import url(../owner-style/navbar-style.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
+    /* color: black; */
+
+}
+
+
+.container{
+    
+    padding: 4.345rem 0rem 0rem 0rem;
+    margin-left: 14.3%;
+    display: flex;
+    
+}
+
+.container .new{
+
+    max-width: 600px;
+    width: 100%;
+    display: block;
+    justify-content: space-between;
+    margin: 100px 5px;
+    padding: 0px 20px;
+   
+}
+
+.container .new1{
+
+    max-width: 600px;
+    width: 100%;
+    display: block;
+    justify-content: space-between;
+    margin: 100px 5px;
+    padding: 0px 20px;
+   
+}
+
+.container h2{
+
+    position: absolute;
+    margin-left: 4%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: hsl(231, 61%, 40%);
+    font-size: 30px;
+} 
+
+header{
+
+    position: absolute;
+    margin-left: 4%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: hsl(231, 61%, 40%);
+    font-size: 30px;
+}
+
+.header1{
+    margin-top: 50px;
+}
+
+.container .card{
+
+    max-width: 600px; 
+    /* flex: 1 1 210px; */
+    text-align: center;
+    height: 150px;
+    /* min-width: 250px; */
+    border: 1px solid hsl(231, 61%, 40%);
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.container .new h2{
+    
+    margin:auto ;
+}
+/* .view{
+
+    margin-top: 50px;
+} */
+.container .card .images{
+    
+    /* padding: 0% 0%;
+    height: 60%;
+    width: 60%;
+    display: flex;
+    margin-top: 5%;
+    margin-left: 3%; */
+    /* justify-content: center;
+    align-items: center;
+    margin: auto; */
+    padding: 0% 0%; 
+    height: 62.5%;
+    width: 20%;
+    /* margin-bottom: 20px; */
+    margin-top: 5%;
+    margin-left: 3%;
+   
+}
+
+.container .card .images img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container .card .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 2em;
+    height: 25%;
+    margin-top: 7%;
+    margin-left: 3%;
+
+}
+
+.container .card .caption p{
+    
+    font-size: 90%;
+    font-weight: bold ;
+    
+}
+.card > .btn-div{
+    margin: 0;
+}
+
+.container .card a{
+    width: 50%;
+}
+
+.container .card button {
+
+    border: 2px solid hsl(231, 61%, 40%);
+    padding: 0.5em;
+    width: 100px;
+    cursor: pointer;
+    /* margin-top: 95%;
+    margin-left: 20%; */
+    margin-top:100px;
+    /* margin-left: 60px; */
+    margin-right: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative;
+    
+    
+}
+
+
+.container .card button:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-color: hsl(231, 61%, 40%);
+    transition: all .5s;
+    margin: 0;
+}
+
+.container .card button::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background-color: hsl(231, 61%, 40%);
+    transition: all .5s;
+}
+
+.container .card button:hover::before{
+    width: 30%;
+
+}
+
+.container .card button:hover::after{
+    width: 30%;
+    
+}
