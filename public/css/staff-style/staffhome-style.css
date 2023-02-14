@@ -38,7 +38,11 @@
 
 }
 
-.card>h3 {
+.card > .grid{
+    margin-inline: 0;
+}
+
+.card > h2 {
     padding-bottom: 1rem;
     color: var(--clr-bg);
 }
@@ -75,9 +79,11 @@
     grid-template-columns: 10fr 1fr;
     grid-gap: 1rem;
     margin-top: 1rem;
+    margin-inline: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.132);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.189);
+    margin-inline: 2rem;   
 }
 
 .grid:hover>.edit-delete-btns {
@@ -114,12 +120,12 @@
     font-weight: 20px;
 }
 
-.text-fields>form {
+.text-fields > form {
     display: flex;
     flex-direction: column;
 }
 
-.text-fields>form>input {
+.text-fields > form > input {
     margin: 0.5rem 0;
     padding: 10px 15px;
     border: none;

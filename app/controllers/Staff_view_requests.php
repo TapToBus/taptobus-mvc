@@ -8,10 +8,10 @@
             
         }
 
-        public function view_requests(){
+        // public function view_requests(){
             
-            $this->view('staff/staff_requests');
-        }
+        //     $this->view('staff/staff_requests');
+        // }
 
         public function owner_requests(){
             $this->view('staff/owner_requests');

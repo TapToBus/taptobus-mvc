@@ -17,8 +17,8 @@
             <h1>Pending Requests</h1>
                 <div class="grid-container">
                   
-                    <a href= "<?php echo URLROOT; ?>/Staff_view_users/view_bus_owner" class="grid-items">
-                        <span class = "icon-button__badge">12</span>
+                    <a href= "<?php echo URLROOT; ?>/Staff_view_requests/owner_requests" class="grid-items">
+                        <span class = "icon-button__badge">6</span>
                         <i class="fa-solid fa-person"></i>
                         <p>Bus owners</p> 
                     </a>

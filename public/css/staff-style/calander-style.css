@@ -2,8 +2,9 @@
 .calander-container{
     padding: 0;
     height: 100%;
+    width: 100%;
     color: #fff;
-    margin-top: 2rem;
+    margin: 0;
 }
 
 a {
@@ -11,9 +12,10 @@ a {
 }
 .calendar-wrapper {
     width: auto;
-    height: 98%;
-    margin: .2rem ;
+    height: 100%;
+    margin: 0 ;
     padding: 2em;
+    padding-top: 4rem;
     background: #fff;
     border-radius: .3rem;
 }

@@ -15,6 +15,8 @@
         }
 
         public function staffhome(){
+            
+            $staff_no = $_SESSION['user_id'];
 
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($_POST['save'])){
@@ -22,7 +24,7 @@
                         
                         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                         
-                        $staff_no = 12;
+                       
                         
                         $data = [
                             'staff_no' => $staff_no,
@@ -44,7 +46,7 @@
                 }   
             }else {
 
-                $staff_no = 12;
+                
 
                 $result = $this->staffModel->viewNotices($staff_no);
                 

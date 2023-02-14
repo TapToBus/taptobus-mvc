@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
+     <?php require APPROOT . '/views/inc/staff_navbar.php' ?> 
 
     <div class="container">
         <p>
@@ -25,7 +25,7 @@
                         <div class="add-notice">
                             <button id="addnotice" class="addnotice" onclick="openModal()"><i class="fa-solid fa-circle-plus"></i> Add Notice</button>
                         </div>
-                        <div class="grid">
+                        <!-- <div class="grid">
                             <div class="text-fields">
                                 <div class="notice-author-timestamp">
                                     <div class="notice-author">
@@ -47,7 +47,7 @@
                                 <button class="edit-btn" onclick=""><i class="fa-solid fa-pen"></i></button>
                                 <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
                             </div>
-                        </div>            
+                        </div>             -->
                     </div>
 
                     <?php
@@ -56,13 +56,39 @@
                     // var_dump($results);
                     // -------------
 
+                    if(isset($results)){
 
                     foreach($results as $result){
 
-                        var_dump($result);
-                        echo "<br/>";
-
+                        ?>
+                        <div class="grid">
+                        <div class="text-fields">
+                            <div class="notice-author-timestamp">
+                                <div class="notice-author">
+                                    <p class="author-text"><?php echo $result->first_name?></p>
+                                    <p class="author-text"><?php echo $result->last_name?></p>
+                                </div>
+                                <p class="time"><?php echo $result->time_stamp?></p>
+                            </div>
+                            <form>
+                                <input type="text" name="title" id="title-<?php echo $result->notice_id ?>" value="<?php echo $result->title; ?>" disabled>
+                                <textarea name="description" id="text-area-<?php echo $result->notice_id ?>" cols="30" rows="5" disabled><?php echo $result->description; ?></textarea>
+                                <div class="save-cancel-btns" id="save-cancel-btns-<?php echo $result->notice_id ?>">
+                                    <button type="submit" name="save" class="save-btn">Save</button>
+                                    <button type="submit" name="cancel" class="cancel-btn">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="edit-delete-btns">
+                            <button class="edit-btn" onclick="enableEdit(<?php echo $result->notice_id ?>)"><i class="fa-solid fa-pen"></i></button>
+                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>   
+                     <?php
+                       
                     }
+
+                }
                     
                     ?>
 
@@ -70,7 +96,7 @@
                 <dialog class="notice-modal">
                     <div class="notice-container">
                         <div class="notice-header">
-                            <h1>Add special notices</h1>
+                            <h2>Add special notices</h2>
                             <button onclick="closeModal()">
                                 <i class="fa-sharp fa-solid fa-circle-xmark"></i>
                             </button>
