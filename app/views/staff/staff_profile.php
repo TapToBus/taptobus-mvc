@@ -32,19 +32,46 @@
                     </div>
                 </div>
                 <div class="main_right">
-                    <div class="right_top">
-                        
+                    <!-- <div class="right_top">
+                    </div> -->
+                    <!-- <div class="right_bottom">
+                    </div> -->
 
+                    <!-- <button id="edit-button">Edit Profile</button> -->
+                    <div id="edit-form" >
+                        <span class="span">
+                            <label class = "lbl" for="">Full Name: </label>                       
+                            <input type="text" id="profile-name" />
+                        </span>
+                        <span class="span">
+                            <label class = "lbl" for="">email</label>
+                            <input type="email" id="profile-email"/>
+                        </span>
+                        <br>
+                      
+                        <span class="span">
+                            <label class = "lbl" for="">current Password:</label>
+                            <input type="password" id="profile-pwdOld"/>
+                        </span>
+                        <span class="span">
+                            <label class = "lbl" for="">New Password:</label>
+                            <input type="password" id="profile-pwdNew"/>
+                        </span>
+                        <span class="span">
+                            <label class = "lbl" for="">confirm Password:</label>
+                            <input type="password" id="profile-pwdConfirm"/>
+                        </span>
+                        <span class="P-button">
+                            <button>Save</button>
+                            <button>cancle</button>
+                        </span>
                     </div>
-                    <div class="right_bottom">
 
-                    </div>
                 </div>
             </div>
-        </p>
-        
+        </p>  
     </div>
+    <script src="<?php echo URLROOT?>/js/staff/staff-profile.js"></script>
 
-    <script src="<?php echo URLROOT?>/js/upload_profile.js"></script>
 </body>
 </html>

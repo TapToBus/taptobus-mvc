@@ -2,7 +2,7 @@
 
 class Staff_requests extends Controller{
 
-    public function __consttruct(){
+    public function __construct(){
         if(! isLoggedIn()){
             direct('users/login');
         }

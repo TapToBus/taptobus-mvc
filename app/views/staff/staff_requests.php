@@ -18,7 +18,7 @@
                 <div class="grid-container">
                   
                     <a href= "<?php echo URLROOT; ?>/Staff_view_requests/owner_requests" class="grid-items">
-                        <span class = "icon-button__badge">12</span>
+                        <span class = "icon-button__badge">6</span>
                         <i class="fa-solid fa-person"></i>
                         <p>Bus owners</p> 
                     </a>

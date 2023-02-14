@@ -23,7 +23,7 @@
                     </div> -->
                     <div class="row">
                         <div class="data">
-                            <span class="row1">988179987V </span>        
+                            <span class="row1">Owner001 </span>        
                             <span class="date">2023/01/07</span> 
                         </div>               
                         <span class="Vbutton">
@@ -33,7 +33,7 @@
 
                     <div class="row">
                         <div class="data">
-                            <span class="row1">988154987V</span> 
+                            <span class="row1">Owner002</span> 
                             <span class="date">2022/10/12</span>  
                         </div>                     
                         <span class="Vbutton">
@@ -43,7 +43,7 @@
 
                     <div class="row">
                         <div class="data">
-                            <span class="row1">988154987V</span> 
+                            <span class="row1">Owner003</span> 
                             <span class="date">2022/06/12</span>  
                         </div>                     
                         <span class="Vbutton">
@@ -53,7 +53,7 @@
 
                        <div class="row">
                         <div class="data">
-                            <span class="row1">988154987V</span> 
+                            <span class="row1">Owner004</span> 
                             <span class="date">2021/10/22</span>  
                         </div>                     
                         <span class="Vbutton">
@@ -63,7 +63,7 @@
 
                      <div class="row">
                         <div class="data">
-                            <span class="row1">988324987V</span> 
+                            <span class="row1">Owner005</span> 
                             <span class="date">2022/10/12</span>  
                         </div>                     
                         <span class="Vbutton">
@@ -73,7 +73,7 @@
 
                       <div class="row">
                         <div class="data">
-                            <span class="row1">678154987V</span> 
+                            <span class="row1">Owner006</span> 
                             <span class="date">2020/09/17</span>  
                         </div>                     
                         <span class="Vbutton">

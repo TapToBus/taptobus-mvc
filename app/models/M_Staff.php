@@ -32,7 +32,7 @@ class M_Staff {
     public function viewNotices($id){
 
         //  limit $start_from,$num_per_page
-        $this->db->query("SELECT * FROM special_notices INNER JOIN staffmember ON special_notices.staff_no = staffmember.staff_no WHERE special_notices.staff_no = :staff_no");
+        $this->db->query("SELECT * FROM special_notices INNER JOIN staffmember ON special_notices.staff_no = staffmember.staff_no WHERE special_notices.staff_no = :staff_no order by time_stamp desc");
         $this->db->bind(":staff_no", $id);
         $result = $this->db->resultSet();
 
