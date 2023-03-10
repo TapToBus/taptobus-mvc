@@ -65,6 +65,7 @@ class Pages extends Controller{
                 $data['message_err'] = 'Message is too short';
             }
 
+
              // make sure errors are empty
             if(empty($data['name_err']) && empty($data['email_err']) && empty($data['mobileNo_err']) && 
                 empty($data['subject_err']) &&  empty($data['message_err'])){

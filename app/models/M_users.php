@@ -3,20 +3,25 @@
 class M_users{
     private $db;
 
+
     public function __construct(){
         $this->db = new Database;
     }
 
 
-    // register user
-    public function register($username, $type, $password){
+    // add user to the user table
+    public function addUser($id, $fname, $lname, $email, $password_hash, $type){
         // prepare query
-        $this->db->query('INSERT INTO user(username, type, password) VALUES (:username, :type, :password)');
+        $this->db->query('INSERT INTO user (id, fname, lname, email, password_hash, type)
+        VALUES (:id, :fname, :lname, :email, :password_hash, :type);');
 
         // bind values
-        $this->db->bind(':username', $username);
+        $this->db->bind(':id', $id);
+        $this->db->bind(':fname', $fname);
+        $this->db->bind(':lname', $lname);
+        $this->db->bind(':email', $email);
+        $this->db->bind(':password_hash', $password_hash);
         $this->db->bind(':type', $type);
-        $this->db->bind(':password', $password);
 
         // execute
         if($this->db->execute()){
@@ -28,17 +33,17 @@ class M_users{
 
 
     // login user
-    public function login($username, $password){
+    public function login($email, $password){
         // prepare query
-        $this->db->query('SELECT * FROM user WHERE username = :username');
+        $this->db->query('SELECT * FROM user WHERE email = :email');
 
         // bind values
-        $this->db->bind(':username', $username);
+        $this->db->bind(':email', $email);
 
         $row = $this->db->single();
 
         // check password
-        $hashed_password = $row->password;
+        $hashed_password = $row->password_hash;
 
         if(password_verify($password, $hashed_password)){
             return $row;
@@ -48,75 +53,21 @@ class M_users{
     }
 
 
-    // find user by username(email)
-    public function findUserByUsername($username){
+    // find user by email
+    public function findUserByEmail($email){
         // prepare query
-        $this->db->query('SELECT * FROM user WHERE username = :username');
-
-        // bind values
-        $this->db->bind(':username', $username);
-
-        $row = $this->db->single();
-
-        // Check row
-        if($this->db->rowCount() > 0){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    // find full record of user
-    public function findUserFullRecord($email, $type){
-        switch($type){
-            case 'passenger': {
-                // prepare relevant query
-                $this->db->query('SELECT * FROM passenger WHERE email = :email');
-
-                break;
-            };
-
-            case 'driver': {
-                // prepare relevant query
-                $this->db->query('SELECT * FROM driver WHERE email = :email');
-
-                break;
-            };
-
-            case 'conductor': {
-                // prepare relevant query
-                $this->db->query('SELECT * FROM conductor WHERE email = :email');
-
-                break;
-            };
-
-            case 'owner': {
-                // prepare relevant query
-                $this->db->query('SELECT * FROM owner WHERE email = :email');
-
-                break;
-            };
-
-            case 'staff': {
-                // prepare relevant query
-                $this->db->query('SELECT * FROM staffmember WHERE email = :email');
-
-                break;
-            };
-
-            case 'admin': {
-                // prepare relevant query
-                $this->db->query('SELECT * FROM admin WHERE email = :email');
-
-                break;
-            };
-        }
+        $this->db->query('SELECT * FROM user WHERE email = :email');
 
         // bind values
         $this->db->bind(':email', $email);
 
         $row = $this->db->single();
 
-        return $row;
+        // check row
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

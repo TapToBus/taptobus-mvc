@@ -5,7 +5,6 @@ class Users extends Controller{
 
 
     public function __construct(){
-        
         $this->userModel = $this->model('m_users');
     }
 
@@ -17,11 +16,13 @@ class Users extends Controller{
                 'type_err' => ''
             ];
 
+
             // validate
             
             if($data['type'] == 'default'){
                 $data['type_err'] = 'Register type is required';
             }
+
 
             // make sure errors are empty
             if(empty($data['type_err'])){
@@ -30,7 +31,7 @@ class Users extends Controller{
                     direct('passenger_register/register');
                 }elseif($data['type'] == 'owner'){
                     // direct to the owner register form
-                    direct('owner_register/register');
+                    die('Owner register');
                 }
             }else{
                 // load the view with error
@@ -64,7 +65,7 @@ class Users extends Controller{
             // validate username
             if(empty($data['username'])){
                 $data['username_err'] = "Username is required";
-            }elseif(! $this->userModel->findUserByUsername($data['username'])){
+            }elseif(! $this->userModel->findUserByEmail($data['username'])){
                 // user not found
                 $data['username_err'] = 'User doesn\'t exist';
             }
@@ -106,80 +107,41 @@ class Users extends Controller{
 
 
     public function createSession($user){
-        $record = $this->userModel->findUserFullRecord($user->username, $user->type);
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_fname'] = $user->fname;
+        $_SESSION['user_lname'] = $user->lname;
+        $_SESSION['user_pic'] = $user->pic;
+        $_SESSION['user_type'] = $user->type;
 
         switch($user->type){
             case 'passenger': {
-                // init session variables
-                $_SESSION['user_id'] = $record->nic;
-                $_SESSION['user_fname'] = $record->fname;
-                $_SESSION['user_type'] = $user->type;
-                $_SESSION['user_pic'] = $record->pic;
-
-                // direc to the passenger first page
-                //die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
-                //print_r($record);
-                direct('Passenger_book_seats/journey_details');
-
+                //die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname'] . ' ' . $_SESSION['user_lname'] . '<br>' . $_SESSION['user_pic'] . '<br>' . $_SESSION['user_type']);
+                direct('passenger_book_seats/journey_details');
                 break;
             };
 
             case 'driver': {
-                /*$_SESSION['user_id'] = ;
-                $_SESSION['user_fname'] = $record->fname;
-                $_SESSION['user_type'] = $user->type;
-                $_SESSION['user_pic'] = $record->pic;
-
-                direct('');*/
-
+                //
                 break;
             };
 
             case 'conductor': {
-                /*$_SESSION['user_id'] = ;
-                $_SESSION['user_fname'] = $record->fname;
-                $_SESSION['user_type'] = $user->type;
-                $_SESSION['user_pic'] = $record->pic;
-
-                direct('');*/
-
+                //
                 break;
             };
 
             case 'owner': {
-                $_SESSION['user_id'] = $record->nic ;
-                $_SESSION['user_fname'] = $record->fname;
-                $_SESSION['user_type'] = $user->type;
-                $_SESSION['user_pic'] = $record->pic;
-
-                direct('owner_dashboard/view_dashboard');
-
+                //
                 break;
             };
 
             case 'staff': {
-                $_SESSION['user_id'] = $record->staff_no;
-                $_SESSION['user_fname'] = $record->first_name;
-                $_SESSION['user_type'] = $user->type;
-                $_SESSION['user_pic'] = $record->pic;
-
-                // die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
-                // print_r($record);
-                direct('Staff_home/staffhome');
-
+                //
                 break;
             };
 
             case 'admin': {
-                $_SESSION['user_id'] = $record->admin_id;
-                $_SESSION['user_fname'] = $record->fname;
-                $_SESSION['user_type'] = $user->type;
-                $_SESSION['user_pic'] = $record->pic;
-
-                // die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname']);
-                //print_r($record);
-                direct('Admin_remove_user_dashboard/remove_user_dashboard');
-
+                //
                 break;
             };
         }
@@ -189,8 +151,9 @@ class Users extends Controller{
     public function logout(){
         unset($_SESSION['user_id']);
         unset($_SESSION['user_fname']);
-        unset($_SESSION['user_type']);
+        unset($_SESSION['user_lname']);
         unset($_SESSION['user_pic']);
+        unset($_SESSION['user_type']);
         session_destroy();
         
         // direct to the login page

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/user-style/login-style.css">
     <title><?php echo SITENAME; ?></title>
 </head>
+
 <body>
     <!-- left side of the login page -->
     <div class="left">
@@ -27,7 +29,7 @@
             <form action="<?php echo URLROOT; ?>/users/login" method="POST">
                 <div class="username">
                     <label for="email">Username</label> <br>
-                    <input type="email" name="username" placeholder="Enter your username" value="<?php echo $data['username']; ?>" maxlength="255"> <br>
+                    <input type="text" name="username" placeholder="Enter your username" value="<?php echo $data['username']; ?>" maxlength="255"> <br>
                     <span><?php echo $data['username_err']; ?></span>
                 </div>
 
@@ -52,4 +54,5 @@
         </div>
     </div>
 </body>
+
 </html>
