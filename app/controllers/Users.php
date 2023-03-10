@@ -31,7 +31,7 @@ class Users extends Controller{
                     direct('passenger_register/register');
                 }elseif($data['type'] == 'owner'){
                     // direct to the owner register form
-                    die('Owner register');
+                    direct('owner_register/register');
                 }
             }else{
                 // load the view with error
@@ -132,6 +132,7 @@ class Users extends Controller{
 
             case 'owner': {
                 //
+                direct('owner_dashboard/view_dashboard');
                 break;
             };
 
