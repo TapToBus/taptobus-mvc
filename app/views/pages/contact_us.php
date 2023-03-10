@@ -37,10 +37,10 @@
             <label for="subject">Subject</label> <br>
             <select name="subject">
                 <option value="default">Select subject</option>
-                <option value="getting_info">Getting information</option>
-                <option value="payment_issue">Payment issue</option>
-                <option value="service_issue">Service issue</option>
-                <option value="other">Other</option>
+                <option value="Getting information">Getting information</option>
+                <option value="Payment issue">Payment issue</option>
+                <option value="Service issue">Service issue</option>
+                <option value="Other issue">Other</option>
             </select> <br>
             <span><?php echo $data['subject_err']; ?></span>
         </div>
