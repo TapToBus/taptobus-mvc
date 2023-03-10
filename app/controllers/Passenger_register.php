@@ -1,9 +1,5 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-
 class Passenger_register extends Controller{
     private $passengerModel;
     private $userModel;
@@ -119,64 +115,6 @@ class Passenger_register extends Controller{
                 // register passenger and add passenger to the passenger table
                 if($this->passengerModel->register($data) &&
                 $this->userModel->addUser($data['nic'], $data['fname'], $data['lname'], $data['email'], $data['password'], 'passenger')){
-                    
-
-                    // phpmailer -------------
-
-                    require 'phpmailer/src/Exception.php';
-                    require 'phpmailer/src/PHPMailer.php';
-                    require 'phpmailer/src/SMTP.php';
-
-                    /*$mail = new PHPMailer(true);
-                    $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';
-                    $mail->SMTPAuth = true;
-                    $mail->Username = 'taptobus001@gmail.com';
-                    $mail->Password = 'xucebcwrznogjclc';
-                    $mail->SMTPSecure = 'ssl';
-                    $mail->Port = 465;
-                    $mail->setFrom('taptobus001@gmail.com');
-
-                    $mail->addAddress($data['email']);
-
-                    $mail->isHTML(true);
-
-                    $mail->Subject = 'Hello from TapToBus';
-                    $mail->Body = 'Hello...!';
-
-                    $mail->send();*/
-
-
-                    try {
-                        //Server settings
-                        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                  //Enable verbose debug output
-                        $mail->isSMTP();                                        //Send using SMTP
-                        $mail->Host       = 'smtp.gmail.com';                   //Set the SMTP server to send through
-                        $mail->SMTPAuth   = true;                               //Enable SMTP authentication
-                        $mail->Username   = 'taptobus001@gmail.com';            //SMTP username
-                        $mail->Password   = 'xucebcwrznogjclc';                 //SMTP password
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        //Enable implicit TLS encryption
-                        $mail->Port       = 465;                                //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                        //Recipients
-                        $mail->setFrom('taptobus001@gmail.com', 'TapToBus');
-                        $mail->addAddress($data['email'], $data['fname']);          //Add a recipient
-
-                        //Content
-                        $mail->isHTML(true);                                        //Set email format to HTML
-                        $mail->Subject = 'Here is the subject';
-                        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-
-                        $mail->send();
-                        echo 'Message has been sent';
-                    } catch (Exception $e) {
-                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                    }
-                    
-                    
-                    // phpmailer -------------
-
-                    
                     direct('users/login');
                 }else{
                     die('Sorry! Something went wrong');
