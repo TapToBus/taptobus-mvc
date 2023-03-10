@@ -1,0 +1,19 @@
+
+:root {
+    --clr-bg: #141E61;
+    --clr-sidebar:#E6E6E6;
+    --clr-text: #fff;
+    --clr-sidetext:#141E61;
+    --clr-icon: #fff;
+    --sidebar-area: clamp(200px, 22%, 230px);
+    --hover-sidebar: #C8C8C8;
+    --hover-actionbtn: rgba(255, 255, 255, 0.2);
+    --hover-picon:  2px solid #00BFFF;
+    --box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+    --box-shadow-2: 0 0 10px 2px rgba(0,0,0,0.1);
+    --accept:rgb(7, 96, 7);
+    --reject:rgb(185, 7, 7);
+    --send:rgb(10, 10, 219);
+    --cancel:rgb(34, 32, 32);
+    --popup-background:#141e61f5;
+}

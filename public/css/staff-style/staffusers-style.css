@@ -1,0 +1,133 @@
+
+.container{
+    padding-left: calc(var(--sidebar-area) + 1rem);
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+    height: 100vh;
+}
+
+.container p{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.container h1{
+    color: var(--clr-bg);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+.grid-items{
+    min-height: 180px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.grid-items:hover {
+    background-color: var(--clr-bg);
+}
+
+.grid-items i {
+    color: #000000;
+    font-size:  3.5rem;
+}
+
+.grid-items p {
+    font-size: 1.3rem;
+    color: #3b3b3b;
+}
+
+.grid-items:hover p, .grid-items:hover i{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.user_main{
+    display: flex;
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 80%;
+    width: 40%;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+ 
+}
+.grid-container > a {
+    text-decoration: none;
+    color: #000;
+}
+
+.grid-container > a > i {
+    color: #000;
+    font-size: 30px;
+    padding: 0.5rem;
+}
+
+.grid-items{
+    background-color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight:600;
+    align-items: center;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 1, 0.1);
+    border-radius: 1.5rem;
+    width: 70%;
+    height: 40%;
+    padding: 2rem;
+    display: flex;
+} */
+
+
+@media screen and (max-width:1024px){    
+
+}
+
+@media screen and (max-width:768px){    
+
+    .grid-container {
+       grid-template-columns: 1fr 1fr;  
+    }
+
+    .grid-items i {
+        font-size:  3rem;
+    }
+}
+
+@media screen and (max-width:567px){    
+    .grid-container {
+       grid-template-columns: 1fr;  
+    }
+
+
+}

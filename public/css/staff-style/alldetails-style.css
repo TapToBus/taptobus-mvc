@@ -1,0 +1,71 @@
+@import url(../variable.css);
+
+.container{
+    padding-left: calc(var(--sidebar-area) + 1rem);
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+    height: 100vh;
+}
+
+h1{
+    color: var(--clr-bg);
+    margin-left: 40px;
+    margin-top: 25px;
+}
+
+.search {
+  position: relative;
+  width: 60%;
+  justify-self: center;
+  margin-inline: auto;
+}
+
+.search input {
+  width: 100%;
+  min-width: 128px;
+  height: 40px;
+  padding: 0 40px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+.search i {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.full-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 94%;
+    margin-left: 40px;
+    margin-top: 40px;
+    
+    box-shadow: 0 0 10px rgb(174, 174, 174);
+  }
+  
+  .full-table td, .full-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .full-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .full-table tr:hover {background-color: #ddd;}
+  
+  .full-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #18236f;
+    color: white;
+  }
+
+
+
+
