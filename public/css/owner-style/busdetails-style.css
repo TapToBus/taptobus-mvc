@@ -1,0 +1,201 @@
+@import url(../main.css);
+@import url(../owner-style/navbar-style.css);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+    height: 100vh;
+}
+.bus_no{
+
+    /* color: #141E61; */
+    margin-top: 30px;
+    margin-left: 2.3rem;
+    color: #213F99;
+    display: flex;
+}
+
+.bus_no h2{
+
+    font-size: 30px;
+}
+
+.ratings{
+
+    margin-top: 0.2rem;
+    color: gold;
+    font-size: 1.5rem;
+    
+}
+
+.ratings a{
+
+    font-size: x-large;
+    color: #213F99 ;
+}
+.full{
+    
+    margin-top: 1rem ;
+    margin-left: 2.4rem;
+    height: 90%;
+    width: 40%;
+   
+}
+.full .images{
+    
+    /* padding: 4% 0%; */
+    position: relative;
+    height: 65%;
+    width: 75%;
+    margin-left: 6.7rem ;
+    margin-bottom: 5px;
+    
+}
+
+.full .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.full h2{
+
+    margin-top: 2rem;
+    color: #213F99;
+}
+.bus_information{
+    
+    position: relative;
+    margin-top: 3rem ;
+    /* margin-left: px; */
+    height: 20%;
+    width: 40%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns:  180px 180px 180px;
+    grid-auto-rows: 6.5rem;
+    grid-gap: 1rem;
+   
+}
+
+.box{
+    
+    padding-top: 0.5rem;
+    border: 1px solid #213F99;
+    border-radius: 20px;
+    background-color: white;
+    align-items: center;
+}
+
+
+.box .word1{
+    text-align: center;
+    font-size: 28px;
+    color: #213F99;
+    font-weight: bold;
+}
+
+.box .word2{
+    text-align: center;
+    font-size:28px;
+    color: #213F99;
+    font-weight: bold;
+}
+
+.box i {
+        
+        margin-left: 2rem;
+        width: 2rem;
+        height: 3rem ;
+        color:#213F99;
+    
+}
+
+
+.employees{
+    
+    position: relative;
+    margin-left: 42rem;
+    margin-top: -40rem;
+    height: 40%;
+    width: 48%;
+    /* border: 2px solid; */
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns:  230px 230px;
+    grid-auto-rows: 15rem;
+    grid-gap: 0.5rem;
+    padding: 2rem;
+}
+
+.emp{
+
+    padding-top: 0.5rem;
+    border: 1px solid black;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+
+}
+
+.emp p{
+    
+    position:  relative;
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto;
+}
+
+
+
+.emp .images{
+    
+    /* padding: 4% 0%; */
+    position: relative;
+    height: 50%;
+    width: 50%;
+    margin-left: 4rem ;
+   margin-top: 1rem;
+    
+}
+
+.emp .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+select.choose{
+    
+    position: relative;
+    margin-top: 1.3rem;
+    margin-left: 1rem;
+    width: 70%;
+    height: 14%;
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+.chart{
+
+    margin-left: 40rem;
+    margin-top: 1.0rem;
+}
+
+#mychart{
+   width:100%;
+   max-width:600px;
+}
+
+
