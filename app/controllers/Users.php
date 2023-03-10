@@ -136,7 +136,7 @@ class Users extends Controller{
             };
 
             case 'staff': {
-                //
+                direct('Staff_dashboard/staff_dash');
                 break;
             };
 
