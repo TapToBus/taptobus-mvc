@@ -31,21 +31,24 @@
                
           ?>
             <div class="card">
+
                 <div class="images">
-                    <i class="fa-solid fa-wifi fa-2x"></i>
+                <i class="fa-solid fa-user-plus fa-5x" style="color: #000080;"></i>
                 </div>
+                
+                
+                <h2><?php echo $row->heading; ?></h2>
+               
+                <div class="description">
 
-                <div class="caption">
-
-                    <h2 class="product_name"><?php echo $row->heading; ?></h2>
                     <p class="price"><?php echo $row->description; ?></p>
                     
                 </div>
 
-                <div class="btn-div">
+                <!-- <div class="btn-div">
                     
                     <a href=""><button class="view">View</button></a>
-                </div>
+                </div> -->
             </div>
 
           <?php
