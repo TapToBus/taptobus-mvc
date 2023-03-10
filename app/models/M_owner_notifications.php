@@ -28,6 +28,8 @@ class M_owner_notifications{
         $this->db->query("SELECT * FROM owner_notifications WHERE nic = :owner_nic");
         $owner_nic = $_SESSION['user_id'];
         $this->db->bind(':owner_nic', $owner_nic);
+        $results = $this->db->resultSet();
+        return $results;
     }
 
   }
