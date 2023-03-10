@@ -65,7 +65,7 @@ class Users extends Controller{
             // validate username
             if(empty($data['username'])){
                 $data['username_err'] = "Username is required";
-            }elseif(! $this->userModel->findUserByEmail($data['username'])){
+            }elseif(! $this->userModel->findUserByEmail($data['username'],$data['password'])){
                 // user not found
                 $data['username_err'] = 'User doesn\'t exist';
             }

@@ -38,13 +38,13 @@ class M_owner_leaverequests{
         $results = $this->db->single();
         $old_bus_no = $results->bus_no ;
 
-        $this->db->query("UPDATE $table_name SET bus_no=NULL WHERE ntcNo= :user_ntc");
+        $this->db->query("UPDATE $table_name SET bus_no = NULL WHERE ntcNo= :user_ntc");
         $this->db->bind(':user_ntc',$user_ntc);
         $this->db->execute(); 
 
-        if($type=='conducter'){ 
+        if($type=='conductor'){ 
 
-        $this->db->query("UPDATE bus SET con_id = NULL WHERE bus_no= :bus_no");
+        $this->db->query("UPDATE bus SET con_ntc = NULL WHERE bus_no= :bus_no");
         $this->db->bind(':bus_no',$old_bus_no);
         $this->db->execute();
 
@@ -52,7 +52,7 @@ class M_owner_leaverequests{
 
         if($type=='driver'){
 
-            $this->db->query("UPDATE bus SET dri_id=NULL WHERE bus_no= :bus_no");
+            $this->db->query("UPDATE bus SET dri_ntc = NULL WHERE bus_no= :bus_no");
             $this->db->bind(':bus_no',$old_bus_no);
             $this->db->execute();
     

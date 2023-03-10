@@ -44,7 +44,7 @@ class Owner_buses extends Controller{
             $data = [
                 'bus_no' => $_POST['bus_no'],
                 'root_no' => $_POST['root_no'],
-                'owner_name' => $_POST['owner_name'],
+                // 'owner_name' => $_POST['owner_name'],
                 'capacity'  => $_POST['capacity'],
                 'bus_image'  => $_POST['bus_image'],
                 'permit_image'  => $_POST['permit_image'],

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title><?php echo SITENAME;?></title>
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/owner-style/requestdetails-style.css">
     
@@ -48,11 +49,31 @@
 
                     <div class="row">
 
-                           <!-- <input type="submit" value="Accept" href="<?php echo URLROOT; ?>/owner_conductors/update_assigned_bus?user_ntc=<?php echo $row->user_ntc; ?>?type=<?php echo $row->type; ?>" >
-                           <input type="submit" value="Reject"> -->
+                           <form id="myform" action="<?php echo URLROOT; ?>/owner_leaverequests/update_assigned_bus" method="POST">
+                             
+                               <input type="hidden" name="user_ntc" value="<?php echo $row->user_ntc;?>">
+                               <input type="hidden" name="type" value="<?php echo $row->type;?>">
+                               <input type="hidden" name="owner_nic" value="<?php echo $_SESSION['user_id']; ?>">
+                               <input type="hidden" name="heading" value="Assign a bus conductor">
+                               <input type="hidden" name="description" value="There is no conductor is assigned for the <?php echo $row->bus_no;?> bus. Please assign a conductor for this bus.">
 
-                           <a href="<?php echo URLROOT; ?>/owner_leaverequests/update_assigned_bus?user_ntc=<?php echo $row->user_ntc; ?>&type=<?php echo $row->type; ?>"> <button>Accept</button></a>
+                           </form>
+
+                           <a > <button id="accept-button" >Accept</button></a>
                            <a> <button>Reject</button></a>
+
+                           <script>
+                             
+                             $(document).ready(function(){
+
+                                $("#accept-button").click(function(){
+
+                                    $("#myform").submit();
+                                });
+
+                             });
+                                
+                           </script>
                     </div>
                 </div>
                 
