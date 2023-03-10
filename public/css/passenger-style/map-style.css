@@ -1,0 +1,8 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.heading{
+    font-size: 25px;
+    color: var(--clr-navbar-top);
+    margin-bottom: 10px;
+}
