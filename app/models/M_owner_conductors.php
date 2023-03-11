@@ -10,15 +10,18 @@ class M_owner_conductors{
 
     public function register($data){
         // prepare query
-        $this->db->query('INSERT INTO conductor (nic, fname, lname,email,mobileNo,password) VALUES (:nic, :fname, :lname,:email, :mobileNo, :password)');
+        var_dump($data);
+        $this->db->query('INSERT INTO conductor (nic, ntcNo, fname, lname,email,mobileNo,dob,address) VALUES (:nic,:ntcNo, :fname, :lname,:email, :mobileNo, :dob, :address)');
 
         // bind values
         $this->db->bind(':nic', $data['nic']);
+        $this->db->bind(':ntcNo', $data['ntcNo']);
         $this->db->bind(':fname', $data['fname']);
         $this->db->bind(':lname', $data['lname']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':mobileNo', $data['mobileNo']);
-        $this->db->bind(':password', $data['password']);
+        $this->db->bind(':dob', $data['dob']);
+        $this->db->bind(':address', $data['address']);
 
         // execute
         if($this->db->execute()){

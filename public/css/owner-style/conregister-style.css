@@ -16,7 +16,7 @@
     margin-top: 2.4rem;
     margin-left: 9.1rem;
     background-image:  linear-gradient(
-        rgba(0,0,0,0.4), 
+        rgba(0,0,0,0.6), 
         rgba(0,0,0,0.6)
         ),url(../../img//owner_img/reg4.jpg);
     
@@ -31,7 +31,7 @@
     text-align: center;
     font-weight: 300px;
     font-size: 28px;
-    /* color: rgb(158, 199, 44); */
+    color: rgb(18, 166, 186);
 }
 
 
@@ -44,7 +44,7 @@
     text-align: center;
     font-weight: 600px;
     font-size: 25px;
-    color: rgb(18, 186, 18);
+    color: rgb(18, 166, 186);
     
 }
 
@@ -97,7 +97,7 @@
     margin-bottom: 15px;
 }
 
-.box .fname label, .lname label, .nic label, .email label, .mobileNo label, .password label, .confirmPassword label{
+.box .fname label, .lname label, .nic label,.ntcNo label, .email label, .mobileNo label, .dob label, .address label{
     font-weight: 500;
     font-size: 16px;
     padding-left: 10px;
@@ -208,7 +208,7 @@
     font-style: italic;
 } */
 
-.box .fname span, .lname span, .nic span, .email span, .mobileNo span, .password span, .confirmPassword span, .agree span{
+.box .fname span, .lname span, .nic span, .ntcNo span, .email span, .mobileNo span, .dob span, .address span, .agree span{
     color: red;
     font-size: 13px;
     font-style: italic;
@@ -232,9 +232,26 @@
     margin-left: 10px;
 }
 
-.box .nic{
-    width: 48%;
+
+.box .field4{
+    display: flex;
+    justify-content: space-between;
 }
+
+.box .nic, .box .ntcNo{
+    width: 100%;
+}
+
+.box .nic{
+    margin-right: 10px;
+   
+}
+
+.box .ntcNo{
+    margin-left: 10px;
+  
+}
+
 
 .box .field2{
     display: flex;
@@ -258,18 +275,18 @@
     justify-content: space-between;
 }
 
-.box .password, .box .confirmPassword{
+.box .dob, .box .address{
     width: 100%;
 }
 
-.box .password{
+.box .dob{
     margin-right: 10px;
 }
 
-.box .confirmPassword{
+.box .address{
     margin-left: 10px;
 }
 
-.fname, .lname, .nic, .email, .mobileNo, .password, .confirmPassword{
+.fname, .lname, .nic, .ntcNo, .email, .mobileNo, .dob, .address{
     margin-bottom: 10px;
 }

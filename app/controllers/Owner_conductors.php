@@ -3,7 +3,6 @@
 class Owner_conductors extends Controller{
 
     private $ownerModel;
-    private $userModel;
 
     public function __construct(){
         if(! isLoggedIn()){
@@ -11,8 +10,7 @@ class Owner_conductors extends Controller{
         }
 
           $this->ownerModel = $this->model('m_owner_conductors');
-          $this->userModel = $this->model('m_users');
- 
+         
     }
 
     public function view_conductors(){
@@ -36,18 +34,20 @@ class Owner_conductors extends Controller{
                 'fname' => $_POST['fname'],
                 'lname' => $_POST['lname'],
                 'nic' => $_POST['nic'],
+                'ntcNo' => $_POST['ntcNo'],
                 'email' => $_POST['email'],
                 'mobileNo' => $_POST['mobileNo'],
-                'password' => $_POST['password'],
-                'confirmPassword' => $_POST['confirmPassword'],
+                'dob' => $_POST['dob'],
+                'address' => $_POST['address'],
                 'agree' => $_POST['agree'],
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',
+                'ntcNo_err' => '',
                 'email_err' => '',
                 'mobileNo_err' => '',
-                'password_err' => '',
-                'confirmPassword_err' => '',
+                'dob_err' => '',
+                'address_err' => '',
                 'agree_err' => '',
                 
             ];
@@ -95,25 +95,6 @@ class Owner_conductors extends Controller{
                 }
             }
 
-            // validate password
-            if(empty($data['password'])){
-                $data['password_err'] = 'Passworrd is required';
-            }elseif(strlen($data['password']) < 8){
-                $data['password_err'] = 'Password must contain at least 8 characters';
-            }elseif(! preg_match("/[0-9]/", $data['password'])){
-                $data['password_err'] = 'Password must contain at least 1 number';
-            }elseif(! preg_match("/[a-z]/i", $data['password'])){
-                $data['password_err'] = 'Password must contain at least 1 letter';
-            }elseif(! preg_match("/[^\w]/", $data['password'])){
-                $data['password_err'] = 'Password must contain at least 1 special character';
-            }
-
-            //validate confirm password
-            if(empty($data['confirmPassword'])){
-                $data['confirmPassword_err'] = 'Confirm password is required';
-            }elseif($data['confirmPassword'] != $data['password']){
-                $data['confirmPassword_err'] = 'Paswords must match';
-            }
 
             // validate checkbox
             if(empty($_POST['agree'])){
@@ -121,17 +102,13 @@ class Owner_conductors extends Controller{
             }
 
             // make sure errors are empty
-            if(empty($data['fname_err']) && empty($data['lname_err']) && 
-            empty($data['nic_err']) && empty($data['email_err']) && 
-            empty($data['mobileNo_err']) && empty($data['password_err']) && 
-            empty($data['confirmPassword_err']) && empty($data['agree_err']) ){
-                    
-                // hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+            if( empty($data['fname_err']) && empty($data['lname_err']) && 
+            empty($data['nic_err']) && empty($data['ntcNo_err']) && empty($data['email_err']) && 
+            empty($data['mobileNo_err']) && empty($data['dob_err']) && empty($data['address_err'])){
+                
 
-                // register conductor
-                if( $this->ownerModel->register($data) &&
-                $this->userModel->addUser($data['nic'],$data['fname'],$data['lname'],$data['email'], $data['password'],'conductor') ){
+                // register passenger
+                if( $this->ownerModel->register($data) ){
                     direct('users/login');
                    
                 }else{
@@ -150,18 +127,20 @@ class Owner_conductors extends Controller{
                 'fname' => '',
                 'lname' => '',
                 'nic' => '',
+                'ntcNo' => '',
                 'email' => '',
                 'mobileNo' => '',
-                'password' => '',
-                'confirmPassword' => '',
+                'dob' => '',
+                'address' => '',
                 'agree' => '',
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',
+                'ntcNo_err' => '',
                 'email_err' => '',
                 'mobileNo_err' => '',
-                'password_err' => '',
-                'confirmPassword_err' => '',
+                'dob_err' => '',
+                'address_err' => '',
                 'agree_err' => '',
                 
             ];
