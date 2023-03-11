@@ -1,24 +1,31 @@
 @import url(../main.css);
+@import url(../owner-style/navbar-style.css);
 
-.left{
-    width: 50%;
-    height: 100vh;
-    background-image: linear-gradient(
-                    rgba(0,0,0,0.7), 
-                    rgba(0,0,0,0.7)
-                    ), 
-                    url(../../img/register-passenger-img.jpg);
-    background-size: cover;
-    background-position: center;
+
+.container{
+    
+    padding: 4.345rem 0rem 0rem 0rem;
+    margin-left: 14.3%;
+   
 }
 
-.left .logo{
+.left{
+    width: 30%;
+    height: 70vh;
+    background-image: url(../../img/owner_img/reg2.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: 8rem;
+    margin-left: 6rem;
+    border-radius:50%;
+}
+
+/* .left .logo{
     position: absolute;
     top: 50%;
     left: 25%;
     transform: translate(-50%, -50%);
 
-    /* background-color: red; */
 }
 
 .left img{
@@ -26,19 +33,12 @@
     position: relative;
     left: 50%;
     transform: translate(-50%);
-}
-
-.left p{
-    color: white;
-    text-align: center;
-    font-weight: 600px;
-    font-size: 20px;
-}
+} */
 
 
 .right{
     width: 50%;
-    background-color: rgb(230, 230, 230);
+    background-color:white;
     position: absolute;
     top: 0;
     left: 50%;
