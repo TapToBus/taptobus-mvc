@@ -8,7 +8,25 @@ class M_owner_conductors{
         $this->db = new Database;
     }
 
-    
+    public function register($data){
+        // prepare query
+        $this->db->query('INSERT INTO conductor (nic, fname, lname,email,mobileNo,password) VALUES (:nic, :fname, :lname,:email, :mobileNo, :password)');
+
+        // bind values
+        $this->db->bind(':nic', $data['nic']);
+        $this->db->bind(':fname', $data['fname']);
+        $this->db->bind(':lname', $data['lname']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':mobileNo', $data['mobileNo']);
+        $this->db->bind(':password', $data['password']);
+
+        // execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public function view_conductors(){
         // prepare query
@@ -70,6 +88,62 @@ class M_owner_conductors{
         $this->db->bind(':con_id',$old_con);   
         $this->db->execute(); 
 
+    }
+
+     // find conductor by nic
+     public function findConByNIC($nic){
+        // prepare query
+        $this->db->query('SELECT * FROM conductor WHERE nic = :nic');
+
+        // bind value
+        $this->db->bind(':nic', $nic);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    // find conductor by email
+    public function findConByEmail($email){
+        // prepare query
+        $this->db->query('SELECT * FROM conductor WHERE email = :email');
+
+        // bind value
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    
+    //find conductor by mobile no
+    public function findrConByMobileNo($mobileNo){
+        // prepare query
+        $this->db->query('SELECT * FROM conductor WHERE mobileNo = :mobileNo');
+
+        // bind value
+        $this->db->bind(':mobileNo', $mobileNo);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

@@ -86,6 +86,7 @@ class M_owner_register{
             return false;
         }
     }
+    
 }
 
 ?>
