@@ -18,10 +18,8 @@
         <!-- left side of the page -->
         <div class="left">
 
-            <div class="image">
-                <img src="" alt="">
-                <!-- <p>Expressway buses are now at<br>your fingertips</p> -->
-            </div>
+            <h2>Register  Your  Employees</h2>
+            <p>Discover More!</p>
 
         </div>
 

@@ -6,39 +6,73 @@
     
     padding: 4.345rem 0rem 0rem 0rem;
     margin-left: 14.3%;
+    background-color: white;
    
 }
 
 .left{
-    width: 30%;
-    height: 70vh;
-    background-image: url(../../img/owner_img/reg2.jpg);
-    background-size: cover;
-    background-position: center;
-    margin-top: 8rem;
-    margin-left: 6rem;
-    border-radius:50%;
+    width: 35%;
+    height: 72vh;
+    margin-top: 2.4rem;
+    margin-left: 9.1rem;
+    background-image:  linear-gradient(
+        rgba(0,0,0,0.4), 
+        rgba(0,0,0,0.6)
+        ),url(../../img//owner_img/reg4.jpg);
+    
 }
 
-/* .left .logo{
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
+.left h2{
 
+    position:absolute;
+    top: 20rem;
+    left: 27rem;
+    color: white;
+    text-align: center;
+    font-weight: 300px;
+    font-size: 28px;
+    /* color: rgb(158, 199, 44); */
 }
 
-.left img{
-    height: 60px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-} */
+
+.left p{
+
+    position:absolute;
+    top: 24rem;
+    left: 32rem;
+    color: white;
+    text-align: center;
+    font-weight: 600px;
+    font-size: 25px;
+    color: rgb(18, 186, 18);
+    
+}
+
+.left.images{
+    
+    padding: 0% 0%;
+    /* height:35rem; */
+    width: 100%;
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; */
+   
+}
+
+.left .images img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 60%; */
+}
 
 
 .right{
     width: 50%;
-    background-color:white;
+    /* background-color:white; */
     position: absolute;
     top: 0;
     left: 50%;
@@ -50,10 +84,10 @@
     width: 85%;
     height: auto;
     position: absolute;
-    top: 50%;
+    top: 50.35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
