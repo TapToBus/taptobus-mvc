@@ -8,6 +8,8 @@ class M_owner_conductors{
         $this->db = new Database;
     }
 
+    
+
     public function view_conductors(){
         // prepare query
         

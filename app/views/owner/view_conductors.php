@@ -19,7 +19,7 @@
     <div class="container">
 
         <div>
-            <a href="<?php echo URLROOT; ?>/owner_conductors/view_conductors"><button class="addbtn">Add Conductor</button></a>
+            <a href="<?php echo URLROOT; ?>/owner_conductors/register_conductor"><button class="addbtn">Add Conductor</button></a>
         </div>
        
          <div>
