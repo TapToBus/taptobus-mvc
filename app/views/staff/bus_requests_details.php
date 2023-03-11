@@ -17,6 +17,20 @@
     <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
 
     <div class="container">
+
+                <?php
+            // if (isset($data['busRequestDetails'])) {
+            //     $result = $data['busRequestDetails'];
+            //     if (isset($result->bus_no)) {
+            //         $busNo = $result->bus_no;
+            //     } else {
+            //         $busNo = '';
+            //     }
+            // } else {
+            //     $busNo = '';
+            // }
+            ?>
+            
             <?php $result = $data['busRequestDetails']?>
 
             <h2><?php echo $result->bus_no?></h2>
@@ -59,7 +73,9 @@
                     <p>Are you sure that you want to add <?php echo $result->bus_no?> to the system?</p>                    
                 </div>
                 <div class="confirm-btns">
-                    <button class = "yes" onclick="">Yes</button>
+                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php echo $result->bus_no?>">
+                        <button class = "yes" onclick="">Yes</button>
+                    </a>
                     <button class = "no" onclick="hideConfirmation()">No</button>
                 </div>
             </dialog>
@@ -68,7 +84,7 @@
             <dialog id="rejection-dialog" class="rejection-box">
                 <form action="" method="post">
                     <div class = "reject-msg">
-                        <p> Please enter the reason for the rejection</p>  
+                        <p>Please enter the reason for the rejection</p>  
                         <textarea type="text" placeholder="Type the reason here" name="reason"></textarea>               
                     </div>
                     <div class="rejection-btns">

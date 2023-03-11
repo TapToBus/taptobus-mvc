@@ -31,12 +31,39 @@ class M_staff_requests{
         return $result;
     }
 
+    //---------------get Request details----------------
     public function busRequestedDetails($bus_no){
         $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where bus_no = :bus_no ");
         $this->db->bind(":bus_no",$bus_no);
         $result = $this->db->Single();
         return $result;
     }
+
+
+    //---------------Accept requests-----------------
+    public function accept_bus_request($data){
+        $this->db->query("UPDATE bus set status = :sts where bus_no = :bus_no");
+        $this->db->bind(":bus_no",$data['bus_no']);
+        $this->db->bind(":sts",$data['status']);
+
+        return $this->db->execute();
+    }
+
+
+
+    // ---------------Update staff id----------------
+
+    public function update_staff_id($data2){
+        $this->db->query("UPDATE bus_request set staff_no = :staff_no, status = :status where owner_nic = :owner_nic");
+        $this->db->bind(":staff_no", $data2['staff_no']);
+        $this->db->bind(":owner_nic", $data2['owner_nic']); 
+        $this->db->bind(":status", $data2['status']);
+
+        return $this->db->execute();
+    }
+
+    
+
 }
 
 ?>

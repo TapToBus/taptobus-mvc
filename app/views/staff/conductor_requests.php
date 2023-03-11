@@ -22,10 +22,12 @@
                         <div class="data">
                             <span class="row1">Conductor001 </span>        
                             <span class="date">2023/01/07</span> 
-                        </div>               
-                        <span class="Vbutton">
-                        <a href="<?php echo URLROOT?>/Staff_view_requests/conductor_requests_details">View</a>
-                        </span>
+                        </div>         
+                              
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/conductor_requests_details">
+                        <span class="Vbutton">View</span>
+                        </a>
+                        
                     </div>      
             </div>        
         </p>
