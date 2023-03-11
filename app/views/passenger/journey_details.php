@@ -16,43 +16,6 @@
         <form action="<?php echo URLROOT; ?>/passenger_book_seats/journey_details" method="POST">
             <h1 class="heading">Journey Details</h1>
 
-            <!-- <div class="from">
-                <label for="from">From</label> <br>
-                <select name="from">
-                    <option value="default">Select location</option>
-                    <option value="Galle">Galle</option>
-                    <option value="Makumbura">Makumbura</option>
-                    <option value="Matara">Matara</option>
-                </select>
-            </div>
-
-            <div class="to">
-                <label for="to">To</label> <br>
-                <select name="to">
-                    <option value="default">Select location</option>
-                    <option value="Galle">Galle</option>
-                    <option value="Makumbura">Makumbura</option>
-                    <option value="Matara">Matara</option>
-                </select>
-            </div>
-
-            <div class="date">
-                <label for="date">Date</label> <br>
-                <input type="date" name="date">
-            </div>
-
-            <div class="count">
-                <label for="count">No. of passengers</label> <br>
-                <select name="count">
-                    <option value="default">Select number</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div> -->
-
             <div class="from">
                 <label for="from">From</label> <br>
                 <select name="from" id="from">
