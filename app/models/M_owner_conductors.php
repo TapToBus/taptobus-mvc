@@ -129,7 +129,7 @@ class M_owner_conductors{
 
     
     //find conductor by mobile no
-    public function findrConByMobileNo($mobileNo){
+    public function findConByMobileNo($mobileNo){
         // prepare query
         $this->db->query('SELECT * FROM conductor WHERE mobileNo = :mobileNo');
 
