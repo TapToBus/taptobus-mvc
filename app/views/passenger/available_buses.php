@@ -15,24 +15,21 @@
     <div class="main">
         <h1 class="heading">Available Buses</h1>
 
-        <div class="notice">
-            <div class="details">
-                <span class="top"><?php echo $data['from'] ?> > <?php echo $data['to'] ?></span>
-
-                <div class="bottom">
-                    <span>Date: <?php echo $data['date'] ?></span>
-                    <span>Passenger count: <?php echo $data['count'] ?></span>
-                </div>
-            </div>
-
-            <div class="recent">
-                <span class="top">Next expressway bus departure</span>
-                <div class="bottom">
-                    <span>From: Galle</span>
-                    <span>To: Matara</span>
-                    <span>At: 13:30</span>
-                </div>
-            </div>
+        <div class="summary">
+            <span class="col1">
+                <span class="sub-col1">Journey:</span> 
+                <span class="sub-col2"><?php echo $data['from'] ?> > <?php echo $data['to'] ?></span>
+            </span>
+            <span class="v-line">|</span>
+            <span class="col2">
+                <span class="sub-col1">On:</span> 
+                <span class="sub-col2"><?php echo $data['date'] ?></span>
+            </span>
+            <span class="v-line">|</span>
+            <span class="col3">
+                <span class="sub-col1">Passenger count:</span> 
+                <span class="sub-col2"><?php echo $data['count'] ?></span>
+            </span>
         </div>
 
         <div class="title">
