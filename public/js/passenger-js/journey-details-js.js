@@ -1,7 +1,8 @@
 const fromDropdown = document.getElementById("from");
 const toDropdown = document.getElementById("to");
 
-// Remove selected option from both dropdowns
+
+// remove selected option from both dropdowns
 function removeOption(value) {
     for (let i = 0; i < fromDropdown.options.length; i++) {
         if (fromDropdown.options[i].value === value) {
@@ -17,7 +18,8 @@ function removeOption(value) {
     }
 }
 
-// Handle changes to "From" dropdown
+
+// handle changes to "From" dropdown
 fromDropdown.addEventListener("change", function () {
     const selectedValue = fromDropdown.value;
     for (let i = 0; i < toDropdown.options.length; i++) {
@@ -28,7 +30,8 @@ fromDropdown.addEventListener("change", function () {
     }
 });
 
-// Handle changes to "To" dropdown
+
+// handle changes to "To" dropdown
 toDropdown.addEventListener("change", function () {
     const selectedValue = toDropdown.value;
     for (let i = 0; i < fromDropdown.options.length; i++) {
@@ -42,6 +45,16 @@ toDropdown.addEventListener("change", function () {
 
 // -----------------------------------------------------------------------------------------------
 
+// get the current date
 const today = new Date().toISOString().split('T')[0];
 
+// set the minimum date for the input field
 document.getElementById('date').setAttribute('min', today);
+
+// calculate the maximum date (2 weeks from now)
+var maxDate = new Date();
+maxDate.setDate(maxDate.getDate() + 20);
+var maxDateStr = maxDate.toISOString().split('T')[0];
+
+// Set the maximum date for the input field
+document.getElementById('date').setAttribute('max', maxDateStr);

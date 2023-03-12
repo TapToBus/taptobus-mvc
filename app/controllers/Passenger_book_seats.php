@@ -33,15 +33,15 @@ class Passenger_book_seats extends Controller{
 
             if($data['to'] == 'default'){
                 $data['to_err'] = 'Ending point is required';
-            }elseif($data['from'] == $data['to']){
+            }/*elseif($data['from'] == $data['to']){
                 $data['to_err'] = 'Starting and ending points can\'t be same';
-            }
+            }*/
 
             if(empty($data['date'])){
                 $data['date_err'] = 'Date is required';
-            }elseif($data['date'] < date("Y-m-d")){
+            }/*elseif($data['date'] < date("Y-m-d")){
                 $data['date_err'] = 'Date must be today or a upcoming date';
-            }
+            }*/
 
             if($data['count'] == 'default'){
                 $data['count_err'] = 'Passenger count is required';
