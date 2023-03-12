@@ -87,12 +87,14 @@
 }
 
 .result > span > i{
-    font-size: 18px !important;
-    color: var(--clr-table-title-bg);
+    font-size: 20px !important;
+    color: gold;
 }
 
-.result .fill-star{
-    color: gold !important;
+.result .responses{
+    font-size: 11px;
+    padding-left: 5px;
+    color: gray;
 }
 
 .btn{

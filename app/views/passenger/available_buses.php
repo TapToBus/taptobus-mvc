@@ -40,52 +40,40 @@
             <span class="title5">Ticket Price</span>
         </div>
 
-        <!-- <div class="no-data">
-            <i class="fa-solid fa-circle-exclamation"></i> <br>
-            <span>No buses to display</span>
-        </div> -->
+        <?php if(empty($data['availableBuses'])) : ?>
+            <div class="no-data">
+                <i class="fa-solid fa-circle-exclamation"></i> <br>
+                <span>No buses to display</span>
+            </div>
+        <?php else : ?>
+            <?php foreach ($data['availableBuses'] as $recode) : ?>
+                <div class="result">
+                    <span class="result1"><?php echo $recode->bus_no ?></span>
+                    <span class="result2">
+                        <?php $i = 0; ?>
+                        
+                        <?php while($i < floor($recode->ratings)): ?>
+                            <i class="fa-solid fa-star"></i>
+                            <?php $i++; ?>
+                        <?php endwhile; ?>
 
-        <div class="result">
-            <span class="result1">NC-8965</span>
-            <span class="result2">
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span class="result3">09:30</span>
-            <span class="result4">12</span>
-            <span class="result5">LKR 1030.00</span>
-        </div>
+                        <?php if($recode->ratings - (floor($recode->ratings)) > 0): ?>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                            <?php $i++; ?>
+                        <?php endif; ?>
 
-        <div class="result">
-            <span class="result1">NC-8965</span>
-            <span class="result2">
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span class="result3">09:30</span>
-            <span class="result4">12</span>
-            <span class="result5">LKR 30.00</span>
-        </div>
-
-        <div class="result">
-            <span class="result1">NC-8965</span>
-            <span class="result2">
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star fill-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span class="result3">09:30</span>
-            <span class="result4">12</span>
-            <span class="result5">LKR 930.00</span>
-        </div>
+                        <?php while($i < 5): ?>
+                            <i class="fa-regular fa-star"></i>
+                            <?php $i++; ?>
+                        <?php endwhile; ?>
+                        <span class="responses">(<?php echo $recode->responses ?>)</span>
+                    </span>
+                    <span class="result3"><?php echo date('h:i A', strtotime($recode->departure_time)) ?></span>
+                    <span class="result4">12</span>
+                    <span class="result5">LKR <?php echo $recode->ticket_price ?></span>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
 
         <div class="btn">
             <button onclick="goBack()">Reset</button>

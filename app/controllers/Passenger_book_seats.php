@@ -1,10 +1,14 @@
 <?php
 
 class Passenger_book_seats extends Controller{
+    private $availableBusModel;
+
     public function __construct(){
         if(! isLoggedIn()){
             direct('users/login');
         }
+
+        $this->availableBusModel = $this->model('m_passenger_book_seats');
     }
 
 
@@ -71,8 +75,11 @@ class Passenger_book_seats extends Controller{
                 'from' => $_GET['from'],
                 'to' => $_GET['to'],
                 'date' => $_GET['date'],
-                'count' => $_GET['count']
+                'count' => $_GET['count'],
+                'availableBuses' => ''
             ];
+
+            $data['availableBuses'] = $this->availableBusModel->getAvailableBuses($data['from'], $data['to'], $data['date'], $data['count']);
 
             $this->view('passenger/available_buses', $data);
         }else{

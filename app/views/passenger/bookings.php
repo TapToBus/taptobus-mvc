@@ -39,7 +39,7 @@
                     <span class="result2"><?php echo $booking->from; ?></span>
                     <span class="result3"><?php echo $booking->to; ?></span>
                     <span class="result4"><?php echo $booking->date; ?></span>
-                    <span class="result5"><?php echo $booking->departure_time; ?></span>
+                    <span class="result5"><?php echo date('h:i A', strtotime($booking->departure_time)); ?></span>
                     <span class="result6">2d : 23h : 42m : 23s</span>
                 </div>
             <?php endforeach; ?>
