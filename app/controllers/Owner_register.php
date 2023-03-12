@@ -3,7 +3,7 @@
 class owner_register extends Controller{
     private $ownerModel;
     private $userModel;
-
+    private $requestModel;
 
     public function __construct(){
         /* 1. instantiate the model inside the controller
@@ -14,6 +14,7 @@ class owner_register extends Controller{
         */ 
         $this->ownerModel = $this->model('m_owner_register');
         $this->userModel = $this->model('m_users');
+        $this->requestModel = $this->model('m_owner_requests');
     }
 
     
@@ -120,7 +121,7 @@ class owner_register extends Controller{
 
                 // register passenger
                 if( $this->ownerModel->register($data) &&
-                $this->userModel->addUser($data['nic'],$data['fname'],$data['lname'],$data['email'], $data['password'],'owner') ){
+                $this->userModel->addUser($data['nic'],$data['fname'],$data['lname'],$data['email'], $data['password'],'owner') && $this->requestModel->add_owner_request($data) ){
                     direct('users/login');
                    
                 }else{

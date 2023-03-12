@@ -3,6 +3,7 @@
 class Owner_conductors extends Controller{
 
     private $ownerModel;
+    private $requestModel;
 
     public function __construct(){
         if(! isLoggedIn()){
@@ -10,6 +11,7 @@ class Owner_conductors extends Controller{
         }
 
           $this->ownerModel = $this->model('m_owner_conductors');
+          $this->requestModel = $this->model('m_owner_conductor_requests');
          
     }
 
@@ -107,8 +109,8 @@ class Owner_conductors extends Controller{
             empty($data['mobileNo_err']) && empty($data['dob_err']) && empty($data['address_err'])){
                 
 
-                // register passenger
-                if( $this->ownerModel->register($data) ){
+                // register conductor
+                if( $this->ownerModel->register($data) && $this->requestModel->add_con_request($data) ){
                     direct('users/login');
                    
                 }else{
