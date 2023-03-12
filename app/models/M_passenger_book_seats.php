@@ -7,7 +7,5 @@ class M_passenger_book_seats{
         $this->db = new Database;
     }
 
-    public function getRecentDeparture(){
-        
-    }
+    
 }
