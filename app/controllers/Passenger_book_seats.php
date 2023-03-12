@@ -79,8 +79,6 @@ class Passenger_book_seats extends Controller{
                 'availableBuses' => ''
             ];
 
-            //$this->availableBusModel->getAvailableBuses($data['from'], $data['to'], $data['date'], $data['count']);
-
             $data['availableBuses'] = $this->availableBusModel->getAvailableBuses($data['from'], $data['to'], $data['date'], $data['count']);
 
             $this->view('passenger/available_buses', $data);
