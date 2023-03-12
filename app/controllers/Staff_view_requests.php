@@ -72,35 +72,36 @@
             $bus_no = $_GET['bus_no'];
             $staff_no = $_SESSION['user_id'];
 
-            $data = [
+            $data1 = [
                 'bus_no' => $bus_no,
                 'status' => 'accepted'
             ]; 
 
-            $this->busModel->accept_bus_request($data);  
+            $this->busModel->accept_bus_request($data1);  
             
             // get the owner id from for the relavent bus number
             $bus_details = $this->busModel->busRequestedDetails($bus_no);
-            $data = [
+            $data2 = [
                 'bus_details' => $bus_details
             ];
 
             // print_r($data); | Array ( [bus_details] => stdClass Object ( [bus_no] => AV-9876 [root_no] => E10 [capacity] => 60 [owner_nic] => 656783425V ) )
             // die();
-            $owner_nic = $data['bus_details']->owner_nic;
+            $owner_nic = $data2['bus_details']->owner_nic;
 
           
-            $data2 = [
+            $data3 = [
                 'owner_nic' => $owner_nic,
                 'staff_no' => $staff_no ,
-                'status' => 'accepted'               
+                'status' => 'accepted' ,
+                // 'reject_reason' =>''              
             ];
 
             // print_r($data2);  | Array ( [owner_nic] => 656783425V [staff_no] => staff001 )
             // die();
             
             
-            $x = $this->busModel->update_staff_id($data2);
+            $x = $this->busModel->update_staff_id($data3);
             // print_r($x);
             // die();
 
@@ -111,6 +112,58 @@
 
         }
 
+// Reject requests by relavent staff member
+
+        public function reject_bus_requests(){
+
+            $bus_no = $_GET['bus_no'];
+            $staff_no = $_SESSION['user_id'];
+
+            $data1 = [
+                'bus_no' => $bus_no,
+                'status' => 'rejected'
+            ];
+
+            $this->busModel->reject_bus_requests($data1); // update the bus tabel status
+
+    
+            //   ------- check whether the reason is empty or not ------------
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                if(isset($_POST['send'])){
+                    if(isset($_POST['reject_reason']) && !empty(trim($_POST['reject_reason']))){  // Check if reject_reason is set and not empty
+
+                        // print_r($_POST['reject_reason']);
+                        // die();
+                        
+                        $bus_details = $this->busModel->busRequestedDetails($bus_no);
+                        $data2 = [
+                            'bus_details' => $bus_details
+                        ];
+
+                        $owner_nic = $data2['bus_details']->owner_nic;
+
+                        $data3 = [
+                            'owner_nic' => $owner_nic,
+                            'staff_no' => $staff_no ,
+                            'status' => 'rejected',
+                            'reject_reason' =>$_POST['reject_reason']                
+                        ];
+            
+                        $this->busModel->update_staff_id($data3); // update  the status and the staff_no on bus_request table
+            
+                        direct('Staff_view_requests/bus_requests');
+
+
+                    }else{
+                        echo "Please enter a reaason for the rejection";
+                    }
+                }
+            }
+          
+         
+
+        }
 
     }
 ?>
