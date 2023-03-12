@@ -53,7 +53,7 @@ document.getElementById('date').setAttribute('min', today);
 
 // calculate the maximum date (2 weeks from now)
 var maxDate = new Date();
-maxDate.setDate(maxDate.getDate() + 14);
+maxDate.setDate(maxDate.getDate() + 20);
 var maxDateStr = maxDate.toISOString().split('T')[0];
 
 // Set the maximum date for the input field
