@@ -7,7 +7,7 @@ class M_passenger_book_seats{
         $this->db = new Database;
     }
 
-    public function getRecentDeparture(){
+    public function getAvailableBuses($from, $to, $date, $pCount){
         
     }
 }

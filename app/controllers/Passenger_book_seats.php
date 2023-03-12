@@ -1,10 +1,14 @@
 <?php
 
 class Passenger_book_seats extends Controller{
+    private $scheduleModel;
+
     public function __construct(){
         if(! isLoggedIn()){
             direct('users/login');
         }
+
+        $this->scheduleModel = $this->model('m_passenger_book_seats');
     }
 
 
