@@ -39,9 +39,17 @@
     height: 60%;
     margin: 1rem;
     padding: .8rem;
-    border: rgba(30, 30, 30, 0.741) solid;
+    border:rgb(49, 48, 48);
     border-radius: 0.5rem;
 }
+
+.rejection-box textarea.empty::placeholder {
+    color: red;
+  }
+
+  /* textarea:not(:focus) {
+    border-color: black;
+  } */
 
 .rejection-btns{
     margin-inline: auto;

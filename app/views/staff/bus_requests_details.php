@@ -82,21 +82,22 @@
 
             <!-- Rejection pop-up Moodel   -->
             <dialog id="rejection-dialog" class="rejection-box">
-                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST">
+                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST" onsubmit="return validateForm()">
                     <div class = "reject-msg">
                         <p>Please enter the reason for the rejection</p>  
-                        <textarea type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
+                        <textarea id="reject-reason" type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
                     </div>
                     <div class="rejection-btns">
                         <!-- <a href="<?php //echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php //echo $result->bus_no?>"> -->
                         <button type="submit" class = "send" name="send" onclick="">Send</button>
                         <!-- </a> -->
-                        <button class = "cancel" onclick="hideConfirmation()">cancel</button>
+                        <button class = "cancel" name="cancel" onclick="hideRejection()">cancel</button>
                     </div>
                 </form>
             </dialog>
-           
+        
     </div>
+  
     <script  src="<?php echo URLROOT;?>/js/staff/popup-msg.js" ></script>
 </body>
 

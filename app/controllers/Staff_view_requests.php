@@ -131,7 +131,7 @@
 
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 if(isset($_POST['send'])){
-                    if(isset($_POST['reject_reason']) && !empty(trim($_POST['reject_reason']))){  // Check if reject_reason is set and not empty
+                    if(isset($_POST['reject_reason']) && !empty(trim($_POST['reject_reason']))){  // Check if reject_reason is set and not empty. check the reject_reason is set is not enough
 
                         // print_r($_POST['reject_reason']);
                         // die();
@@ -156,8 +156,11 @@
 
 
                     }else{
-                        echo "Please enter a reaason for the rejection";
+                        echo "Please enter a reason for the rejection";
                     }
+                }
+                else if(isset($_POST['cancel'])){
+                    direct('Staff_view_requests/bus_requests_details?bus_no='. $bus_no);
                 }
             }
           
