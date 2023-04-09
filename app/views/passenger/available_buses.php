@@ -66,10 +66,14 @@
                             <i class="fa-regular fa-star"></i>
                             <?php $i++; ?>
                         <?php endwhile; ?>
+
                         <span class="responses">(<?php echo $recode->responses ?>)</span>
                     </span>
                     <span class="result3"><?php echo date('h:i A', strtotime($recode->departure_time)) ?></span>
-                    <span class="result4">12</span>
+                    <span class="result4">
+                        <span><?php echo $recode->available_seats_count ?></span>
+                        <span class="capacity">/ <?php echo $recode->capacity ?></span>
+                    </span>
                     <span class="result5">LKR <?php echo $recode->ticket_price ?></span>
                 </div>
             <?php endforeach; ?>

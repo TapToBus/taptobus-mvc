@@ -79,7 +79,6 @@ class Passenger_book_seats extends Controller{
 
             $this->view('passenger/available_buses', $data);
         }else{
-            //die('Sorry! something went wrong');
             direct('passenger_book_seats/journey_details');
         }
     }
