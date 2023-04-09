@@ -46,7 +46,6 @@ form input{
     color: black;
     font-size: 15px;
     margin-top: 2px;
-    /* margin-bottom: 2px; */
     padding-left: 10px;
     padding-right: 10px;
 
@@ -62,7 +61,6 @@ form select{
     color: black;
     font-size: 15px;
     margin-top: 2px;
-    /* margin-bottom: 2px; */
     padding-left: 10px;
     padding-right: 10px;
 
@@ -79,9 +77,9 @@ form > .btn{
 }
 
 form > .btn > button{
-    /* margin-top: 10px; */
-    width: 150px;
-    height: 45px;
+    margin-top: 5px;
+    width: 130px;
+    height: 40px;
     border-radius: 5px;
 
     font-size: 16px;
@@ -97,4 +95,10 @@ form > .btn > button{
 form > .btn > button:hover{
     background-color: var(--clr-button-hover);
     transition: 0.3s;
+}
+
+form .err{
+    font-size: 13px;
+    color: var(--clr-error);
+    padding-left: 10px;
 }
