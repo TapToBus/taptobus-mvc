@@ -47,35 +47,37 @@
             </div>
         <?php else : ?>
             <?php foreach ($data['availableBuses'] as $recode) : ?>
-                <div class="result">
-                    <span class="result1"><?php echo $recode->bus_no ?></span>
-                    <span class="result2">
-                        <?php $i = 0; ?>
-                        
-                        <?php while($i < floor($recode->ratings)): ?>
-                            <i class="fa-solid fa-star"></i>
-                            <?php $i++; ?>
-                        <?php endwhile; ?>
+                <a class="result-link" href="<?php echo URLROOT ?>/passenger_book_seats/bus_details?schedule_id=<?php echo $recode->schedule_id; ?>&booked_seats_id=<?php echo $recode->booked_seats_id; ?>&count=<?php echo $data['count']; ?>">
+                    <div class="result">
+                        <span class="result1"><?php echo $recode->bus_no ?></span>
+                        <span class="result2">
+                            <?php $i = 0; ?>
+                            
+                            <?php while($i < floor($recode->ratings)): ?>
+                                <i class="fa-solid fa-star"></i>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
 
-                        <?php if($recode->ratings - (floor($recode->ratings)) > 0): ?>
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                            <?php $i++; ?>
-                        <?php endif; ?>
+                            <?php if($recode->ratings - (floor($recode->ratings)) > 0): ?>
+                                <i class="fa-regular fa-star-half-stroke"></i>
+                                <?php $i++; ?>
+                            <?php endif; ?>
 
-                        <?php while($i < 5): ?>
-                            <i class="fa-regular fa-star"></i>
-                            <?php $i++; ?>
-                        <?php endwhile; ?>
+                            <?php while($i < 5): ?>
+                                <i class="fa-regular fa-star"></i>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
 
-                        <span class="responses">(<?php echo $recode->responses ?>)</span>
-                    </span>
-                    <span class="result3"><?php echo date('h:i A', strtotime($recode->departure_time)) ?></span>
-                    <span class="result4">
-                        <span><?php echo $recode->available_seats_count ?></span>
-                        <span class="capacity">/ <?php echo $recode->capacity ?></span>
-                    </span>
-                    <span class="result5">LKR <?php echo $recode->ticket_price ?></span>
-                </div>
+                            <span class="responses">(<?php echo $recode->responses ?>)</span>
+                        </span>
+                        <span class="result3"><?php echo date('h:i A', strtotime($recode->departure_time)) ?></span>
+                        <span class="result4">
+                            <span><?php echo $recode->available_seats_count ?></span>
+                            <span class="capacity">/ <?php echo $recode->capacity ?></span>
+                        </span>
+                        <span class="result5">LKR <?php echo $recode->ticket_price ?></span>
+                    </div>
+                </a>
             <?php endforeach; ?>
         <?php endif; ?>
 

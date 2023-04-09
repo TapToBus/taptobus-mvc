@@ -85,7 +85,13 @@ class Passenger_book_seats extends Controller{
 
 
     public function bus_details(){
-        //
+        $data = [
+            'schedule_id' => $_GET['schedule_id'],
+            'booked_seats_id' => $_GET['booked_seats_id'],
+            'count' => $_GET['count'],
+        ];
+
+        $this->view('passenger/bus_details', $data);
     }
 
     public function select_seats(){

@@ -141,3 +141,8 @@
     font-size: 25px;
     font-weight: 400;
 }
+
+.main .result-link{
+    text-decoration: none;
+    color: black;
+}

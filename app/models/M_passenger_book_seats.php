@@ -7,6 +7,7 @@ class M_passenger_book_seats{
         $this->db = new Database;
     }
 
+    
     // get available buses when passenger fill and submit journey details form
     public function getAvailableBuses($from, $to, $date, $pCount){
         // find day using date
