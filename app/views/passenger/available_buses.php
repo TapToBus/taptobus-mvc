@@ -47,7 +47,7 @@
             </div>
         <?php else : ?>
             <?php foreach ($data['availableBuses'] as $recode) : ?>
-                <a class="result-link" href="<?php echo URLROOT ?>/passenger_book_seats/bus_details?schedule_id=<?php echo $recode->schedule_id; ?>&booked_seats_id=<?php echo $recode->booked_seats_id; ?>&count=<?php echo $data['count']; ?>">
+                <a class="result-link" href="<?php echo URLROOT ?>/passenger_book_seats/bus_details?bus_no=<?php echo $recode->bus_no; ?>&schedule_id=<?php echo $recode->schedule_id; ?>&booked_seats_id=<?php echo $recode->booked_seats_id; ?>&count=<?php echo $data['count']; ?>">
                     <div class="result">
                         <span class="result1"><?php echo $recode->bus_no ?></span>
                         <span class="result2">

@@ -2,6 +2,7 @@
 
 class Passenger_book_seats extends Controller{
     private $availableBusModel;
+    private $busModel;
 
     public function __construct(){
         if(! isLoggedIn()){
@@ -9,6 +10,7 @@ class Passenger_book_seats extends Controller{
         }
 
         $this->availableBusModel = $this->model('m_passenger_book_seats');
+        $this->busModel = $this->model('m_passenger_book_seats');
     }
 
 
@@ -85,13 +87,22 @@ class Passenger_book_seats extends Controller{
 
 
     public function bus_details(){
-        $data = [
-            'schedule_id' => $_GET['schedule_id'],
-            'booked_seats_id' => $_GET['booked_seats_id'],
-            'count' => $_GET['count'],
-        ];
+        if(isset($_GET['bus_no'], $_GET['schedule_id'], $_GET['booked_seats_id'], $_GET['count'])){
+            $data = [
+                'bus' => '',
+                'driver' => '',
+                'conductor' => '',
+                'schedule_id' => $_GET['schedule_id'],
+                'booked_seats_id' => $_GET['booked_seats_id'],
+                'count' => $_GET['count']
+            ];
 
-        $this->view('passenger/bus_details', $data);
+            $data['bus'] = $this->availableBusModel->getBusDetails($_GET['bus_no']);
+
+            $this->view('passenger/bus_details', $data);
+        }else{
+            direct('passenger_book_seats/journey_details');
+        }
     }
 
     public function select_seats(){
