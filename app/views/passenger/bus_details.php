@@ -157,12 +157,14 @@
             <div class="btn">
                 <?php
                     $bus_no = $data['bus']->bus_no;
+                    $capacity = $data['bus']->capacity;
                     $schedule_id = $data['schedule_id'];
                     $booked_seats_id = $data['booked_seats_id'];
                     $count = $data['count'];
                 ?>
+                
                 <button class="left" onclick="goBack()">Back</button>
-                <button class="right" onclick="goNext('<?php echo $bus_no ?>', '<?php echo $schedule_id ?>', '<?php echo $booked_seats_id ?>', '<?php echo $count ?>')">Next</button>
+                <button class="right" onclick="goNext('<?php echo $bus_no ?>', '<?php echo $capacity ?>', '<?php echo $schedule_id ?>', '<?php echo $booked_seats_id ?>', '<?php echo $count ?>')">Next</button>
             </div>
 
 

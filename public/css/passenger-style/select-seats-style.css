@@ -1,0 +1,50 @@
+@import url(../main.css);
+@import url(../passenger-style/navbar-style.css);
+
+.seating-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .seat-label {
+    position: relative;
+    margin: 10px; /* Increase margin to add gap */
+  }
+  
+  .seat {
+    display: none;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+  
+  .checkmark:before {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 5px;
+    left: 5px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #2196F3;
+  }
+  
+  .seat:checked + .checkmark:before {
+    display: block;
+  }
+  

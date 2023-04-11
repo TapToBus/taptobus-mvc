@@ -34,9 +34,6 @@ class M_passenger_book_seats{
     }
 
     public function getBusDetails($bus_no){
-        // $this->db->query('SELECT bus_no, capacity, bus_image, wifi, usb, tv, ratings, responses
-        //     FROM bus
-        //     WHERE bus_no=:bus_no AND status=\'active\';');
         $this->db->query('SELECT bus_no, capacity, bus_image, wifi, usb, tv, ratings, responses, dri_ntc AS driver_ntc, con_ntc AS conductor_ntc
             FROM bus
             WHERE bus_no=:bus_no AND status=\'active\';');

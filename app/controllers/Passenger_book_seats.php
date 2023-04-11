@@ -110,6 +110,6 @@ class Passenger_book_seats extends Controller{
     }
 
     public function select_seats(){
-        echo 'Hello';
+        $this->view('passenger/select_seats');
     }
 }
