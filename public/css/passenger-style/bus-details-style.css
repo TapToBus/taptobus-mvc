@@ -80,12 +80,19 @@
     padding-left: 5px;
 }
 
-.content .top-right .sub-row{
+.content .top-right .facilities{
     display: grid;
-    grid-template-columns: 13% 13% 13% 13%;
-    font-size: 18px;
-    margin-bottom: 15px;
+    grid-template-columns: 12% 12% 12% 12%;
+    grid-template-rows: 15% 15%;
+    row-gap: 25px;
+    column-gap: 5px;
+    margin-top: 10px;
     align-items: center;
+}
+
+.content .top-right .facilities i{
+    /* border: 1px solid black; */
+    font-size: 18px;
 }
 
 .content .bottom{

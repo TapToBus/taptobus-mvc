@@ -90,6 +90,7 @@ class Passenger_book_seats extends Controller{
         if(isset($_GET['bus_no'], $_GET['schedule_id'], $_GET['booked_seats_id'], $_GET['count'])){
             $data = [
                 'bus' => '',
+                'bus_rides' => '',
                 'driver' => '',
                 'conductor' => '',
                 'schedule_id' => $_GET['schedule_id'],
@@ -97,7 +98,10 @@ class Passenger_book_seats extends Controller{
                 'count' => $_GET['count']
             ];
 
-            $data['bus'] = $this->availableBusModel->getBusDetails($_GET['bus_no']);
+            $data['bus'] = $this->busModel->getBusDetails($_GET['bus_no']);
+            $data['bus_rides'] = $this->busModel->getRidesCount($_GET['bus_no']);
+            $data['driver'] = $this->busModel->getDriverDetails($data['bus']->driver_ntc);
+            $data['conductor'] = $this->busModel->getConductorDetails($data['bus']->conductor_ntc);
 
             $this->view('passenger/bus_details', $data);
         }else{
@@ -106,6 +110,6 @@ class Passenger_book_seats extends Controller{
     }
 
     public function select_seats(){
-        //
+        echo 'Hello';
     }
 }

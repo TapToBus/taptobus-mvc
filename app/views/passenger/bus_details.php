@@ -54,7 +54,7 @@
 
                     <div class="row">
                         <span class="col1">Rides:</span>
-                        <span class="col2">201</span>
+                        <span class="col2"><?php echo $data['bus_rides']->count; ?></span>
                     </div>
 
                     <div class="row">
@@ -63,21 +63,28 @@
                     </div>
 
                     <div class="row">
-                        <span class="col1 facilities">Facilities:</span>
+                        <span class="col1">Facilities:</span>
                         <span class="col2">
-                            <?php $i = 0; ?>
-
-                            <!-- <div class="sub-row">
-                                <i class="fa-solid fa-wifi"></i>
-                                <i class="fa-solid fa-tv"></i>
-                                <i class="fa-brands fa-usb"></i>
-                                <i class="fa-solid fa-sliders"></i>
+                            <div class="facilities">
+                                <!-- <?php if ($data['bus']->ac == 1) : ?>
+                                    <i class="fa-solid fa-snowflake"></i>
+                                <?php endif; ?> -->
+                                <?php if ($data['bus']->tv == 1) : ?>
+                                    <i class="fa-solid fa-tv"></i>
+                                <?php endif; ?>
+                                <!-- <?php if ($data['bus']->sounds == 1) : ?>
+                                    <i class="fa-solid fa-volume-high"></i>
+                                <?php endif; ?> -->
+                                <!-- <?php if ($data['bus']->adj_seats == 1) : ?>
+                                    <i class="fa-solid fa-sliders"></i>
+                                <?php endif; ?> -->
+                                <?php if ($data['bus']->wifi == 1) : ?>
+                                    <i class="fa-solid fa-wifi"></i>
+                                <?php endif; ?>
+                                <?php if ($data['bus']->usb == 1) : ?>
+                                    <i class="fa-brands fa-usb"></i>
+                                <?php endif; ?>
                             </div>
-
-                            <div class="sub-row">
-                                <i class="fa-solid fa-snowflake"></i>
-                                <i class="fa-solid fa-volume-high"></i>
-                            </div> -->
                         </span>
                     </div>
                 </span>
@@ -86,51 +93,83 @@
             <div class="bottom">
                 <span class="bottom-left">
                     <span class="col1">
-                        <img src="<?php echo URLROOT; ?>/img/bus/bus-img1.jpg" alt="bus_no">
+                        <img src="<?php echo URLROOT; ?>/img/bus/<?php echo $data['driver']->pic; ?>" alt="<?php echo $data['driver']->ntcNo; ?>">
                     </span>
 
                     <span class="col2">
                         <div class="title">Driver</div>
-                        <div class="name">Adheesha Chamod</div>
+                        <div class="name"><?php echo $data['driver']->fname . ' ' . $data['driver']->lname; ?></div>
                         <div class="rating">
-                            <i class="fa-solid fa-star star"></i>
-                            <i class="fa-solid fa-star star"></i>
-                            <i class="fa-solid fa-star star"></i>
-                            <i class="fa-regular fa-star-half-stroke star"></i>
-                            <i class="fa-regular fa-star star"></i>
-                            <span class="response">(100)</span>
+                            <?php $i = 0; ?>
+
+                            <?php while ($i < floor($data['driver']->ratings)) : ?>
+                                <i class="fa-solid fa-star star"></i>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
+
+                            <?php if ($data['driver']->ratings - (floor($data['driver']->ratings)) > 0) : ?>
+                                <i class="fa-regular fa-star-half-stroke star"></i>
+                                <?php $i++; ?>
+                            <?php endif; ?>
+
+                            <?php while ($i < 5) : ?>
+                                <i class="fa-regular fa-star star"></i>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
+
+                            <span class="response">(<?php echo $data['driver']->responses; ?>)</span>
                         </div>
                     </span>
                 </span>
 
                 <span class="bottom-right">
                     <span class="col1">
-                        <img src="<?php echo URLROOT; ?>/img/bus/bus-img1.jpg" alt="bus_no">
+                        <img src="<?php echo URLROOT; ?>/img/bus/<?php echo $data['conductor']->pic; ?>" alt="<?php echo $data['conductor']->ntcNo; ?>">
                     </span>
 
                     <span class="col2">
                         <div class="title">Conductor</div>
-                        <div class="name">Adheesha Chamod</div>
+                        <div class="name"><?php echo $data['conductor']->fname . ' ' . $data['conductor']->lname; ?></div>
                         <div class="rating">
-                            <i class="fa-solid fa-star star"></i>
-                            <i class="fa-solid fa-star star"></i>
-                            <i class="fa-solid fa-star star"></i>
-                            <i class="fa-regular fa-star-half-stroke star"></i>
-                            <i class="fa-regular fa-star star"></i>
-                            <span class="response">(100)</span>
+                            <?php $i = 0; ?>
+
+                            <?php while ($i < floor($data['conductor']->ratings)) : ?>
+                                <i class="fa-solid fa-star star"></i>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
+
+                            <?php if ($data['conductor']->ratings - (floor($data['conductor']->ratings)) > 0) : ?>
+                                <i class="fa-regular fa-star-half-stroke star"></i>
+                                <?php $i++; ?>
+                            <?php endif; ?>
+
+                            <?php while ($i < 5) : ?>
+                                <i class="fa-regular fa-star star"></i>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
+
+                            <span class="response">(<?php echo $data['conductor']->responses; ?>)</span>
                         </div>
                     </span>
                 </span>
             </div>
 
             <div class="btn">
-                <button class="left">Back</button>
-                <button class="right">Next</button>
+                <?php
+                    $bus_no = $data['bus']->bus_no;
+                    $schedule_id = $data['schedule_id'];
+                    $booked_seats_id = $data['booked_seats_id'];
+                    $count = $data['count'];
+                ?>
+                <button class="left" onclick="goBack()">Back</button>
+                <button class="right" onclick="goNext('<?php echo $bus_no ?>', '<?php echo $schedule_id ?>', '<?php echo $booked_seats_id ?>', '<?php echo $count ?>')">Next</button>
             </div>
+
+
         </div>
     </div>
 
-    <script src=""></script>
+    <script src="<?php echo URLROOT; ?>/js/passenger-js/bus-details-js.js"></script>
 </body>
 
 </html>

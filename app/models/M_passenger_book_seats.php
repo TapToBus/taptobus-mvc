@@ -34,31 +34,54 @@ class M_passenger_book_seats{
     }
 
     public function getBusDetails($bus_no){
-        $this->db->query('SELECT bus_no, capacity, bus_image, wifi, usb, tv, ratings, responses
+        // $this->db->query('SELECT bus_no, capacity, bus_image, wifi, usb, tv, ratings, responses
+        //     FROM bus
+        //     WHERE bus_no=:bus_no AND status=\'active\';');
+        $this->db->query('SELECT bus_no, capacity, bus_image, wifi, usb, tv, ratings, responses, dri_ntc AS driver_ntc, con_ntc AS conductor_ntc
             FROM bus
             WHERE bus_no=:bus_no AND status=\'active\';');
         
         $this->db->bind(':bus_no', $bus_no);
-
-        // $result = $this->db->resultSet();
+        
         $result = $this->db->single();
-        //$rides = $this->getRidesCount($bus_no);
-
-        // append rides value in result
-        //$result['rides'] = $rides;
 
         return $result;
     }
 
 
     public function getRidesCount($bus_no){
-        $this->db->query('SELECT id FROM history WHERE bus_no=:bus_no;');
+        $this->db->query('SELECT COUNT(id) AS count FROM history WHERE bus_no=:bus_no;');
         
         $this->db->bind(':bus_no', $bus_no);
-
-        $result = $this->db->resultSet();
-        $rides = $this->db->rowCount();
+        
+        $rides = $this->db->single();
 
         return $rides;
+    }
+
+
+    public function getDriverDetails($driver_ntc){
+        $this->db->query('SELECT ntcNo, fname, lname, ratings, responses, pic
+            FROM driver
+            WHERE ntcNo=:driver_ntc AND status=\'active\';');
+        
+        $this->db->bind(':driver_ntc', $driver_ntc);
+        
+        $result = $this->db->single();
+
+        return $result;
+    }
+
+
+    public function getConductorDetails($conductor_ntc){
+        $this->db->query('SELECT ntcNo, fname, lname, ratings, responses, pic
+            FROM conductor
+            WHERE ntcNo=:conductor_ntc AND status=\'active\';');
+        
+        $this->db->bind(':conductor_ntc', $conductor_ntc);
+        
+        $result = $this->db->single();
+
+        return $result;
     }
 }
