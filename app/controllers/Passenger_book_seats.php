@@ -112,4 +112,9 @@ class Passenger_book_seats extends Controller{
     public function select_seats(){
         $this->view('passenger/select_seats');
     }
+
+
+    public function payment(){
+        $this->view('passenger/payment');
+    }
 }
