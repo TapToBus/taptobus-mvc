@@ -31,7 +31,7 @@ class Users extends Controller{
                     direct('passenger_register/register');
                 }elseif($data['type'] == 'owner'){
                     // direct to the owner register form
-                    die('Owner register');
+                    direct('owner_register/register');
                 }
             }else{
                 // load the view with error
@@ -115,7 +115,6 @@ class Users extends Controller{
 
         switch($user->type){
             case 'passenger': {
-                //die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname'] . ' ' . $_SESSION['user_lname'] . '<br>' . $_SESSION['user_pic'] . '<br>' . $_SESSION['user_type']);
                 direct('passenger_book_seats/journey_details');
                 break;
             };
@@ -131,7 +130,7 @@ class Users extends Controller{
             };
 
             case 'owner': {
-                //
+                direct('owner_dashboard/view_dashboard');
                 break;
             };
 

@@ -120,7 +120,7 @@ class owner_register extends Controller{
 
                 // register passenger
                 if($this->ownerModel->register($data) &&
-                $this->userModel->register($data['email'], 'owner', $data['password'])){
+                $this->userModel->addUser($data['nic'], $data['fname'], $data['lname'], $data['email'], $data['password'], 'owner')){
                     direct('users/login');
                    
                 }else{
