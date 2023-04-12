@@ -18,9 +18,14 @@
         <p>
             <h2>Pending Bus Conductor Requests </h2>
             <div class="result">
-                    <div class="row">
+                <?php 
+                $result = $data['conductorRequests'];
+
+                foreach ( $result as $conductorRequest){
+                ?>
+                  <div class="row">
                         <div class="data">
-                            <span class="row1">Conductor001 </span>        
+                            <span class="row1"><?php echo $conductorRequest->nic?></span>        
                             <span class="date">2023/01/07</span> 
                         </div>         
                               
@@ -28,7 +33,11 @@
                         <span class="Vbutton">View</span>
                         </a>
                         
-                    </div>      
+                    </div>  
+
+                <?php
+                }
+                ?>    
             </div>        
         </p>
     </div>

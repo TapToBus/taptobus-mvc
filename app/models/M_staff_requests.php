@@ -6,7 +6,7 @@ class M_staff_requests{
     {
         $this->db = new Database();
     }
-
+    //-------------- get pending requests --------------
     public function ownerRequests(){
         $this->db->query("SELECT nic, fname, lname, email, mobileNo FROM owner where status = 'pending' ");
         $result = $this->db->resultSet();
@@ -14,7 +14,8 @@ class M_staff_requests{
     }
 
     public function driverRequests(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'pending ");
+        
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'pending'");
         $result = $this->db->resultSet();
         return $result;
     }
@@ -32,6 +33,14 @@ class M_staff_requests{
     }
 
     //---------------get Request details----------------
+
+    public function ownerRequestsDetails($owner_nic){
+        $this->db->query("SELECT nic, fname, lname, email, pic, mobileNo FROM owner where nic = :owner_nic");
+        $this->db->bind(":owner_nic",$owner_nic);
+        $result = $this->db->Single();
+        return $result;
+    }
+
     public function busRequestedDetails($bus_no){
         $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where bus_no = :bus_no ");
         $this->db->bind(":bus_no",$bus_no);

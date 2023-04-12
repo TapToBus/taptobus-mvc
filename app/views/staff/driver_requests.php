@@ -19,17 +19,25 @@
           
             <h2>Pending Bus Driver Requests </h2>
             <div class="result">
+                <?php
+                     $result =  $data['driverRequests'];
+
+                     foreach ($result as $driverRequest){                
+                ?>
                     <div class="row">
                         <div class="data">
-                            <span class="row1">driver001 </span>        
+                            <span class="row1"><?php echo $driverRequest->nic?></span>       
                             <span class="date">2023/01/07</span> 
                         </div>               
                         
                         <a href="<?php echo URLROOT?>/Staff_view_requests/driver_requests_details">
                         <span class="Vbutton">View</span>
                         </a>                      
-                    </div>      
+                    </div> 
 
+                <?php
+                    }
+                ?>     
             </div>        
         </p>
     </div>

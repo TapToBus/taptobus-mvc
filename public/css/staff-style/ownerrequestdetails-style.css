@@ -1,0 +1,111 @@
+.container{
+    padding-left: calc(var(--sidebar-area) + 1rem);
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+    height: 100vh;
+    font-weight: 700;
+}
+.container > .back-btn{
+    width: 40px;
+    aspect-ratio: 1;
+    padding: 1rem .4rem 0;
+    margin-left: 1rem;
+}
+
+.container h2{
+    color: var(--clr-bg);
+    margin-bottom: 1rem;
+    width: 20%;
+    margin: auto;  
+    padding: 1rem;
+}
+
+.container-2{
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    background-color: var(--clr-sidebar);
+    display: grid;
+    grid-template-rows: repeat(2,1fr) ;
+    gap: .2rem;
+    padding: 2rem;
+    padding-bottom: 0.5rem;
+    box-shadow: var(--box-shadow-2);
+}
+
+.container-2 > .details-top , .details-bottom{
+    width: 95%;
+    height: 85%;
+    background-color:var(--clt-sidebar);
+    border-radius: 1rem;
+}
+
+.container-2 > .details-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    margin: 1rem;
+}
+.container-2 > .details-top > .top-left{
+    display: flex;
+    /* flex-direction: column; */
+    height: 90%;
+    margin: 0;
+}
+.top-label , .top-data {
+    display: flex;
+    flex-direction: column;
+}
+
+ .container-2 span{
+    padding: 1rem;
+}
+
+.container-2 > .details-bottom{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    margin: 0 1rem;
+    width: 95%;
+    padding: 2rem;
+    
+}
+
+.container-2 > .details-bottom >.download-pic > i{
+    background-color: var(--clr-sidebar);
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 1rem;
+}
+
+.container-2 > .details-bottom > .action-btn{
+    margin: auto 1rem;
+    display: flex;
+    width: 55%;
+    justify-content: space-between; 
+}
+
+.container-2 > .details-bottom >.action-btn > button{
+    width: 7rem;
+    height: 3rem;
+    padding: .5rem;
+    border-style: none;
+    border-radius: .4rem;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}
+
+.action-btn > .accept{
+    background-color: var(--accept);
+}
+
+.action-btn > .reject{
+    background-color: var(--reject);
+}

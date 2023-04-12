@@ -2,7 +2,7 @@
     class Staff_view_requests extends Controller{
         private $ownerModel;
         private $driverModel;
-        private $conductorModel;
+        private $conductorModel; 
         private $busModel;
 
         public function __construct()
@@ -17,23 +17,34 @@
         }
 
        
-
+// get the pending requests from the model and pass it to the corresponding view
         public function owner_requests(){
-            $this->view('staff/owner_requests');
+            $ownerRequests = $this->ownerModel->ownerRequests();
+            $data = ['ownerRequests' => $ownerRequests];
+            $this->view('staff/owner_requests' , $data);
 
         }
 
         public function driver_requests(){
-            $this->view('staff/driver_requests');
+            $driverRequests = $this->driverModel->driverRequests();
+            $data = ['driverRequests' => $driverRequests];
+            $this->view('staff/driver_requests', $data);
+            
         }
 
         public function conductor_requests(){
-            $this->view('staff/conductor_requests');
+            $conductorReqquests = $this->conductorModel->conductorRequests();
+            $data = ['conductorRequests' => $conductorReqquests];
+            $this->view('staff/conductor_requests',$data);
+            
         }
 
         public function bus_requests(){            
             $busRequests = $this->busModel->busRequests();
             $data = ['busRequests' => $busRequests];
+            // $bus_no = $data['busRequests'][0]->bus_no; // to get date 
+            // print_r($bus_no);
+            // die();
             $this->view('staff/bus_requests' , $data);
         }
 
