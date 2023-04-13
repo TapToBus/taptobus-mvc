@@ -41,7 +41,7 @@ class Owner_conductors extends Controller{
                 'mobileNo' => $_POST['mobileNo'],
                 'dob' => $_POST['dob'],
                 'address' => $_POST['address'],
-                'agree' => $_POST['agree'],
+               
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',
@@ -50,7 +50,7 @@ class Owner_conductors extends Controller{
                 'mobileNo_err' => '',
                 'dob_err' => '',
                 'address_err' => '',
-                'agree_err' => '',
+               
                 
             ];
  

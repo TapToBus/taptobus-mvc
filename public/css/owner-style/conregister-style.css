@@ -10,91 +10,39 @@
    
 }
 
-.left{
-    width: 35%;
-    height: 72vh;
-    margin-top: 2.4rem;
-    margin-left: 9.1rem;
-    background-image:  linear-gradient(
-        rgba(0,0,0,0.6), 
-        rgba(0,0,0,0.6)
-        ),url(../../img//owner_img/reg4.jpg);
-    
-}
-
-.left h2{
-
-    position:absolute;
-    top: 20rem;
-    left: 27rem;
-    color: white;
-    text-align: center;
-    font-weight: 300px;
-    font-size: 28px;
-    color: rgb(18, 166, 186);
-}
-
-
-.left p{
-
-    position:absolute;
-    top: 24rem;
-    left: 32rem;
-    color: white;
-    text-align: center;
-    font-weight: 600px;
-    font-size: 25px;
-    color: rgb(18, 166, 186);
-   
-}
-
-.left.images{
-    
-    padding: 0% 0%;
-    /* height:35rem; */
-    width: 100%;
-    width: 100%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto; */
-   
-}
-
-.left .images img{
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* border-radius: 60%; */
-}
-
 
 .right{
     width: 50%;
     /* background-color:white; */
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 32%;
     height: 100vh;
 }
 
 .box{
-    background: white;
+    /* background: white; */
+    background-color: #f2f2f2;
     width: 85%;
     height: auto;
     position: absolute;
     top: 50.35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* border-radius: 10px; */
+    border: 1px solid ;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+    border-color: hsl(231, 72%, 37%);
+    border-radius: 10px; 
     padding: 25px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
 .box h2{
     text-align: center;
     margin-bottom: 15px;
+    color: hsl(231, 72%, 37%);;
 }
 
 .box .fname label, .lname label, .nic label,.ntcNo label, .email label, .mobileNo label, .dob label, .address label{
@@ -104,36 +52,14 @@
     font-style: normal;
 }
 
-.box .agree .inner-field{
-    display: flex;
-    justify-content: left;
-}
-
-.box .agree .inner-field label{
-    font-size: 15px;
-    padding-left: 10px;
-    /* padding-top: 10px; */
-}
-
-.box .agree input{
-    width: 16px;
-    height: 16px;
-}
-
-.box .agree a{
-    text-decoration: none;
-    color: blue;
-}
-
-.box .agree a:hover{
-    color: red;
-}
-
 .box input{
     width: 100%;
-    border: white;
-    border-radius: 5px;
-    background: rgb(230, 230, 230);
+    /* border: white;
+    border-radius: 5px; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* background: rgb(230, 230, 230); */
+    background-color: white;
     height: 40px;
     color: black;
     font-size: 15px;
@@ -187,26 +113,6 @@
     border: 2px solid transparent;
     color: white;
 }
-
-.box .login-link{
-    font-size: 14px;
-    text-align: center;
-}
-
-.box .login-link a{
-    text-decoration: none;
-    color: blue;
-}
-
-.box .login-link a:hover{
-    color: red;
-}
-
-/* .box .username span, .password span{
-    color: red;
-    font-size: 13px;
-    font-style: italic;
-} */
 
 .box .fname span, .lname span, .nic span, .ntcNo span, .email span, .mobileNo span, .dob span, .address span, .agree span{
     color: red;

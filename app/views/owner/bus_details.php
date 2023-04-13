@@ -81,6 +81,7 @@
                     <?php if (isset($data2->ntcNo)) : ?>
                         <input type="hidden" name="old_con_id" value="<?php echo $data2->ntcNo; ?>">
                     <?php else : ?>
+                        <input type="hidden" name="old_con_id" value="NULL">
                     <?php endif; ?>
 
                     <select class="choose" name="con_name" id="con_name">

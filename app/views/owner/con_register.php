@@ -15,14 +15,6 @@
 
     <div class="container">
 
-        <!-- left side of the page -->
-        <div class="left">
-
-            <h2>Register  Your  Employees</h2>
-            <p>Discover More!</p>
-
-        </div>
-
         <!-- right side of the  page -->
         <div class="right">
             <div class="box">
@@ -88,25 +80,14 @@
                         </div>
                     </div>
 
-                    <div class="agree">
-                        <div class="inner-field">
-                            <input type="checkbox" name="agree">
-                            <label for="agree">By registering, I agree to the
-                                <a href="<?php echo URLROOT; ?>/common/terms_conditions">terms & conditions</a> of the TapToBus</label> <br>
-                        </div>
-
-                        <span><?php echo $data['agree_err']; ?></span>
-                    </div>
-
+                   
                     <div class="btn">
                         <button><span></span>Register</button>
                     </div>
                     
                 </form>
 
-                <div class="login-link">
-                    <p>Already have an account? <a href="<?php echo URLROOT; ?>/users/login">Log in</a></p>
-                </div>
+              
             </div>
         </div>
 

@@ -119,7 +119,7 @@ class owner_register extends Controller{
                 // hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                // register passenger
+                // register owner
                 if( $this->ownerModel->register($data) &&
                 $this->userModel->addUser($data['nic'],$data['fname'],$data['lname'],$data['email'], $data['password'],'owner') && $this->requestModel->add_owner_request($data) ){
                     direct('users/login');

@@ -19,41 +19,35 @@
     <div class="container">
 
         <div>
-
             <h2 class="header">Notifications</h2>
         </div>
 
         <div class="new">
-          
-          <?php
-                
-                foreach ($data as $row):
-               
-          ?>
-            <div class="card">
 
-                <div class="images">
-                <i class="fa-solid fa-user-plus fa-5x" style="color: #000080;"></i>
+            <?php
+            foreach ($data as $row) :
+            ?>
+
+                <div class="card">
+
+                    <div class="images">
+                        <i class="fa-solid fa-user-plus fa-5x" style="color: #000080;"></i>
+                    </div>
+
+
+                    <h2><?php echo $row->heading; ?></h2>
+
+                    <div class="description">
+
+                        <p class="price"><?php echo $row->description; ?></p>
+
+                    </div>
+
                 </div>
-                
-                
-                <h2><?php echo $row->heading; ?></h2>
-               
-                <div class="description">
 
-                    <p class="price"><?php echo $row->description; ?></p>
-                    
-                </div>
-
-                <!-- <div class="btn-div">
-                    
-                    <a href=""><button class="view">View</button></a>
-                </div> -->
-            </div>
-
-          <?php
+            <?php
             endforeach;
-          ?> 
+            ?>
 
         </div>
 

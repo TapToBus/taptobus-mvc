@@ -17,9 +17,10 @@ class Owner_notifications extends Controller{
 
         $data = $this->ownerModel->view_notifications();
         $this->view('owner/view_notifications',$data);
-
+        $this->ownerModel->not_status_change();
     
     }
+
 
 
 }
