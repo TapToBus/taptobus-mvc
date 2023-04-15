@@ -21,26 +21,34 @@
                     <div class="left-heading">Front</div>
 
                     <div class="seat-arrangement">
-                        <?php $line = 0; ?>
+                        <?php $line = 1; ?>
+                        <?php $j = 0; ?>
 
-                        <?php while($line <= 7): ?>
+                        <?php while($line <= 5): ?>
                             <div class="row">
-                                <span class="col1"><input type="checkbox" name="s<?php echo $line+1; ?>>" id="s<?php echo $line+1; ?>>" class="seat"></span>
-                                <span class="col2"><input type="checkbox" name="s<?php echo $line+2; ?>>" id="s<?php echo $line+2; ?>>" class="seat"></span>
+                                <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                                <?php $j++; ?>
+                                <span class="col2"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                                <?php $j++; ?>
                                 <span class="col3"></span>
-                                <span class="col4"><input type="checkbox" name="s<?php echo $line+3; ?>" id="<?php echo $line+3; ?>s" class="seat"></span>
-                                <span class="col5"><input type="checkbox" name="s<?php echo $line+4; ?>" id="s<?php echo $line+4; ?>" class="seat"></span>
+                                <span class="col4"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                                <?php $j++; ?>
+                                <span class="col5"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
                             </div>
 
                             <?php $line++; ?>
                         <?php endwhile; ?>
 
                         <div class="row">
-                            <span class="col1"><input type="checkbox" name="s<?php echo $line+1; ?>>" id="s<?php echo $line+1; ?>>" class="seat"></span>
-                            <span class="col2"><input type="checkbox" name="s<?php echo $line+2; ?>>" id="s<?php echo $line+2; ?>>" class="seat"></span>
-                            <span class="col3"><input type="checkbox" name="s<?php echo $line+3; ?>" id="<?php echo $line+3; ?>s" class="seat"></span>
-                            <span class="col4"><input type="checkbox" name="s<?php echo $line+4; ?>" id="<?php echo $line+4; ?>s" class="seat"></span>
-                            <span class="col5"><input type="checkbox" name="s<?php echo $line+5; ?>" id="s<?php echo $line+5; ?>" class="seat"></span>
+                            <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                            <?php $j++; ?>
+                            <span class="col2"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                            <?php $j++; ?>
+                            <span class="col3"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                            <?php $j++; ?>
+                            <span class="col4"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
+                            <?php $j++; ?>
+                            <span class="col5"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
                         </div>
                     </div>
                 </div>

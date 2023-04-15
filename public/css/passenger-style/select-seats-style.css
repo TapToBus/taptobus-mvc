@@ -11,11 +11,12 @@
 	font-size: 25px;
 	color: var(--clr-navbar-top);
 	margin-bottom: 15px;
+	margin-top: 10px;
 }
 
 .main .content .details{
 	display: grid;
-	grid-template-columns: 30% 68%;
+	grid-template-columns: 32% 66%;
 	align-items: center;
 	column-gap: 15px;
 }
@@ -36,7 +37,7 @@
 
 .main .content .details .left .seat-arrangement{
 	position: relative;
-	padding-top: 20px;
+	padding-top: 25px;
 	padding-bottom: 5px;
 	border-radius: 5px;
 
@@ -45,11 +46,13 @@
 
 .main .content .details .left .seat-arrangement .row{
 	display: grid;
-	grid-template-columns: 19% 19% 19% 19% 19%;
+	grid-template-columns: 20% 20% 20% 20% 20%;
 	justify-content: center;
 	align-items: center;
+	margin-left: 10px;
+	margin-right: 10px;
 
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .main .content .details .left .seat-arrangement .row .col1,
@@ -65,7 +68,7 @@
 .main .content .details .left .seat-arrangement .seat{
 	width: 35px;
 	height: 35px;
-}
+} 
 
 /* .main .content .details .right{
 
@@ -85,11 +88,12 @@
 	text-align: center;
 	font-weight: 600;
 	font-size: 19px;
+	margin-bottom: 10px;
 }
 
 .main .content .details .right .right-top .right-top-details .journey{
 	font-weight: 450;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .main .content .details .right .right-top .right-top-details .row{
@@ -119,6 +123,7 @@
 .main .content .details .right .right-bottom .right-bottom-heading{
 	font-weight: 600;
 	font-size: 18px;
+	margin-bottom: 5px;
 }
 
 .main .content .details .right .right-bottom .description{
