@@ -141,7 +141,7 @@ class Users extends Controller{
             };
 
             case 'admin': {
-                //
+                direct('admin_dashboard/view_admin_dashboard');
                 break;
             };
         }
