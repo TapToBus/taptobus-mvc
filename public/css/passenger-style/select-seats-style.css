@@ -11,7 +11,6 @@
 	font-size: 25px;
 	color: var(--clr-navbar-top);
 	margin-bottom: 15px;
-	margin-top: 10px;
 }
 
 .main .content .details{
@@ -33,6 +32,9 @@
 	border-radius: 5px;
 
 	background-color: var(--clr-table-title-bg);
+
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .main .content .details .left .seat-arrangement{

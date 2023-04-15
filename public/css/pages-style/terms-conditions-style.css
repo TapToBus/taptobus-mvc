@@ -10,48 +10,45 @@ body{
                     ), 
                     url(../../img/terms-conditions-background.jpg);
     background-size: cover;
-    /* background-position: center; */
 }
 
 .details{
     color: white;
     text-align: justify;
-    padding: 0 25px 15px 25px;
+    padding: 0 1.5625rem 0.9375rem 1.5625rem;
 }
 
 .details h1{
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 .details h2{
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-top: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+    margin-top: 0.9375rem;
 }
 
 .details ul{
-    padding-left: 15px;
-    padding-bottom: 10px;
+    padding-left: 0.9375rem;
+    padding-bottom: 0.625rem;
 }
 
 .details li{
-    padding-bottom: 8px;
-    /* font-size: 15px; */
+    padding-bottom: 0.5rem;
 }
 
 .details table, tr, td{
-    border: 1px solid white;
+    border: 0.0625rem solid white;
 }
 
 .details table{
     border-collapse: collapse;
-    /* margin-top: 8px; */
-    margin-bottom: 20px;
-    margin-left: 15px;
+    margin-bottom: 1.25rem;
+    margin-left: 0.9375rem;
 }
 
 .details td{
-    padding: 5px;
+    padding: 0.3125rem;
 }
 
 .details .col1{

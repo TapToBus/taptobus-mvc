@@ -23,39 +23,39 @@ body{
 }
 
 .content h1{
-    font-size: 45px;
+    font-size: 2.813rem;
 }
 
 .content p{
-    font-size: 20px;
-    margin: 10px 0 10px 0;
+    font-size: 1.25rem;
+    margin: 0.625rem 0;
 }
 
 .content .btn{
-    margin: 25px 0 25px 0;
+    margin: 1.5625rem 0 1.5625rem 0;
 }
 
 .content button{
-    width: 200px;
-    padding: 12px 0 12px 0;
+    width: 12.5rem;
+    padding: 0.75rem 0 0.75rem 0;
     text-align: center;
-    margin: 0 10px 0 10px;
-    border-radius: 25px;
+    margin: 0 0.625rem 0 0.625rem;
+    border-radius: 1.5625rem;
     font-weight: bold;
-    border: 2px solid #00BFFF;
+    border: 0.125rem solid #00BFFF;
     background: transparent;
     color: white;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .content span{
     background: #00BFFF;
     height: 100%;
     width: 0;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     position: absolute;
     left: 0;
     bottom: 0;

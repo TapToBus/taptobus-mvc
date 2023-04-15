@@ -24,7 +24,7 @@
                         <?php $line = 1; ?>
                         <?php $j = 0; ?>
 
-                        <?php while($line <= 5): ?>
+                        <?php while($line <= 7): ?>
                             <div class="row">
                                 <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
                                 <?php $j++; ?>

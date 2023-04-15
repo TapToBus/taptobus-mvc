@@ -1,37 +1,23 @@
 .navbar{
     width: 100%;
     margin: auto;
-    padding: 20px 25px 20px 25px;
+    padding: 1.25rem 1.5625rem 1.25rem 1.5625rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: white;
 }
 
-/* .navbar h2{
-    font-size: 20px;
-}
-
-.navbar h2:hover{
-    color: #00BFFF;
-    transition: 0.5s;
-    cursor: pointer;
-} */
-
 .navbar img{
-    height: 30px;
+    height: 1.875rem;
     width: auto;
     cursor: pointer;
 }
 
-/* .navbar img:hover{
-
-} */
-
 .navbar ul li{
     list-style: none;
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 1.5625rem;
     position: relative;
 }
 
@@ -44,12 +30,12 @@
 
 .navbar ul li::after{
     content: '';
-    height: 3px;
+    height: 0.1875rem;
     width: 0;
     background: #00BFFF;
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom: -0.625rem;
     transition: 0.5s;
 }
 
