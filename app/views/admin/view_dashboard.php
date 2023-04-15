@@ -99,7 +99,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?php echo URLROOT; ?>/js/monthly-users-chart.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script>
     <script src="<?php echo URLROOT; ?>/js/admin-dashboard-doughnut-chart.js"></script>
     <script src="<?php echo URLROOT; ?>/js/bus-monthly-chart.js"></script>
     <script src="<?php echo URLROOT; ?>/js/passenger-monthly-chart.js"></script>
