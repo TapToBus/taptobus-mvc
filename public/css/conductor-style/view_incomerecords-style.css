@@ -72,11 +72,12 @@ background-size: cover;
     background-color: #f2f2f2;
     padding: 20px;
     /* max-width: 500px; */
-    min-width: 600px;
-    height: 770px;
+    min-width: 500px;
+    height: 450px;
     /* margin: 200px 50px auto; */
     /* margin-top :0px; */
-    margin-top: 8%;
+    margin-top: 4%;
+    margin-left: -30rem;
     line-height:30px;
     
   }
@@ -90,7 +91,7 @@ background-size: cover;
   
  .big{
 
-  margin: 30px auto;
+  margin: 50px auto;
 
  }
   /* Floating column for labels: 25% width */
