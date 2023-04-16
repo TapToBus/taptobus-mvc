@@ -127,11 +127,13 @@ class Users extends Controller{
 
             case 'conductor': {
                 //
+                direct('conductor_dashboard/view_dashboard');
                 break;
             };
 
             case 'owner': {
                 //
+                direct('owner_dashboard/view_dashboard');
                 break;
             };
 
