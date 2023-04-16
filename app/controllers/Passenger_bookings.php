@@ -21,6 +21,7 @@ class Passenger_bookings extends Controller{
             foreach ($result as $row) {
                 $booking = new stdClass();
                 
+                $booking->booking_id = $row->id;
                 $booking->bus_no = $row->bus_no;
                 $booking->from = $row->from;
                 $booking->to = $row->to;
@@ -33,7 +34,7 @@ class Passenger_bookings extends Controller{
                 $remainingTime = $this->calculateRemainingTime($row->departure_datetime);
                 $booking->remaining_days = $remainingTime["remaining_days"];
                 $booking->remaining_hours = $remainingTime["remaining_hours"];
-            
+
                 array_push($data, $booking);
             }                            
         }
