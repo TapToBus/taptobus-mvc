@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo  SITENAME; ?></title>
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/main.css"/>
-    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/busrequestdetails-style.css" />
+    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/conductorrequestdetails-style.css" />
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffnavbar-style.css" />
 </head>
 
@@ -15,26 +15,30 @@
     <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
 
     <div class="container">
+    <?php  $result = $data['conductorRequestDetails'] ?>
             
-            <h2>Bus001</h2>
+            <h2><?php echo $result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
-                            <span>Bus owner </span>
-                            <span>Bus number </span>
-                            <span>Root number</span>
-                            <span>Capasity</span>
+                            <div class="top-label">
+                                <span>NIC </span>
+                                <span>Name</span>
+                                <span>E mail</span>
+                                <span>Mobile No</span>
+                            </div>
+                            <div class="top-data">
+                                <span> <?php echo ': '.$result->nic?></span>
+                                <span><?php echo ': '.$result->fname.' '.$result->lname?></span>
+                                <span><?php echo ': '.$result->email?></span>
+                                <span><?php echo ': '.$result->mobileNo?></span>
+                            </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="Bus image" srcset="">
+                            <img src="" alt="conductor pic" srcset="">
                         </div>                       
                     </div>
                     <div class="details-bottom">
-                        <div class="download-pic">
-                            Bus permit <br><br>
-                            <i class="fa-solid fa-download"></i>
-                            <a href="#">Download here</a>
-                        </div>
                         <div class="action-btn">
                             <button class="accept">Accept</button>
                             <button class="reject">Reject</button>

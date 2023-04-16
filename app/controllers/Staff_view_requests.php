@@ -52,17 +52,32 @@
 
 
         public function owner_requests_details(){
-            $this->view('staff/owner_requests_details');
+            $owner_nic = $_GET['nic'];
+            $ownerRequestDetails = $this->ownerModel->ownerRequestedDetails($owner_nic);
+            $data = [
+                    'ownerRequestDetails' => $ownerRequestDetails
+            ];
+            $this->view('staff/owner_requests_details',$data);
         }
 
         
         public function driver_requests_details(){
-            $this->view('staff/driver_requests_details');
+            $driver_nic = $_GET['nic'];
+            $driverRequestDetails = $this->driverModel->driverRequestedDetails($driver_nic);
+            $data = [
+                'driverRequestDetails' => $driverRequestDetails
+            ];
+            $this->view('staff/driver_requests_details',$data);
         }
 
         
         public function conductor_requests_details(){
-            $this->view('staff/conductor_requests_details');
+            $conductor_nic = $_GET['nic'];
+            $conductorRequestsDetails = $this->driverModel->conductorRequestedDetails($conductor_nic);
+            $data = [ 
+                    'conductorRequestDetails' => $conductorRequestsDetails
+            ];
+            $this->view('staff/conductor_requests_details',$data);
         }
 
 

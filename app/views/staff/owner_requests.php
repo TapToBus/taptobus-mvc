@@ -31,7 +31,7 @@
                             <span class="date">2023/01/07</span> 
                         </div>               
         
-                        <a href="<?php echo URLROOT?>/Staff_view_requests/owner_requests_details">
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/owner_requests_details?nic=<?php echo $ownerRequest->nic?>">
                         <span class="Vbutton">View </span>
                         </a>
                        

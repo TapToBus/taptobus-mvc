@@ -30,7 +30,7 @@
                             <span class="date">2023/01/07</span> 
                         </div>               
                         
-                        <a href="<?php echo URLROOT?>/Staff_view_requests/driver_requests_details">
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/driver_requests_details?nic=<?php echo $driverRequest->nic?>">
                         <span class="Vbutton">View</span>
                         </a>                      
                     </div> 
