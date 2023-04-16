@@ -60,5 +60,10 @@ class Passenger_bookings extends Controller{
         $remainingHours = $timeDiff->h;
 
         return array("remaining_days" => $remainingDays, "remaining_hours" => $remainingHours);
-    }      
+    }
+    
+    
+    function booking_details(){
+        echo 'Hello...!' . '<br>booking_id : ' . $_GET['booking_id'];
+    }
 }

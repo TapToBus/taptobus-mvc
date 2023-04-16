@@ -13,7 +13,7 @@
     <?php require APPROOT . '/views/inc/passenger_navbar.php' ?>
 
     <div class="main">
-        <h1 class="heading">Bookings</h1>
+            <h1 class="heading">Bookings</h1>
 
         <div class="title">
             <span class="title0">Bus No</span>
@@ -34,7 +34,7 @@
         <?php else : ?>
 
             <?php foreach ($data as $booking) : ?>
-                <div class="result">
+                <div class="result" onclick="goNext(<?php echo $booking->booking_id; ?>)">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
                     <span class="result2"><?php echo $booking->from; ?></span>
                     <span class="result3"><?php echo $booking->to; ?></span>
@@ -42,13 +42,13 @@
                     <span class="result5"><?php echo $booking->departure_time; ?></span>
 
                     <?php if ($booking->remaining_days > 0 && $booking->remaining_hours >= 0) : ?>
-                        <span class="result6"><?php echo 'More than ' . $booking->remaining_days . ' days'; ?></span>
+                        <span class="result6 low-priority"><?php echo 'More than ' . $booking->remaining_days . ' days'; ?></span>
                     <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours > 1) : ?>
-                        <span class="result6"><?php echo 'More than ' . $booking->remaining_hours . ' hours'; ?></span>
+                        <span class="result6 middle-priority"><?php echo 'More than ' . $booking->remaining_hours . ' hours'; ?></span>
                     <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 1) : ?>
-                        <span class="result6"><?php echo 'More than ' . $booking->remaining_hours . ' hour'; ?></span>
+                        <span class="result6 middle-priority"><?php echo 'More than ' . $booking->remaining_hours . ' hour'; ?></span>
                     <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 0) : ?>
-                        <span class="result6"><?php echo 'Less than 1 hour'; ?></span>
+                        <span class="result6 high-priority"><?php echo 'Less than 1 hour'; ?></span>
                     <?php endif; ?>
 
                     <!-- <span class="result6"><?php echo $booking->remaining_days . ' d : ' . $booking->remaining_hours . ' h'; ?></span> -->

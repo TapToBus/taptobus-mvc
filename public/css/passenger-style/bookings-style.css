@@ -71,3 +71,19 @@
     font-size: 25px;
     font-weight: 400;
 }
+
+.result .low-priority{
+    color: blue;
+    font-weight: 450;
+}
+
+.result .middle-priority{
+    color: green;
+    font-weight: 500;
+}
+
+.result .high-priority{
+    color: red;
+    font-weight: 550;
+}
+
