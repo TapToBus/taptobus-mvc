@@ -93,6 +93,7 @@
     
 // Accept requests by relavent staff member
 
+        //-------------------------- Accept bus requests -----------------------------
         public function accept_bus_requests(){
            
             $bus_no = $_GET['bus_no'];
@@ -104,41 +105,65 @@
             ]; 
 
             $this->busModel->accept_bus_request($data1);  
-            
-            // get the owner id from for the relavent bus number
-            $bus_details = $this->busModel->busRequestedDetails($bus_no);
+
             $data2 = [
-                'bus_details' => $bus_details
+                'bus_no' => $bus_no,
+                'status' => 'accepted',
+                'staff_no' => $staff_no 
             ];
 
-            // print_r($data); | Array ( [bus_details] => stdClass Object ( [bus_no] => AV-9876 [root_no] => E10 [capacity] => 60 [owner_nic] => 656783425V ) )
-            // die();
-            $owner_nic = $data2['bus_details']->owner_nic;
+            $this->busModel->update_staff_id($data2);
 
-          
-            $data3 = [
-                'owner_nic' => $owner_nic,
-                'staff_no' => $staff_no ,
-                'status' => 'accepted' ,
-                // 'reject_reason' =>''              
-            ];
+            direct('Staff_view_requests/bus_requests');
 
-            // print_r($data2);  | Array ( [owner_nic] => 656783425V [staff_no] => staff001 )
-            // die();
+            //----------------------------------------------
+     
+
             
-            
-            $x = $this->busModel->update_staff_id($data3);
-            // print_r($x);
-            // die();
+       
 
-            direct('Staff_view_requests/bus_requests');//we cant use view here bcz we are not passing any data to render the relavent page
+            // direct('Staff_view_requests/bus_requests');//we cant use view here bcz we are not passing any data to render the relavent page
 
             // if you want to render the details page with the requested data you should pass the it to the direct page
             // direct('Staff_view_requests/bus_requests_details?bus_no='. $bus_no);
 
         }
 
+        // -------------Accept owner reqests---------------------
+
+        public function accept_owner_requests(){
+           
+            $owner_nic = $_GET['nic'];
+            $staff_no = $_SESSION['user_id'];
+
+            $data1 = [
+                'owner_nic' => $owner_nic,
+                'staff_no' => $staff_no ,
+                'status' => 'accepted'
+            ]; 
+            $this->ownerModel->accept_owner_request($data1);  
+
+            $data3 = [
+                'owner_nic' => $owner_nic,
+                'staff_no' => $staff_no ,
+                'status' => 'accepted' ,             
+            ];            
+            $x = $this->busModel->update_staff_id($data3);
+            print_r($x);
+            die();
+
+            direct('Staff_view_requests/bus_requests');
+        }
+
+        //--------------Accept conductor requests-------------------
+
+        // -------------Accept driver requests-----------------------
+
+
+
 // Reject requests by relavent staff member
+
+        // -------- reject bus requests ---------------------
 
         public function reject_bus_requests(){
 
@@ -153,11 +178,11 @@
             $this->busModel->reject_bus_requests($data1); // update the bus tabel status
 
     
-            //   ------- check whether the reason is empty or not ------------
+             //    ------- check whether the reason is empty or not ------------
 
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 if(isset($_POST['send'])){
-                    if(isset($_POST['reject_reason']) && !empty(trim($_POST['reject_reason']))){  // Check if reject_reason is set and not empty. check the reject_reason is set is not enough
+                    if(isset($_POST['reject_reason']) && !empty(trim($_POST['reject_reason']))){  // Check if reject_reason is set and not empty.
 
                         // print_r($_POST['reject_reason']);
                         // die();
@@ -167,10 +192,10 @@
                             'bus_details' => $bus_details
                         ];
 
-                        $owner_nic = $data2['bus_details']->owner_nic;
+                        // $owner_nic = $data2['bus_details']->owner_nic;
 
                         $data3 = [
-                            'owner_nic' => $owner_nic,
+                            // 'owner_nic' => $owner_nic,
                             'staff_no' => $staff_no ,
                             'status' => 'rejected',
                             'reject_reason' =>$_POST['reject_reason']                
@@ -193,6 +218,15 @@
          
 
         }
+
+        // --------------------reject owner requests----------------
+        
+
+        // -------------------reject conductor requests-------------
+
+        // --------------------reject driver requests----------------
+
+
 
     }
 ?>

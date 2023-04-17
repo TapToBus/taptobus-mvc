@@ -26,7 +26,7 @@
                             <div class="row">
                                 <!-----this part should repeat ( according to the no of rows in request table)------>
                                 <div class="data">
-                                    <span class="row1"> <?php echo $busRequest->bus_no?></span>        
+                                    <span class="row1"> <?php echo $busRequest->bus_no?></span>    
                                     <!-- <span class="date">2023/01/07</span>  -->
                                 </div>  
                             

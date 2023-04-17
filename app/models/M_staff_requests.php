@@ -72,16 +72,46 @@ class M_staff_requests{
         return $this->db->execute();
     }
 
+    public function accept_owner_request($data1){
+        $this->db->query("UPDATE owner set status = :sts where nic = :owner_nic");
+        $this->db->bind(":owner_nic",$data1['owner_nic']);
+        $this->db->bind(":sts",$data1['status']);
 
+        return $this->db->execute();
+    }
 
+    public function accept_driver_request($data1){
+        $this->db->query("UPDATE driver set status = :sts where nic = :driver_nic");
+        $this->db->bind(":driver_nic",$data1['driver_nic']);
+        $this->db->bind(":sts",$data1['status']);
+
+        return $this->db->execute();
+    }
+
+    public function accept_conductor_request($data1){
+        $this->db->query("UPDATE conductor set status = :sts where nic = :conductor_nic");
+        $this->db->bind(":conductor_nic",$data1['conductor_nic']);
+        $this->db->bind(":sts",$data1['status']);
+
+        return $this->db->execute();
+    }
     // ---------------Update staff id----------------
 
-    public function update_staff_id($data3){
-        $this->db->query("UPDATE bus_request set staff_no = :staff_no, status = :status , reject_reason = :rjt_reason where owner_nic = :owner_nic");
-        $this->db->bind(":staff_no", $data3['staff_no']);
-        $this->db->bind(":owner_nic", $data3['owner_nic']); 
-        $this->db->bind(":status", $data3['status']);
-        $this->db->bind(":rjt_reason" , $data3['reject_reason']);
+    // public function update_staff_id($data3){
+    //     $this->db->query("UPDATE bus_request set staff_no = :staff_no, status = :status , reject_reason = :rjt_reason where owner_nic = :owner_nic");
+    //     $this->db->bind(":staff_no", $data3['staff_no']);
+    //     $this->db->bind(":owner_nic", $data3['owner_nic']); 
+    //     $this->db->bind(":status", $data3['status']);
+    //     $this->db->bind(":rjt_reason" , $data3['reject_reason']);
+
+    //     return $this->db->execute();
+    // }
+
+    public function update_staff_id($data2){
+        $this->db->query("UPDATE bus_request set staff_no = :staff_no, status = :status  where bus_no = :bus_no");
+        $this->db->bind(":staff_no", $data2['staff_no']);
+        $this->db->bind(":bus_no", $data2['bus_no']); 
+        $this->db->bind(":status", $data2['status']);
 
         return $this->db->execute();
     }

@@ -19,7 +19,7 @@
     <div class="container">
         <?php  $result = $data['ownerRequestDetails']  ?>
         
-            <h2><?php echo $result->fname.' '.$result->lname?></h2>
+            <h2>Bus Owner:- <?php echo ' '.$result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
@@ -51,10 +51,10 @@
              <!-- confirmation pop-up Moodel   -->
              <dialog id="confirmation-dialog" class="confirmation-box">
                 <div class = "confirm-msg">
-                    <p>Are you sure that you want to add <?php //echo $result->bus_no?> to the system?</p>                    
+                    <p>Are you sure that you want to add <?php echo $result->fname.' '.$result->lname?> to the system?</p>                    
                 </div>
                 <div class="confirm-btns">
-                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php //echo $result->bus_no?>">
+                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php echo $result->nic?>">
                         <button class = "yes" onclick="">Yes</button>
                     </a>
                     <button class = "no" onclick="hideConfirmation()">No</button>
@@ -63,13 +63,13 @@
 
             <!-- Rejection pop-up Moodel   -->
             <dialog id="rejection-dialog" class="rejection-box">
-                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST" onsubmit="return validateForm()">
+                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->nic?>" method="POST" onsubmit="return validateForm()">
                     <div class = "reject-msg">
                         <p>Please enter the reason for the rejection</p>  
                         <textarea id="reject-reason" type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
                     </div>
                     <div class="rejection-btns">
-                        <!-- <a href="<?php //echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php //echo $result->bus_no?>"> -->
+                        <!-- <a href="<?php //echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php //echo $result->nic?>"> -->
                         <button type="submit" class = "send" name="send" onclick="">Send</button>
                         <!-- </a> -->
                         <button class = "cancel" name="cancel" onclick="hideRejection()">cancel</button>
