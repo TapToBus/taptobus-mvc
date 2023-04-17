@@ -7,7 +7,7 @@ class Admin_remove_user_dashboard extends Controller{
     public function __construct()
     {
         $this->pageModelReStaffMember = $this->model('M_Admin_staff_member_details');
-        $this->pageModelReBusOwner = $this->model('M_Admin_remove_bus_owners');
+        $this->pageModelReBusOwner = $this->model('M_Admin_remove_bus_owner');
         
     }
 

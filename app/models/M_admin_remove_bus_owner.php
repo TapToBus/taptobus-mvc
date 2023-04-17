@@ -29,8 +29,3 @@ class M_admin_remove_bus_owner {
 ?>
 
 
-<?php
-
-
-
-?>

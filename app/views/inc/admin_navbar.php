@@ -45,7 +45,7 @@
         <label for="menu" class="close-btn action-btn">
             <i class="fa fa-times"></i>
         </label>
-    </div>
+    </div>                          
 
     <a href="<?php echo URLROOT; ?>/Admin_dashboard/view_admin_dashboard"><i class="fa-solid fa-chart-line"></i><span>Dashboard </span></a>
     <a href="<?php echo URLROOT; ?>/Admin_view_user_dashboard/view_user_dashboard"><i class="fa-solid fa-person"></i><span>Users </span></a>
