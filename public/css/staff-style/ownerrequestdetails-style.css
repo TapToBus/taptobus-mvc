@@ -15,7 +15,7 @@
 }
 
 .container-2{
-    height: 85%;
+    height: 80%;
     width: 90%;
     margin: auto;
     background-color: var(--clr-sidebar);
@@ -45,6 +45,7 @@
 }
 .container-2 > .details-top > .top-left{
     display: flex;
+    /* flex-direction: column; */
     height: 90%;
     margin: 0;
 }
@@ -58,9 +59,6 @@
 }
 
 .container-2 > .details-bottom{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
     border-radius: 1rem;
     background-color: #fff;
     margin: 0 1rem;
@@ -69,18 +67,12 @@
     
 }
 
-.container-2 > .details-bottom >.download-pic > i{
-    background-color: var(--clr-sidebar);
-    border-radius: 50%;
-    font-size: 30px;
-    margin: 1rem;
-}
-
 .container-2 > .details-bottom > .action-btn{
-    margin: auto 1rem;
+    margin: auto ;
     display: flex;
-    width: 55%;
+    width: 30%;
     justify-content: space-between; 
+    
 }
 
 .container-2 > .details-bottom >.action-btn > button{
@@ -102,10 +94,3 @@
 .action-btn > .reject{
     background-color: var(--reject);
 }
-
-
-
-
-
-
-

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo  SITENAME; ?></title>
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/main.css"/>
-    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/busrequestdetails-style.css" />
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffnavbar-style.css" />
+    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/busrequestdetails-style.css" />
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/confirmpopup-style.css" />
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/rejectpopup-style.css" />
 </head>
@@ -17,6 +17,20 @@
     <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
 
     <div class="container">
+
+                <?php
+            // if (isset($data['busRequestDetails'])) {
+            //     $result = $data['busRequestDetails'];
+            //     if (isset($result->bus_no)) {
+            //         $busNo = $result->bus_no;
+            //     } else {
+            //         $busNo = '';
+            //     }
+            // } else {
+            //     $busNo = '';
+            // }
+            ?>
+
             <?php $result = $data['busRequestDetails']?>
 
             <h2><?php echo $result->bus_no?></h2>
@@ -59,26 +73,31 @@
                     <p>Are you sure that you want to add <?php echo $result->bus_no?> to the system?</p>                    
                 </div>
                 <div class="confirm-btns">
-                    <button class = "yes" onclick="">Yes</button>
+                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php echo $result->bus_no?>">
+                        <button class = "yes" onclick="">Yes</button>
+                    </a>
                     <button class = "no" onclick="hideConfirmation()">No</button>
                 </div>
             </dialog>
 
             <!-- Rejection pop-up Moodel   -->
             <dialog id="rejection-dialog" class="rejection-box">
-                <form action="" method="post">
+                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST" onsubmit="return validateForm()">
                     <div class = "reject-msg">
-                        <p> Please enter the reason for the rejection</p>  
-                        <textarea type="text" placeholder="Type the reason here" name="reason"></textarea>               
+                        <p>Please enter the reason for the rejection</p>  
+                        <textarea id="reject-reason" type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
                     </div>
                     <div class="rejection-btns">
-                        <button class = "send" onclick="">Send</button>
-                        <button class = "cancel" onclick="hideConfirmation()">cancel</button>
+                        <!-- <a href="<?php //echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php //echo $result->bus_no?>"> -->
+                        <button type="submit" class = "send" name="send" onclick="">Send</button>
+                        <!-- </a> -->
+                        <button class = "cancel" name="cancel" onclick="hideRejection()">cancel</button>
                     </div>
                 </form>
             </dialog>
-           
+        
     </div>
+  
     <script  src="<?php echo URLROOT;?>/js/staff/popup-msg.js" ></script>
 </body>
 

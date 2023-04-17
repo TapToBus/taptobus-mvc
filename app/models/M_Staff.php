@@ -78,15 +78,15 @@ class M_Staff {
     }
 
     // edit the notice
-    public function editNotice($data){
-        $this->db->query("UPDATE  special_notices set title = :title , description = :description where notice_id = :notice_id");
-        $this->db->bind(":notice_id", $data['notice_id']);
-        $this->db->bind(":title", $data["edit_title"]);
-        $this->db->bind(":description", $data["edit_description"]);
+    // public function editNotice($data){
+    //     $this->db->query("UPDATE  special_notices set title = :title , description = :description where notice_id = :notice_id");
+    //     $this->db->bind(":notice_id", $data['notice_id']);
+    //     $this->db->bind(":title", $data["edit_title"]);
+    //     $this->db->bind(":description", $data["edit_description"]);
 
-        return $this->db->execute();    
+    //     return $this->db->execute();    
 
-    }
+    // }
 
 }
 ?>

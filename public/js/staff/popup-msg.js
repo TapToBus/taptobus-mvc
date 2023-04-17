@@ -22,3 +22,26 @@ function hideRejection() {
   document.getElementById("rejection-dialog").close();
 }
 
+function validateForm() {
+  var rejectReason = document.getElementById("reject-reason");
+  if (rejectReason.value.trim()=="") {
+    rejectReason.style.outline = "2px solid red";
+    navigator.vibrate([500, 200, 500]);
+    rejectReason.classList.add("empty");
+    rejectReason.style.textDecorationColor = "Red";
+    return false;
+  } else {
+    rejectReason.style.outline = "black";
+    rejectReason.classList.remove("empty");
+    return true;
+  }
+ 
+}
+
+var rejectReason = document.getElementById("reject-reason");
+rejectReason.addEventListener("input", function() {
+  rejectReason.classList.remove("empty");
+  rejectReason.style.outline = "black";
+  rejectReason.style.color = "black";
+  });
+

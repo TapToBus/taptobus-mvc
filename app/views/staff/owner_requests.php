@@ -19,15 +19,26 @@
            
             <h2>Pending Bus Owner Requests </h2>
             <div class="result">
+                <?php
+                    $result =  $data['ownerRequests'];
+
+                    foreach ($result as $ownerRequest){
+                ?> 
+                    <!-- this part is repeating according to the no of rows in the requests table -->
                     <div class="row">
                         <div class="data">
-                            <span class="row1">Owner001 </span>        
+                            <span class="row1"> <?php echo $ownerRequest->nic?></span>        
                             <span class="date">2023/01/07</span> 
                         </div>               
-                        <span class="Vbutton">
-                            <a href="<?php echo URLROOT?>/Staff_view_requests/owner_requests_details">View</a>
-                        </span>
+        
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/owner_requests_details?nic=<?php echo $ownerRequest->nic?>">
+                        <span class="Vbutton">View </span>
+                        </a>
+                       
                     </div>      
+                <?php
+                     } 
+                ?>
             </div>        
         </p>
     </div>

@@ -1,7 +1,7 @@
 
 .rejection-box{
     background-color:var(--popup-background);
-    color: #fff;
+    color: #000;
     padding: 2rem;
     border-radius: .5rem;
     height: 15rem;
@@ -38,8 +38,18 @@
     width: 90%;
     height: 60%;
     margin: 1rem;
-    padding: .6rem;
+    padding: .8rem;
+    border:rgb(49, 48, 48);
+    border-radius: 0.5rem;
 }
+
+.rejection-box textarea.empty::placeholder {
+    color: red;
+  }
+
+  /* textarea:not(:focus) {
+    border-color: black;
+  } */
 
 .rejection-btns{
     margin-inline: auto;
