@@ -35,6 +35,21 @@
                 <p>Staff members</p>
             </a>
 
+            <a href="<?php echo URLROOT; ?> #" class="grid-items">
+                <i class="fa-regular fa-user"></i>
+                <p>Bus Conductors</p>
+            </a>
+
+            <a href="<?php echo URLROOT; ?> #" class="grid-items">
+                <i class="fa-solid fa-user"></i>
+                <p>Bus Drivers</p>
+            </a>
+
+            <a href="<?php echo URLROOT; ?> #" class="grid-items">
+                <i class="fa-solid fa-bus"></i>
+                <p>Buses</p>
+            </a>
+
         </div>
         </p>
     </div>
