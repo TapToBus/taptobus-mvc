@@ -76,6 +76,7 @@ class Pages extends Controller{
              // make sure errors are empty
             if(empty($data['name_err']) && empty($data['email_err']) && empty($data['mobileNo_err']) && empty($data['subject_err']) &&  empty($data['message_err'])){
 
+
                 // start phpmailer -------------------------------
 
                 //Load Composer's autoloader

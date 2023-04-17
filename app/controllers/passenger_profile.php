@@ -13,20 +13,30 @@ class passenger_profile extends Controller{
 
     
     public function profile(){
-        $proDetails = $this->profileModel->getProfileDetails($_SESSION['user_id']);
-        $totBookings = $this->profileModel->getTotalHistoryCount($_SESSION['user_id']);
-        $totJourneies = $this->profileModel->getTotalJourneyCount($_SESSION['user_id']);
-        $recentBooking = $this->profileModel->recentBooking($_SESSION['user_id']);
-        $recentHistory = $this->profileModel->recentHistory($_SESSION['user_id']);
-        
-        $data = [
-            'proDetails' => $proDetails,
-            'totBookings' => $totBookings,
-            'totJourneies' => $totJourneies,
-            'recentBooking' => $recentBooking,
-            'recentHistory' => $recentHistory
-        ];
+        // $data1 = $this->profileModel->getPassengerDetails($_SESSION['user_id']);
+        // print_r($data1);
 
-        $this->view('passenger/profile', $data);
+        // echo '<br><br>';
+
+        // $data2 = $this->profileModel->getJourneysCount($_SESSION['user_id']);
+        // echo $data2;
+
+        // echo '<br><br>';
+
+        // $data3 = $this->profileModel->getCancellationsCount($_SESSION['user_id']);
+        // echo $data3;
+
+        // echo '<br><br>';
+
+        // $data4 = $this->profileModel->getPreviousJourney($_SESSION['user_id']);
+        // print_r($data4);
+
+
+        // echo '<br><br>';
+
+        // $data5 = $this->profileModel->getNextJourney($_SESSION['user_id']);
+        // print_r($data5);
+
+        $this->view('passenger/profile');
     }
 }
