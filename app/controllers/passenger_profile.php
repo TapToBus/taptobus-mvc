@@ -39,8 +39,8 @@ class passenger_profile extends Controller{
             'upcomingJourney' => $this->profileModel->getUpcomingJourney($_SESSION['user_id'])
         ];
 
-        // echo $data['profile'];
+        // echo $data['profile']->nic;
 
-        //$this->view('passenger/profile', $data);
+        $this->view('passenger/profile', $data);
     }
 }

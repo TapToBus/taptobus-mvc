@@ -13,7 +13,7 @@ class M_passenger_profile{
                         FROM passenger 
                         WHERE nic = :passenger_nic AND status = \'active\';');
         $this->db->bind(':passenger_nic', $passenger_nic);
-        $result = $this->db->resultSet();
+        $result = $this->db->single();
 
         return $result;
     }

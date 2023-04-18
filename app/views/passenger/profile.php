@@ -18,26 +18,26 @@
 
             <div class="pro-details">
                 <div class="left">
-                    <img src="<?php echo URLROOT; ?>/img/profile-pic/992166398V.jpg" alt="">
+                    <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['profile']->pic; ?>" alt="<?php echo $data['profile']->nic; ?>">
                 </div>
 
                 <div class="right">
-                    <div class="name">Adheesha Chamod</div>
+                    <div class="name"><?php echo $data['profile']->fname . ' ' . $data['profile']->lname; ?></div>
 
                     <div class="details">
                         <div class="row">
                             <span class="col1">NIC:</span>
-                            <span class="col2">992166398V</span>
+                            <span class="col2"><?php echo $data['profile']->nic ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Email:</span>
-                            <span class="col2">adheesha@gmail.com</span>
+                            <span class="col2"><?php echo $data['profile']->email ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Mobile No:</span>
-                            <span class="col2">0779293569</span>
+                            <span class="col2"><?php echo $data['profile']->mobile_no ?></span>
                         </div>
                     </div>
 
@@ -52,18 +52,20 @@
                 <div class="left">
                     <span class="journeys">
                         <span class="col1">Journeys:</span>
-                        <span class="col2">234</span>
+                        <span class="col2"><?php echo isset($data['journeysCount']) ? $data['journeysCount'] : '0'; ?></span>
                     </span>
 
                     <span class="cancellations">
                         <span class="col1">Cancellations:</span>
-                        <span class="col2">3</span>
+                        <span class="col2"><?php echo isset($data['cancelCount']) ? $data['cancelCount'] : '0'; ?></span>
                     </span>
                 </div>
 
                 <div class="right">
                     <span class="col1">Upcoming journey:</span>
-                    <span class="col2">Galle > Makumbura</span>
+                    <span class="col2">
+                        <?php echo isset($data['upcomingJourney']) ? $data['upcomingJourney']->from . ' > ' . $data['upcomingJourney']->to: '0'; ?>
+                    </span>
                 </div>
             </div>
         </div>
