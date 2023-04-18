@@ -26,17 +26,21 @@ class passenger_profile extends Controller{
         // $data3 = $this->profileModel->getCancellationsCount($_SESSION['user_id']);
         // echo $data3;
 
-        // echo '<br><br>';
-
-        // $data4 = $this->profileModel->getPreviousJourney($_SESSION['user_id']);
-        // print_r($data4);
-
 
         // echo '<br><br>';
 
-        // $data5 = $this->profileModel->getNextJourney($_SESSION['user_id']);
+        // $data5 = $this->profileModel->getUpcomingJourney($_SESSION['user_id']);
         // print_r($data5);
 
-        $this->view('passenger/profile');
+        $data = [
+            'profile' => $this->profileModel->getPassengerDetails($_SESSION['user_id']),
+            'journeysCount' => $this->profileModel->getJourneysCount($_SESSION['user_id']),
+            'cancelCount' => $this->profileModel->getCancellationsCount($_SESSION['user_id']),
+            'upcomingJourney' => $this->profileModel->getUpcomingJourney($_SESSION['user_id'])
+        ];
+
+        // echo $data['profile'];
+
+        //$this->view('passenger/profile', $data);
     }
 }

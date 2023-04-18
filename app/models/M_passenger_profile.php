@@ -45,21 +45,21 @@ class M_passenger_profile{
     }
 
 
-    public function getPreviousJourney($passenger_nic){
-        $this->db->query('SELECT `from`, `to`
-                    FROM history 
-                    WHERE passenger_nic = :passenger_nic AND status = \'Used\'
-                    ORDER BY date DESC, started_time DESC
-                    LIMIT 1;');
-        $this->db->bind(':passenger_nic', $passenger_nic);
+    // public function getPreviousJourney($passenger_nic){
+    //     $this->db->query('SELECT `from`, `to`
+    //                 FROM history 
+    //                 WHERE passenger_nic = :passenger_nic AND status = \'Used\'
+    //                 ORDER BY date DESC, started_time DESC
+    //                 LIMIT 1;');
+    //     $this->db->bind(':passenger_nic', $passenger_nic);
         
-        $result = $this->db->single();
+    //     $result = $this->db->single();
 
-        return $result;
-    }
+    //     return $result;
+    // }
 
 
-    public function getNextJourney($passenger_nic){
+    public function getUpcomingJourney($passenger_nic){
         $this->db->query('SELECT `from`, `to`
                     FROM bookings 
                     WHERE passenger_nic = :passenger_nic

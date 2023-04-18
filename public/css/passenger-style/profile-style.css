@@ -83,7 +83,7 @@
 
 .content .pro-summary{
     display: grid;
-    grid-template-columns: 49.5% 49.5%;
+    grid-template-columns: 49% 49.5%;
     column-gap: 10px;
 }
 

@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="right">
-                    <span class="col1">Next journey:</span>
+                    <span class="col1">Upcoming journey:</span>
                     <span class="col2">Galle > Makumbura</span>
                 </div>
             </div>
