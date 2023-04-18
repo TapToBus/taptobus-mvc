@@ -13,6 +13,13 @@ class M_Admin_bus_driver_details{
 
         return $this->db->resultSet();
     }
+
+    public function removedrivers(){
+        $this->db->query('SELECT * FROM driver WHERE status = "pending"');
+        return $this->db->resultSet();
+    }
+
+    
 }
 
 ?>
