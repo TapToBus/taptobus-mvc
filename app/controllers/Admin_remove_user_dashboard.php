@@ -4,12 +4,14 @@ class Admin_remove_user_dashboard extends Controller{
     private $pageModelReStaffMember;
     private $pageModelReBusOwner;
     private $pageModelReBusConductor;
+    private $pageModelReBusDriver;
 
     public function __construct()
     {
         $this->pageModelReStaffMember = $this->model('M_Admin_staff_member_details');
         $this->pageModelReBusOwner = $this->model('M_Admin_remove_bus_owner');
         $this->pageModelReBusConductor = $this->model('M_Admin_bus_conductor_details');
+        $this->pageModelReBusDriver = $this->model('M_Admin_bus_driver_details');
         
     }
 
@@ -86,6 +88,14 @@ class Admin_remove_user_dashboard extends Controller{
             }
         }
     }
+
+    //view bus driver rearrange page
+
+    public function view_remove_bus_driver(){
+        
+       
+    }
+
 
 }
 ?>
