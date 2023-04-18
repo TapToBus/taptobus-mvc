@@ -169,24 +169,26 @@ input[type=date]{
 
 table {
   width: 100%;
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
   /* border: 1px solid #ccc; */
   margin-bottom: 20px;
 }
 
-thead {
+/* thead {
   background-color: #f2f2f2;
-}
+ 
+} */
 
 th {
   padding: 10px;
   text-align: left;
+  background-color: #f2f2f2;
+  border-radius: 10px;
   /* border-bottom: 1px solid #ccc; */
 }
 
 tbody {
-  /* display: flex;
-  flex-wrap: wrap; */
+  
   font-size: 16px;
 }
 
@@ -194,13 +196,14 @@ tr {
   width: 300px;
   margin-right: 20px;
   margin-bottom: 20px;
-  background-color: #bf9b9b;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
+  /* background-color: #bf9b9b;
+  box-shadow: 0px 0px 5px #ccc; */
 }
 
 td {
   padding: 10px;
+  /* border-bottom: 1px solid #ccc; */
+  border-radius: 10px;
 }
 
 button {
