@@ -78,7 +78,7 @@
     </dialog>
     
     
-    <script src="<?php echo URLROOT; ?>/js/reset-owner-popup.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/admin-js/reset-owner-popup.js"></script>
 </body>
 
 </html>
