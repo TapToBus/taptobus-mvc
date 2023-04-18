@@ -42,8 +42,8 @@
                     </div>
 
                     <div class="btn">
-                        <button class="edit">Edit profile</button>
                         <button class="delete">Delete profile</button>
+                        <button class="edit">Edit profile</button>
                     </div>
                 </div>
             </div>

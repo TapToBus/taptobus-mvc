@@ -76,9 +76,26 @@
 }
 
 .content .pro-details .right .btn button{
-    width: 100px;
+    width: 120px;
     height: 25px;
     cursor: pointer;
+}
+
+.content .pro-details .right .btn .delete{
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.content .pro-details .right .btn button:hover{
+    background-color: var(--clr-table-title-bg);
+    transition: 0.3s;
+}
+
+.content .pro-details .right .btn .edit{
+    color: var(--clr-navbar-top);
+    border: 1px solid var(--clr-navbar-top);
+    border-radius: 5px;
 }
 
 .content .pro-summary{
@@ -92,8 +109,9 @@
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-    padding: 15px;
-
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -115,7 +133,8 @@
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     text-align: center;
 }
