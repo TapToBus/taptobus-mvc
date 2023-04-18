@@ -27,7 +27,21 @@ class M_conductor_incomerecords{
         }
     }
 
+    public function find_bus(){
+        
+        $id = $_SESSION['user_id'];
+
+        // prepare query
+        $this->db->query('SELECT bus_no from bus WHERE con_ntc= :con_ntc');
+       
+        $this->db->bind(':con_ntc',$id);
+        $result = $this->db->single();
+        return $result;
+
+}
+
     public function view_incomerecords($bus_no){
+
 
             // prepare query
             $this->db->query('SELECT date,amount from incomerecords WHERE bus_no= :bus_no');

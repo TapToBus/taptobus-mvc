@@ -15,6 +15,10 @@ class Conductor_incomerecords extends Controller{
 
     public function add_incomerecords(){
 
+
+        $new =  $this->recordModel->find_bus();
+        $data1 =  $this->recordModel->view_incomerecords($new);
+
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // intialize data
 
@@ -36,11 +40,6 @@ class Conductor_incomerecords extends Controller{
             //         $data['bus_no_err'] = 'Bus No is already used';
             //     }
             // }
-
-        
-            // if(! preg_match('/^[E]-[1-6]$/', $data['root_no'])){ 
-            //     $data['root_no_err'] = 'A valid root number is required';
-            // }
    
             //  if(! preg_match('/^[4-5][0-9]$|^60$/', $data['capacity'])){
             //     $data['capacity_err'] = 'A valid capacity is required';
@@ -60,7 +59,7 @@ class Conductor_incomerecords extends Controller{
 
              else{
                 // load view with errors
-                $this->view('conductor/view_incomerecords', $data);
+                $this->view('conductor/view_incomerecords', $data,$data1);
     
             }
         }
@@ -78,7 +77,7 @@ class Conductor_incomerecords extends Controller{
             ];
 
             // load the view
-            $this->view('conductor/view_incomerecords', $data);
+            $this->view('conductor/view_incomerecords', $data,$data1);
         }
 
        
