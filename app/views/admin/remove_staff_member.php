@@ -81,7 +81,7 @@
         </div>
     </dialog>
 
-    <script src="<?php echo URLROOT; ?>/js/reset-staff-member.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/admin-js/reset-staff-member.js"></script>
 
 </body>
 
