@@ -20,8 +20,7 @@
 
         <div class="container">
 
-            
-
+        
                 <form action="" method="post" name="add_incomerecords-form" onsubmit="return isValid()">
 
                     <h2>Add Income Records</h2>
@@ -72,6 +71,12 @@
                 </form>
 
         
+        </div>
+
+
+        <div class="container2">
+
+
         </div>
 
     </div>
