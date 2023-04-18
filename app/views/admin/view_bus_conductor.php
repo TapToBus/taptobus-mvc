@@ -39,30 +39,43 @@
             <table class="full-table">
                 <tr>
                     <th>NTC no</th>
+                    <th>NIC</th>
+                    <!-- <th>License no</th> -->
                     <th>First name</th>
                     <th>Last name</th>
-                    <th>NIC</th>
                     <th>DOB</th>
                     <th>Address</th>
+                    <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
-                    <th>Email</th>
                     <th>Rating</th>
+                    <th>Total Ratings</th>
+                    <th>Response</th>
+                    <th>Owner NIC</th>
                 </tr>
 
                 <?php foreach ($data['conductors'] as $conductors) : ?>
                     <tr>
-
-
-
-
+                        <td><?php echo $conductors->ntcNo; ?></td>
+                        <td><?php echo $conductors->nic; ?></td>
+                        <td><?php echo $conductors->fname; ?></td>
+                        <td><?php echo $conductors->lname; ?></td>
+                        <td><?php echo $conductors->dob; ?></td>
+                        <td><?php echo $conductors->address; ?></td>
+                        <td><?php echo $conductors->email; ?></td>
+                        <td><?php echo $conductors->mobileNo; ?></td>
+                        <td><?php echo $conductors->telNo; ?></td>
+                        <td><?php echo $conductors->ratings; ?></td>
+                        <td><?php echo $conductors->total_ratings; ?></td>
+                        <td><?php echo $conductors->responses; ?></td>
+                        <td><?php echo $conductors->owner_nic; ?></td>
                     </tr>
                 <?php endforeach; ?>
 
             </table>
         </div>
     </div>
-    
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/conductor-monthly-chart.js"></script> -->
 
