@@ -17,7 +17,6 @@
     <div class="main">
         <div class="content-heading">
             <h1>Buses</h1>
-            <hr>
         </div>
 
         <div class="searching-and-sorting">
