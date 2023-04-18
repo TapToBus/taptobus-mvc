@@ -20,62 +20,82 @@
 
         <div class="container">
 
-        
-                <form action="" method="post" name="add_incomerecords-form" onsubmit="return isValid()">
 
-                    <h2>Add Income Records</h2>
+            <form action="" method="post" name="add_incomerecords-form" onsubmit="return isValid()">
 
-                    <div class="big">
-                        <div class="row">
-                            <div class="a">
-                                <label>Bus No</label>
-                            </div>
-                            <div class="b">
-                                <input type="text" class="form-control" name="bus_no" id="bus_no" required>
-                            </div>
-                            <span><?php echo $data['bus_no_err']; ?></span> 
+                <h2>Add Income Records</h2>
+
+                <div class="big">
+                    <div class="row">
+                        <div class="a">
+                            <label>Bus No</label>
                         </div>
-
-                        <div class="row">
-                            <div class="a">
-                                <label>Date</label>
-                            </div>
-                            <div class="b">
-                                <input type="date" class="form-control" name="date" id="date" required>
-                            </div>
-                            
+                        <div class="b">
+                            <input type="text" class="form-control" name="bus_no" id="bus_no" required>
                         </div>
-
-                        <div class="row">
-                            <div class="a">
-                                <label>Amount</label>
-                            </div>
-                            <div class="b">
-                                <input type="text" class="form-control" name="amount" id="amount" required>
-                            </div>
-                        </div>
-
-
-
+                        <span><?php echo $data['bus_no_err']; ?></span>
                     </div>
-
 
                     <div class="row">
-
-                        <input type="submit" value="Submit">
-                        <input type="submit" value="Cancel">
+                        <div class="a">
+                            <label>Date</label>
+                        </div>
+                        <div class="b">
+                            <input type="date" class="form-control" name="date" id="date" required>
+                        </div>
 
                     </div>
 
+                    <div class="row">
+                        <div class="a">
+                            <label>Amount</label>
+                        </div>
+                        <div class="b">
+                            <input type="text" class="form-control" name="amount" id="amount" required>
+                        </div>
+                    </div>
 
-                </form>
 
-        
+
+                </div>
+
+
+                <div class="row">
+
+                    <input type="submit" value="Submit">
+                    <input type="submit" value="Cancel">
+
+                </div>
+
+
+            </form>
+
+
         </div>
 
 
         <div class="container2">
 
+           <table>
+ 
+             <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                </tr>
+             </thead>
+
+             <tbody>
+
+              <tr>
+                <td>data1</td>
+                <td>data2</td>
+                <td><button>Delete</button></td>
+              </tr>
+              
+             </tbody>
+
+           </table>
 
         </div>
 
