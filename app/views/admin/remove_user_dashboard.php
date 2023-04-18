@@ -40,7 +40,7 @@
                 <p>Bus Conductors</p>
             </a>
 
-            <a href="<?php echo URLROOT; ?> #" class="grid-items">
+            <a href="<?php echo URLROOT; ?> /Admin_remove_user_dashboard/view_remove_bus_driver" class="grid-items">
                 <i class="fa-solid fa-user"></i>
                 <p>Bus Drivers</p>
             </a>
