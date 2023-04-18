@@ -98,6 +98,18 @@ class Admin_remove_user_dashboard extends Controller{
        
     }
 
+    //restore function for the bus drivers
+
+    public function remove_bus_driver(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['removeBusDriverBtn'])){
+                $ntcNo = $_POST['removeBusDriverBtn'];
+                $response = $this->pageModelReBusDriver->resetdrivers($ntcNo);
+                $this->view_remove_bus_driver();
+            }
+        }
+    }
+
 
 }
 ?>
