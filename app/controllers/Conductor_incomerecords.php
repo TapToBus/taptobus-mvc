@@ -20,8 +20,7 @@ class Conductor_incomerecords extends Controller
         $new =  $this->recordModel->find_bus();
         $bus_no = $new->bus_no;
         $data1 =  $this->recordModel->view_incomerecords($bus_no);
-        echo($bus_no);
-        var_dump($data1);
+    
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // intialize data
