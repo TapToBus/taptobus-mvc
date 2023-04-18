@@ -5,6 +5,7 @@ class Admin_remove_user_dashboard extends Controller{
     private $pageModelReBusOwner;
     private $pageModelReBusConductor;
     private $pageModelReBusDriver;
+    private $pageModelReBus;
 
     public function __construct()
     {
@@ -12,6 +13,7 @@ class Admin_remove_user_dashboard extends Controller{
         $this->pageModelReBusOwner = $this->model('M_Admin_remove_bus_owner');
         $this->pageModelReBusConductor = $this->model('M_Admin_bus_conductor_details');
         $this->pageModelReBusDriver = $this->model('M_Admin_bus_driver_details');
+        $this->pageModelReBus = $this->model('M_Admin_bus_details');
         
     }
 
