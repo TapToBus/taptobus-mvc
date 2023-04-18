@@ -72,6 +72,19 @@
         </div>
     </div>
 
+    <dialog id="resetPopup" class="resetPopup">
+        <div class="resetPopup-contianer">
+            <h1>Are You Sure ?</h1>
+            <p>Do you really wants to re activate this bus .</p>
+
+            <form action="<?php echo URLROOT ?>/Admin_remove_user_dashboard/remove_bus" method="POST" class="delete-button">
+                    <button class="delete-btn" type="submit" name="removeBusBtn" id="removeBusBtn">Yes</button>
+                    <button class="delete-btn" type="button" onclick="closeModal()">No</button>
+            </form>
+        </div>
+    </dialog>
+
+
 
 
 </body>
