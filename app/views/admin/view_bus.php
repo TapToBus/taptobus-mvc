@@ -13,10 +13,11 @@
 <body>
 
     <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
-    
+
     <div class="main">
         <div class="content-heading">
             <h1>BUSES</h1>
+            
         </div>
 
         <div class="searching-and-sorting">
@@ -33,29 +34,31 @@
         <div class="content-table">
             <table class="full-table">
                 <tr>
-                    <th>Bus no</th>
-                    <th>Owner ID</th>
-                    <th>Driver ID</th>
-                    <th>Conductor ID</th>
-                    <th>Root permit no</th>
-                    <th>License no</th>
+                    <th>Bus No</th>
+                    <th>Root No</th>
                     <th>Capacity</th>
+                    <th>Conductor NTC No</th>
+                    <th>Driver NTC No</th>
+                    <th>Owner NIC</th>
                     <th>Rating</th>
+                    <th>Total Ratings</th>
+                    <th>Responses</th>
                 </tr>
 
-                <?php foreach($data['buses'] as $buses): ?>
-                <tr>
-                    <td><?php echo $buses->bus_no; ?></td>
-                    <td><?php echo $buses->root_no;?></td>
-                    <td><?php echo $buses->owner_name;?></td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                </tr>
+                <?php foreach ($data['buses'] as $buses) : ?>
+                    <tr>
+                        <td><?php echo $buses->root_no ?></td>
+                        <td><?php echo $buses->bus_no ?></td>
+                        <td><?php echo $buses->capacity ?></td>
+                        <td><?php echo $buses->con_ntc ?></td>
+                        <td><?php echo $buses->dri_ntc ?></td>
+                        <td><?php echo $buses->owner_nic ?></td>
+                        <td><?php echo $buses->ratings ?></td>
+                        <td><?php echo $buses->total_ratings ?></td>
+                        <td><?php echo $buses->responses ?></td>
+                    </tr>
                 <?php endforeach; ?>
-                
+
             </table>
         </div>
     </div>
