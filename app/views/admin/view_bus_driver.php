@@ -39,31 +39,36 @@
             <table class="full-table">
                 <tr>
                     <th>NTC no</th>
-                    <th>Owner NIC</th>
-                    <th>License no</th>
+                    <th>NIC</th>
+                    <!-- <th>License no</th> -->
                     <th>First name</th>
                     <th>Last name</th>
-                    <th>NIC</th>
                     <th>DOB</th>
+                    <th>Address</th>
+                    <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
-                    <th>Email</th>
                     <th>Rating</th>
+                    <th>Total Ratings</th>
+                    <th>Response</th>
+                    <th>Owner NIC</th>
                 </tr>
 
                 <?php foreach ($data['drivers'] as $drivers) : ?>
                     <tr>
                         <td><?php echo $drivers->ntcNo; ?></td>
-                        <td><?php echo $drivers->owner_nic; ?></td>
-                        <td><?php echo $drivers->licenseNo; ?></td>
+                        <td><?php echo $drivers->nic; ?></td>
                         <td><?php echo $drivers->fname; ?></td>
                         <td><?php echo $drivers->lname; ?></td>
-                        <td><?php echo $drivers->nic; ?></td>
                         <td><?php echo $drivers->dob; ?></td>
+                        <td><?php echo $drivers->address; ?></td>
+                        <td><?php echo $drivers->email; ?></td>
                         <td><?php echo $drivers->mobileNo; ?></td>
                         <td><?php echo $drivers->telNo; ?></td>
-                        <td><?php echo $drivers->email; ?></td>
                         <td><?php echo $drivers->ratings; ?></td>
+                        <td><?php echo $drivers->total_ratings; ?></td>
+                        <td><?php echo $drivers->responses; ?></td>
+                        <td><?php echo $drivers->owner_nic; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
