@@ -20,7 +20,7 @@
 
         <div class="container">
 
-            <div class="left">
+            
 
                 <form action="" method="post" name="add_incomerecords-form" onsubmit="return isValid()">
 
@@ -69,17 +69,9 @@
                     </div>
 
 
-
                 </form>
 
-            </div>
-
-            
-            <div class="right">
-
-
-            </div>
-
+        
         </div>
 
     </div>
