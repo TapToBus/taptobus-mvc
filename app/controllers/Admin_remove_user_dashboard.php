@@ -92,7 +92,9 @@ class Admin_remove_user_dashboard extends Controller{
     //view bus driver rearrange page
 
     public function view_remove_bus_driver(){
-        
+        $removedrivers = $this->pageModelReBusDriver->removedrivers();
+        $data =['removedrivers' => $removedrivers];
+        $this->view('admin/remove_bus_driver' ,$data); 
        
     }
 
