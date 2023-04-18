@@ -8,6 +8,7 @@ input[type=text] ,select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    font-size: 15px;
 }
 
 input[type=date]{
@@ -17,27 +18,8 @@ input[type=date]{
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+  font-size: 15px;
 }
-
-input[type=file]{
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-  background-color: white;
-}
-
-/* body{
-  background-image: url("./");
-  background-repeat: no-repeat; 
-  height: 100%;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-
- } */
 
  .outer{
   min-height: 100dvh;
