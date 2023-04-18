@@ -32,9 +32,9 @@ class M_conductor_incomerecords{
         $id = $_SESSION['user_id'];
 
         // prepare query
-        $this->db->query('SELECT bus_no from bus WHERE con_ntc= :con_ntc');
+        $this->db->query('SELECT bus_no from conductor WHERE nic= :nic');
        
-        $this->db->bind(':con_ntc',$id);
+        $this->db->bind(':nic',$id);
         $result = $this->db->single();
         return $result;
 

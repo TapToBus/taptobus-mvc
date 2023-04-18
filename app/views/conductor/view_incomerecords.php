@@ -86,12 +86,23 @@
              </thead>
 
              <tbody>
+             <?php
+                
+                foreach ($data1 as $row):
+
+             ?>
 
               <tr>
-                <td>2023/02/04</td>
-                <td>100,000</td>
+                <td><?php echo $row->date;?></td>
+                <td><?php echo $row->amount;?></td>
                 <td><button>Delete</button></td>
               </tr>
+
+              <?php
+                
+                endforeach;
+
+              ?>
 
              </tbody>
 
