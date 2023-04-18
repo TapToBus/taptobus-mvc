@@ -17,44 +17,58 @@
     <div class="main">
         <div class="content-heading">
             <h1>Bus Conductors</h1>
-            <hr>
+            
         </div>
 
         <div class="content-table">
             <table class="full-table">
                 <tr>
                     <th>NTC no</th>
+                    <th>NIC</th>
                     <th>First name</th>
                     <th>Last name</th>
-                    <th>NIC</th>
                     <th>DOB</th>
                     <th>Address</th>
+                    <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
-                    <th>Email</th>
                     <th>Rating</th>
+                    <th>Total Ratings</th>
+                    <th>Responses</th>
+                    <th>Owner NIC</th>
                     <th class="delete-button"></th>
                 </tr>
-                <tr>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td class="delete-button"><button class="delete-btn">Remove</button></td>
-                </tr>
 
+                <?php foreach($data['removeconductors'] as $removeconductors) : ?>
+                    <tr>
+                        <td><?php echo $removeconductors->ntcNo; ?></td>
+                        <td><?php echo $removeconductors->nic; ?></td>
+                        <td><?php echo $removeconductors->fname; ?></td>
+                        <td><?php echo $removeconductors->lname; ?></td>
+                        <td><?php echo $removeconductors->dob; ?></td>
+                        <td><?php echo $removeconductors->address; ?></td>
+                        <td><?php echo $removeconductors->email; ?></td>
+                        <td><?php echo $removeconductors->mobileNo; ?></td>
+                        <td><?php echo $removeconductors->telNo; ?></td>
+                        <td><?php echo $removeconductors->ratings; ?></td>
+                        <td><?php echo $removeconductors->total_ratings; ?></td>
+                        <td><?php echo $removeconductors->responses; ?></td>
+                        <td><?php echo $removeconductors->owner_nic; ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removeconductors->ntcNo ?>')">Reset</button>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
 
             </table>
 
         </div>
 
     </div>
+
+    
 
 
 
