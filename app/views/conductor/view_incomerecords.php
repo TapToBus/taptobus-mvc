@@ -88,11 +88,11 @@
              <tbody>
 
               <tr>
-                <td>data1</td>
-                <td>data2</td>
+                <td>2023/02/04</td>
+                <td>100,000</td>
                 <td><button>Delete</button></td>
               </tr>
-              
+
              </tbody>
 
            </table>
