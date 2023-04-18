@@ -23,7 +23,7 @@
                         <p>Bus owners</p> 
                     </a>
                     <a href= "<?php echo URLROOT; ?>/Staff_view_requests/driver_requests" class="grid-items">
-                        <span class = "icon-button__badge">32</span>
+                        <span class = "icon-button__badge">3</span>
                         <i class="fa-solid fa-user"></i>
                         <p>Drivers</p> 
                     </a>

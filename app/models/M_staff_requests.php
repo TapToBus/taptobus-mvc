@@ -49,14 +49,14 @@ class M_staff_requests{
     }
 
     public function conductorRequestedDetails($conductor_nic){
-        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo   FROM conductor WHERE nic = :conductor_nic");
+        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo ,ntcNo ,owner_nic  FROM conductor WHERE nic = :conductor_nic");
         $this->db->bind(":conductor_nic",$conductor_nic);
         $result = $this->db->Single();
         return $result;
     }
 
     public function driverRequestedDetails($driver_nic){
-        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo FROM driver where nic = :driver_nic");
+        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo , ntcNo, owner_nic FROM driver where nic = :driver_nic");
         $this->db->bind(":driver_nic",$driver_nic);
         $result = $this->db->Single();
         return $result;
@@ -81,39 +81,69 @@ class M_staff_requests{
     }
 
     public function accept_driver_request($data1){
-        $this->db->query("UPDATE driver set status = :sts where nic = :driver_nic");
-        $this->db->bind(":driver_nic",$data1['driver_nic']);
+        $this->db->query("UPDATE driver set status = :sts where ntcNo = :driver_ntc");
+        $this->db->bind(":driver_ntc",$data1['driver_ntc']);
         $this->db->bind(":sts",$data1['status']);
 
         return $this->db->execute();
     }
 
     public function accept_conductor_request($data1){
-        $this->db->query("UPDATE conductor set status = :sts where nic = :conductor_nic");
-        $this->db->bind(":conductor_nic",$data1['conductor_nic']);
+        $this->db->query("UPDATE conductor set status = :sts where ntcNo = :conductor_ntc");
+        $this->db->bind(":conductor_ntc",$data1['conductor_ntc']);
         $this->db->bind(":sts",$data1['status']);
 
         return $this->db->execute();
     }
     // ---------------Update staff id----------------
 
-    // public function update_staff_id($data3){
-    //     $this->db->query("UPDATE bus_request set staff_no = :staff_no, status = :status , reject_reason = :rjt_reason where owner_nic = :owner_nic");
-    //     $this->db->bind(":staff_no", $data3['staff_no']);
-    //     $this->db->bind(":owner_nic", $data3['owner_nic']); 
-    //     $this->db->bind(":status", $data3['status']);
-    //     $this->db->bind(":rjt_reason" , $data3['reject_reason']);
-
-    //     return $this->db->execute();
-    // }
-
-    public function update_staff_id($data2){
+    public function update_staff_id_for_bus($data2){
         $this->db->query("UPDATE bus_request set staff_no = :staff_no, status = :status  where bus_no = :bus_no");
         $this->db->bind(":staff_no", $data2['staff_no']);
         $this->db->bind(":bus_no", $data2['bus_no']); 
         $this->db->bind(":status", $data2['status']);
 
         return $this->db->execute();
+    }
+
+    public function update_staff_id_for_owner($data2) {
+        $this->db->query("UPDATE owner_request set staff_no = :staff_no, status = :status WHERE owner_nic = :owner_nic");
+        $this->db->bind(":status", $data2['status']);
+        $this->db->bind(":staff_no", $data2['staff_no']);
+        $this->db->bind(":owner_nic", $data2['owner_nic']);
+
+        return $this->db->execute();
+    }
+
+    public function update_staff_id_for_conductor($data2){
+        $this->db->query("UPDATE conductor_request set staff_no = :staff_no, status = :status WHERE conductor_ntc = :conductor_ntc");
+        $this->db->bind(":status",$data2['status']);
+        $this->db->bind(":staff_no", $data2['staff_no']);
+        $this->db->bind(":conductor_ntc", $data2['conductor_ntc']);
+
+        return $this->db->execute();
+
+    }
+
+    public function update_staff_id_for_driver($data2){
+        $this->db->query("UPDATE driver_request set staff_no = :staff_no, status = :status WHERE driver_ntc = :driver_ntc");
+        $this->db->bind(":status",$data2['status']);
+        $this->db->bind(":staff_no", $data2['staff_no']);
+        $this->db->bind(":driver_ntc", $data2['driver_ntc']);
+
+        return $this->db->execute();
+
+    }
+
+
+
+    // ------------- get owner's email ----------
+    
+    public function get_owner_email($owner_nic) {
+        $this->db->query("SELECT email, fname, lname FROM owner WHERE nic = :owner_nic");
+        $this->db->bind(":owner_nic",$owner_nic);
+        $result = $this->db->Single();
+        return $result;
     }
 
     //---------------------Reject requests -----------

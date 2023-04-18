@@ -43,8 +43,8 @@
                     </div>
                     <div class="details-bottom">
                         <div class="action-btn">
-                            <button class="accept" onclick="showConfirmation()">Accept</button>
-                            <button class="reject" onclick="showRejection()">Reject</button>
+                            <button id ="accept" class="accept" onclick="showConfirmation()">Accept</button>
+                            <button id = "reject"  class="reject" onclick="showRejection()">Reject</button>
                         </div>
                     </div>
             </div>   
@@ -54,7 +54,7 @@
                     <p>Are you sure that you want to add <?php echo $result->fname.' '.$result->lname?> to the system?</p>                    
                 </div>
                 <div class="confirm-btns">
-                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php //echo $result->bus_no?>">
+                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_driver_requests?driver_ntc=<?php echo $result->ntcNo?>&owner_nic=<?php echo $result->owner_nic?>">
                         <button class = "yes" onclick="">Yes</button>
                     </a>
                     <button class = "no" onclick="hideConfirmation()">No</button>
@@ -63,7 +63,7 @@
 
             <!-- Rejection pop-up Moodel   -->
             <dialog id="rejection-dialog" class="rejection-box">
-                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST" onsubmit="return validateForm()">
+                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_driver_requests?driver_ntc=<?php echo $result->ntcNo?>&owner_nic=<?php echo $result->owner_nic?>" method="POST" onsubmit="return validateForm()">
                     <div class = "reject-msg">
                         <p>Please enter the reason for the rejection</p>  
                         <textarea id="reject-reason" type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
