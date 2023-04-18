@@ -77,4 +77,15 @@ class Conductor_incomerecords extends Controller
             $this->view('conductor/view_incomerecords', $data, $data1);
         }
     }
+
+    public function delete_incomerecords($record_id){
+
+        $this->recordModel->delete_incomerecords($record_id);
+        $new =  $this->recordModel->find_bus();
+        $bus_no = $new->bus_no;
+        $data1 =  $this->recordModel->view_incomerecords($bus_no);
+        $this->view('conductor/view_incomerecords',$data1);
+    }
+
+
 }
