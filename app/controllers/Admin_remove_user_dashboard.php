@@ -3,11 +3,13 @@ class Admin_remove_user_dashboard extends Controller{
 
     private $pageModelReStaffMember;
     private $pageModelReBusOwner;
+    private $pageModelReBusConductor;
 
     public function __construct()
     {
         $this->pageModelReStaffMember = $this->model('M_Admin_staff_member_details');
         $this->pageModelReBusOwner = $this->model('M_Admin_remove_bus_owner');
+        $this->pageModelReBusConductor = $this->model('M_Admin_bus_conductor_details');
         
     }
 
@@ -29,7 +31,7 @@ class Admin_remove_user_dashboard extends Controller{
         $this->view('admin/remove_staff_member',$data);
     }
 
-    //reser function of staff member
+    //reset function of staff member
 
     public function reset_staff_member(){
         // check if button and form is work
@@ -63,6 +65,12 @@ class Admin_remove_user_dashboard extends Controller{
             }
         }
         
+    }
+
+    // view bus conductor rearrage page
+
+    public function view_remove_bus_conductor(){
+        // $removeconductors = $this->pageModelReBusConductor->
     }
 }
 ?>
