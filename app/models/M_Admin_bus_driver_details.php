@@ -19,7 +19,12 @@ class M_Admin_bus_driver_details{
         return $this->db->resultSet();
     }
 
-    
+    public function resetdrivers($ntcNo){
+        $this->db->query('UPDATE driver SET status = "active" WHERE ntcNo = :ntcNo');
+        $this->db->bind(":ntcNo",$ntcNo);
+        return $this->db->execute();
+
+    }
 }
 
 ?>
