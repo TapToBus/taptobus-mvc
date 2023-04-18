@@ -45,7 +45,7 @@
                 <p>Bus Drivers</p>
             </a>
 
-            <a href="<?php echo URLROOT; ?> #" class="grid-items">
+            <a href="<?php echo URLROOT; ?> /Admin_remove_user_dashboard/view_remove_bus" class="grid-items">
                 <i class="fa-solid fa-bus"></i>
                 <p>Buses</p>
             </a>
