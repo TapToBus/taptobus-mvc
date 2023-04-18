@@ -178,29 +178,24 @@ thead {
   background-color: #f2f2f2;
 }
 
-/* Style the table head cells */
 th {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
 
-/* Style the table body */
 tbody {
   font-size: 16px;
 }
 
-/* Style the table body rows */
 tr {
   border-bottom: 1px solid #ccc;
 }
 
-/* Style the table body cells */
 td {
   padding: 10px;
 }
 
-/* Style the delete button */
 button {
   background-color: #dc3545;
   color: #fff;
