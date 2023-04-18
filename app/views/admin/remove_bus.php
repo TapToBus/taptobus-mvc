@@ -34,33 +34,42 @@
         <div class="content-table">
             <table class="full-table">
                 <tr>
-                    <th>Bus no</th>
-                    <th>Owner ID</th>
-                    <th>Driver ID</th>
-                    <th>Conductor ID</th>
-                    <th>Root permit no</th>
-                    <th>License no</th>
+                    <th>Bus No</th>
+                    <th>Root No</th>
                     <th>Capacity</th>
+                    <th>Conductor NTC No</th>
+                    <th>Driver NTC No</th>
+                    <th>Owner NIC</th>
                     <th>Rating</th>
+                    <th>Total Ratings</th>
+                    <th>Responses</th>
+
+                    <!-- <th>Root permit no</th>
+                    <th>License no</th> -->
+
                     <th class="delete-button"></th>
                 </tr>
-                <tr>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td class="delete-button"><button class="delete-btn">Remove</button></td>
-                </tr>
-
+                <?php foreach ($data['removebuses'] as $removebuses) : ?>
+                    <tr>
+                        <td><?php echo $removebuses->bus_no ?></td>
+                        <td><?php echo $removebuses->root_no ?></td>
+                        <td><?php echo $removebuses->capacity ?></td>
+                        <td><?php echo $removebuses->con_ntc ?></td>
+                        <td><?php echo $removebuses->dri_ntc ?></td>
+                        <td><?php echo $removebuses->owner_nic ?></td>
+                        <td><?php echo $removebuses->ratings ?></td>
+                        <td><?php echo $removebuses->total_ratings ?></td>
+                        <td><?php echo $removebuses->responses ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removebuses->bus_no ?>')">Reset</button>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
 
             </table>
-
         </div>
-
     </div>
 
 
