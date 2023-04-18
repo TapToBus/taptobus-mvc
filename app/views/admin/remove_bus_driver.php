@@ -19,6 +19,17 @@
             <h1>Bus Drivers</h1>
         </div>
 
+        <div class="searching-and-sorting">
+            <div class="searching">
+                <input type="text" id="search" placeholder="Search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+
+            </div>
+            <div class="sorting">
+                for sorting bar
+            </div>
+        </div>
+
         <div class="content-table">
             <table class="full-table">
                 <tr>
