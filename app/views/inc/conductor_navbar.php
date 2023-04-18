@@ -36,7 +36,7 @@
     </div>
     
     <a href="<?php echo URLROOT; ?>/conductor_dashboard/view_dashboard"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
-    <a href="<?php echo URLROOT; ?>/conductor_incomerecords/view_incomerecords"><i class="fa-solid fa-bus"></i><span>Income Records</span></a>
+    <a href="<?php echo URLROOT; ?>/conductor_incomerecords/add_incomerecords"><i class="fa-solid fa-bus"></i><span>Income Records</span></a>
     <a href="<?php echo URLROOT; ?>/conductor_schedule/view_schedule"><i class="fa-solid fa-user"></i><span>Schedule</span></a>
     <a href="<?php echo URLROOT; ?>/conductor_leaverequests/view_leaverequests"><i class="fa-solid fa-newspaper"></i><span>Leave Requests</span></a>
     <a href="<?php echo URLROOT; ?>/conductor_notifications/view_notifications"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
