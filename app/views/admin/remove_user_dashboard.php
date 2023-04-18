@@ -35,7 +35,7 @@
                 <p>Staff members</p>
             </a>
 
-            <a href="<?php echo URLROOT; ?> #" class="grid-items">
+            <a href="<?php echo URLROOT; ?> /Admin_remove_user_dashboard/view_remove_bus_conductor" class="grid-items">
                 <i class="fa-regular fa-user"></i>
                 <p>Bus Conductors</p>
             </a>
