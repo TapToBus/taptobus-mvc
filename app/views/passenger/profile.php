@@ -14,13 +14,11 @@
 
     <div class="main">
         <div class="content">
-            <h1 class="heading">Bus Details</h1>
+            <h1 class="heading">Profile</h1>
 
             <div class="pro-details">
                 <div class="left">
-                    <div class="img-container">
-                        <!-- <img src="<?php echo URLROOT; ?>/img/profile-pic/992166398V.jpg" alt=""> -->
-                    </div>
+                    <img src="<?php echo URLROOT; ?>/img/profile-pic/992166398V.jpg" alt="">
                 </div>
 
                 <div class="right">
@@ -62,11 +60,6 @@
                         <span class="col2">3</span>
                     </span>
                 </div>
-
-                <!-- <div class="middle">
-                    <span class="col1">Previous journey:</span>
-                    <span class="col2">Galle > Makumbura</span>
-                </div> -->
 
                 <div class="right">
                     <span class="col1">Next journey:</span>
