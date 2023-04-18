@@ -112,6 +112,26 @@ class Admin_remove_user_dashboard extends Controller{
         }
     }
 
+    //view bus rearrange page
+    public function view_remove_bus(){
+        $removebuses = $this->pageModelReBus->removebuses();
+        $data = ['removebuses' => $removebuses];
+        $this->view('admin/remove_bus',$data);
+    }
+
+    // restore function for bus
+
+    public function remove_bus(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['removeBusBtn'])){
+                $bus_no = $_POST['removeBusBtn'];
+                $response = $this->pageModelReBus->resetbuses($bus_no);
+                $this->view_remove_bus();
+
+            }
+        }
+    }
+
 
 }
 ?>
