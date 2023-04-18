@@ -136,17 +136,60 @@ class M_staff_requests{
     }
 
 
+// ----------------for email ------------------
 
-    // ------------- get owner's email ----------
-    
-    public function get_owner_email($owner_nic) {
-        $this->db->query("SELECT email, fname, lname FROM owner WHERE nic = :owner_nic");
-        $this->db->bind(":owner_nic",$owner_nic);
-        $result = $this->db->Single();
-        return $result;
-    }
+                // ------------- get owner's email ----------
+                
+                public function get_owner_email($owner_nic) {
+                    $this->db->query("SELECT email, fname, lname FROM owner WHERE nic = :owner_nic");
+                    $this->db->bind(":owner_nic",$owner_nic);
+                    $result = $this->db->Single();
+                    return $result;
+                }
 
-    //---------------------Reject requests -----------
+                //------------get conductor's data -----------
+
+                public function get_conductor_data($conductor_ntc) {
+                    $this->db->query("SELECT fname, lname, email from conductor where ntcNo = :conductor_ntc");
+                    $this->db->bind(":conductor_ntc",$conductor_ntc);
+                    $result = $this->db->Single();
+                    return $result;
+                }
+
+                //---------get driver's data------------------------
+
+                public function get_driver_data($driver_ntc) {
+                    $this->db->query("SELECT fname , lname, email from driver where ntcNo = :driver_ntc");
+                    $this->db->bind(":driver_ntc", $driver_ntc);
+                    $result = $this->db->Single();
+                    return $result;
+                }
+
+                // --------------- save temporery password
+
+                public function save_temporery_password($data1){
+                    $this->db->query("UPDATE owner set password = :password where nic = :owner_nic");
+                    $this->db->bind(":owner_nic",$data1['owner_nic']);
+                    $this->db->bind(":password",$data1['password']);
+            
+                    return $this->db->execute();
+                }
+
+    // insert_into_user table
+                public function insert_into_user($data){
+                    $this->db->query("INSERT INTO user (id, fname ,lname , email, password_hash, type) VALUES (:id ,:fname ,:lname ,:email ,:password_hash ,:type)");
+                    $this->db->bind(":id",$data['id']);
+                    $this->db->bind(":fname",$data['fname']);
+                    $this->db->bind(":lname",$data['lname']);
+                    $this->db->bind(":email",$data['email']);
+                    $this->db->bind(":password_hash",$data['password_hash']);
+                    $this->db->bind(":type",$data['type']);
+
+                    return $this->db->execute();
+                }
+
+                
+//---------------------Reject requests -----------
 
     public function reject_bus_requests($data1) {
         $this->db->query("UPDATE bus set status = :sts where bus_no= :bus_no");

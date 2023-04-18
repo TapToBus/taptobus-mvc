@@ -44,7 +44,10 @@ class M_users{
 
         // check password
         $hashed_password = $row->password_hash;
-
+        // echo $hashed_password;
+        // echo $password;
+        // echo password_verify($password, $hashed_password);
+        // die();
         if(password_verify($password, $hashed_password)){
             return $row;
         }else{
