@@ -13,11 +13,13 @@ class Passenger_history extends Controller{
 
     
     public function history(){
-        $hist = $this->historyModel->getHistory($_SESSION['user_id']);
-
         $data = [
-            'hist' => $hist
+            'history' => $this->historyModel->getHistory($_SESSION['user_id']),
+            'fullHistory' => '',
         ];
+
+        // $data1 = ['details' => $this->historyModel->getFullHistory(6)];
+        // echo $data1['details']->from;
 
         $this->view('passenger/history', $data);
     }
