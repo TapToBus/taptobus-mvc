@@ -27,9 +27,16 @@ class M_conductor_incomerecords{
         }
     }
 
-    public function view_incomerecords(){
+    public function view_incomerecords($data){
 
-      
+            // prepare query
+            $this->db->query('SELECT * from incomerecords WHERE bus_no= :bus_no');
+           
+            $this->db->bind(':bus_no',$data);
+            $results = $this->db->resultSet();
+            return $results;
+    
+        
     }
 
 
