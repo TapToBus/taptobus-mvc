@@ -70,7 +70,22 @@ class Admin_remove_user_dashboard extends Controller{
     // view bus conductor rearrage page
 
     public function view_remove_bus_conductor(){
-        // $removeconductors = $this->pageModelReBusConductor->
+        $removeconductors = $this->pageModelReBusConductor->removeconductors();
+        $data = ['removeconductors' => $removeconductors];
+        $this->view('admin/remove_bus_conductor',$data);
     }
+
+    // restore function for the bus conductors
+
+    public function remove_bus_conductor(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['removeBusConductorBtn'])){
+                $ntcNo = $_POST['removeBusConductorBtn'];
+                $response = $this->pageModelReBusConductor->resetconductors($ntcNo);
+                $this->view_remove_bus_conductor();
+            }
+        }
+    }
+
 }
 ?>
