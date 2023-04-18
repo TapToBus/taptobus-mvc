@@ -34,7 +34,7 @@
         <?php else : ?>
 
             <?php foreach ($data as $booking) : ?>
-                <div class="result" onclick="goNext(<?php echo $booking->booking_id; ?>)">
+                <div class="result" onclick="goNext('<?php echo $booking->booking_id; ?>')">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
                     <span class="result2"><?php echo $booking->from; ?></span>
                     <span class="result3"><?php echo $booking->to; ?></span>

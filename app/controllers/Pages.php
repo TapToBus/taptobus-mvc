@@ -98,7 +98,7 @@ class Pages extends Controller{
                 $mail->Port       = 465;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                 //$mail->Port       = 587;
 
-                //Recipients
+                // Recipients
                 // $mail->setFrom('customer.taptobus@gmail.com', $data['name']);
                 $mail->setFrom(CUSTOMER_EMAIL, $data['name']);
                 $mail->addAddress(TAPTOBUS_EMAIL, 'TapToBus Company');                 //Add a recipient

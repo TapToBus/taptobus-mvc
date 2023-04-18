@@ -18,7 +18,6 @@
 
             <div class="top">
                 <span class="top-left">
-                    <!-- <img src="<?php echo URLROOT; ?>/img/bus/bus-img1.jpg" alt="bus_no"> -->
                     <img src="<?php echo URLROOT; ?>/img/bus/<?php echo $data['bus']->bus_image; ?>" alt="<?php echo $data['bus']->bus_no; ?>">
                 </span>
 

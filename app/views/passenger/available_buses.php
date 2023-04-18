@@ -17,17 +17,21 @@
 
         <div class="summary">
             <span class="col1">
-                <span class="sub-col1">Journey:</span> 
+                <span class="sub-col1">Journey:</span>
                 <span class="sub-col2"><?php echo $data['from'] ?> > <?php echo $data['to'] ?></span>
             </span>
+
             <span class="v-line">|</span>
+
             <span class="col2">
-                <span class="sub-col1">On:</span> 
+                <span class="sub-col1">On:</span>
                 <span class="sub-col2"><?php echo $data['date'] ?></span>
             </span>
+
             <span class="v-line">|</span>
+
             <span class="col3">
-                <span class="sub-col1">Passenger count:</span> 
+                <span class="sub-col1">Passenger count:</span>
                 <span class="sub-col2"><?php echo $data['count'] ?></span>
             </span>
         </div>
@@ -40,44 +44,50 @@
             <span class="title5">Ticket Price</span>
         </div>
 
-        <?php if(empty($data['availableBuses'])) : ?>
+        <?php if (empty($data['availableBuses'])) : ?>
+
             <div class="no-data">
                 <i class="fa-solid fa-circle-exclamation"></i> <br>
                 <span>No buses to display</span>
             </div>
+
         <?php else : ?>
             <?php foreach ($data['availableBuses'] as $recode) : ?>
-                <a class="result-link" href="<?php echo URLROOT ?>/passenger_book_seats/bus_details?bus_no=<?php echo $recode->bus_no; ?>&schedule_id=<?php echo $recode->schedule_id; ?>&booked_seats_id=<?php echo $recode->booked_seats_id; ?>&count=<?php echo $data['count']; ?>">
-                    <div class="result">
-                        <span class="result1"><?php echo $recode->bus_no ?></span>
-                        <span class="result2">
-                            <?php $i = 0; ?>
-                            
-                            <?php while($i < floor($recode->ratings)): ?>
-                                <i class="fa-solid fa-star"></i>
-                                <?php $i++; ?>
-                            <?php endwhile; ?>
+                <div class="result" 
+                onclick="goNext('<?php echo $data['from']; ?>', '<?php echo $data['to']; ?>', '<?php echo $data['date']; ?>', '<?php echo $data['count']; ?>', '<?php echo $recode->sch_id; ?>', '<?php echo $recode->boks_id; ?>', '<?php echo $recode->bus_no; ?>')">
+                    
+                    <span class="result1"><?php echo $recode->bus_no; ?></span>
 
-                            <?php if($recode->ratings - (floor($recode->ratings)) > 0): ?>
-                                <i class="fa-regular fa-star-half-stroke"></i>
-                                <?php $i++; ?>
-                            <?php endif; ?>
+                    <span class="result2">
+                        <?php $i = 0; ?>
 
-                            <?php while($i < 5): ?>
-                                <i class="fa-regular fa-star"></i>
-                                <?php $i++; ?>
-                            <?php endwhile; ?>
+                        <?php while ($i < floor($recode->ratings)) : ?>
+                            <i class="fa-solid fa-star"></i>
+                            <?php $i++; ?>
+                        <?php endwhile; ?>
 
-                            <span class="responses">(<?php echo $recode->responses ?>)</span>
-                        </span>
-                        <span class="result3"><?php echo date('h:i A', strtotime($recode->departure_time)) ?></span>
-                        <span class="result4">
-                            <span><?php echo $recode->available_seats_count ?></span>
-                            <span class="capacity">/ <?php echo $recode->capacity ?></span>
-                        </span>
-                        <span class="result5">LKR <?php echo $recode->ticket_price ?></span>
-                    </div>
-                </a>
+                        <?php if ($recode->ratings - (floor($recode->ratings)) > 0) : ?>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                            <?php $i++; ?>
+                        <?php endif; ?>
+
+                        <?php while ($i < 5) : ?>
+                            <i class="fa-regular fa-star"></i>
+                            <?php $i++; ?>
+                        <?php endwhile; ?>
+
+                        <span class="responses">(<?php echo $recode->responses; ?>)</span>
+                    </span>
+
+                    <span class="result3"><?php echo date('h:i A', strtotime($recode->departure_time)) ?></span>
+
+                    <span class="result4">
+                        <span><?php echo $recode->available_seats_count; ?></span>
+                        <span class="capacity">/ <?php echo $recode->capacity; ?></span>
+                    </span>
+
+                    <span class="result5">LKR <?php echo number_format($recode->ticket_price * $data['count'], 2); ?></span>
+                </div>
             <?php endforeach; ?>
         <?php endif; ?>
 

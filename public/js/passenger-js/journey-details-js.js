@@ -5,6 +5,7 @@ const toDropdown = document.getElementById("to");
 // handle changes to "From" dropdown
 fromDropdown.addEventListener("change", function () {
     const selectedValue = fromDropdown.value;
+
     for (let i = 0; i < toDropdown.options.length; i++) {
         if (toDropdown.options[i].value === selectedValue) {
             toDropdown.remove(i);
@@ -17,6 +18,7 @@ fromDropdown.addEventListener("change", function () {
 // handle changes to "To" dropdown
 toDropdown.addEventListener("change", function () {
     const selectedValue = toDropdown.value;
+    
     for (let i = 0; i < fromDropdown.options.length; i++) {
         if (fromDropdown.options[i].value === selectedValue) {
             fromDropdown.remove(i);
@@ -24,7 +26,6 @@ toDropdown.addEventListener("change", function () {
         }
     }
 });
-
 
 
 // handle date
