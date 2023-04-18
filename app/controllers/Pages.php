@@ -91,24 +91,17 @@ class Pages extends Controller{
                 $mail->isSMTP();                                    //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';               //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                           //Enable SMTP authentication
-                $mail->Username   = 'customer.taptobus@gmail.com';  //SMTP username
-                $mail->Password   = 'osilodwfmkfjpouj';             //SMTP password
+                $mail->Username   = CUSTOMER_EMAIL;                 //SMTP username
+                $mail->Password   = CUSTOMER_PASS;                  //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;    //Enable implicit TLS encryption
                 //$mail->SMTPSecure = 'tls';
                 $mail->Port       = 465;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                 //$mail->Port       = 587;
 
                 //Recipients
-                $mail->setFrom('customer.taptobus@gmail.com', $data['name']);
-                $mail->addAddress('taptobus001@gmail.com', 'TapToBus Company');     //Add a recipient
-                /*$mail->addAddress('ellen@example.com');                           //Name is optional
-                $mail->addReplyTo('info@example.com', 'Information');
-                $mail->addCC('cc@example.com');
-                $mail->addBCC('bcc@example.com');*/
-
-                //Attachments
-                /*$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-                $mail->addAttachment('/tmp/image.jpg', 'new.jpg');*/    //Optional name
+                // $mail->setFrom('customer.taptobus@gmail.com', $data['name']);
+                $mail->setFrom(CUSTOMER_EMAIL, $data['name']);
+                $mail->addAddress(TAPTOBUS_EMAIL, 'TapToBus Company');                 //Add a recipient
 
                 //Content
                 $mail->isHTML(true);                                    //Set email format to HTML
