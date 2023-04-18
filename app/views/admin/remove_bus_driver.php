@@ -77,6 +77,8 @@
         </div>
     </dialog>
 
+    <script src="<?php echo URLROOT; ?> /js/admin-js/reset-driver-popup.js"></script>
+
 
 
 
