@@ -25,6 +25,13 @@ class M_Admin_bus_driver_details{
         return $this->db->execute();
 
     }
+
+    // function for delete the row from the table
+    public function deletedrivers($ntcNo){
+        $this->db->query('UPDATE driver SET status = "pending" WHERE ntcNo = :ntcNo');
+        $this->db->bind(":ntcNo", $ntcNo);
+        return $this->db->execute();
+    }
 }
 
 ?>
