@@ -40,7 +40,7 @@ class M_owner_leaverequests{
 
         $this->db->query("UPDATE $table_name SET bus_no=NULL WHERE ntcNo= :user_ntc");
         $this->db->bind(':user_ntc',$user_ntc);
-        $this->db->execute(); 
+        $this->db->execute();  
 
         if($type=='conducter'){ 
 
