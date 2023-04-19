@@ -62,11 +62,20 @@ class M_owner_leaverequests{
 
     }
 
-    public function remove_leaverequest($user_ntc){
+    public function remove_leaverequest($request_id){
 
         // prepare query
-        $this->db->query("DELETE from leave_request WHERE user_ntc = :user_ntc");
-        $this->db->bind(':user_ntc',$user_ntc);
+        $this->db->query("UPDATE leave_request SET status='accept' WHERE request_id = :request_id");
+        $this->db->bind(':request_id',$request_id);
+        $this->db->execute();
+
+    }
+
+    public function remove_leaverequest($request_id){
+
+        // prepare query
+        $this->db->query("UPDATE leave_request SET status='accept' WHERE request_id = :request_id");
+        $this->db->bind(':request_id',$request_id);
         $this->db->execute();
 
     }

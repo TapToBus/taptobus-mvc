@@ -35,16 +35,24 @@ class Owner_leaverequests extends Controller{
         
         $user_ntc = $_GET['user_ntc'];
         $type     = $_GET['type'];
+        $request_id    = $_GET['request_id'];
 
         $data = $this->ownerModel->update_assigned_bus($user_ntc,$type);
         $bus_no = $data->bus_no;
-        $this->remove_leaverequest($user_ntc,$bus_no);
+        $this->remove_leaverequest($request_id,$bus_no);
         
     }
 
-    public function remove_leaverequest($user_ntc,$bus_no){
+    public function remove_leaverequest($request_id,$bus_no){
        
-        $this->ownerModel->remove_leaverequest($user_ntc);
+        $this->ownerModel->remove_leaverequest($request_id);
+        $data = $this->ownerModel1->bus_details($bus_no);
+        $this->view('owner/bus_details',$data); 
+    }
+
+    public function reject_leaverequest($request_id,$bus_no){
+       
+        $this->ownerModel->reject_leaverequest($request_id);
         $data = $this->ownerModel1->bus_details($bus_no);
         $this->view('owner/bus_details',$data); 
     }
