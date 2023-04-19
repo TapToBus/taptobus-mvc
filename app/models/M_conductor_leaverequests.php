@@ -10,7 +10,7 @@ class M_conductor_leaverequests
         $this->db = new Database;
     }
 
-    public function add_leaverequests($data)
+    public function add_leaverequests($data,$data1)
     {
 
         $type = 'conductor';
@@ -21,6 +21,7 @@ class M_conductor_leaverequests
         $this->db->bind(':date_from', $data['date_from']);
         $this->db->bind(':date_to', $data['date_to']);
         $this->db->bind(':reason', $data['reason']);
+        
 
         // execute
         if ($this->db->execute()) {

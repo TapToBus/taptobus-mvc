@@ -33,7 +33,7 @@ class Conductor_leaverequests extends Controller
             ];
 
 
-            if ($this->requestModel->add_leaverequests($data)) {
+            if ($this->requestModel->add_leaverequests($data,$data1)) {
                 direct('conductor_leaverequests/add_leaverequests');
             } else {
                 die('Sorry! Something went wrong');
