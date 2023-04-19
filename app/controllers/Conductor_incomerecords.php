@@ -31,7 +31,6 @@ class Conductor_incomerecords extends Controller
                 'date' => $_POST['date'],
                 'amount' => $_POST['amount'],
                 'bus_no_err' => '',
-                'date_err' => '',
                 'amount_err' => '',
             ];
 
@@ -48,7 +47,7 @@ class Conductor_incomerecords extends Controller
             //     $data['capacity_err'] = 'A valid capacity is required';
             // }
 
-            if (empty($data['bus_no_err']) && empty($data['date_err']) && empty($data['amount_err'])) {
+            if (empty($data['bus_no_err']) && empty($data['amount_err'])) {
 
                 if ($this->recordModel->add_incomerecords($data)) {
                     direct('conductor_incomerecords/add_incomerecords');
@@ -68,7 +67,6 @@ class Conductor_incomerecords extends Controller
                 'date' => '',
                 'amount' => '',
                 'bus_no_err' => '',
-                'date_err' => '',
                 'amount_err' => '',
 
             ];
