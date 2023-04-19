@@ -20,8 +20,7 @@ class Conductor_leaverequests extends Controller
         $new =  $this->requestModel->get_user_details();
         $user_ntc = $new->ntcNo;
         $data1 =  $this->requestModel->view_leaverequests($user_ntc);
-
-
+    
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
@@ -33,7 +32,7 @@ class Conductor_leaverequests extends Controller
             ];
 
 
-            if ($this->requestModel->add_leaverequests($data,$data1)) {
+            if ($this->requestModel->add_leaverequests($data,$new)) {
                 direct('conductor_leaverequests/add_leaverequests');
             } else {
                 die('Sorry! Something went wrong');

@@ -10,23 +10,23 @@ class M_conductor_leaverequests
         $this->db = new Database;
     }
 
-    public function add_leaverequests($data,$data1)
+    public function add_leaverequests($data,$new)
     {
-
+        
         $type = 'conductor';
 
         // prepare query 
-        $this->db->query('INSERT INTO leaverequest (user_ntc,user_fname,user_lname,type,reason,date_from,date_to,owner_nic,bus_no) VALUES (:user_ntc,:user_fname,:user_lname,:type,:reason,:date_from,:date_to,:owner_nic,:bus_no)');
+        $this->db->query('INSERT INTO leave_request (user_ntc,user_fname,user_lname,type,reason,date_from,date_to,owner_nic,bus_no) VALUES (:user_ntc,:user_fname,:user_lname,:type,:reason,:date_from,:date_to,:owner_nic,:bus_no)');
 
         $this->db->bind(':date_from', $data['date_from']);
         $this->db->bind(':date_to', $data['date_to']);
         $this->db->bind(':reason', $data['reason']);
-        $this->db->bind(':user_ntc', $data1->ntcNo);
-        $this->db->bind(':user_fname', $data1->fname);
-        $this->db->bind(':user_fname', $data1->lname);
+        $this->db->bind(':user_ntc', $new['ntcNo']);
+        $this->db->bind(':user_fname', $new['fname']);
+        $this->db->bind(':user_lname', $new['lname']);
         $this->db->bind(':type', $type);
-        $this->db->bind(':owner_nic', $data1->owner_nic);
-        $this->db->bind(':bus_no', $data1->bus_no);
+        $this->db->bind(':owner_nic', $new['owner_nic']);
+        $this->db->bind(':bus_no',$new['bus_no']);
         
 
         // execute
@@ -58,6 +58,7 @@ class M_conductor_leaverequests
         $this->db->bind(':user_ntc', $user_ntc);
         $results = $this->db->resultSet();
         return $results;
+       
     }
 
 }
