@@ -52,6 +52,8 @@
                     <th>Total Ratings</th>
                     <th>Response</th>
                     <th>Owner NIC</th>
+                    <th class="delete-button"></th>
+
                 </tr>
 
                 <?php foreach ($data['drivers'] as $drivers) : ?>
@@ -69,6 +71,11 @@
                         <td><?php echo $drivers->total_ratings; ?></td>
                         <td><?php echo $drivers->responses; ?></td>
                         <td><?php echo $drivers->owner_nic; ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $drivers->ntcNo ?>')">Delete</button>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
