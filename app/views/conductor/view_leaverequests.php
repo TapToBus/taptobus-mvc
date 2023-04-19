@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                    <script>
+                    <!-- <script>
                         const today = new Date().toISOString().split('T')[0];
                         const dateFrom = document.getElementById('date_from');
                         const dateTo = document.getElementById('date_to');
@@ -66,6 +66,11 @@
                               dateTo.min = this.value;
                         });
                         
+                    </script> -->
+
+                    <script>
+                        const today = new Date().toISOString().split('T')[0];
+                        document.getElementById('date_from').setAttribute('min', today);
                     </script>
 
                 </div>
