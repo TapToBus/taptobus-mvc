@@ -78,9 +78,21 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
             </table>
         </div>
     </div>
+    <dialog id="DeletePopup" class="resetPopup">
+        <div class="resetPopup-contianer">
+            <h1>Are You Sure ?</h1>
+            <p>Do you really wants to delete this bus driver.</p>
+
+            <form action="<?php echo URLROOT?>/Admin_view_user_dashboard/delete_bus_driver" method="POST" class="delete-button">
+                    <button class="delete-btn" type="submit" id="deleteBusDriverBtn" name="deleteBusDriverBtn">Yes</button>
+                    <button class="delete-btn" type="button" onclick="closeModal()">No</button>
+            </form>
+        </div>
+    </dialog>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/driver-monthly-chart.js"></script> -->
