@@ -41,7 +41,7 @@ class Conductor_leaverequests extends Controller
         } 
         
         else {
-            // intialize default values
+            
             $data = [
                 'date_from' => '',
                 'date_to' => '',
