@@ -55,7 +55,18 @@
                         </div>
                     </div>
 
+                    <script>
+                        const today = new Date().toISOString().split('T')[0];
+                        const dateFrom = document.getElementById('date_from');
+                        const dateTo = document.getElementById('date_to');
+                        document.getElementById('date_from').setAttribute('min', today);
+   
+                        dateFrom.addEventListener("change",function(){
 
+                              dateTo.min = this.value;
+                        });
+                        
+                    </script>
 
                 </div>
 
