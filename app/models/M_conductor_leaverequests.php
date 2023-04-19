@@ -14,6 +14,8 @@ class M_conductor_leaverequests
     {
 
         $id = $_SESSION['user_id'];
+        $type = 'conductor';
+
         // prepare query 
         $this->db->query('INSERT INTO leaverequest (user_ntc,bus_no,date,amount) VALUES (:user_ntc,:bus_no,:date,:amount)');
 
