@@ -15,7 +15,7 @@ class M_conductor_leaverequests
 
         $id = $_SESSION['user_id'];
         // prepare query 
-        $this->db->query('INSERT INTO incomerecords (user_ntc,bus_no,date,amount) VALUES (:user_ntc,:bus_no,:date,:amount)');
+        $this->db->query('INSERT INTO leaverequest (user_ntc,bus_no,date,amount) VALUES (:user_ntc,:bus_no,:date,:amount)');
 
         $this->db->bind(':user_ntc', $id);
         $this->db->bind(':bus_no', $data['bus_no']);
@@ -30,7 +30,7 @@ class M_conductor_leaverequests
         }
     }
 
-    public function find_bus()
+    public function get_user_details()
     {
 
         $id = $_SESSION['user_id'];
@@ -43,7 +43,7 @@ class M_conductor_leaverequests
         return $result;
     }
 
-    public function view_incomerecords($bus_no)
+    public function view_leaverequests($user_ntc)
     {
 
 

@@ -17,9 +17,9 @@ class Conductor_leaverequests extends Controller
     public function add_leaverequests()
     {
 
-        $new =  $this->requestModel->find_bus();
-        $bus_no = $new->bus_no;
-        $data1 =  $this->requestModel->view_incomerecords($bus_no);
+        $new =  $this->requestModel->get_user_details();
+        $user_ntc = $new->ntcNo;
+        $data1 =  $this->requestModel->view_leaverequests($user_ntc);
 
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
