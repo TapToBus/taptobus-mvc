@@ -23,7 +23,6 @@ class Conductor_leaverequests extends Controller
 
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // intialize data
 
 
             $data = [
