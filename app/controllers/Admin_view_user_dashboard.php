@@ -63,15 +63,25 @@ class Admin_view_user_dashboard extends Controller{
 
     //view bus owner page
 
-    public function view_bus_owner(){
-            
+    public function view_bus_owner(){            
         $owners = $this->pagesModelBusOwners->getowners();
-
         $data = ['owners' => $owners];
-
         $this->view('admin/view_bus_owner', $data);
-
     }
+
+    //delete bus conductor from users
+
+    public function delete_bus_owner(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['deleteBusOwnerBtn'])){
+                $nic = $_POST['deleteBusOwnerBtn'];
+                $response = $this->pagesModelBusOwners->deleteowners($nic);
+                $this->view_bus_owner();
+            }
+        }
+    } 
+
+
 
     //view bus driver page
 
