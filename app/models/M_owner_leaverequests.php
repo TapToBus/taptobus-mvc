@@ -71,10 +71,10 @@ class M_owner_leaverequests{
 
     }
 
-    public function remove_leaverequest($request_id){
+    public function reject_leaverequest($request_id){
 
         // prepare query
-        $this->db->query("UPDATE leave_request SET status='accept' WHERE request_id = :request_id");
+        $this->db->query("UPDATE leave_request SET status='reject' WHERE request_id = :request_id");
         $this->db->bind(':request_id',$request_id);
         $this->db->execute();
 
