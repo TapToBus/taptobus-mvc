@@ -21,12 +21,12 @@ class M_conductor_leaverequests
         $this->db->bind(':date_from', $data['date_from']);
         $this->db->bind(':date_to', $data['date_to']);
         $this->db->bind(':reason', $data['reason']);
-        $this->db->bind(':user_ntc', $new['ntcNo']);
-        $this->db->bind(':user_fname', $new['fname']);
-        $this->db->bind(':user_lname', $new['lname']);
+        $this->db->bind(':user_ntc', $new->ntcNo);
+        $this->db->bind(':user_fname', $new->fname);
+        $this->db->bind(':user_lname', $new->lname);
         $this->db->bind(':type', $type);
-        $this->db->bind(':owner_nic', $new['owner_nic']);
-        $this->db->bind(':bus_no',$new['bus_no']);
+        $this->db->bind(':owner_nic', $new->owner_nic);
+        $this->db->bind(':bus_no',$new->bus_no);
         
 
         // execute
