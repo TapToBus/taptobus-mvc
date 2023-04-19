@@ -78,8 +78,9 @@ class Conductor_incomerecords extends Controller
         }
     }
 
-    public function delete_incomerecords($record_id){
+    public function delete_incomerecords(){
 
+        $record_id = $_GET['record_id'];
         $this->recordModel->delete_incomerecords($record_id);
         $new =  $this->recordModel->find_bus();
         $bus_no = $new->bus_no;

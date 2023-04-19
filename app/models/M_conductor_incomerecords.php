@@ -52,9 +52,8 @@ class M_conductor_incomerecords{
     
     }
 
-    public function delete_incomerecords(){
+    public function delete_incomerecords($record_id){
 
-        $record_id = $_GET['record_id'];
         // prepare query
         $this->db->query('DELETE from incomerecords WHERE record_id= :record_id');
         $this->db->bind(':record_id',$record_id);
