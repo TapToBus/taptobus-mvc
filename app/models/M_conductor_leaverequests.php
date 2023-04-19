@@ -36,7 +36,7 @@ class M_conductor_leaverequests
         $id = $_SESSION['user_id'];
 
         // prepare query
-        $this->db->query('SELECT bus_no from conductor WHERE nic= :nic');
+        $this->db->query('SELECT * from conductor WHERE nic= :nic');
 
         $this->db->bind(':nic', $id);
         $result = $this->db->single();
@@ -46,9 +46,9 @@ class M_conductor_leaverequests
     public function view_leaverequests($user_ntc)
     {
         // prepare query
-        $this->db->query('SELECT date,amount from incomerecords WHERE bus_no= :bus_no');
+        $this->db->query('SELECT * from leave_request WHERE user_ntc= :user_ntc');
 
-        $this->db->bind(':bus_no', $bus_no);
+        $this->db->bind(':user_ntc', $user_ntc);
         $results = $this->db->resultSet();
         return $results;
     }
