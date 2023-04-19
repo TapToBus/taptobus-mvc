@@ -94,6 +94,8 @@
         </div>
     </dialog>
 
+    <script src="<?php echo URLROOT; ?> /js/admin-js/delete-driver-popup.js"></script>
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/driver-monthly-chart.js"></script> -->
 
