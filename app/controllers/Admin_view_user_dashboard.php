@@ -77,11 +77,23 @@ class Admin_view_user_dashboard extends Controller{
 
     public function view_bus_driver(){
         $drivers = $this->pagesModelBusDrivers->getdrivers();
-
         $data = ['drivers' => $drivers];
-
         $this->view('admin/view_bus_driver', $data);
     }
+
+    //delete bus conductor from users
+
+    public function delete_bus_driver(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['deleteBusDriverBtn'])){
+                $ntcNo = $_POST['deleteBusDriverBtn'];
+                $response = $this->pagesModelBusDrivers->deletedrivers($ntcNo);
+                $this->view_bus_driver();
+            }
+        }
+    }    
+    
+
 
 
     //view bus conductor page
@@ -103,6 +115,9 @@ class Admin_view_user_dashboard extends Controller{
             }
         }
     }
+
+
+
 
     
 
