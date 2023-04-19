@@ -13,16 +13,14 @@ class M_conductor_leaverequests
     public function add_leaverequests($data)
     {
 
-        $id = $_SESSION['user_id'];
         $type = 'conductor';
 
         // prepare query 
         $this->db->query('INSERT INTO leaverequest (user_ntc,bus_no,date,amount) VALUES (:user_ntc,:bus_no,:date,:amount)');
 
-        $this->db->bind(':user_ntc', $id);
-        $this->db->bind(':bus_no', $data['bus_no']);
-        $this->db->bind(':date', $data['date']);
-        $this->db->bind(':amount', $data['amount']);
+        $this->db->bind(':date_from', $data['date_from']);
+        $this->db->bind(':date_to', $data['date_to']);
+        $this->db->bind(':reason', $data['reason']);
 
         // execute
         if ($this->db->execute()) {
