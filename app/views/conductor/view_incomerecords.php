@@ -31,7 +31,7 @@
                             <label>Bus No</label>
                         </div>
                         <div class="b">
-                            <input type="text" class="form-control" name="bus_no" id="bus_no" required>
+                            <input type="text"  name="bus_no" id="bus_no" required>
                         </div>
                         <span><?php echo $data['bus_no_err']; ?></span>
                     </div>
@@ -41,7 +41,7 @@
                             <label>Date</label>
                         </div>
                         <div class="b">
-                            <input type="date" class="form-control" name="date" id="date" required>
+                            <input type="date"  name="date" id="date" required>
                         </div>
 
                     </div>
@@ -51,7 +51,7 @@
                             <label>Amount</label>
                         </div>
                         <div class="b">
-                            <input type="text" class="form-control" name="amount" id="amount" required>
+                            <input type="text"  name="amount" id="amount" required>
                         </div>
                     </div>
 
