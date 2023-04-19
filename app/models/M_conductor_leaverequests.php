@@ -45,8 +45,6 @@ class M_conductor_leaverequests
 
     public function view_leaverequests($user_ntc)
     {
-
-
         // prepare query
         $this->db->query('SELECT date,amount from incomerecords WHERE bus_no= :bus_no');
 
