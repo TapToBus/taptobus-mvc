@@ -16,11 +16,17 @@ class M_conductor_leaverequests
         $type = 'conductor';
 
         // prepare query 
-        $this->db->query('INSERT INTO leaverequest (user_ntc,bus_no,date,amount) VALUES (:user_ntc,:bus_no,:date,:amount)');
+        $this->db->query('INSERT INTO leaverequest (user_ntc,user_fname,user_lname,type,reason,date_from,date_to,owner_nic,bus_no) VALUES (:user_ntc,:user_fname,:user_lname,:type,:reason,:date_from,:date_to,:owner_nic,:bus_no)');
 
         $this->db->bind(':date_from', $data['date_from']);
         $this->db->bind(':date_to', $data['date_to']);
         $this->db->bind(':reason', $data['reason']);
+        $this->db->bind(':user_ntc', $data1->ntcNo);
+        $this->db->bind(':user_fname', $data1->fname);
+        $this->db->bind(':user_fname', $data1->lname);
+        $this->db->bind(':type', $type);
+        $this->db->bind(':owner_nic', $data1->owner_nic);
+        $this->db->bind(':bus_no', $data1->bus_no);
         
 
         // execute
