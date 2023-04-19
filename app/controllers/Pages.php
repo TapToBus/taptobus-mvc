@@ -1,12 +1,5 @@
 <?php
 
-
-// Import PHPMailer classes into the global namespace
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-
 class Pages extends Controller{
     public function __construct(){
         //
@@ -74,48 +67,21 @@ class Pages extends Controller{
 
 
              // make sure errors are empty
-            if(empty($data['name_err']) && empty($data['email_err']) && empty($data['mobileNo_err']) && empty($data['subject_err']) &&  empty($data['message_err'])){
+            if(empty($data['name_err']) && empty($data['email_err']) 
+            && empty($data['mobileNo_err']) && empty($data['subject_err']) 
+            &&  empty($data['message_err'])){
 
+                $mailer = new Mailer(CUSTOMER_EMAIL, CUSTOMER_PASS, $data['name']);
 
-                // start phpmailer -------------------------------
+                $subject = countact_us_subject($data['subject']);
+                $body = contact_us_body($data['message'], $data['name'], $data['email'], $data['mobileNo']);
 
-                //Load Composer's autoloader
-                require APPROOT . '/phpmailer/vendor/autoload.php';
-
-                //Create an instance; passing `true` enables exceptions
-                $mail = new PHPMailer(true);
-
-                //Server settings
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;              //Enable verbose debug output
-                //$mail->SMTPDebug = 2;
-                $mail->isSMTP();                                    //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';               //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                           //Enable SMTP authentication
-                $mail->Username   = CUSTOMER_EMAIL;                 //SMTP username
-                $mail->Password   = CUSTOMER_PASS;                  //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;    //Enable implicit TLS encryption
-                //$mail->SMTPSecure = 'tls';
-                $mail->Port       = 465;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-                //$mail->Port       = 587;
-
-                // Recipients
-                // $mail->setFrom('customer.taptobus@gmail.com', $data['name']);
-                $mail->setFrom(CUSTOMER_EMAIL, $data['name']);
-                $mail->addAddress(TAPTOBUS_EMAIL, 'TapToBus Company');                 //Add a recipient
-
-                //Content
-                $mail->isHTML(true);                                    //Set email format to HTML
-                $mail->Subject = 'TapToBus Contact us form: ' . $data['subject'];
-                $mail->Body = '<p>' . $data['message'] . '</p><br><p>' . $data['name'] . '<br>' . $data['mobileNo'] . '<br>' . $data['email'] . '</p>' ;
-                //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-                if ($mail->send()) {
-                    die('Message has been sent');
-                } else {
-                    die('Message could not be sent');
+                if($mailer->send(TAPTOBUS_EMAIL, $subject, $body)){
+                    die('Success');
+                }else{
+                    die('Failed');
                 }
-
-                // end phpmailer ---------------------------------
+                
 
             }else{
                 // load view with errors
