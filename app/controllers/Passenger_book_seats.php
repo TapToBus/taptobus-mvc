@@ -112,18 +112,7 @@ class Passenger_book_seats extends Controller{
             $data['driver'] = $this->busModel->getDriverDetails($data['bus']->driver_ntc);
             $data['conductor'] = $this->busModel->getConductorDetails($data['bus']->conductor_ntc);
 
-            print_r($data['bus']);
-            echo '<br>';
-            print_r($data['bus_rides']);
-            echo '<br>';
-            print_r($data['driver']);
-            echo '<br>';
-            print_r($data['conductor']);
-            echo '<br>';
-            echo '<br>';
-            print_r($data);
-
-            //$this->view('passenger/bus_details', $data);
+            $this->view('passenger/bus_details', $data);
         }else{
             direct('passenger_book_seats/journey_details');
         }

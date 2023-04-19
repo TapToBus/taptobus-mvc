@@ -53,7 +53,7 @@
 
                     <div class="row">
                         <span class="col1">Rides:</span>
-                        <span class="col2"><?php echo $data['bus_rides']->count; ?></span>
+                        <span class="col2"><?php echo isset($data['bus_rides']->count) ? $data['bus_rides']->count : 0; ?></span>
                     </div>
 
                     <div class="row">
@@ -68,18 +68,23 @@
                                 <!-- <?php if ($data['bus']->ac == 1) : ?>
                                     <i class="fa-solid fa-snowflake"></i>
                                 <?php endif; ?> -->
+
                                 <?php if ($data['bus']->tv == 1) : ?>
                                     <i class="fa-solid fa-tv"></i>
                                 <?php endif; ?>
+
                                 <!-- <?php if ($data['bus']->sounds == 1) : ?>
                                     <i class="fa-solid fa-volume-high"></i>
                                 <?php endif; ?> -->
+
                                 <!-- <?php if ($data['bus']->adj_seats == 1) : ?>
                                     <i class="fa-solid fa-sliders"></i>
                                 <?php endif; ?> -->
+
                                 <?php if ($data['bus']->wifi == 1) : ?>
                                     <i class="fa-solid fa-wifi"></i>
                                 <?php endif; ?>
+
                                 <?php if ($data['bus']->usb == 1) : ?>
                                     <i class="fa-brands fa-usb"></i>
                                 <?php endif; ?>
@@ -154,19 +159,11 @@
             </div>
 
             <div class="btn">
-                <?php
-                    $bus_no = $data['bus']->bus_no;
-                    $capacity = $data['bus']->capacity;
-                    $schedule_id = $data['schedule_id'];
-                    $booked_seats_id = $data['booked_seats_id'];
-                    $count = $data['count'];
-                ?>
-                
                 <button class="left" onclick="goBack()">Back</button>
-                <button class="right" onclick="goNext('<?php echo $bus_no ?>', '<?php echo $capacity ?>', '<?php echo $schedule_id ?>', '<?php echo $booked_seats_id ?>', '<?php echo $count ?>')">Next</button>
+                <button class="right" 
+                onclick="goNext('<?php echo $data['from']; ?>', '<?php echo $data['to']; ?>', '<?php echo $data['date']; ?>', '<?php echo $data['count']; ?>', '<?php echo $data['sch_id']; ?>', '<?php echo $data['boks_id']; ?>', '<?php echo $data['bus_no']; ?>', '<?php echo $data['bus']->capacity; ?>')">Next</button>
+            
             </div>
-
-
         </div>
     </div>
 

@@ -14,7 +14,7 @@ class M_passenger_book_seats{
         $day = date('l', strtotime($date));
 
         $this->db->query('SELECT sch.id as sch_id, sch.departure_time, sch.ticket_price,
-                    b.bus_no, b.capacity, b.ratings, b.responses,
+                    b.bus_no, b.capacity, b.ratings, b.responses, b.dri_ntc, b.con_ntc,
                     boks.id as boks_id, boks.available_seats_count
                     FROM schedule sch 
                     INNER JOIN bus b ON sch.bus_no = b.bus_no 

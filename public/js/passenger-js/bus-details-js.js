@@ -3,8 +3,8 @@ function goBack(){
 }
 
 
-function goNext(bus_no, capacity, schedule_id, booked_seats_id, count) {
-    var url = "http://localhost/taptobus/passenger_book_seats/select_seats?bus_no=" + bus_no + "&capacity=" + capacity +"&schedule_id=" + schedule_id + "&booked_seats_id=" + booked_seats_id + "&count=" + count;
+function goNext(from, to, date, count, sch_id, boks_id, bus_no, capacity) {
+    const url = "http://localhost/taptobus/passenger_book_seats/select_seats?from=" +from+ "&to=" +to+ "&date=" +date+ "&count=" +count+ "&sch_id=" +sch_id+ "&boks_id=" +boks_id+ "&bus_no=" +bus_no+ "&capacity" +capacity;
     window.location.href = url;
 }
   
