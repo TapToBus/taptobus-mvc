@@ -52,6 +52,7 @@
                     <th>Total Ratings</th>
                     <th>Response</th>
                     <th>Owner NIC</th>
+                    <th class="delete-button"></th>
                 </tr>
 
                 <?php foreach ($data['conductors'] as $conductors) : ?>
@@ -69,6 +70,11 @@
                         <td><?php echo $conductors->total_ratings; ?></td>
                         <td><?php echo $conductors->responses; ?></td>
                         <td><?php echo $conductors->owner_nic; ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $conductors->ntcNo ?>')">Delete</button>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
 
