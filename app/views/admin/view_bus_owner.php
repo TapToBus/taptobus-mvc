@@ -43,6 +43,7 @@
                     <th>Last name</th>
                     <th>Email</th>
                     <th>Mobile no</th>
+                    <th class="delete-button"></th>
                 </tr>
 
                 <?php foreach ($data['owners'] as $owners) : ?>
@@ -52,6 +53,11 @@
                         <td><?php echo $owners->lname; ?></td>
                         <td><?php echo $owners->email; ?></td>
                         <td><?php echo $owners->mobileNo; ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $owners->nic ?>')">Delete</button>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
