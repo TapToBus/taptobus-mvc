@@ -31,9 +31,9 @@
                             <label>Date from</label>
                         </div>
                         <div class="b">
-                            <input type="date" class="form-control" name="date_from" id="date_to" required>
+                            <input type="date" class="form-control" name="date_from" id="date_from" required>
                         </div>
-                        
+
                     </div>
 
                     <div class="row">
@@ -55,23 +55,28 @@
                         </div>
                     </div>
 
-                    <!-- <script>
+                    <script>
                         const today = new Date().toISOString().split('T')[0];
                         const dateFrom = document.getElementById('date_from');
                         const dateTo = document.getElementById('date_to');
                         document.getElementById('date_from').setAttribute('min', today);
-   
-                        dateFrom.addEventListener("change",function(){
 
-                              dateTo.min = this.value;
+                        dateFrom.addEventListener("change", function() {
+
+                            dateTo.min = this.value;
                         });
-                        
-                    </script> -->
 
-                    <script>
+                        dateTo.addEventListener("change", function() {
+
+                            dateFrom.disabled = true;
+                        });
+                    </script>
+
+                    <!-- <script>
                         const today = new Date().toISOString().split('T')[0];
                         document.getElementById('date_from').setAttribute('min', today);
-                    </script>
+                        dateTo.disabled = true;
+                    </script> -->
 
                 </div>
 
@@ -92,38 +97,38 @@
 
         <div class="container2">
 
-           <table>
- 
-             <thead>
-                <tr>
-                    <th>Request ID</th>
-                    <th>Date From</th>
-                    <th>Status</th>
-                </tr>
-             </thead>
+            <table>
 
-             <tbody>
-             <?php
-                
-                foreach ($data1 as $row):
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Date From</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
 
-             ?>
+                <tbody>
+                    <?php
 
-              <tr>
-                <td><?php echo $row->request_id;?></td>
-                <td><?php echo $row->date_from;?></td>
-                <td><?php echo $row->status;?></td>
-              </tr>
+                    foreach ($data1 as $row) :
 
-              <?php
-                
-                endforeach;
+                    ?>
 
-              ?>
+                        <tr>
+                            <td><?php echo $row->request_id; ?></td>
+                            <td><?php echo $row->date_from; ?></td>
+                            <td><?php echo $row->status; ?></td>
+                        </tr>
 
-             </tbody>
+                    <?php
 
-           </table>
+                    endforeach;
+
+                    ?>
+
+                </tbody>
+
+            </table>
 
         </div>
 
