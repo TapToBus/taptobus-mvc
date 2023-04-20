@@ -17,16 +17,6 @@ input.addEventListener('change', () => {
 
 
 
-// const passwordBtn = document.getElementById('passwordBtn');
-// const passwordFields = document.querySelectorAll('.password-field');
-
-// passwordBtn.addEventListener('click', function () {
-//     passwordFields.forEach(function (field) {
-//         field.classList.toggle('hidden');
-//     });
-// });
-
-
 const passwordBtn = document.getElementById('passwordBtn');
 const passwordFields = document.querySelectorAll('.password-field');
 const currPwdField = document.getElementById('curr_pwd');

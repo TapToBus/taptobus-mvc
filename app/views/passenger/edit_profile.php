@@ -16,7 +16,7 @@
         <form action="<?php echo URLROOT; ?>/passenger_profile/edit_profile" method="POST">
             <div class="pic">
                 <div class="img">
-                    <img id="preview" src="<?= URLROOT; ?>/img/profile-pic/default.jpg" alt="<?php echo $data['details']->nic; ?>" width="100" height="100"><br>
+                    <img id="preview" src="<?= URLROOT; ?>/img/profile-pic/<?php echo $data['details']->pic ?>" alt="<?php echo $data['details']->nic; ?>" width="100" height="100"><br>
                     <input type="file" name="pic" id="pic" accept="image/*">
                 </div>
             </div>
@@ -29,11 +29,13 @@
             <div class="fname">
                 <label for="fname">First name</label> <br>
                 <input type="text" name="fname" id="fname" value="<?php echo $data['details']->fname; ?>">
+                <span><?php echo $data['fname_err']; ?></span>
             </div>
 
             <div class="lname">
                 <label for="lname">Last name</label> <br>
                 <input type="text" name="lname" id="lname" value="<?php echo $data['details']->lname; ?>">
+                <span><?php echo $data['lname_err']; ?></span>
             </div>
 
             <div class="email">
@@ -43,7 +45,7 @@
 
             <div class="mobile_no">
                 <label for="mobile_no">Mobile No</label> <br>
-                <input type="text" name="mobile_no" id="mobile_no" value="<?php echo $data['details']->mobile_no; ?>">
+                <input type="text" name="mobile_no" id="mobile_no" value="<?php echo $data['details']->mobile_no; ?>" readonly>
             </div>
 
             <div class="password">
@@ -53,16 +55,19 @@
             <div class="curr_pwd password-field hidden">
                 <label for="curr_pwd">Current password</label> <br>
                 <input type="password" name="curr_pwd" id="curr_pwd">
+                <span><?php echo $data['curr_pwd_err']; ?></span>
             </div>
 
             <div class="new_pwd password-field hidden">
                 <label for="new_pwd">New password</label> <br>
-                <input type="password" name="new_pwd" id="new_pwd">
+                <input type="password" name="new_pwd" id="new_pwd" maxlength="10">
+                <span><?php echo $data['new_pwd_err']; ?></span>
             </div>
 
             <div class="confirm_pwd password-field hidden">
                 <label for="confirm_pwd">Confirm password</label> <br>
-                <input type="password" name="confirm_pwd" id="confirm_pwd">
+                <input type="password" name="confirm_pwd" id="confirm_pwd" maxlength="10">
+                <span><?php echo $data['confirm_pwd_err']; ?></span>
             </div>
 
             <div class="btn">
