@@ -1,0 +1,24 @@
+@import url(../main.css);
+
+
+:root {
+    --clr-white: #fff;
+    --clr-black: #000;
+
+    --clr-navbar-top: #141E61;
+    --clr-navbar-side-bg: #E6E6E6;          /* rgb(230, 230, 230) */
+    --clr-navbar-side-hover: #C8C8C8;       /* rgb(200, 200, 200) */
+    
+    --clr-bg: #fff;
+    --clr-input-field: #E6E6E6;             /* rgb(230, 230, 230) */
+    --clr-input-outline: #00BFFF;
+    --clr-error: #FF0000;
+    --clr-content-hover: #F0F0F0;           /* rgb(240, 240, 240) */
+    --clr-table-title-bg: #D2D2D2;          /* rgb(210, 210, 210) */
+    --clr-table-result-hover: #F0F0F0;      /* rgb(240, 240, 240) */
+    --clr-button: #141E61;
+    --clr-delete-button: #FF0000;
+    --clr-button-hover: #303b86;
+    --clr-delete-button-hover: rgb(185, 61, 61);
+    --clr-no-data-to-display: #BEBEBE;      /* rgb(190, 190, 190) */
+}

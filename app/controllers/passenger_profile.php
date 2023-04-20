@@ -3,6 +3,7 @@
 class passenger_profile extends Controller{
     private $profileModel;
     
+
     public function __construct(){
         if(! isLoggedIn()){
             direct('users/login');
@@ -13,25 +14,7 @@ class passenger_profile extends Controller{
 
     
     public function profile(){
-        // $data1 = $this->profileModel->getPassengerDetails($_SESSION['user_id']);
-        // print_r($data1);
-
-        // echo '<br><br>';
-
-        // $data2 = $this->profileModel->getJourneysCount($_SESSION['user_id']);
-        // echo $data2;
-
-        // echo '<br><br>';
-
-        // $data3 = $this->profileModel->getCancellationsCount($_SESSION['user_id']);
-        // echo $data3;
-
-
-        // echo '<br><br>';
-
-        // $data5 = $this->profileModel->getUpcomingJourney($_SESSION['user_id']);
-        // print_r($data5);
-
+        
         $data = [
             'profile' => $this->profileModel->getPassengerDetails($_SESSION['user_id']),
             'journeysCount' => $this->profileModel->getJourneysCount($_SESSION['user_id']),
@@ -42,5 +25,10 @@ class passenger_profile extends Controller{
         // echo $data['profile']->nic;
 
         $this->view('passenger/profile', $data);
+    }
+
+
+    public function edit_profile(){
+        $this->view('passenger/edit_profile');
     }
 }
