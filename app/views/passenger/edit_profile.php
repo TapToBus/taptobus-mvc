@@ -28,7 +28,7 @@
 
             <div class="fname">
                 <label for="fname">First name</label> <br>
-                <input type="text" name="fname" id="lname" value="<?php echo $data['details']->fname; ?>">
+                <input type="text" name="fname" id="fname" value="<?php echo $data['details']->fname; ?>">
             </div>
 
             <div class="lname">
@@ -47,7 +47,22 @@
             </div>
 
             <div class="password">
-                <input type="button" value="Change password">
+                <input type="button" value="Change password" id="passwordBtn">
+            </div>
+
+            <div class="curr_pwd password-field hidden">
+                <label for="curr_pwd">Current password</label> <br>
+                <input type="password" name="curr_pwd" id="curr_pwd">
+            </div>
+
+            <div class="new_pwd password-field hidden">
+                <label for="new_pwd">New password</label> <br>
+                <input type="password" name="new_pwd" id="new_pwd">
+            </div>
+
+            <div class="confirm_pwd password-field hidden">
+                <label for="confirm_pwd">Confirm password</label> <br>
+                <input type="password" name="confirm_pwd" id="confirm_pwd">
             </div>
 
             <div class="btn">

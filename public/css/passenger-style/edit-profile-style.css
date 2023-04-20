@@ -22,3 +22,9 @@
     --clr-delete-button-hover: rgb(185, 61, 61);
     --clr-no-data-to-display: #BEBEBE;      /* rgb(190, 190, 190) */
 }
+
+
+.password-field.hidden {
+    display: none;
+}
+  

@@ -37,7 +37,10 @@ class passenger_profile extends Controller{
                 'fname' => $_POST['fname'],
                 'lname' => $_POST['lname'],
                 'email' => $_POST['email'],
-                'mobile_no' => $_POST['mobile_no']
+                'mobile_no' => $_POST['mobile_no'],
+                'curr_pwd' => $_POST['curr_pwd'],
+                'new_pwd' => $_POST['new_pwd'],
+                'confirm_pwd' => $_POST['confirm_pwd']
             ];
 
             print_r($data);
