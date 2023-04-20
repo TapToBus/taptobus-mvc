@@ -23,7 +23,7 @@
 
             <div class="nic">
                 <label for="nic">NIC</label> <br>
-                <input type="text" name="nic" id="nic" value="<?php echo $data['details']->nic; ?>">
+                <input type="text" name="nic" id="nic" value="<?php echo $data['details']->nic; ?>" readonly>
             </div>
 
             <div class="fname">
@@ -38,7 +38,7 @@
 
             <div class="email">
                 <label for="email">Email</label> <br>
-                <input type="text" name="email" id="email" value="<?php echo $data['details']->email; ?>">
+                <input type="text" name="email" id="email" value="<?php echo $data['details']->email; ?>" readonly>
             </div>
 
             <div class="mobile_no">
