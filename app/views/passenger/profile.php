@@ -64,7 +64,7 @@
                 <div class="right">
                     <span class="col1">Upcoming journey:</span>
                     <span class="col2">
-                        <?php echo isset($data['upcomingJourney']) ? $data['upcomingJourney']->from . ' > ' . $data['upcomingJourney']->to: '0'; ?>
+                        <?php echo ! empty($data['upcomingJourney']) ? ($data['upcomingJourney']->from . ' > ' . $data['upcomingJourney']->to): '--'; ?>
                     </span>
                 </div>
             </div>
