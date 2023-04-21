@@ -125,12 +125,23 @@ class Passenger_register extends Controller{
                     $otp = generateOTP();
 
                     if($this->passengerModel->setPassengerOTP($data['nic'], $otp)){
-                        direct('passenger_register/verify_otp?id=' . $data['nic']);
+                        // direct('passenger_register/verify_otp?id=' . $data['nic']);
+
+                        $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, 'TapToBus');
+
+                        $subject = emailVerSubject();
+                        $body = emailVerBody($otp);
+
+                        if($mailer->send($data['email'], $subject, $body)){
+                            direct('passenger_register/verify_otp?id=' . $data['nic']);
+                        }else{
+                            die('Sorry! Something went wrong 1');
+                        }
                     }else{
-                        die('Sorry! Something went wrong');    
+                        die('Sorry! Something went wrong 2');    
                     }
                 }else{
-                    die('Sorry! Something went wrong');
+                    die('Sorry! Something went wrong 3');
                 }
 
             }else{
@@ -196,11 +207,25 @@ class Passenger_register extends Controller{
                     
                     // compare otps
                     if( ($data['otp'] == $pOTP) && ($nic == $pNIC) ){
-                        if($this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')){
+                        // if($this->passengerModel->activePassenger($pNIC)){
+
+                        //     if ($this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')) {
+                        //         direct('users/login');
+                        //     } else {
+                        //         die('Sorry! Something went wrong 1');
+                        //     }
+                                                                                        
+                        // }else{
+                        //     die('Sorry! Something went wrong 2');
+                        // }
+
+                        if($this->passengerModel->activePassenger($pNIC) && 
+                        $this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')){
                             direct('users/login');
                         }else{
                             die('Sorry! Something went wrong');
                         }
+
                     }else{
                         $data['otp_err'] = 'Incorrect OTP';
                         $this->view('passenger/verify_otp', $data);

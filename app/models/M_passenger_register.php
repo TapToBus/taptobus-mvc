@@ -109,4 +109,13 @@ class M_passenger_register{
 
         return $this->db->single();
     }
+
+
+    public function activePassenger($passenger_nic){
+        $this->db->query('UPDATE passenger SET status = :status WHERE nic = :passenger_nic');
+        $this->db->bind(':status', 'active');
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        return $this->db->execute();
+    }
 }
