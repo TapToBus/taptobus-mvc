@@ -87,4 +87,26 @@ class M_passenger_register{
             return false;
         }
     }
+
+
+    // set passenger OTP
+    public function setPassengerOTP($passenger_nic, $otp){
+        $this->db->query('UPDATE passenger SET otp = :otp WHERE nic = :passenger_nic;');
+        $this->db->bind(':otp', $otp);
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    public function getPassengerDetails($passenger_nic){
+        $this->db->query('SELECT * FROM passenger WHERE nic = :passenger_nic');
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        return $this->db->single();
+    }
 }

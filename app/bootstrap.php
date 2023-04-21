@@ -18,3 +18,4 @@ require_once 'helpers/session_helper.php';
 require_once 'helpers/mail_helper.php';
 require_once 'helpers/contact_us_sub_tmplt.php';
 require_once 'helpers/contact_us_bdy_tmplt.php';
+require_once 'helpers/otp_helper.php';
