@@ -12,8 +12,8 @@ class M_passenger_register{
     // register passenger
     public function register($data){
         // prepare query
-        $this->db->query('INSERT INTO passenger(nic, fname, lname, email, mobile_no, password_hash)
-        VALUES (:nic, :fname, :lname, :email, :mobile_no, :password_hash)');
+        $this->db->query('INSERT INTO passenger(nic, fname, lname, email, mobile_no, password_hash, joined_datetime)
+        VALUES (:nic, :fname, :lname, :email, :mobile_no, :password_hash, CURRENT_TIMESTAMP)');
 
         // bind values
         $this->db->bind(':nic', $data['nic']);
@@ -112,7 +112,8 @@ class M_passenger_register{
 
 
     public function activePassenger($passenger_nic){
-        $this->db->query('UPDATE passenger SET status = :status WHERE nic = :passenger_nic');
+        // $this->db->query('UPDATE passenger SET status = :status WHERE nic = :passenger_nic');
+        $this->db->query('UPDATE passenger SET status = :status, joined_datetime = CURRENT_TIMESTAMP WHERE nic = :passenger_nic');
         $this->db->bind(':status', 'active');
         $this->db->bind(':passenger_nic', $passenger_nic);
 
