@@ -61,14 +61,17 @@
                         const dateTo = document.getElementById('date_to');
                         document.getElementById('date_from').setAttribute('min', today);
 
+                        dataTo.disabled = true;
                         dateFrom.addEventListener("change", function() {
 
-                            dateTo.min = this.value;
+                            dataTo.disabled = false; // enable dateTo once a date is selected in dateFrom
+                            dateTo.min = this.value; // disable dateTo initially
+
                         });
 
                         dateTo.addEventListener("change", function() {
 
-                            dateFrom.disabled = true;
+                            dateFrom.disabled = true; 
                         });
                     </script>
 
