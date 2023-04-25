@@ -88,9 +88,8 @@
     </dialog>
 
 
-
-
     <script src="<?php echo URLROOT; ?>/js/admin/staffhome.js"></script>
+    <script src="<?php echo URLROOT; ?> /js/admin-js/delete-staff-member-popup.js"></script>
 
 
 
