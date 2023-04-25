@@ -97,7 +97,7 @@
             <div class="bottom">
                 <span class="bottom-left">
                     <span class="col1">
-                        <img src="<?php echo URLROOT; ?>/img/bus/<?php echo $data['driver']->pic; ?>" alt="<?php echo $data['driver']->ntcNo; ?>">
+                        <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['driver']->pic; ?>" alt="<?php echo $data['driver']->ntcNo; ?>">
                     </span>
 
                     <span class="col2">
@@ -128,7 +128,7 @@
 
                 <span class="bottom-right">
                     <span class="col1">
-                        <img src="<?php echo URLROOT; ?>/img/bus/<?php echo $data['conductor']->pic; ?>" alt="<?php echo $data['conductor']->ntcNo; ?>">
+                        <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['conductor']->pic; ?>" alt="<?php echo $data['conductor']->ntcNo; ?>">
                     </span>
 
                     <span class="col2">
