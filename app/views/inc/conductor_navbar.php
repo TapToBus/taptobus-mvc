@@ -35,7 +35,7 @@
         </label>
     </div>
     
-    <a href="<?php echo URLROOT; ?>/conductor_Bookings/check_bookings"><i class="fa-solid fa-square-check"></i><span>Dashboard</span></a>
+    <a href="<?php echo URLROOT; ?>/conductor_bookings/check_bookings"><i class="fa-solid fa-square-check"></i><span>Check Bookings</span></a>
     <a href="<?php echo URLROOT; ?>/conductor_incomerecords/add_incomerecords"><i class="fa-solid fa-note-sticky"></i><span>Income Records</span></a>
     <a href="<?php echo URLROOT; ?>/conductor_schedule/view_schedule"><i class="fa-solid fa-calendar-days"></i><span>Schedule</span></a>
     <a href="<?php echo URLROOT; ?>/conductor_leaverequests/add_leaverequests"><i class="fa-solid fa-newspaper"></i><span>Leave Requests</span></a>
