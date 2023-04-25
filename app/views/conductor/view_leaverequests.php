@@ -66,11 +66,12 @@
 
                             dateTo.disabled = false; // enable dateTo once a date is selected in dateFrom
                             dateTo.min = this.value; 
+                            dateTo.value = "";
                         });
 
                         dateTo.addEventListener("change", function() {
 
-                            dateFrom.disabled = true; 
+                            // dateFrom.disabled = true; 
                         });
                     </script>
 
