@@ -19,11 +19,11 @@ class M_owner_leaverequests{
 
     }
 
-    public function request_details($user_ntc){
+    public function request_details($request_id){
         // prepare query
 
-        $this->db->query('SELECT * from leave_request WHERE user_ntc= :user_ntc');
-        $this->db->bind(':user_ntc',$user_ntc);
+        $this->db->query('SELECT * from leave_request WHERE request_id= :request_id');
+        $this->db->bind(':request_id',$request_id);
         $results = $this->db->resultSet();
         return $results;
 

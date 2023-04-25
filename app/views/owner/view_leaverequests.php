@@ -43,8 +43,8 @@
                 </div>
 
                 <div class="btn-div">
-                    <?php $_SESSION['user_ntc'] =  $row->user_ntc; ?>
-                    <a href="<?php echo URLROOT; ?>/owner_leaverequests/request_details?user_ntc=<?php echo $row->user_ntc; ?>"><button class="view">View</button></a>
+                    <!-- <?php $_SESSION['user_ntc'] =  $row->user_ntc; ?> -->
+                    <a href="<?php echo URLROOT; ?>/owner_leaverequests/request_details?request_id=<?php echo $row->request_id; ?>"><button class="view">View</button></a>
                 </div>
             </div>
 

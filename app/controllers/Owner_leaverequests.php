@@ -28,8 +28,8 @@ class Owner_leaverequests extends Controller{
 
     public function request_details(){
         
-        $user_ntc = $_GET['user_ntc'];
-        $data = $this->ownerModel->request_details($user_ntc);
+        $request_id = $_GET['request_id'];
+        $data = $this->ownerModel->request_details($request_id);
         $this->view('owner/request_details',$data);
     }
 
