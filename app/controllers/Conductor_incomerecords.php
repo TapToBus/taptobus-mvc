@@ -35,13 +35,9 @@ class Conductor_incomerecords extends Controller
             ];
 
 
-            // if(! preg_match('/^[N][B-E]-\d{4}$/', $data['bus_no'])){
-            //     $data['bus_no_err'] = 'A valid bus number is required';
-            // }else{
-            //     if($this->ownerModel->findOwnerByBusNo($data['bus_no'])){
-            //         $data['bus_no_err'] = 'Bus No is already used';
-            //     }
-            // }
+            if(! preg_match('/^[N][B-E]-\d{4}$/', $data['bus_no'])){
+                $data['bus_no_err'] = 'A valid bus number is required';
+            }
 
             //  if(! preg_match('/^[4-5][0-9]$|^60$/', $data['capacity'])){
             //     $data['capacity_err'] = 'A valid capacity is required';
