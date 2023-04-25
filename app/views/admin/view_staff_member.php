@@ -61,6 +61,11 @@
                         <td><?php echo $staffmembers->mobile_no; ?></td>
                         <td><?php echo $staffmembers->tele_no; ?></td>
                         <td><?php echo $staffmembers->email; ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $staffmembers->staff_no ?>')">Delete</button>
+                            </div>
+                        </td>
 
 
                     </tr>
