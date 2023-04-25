@@ -61,6 +61,18 @@ class Admin_view_user_dashboard extends Controller{
         $this->view('admin/view_staff_member', $data);
     }
 
+    //delete staff member from users
+
+    public function delete_staff_member(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['deleteStaffMemberBtn'])){
+                $staff_no = $_POST['deleteStaffMemberBtn'];
+                $response = $this->pagesModelStaffMembers->deletestaffmembers($staff_no);
+                $this->view_staff_member();
+            }
+        }
+    } 
+
     //view bus owner page
 
     public function view_bus_owner(){            
