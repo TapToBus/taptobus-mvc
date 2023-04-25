@@ -72,11 +72,6 @@
                         });
                     </script>
 
-                    <!-- <script>
-                        const today = new Date().toISOString().split('T')[0];
-                        document.getElementById('date_from').setAttribute('min', today);
-                        dateTo.disabled = true;
-                    </script> -->
 
                 </div>
 
