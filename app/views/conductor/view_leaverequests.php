@@ -69,10 +69,7 @@
                             dateTo.value = "";
                         });
 
-                        dateTo.addEventListener("change", function() {
-
-                            // dateFrom.disabled = true; 
-                        });
+                      
                     </script>
 
 
