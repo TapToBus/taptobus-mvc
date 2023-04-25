@@ -77,6 +77,8 @@
         </div>
     </dialog>
 
+    <script src="<?php echo URLROOT; ?> /js/admin-js/delete-owner-popup.js"></script>
+
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/owner-monthly-chart.js"></script> -->
