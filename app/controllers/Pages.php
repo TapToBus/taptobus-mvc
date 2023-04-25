@@ -77,9 +77,9 @@ class Pages extends Controller{
                 $body = contact_us_body($data['message'], $data['name'], $data['email'], $data['mobileNo']);
 
                 if($mailer->send(TAPTOBUS_EMAIL, $subject, $body)){
-                    die('Success');
+                    echo 'Success';
                 }else{
-                    die('Failed');
+                    echo 'Error';
                 }
                 
 
