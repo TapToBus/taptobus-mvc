@@ -9,9 +9,9 @@ class Conductor_bookings extends Controller{
     }
     }
 
-    public function view_dashboard(){
+    public function check_bookings(){
       
-      $this->view('conductor/view_dashboard');
+      $this->view('conductor/check_bookings');
     }
 }
 
