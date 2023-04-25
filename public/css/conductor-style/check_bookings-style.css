@@ -1,0 +1,39 @@
+@import url(../main.css);
+@import url(../conductor-style/navbar-style.css);
+
+input[type=text]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 15px;
+}
+
+
+ .outer{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+ }
+
+  .container {
+    
+    border: 1px solid ;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    border-color: hsl(231, 72%, 37%);
+    background-color: #f2f2f2;
+    padding: 20px;
+    min-width: 500px;
+    height: 450px;
+    margin-top: 5%;
+    margin-left: 10rem;
+    line-height:30px;
+    
+  }
+
+  

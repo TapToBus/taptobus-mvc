@@ -12,6 +12,7 @@ class Conductor_bookings extends Controller{
     public function check_bookings(){
       
       $this->view('conductor/check_bookings');
+      echo(1);
     }
 }
 

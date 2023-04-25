@@ -20,7 +20,8 @@
 
         <div class="container">
 
-
+           <input type ="text" id="live_search" autocomplete="off" placeholder= "Enter the code..." >
+           <i class="fa-solid fa-magnifying-glass"></i>
 
 
         </div>
