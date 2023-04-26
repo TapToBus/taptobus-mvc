@@ -87,7 +87,7 @@ class Conductor_incomerecords extends Controller
         //     'amount_err' => '',
 
         // ];
-        $this->view('conductor/view_incomerecords',$data,$data1);
+        $this->view('conductor/view_incomerecords',$data1);
     }
 
 
