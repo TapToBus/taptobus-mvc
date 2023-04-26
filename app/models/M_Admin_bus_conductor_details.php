@@ -37,6 +37,15 @@ class M_Admin_bus_conductor_details{
         return $this->db->execute();
 
     }
+
+    //search function
+
+    public function getSearchBusConductors($search)
+      {
+        $this->db->query("SELECT * FROM conductor WHERE CONCAT(fname,lname) LIKE '%$search%' OR ntcNo LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search' OR email LIKE '%$search'");
+        $result=$this->db->resultSet();
+        return $result;
+      }
 }
 
 ?>
