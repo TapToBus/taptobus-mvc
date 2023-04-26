@@ -13,7 +13,7 @@ class M_passenger_book_seats{
         // find day using date
         $day = date('l', strtotime($date));
 
-        $this->db->query('SELECT sch.id as sch_id, sch.departure_time, sch.ticket_price,
+        /*$this->db->query('SELECT sch.id as sch_id, sch.departure_time, sch.ticket_price,
                     b.bus_no, b.capacity, b.ratings, b.responses, b.dri_ntc, b.con_ntc,
                     boks.id as boks_id, boks.available_seats_count
                     FROM schedule sch 
@@ -28,13 +28,29 @@ class M_passenger_book_seats{
                     AND b.con_ntc IS NOT NULL
                     AND boks.status = \'available\' 
                     AND boks.available_seats_count >= :count
+                    ORDER BY sch.departure_time;');*/
+
+        $this->db->query('SELECT sch.id as sch_id, sch.departure_time, sch.ticket_price,
+                    b.bus_no, b.capacity, b.ratings, b.responses, b.dri_ntc, b.con_ntc,
+                    boks.id as boks_id, boks.available_seats_count
+                    FROM schedule sch 
+                    INNER JOIN bus b ON sch.bus_no = b.bus_no 
+                    INNER JOIN booked_seats boks ON sch.id = boks.schedule_id AND sch.bus_no = boks.bus_no
+                    WHERE sch.from = :from
+                    AND sch.to = :to
+                    AND sch.day = :day 
+                    AND boks.date = :date
+                    AND b.status = \'active\'
+                    AND b.dri_ntc IS NOT NULL
+                    AND b.con_ntc IS NOT NULL
+                    AND boks.status = \'available\'
                     ORDER BY sch.departure_time;');
         
         $this->db->bind(':from', $from);
         $this->db->bind(':to', $to);
         $this->db->bind(':day', $day);
         $this->db->bind(':date', $date);
-        $this->db->bind(':count', $count);
+        //$this->db->bind(':count', $count);
 
         $result = $this->db->resultSet();
 
