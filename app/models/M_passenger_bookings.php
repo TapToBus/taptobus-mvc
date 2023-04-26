@@ -10,7 +10,7 @@ class M_passenger_bookings{
     public function getAllBookings($passenger_nic){
         $this->db->query('SELECT id, bus_no, `from`, `to`, departure_datetime 
                             FROM bookings 
-                            WHERE passenger_nic = :passenger_nic
+                            WHERE passenger_nic = :passenger_nic AND status = \'pending\'
                             ORDER BY departure_datetime');
 
 
