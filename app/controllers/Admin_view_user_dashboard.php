@@ -17,7 +17,7 @@ class Admin_view_user_dashboard extends Controller{
         $this->pagesModelBusDrivers = $this->model('M_Admin_bus_driver_details');
         $this->pagesModelBusConductors = $this->model('M_Admin_bus_conductor_details');
 
-        // var_dump($_SESSION); die();
+        // check if admin is logined to the system
 
         if(!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'admin'){
             direct('user/logout');  

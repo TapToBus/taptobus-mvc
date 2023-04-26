@@ -14,6 +14,12 @@ class Admin_remove_user_dashboard extends Controller{
         $this->pageModelReBusConductor = $this->model('M_Admin_bus_conductor_details');
         $this->pageModelReBusDriver = $this->model('M_Admin_bus_driver_details');
         $this->pageModelReBus = $this->model('M_Admin_bus_details');
+
+        // check if admin is logined to the system
+
+        if(!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'admin'){
+            direct('user/logout');  
+        }
         
     }
 
