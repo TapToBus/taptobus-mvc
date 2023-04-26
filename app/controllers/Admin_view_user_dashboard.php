@@ -147,6 +147,31 @@ class Admin_view_user_dashboard extends Controller{
         }
     } 
 
+    //seach bus owners
+
+    public function  adminSearchBusOwners()
+    {          
+     if($_SERVER['REQUEST_METHOD']=='GET'){
+       $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+ 
+           $search=trim($_GET['search']);            
+           $owners= $this->pagesModelBusOwners->getSearchBusOwners($search);
+           
+           $data=[                      
+             'owners'=>$owners,
+             'search'=>$search
+           ];
+
+           $this->view('admin/view_bus_owner',$data);
+      }else{
+           $data=[                      
+             'owners'=>'',
+             'search'=>''
+           ];
+           $this->view('admin/view_bus_owner',$data);
+      }
+    }
+
 
 
     //view bus driver page
