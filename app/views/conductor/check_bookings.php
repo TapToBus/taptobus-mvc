@@ -27,6 +27,11 @@
 
           </div>
 
+          <div id ="searchresult">
+
+             
+          </div>
+
         </div>
 
 
@@ -47,9 +52,17 @@
                       url: "<?php echo URLROOT; ?>/conductor_bookings/check_bookings",
                       mehtod : "POST",
                       data:{input:input},
-
+                       
+                      success:function(data){
+                        $("#searchresult").html(data);
+                      }
                     });
 
+                }
+
+                else{
+
+                    $("#searchresult").css("display","none");
                 }
             });
         });
