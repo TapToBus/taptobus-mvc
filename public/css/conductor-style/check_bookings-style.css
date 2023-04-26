@@ -1,7 +1,7 @@
 @import url(../main.css);
 @import url(../conductor-style/navbar-style.css);
 
-input[type=text]{
+/* input[type=text]{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -9,7 +9,7 @@ input[type=text]{
     box-sizing: border-box;
     resize: vertical;
     font-size: 15px;
-}
+} */
 
 
  .outer{
@@ -36,13 +36,40 @@ input[type=text]{
     
   }
 
- .i {
+ /* .outer i {
         
-    margin-left: 2rem;
+    margin-right: -20rem;
     width: 2rem;
     height: 3rem ;
     color:#213F99;
 
+} */
+
+
+.container .search-box {
+  position: relative;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
+.container .search-box input[type="text"] {
+  padding-right: 2rem; /* leave space for the icon */
+  padding-left: 3 rem;
+  width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 20px;
+  
+}
+
+.container .search-box i {
+  position: absolute;
+  top: 50%;
+  right: 3.5rem;
+  transform: translateY(-50%);
+  color: #3a029c;
+}
   

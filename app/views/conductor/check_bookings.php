@@ -20,15 +20,18 @@
 
         <div class="container">
 
-           <input type ="text" id="live_search" autocomplete="off" placeholder= "Enter the code..." >
-           <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="search-box">
 
+            <input type ="text" id="live_search" autocomplete="off" placeholder= "Enter the code..." >
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+          </div>
 
         </div>
 
 
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>
 
 </html>
