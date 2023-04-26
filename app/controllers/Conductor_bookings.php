@@ -21,6 +21,7 @@ class Conductor_bookings extends Controller{
 
         $input = $_POST['input'];
         $data =  $this->newModel->check_bookings($input);
+        echo(1);
         var_dump($data);
         $this->view('conductor/check_bookings',$data);
       }
