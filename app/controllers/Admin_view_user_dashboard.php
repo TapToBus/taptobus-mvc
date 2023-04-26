@@ -242,6 +242,30 @@ class Admin_view_user_dashboard extends Controller{
         }
     }
 
+    //bus conductor search
+    public function  adminSearchBusConductors()
+    {          
+     if($_SERVER['REQUEST_METHOD']=='GET'){
+       $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+ 
+           $search=trim($_GET['search']);            
+           $conductors= $this->pagesModelBusConductors->getSearchBusConductors($search);
+           
+           $data=[                      
+             'conductors'=>$conductors,
+             'search'=>$search
+           ];
+
+           $this->view('admin/view_bus_conductor',$data);
+      }else{
+           $data=[                      
+             'conductors'=>'',
+             'search'=>''
+           ];
+           $this->view('admin/view_bus_conductor',$data);
+      }
+    }
+
 
 
 
