@@ -42,7 +42,7 @@
 
             <div class="admin-card">
                 <div class="admin-card-content">
-                    <div class="admin-number">60</div>
+                    <div class="admin-number"><?php echo $data['owner_count'] ?></div>
                     <div class="admin-card-name">Bus Owners</div>
                 </div>
                 <div class="admin-icon-box">
