@@ -18,5 +18,14 @@
         $this->db->bind(":nic", $nic);
         return $this->db->execute();
     }
+
+    //search function
+
+    public function getSearchBusOwners($search)
+      {
+        $this->db->query("SELECT * FROM owner WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search' OR email LIKE '%$search'");
+        $result=$this->db->resultSet();
+        return $result;
+      }
  }
 ?>
