@@ -21,19 +21,18 @@
 
         <div class="searching-and-sorting">
             <div class="searching">
-                <input type="text" id="search" placeholder="Search here">
-                <label for="search"><i class="fas fa-search"></i></label>
+
+                <form class="searchForm" action="<?php echo URLROOT; ?>/Admin_view_user_dashboard/adminSearchBusDrivers" method="GET">
+                    <input type="text" id="search" name="search" placeholder="Search Here...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
 
             </div>
             <div class="sorting">
-                for sorting bar
+
             </div>
         </div>
 
-        <!-- <div class="new-add-user-bar-chart">
-            <h2> Weekly profit </h2>
-            <canvas id="admin-driver-bar-chart"></canvas>
-        </div> -->
 
         <div class="content-table">
             <table class="full-table">
@@ -87,9 +86,9 @@
             <h1>Are You Sure ?</h1>
             <p>Do you really wants to delete this bus driver.</p>
 
-            <form action="<?php echo URLROOT?>/Admin_view_user_dashboard/delete_bus_driver" method="POST" class="delete-button">
-                    <button class="delete-btn" type="submit" id="deleteBusDriverBtn" name="deleteBusDriverBtn">Yes</button>
-                    <button class="delete-btn" type="button" onclick="closeModal()">No</button>
+            <form action="<?php echo URLROOT ?>/Admin_view_user_dashboard/delete_bus_driver" method="POST" class="delete-button">
+                <button class="delete-btn" type="submit" id="deleteBusDriverBtn" name="deleteBusDriverBtn">Yes</button>
+                <button class="delete-btn" type="button" onclick="closeModal()">No</button>
             </form>
         </div>
     </dialog>
