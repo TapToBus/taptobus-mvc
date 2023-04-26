@@ -67,8 +67,8 @@
 
 .container .search-box i {
   position: absolute;
-  top: 50%;
-  right: 3.5rem;
+  top:1rem;
+  right: 2.5rem;
   transform: translateY(-50%);
   color: #3a029c;
 }
