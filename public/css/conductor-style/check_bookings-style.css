@@ -48,6 +48,7 @@
 
 .container .search-box {
   position: relative;
+  margin-left: 3.2rem;
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -56,7 +57,7 @@
 .container .search-box input[type="text"] {
   padding-right: 2rem; /* leave space for the icon */
   padding-left: 3 rem;
-  width: 100%;
+  width: 70%;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
@@ -68,8 +69,25 @@
 .container .search-box i {
   position: absolute;
   top:1rem;
-  right: 2.5rem;
+  right: 10rem;
   transform: translateY(-50%);
   color: #3a029c;
+}
+
+.container .info{
+  width: 70%;
+  height: auto;
+   display: flex;
+  /* grid-template-columns: auto;  */
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  margin-left: 17.5% ;
+  margin-top: 5%;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.info > label{
+  padding: 0.5rem;
 }
   

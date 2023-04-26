@@ -40,12 +40,12 @@
         ?>
 
           <div class="info">
-            <label for=""><b>Bus No. - </b> <?php echo $row->bus_no; ?></label>
-            <label for=""><b>From - </b> <?php echo $row->from; ?> </label>
-            <label for=""><b>To - </b> <?php echo $row->to; ?></label>
-            <label for=""><b>Time - </b> <?php echo $row->departure_time; ?></label>
-            <label for=""><b>Passenger Count - </b> <?php echo $row->passenger_count; ?></label>
-            <label for=""><b>Booked Seats - </b> <?php echo $row->booked_seats; ?></label>
+            <label for="">Bus No.     - <?php echo $row->bus_no; ?></label>
+            <label for="">From        - <?php echo $row->from; ?> </label>
+            <label for="">To          -  <?php echo $row->to; ?></label>
+            <label for="">Time        -  <?php echo $row->departure_time; ?></label>
+            <label for="">Passenger Count -  <?php echo $row->passenger_count; ?></label>
+            <label for="">Seats       -  <?php echo $row->booked_seats; ?></label>
 
           </div>
 
