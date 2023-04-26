@@ -12,5 +12,10 @@ class M_Admin_dashboard{
         $this->db->query("SELECT COUNT(*) AS user_count FROM user");
         return $this->db->single();
     }
+
+    public function get_passenger_count(){
+        $this->db->query("SELECT COUNT(*) AS passenger_count FROM passenger");
+        return $this->db->single();
+    }
 }
 ?>
