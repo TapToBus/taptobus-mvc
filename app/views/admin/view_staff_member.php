@@ -16,12 +16,12 @@
     <div class="main">
         <div class="content-heading">
             <h1>STAFF MEMBER</h1>
-        
+
             <button class="add_staff_member_button">
                 <div class="button-name">
                     <a href="<?php echo URLROOT; ?>/Admin_add_staff_member/add_staff_member">
-                        <i class="fa-solid fa-user-tie"></i><p>Add staff members</p>
-                        <!-- <p>Add staff members</p> -->
+                        <i class="fa-solid fa-user-tie"></i>
+                        <p>Add staff members</p>
                     </a>
                 </div>
             </button>
@@ -30,14 +30,13 @@
         <div class="searching-and-sorting">
             <div class="searching">
 
-                <form class="searchForm" action="<?php echo URLROOT;?>/Admin_view_user_dashboard/adminSearchStaffMember" method="GET">
-                       <input type="text" id="search" name="search"  placeholder="Search Here...">
-                       <button  type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
+                <form class="searchForm" action="<?php echo URLROOT; ?>/Admin_view_user_dashboard/adminSearchStaffMember" method="GET">
+                    <input type="text" id="search" name="search" placeholder="Search Here...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
 
             </div>
             <div class="sorting">
-                <!-- for sorting bar -->
             </div>
         </div>
 
@@ -83,9 +82,9 @@
             <h1>Are You Sure ?</h1>
             <p>Do you really wants to delete this staff member.</p>
 
-            <form action="<?php echo URLROOT?>/Admin_view_user_dashboard/delete_staff_member" method="POST" class="delete-button">
-                    <button class="delete-btn" type="submit" id="deleteStaffMemberBtn" name="deleteStaffMemberBtn">Yes</button>
-                    <button class="delete-btn" type="button" onclick="closeModal()">No</button>
+            <form action="<?php echo URLROOT ?>/Admin_view_user_dashboard/delete_staff_member" method="POST" class="delete-button">
+                <button class="delete-btn" type="submit" id="deleteStaffMemberBtn" name="deleteStaffMemberBtn">Yes</button>
+                <button class="delete-btn" type="button" onclick="closeModal()">No</button>
             </form>
         </div>
     </dialog>
