@@ -32,7 +32,7 @@
 
             <div class="admin-card">
                 <div class="admin-card-content">
-                    <div class="admin-number">400</div>
+                    <div class="admin-number"><?php echo $data['passenger_count'] ?></div>
                     <div class="admin-card-name">Passengers</div>
                 </div>
                 <div class="admin-icon-box">
