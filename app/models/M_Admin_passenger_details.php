@@ -12,6 +12,15 @@ class M_Admin_passenger_details{
 
         return $this->db->resultSet();
     }
+
+    //search function
+
+    public function getSearchPassengers($search)
+      {
+        $this->db->query("SELECT * FROM passenger WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search%' OR mobile_no LIKE '%$search' OR email LIKE '%$search'");
+        $result=$this->db->resultSet();
+        return $result;
+      }
 }
 
 ?>
