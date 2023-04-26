@@ -1,6 +1,6 @@
 <?php
 
-class M_conductor_incomerecords
+class M_conductor_bookings
 {
     private $db;
 
@@ -12,6 +12,12 @@ class M_conductor_incomerecords
 
    public function check_bookings($input){
 
+    // prepare query
+    $this->db->query('SELECT bus_no,from,to,date,passenger_count,booked_seats from bookings WHERE booking_code LIKE :input% ');
+
+    $this->db->bind(':input', $input);
+    $results = $this->db->resultSet();
+    return $results;
 
    }
 }

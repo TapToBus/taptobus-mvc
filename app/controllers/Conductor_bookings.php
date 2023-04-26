@@ -20,7 +20,9 @@ class Conductor_bookings extends Controller{
       if(isset($_POST['input'])){
 
         $input = $_POST['input'];
-        $data1 =  $this->newModel->check_bookings($input);
+        $data =  $this->newModel->check_bookings($input);
+        var_dump($data);
+        $this->view('conductor/check_bookings',$data);
       }
 
       else{
