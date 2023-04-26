@@ -118,11 +118,17 @@ class owner_register extends Controller{
                 // hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                // register passenger
-                if($this->ownerModel->register($data) &&
-                $this->userModel->register($data['email'], 'owner', $data['password'])){
-                    direct('users/login');
+                // // register passenger
+                // if($this->ownerModel->register($data) &&
+                // $this->userModel->register($data['email'], 'owner', $data['password'])){
+                //     direct('users/login');
                    
+                // }else{
+                //     die('Sorry! Something went wrong');
+                // }
+                // newly added
+                if($this->ownerModel->register($data)){
+                    direct('pages/index');
                 }else{
                     die('Sorry! Something went wrong');
                 }

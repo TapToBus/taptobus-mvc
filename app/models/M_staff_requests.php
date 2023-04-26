@@ -138,7 +138,7 @@ class M_staff_requests{
 
 // ----------------for email ------------------
 
-                // ------------- get owner's email ----------
+                // ------------- get owner's data ----------
                 
                 public function get_owner_email($owner_nic) {
                     $this->db->query("SELECT email, fname, lname FROM owner WHERE nic = :owner_nic");
@@ -150,7 +150,7 @@ class M_staff_requests{
                 //------------get conductor's data -----------
 
                 public function get_conductor_data($conductor_ntc) {
-                    $this->db->query("SELECT fname, lname, email from conductor where ntcNo = :conductor_ntc");
+                    $this->db->query("SELECT nic , fname, lname, email from conductor where ntcNo = :conductor_ntc");
                     $this->db->bind(":conductor_ntc",$conductor_ntc);
                     $result = $this->db->Single();
                     return $result;
@@ -159,21 +159,36 @@ class M_staff_requests{
                 //---------get driver's data------------------------
 
                 public function get_driver_data($driver_ntc) {
-                    $this->db->query("SELECT fname , lname, email from driver where ntcNo = :driver_ntc");
+                    $this->db->query("SELECT nic , fname , lname, email from driver where ntcNo = :driver_ntc");
                     $this->db->bind(":driver_ntc", $driver_ntc);
                     $result = $this->db->Single();
                     return $result;
                 }
 
                 // --------------- save temporery password
+                    // for owners
+                    public function save_owner_temporery_password($data){
+                        $this->db->query("UPDATE owner set password = :password where nic = :owner_nic");
+                        $this->db->bind(":owner_nic",$data['owner_nic']);
+                        $this->db->bind(":password",$data['password']);
+                
+                        return $this->db->execute();
+                    }
+                    
+                    // for conductors
+                    public function save_conductor_temporery_password($data){
+                        $this->db->query('UPDATE conductor set password = :password where ntcNo = :conductor_ntc');
+                        $this->db->bind(":password",$data['password']);
+                        $this->db->bind(":conductor_ntc",$data['conductor_ntc']);
+                    }
 
-                public function save_temporery_password($data1){
-                    $this->db->query("UPDATE owner set password = :password where nic = :owner_nic");
-                    $this->db->bind(":owner_nic",$data1['owner_nic']);
-                    $this->db->bind(":password",$data1['password']);
-            
-                    return $this->db->execute();
-                }
+                    // for drivers
+
+                    public function save_driver_temporery_password($data){
+                        $this->db->query('UPDATE driver set password = :password where ntcNo = :driver_ntc');
+                        $this->db->bind(":password",$data['password']);
+                        $this->db->bind(":driver_ntc",$data['driver_ntc']);
+                    }
 
     // insert_into_user table
                 public function insert_into_user($data){
