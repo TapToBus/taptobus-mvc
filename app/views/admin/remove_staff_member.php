@@ -27,7 +27,7 @@
 
             </div>
             <div class="sorting">
-                for sorting bar
+                
             </div>
         </div>
 
