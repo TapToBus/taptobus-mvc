@@ -182,7 +182,7 @@ class Admin_view_user_dashboard extends Controller{
         $this->view('admin/view_bus_driver', $data);
     }
 
-    //delete bus conductor from users
+    //delete bus driver from users
 
     public function delete_bus_driver(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -192,7 +192,32 @@ class Admin_view_user_dashboard extends Controller{
                 $this->view_bus_driver();
             }
         }
-    }    
+    } 
+    
+    //seach bus owners
+
+    public function  adminSearchBusDrivers()
+    {          
+     if($_SERVER['REQUEST_METHOD']=='GET'){
+       $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+ 
+           $search=trim($_GET['search']);            
+           $drivers= $this->pagesModelBusDrivers->getSearchBusDrivers($search);
+           
+           $data=[                      
+             'drivers'=>$drivers,
+             'search'=>$search
+           ];
+
+           $this->view('admin/view_bus_driver',$data);
+      }else{
+           $data=[                      
+             'drivers'=>'',
+             'search'=>''
+           ];
+           $this->view('admin/view_bus_driver',$data);
+      }
+    }
     
 
 
