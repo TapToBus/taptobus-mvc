@@ -23,3 +23,4 @@ require_once 'helpers/session_helper.php';
 require_once 'helpers/mail_helper.php';
 require_once 'helpers/contact_us_sub_tmplt.php';
 require_once 'helpers/contact_us_bdy_tmplt.php';
+require_once 'helpers/temporery_pw_email_tmplt.php';

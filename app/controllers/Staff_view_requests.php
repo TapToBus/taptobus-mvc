@@ -1,9 +1,4 @@
 <?php
-    // Import PHPMailer classes into the global namespace
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
-
     class Staff_view_requests extends Controller{
         private $ownerModel;
         private $driverModel;
@@ -127,8 +122,7 @@
           
             $mailer = new Mailer(TAPTOBUS_EMAIL , TAPTOBUS_PASS , SITENAME);
             $subject  = 'Successfully added to TapToBus' ;
-            $Body =  '<p> Dear '.$owner_data->fname.'! <br>'.'Your bus <b>'.$data1['bus_no'].'</b> is successfully added to the TapToBus System' ;
-               
+            $Body =  '<p> Dear '.$owner_data->fname.'! <br>'.'Your bus <b>'.$data1['bus_no'].'</b> is successfully added to the TapToBus System' ;               
               
             if ($mailer->send($owner_data->email, $subject, $Body)) {
                 direct('Staff_view_requests/bus_requests');
@@ -174,8 +168,13 @@
                    
                     $mailer = new Mailer(TAPTOBUS_EMAIL,TAPTOBUS_PASS,SITENAME);              
                     $Subject = 'Successfully added to TapToBus' ;
-                    $Body =  '<p> Dear '.$owner_data->fname.'! <br>'.'You are successfully registered to the TapToBus System as a bus owner <br> your temporery password is '.$password ;
-
+                    $email_data = [
+                        'fname' =>$owner_data->fname,
+                        'password' =>$password,
+                        'type' => 'Bus owner'
+                    ];
+                    $Body = temporery_password_email($email_data['fname'], $email_data['password'],$email_data['type']);
+ 
                     if ($mailer->send($owner_data->email, $Subject,$Body)) {
                                     // if the message has been sent successfully temperory password save in owner's table
                                     // and owner data will be saved in the user table
@@ -239,13 +238,18 @@
                 // $subject1 = 'Successfully added to TapToBus';
                 // $Body1= '<p> Dear '.$owner_data->fname.'! <br>'.'Your conductor <b>'.$conductor_data->fname.'</b> is successfully added to the TapToBus System' ;
 
-                $subject2 = 'Successfully added to TapToBus';
-                $Body2= '<p> Dear '.$conductor_data->fname.'! <br>'.'You are successfully added to the TapToBus System as a conductor. <br> Your temporery password is <b>'.$password ;
+                $subject = 'Successfully added to TapToBus';
+                $email_data = [
+                    'fname' =>$conductor_data->fname,
+                    'password' =>$password,
+                    'type' => 'conductor'
+                ];
+                $Body = temporery_password_email($email_data['fname'], $email_data['password'],$email_data['type']);
 
 
                 
                 // if($mailer->send($owner_data->email,$subject1,$Body1)){
-                        if($mailer->send($conductor_data->email,$subject2,$Body2)){
+                        if($mailer->send($conductor_data->email,$subject,$Body)){
 
                             $this->conductorModel->save_conductor_temporery_password([
                                 'conductor_ntc'=>$conductor_ntc,
@@ -313,12 +317,17 @@
                 // $subject1 = 'Successfully added to TapToBus';
                 // $Body1= '<p> Dear '.$owner_data->fname.'! <br>'.'Your driver <b>'.$driver_data->fname.'</b> is successfully added to the TapToBus System' ;
 
-                $subject2 = 'Successfully added to TapToBus';
-                $Body2= '<p> Dear '.$driver_data->fname.'! <br>'.'You are successfully added to the TapToBus System as a driver. <br> Your temporery password is <b>'.$password ;
+                $subject = 'Successfully added to TapToBus';
+                $email_data = [
+                    'fname' =>$driver_data->fname,
+                    'password' =>$password,
+                    'type' => 'conductor'
+                ];
+                $Body = temporery_password_email($email_data['fname'], $email_data['password'],$email_data['type']);
 
-                
+
                 // if($mailer->send($owner_data->email,$subject1,$Body1)){
-                        if($mailer->send($driver_data->email,$subject2,$Body2)){
+                        if($mailer->send($driver_data->email,$subject,$Body)){
 
                             $this->driverModel->save_driver_temporery_password([
                                 'driver_ntc'=>$driver_ntc,
