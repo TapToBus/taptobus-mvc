@@ -16,12 +16,15 @@ class Conductor_bookings extends Controller{
     }
 
     public function check_bookings(){
-      
-      
+
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        
+       $input = $_POST['code'];
        $data = $this->newModel->check_bookings($input);
        $this->view('conductor/check_bookings',$data);
 
-    }
+     }
+   }
 
 
 }

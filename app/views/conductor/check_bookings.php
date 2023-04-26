@@ -22,15 +22,15 @@
 
           <div class="search-box">
 
-            <input type ="text" id="live_search" autocomplete="off" placeholder= "Enter the code..." >
-            <i class="fa-solid fa-magnifying-glass"></i>
+             <form action = "<?php echo URLROOT; ?>/conductor_bookings/check_bookings" method="post" id="my-form">
+
+            <input type ="text" name ="code" id="code" autocomplete="off" placeholder= "Enter the code..." >
+            <button type="submit" name="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+            </form>
 
           </div>
 
-          <div id ="searchresult">
-
-             
-          </div>
 
         </div>
 
