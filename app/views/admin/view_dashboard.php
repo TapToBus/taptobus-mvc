@@ -22,7 +22,7 @@
         <div class="admin-cards">
             <div class="admin-card">
                 <div class="admin-card-content">
-                    <div class="admin-number">600</div>
+                    <div class="admin-number"><?php echo $data['user_count'] ?></div>
                     <div class="admin-card-name">Users</div>
                 </div>
                 <div class="admin-icon-box">

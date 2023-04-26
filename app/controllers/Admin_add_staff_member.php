@@ -7,6 +7,11 @@ class Admin_add_staff_member extends Controller{
     {
         
         $this->addstaffmembersModel =  $this->model('M_admin_add_staff_member');
+
+        // check if admin is logined to the system
+        if(!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'admin'){
+            direct('user/logout');  
+        }
         
     }
 
@@ -34,7 +39,7 @@ class Admin_add_staff_member extends Controller{
             ];
 
             if($this->addstaffmembersModel->add_staff_member($data)){
-                // redirect('Admin_view_staff_member/view_staff_member');
+                direct('admin/view_staff_member');
             }
 
         }
