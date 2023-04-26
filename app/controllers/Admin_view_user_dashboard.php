@@ -16,6 +16,13 @@ class Admin_view_user_dashboard extends Controller{
         $this->pagesModelBusOwners = $this->model('M_Admin_bus_owner_details');
         $this->pagesModelBusDrivers = $this->model('M_Admin_bus_driver_details');
         $this->pagesModelBusConductors = $this->model('M_Admin_bus_conductor_details');
+
+        // var_dump($_SESSION); die();
+
+        if(!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'admin'){
+            direct('user/logout');  
+        }
+
         
     }
 
@@ -55,9 +62,7 @@ class Admin_view_user_dashboard extends Controller{
     public function view_staff_member(){
 
         $staffmembers = $this->pagesModelStaffMembers->getstaffmembers();
-        
         $data = ['staffmembers' => $staffmembers];
-
         $this->view('admin/view_staff_member', $data);
     }
 
@@ -72,6 +77,31 @@ class Admin_view_user_dashboard extends Controller{
             }
         }
     } 
+
+
+    // search staff members fro users
+    public function  adminSearchStaffMember()
+    {          
+     if($_SERVER['REQUEST_METHOD']=='GET'){
+       $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+ 
+           $search=trim($_GET['search']);            
+           $staffmembers= $this->pagesModelStaffMembers->getSearchStaffMembers($search);
+           
+           $data=[                      
+             'staffmembers'=>$staffmembers,
+             'search'=>$search
+           ];
+
+           $this->view('admin/view_staff_member',$data);
+      }else{
+           $data=[                      
+             'staffmembers'=>'',
+             'search'=>''
+           ];
+           $this->view('admin/view_staff_member',$data);
+      }
+    }
 
     //view bus owner page
 

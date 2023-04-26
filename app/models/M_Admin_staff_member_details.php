@@ -31,5 +31,14 @@ class M_Admin_staff_member_details{
         $this->db->bind(":staff_no", $staff_no);
         return $this->db->execute();
     }
+
+    //search function
+
+    public function getSearchStaffMembers($search)
+      {
+        $this->db->query("SELECT * FROM staffmember WHERE CONCAT(first_name,last_name) LIKE '%$search%' OR staff_no LIKE '%$search%' OR nic LIKE '%$search%' OR mobile_no LIKE '%$search' OR email LIKE '%$search'");
+        $result=$this->db->resultSet();
+         return $result;
+      }
 }
 ?>

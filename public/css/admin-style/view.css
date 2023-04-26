@@ -439,7 +439,7 @@ a{
 
 .sorting{
   padding: 10px 180px;
-  background-color:#f1f1f1;
+  background-color:#ffffff;
   margin-right: 37px;
 }
 
@@ -461,7 +461,7 @@ a{
   border: none;
   outline: none;
   border-radius: 10px;
-  background: #fff;
+  background: #ecececa7;
 }
 
 .searching i{

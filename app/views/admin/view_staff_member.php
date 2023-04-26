@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
 
     <div class="main">
@@ -21,8 +20,8 @@
             <button class="add_staff_member_button">
                 <div class="button-name">
                     <a href="<?php echo URLROOT; ?>/Admin_add_staff_member/add_staff_member">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <p>Add staff members</p>
+                        <i class="fa-solid fa-user-tie"></i><p>Add staff members</p>
+                        <!-- <p>Add staff members</p> -->
                     </a>
                 </div>
             </button>
@@ -30,14 +29,18 @@
 
         <div class="searching-and-sorting">
             <div class="searching">
-                <input type="text" id="search" placeholder="Search here">
-                <label for="search"><i class="fas fa-search"></i></label>
+
+                <form class="searchForm" action="<?php echo URLROOT;?>/Admin_view_user_dashboard/adminSearchStaffMember" method="GET">
+                       <input type="text" id="search" name="search"  placeholder="Search Here...">
+                       <button  type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
 
             </div>
             <div class="sorting">
-                for sorting bar
+                <!-- for sorting bar -->
             </div>
         </div>
+
 
 
         <div class="content-table">
