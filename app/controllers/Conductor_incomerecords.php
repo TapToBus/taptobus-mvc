@@ -79,7 +79,15 @@ class Conductor_incomerecords extends Controller
         $new =  $this->recordModel->find_bus();
         $bus_no = $new->bus_no;
         $data1 =  $this->recordModel->view_incomerecords($bus_no);
-        $this->view('conductor/view_incomerecords',$data1);
+        // $data = [
+        //     'bus_no' => '',
+        //     'date' => '',
+        //     'amount' => '',
+        //     'bus_no_err' => '',
+        //     'amount_err' => '',
+
+        // ];
+        $this->view('conductor/view_incomerecords',$data,$data1);
     }
 
 
