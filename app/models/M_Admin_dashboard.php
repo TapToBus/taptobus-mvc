@@ -15,16 +15,23 @@ class M_Admin_dashboard{
         return $this->db->single();
     }
 
-    //get all passenger count
+    //get all passengers count
     public function get_passenger_count(){
         $this->db->query("SELECT COUNT(*) AS passenger_count FROM passenger");
         return $this->db->single();
     }
 
-    //get all owner count
+    //get all owners count
     public function get_owner_count(){
         $this->db->query("SELECT COUNT(*) AS owner_count FROM owner");
         return $this->db->single();
     }
+
+    //get all buses count
+    public function get_bus_count(){
+        $this->db->query("SELECT COUNT(*) AS bus_count FROM bus");
+        return $this->db->single();
+    }
+
 }
 ?>

@@ -52,7 +52,7 @@
 
             <div class="admin-card">
                 <div class="admin-card-content">
-                    <div class="admin-number">50</div>
+                    <div class="admin-number"><?php echo $data['bus_count'] ?></div>
                     <div class="admin-card-name">Buses</div>
                 </div>
                 <div class="admin-icon-box">
