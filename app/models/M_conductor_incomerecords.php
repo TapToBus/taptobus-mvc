@@ -48,7 +48,7 @@ class M_conductor_incomerecords
 
 
         // prepare query
-        $this->db->query('SELECT date,amount from incomerecords WHERE bus_no= :bus_no');
+        $this->db->query('SELECT record_id,date,amount from incomerecords WHERE bus_no= :bus_no');
 
         $this->db->bind(':bus_no', $bus_no);
         $results = $this->db->resultSet();

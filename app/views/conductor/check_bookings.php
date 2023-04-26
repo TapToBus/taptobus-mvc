@@ -55,9 +55,10 @@
                        
                       success:function(data){
                         $("#searchresult").html(data);
+                        console.log(data);
                       }
-                    });
 
+                    });
                 }
 
                 else{
