@@ -32,6 +32,16 @@ class M_Admin_bus_driver_details{
         $this->db->bind(":ntcNo", $ntcNo);
         return $this->db->execute();
     }
+
+    //
+    //search function
+
+    public function getSearchBusDrivers($search)
+      {
+        $this->db->query("SELECT * FROM driver WHERE CONCAT(fname,lname) LIKE '%$search%' OR ntcNo LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search' OR email LIKE '%$search'");
+        $result=$this->db->resultSet();
+        return $result;
+      }
 }
 
 ?>
