@@ -36,38 +36,7 @@
 
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      
-        $(document).ready(function(){
     
-            $("#live_search").keyup(function(){
-
-                var input = $(this).val();
-                
-                if(input != ""){
-
-                    $.ajax({
-
-                      url: "<?php echo URLROOT; ?>/conductor_bookings/check_bookings",
-                      mehtod : "POST",
-                      data:{input:input},
-                       
-                      success:function(data){
-                        $("#searchresult").html(data);
-                        console.log(data);
-                      }
-
-                    });
-                }
-
-                else{
-
-                    $("#searchresult").css("display","none");
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

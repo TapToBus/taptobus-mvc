@@ -17,7 +17,9 @@ class Conductor_bookings extends Controller{
 
     public function check_bookings(){
       
-       
+      
+       $data = $this->newModel->check_bookings($input);
+       $this->view('conductor/check_bookings',$data);
 
     }
 
