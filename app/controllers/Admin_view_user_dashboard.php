@@ -47,6 +47,30 @@ class Admin_view_user_dashboard extends Controller{
         $this->view('admin/view_passenger',$data);
     }
 
+    // search for passenger details
+    public function  adminSearchPassengers()
+    {          
+     if($_SERVER['REQUEST_METHOD']=='GET'){
+       $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+ 
+           $search=trim($_GET['search']);            
+           $passengers= $this->pagesModelPassengers->getSearchPassengers($search);
+           
+           $data=[                      
+             'passengers'=>$passengers,
+             'search'=>$search
+           ];
+
+           $this->view('admin/view_passenger',$data);
+      }else{
+           $data=[                      
+             'passengers'=>'',
+             'search'=>''
+           ];
+           $this->view('admin/view_passenger',$data);
+      }
+    }
+
     // view bus page
 
     public function view_bus(){
