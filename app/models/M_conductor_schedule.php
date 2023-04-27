@@ -17,7 +17,7 @@ class M_conductor_schedule
         $this->db->query('SELECT * from conductor WHERE nic = :nic');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
-        $results = $this->db->resultSet();
+        $results = $this->db->single();
         return $results;
 
     } 
@@ -28,11 +28,17 @@ class M_conductor_schedule
     $currentDate = date('l'); 
     $twoDaysLater = date('l', strtotime('+2 days'));
 
-    $this->db->query(" SELECT * FROM schedule WHERE day >= '$currentDate' AND day <= '$twoDaysLater' AND bus_no = :bus_no ");
+    $this->db->query(" SELECT * FROM schedule WHERE bus_no = :bus_no ORDER BY day ASC ");
 
     $this->db->bind(':bus_no', $bus_no);
+    // $this->db->bind(':currentDate', $currentDate);
+    // $this->db->bind(':twoDaysLater', $twoDaysLater);
+
     $results = $this->db->resultSet();
     return $results;
 
    }
 }
+
+
+// day >= '$currentDate' AND day <= '$twoDaysLater' AND
