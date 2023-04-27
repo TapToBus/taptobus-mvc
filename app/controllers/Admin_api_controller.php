@@ -5,6 +5,7 @@ class Admin_api_controller extends Controller{
     private $adminDoughnutModel;
     private $adminNewUserModel;
     private $adminNewUserPassengerModel;
+    private $adminNewBusModel;
 
     public function __construct()
     {
@@ -19,6 +20,8 @@ class Admin_api_controller extends Controller{
         $this->adminNewUserModel =$this->model('M_Admin_dashboard');
 
         $this->adminNewUserPassengerModel =$this->model('M_Admin_dashboard');
+
+        $this->adminNewBusModel =$this->model('M_Admin_dashboard');
         
     }
 
@@ -38,6 +41,12 @@ class Admin_api_controller extends Controller{
         $passengerAddData = $this->adminNewUserPassengerModel->getPassengerAddDateChart();
         //convert php and jason data to transfer
         echo json_encode($passengerAddData);
+    }
+
+    public function adminNewBusLineChart(){
+        $busAddData = $this->adminNewBusModel->getbusAddDateChart();
+        //convert php and jason data to transfer
+        echo json_encode($busAddData);
     }
 
 
