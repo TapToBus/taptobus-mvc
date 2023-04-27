@@ -41,8 +41,13 @@ class M_Admin_dashboard{
 
     //get all users new adding to the system for new users line chart
     public function getUserAddDateChart(){
-        $this->db->query("SELECT MONTH(active_date) AS month,COUNT(*) AS count FROM user GROUP BY active_date");
+        $this->db->query("SELECT MONTH(active_date) AS month,COUNT(*) AS count FROM user GROUP BY month");
         return $this->db->resultSet();
+    }
+
+    //get all passenger new adding to the system for new user line chart
+    public function getPassengerAddDateChart(){
+
     }
 
 }
