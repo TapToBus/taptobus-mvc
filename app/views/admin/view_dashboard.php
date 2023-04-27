@@ -71,9 +71,33 @@
         <div class="admin-charts-pair">
             <div class="admin-chart-pair">
                 <h2> New Users (Monthly) </h2>
-                <!-- <canvas id="admin-bus-line-chart"></canvas> -->
                 <canvas id="monthly-users-line-chart"></canvas>
+
+                <script>
+                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminNewUserLineChart')
+                        .then(response=>response.json())
+                        .then(result=>{
+                            const months = result.map(item=>item.month)
+                            const counts = result.map(item=>item.count)
+
+                            const lineChart = new Chart(document.getElementById('monthly-users-line-chart'),{
+                                type: 'line',
+                                data: {
+                                    labels:months,
+                                    datasets:[{
+                                        data:counts
+                                    }]
+                                }
+                            });
+
+                        })
+
+                        .catch(error=>console.log(error))
+                </script>
+
             </div>
+
+
 
             <div class="admin-chart-pair">
                 <h2 class="admin-chart-doughnut-heading"> Users </h2>
@@ -85,11 +109,9 @@
                         .then(response=>response.json())
                         .then(result=>{
                             
-                            
                             const types = result.map(item=>item.type)
                             const counts = result.map(item=>item.count)
-                            // console.log(types);
-                            // console.log(counts);
+
                             const pieChart = new Chart(document.getElementById('admin-doughnut'),{
                                 type: 'doughnut',
                                 data: {
@@ -99,15 +121,7 @@
                                     }]
                                 }
                             });
-                        //     const pieChart = new Chart(document.getElementById('admin-doughnut'),{
-                        //         type: 'line',
-                        //         data: {
-                        //             labels:types,
-                        //             datasets:[{
-                        //                 data:counts
-                        //             }]
-                        //         }
-                        //     });
+
                         })
                         .catch(error=>console.log(error))
                 </script>
@@ -131,7 +145,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script> -->
     <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/admin-dashboard-doughnut-chart.js"></script> -->
     <script src="<?php echo URLROOT; ?>/js/admin-js/bus-monthly-chart.js"></script>
     <script src="<?php echo URLROOT; ?>/js/admin-js/passenger-monthly-chart.js"></script>
