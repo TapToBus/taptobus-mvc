@@ -39,5 +39,11 @@ class M_Admin_dashboard{
         return $this->db->resultSet();
     }
 
+    //get all users new adding to the system for new users line chart
+    public function getUserAddDateChart(){
+        $this->db->query("SELECT MONTH(active_date) AS month,COUNT(*) AS count FROM user GROUP BY active_date");
+        return $this->db->resultSet();
+    }
+
 }
 ?>
