@@ -131,10 +131,37 @@
             </div>
         </div>
 
+
         <div class="admin-chart-box">
             <div class="admin-chart">
                 <h2> New Passengers (Monthly) </h2>
                 <canvas id="monthly-passenger-line-chart"></canvas>
+
+                <script>
+                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminNewPassengerLineChart')
+                        .then(response=>response.json())
+                        .then(result=>{
+                            const months = result.map(item=>item.month)
+                            const counts = result.map(item=>item.count)
+
+                            const lineChart = new Chart(document.getElementById('monthly-passenger-line-chart'),{
+                                type: 'line',
+                                data: {
+                                    labels:months,
+                                    datasets:[{
+                                        label:'passenger count over month',
+                                        data:counts,
+                                        borderColor: 'rgb(255, 102, 178)',
+                                        tension: 0.1
+                                    }]
+                                }
+                            });
+
+                        })
+
+                        .catch(error=>console.log(error))
+                </script>
+
             </div>
         </div>
 
@@ -151,7 +178,7 @@
     <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script> -->
     <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/admin-dashboard-doughnut-chart.js"></script> -->
     <script src="<?php echo URLROOT; ?>/js/admin-js/bus-monthly-chart.js"></script>
-    <script src="<?php echo URLROOT; ?>/js/admin-js/passenger-monthly-chart.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/passenger-monthly-chart.js"></script> -->
 
 
 
