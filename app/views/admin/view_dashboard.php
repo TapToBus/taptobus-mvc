@@ -81,7 +81,7 @@
                 <canvas id="admin-doughnut"></canvas>
                 
                 <script>
-                    fetch('<?php echo URLROOT ?>/apiController/adminDoughnutChart')
+                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminDoughnutChart')
                         .then(response=>response.json())
                         .then(result=>{
                             

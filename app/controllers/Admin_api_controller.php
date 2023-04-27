@@ -1,6 +1,6 @@
 <?php
 
-class APIcontroller extends Controller{
+class Admin_api_controller extends Controller{
 
     private $adminDoughnutModel;
 
