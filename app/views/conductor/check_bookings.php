@@ -24,7 +24,7 @@
 
         <form action="<?php echo URLROOT; ?>/conductor_bookings/check_bookings" method="post" id="my-form">
 
-          <input type="text" name="code" id="code" autocomplete="off" placeholder="Enter the code...">
+          <input type="text" name="code" id="code" autocomplete="off" placeholder="Enter reservation code...">
           <button type="submit" name="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 
         </form>
@@ -44,8 +44,8 @@
             <label for="">From        - <?php echo $row->from; ?> </label>
             <label for="">To          -  <?php echo $row->to; ?></label>
             <label for="">Time        -  <?php echo $row->departure_time; ?></label>
-            <label for="">Passenger Count -  <?php echo $row->passenger_count; ?></label>
-            <label for="">Seats       -  <?php echo $row->booked_seats; ?></label>
+            <label for="">Passenger Count -  <?php echo $row->passenger_count; ?></label> 
+            <label for="">Seat Numbers    -  <?php echo $row->booked_seats; ?></label>
 
           </div>
 
