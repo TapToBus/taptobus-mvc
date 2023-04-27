@@ -55,6 +55,6 @@
     <a href="<?php echo URLROOT; ?>/Admin_view_bus_driver/view_bus_driver"><i class="fa-solid fa-file"></i><span>Reports</span></a> -->
 
     <!-- <a href="#"><i class="fa-solid fa-user"></i><span>Remove history</span></a> -->
-    <a href="#"><i class="fa-solid fa-address-card"></i><span>Profile</span></a>
+    <a href="<?php echo URLROOT; ?>/Admin_profile/view_profile"><i class="fa-solid fa-address-card"></i><span>Profile</span></a>
     <a href="<?php echo URLROOT; ?>/users/logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 </div>
