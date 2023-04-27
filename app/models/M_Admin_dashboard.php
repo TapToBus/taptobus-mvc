@@ -33,5 +33,11 @@ class M_Admin_dashboard{
         return $this->db->single();
     }
 
+    //get all users count for admin dashboard doghtnut chart
+    public function getUserChartCount(){
+        $this->db->query("SELECT type,COUNT(*) AS count FROM user GROUP BY type");
+        return $this->db->resultSet();
+    }
+
 }
 ?>

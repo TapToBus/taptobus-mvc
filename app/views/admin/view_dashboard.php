@@ -77,8 +77,28 @@
 
             <div class="admin-chart-pair">
                 <h2 class="admin-chart-doughnut-heading"> Users </h2>
-                <!-- <canvas id="admin-owner-bar-chart"></canvas> -->
+
                 <canvas id="admin-doughnut"></canvas>
+                
+                <script>
+                    fetch('<?php echo URLROOT ?>/APIcontroller/adminDoughnutChart')
+                        .then(response=>response.json())
+                        .then(result=>{
+                            const categories = result.data.map(item=>item.category)
+                            const counts = result.data.map(item=>item.numberOfGigs)
+
+                            const pieChart = new Chart(document.getElementById('admin-doughnut'),{
+                                type: 'pie',
+                                data: {
+                                    labels:categories,
+                                    datasets:[{
+                                        data:counts
+                                    }]
+                                }
+                            });
+                        })
+                        .catch(error=>console.log(error))
+                </script>
             </div>
         </div>
 
