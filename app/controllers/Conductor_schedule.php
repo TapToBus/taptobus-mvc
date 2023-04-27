@@ -15,7 +15,8 @@ class Conductor_schedule extends Controller{
 
     public function view_schedule(){
       
-        
+      $new =  $this->scheduleModel->find_bus_no();  
+      $bus_no = $new->bus_no;
       $data = $this->scheduleModel->view_schedule();
       $this->view('conductor/view_schedule',$data);
     }
