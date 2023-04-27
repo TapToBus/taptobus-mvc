@@ -21,11 +21,12 @@
         <div class="table">
 
             <div class="row header">
+                <div>Bus_no</div>
                 <div>From</div>
                 <div>To</div>
-                <div>Time</div>
-                <div>Bus No</div>
-                <div>Action</div>
+                <div>Date</div>
+                <div>Departure Time</div>
+                <div>Arrival Time</div>
             </div>
 
             <?php
@@ -33,10 +34,12 @@
             ?>
 
             <div class="row">
-                <div><?php echo $row->date; ?></div>
-                <div>Boston</div>
-                <div>8:00 AM</div>
-                <div>123</div>
+                <div><?php echo $row->bus_no; ?></div>
+                <div><?php echo $row->Location_from; ?></div>
+                <div><?php echo $row->Location_to; ?></div>
+                <div><?php echo $row->day; ?></div>
+                <div><?php echo $row->departure_time; ?></div>
+                <div><?php echo $row->arrival_time; ?></div>
                 <div><button class="btn">Book Now</button></div>
             </div>
 
