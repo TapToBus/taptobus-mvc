@@ -3,6 +3,7 @@
 class Admin_api_controller extends Controller{
 
     private $adminDoughnutModel;
+    private $adminNewUserModel;
 
     public function __construct()
     {
@@ -13,6 +14,8 @@ class Admin_api_controller extends Controller{
         }
 
         $this->adminDoughnutModel =$this->model('M_Admin_dashboard');
+
+        $this->adminNewUserModel =$this->model('M_Admin_dashboard');
         
     }
 
@@ -21,5 +24,13 @@ class Admin_api_controller extends Controller{
         //convert php and jason data to transfer
         echo json_encode($userCount);
     }
+
+    public function adminNewUserLineChart(){
+        $userAddData = $this->adminNewUserModel->getUserAddDateChart();
+        //convert php and jason data to transfer
+        echo json_encode($userAddData);
+    }
+
+
 }
 ?>
