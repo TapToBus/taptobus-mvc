@@ -7,7 +7,7 @@ class Conductor_schedule extends Controller{
     public function __construct()
     {
       if(! isLoggedIn()){
-        direct('users/login');
+        direct('users/login'); 
     }
 
       $this->scheduleModel = $this->model('m_conductor_schedule');
@@ -15,7 +15,7 @@ class Conductor_schedule extends Controller{
 
     public function view_schedule(){
       
-
+      
       $this->view('conductor/view_schedule');
     }
 }
