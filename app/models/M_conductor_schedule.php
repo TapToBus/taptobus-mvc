@@ -14,10 +14,10 @@ class M_conductor_schedule
     public function find_bus_no(){
         // prepare query
         
-        $this->db->query('SELECT * from conductor WHERE  ntcNo = :ntcNo');
+        $this->db->query('SELECT * from conductor WHERE nic = :nic');
         $id = $_SESSION['user_id'];
-        $this->db->bind(':ntcNo',$id);
-        $results = $this->db->single();
+        $this->db->bind(':nic',$id);
+        $results = $this->db->resultSet();
         return $results;
 
     } 
