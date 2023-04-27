@@ -47,6 +47,8 @@ class M_Admin_dashboard{
 
     //get all passenger new adding to the system for new user line chart
     public function getPassengerAddDateChart(){
+        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM passenger GROUP BY month");
+        return $this->db->resultSet();
 
     }
 
