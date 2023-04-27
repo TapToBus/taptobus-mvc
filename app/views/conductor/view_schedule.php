@@ -33,7 +33,7 @@
                 foreach($data as $row):
             ?>
 
-            <div class="row">
+            <div class="row ">
                 <div><?php echo $row->bus_no; ?></div>
                 <div><?php echo $row->Location_from; ?></div>
                 <div><?php echo $row->Location_to; ?></div>
