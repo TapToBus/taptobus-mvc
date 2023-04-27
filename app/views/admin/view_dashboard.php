@@ -81,21 +81,33 @@
                 <canvas id="admin-doughnut"></canvas>
                 
                 <script>
-                    fetch('<?php echo URLROOT ?>/APIcontroller/adminDoughnutChart')
+                    fetch('<?php echo URLROOT ?>/apiController/adminDoughnutChart')
                         .then(response=>response.json())
                         .then(result=>{
-                            const categories = result.data.map(item=>item.category)
-                            const counts = result.data.map(item=>item.numberOfGigs)
-
+                            
+                            
+                            const types = result.map(item=>item.type)
+                            const counts = result.map(item=>item.count)
+                            // console.log(types);
+                            // console.log(counts);
                             const pieChart = new Chart(document.getElementById('admin-doughnut'),{
-                                type: 'pie',
+                                type: 'doughnut',
                                 data: {
-                                    labels:categories,
+                                    labels:types,
                                     datasets:[{
                                         data:counts
                                     }]
                                 }
                             });
+                        //     const pieChart = new Chart(document.getElementById('admin-doughnut'),{
+                        //         type: 'line',
+                        //         data: {
+                        //             labels:types,
+                        //             datasets:[{
+                        //                 data:counts
+                        //             }]
+                        //         }
+                        //     });
                         })
                         .catch(error=>console.log(error))
                 </script>
@@ -120,7 +132,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script>
-    <script src="<?php echo URLROOT; ?>/js/admin-js/admin-dashboard-doughnut-chart.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/admin-dashboard-doughnut-chart.js"></script> -->
     <script src="<?php echo URLROOT; ?>/js/admin-js/bus-monthly-chart.js"></script>
     <script src="<?php echo URLROOT; ?>/js/admin-js/passenger-monthly-chart.js"></script>
 

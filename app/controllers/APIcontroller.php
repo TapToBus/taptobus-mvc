@@ -17,8 +17,7 @@ class APIcontroller extends Controller{
     }
 
     public function adminDoughnutChart(){
-        $userCount = $this->adminDoughnutModel->getUserChartCount();
-
+        $userCount = $this->adminDoughnutModel->getUserChartCount();        
         //convert php and jason data to transfer
         echo json_encode($userCount);
     }
