@@ -212,13 +212,48 @@
 
         <div class="admin-chart-heading">
             <div class="admin-chart">
-                <h2> INCOME OVERVIEW </h2>
+                <h2> PROFIT OVERVIEW </h2>
             </div>
         </div>
 
         <div class="admin-chart-box">
             <div class="admin-chart">
-                <h2> INCOME </h2>
+                <h2> Profit (Monthly) </h2>
+                <canvas id="monthly-profit-line-chart"></canvas>
+
+                <!-- <script>
+                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminNewPassengerLineChart')
+                        .then(response=>response.json())
+                        .then(result=>{
+                            const months = result.map(item=>item.month)
+                            const counts = result.map(item=>item.count)
+
+                            const lineChart = new Chart(document.getElementById('monthly-passenger-line-chart'),{
+                                type: 'line',
+                                data: {
+                                    labels:months,
+                                    datasets:[{
+                                        label:'passenger count over month',
+                                        data:counts,
+                                        borderColor: 'rgb(255, 102, 178)',
+                                        tension: 0.1
+                                    }]
+                                }
+                            });
+
+                        })
+
+                        .catch(error=>console.log(error))
+                </script> -->
+
+            </div>
+        </div>
+
+
+
+        <div class="admin-chart-box">
+            <div class="admin-chart">
+                <h2> Profit  </h2>
 
                 <div class="content-table">
                     <table class="full-table">
