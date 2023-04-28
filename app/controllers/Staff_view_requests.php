@@ -105,14 +105,14 @@
           
             $data1 = [
                 'bus_no' => $bus_no,
-                'status' => 'accepted'
+                'status' => 'active'
             ]; 
 
             $this->busModel->accept_bus_request($data1);  
 
             $data2 = [
                 'bus_no' => $bus_no,
-                'status' => 'accepted',
+                'status' => 'active',
                 'staff_no' => $staff_no 
             ];
 
@@ -148,7 +148,7 @@
 
             $data1 = [
                 'owner_nic' => $owner_nic,
-                'status' => 'accepted'
+                'status' => 'active'
             ]; 
           
             $this->ownerModel->accept_owner_request($data1);  
@@ -156,7 +156,7 @@
             $data2 = [
                 'owner_nic' => $owner_nic,
                 'staff_no' => $staff_no ,
-                'status' => 'accepted' ,             
+                'status' => 'active' ,             
             ]; 
             
             $this->ownerModel->update_staff_id_for_owner($data2);
@@ -216,13 +216,13 @@
           
             $data1 = [
                 'conductor_ntc'=>$conductor_ntc,
-                'status' => 'accepted'
+                'status' => 'active'
             ]; 
             
-            $this->conductorModel->accept_conductor_request($data1);  // change the status pending to the accepted
+            $this->conductorModel->accept_conductor_request($data1);  // change the status pending to the active
             $data2 = [
                 'conductor_ntc' => $conductor_ntc,
-                'status' => 'accepted',
+                'status' => 'active',
                 'staff_no' => $staff_no 
             ];
 
@@ -294,14 +294,14 @@
           
             $data1 = [
                 'driver_ntc' => $driver_ntc,
-                'status' => 'accepted'
+                'status' => 'active'
             ]; 
 
             $this->driverModel->accept_driver_request($data1);  
 
             $data2 = [
                 'driver_ntc' => $driver_ntc,
-                'status' => 'accepted',
+                'status' => 'active',
                 'staff_no' => $staff_no 
             ];
 
