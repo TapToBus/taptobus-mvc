@@ -119,7 +119,23 @@ class Passenger_book_seats extends Controller{
     }
 
     public function select_seats(){
-        $this->view('passenger/select_seats');
+        if(isset($_GET['from'], $_GET['to'], $_GET['date'], $_GET['count'], $_GET['sch_id'], $_GET['boks_id'], $_GET['bus_no'])){
+
+            $data = [
+                'from' => $_GET['from'],
+                'to' => $_GET['to'],
+                'date' => $_GET['date'],
+                'count' => $_GET['count'],
+                'sch_id' => $_GET['sch_id'],
+                'boks_id' => $_GET['boks_id'],
+                'bus_no' => $_GET['bus_no'],
+                'capacity' => $_GET['capacity'],
+            ];
+
+            $this->view('passenger/select_seats', $data);
+        }else{
+            direct('passenger_book_seats/journey_details');
+        }
     }
 
 

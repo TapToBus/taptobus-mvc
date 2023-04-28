@@ -24,7 +24,7 @@
                         <?php $line = 1; ?>
                         <?php $j = 0; ?>
 
-                        <?php while($line <= 7): ?>
+                        <?php while($line <= ($data['capacity'] - 5)/4): ?>
                             <div class="row">
                                 <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
                                 <?php $j++; ?>
@@ -58,11 +58,11 @@
                         <div class="right-top-heading">Summary</div>
 
                         <div class="right-top-details">
-                            <div class="journey">Galle > Makumbura</div>
+                            <div class="journey"><?php echo $data['from']; ?> > <?php echo $data['to']; ?></div>
 
                             <div class="row">
                                 <span class="col1">On:</span>
-                                <span class="col2">2023-04-14</span>
+                                <span class="col2"><?php echo $data['date']; ?></span>
                             </div>
                             <div class="row">
                                 <span class="col1">At:</span>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="row">
                                 <span class="col1">Passenger count:</span>
-                                <span class="col2">4</span>
+                                <span class="col2"><?php echo $data['count']; ?></span>
                             </div>
                             <div class="row">
                                 <span class="col1">Bus No:</span>
@@ -85,7 +85,7 @@
 
                     <div class="right-bottom">
                         <div class="right-bottom-heading">Select Seats</div>
-                        <div class="description">You can select 4 seats</div>
+                        <div class="description">You can select <?php echo $data['count']; ?> seats</div>
 
                         <div class="legend">
                             <span class="col">
