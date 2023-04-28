@@ -169,6 +169,44 @@
             <div class="admin-chart">
                 <h2> New Buses (Monthly) </h2>
                 <canvas id="admin-bus-bar-chart"></canvas>
+
+                <script>
+                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminNewBusLineChart')
+                        .then(response=>response.json())
+                        .then(result=>{
+                            const months = result.map(item=>item.month)
+                            const counts = result.map(item=>item.count)
+
+                            const lineChart = new Chart(document.getElementById('admin-bus-bar-chart'),{
+                                type: 'bar',
+                                data: {
+                                    labels:months,
+                                    datasets:[{
+                                        label:'bus count over month',
+                                        data:counts,
+                                        backgroundColor:['rgba(255, 99, 132, 0.2)',
+                                                         'rgba(255, 159, 64, 0.2)',
+                                                         'rgba(54, 162, 235, 0.2)',
+                                                         'rgba(75, 192, 192, 0.2)',
+                                                         'rgba(201, 203, 207, 0.2)',
+                                                         'rgba(153, 102, 255, 0.2)',
+                                                         'rgba(255, 99, 132, 0.2)',
+                                                         'rgba(255, 159, 64, 0.2)',
+                                                         'rgba(54, 162, 235, 0.2)',
+                                                         'rgba(75, 192, 192, 0.2)',
+                                                         'rgba(201, 203, 207, 0.2)',
+                                                         'rgba(153, 102, 255, 0.2)'],
+                                        borderColor: 'rgb(255, 102, 178)',
+                                        tension: 0.1
+                                    }]
+                                }
+                            });
+
+                        })
+
+                        .catch(error=>console.log(error))
+                </script>
+
             </div>
         </div>
 
@@ -177,7 +215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script> -->
     <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/admin-dashboard-doughnut-chart.js"></script> -->
-    <script src="<?php echo URLROOT; ?>/js/admin-js/bus-monthly-chart.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/bus-monthly-chart.js"></script> -->
     <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/passenger-monthly-chart.js"></script> -->
 
 
