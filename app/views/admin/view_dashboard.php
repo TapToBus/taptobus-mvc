@@ -163,6 +163,10 @@
                 </script>
 
             </div>
+
+                        
+
+
         </div>
 
         <div class="admin-charts">
@@ -221,20 +225,20 @@
                 <h2> Profit (Monthly) </h2>
                 <canvas id="monthly-profit-line-chart"></canvas>
 
-                <!-- <script>
-                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminNewPassengerLineChart')
+                <script>
+                    fetch('<?php echo URLROOT ?>/Admin_api_controller/adminProfitLineChart')
                         .then(response=>response.json())
                         .then(result=>{
                             const months = result.map(item=>item.month)
-                            const counts = result.map(item=>item.count)
+                            const profits = result.map(item=>item.profit)
 
-                            const lineChart = new Chart(document.getElementById('monthly-passenger-line-chart'),{
+                            const lineChart = new Chart(document.getElementById('monthly-profit-line-chart'),{
                                 type: 'line',
                                 data: {
                                     labels:months,
                                     datasets:[{
-                                        label:'passenger count over month',
-                                        data:counts,
+                                        label:'Profit over month',
+                                        data:profits,
                                         borderColor: 'rgb(255, 102, 178)',
                                         tension: 0.1
                                     }]
@@ -244,7 +248,7 @@
                         })
 
                         .catch(error=>console.log(error))
-                </script> -->
+                </script>
 
             </div>
         </div>
