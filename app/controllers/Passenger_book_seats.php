@@ -3,6 +3,9 @@
 class Passenger_book_seats extends Controller{
     private $availableBusModel;
     private $busModel;
+    private $scheduleModel;
+    private $driverModel;
+    private $conductorModel;
 
 
     public function __construct(){
@@ -12,6 +15,9 @@ class Passenger_book_seats extends Controller{
 
         $this->availableBusModel = $this->model('m_passenger_book_seats');
         $this->busModel = $this->model('m_passenger_book_seats');
+        $this->scheduleModel = $this->model('m_passenger_book_seats');
+        $this->driverModel = $this->model('m_passenger_book_seats');
+        $this->conductorModel = $this->model('m_passenger_book_seats');
     }
 
 
@@ -93,27 +99,52 @@ class Passenger_book_seats extends Controller{
 
 
     public function bus_details(){
-        if(isset($_GET['from'], $_GET['to'], $_GET['date'], $_GET['count'], $_GET['sch_id'], $_GET['boks_id'], $_GET['bus_no'])){
+        // if(isset($_GET['from'], $_GET['to'], $_GET['date'], $_GET['count'], $_GET['sch_id'], $_GET['boks_id'], $_GET['bus_no'])){
 
+        //     $data = [
+        //         'from' => $_GET['from'],
+        //         'to' => $_GET['to'],
+        //         'date' => $_GET['date'],
+        //         'count' => $_GET['count'],
+        //         'sch_id' => $_GET['sch_id'],
+        //         'boks_id' => $_GET['boks_id'],
+        //         'bus_no' => $_GET['bus_no'],
+        //         'bus' => $this->busModel->getBusDetails($_GET['bus_no']),
+        //         'bus_rides' => $this->busModel->getRidesCount($_GET['bus_no']),
+        //         'driver' => '',
+        //         'conductor' => ''
+        //     ];
+
+            // $data['driver'] = $this->busModel->getDriverDetails($data['bus']->driver_ntc);
+            // $data['conductor'] = $this->busModel->getConductorDetails($data['bus']->conductor_ntc);
+
+        //     $this->view('passenger/bus_details', $data);
+        // }else{
+        //     direct('passenger_book_seats/journey_details');
+        // }
+
+        if (isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])) {
             $data = [
-                'from' => $_GET['from'],
-                'to' => $_GET['to'],
-                'date' => $_GET['date'],
-                'count' => $_GET['count'],
                 'sch_id' => $_GET['sch_id'],
                 'boks_id' => $_GET['boks_id'],
-                'bus_no' => $_GET['bus_no'],
-                'bus' => $this->busModel->getBusDetails($_GET['bus_no']),
-                'bus_rides' => $this->busModel->getRidesCount($_GET['bus_no']),
+                'count' => $_GET['count'],
+                'bus' => '',
+                'bus_rides' => '',
                 'driver' => '',
                 'conductor' => ''
             ];
 
-            $data['driver'] = $this->busModel->getDriverDetails($data['bus']->driver_ntc);
-            $data['conductor'] = $this->busModel->getConductorDetails($data['bus']->conductor_ntc);
+            $row = $this->scheduleModel->getBusNo($data['sch_id']);
+
+            $data['bus'] = $this->busModel->getBusDetails($row->bus_no);
+            $data['bus_rides'] = $this->busModel->getRidesCount($row->bus_no);
+
+            $data['driver'] = $this->driverModel->getDriverDetails($data['bus']->driver_ntc);
+            $data['conductor'] = $this->conductorModel->getConductorDetails($data['bus']->conductor_ntc);
+
 
             $this->view('passenger/bus_details', $data);
-        }else{
+        } else {
             direct('passenger_book_seats/journey_details');
         }
     }
