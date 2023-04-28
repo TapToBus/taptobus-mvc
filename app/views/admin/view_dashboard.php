@@ -131,9 +131,10 @@
             </div>
         </div>
 
-
-        <div class="admin-chart-box">
-            <div class="admin-chart">
+        <!-- admin-chart-box -->
+        <div class="second-line-charts"> 
+        <!-- admin-chart -->
+            <div class="second-line-sub-chart">
                 <h2> New Passengers (Monthly) </h2>
                 <canvas id="monthly-passenger-line-chart"></canvas>
 
@@ -161,16 +162,10 @@
 
                         .catch(error=>console.log(error))
                 </script>
-
             </div>
 
-                        
 
-
-        </div>
-
-        <div class="admin-charts">
-            <div class="admin-chart">
+            <div class="second-line-sub-chart">
                 <h2> New Buses (Monthly) </h2>
                 <canvas id="admin-bus-bar-chart"></canvas>
 
@@ -212,13 +207,16 @@
                 </script>
 
             </div>
+
         </div>
+
 
         <div class="admin-chart-heading">
             <div class="admin-chart">
                 <h2> PROFIT OVERVIEW </h2>
             </div>
         </div>
+        
 
         <div class="admin-chart-box">
             <div class="admin-chart">

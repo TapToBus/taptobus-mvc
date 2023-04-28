@@ -530,6 +530,24 @@ a{
 
 /* admin dashboard charts styles */
 
+.second-line-charts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.second-line-sub-chart{
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .admin-charts{
   display: grid;
   grid-template-columns: 2fr 1fr;
