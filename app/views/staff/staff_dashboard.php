@@ -12,44 +12,44 @@
 </head>
 <body>    
     <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
-
-        <div class="container">
+    
+          <div class="container">
             <h2>Dashboard</h2>
             <!-- <div class="search">
                     <input type="text" name="search" placeholder="search here">
                     <label for="search"><i class="fas fa-search"></i></label>
             </div>             -->
             <div class="cards">
-                <div class="card">
+                <div class="card" id="card1">
                     <div class="card-content">
-                        <div class="number">21</div>
+                        <div class="number"><?php echo (string)($data['no_of_owners'])?></div>
                         <div class="card-name">Owners</div>
                     </div>
                     <div class="icon-box">
                          <i class="fa-solid fa-person"></i>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="card2">
                     <div class="card-content">
-                        <div class="number">42</div>
+                        <div class="number"><?php echo (string)($data['no_of_conductors'])?></div>
                         <div class="card-name">Conductors</div>
                     </div>
                     <div class="icon-box">
                         <i class="fa-solid fa-user"></i>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="card3">
                     <div class="card-content">
-                        <div class="number">68</div>
+                        <div class="number"><?php echo (string)($data['no_of_drivers'])?></div>
                         <div class="card-name">drivers</div>
                     </div>
                     <div class="icon-box">
                         <i class="fa-regular fa-user"></i>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="card4">
                     <div class="card-content">
-                        <div class="number">45</div>
+                        <div class="number"><?php echo (string)($data['no_of_buses'])?></div>
                         <div class="card-name">Buses</div>
                     </div>
                     <div class="icon-box">
@@ -57,25 +57,73 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="charts">
+                <!-- line chart -->
                 <div class="chart">
-                    <h2>User population ( past 12 months )</h2>
+                    <h2>User population (Monthly)</h2>
                     <div>
-                        <canvas id="lineChart"></canvas>
+                        <canvas id="line-chart"></canvas>
                     </div>
+                    <script>
+                        fetch('<?php echo URLROOT ?>/Staff_dashboard/user_population_line_chart')
+                            .then(response=>response.json())
+                            .then(result=>{
+                                const months  = result.map(item=>item.month)
+                                const count  = result.map(item=>item.count)
+
+                                const lineChart = new Chart(document.getElementById('line-chart'),{
+                                type: 'line',
+                                data: {
+                                    labels:months,
+                                    datasets:[{
+                                        label:'User count over month',
+                                        data:counts,
+                                        borderColor: 'rgb(75, 192, 192)',
+                                        tension: 0.1
+                                    }]
+                                }
+                                });
+                                
+                            })
+                            .catch(error=>console.log(error))
+                    </script>
                 </div>
+
+                <!-- doughnut chart -->
                 <div class="chart doughnut-chart">
-                    <h2>Employees</h2>
+                    <h2>Users</h2>
                     <div>
-                        <canvas id="doughnut"></canvas>
+                        <canvas id="doughnut-chart"></canvas>
                     </div>
+                    <script>
+                        fetch('<?php echo URLROOT ?>/Staff_dashboard/current_user_doughnut_chart')
+                            .then(response=>response.json())
+                            .then(result=>{
+                            
+                            const types = result.map(item=>item.type)
+                            const counts = result.map(item=>item.count)
+
+                            const pieChart = new Chart(document.getElementById('doughnut-chart'),{
+                                type: 'doughnut',
+                                data: {
+                                    labels:types,
+                                    datasets:[{
+                                        data:counts
+                                    }]
+                                }
+                            });
+                        })
+                        .catch(error=>console.log(error))
+                    </script>
                 </div>
+
             </div>
         </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-    <script src="<?php echo URLROOT;?>/js/staff/chart1.js"></script>
-    <script src="<?php echo URLROOT;?>/js/staff/chart2.js"></script>
-   
-</body>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </body>
 </html>
 
