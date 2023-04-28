@@ -17,19 +17,19 @@ class M_Admin_dashboard{
 
     //get all passengers count
     public function get_passenger_count(){
-        $this->db->query("SELECT COUNT(*) AS passenger_count FROM passenger");
+        $this->db->query("SELECT COUNT(*) AS passenger_count FROM passenger WHERE status = 'active'");
         return $this->db->single();
     }
 
     //get all owners count
     public function get_owner_count(){
-        $this->db->query("SELECT COUNT(*) AS owner_count FROM owner");
+        $this->db->query("SELECT COUNT(*) AS owner_count FROM owner WHERE status = 'active'");
         return $this->db->single();
     }
 
     //get all buses count
     public function get_bus_count(){
-        $this->db->query("SELECT COUNT(*) AS bus_count FROM bus");
+        $this->db->query("SELECT COUNT(*) AS bus_count FROM bus WHERE status = 'active'");
         return $this->db->single();
     }
 
@@ -47,14 +47,14 @@ class M_Admin_dashboard{
 
     //get all passenger new adding to the system for new passenger line chart
     public function getPassengerAddDateChart(){
-        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM passenger GROUP BY month");
+        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM passenger WHERE status = 'active' GROUP BY month ");
         return $this->db->resultSet();
 
     }
 
     //get all buses new adding to the system for new bus bar chart
     public function getBusAddDateChart(){
-        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM bus GROUP BY month");
+        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM bus WHERE status = 'active' GROUP BY month");
         return $this->db->resultSet();
     }
 

@@ -210,15 +210,19 @@
             </div>
         </div>
 
+        <div class="admin-chart-heading">
+            <div class="admin-chart">
+                <h2> INCOME </h2>
+            </div>
+        </div>
+
+        
+
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/monthly-users-chart.js"></script> -->
-    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/admin-dashboard-doughnut-chart.js"></script> -->
-    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/bus-monthly-chart.js"></script> -->
-    <!-- <script src="<?php echo URLROOT; ?>/js/admin-js/passenger-monthly-chart.js"></script> -->
-
-
 
 </body>
 
