@@ -45,6 +45,11 @@
                         </div>                       
                     </div>
                     <div class="details-bottom">
+                        <div class="download-pic">
+                            Bus permit <br><br>
+                            <i class="fa-solid fa-download"></i>
+                            <a href="#">Download here</a>
+                        </div>
                         <div class="action-btn">
                             <button id ="accept" class="accept" onclick="showConfirmation()">Accept</button>
                             <button id = "reject" class="reject" onclick="showRejection()">Reject</button>

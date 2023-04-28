@@ -25,12 +25,14 @@
                     <div class="details-top">
                         <div class="top-left">
                             <div class="top-label">
+                                <span>NTC No</span>
                                 <span>NIC </span>
                                 <span>Name</span>
                                 <span>E mail</span>
                                 <span>Mobile No</span>
                             </div>
                             <div class="top-data">
+                                <span><?php echo ':'.$result->ntcNo?></span>
                                 <span> <?php echo ': '.$result->nic?></span>
                                 <span><?php echo ': '.$result->fname.' '.$result->lname?></span>
                                 <span><?php echo ': '.$result->email?></span>

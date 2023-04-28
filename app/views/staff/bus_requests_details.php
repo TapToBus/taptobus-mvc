@@ -82,7 +82,7 @@
 
             <!-- Rejection pop-up Moodel   -->
             <dialog id="rejection-dialog" class="rejection-box">
-                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST" onsubmit="return validateForm()">
+                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>&owner_nic=<?php echo $result->owner_nic?>" method="POST" onsubmit="return validateForm()">
                     <div class = "reject-msg">
                         <p>Please enter the reason for the rejection</p>  
                         <textarea id="reject-reason" type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
