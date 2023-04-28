@@ -216,7 +216,7 @@
                 <h2> PROFIT OVERVIEW </h2>
             </div>
         </div>
-        
+
 
         <div class="admin-chart-box">
             <div class="admin-chart">
@@ -261,7 +261,7 @@
                     <table class="full-table">
                         <tr>
 
-                            <th>OwnerID</th>
+                            <th>Owner NIC</th>
                             <th>Month</th>
                             <th>Profit</th>
 
