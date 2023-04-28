@@ -150,7 +150,7 @@ class Passenger_book_seats extends Controller{
     }
 
     public function select_seats(){
-        if(isset($_GET['from'], $_GET['to'], $_GET['date'], $_GET['count'], $_GET['sch_id'], $_GET['boks_id'], $_GET['bus_no'])){
+        /*if(isset($_GET['from'], $_GET['to'], $_GET['date'], $_GET['count'], $_GET['sch_id'], $_GET['boks_id'], $_GET['bus_no'])){
 
             $data = [
                 'from' => $_GET['from'],
@@ -162,6 +162,30 @@ class Passenger_book_seats extends Controller{
                 'bus_no' => $_GET['bus_no'],
                 'capacity' => $_GET['capacity'],
             ];
+
+            $this->view('passenger/select_seats', $data);
+        }else{
+            direct('passenger_book_seats/journey_details');
+        }*/
+
+        if(isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])){
+
+            $data = [
+                'sch_id' => $_GET['sch_id'],
+                'boks_id' => $_GET['boks_id'],
+                'count' => $_GET['count'],
+                'bus' => '',
+                'journey' => '',
+                'date' => ''
+
+            ];
+
+            $row = $this->scheduleModel->getBusNo($data['sch_id']);
+            $data['bus'] = $this->busModel->getBusDetails($row->bus_no);
+
+            $data['journey'] = $this->scheduleModel->getJourney($data['sch_id']);
+
+            $data['date'] = $this->scheduleModel->getBookingDate($data['boks_id']);
 
             $this->view('passenger/select_seats', $data);
         }else{

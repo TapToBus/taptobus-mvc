@@ -160,14 +160,25 @@
 
             <div class="btn">
                 <button class="left" onclick="goBack()">Back</button>
-                <button class="right" 
-                onclick="goNext('<?php echo $data['from']; ?>', '<?php echo $data['to']; ?>', '<?php echo $data['date']; ?>', '<?php echo $data['count']; ?>', '<?php echo $data['sch_id']; ?>', '<?php echo $data['boks_id']; ?>', '<?php echo $data['bus_no']; ?>', '<?php echo $data['bus']->capacity; ?>')">Next</button>
-            
+                <button class="right" onclick="goNext('<?php echo $data['sch_id']; ?>', '<?php echo $data['boks_id']; ?>', '<?php echo $data['count']; ?>')">Next</button>
+
             </div>
         </div>
     </div>
 
-    <script src="<?php echo URLROOT; ?>/js/passenger-js/bus-details-js.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bus-details-js.js"></script> -->
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+
+        function goNext(sch_id, boks_id, count) {
+            const url = "http://localhost/taptobus/passenger_book_seats/select_seats?sch_id=" +sch_id+ "&boks_id=" +boks_id+ "&count=" +count;
+            window.location.href = url;
+        }
+    </script>
 </body>
 
 </html>

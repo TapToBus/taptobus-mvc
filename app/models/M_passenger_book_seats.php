@@ -112,4 +112,24 @@ class M_passenger_book_seats{
 
         return $result;
     }
+
+
+    public function getJourney($sch_id){
+        $this->db->query('SELECT `from`, `to`, departure_time, ticket_price FROM schedule WHERE id = :sch_id;');
+        
+        $this->db->bind(':sch_id', $sch_id);
+        $result = $this->db->single();
+
+        return $result;
+    }
+
+    
+    public function getBookingDate($boks_id){
+        $this->db->query('SELECT date FROM booked_seats WHERE id = :boks_id;');
+        
+        $this->db->bind(':boks_id', $boks_id);
+        $result = $this->db->single();
+
+        return $result;
+    }
 }

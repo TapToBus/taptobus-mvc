@@ -24,7 +24,7 @@
                         <?php $line = 1; ?>
                         <?php $j = 0; ?>
 
-                        <?php while($line <= ($data['capacity'] - 5)/4): ?>
+                        <?php while($line <= ($data['bus']->capacity - 5)/4): ?>
                             <div class="row">
                                 <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat"></span>
                                 <?php $j++; ?>
@@ -58,15 +58,15 @@
                         <div class="right-top-heading">Summary</div>
 
                         <div class="right-top-details">
-                            <div class="journey"><?php echo $data['from']; ?> > <?php echo $data['to']; ?></div>
+                            <div class="journey"><?php echo $data['journey']->from; ?> > <?php echo $data['journey']->to; ?></div>
 
                             <div class="row">
                                 <span class="col1">On:</span>
-                                <span class="col2"><?php echo $data['date']; ?></span>
+                                <span class="col2"><?php echo $data['date']->date; ?></span>
                             </div>
                             <div class="row">
                                 <span class="col1">At:</span>
-                                <span class="col2">10:30 AM</span>
+                                <span class="col2"><?php echo date('h:i A', strtotime($data['journey']->departure_time)) ?></span>
                             </div>
                             <div class="row">
                                 <span class="col1">Passenger count:</span>
@@ -74,11 +74,11 @@
                             </div>
                             <div class="row">
                                 <span class="col1">Bus No:</span>
-                                <span class="col2">NB-1234</span>
+                                <span class="col2"><?php echo $data['bus']->bus_no; ?></span>
                             </div>
                             <div class="row">
                                 <span class="col1">Ticket price:</span>
-                                <span class="col2">LKR 5000.00</span>
+                                <span class="col2">LKR <?php echo number_format($data['journey']->ticket_price * $data['count'], 2); ?></span>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
 
                     <div class="btn">
                         <button class="btn-left" onclick="goBack()">Back</button>
-                        <button class="btn-right" onclick="goNext('<?php echo $bus_no ?>', '<?php echo $capacity ?>', '<?php echo $schedule_id ?>', '<?php echo $booked_seats_id ?>', '<?php echo $count ?>')">Pay</button>
+                        <button class="btn-right" onclick="goNext()">Pay</button>
                     </div>
                 </div>
             </div>
