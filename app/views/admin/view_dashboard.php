@@ -212,11 +212,27 @@
 
         <div class="admin-chart-heading">
             <div class="admin-chart">
-                <h2> INCOME </h2>
+                <h2> INCOME OVERVIEW </h2>
             </div>
         </div>
 
-        
+        <div class="admin-chart-box">
+            <div class="admin-chart">
+                <h2> INCOME </h2>
+
+                <div class="content-table">
+                    <table class="full-table">
+                        <tr>
+                            <th>OwnerID</th>
+                            <th>Month</th>
+                            <th>Profit</th>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
 
 
 
