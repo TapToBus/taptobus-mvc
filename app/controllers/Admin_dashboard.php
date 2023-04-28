@@ -6,12 +6,16 @@ class Admin_dashboard extends Controller{
     private $pageModelOwnerCount;
     private $pageModelBusCount;
 
+    private $pageModelProfitCount;
+
     public function __construct()
     {
         $this->pageModelUserCount = $this->model('M_Admin_dashboard');
         $this->pageModelPassengerCount = $this->model('M_Admin_dashboard');
         $this->pageModelOwnerCount = $this->model('M_Admin_dashboard');
         $this->pageModelBusCount = $this->model('M_Admin_dashboard');
+
+        $this->pageModelProfitCount = $this->model('M_Admin_dashboard');
 
         // check if admin is logined to the system
 
@@ -44,6 +48,15 @@ class Admin_dashboard extends Controller{
             'bus_count'=>$data4->bus_count
         ];
 
+        $this->view('admin/view_dashboard', $data);
+
+    }
+
+    public function view_system_profit(){
+
+        $profit = $this->pageModelProfitCount->getProfit();
+        $data = ['profit' => $profit];
+        
         $this->view('admin/view_dashboard', $data);
 
     }
