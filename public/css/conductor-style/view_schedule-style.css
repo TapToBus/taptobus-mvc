@@ -29,19 +29,52 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
+    /* padding: 5px; */
     height: 60px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+}
+
+/* .l1{
+
+    position: relative;
+    margin-left: -2.4rem;
+}
+
+.l2{
+
+    position: relative;
+    margin-left: -4rem;
+
+}
+
+.l3{
+
+    margin-left: -6rem;
+
+}
+
+.l4{
+
+    margin-left: -13rem;
+
+} */
+
+.l5{
+
+  
+   left: 0rem;
+
 }
 
 .row > div {
     flex: 1;
-    padding: 5px;
+    /* padding: 5px; */
     
 }
 
 .header {
     font-weight: bold;
+    /* text-align: left; */
 }
 
 .btn {
