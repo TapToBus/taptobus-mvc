@@ -13,7 +13,7 @@
 
         public function staff_dash(){
 
-            $status = "accepted";
+            $status = "active";
             $no_of_total_users = $this->dashboard_model->getTotalUsers();
             $no_of_buses = $this->dashboard_model->getTotalBusses($status)->num_buses;
             $no_of_owners = $this->dashboard_model->getTotalOwners($status)->num_owners;
