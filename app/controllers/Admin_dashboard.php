@@ -39,13 +39,15 @@ class Admin_dashboard extends Controller{
         //get all bus count
         $data4=$this->pageModelBusCount->get_bus_count();
 
-        
+        $profit = $this->pageModelProfitCount->getProfit();
+
 
         $data = [
             'user_count' => $data->user_count,
             'passenger_count'=>$data2->passenger_count,
             'owner_count'=>$data3->owner_count,
-            'bus_count'=>$data4->bus_count
+            'bus_count'=>$data4->bus_count,
+            'profit' => $profit
         ];
 
         $this->view('admin/view_dashboard', $data);
@@ -53,11 +55,6 @@ class Admin_dashboard extends Controller{
     }
 
     public function view_system_profit(){
-
-        $profit = $this->pageModelProfitCount->getProfit();
-        $data = ['profit' => $profit];
-        
-        $this->view('admin/view_dashboard', $data);
 
     }
 }

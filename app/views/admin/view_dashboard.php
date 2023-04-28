@@ -223,10 +223,23 @@
                 <div class="content-table">
                     <table class="full-table">
                         <tr>
+
                             <th>OwnerID</th>
                             <th>Month</th>
                             <th>Profit</th>
+
                         </tr>
+
+                        <?php foreach($data['profit'] as $profit) : ?>
+                            <tr>
+
+                                <td><?php echo $profit->owner_nic?></td>
+                                <td><?php echo $profit->month?></td>
+                                <td>LKR <?php echo number_format($profit->profit, 2, '.', ',')?></td>
+                                
+                            </tr>
+
+                        <?php endforeach;  ?>    
                     </table>
                 </div>
 
