@@ -45,11 +45,17 @@ class M_Admin_dashboard{
         return $this->db->resultSet();
     }
 
-    //get all passenger new adding to the system for new user line chart
+    //get all passenger new adding to the system for new passenger line chart
     public function getPassengerAddDateChart(){
         $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM passenger GROUP BY month");
         return $this->db->resultSet();
 
+    }
+
+    //get all buses new adding to the system for new bus bar chart
+    public function getBusAddDateChart(){
+        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM bus GROUP BY month");
+        return $this->db->resultSet();
     }
 
 }
