@@ -12,13 +12,63 @@
 
 <body>
 
-<?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
 
-<div class="main">
-    <div class="content-heading">
-        <h1>PROFILE</h1>
+    <div class="main">
+        <div class="content">
+            <h1 class="heading">PROFILE</h1>
+
+            <div class="pro-details">
+                <div class="left">
+                    <img src="<?php echo URLROOT; ?>/img/profile-pic/AdminProfilePicture.png">
+                </div>
+
+                <div class="right">
+                    <div class="name"><?php echo $data['profile']->fname . ' ' . $data['profile']->lname; ?></div>
+
+                    <div class="details">
+
+                        <div class="row">
+                            <span class="col1">Admin ID: </span>
+                            <span class="col2"><?php echo $data['profile']->admin_id ?></span>
+                        </div>
+
+                        <div class="row">
+                            <span class="col1">NIC: </span>
+                            <span class="col2"><?php echo $data['profile']->nic ?></span>
+                        </div>
+
+                        <div class="row">
+                            <span class="col1">Email: </span>
+                            <span class="col2"><?php echo $data['profile']->email ?></span>
+                        </div>
+
+                        <div class="row">
+                            <span class="col1">Mobile Number: </span>
+                            <span class="col2"><?php echo $data['profile']->mobileNo ?></span>
+                        </div>
+
+                        <div class="row">
+                            <span class="col1">Telephone Number: </span>
+                            <span class="col2"><?php echo $data['profile']->telNo ?></span>
+                        </div>
+
+                    </div>
+
+                    <div class="btn">
+                        <button class="delete">Delete Profile</button>
+                        <a href="<?= URLROOT; ?>/admin_profile/edit_profile"><button class="edit">Edit profile</button></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-</div>
+
+
+    </div>
 </body>
+
 </html>

@@ -2,7 +2,6 @@
 
 class admin_profile extends Controller{
 
-    private $adminProfileModel;
 
     public function __construct()
     {
@@ -12,11 +11,11 @@ class admin_profile extends Controller{
              direct('user/logout');  
         }
 
-        $this->adminProfileModel->model('M_admin_profile');
-        
     }
 
     public function view_profile(){
+        
+        $this->view('admin/view_profile');
         
 
     }
