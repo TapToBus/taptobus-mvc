@@ -41,20 +41,20 @@ class M_Admin_dashboard{
 
     //get all users new adding to the system for new users line chart
     public function getUserAddDateChart(){
-        $this->db->query("SELECT MONTH(active_date) AS month,COUNT(*) AS count FROM user GROUP BY month");
+        $this->db->query("SELECT MONTHNAME(active_date) AS month,COUNT(*) AS count FROM user GROUP BY month");
         return $this->db->resultSet();
     }
 
     //get all passenger new adding to the system for new passenger line chart
     public function getPassengerAddDateChart(){
-        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM passenger WHERE status = 'active' GROUP BY month ");
+        $this->db->query("SELECT MONTHNAME(joined_datetime) AS month,COUNT(*) AS count FROM passenger WHERE status = 'active' GROUP BY month ");
         return $this->db->resultSet();
 
     }
 
     //get all buses new adding to the system for new bus bar chart
     public function getBusAddDateChart(){
-        $this->db->query("SELECT MONTH(joined_datetime) AS month,COUNT(*) AS count FROM bus WHERE status = 'active' GROUP BY month");
+        $this->db->query("SELECT MONTHNAME(joined_datetime) AS month,COUNT(*) AS count FROM bus WHERE status = 'active' GROUP BY month");
         return $this->db->resultSet();
     }
 
