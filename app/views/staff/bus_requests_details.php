@@ -58,7 +58,7 @@
                         <div class="download-pic">
                             Bus permit <br><br>
                             <i class="fa-solid fa-download"></i>
-                            <a href="#">Download here</a>
+                            <a href="<?php echo URLROOT?>/Staff_view_requests/download_bus_permit?bus_no=<?php echo $result->bus_no?>">Download here</a>
                         </div>
                         <div class="action-btn">
                             <button id ="accept"class="accept" onclick="showConfirmation()">Accept</button>

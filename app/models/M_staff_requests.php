@@ -241,6 +241,25 @@ class M_staff_requests{
         return $this->db->execute();
     }
 
+
+    //  Download the permit image
+    public function downloadPermitImage($bus_no){
+        $this->db->query("SELECT permit_image FROM bus WHERE bus_no = :bus_no");
+        $this->db->bind(':bus_no', $bus_no);
+
+        return $this->db->single();
+    
+    }
+    public function noOfRows($bus_no){
+        $this->db->query("SELECT count(*) FROM bus WHERE bus_no = :bus_no");
+        $this->db->bind(':bus_no', $bus_no);
+    
+        return $this->db->single();
+       
+    }
+    
+        
+
 }
 
 ?>

@@ -627,6 +627,33 @@
 
 
         }
+
+        public function download_bus_permit(){
+            $bus_no = $_GET['bus_no'];
+            $permit_image = $this->busModel->downloadPermitImage($bus_no);
+            // print_r($bus_no);
+            // die();
+           
+            // -----------------  ERROR HANDLING  --------------
+            // if (!isset($permit_image)) {
+            //     // Handle error: permit image not found
+            //     echo 'Permit image not found';
+            //     die();
+            // }
+
+            $noofrows = $this->busModel->noOfRows($bus_no);
+            $countbus = is_object($noofrows) ? $noofrows : 0;
+            print_r($countbus);
+            die();
+
+          
+
+            header('content-type: image/jpeg');
+            header('Content-Disposition: attachment; filename=bus_permit');
+            
+           
+           
+        }
     }
 
 ?>
