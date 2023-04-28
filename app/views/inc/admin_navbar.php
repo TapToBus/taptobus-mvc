@@ -17,20 +17,12 @@
 
     <div class="topright">
 
-        <div class="message">
-            <i class="fa-solid fa-message"></i>
-        </div>
-
-        <div class="nortification">
-            <i class="fa-solid fa-bell"></i>
-        </div>
-
         <div class="vl"></div>
 
         <small><b>Hi! Kithsandu</b></small>
 
         <div class="picon">
-            <img src="<?php echo URLROOT; ?>/img/profile-pic.jpg" alt="Profile Pic">
+            <img src="<?php echo URLROOT; ?>/img/profile-pic/AdminProfilePicture.png" alt="Profile Pic">
         </div>
         
     </div>
