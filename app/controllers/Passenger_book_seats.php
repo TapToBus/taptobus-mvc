@@ -176,7 +176,7 @@ class Passenger_book_seats extends Controller{
                 'count' => $_GET['count'],
                 'bus' => '',
                 'journey' => '',
-                'date' => ''
+                'seats' => ''
 
             ];
 
@@ -185,7 +185,7 @@ class Passenger_book_seats extends Controller{
 
             $data['journey'] = $this->scheduleModel->getJourney($data['sch_id']);
 
-            $data['date'] = $this->scheduleModel->getBookingDate($data['boks_id']);
+            $data['seats'] = $this->scheduleModel->getBookedSeatsDate($data['boks_id']);
 
             $this->view('passenger/select_seats', $data);
         }else{
