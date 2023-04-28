@@ -71,7 +71,7 @@
                             .then(response=>response.json())
                             .then(result=>{
                                 const months  = result.map(item=>item.month)
-                                const count  = result.map(item=>item.count)
+                                const counts  = result.map(item=>item.count)
 
                                 const lineChart = new Chart(document.getElementById('line-chart'),{
                                 type: 'line',
@@ -83,6 +83,9 @@
                                         borderColor: 'rgb(75, 192, 192)',
                                         tension: 0.1
                                     }]
+                                },
+                                Options:{
+                                    respponsive: true
                                 }
                                 });
                                 
@@ -110,7 +113,18 @@
                                 data: {
                                     labels:types,
                                     datasets:[{
-                                        data:counts
+                                        data:counts,
+                                        backgroundColor: [
+                                        '#6666ff',
+                                        '#0000e6',
+                                        '#000080'
+                                    ],
+                                        borderColor: [
+                                        '#1e0e5e',
+                                        '#60519d',
+                                        '#390ee6'  
+                                    ],
+                                        borderWidth: 1
                                     }]
                                 }
                             });
