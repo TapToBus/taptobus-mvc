@@ -34,9 +34,8 @@
     <a href="<?php echo URLROOT; ?>/Staff_home/staffhome" class="active"><i class="fa-solid fa-scroll"></i><span>Announcement</span></a>
     <a href="<?php echo URLROOT; ?>/Staff_view_users/view_users"><i class="fa-solid fa-users"></i><span>Users</span></a>
     <a href="#"><i class="fa-solid fa-calendar-days"></i><span>Calender</span></a>
-    <a href="#"><i class="fa-solid fa-table-list"></i><span>Shedule</span></a>
+    <a href="<?php echo URLROOT; ?>/Staff_schedule/view_schedule"><i class="fa-solid fa-table-list"></i><span>Schedule</span></a>
     <a href="<?php echo URLROOT; ?>/Staff_requests/view_requests"><i class="fa-solid fa-user-plus"></i><span>Requests</span></a>
-    <!-- <a href="#"><i class="fa-solid fa-bell"></i><span>Notifications</span></a> -->
     <a href="<?php echo URLROOT; ?>/Staff_profile/viewprofile"><i class="fa-solid fa-user"></i><span>Profile</span></a>
     <a href="<?php echo URLROOT; ?>/Users/logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 
