@@ -51,6 +51,7 @@
 
                            <form id="myform" action="<?php echo URLROOT; ?>/owner_leaverequests/update_assigned_bus" method="POST">
                              
+                               <input type="hidden" name="request_id" value="<?php echo $row->request_id;?>">
                                <input type="hidden" name="user_ntc" value="<?php echo $row->user_ntc;?>">
                                <input type="hidden" name="type" value="<?php echo $row->type;?>">
                                <input type="hidden" name="owner_nic" value="<?php echo $_SESSION['user_id']; ?>">
@@ -60,7 +61,7 @@
                            </form>
 
                            <a > <button id="accept-button" >Accept</button></a>
-                           <a> <button>Reject</button></a>
+                           <a> <button id="reject-button">Reject</button></a>
 
                            <script>
                              
