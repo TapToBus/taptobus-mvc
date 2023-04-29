@@ -54,7 +54,7 @@ class Admin_api_controller extends Controller{
     }
 
     public function adminProfitLineChart(){
-        $profitData = $this->adminProfitModel->getProfit();
+        $profitData = $this->adminProfitModel->getProfitChart();
         //convert php and jason data to transfer
         echo json_encode($profitData);
     }
