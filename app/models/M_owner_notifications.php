@@ -11,6 +11,7 @@ class M_owner_notifications{
     public function change_conductor_noti($bus_no){
 
         
+        
     }
 
 }
