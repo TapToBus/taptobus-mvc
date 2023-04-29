@@ -32,14 +32,14 @@ class M_owner_notifications{
         return $results;
     }
 
-    public function not_status_change(){
+    // public function not_status_change(){
 
-        $this->db->query("UPDATE owner_notifications SET read_status=1 WHERE nic = :owner_nic");
-        $owner_nic = $_SESSION['user_id'];
-        $this->db->bind(':owner_nic', $owner_nic);
-        $this->db->execute();
+    //     $this->db->query("UPDATE owner_notifications SET read_status=1 WHERE nic = :owner_nic");
+    //     $owner_nic = $_SESSION['user_id'];
+    //     $this->db->bind(':owner_nic', $owner_nic);
+    //     $this->db->execute();
 
-    }
+    // }
 
   }
 
