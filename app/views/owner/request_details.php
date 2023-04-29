@@ -51,8 +51,8 @@
                            <!-- <input type="submit" value="Accept" href="<?php echo URLROOT; ?>/owner_conductors/update_assigned_bus?user_ntc=<?php echo $row->user_ntc; ?>?type=<?php echo $row->type; ?>" >
                            <input type="submit" value="Reject"> -->
 
-                           <a href="<?php echo URLROOT; ?>/owner_leaverequests/update_assigned_bus?user_ntc=<?php echo $row->user_ntc; ?>&type=<?php echo $row->type; ?>"> <button>Accept</button></a>
-                           <a> <button>Reject</button></a>
+                           <a href="<?php echo URLROOT; ?>/owner_leaverequests/update_assigned_bus?user_ntc=<?php echo $row->user_ntc; ?>&type=<?php echo $row->type; ?>&request_id=<?php echo $row->request_id; ?>"> <button>Accept</button></a>
+                           <a href="<?php echo URLROOT; ?>/owner_leaverequests/reject_leaverequest?request_id=<?php echo $row->request_id; ?>"> <button>Reject</button></a>
                     </div>
                 </div>
                 

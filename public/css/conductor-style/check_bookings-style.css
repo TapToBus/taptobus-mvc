@@ -1,0 +1,93 @@
+@import url(../main.css);
+@import url(../conductor-style/navbar-style.css);
+
+/* input[type=text]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 15px;
+} */
+
+
+ .outer{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+ }
+
+  .container {
+    
+    border: 1px solid ;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    border-color: hsl(231, 72%, 37%);
+    background-color: #f2f2f2;
+    padding: 20px;
+    min-width: 500px;
+    height: 450px;
+    margin-top: 5%;
+    margin-left: 10rem;
+    line-height:30px;
+    
+  }
+
+ /* .outer i {
+        
+    margin-right: -20rem;
+    width: 2rem;
+    height: 3rem ;
+    color:#213F99;
+
+} */
+
+
+.container .search-box {
+  position: relative;
+  margin-left: 3.2rem;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container .search-box input[type="text"] {
+  padding-right: 2rem; /* leave space for the icon */
+  padding-left: 3 rem;
+  width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 20px;
+  
+}
+
+.container .search-box i {
+  position: absolute;
+  top:1rem;
+  right: 10rem;
+  transform: translateY(-50%);
+  color: #3a029c;
+}
+
+.container .info{
+  width: 70%;
+  height: auto;
+   display: flex;
+  /* grid-template-columns: auto;  */
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  margin-left: 17.5% ;
+  margin-top: 5%;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.info > label{
+  padding: 0.5rem;
+}
+  

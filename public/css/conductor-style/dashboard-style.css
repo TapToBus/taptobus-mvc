@@ -1,0 +1,16 @@
+@import url(../main.css);
+@import url(../conductor-style/navbar-style.css);
+
+
+.container{
+    
+    /* width:1600px; */
+    
+    padding: 4.345rem 0rem 0rem 0rem;
+    margin-left: 14.3%;
+    /* width: 80%;
+    margin:30px ; */
+    /* display: flex; */
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+}

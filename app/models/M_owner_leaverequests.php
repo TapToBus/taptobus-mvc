@@ -40,7 +40,7 @@ class M_owner_leaverequests{
 
         $this->db->query("UPDATE $table_name SET bus_no=NULL WHERE ntcNo= :user_ntc");
         $this->db->bind(':user_ntc',$user_ntc);
-        $this->db->execute(); 
+        $this->db->execute();  
 
         if($type=='conducter'){ 
 
@@ -62,11 +62,20 @@ class M_owner_leaverequests{
 
     }
 
-    public function remove_leaverequest($user_ntc){
+    public function remove_leaverequest($request_id){
 
         // prepare query
-        $this->db->query("DELETE from leave_request WHERE user_ntc = :user_ntc");
-        $this->db->bind(':user_ntc',$user_ntc);
+        $this->db->query("UPDATE leave_request SET status='accept' WHERE request_id = :request_id");
+        $this->db->bind(':request_id',$request_id);
+        $this->db->execute();
+
+    }
+
+    public function reject_leaverequest($request_id){
+
+        // prepare query
+        $this->db->query("UPDATE leave_request SET status='reject' WHERE request_id = :request_id");
+        $this->db->bind(':request_id',$request_id);
         $this->db->execute();
 
     }
