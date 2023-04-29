@@ -73,17 +73,29 @@
 }
 
 .result .low-priority{
-    color: blue;
-    font-weight: 450;
+    /* color: blue;
+    font-weight: 450; */
+    background-color: blue;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
 }
 
 .result .middle-priority{
-    color: green;
+    /* color: green;
+    font-weight: 500; */
+    background-color: green;
+    color: white;
     font-weight: 500;
+    border-radius: 10px;
 }
 
 .result .high-priority{
-    color: red;
-    font-weight: 550;
+    /* color: red;
+    font-weight: 550; */
+    background-color: red;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
 }
 

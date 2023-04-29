@@ -69,3 +69,23 @@
     font-size: 25px;
     font-weight: 400;
 }
+
+.result .used{
+    /* color: green;
+    font-weight: 500; */
+    
+    /* background-color: green; */
+    background-color: blue;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.result .cancelled{
+    /* color: red;
+    font-weight: 550; */
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+}
