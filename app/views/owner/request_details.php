@@ -61,7 +61,7 @@
                            </form>
 
                            <a > <button id="accept-button" >Accept</button></a>
-                           <a> <button id="reject-button">Reject</button></a>
+                           <a href="<?php echo URLROOT; ?>/owner_leaverequests/reject_leaverequest?request_id=<?php echo $row->request_id; ?>"> <button>Reject</button></a>
 
                            <script>
                              
