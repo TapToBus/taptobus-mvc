@@ -64,6 +64,7 @@ class Passenger_bookings extends Controller{
     
     
     function booking_details(){
-        echo 'Hello...!' . '<br>booking_id : ' . $_GET['booking_id'];
+        
+        $this->view('passenger/booking_details');
     }
 }

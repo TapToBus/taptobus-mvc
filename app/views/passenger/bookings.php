@@ -13,7 +13,7 @@
     <?php require APPROOT . '/views/inc/passenger_navbar.php' ?>
 
     <div class="main">
-            <h1 class="heading">Bookings</h1>
+        <h1 class="heading">Bookings</h1>
 
         <div class="title">
             <span class="title0">Bus No</span>
@@ -58,7 +58,14 @@
         <?php endif; ?>
     </div>
 
-    <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script> -->
+
+    <script>
+        function goNext(booking_id) {
+            const url = "http://localhost/taptobus/passenger_bookings/booking_details?bok_id=" + booking_id;
+            window.location.href = url;
+        }
+    </script>
 </body>
 
 </html>

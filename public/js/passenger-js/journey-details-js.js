@@ -1,4 +1,4 @@
-const fromDropdown = document.getElementById("from");
+/*const fromDropdown = document.getElementById("from");
 const toDropdown = document.getElementById("to");
 
 
@@ -42,4 +42,4 @@ maxDate.setDate(maxDate.getDate() + 13);
 var maxDateStr = maxDate.toISOString().split('T')[0];
 
 // Set the maximum date for the input field
-document.getElementById('date').setAttribute('max', maxDateStr);
+document.getElementById('date').setAttribute('max', maxDateStr);*/
