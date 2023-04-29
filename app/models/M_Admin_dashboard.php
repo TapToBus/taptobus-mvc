@@ -64,5 +64,10 @@ class M_Admin_dashboard{
         return $this->db->resultSet();
     }
 
+    //get system profit into chart
+    public function getProfitChart(){
+        $this->db->query('SELECT MONTHNAME(i.date) as month, SUM(i.amount)*0.05 as profit FROM bus b JOIN incomerecords i ON b.bus_no = i.bus_no GROUP BY MONTH(i.date)');
+    } 
+
 }
 ?>
