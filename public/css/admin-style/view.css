@@ -701,6 +701,89 @@ a{
 }
 
 
+/* admin report styles */
+
+/* .report-containers{
+  display: flex;
+  flex-direction: row;
+
+} */
+
+.report-container{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+  margin-top: 20px;
+  
+
+}
+
+
+.report-sub-container{
+
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-bottom: 10px;
+ 
+}
+
+.report-container .report-sub-container .report-container-form{
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  margin: 5px 30px 5px 30px;
+
+}
+
+.report-container .report-sub-container .report-container-heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:20px;
+}
+
+.report-container .report-sub-container .datapicker_report{
+  margin-bottom: 30px;
+}
+
+.report-container .report-sub-container .report_date_la{
+  margin-bottom: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* admin profile styles */
 
 .content{
