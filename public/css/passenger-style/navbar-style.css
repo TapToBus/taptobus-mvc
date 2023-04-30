@@ -31,8 +31,6 @@ body{
     background-image: url(../../img/main-background.jpg);
     background-size: cover;
     background-position: center;
-
-    position: relative;
 }
 
 
@@ -46,7 +44,7 @@ body{
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    height: 55px;
+    height: 60px;
     color: var(--clr-white);
     position: fixed;
     z-index: 10;
@@ -132,8 +130,8 @@ body{
 .main{
     margin-left: clamp(100px, 22%, 200px);
     /* padding-top: 70px; */
-    padding-top: 65px;
+    padding-top: 80px;
     padding-bottom: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
 }

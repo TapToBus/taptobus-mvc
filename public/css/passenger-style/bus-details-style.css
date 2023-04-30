@@ -7,27 +7,35 @@
     color: var(--clr-navbar-top);
     margin-bottom: 10px;
 
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .content{
-    margin-left: 120px;
-    margin-right: 120px;
+    /* margin-left: 120px;
+    margin-right: 120px; */
+
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+
 }
 
 .content .top{
     display: grid;
     grid-template-columns: 48% 52%;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    margin-bottom: 10px;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-    height: 40vh;
+    height: 30vh;
 
     background-color: white;
 }
@@ -44,7 +52,7 @@
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
 
     position: absolute;
     top: 50%;
@@ -55,11 +63,13 @@
 .content .top-right{
     line-height: 20px;
     padding-left: 20px;
+
+    align-items: center;
 }
 
 .content .top-right .row{
     display: grid;
-    grid-template-columns: 22% 78%;
+    grid-template-columns: 25% 75%;
     justify-content: center;
     margin-bottom: 5px;
     line-height: 30px;
@@ -71,7 +81,7 @@
 
 .content .star{
     color: gold;
-    /* font-size: 18px; */
+    font-size: 20px;
 }
 
 .content .response{
@@ -92,18 +102,18 @@
 
 .content .top-right .facilities i{
     /* border: 1px solid black; */
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .content .bottom{
     display: grid;
-    grid-template-columns: 49% 49%;
-    column-gap: 15px;
+    grid-template-columns: 49.5% 49.5%;
+    column-gap: 10px;
     margin-bottom: 15px;
     align-items: center;
     justify-content: space-between;
 
-    height: 16vh;
+    /* height: 18vh; */
 }
 
 .content .bottom-left, .content .bottom-right{
@@ -111,10 +121,10 @@
     grid-template-columns: 20% 80%;
     align-items: center;
 
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 

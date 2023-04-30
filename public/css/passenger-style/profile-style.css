@@ -2,26 +2,33 @@
 @import url(../passenger-style/navbar-style.css);
 
 .content{
-    margin-left: 200px;
-    margin-right: 200px;
+    /* margin-left: 200px;
+    margin-right: 200px; */
+
+    width: 55%;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
 }
 
 .content .heading{
     font-size: 25px;
     color: var(--clr-navbar-top);
     margin-bottom: 10px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 .content .pro-details{
     display: grid;
-    grid-template-columns: 50% 50%;
+    /* grid-template-columns: 50% 50%; */
+    grid-template-columns: 45% 55%;
     align-items: center;
 
-    height: 45vh;
+    height: 35vh;
 
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
     margin-bottom: 10px;
@@ -29,7 +36,7 @@
 
 .content .pro-details .left{
     height: 80%;
-    width: 65%;
+    width: 75%;
     position: relative;
 
     top: 40%;
@@ -106,11 +113,11 @@
 
 .content .pro-summary .left{
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     
     display: grid;
     grid-template-columns: 50% 50%;
@@ -130,11 +137,11 @@
 
 .content .pro-summary .right{
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     text-align: center;
 }
