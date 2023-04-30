@@ -19,7 +19,7 @@ class admin_profile extends Controller{
 
     public function view_profile(){
         
-        $ProfileDetails = $this->profileModel->getProfileDetails($_SESSION['user_id']);
+        $ProfileDetails = $this->profileModel->getAdminProfileDetails($_SESSION['user_id']);
 
         $data = [
             'ProfileDetails' => $ProfileDetails
