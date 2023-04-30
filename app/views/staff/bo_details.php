@@ -29,8 +29,8 @@
         <div class="content-table">
             <table class="full-table">
                 <tr>
-                    <th>Name</th>
                     <th>NIC</th>
+                    <th>Name</th>                    
                     <th>Mobile no</th>
                     <th>Email</th>   
                 </tr>
@@ -39,8 +39,8 @@
                 foreach($results as $busOwnerdetial){
                 ?>
                 <tr>
-                    <td><?php echo $busOwnerdetial->fname ."  ". $busOwnerdetial->lname ?></td>
                     <td><?php echo $busOwnerdetial->nic ?></td>
+                    <td><?php echo $busOwnerdetial->fname ."  ". $busOwnerdetial->lname ?></td>
                     <td><?php echo $busOwnerdetial->mobileNo?></td>
                     <td><?php echo $busOwnerdetial->email ?></td>
                 </tr>
