@@ -2,7 +2,7 @@
 
 class Admin_reports extends Controller{
 
-    private $dateFromDateToModel;
+    // private $dateFromDateToModel;
 
     public function __construct()
     {
@@ -11,7 +11,7 @@ class Admin_reports extends Controller{
             direct('user/logout');
         }
 
-        $this->dateFromDateToModel = $this->model('M_Admin_reports');
+        // $this->dateFromDateToModel = $this->model('M_Admin_reports');
         
     }
 
@@ -25,22 +25,22 @@ class Admin_reports extends Controller{
         $this->view('admin/reports');
     }
 
-    public function Date_From_Date_To(){
+    // public function Date_From_Date_To(){
 
-        //check if form is submitted
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //     //check if form is submitted
+    //     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-            //get data form data array
-            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+    //         //get data form data array
+    //         $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
-            $data=[
-                'date_from' => trim($_POST['date_from']),
-                'date_to' => trim($_POST['date_to']),
-            ];
+    //         $data=[
+    //             'date_from' => trim($_POST['date_from']),
+    //             'date_to' => trim($_POST['date_to']),
+    //         ];
 
-        }
+    //     }
 
-    }
+    // }
 }
 
 

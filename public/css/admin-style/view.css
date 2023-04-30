@@ -711,9 +711,8 @@ a{
 
 .report-container{
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 20px;
   padding-top: 0;
@@ -745,10 +744,10 @@ a{
 }
 
 .report-container .report-sub-container .report-container-heading{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   margin-bottom:20px;
   color: #404989;
 }
@@ -758,8 +757,156 @@ a{
 }
 
 .report-container .report-sub-container .report_date_la{
-  margin-bottom: 7px;
+  margin-top: 7px;
+  margin-right: 3px;
 }
+
+.report-container .report-sub-container .report-container-form-input-labels{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.report-container .report-sub-container .report-container-form-input-labels .datapicker_report{
+
+  width: 175px;
+  border: white;
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  height: 40px;
+  color: black;
+  font-size: 15px;
+  margin-top: 2px;
+  /* margin-bottom: 2px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.report-container .report-sub-container .report-container-form-input-labels input{
+  margin-right: 20px;
+}
+
+.report-container .report-sub-container .report-container-form-input-labels .report_date_la{
+  font-weight: 500;
+  font-size: 16px;
+  padding-right: 10px;
+  font-style: normal;
+}
+
+.submit-reset-buttons button{
+
+  width: 100px;
+  padding: 8px 0 8px 0;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid black;
+  background: transparent;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  margin-left: 10px;
+
+}
+
+.submit-reset-buttons span{
+  background: black;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.submit-reset-buttons button:hover span{
+  width: 100%;
+}
+
+.submit-reset-buttons button:hover{
+  border: 2px solid transparent;
+  color: rgb(133, 133, 133);
+  background-color:  rgb(231, 231, 231) ;
+  border: #000000;
+  
+}
+
+.generation-buttons button{
+
+  width: 200px;
+  padding: 8px 0 8px 0;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid rgb(189, 167, 0);
+  background: transparent;
+  color: rgb(189, 167, 0);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  margin-left: 20px;
+
+}
+
+.generation-buttons span{
+  background: black;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.generation-buttons button:hover span{
+  width: 100%;
+}
+
+.generation-buttons button:hover{
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.908);
+  background-color:  rgba(189, 167, 0, 0.808) ;
+  border: #000000;
+  
+}
+
+.two-button{
+  display: flex;
+  flex-direction: row;
+  margin-left: 150px;
+}
+
+.report-container-form-input-labels select{
+  width: 100px;
+  border: white;
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  height: 40px;
+  color: black;
+  font-size: 15px;
+  padding-left: 6px;
+  margin-top: 2px;
+  /* margin-bottom: 2px; */
+  cursor: pointer;
+}
+
+.report-container-form-input-labels option{
+  color: black;
+  font-size: 15px;
+}
+
+.report-container-form-input-labels select:focus{
+  outline: 2px solid #00BFFF;
+  border: 2px solid transparent;
+}
+
+
+
 
 
 
