@@ -11,7 +11,7 @@ class M_Admin_report{
 
     public function get_income_records(){
 
-        $this->db->query('SELECT * FROM incomerecords');
+        $this->db->query('SELECT record_id, bus_no, date, (5*amount)/100 AS profit FROM incomerecords');
 
         return $this->db->resultSet();
         

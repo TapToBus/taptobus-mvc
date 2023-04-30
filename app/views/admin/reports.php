@@ -71,6 +71,16 @@
                             <th>Profit</th>
                         </tr>
 
+                        <?php foreach($data['reportData'] as $reportData) :?>
+                            <tr>
+                                <td><?php echo $reportData->record_id; ?></td>
+                                <td><?php echo $reportData->bus_no; ?></td>
+                                <td><?php echo $reportData->date; ?></td>
+                                <td>LKR <?php echo number_format($reportData->profit, 2, '.', ',')?></td>
+                            </tr>
+
+                        <?php endforeach ?>    
+
                     </table>
 
                 </div>
