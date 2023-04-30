@@ -33,7 +33,7 @@
                         <label for="Date_To" class="report_date_la">Date To :</label>
                         <input type="date" name="date_to" id="date_to" class="datapicker_report" >
 
-                        <select name="busNo" id="" class="" data-validation="required">
+                        <select name="busNo" id="busNo" class="" data-validation="required">
                             <option value="AB">All Bus</option>
                         </select>
 
