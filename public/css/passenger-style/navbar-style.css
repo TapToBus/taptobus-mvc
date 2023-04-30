@@ -3,7 +3,7 @@
     --clr-black: #000;
 
     --clr-navbar-top: #141E61;
-    --clr-navbar-side-bg: #E6E6E6;          /* rgb(230, 230, 230) */
+    --clr-navbar-side-bg: #E6E6E6;         /* rgb(230, 230, 230) */
     --clr-navbar-side-hover: #C8C8C8;       /* rgb(200, 200, 200) */
     
     --clr-bg: #fff;
@@ -30,7 +30,9 @@ body{
     height: 100vh;
     background-image: url(../../img/main-background.jpg);
     background-size: cover;
-    background-position: right;
+    background-position: center;
+
+    position: relative;
 }
 
 
@@ -123,9 +125,9 @@ body{
     margin-right: 5px;
 }
 
-.navbar-side .logout{
+/* .navbar-side .logout{
     margin-top: 110px !important;
-}
+} */
 
 .main{
     margin-left: clamp(100px, 22%, 200px);

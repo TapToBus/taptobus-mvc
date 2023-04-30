@@ -15,7 +15,7 @@
     /* margin-top: 10px; */
 
     background-color: var(--clr-table-title-bg);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -33,12 +33,12 @@
     margin-bottom: 10px;
 
     background-color: var(--clr-white);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 25px;
+    line-height: 40px;
 
     text-align: center;
 
@@ -75,10 +75,13 @@
     font-weight: 500; */
     
     /* background-color: green; */
-    background-color: blue;
+    background-color: green;
     color: white;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 15px;
+
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .result .cancelled{
@@ -87,5 +90,8 @@
     background-color: rgb(255, 0, 0);
     color: white;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 15px;
+
+    margin-left: 20px;
+    margin-right: 20px;
 }

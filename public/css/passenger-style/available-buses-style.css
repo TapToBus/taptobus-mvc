@@ -14,16 +14,16 @@
     column-gap: 25px;
     margin-bottom: 25px;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 25px;
+    line-height: 30px;
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-    /* background-color: white; */
+    background-color: white;
 }
 
 .summary .sub-col1{
@@ -48,7 +48,7 @@
     margin-bottom: 10px;
 
     background-color: var(--clr-table-title-bg);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -66,12 +66,12 @@
     margin-bottom: 10px;
 
     background-color: var(--clr-white);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 25px;
+    line-height: 40px;
 
     text-align: center;
 
