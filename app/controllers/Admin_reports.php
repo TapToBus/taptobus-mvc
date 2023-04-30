@@ -4,6 +4,8 @@ class Admin_reports extends Controller{
 
     // private $dateFromDateToModel;
 
+    private $profitTableModel;
+
     public function __construct()
     {
         //check if admin is logined to the system
@@ -12,6 +14,10 @@ class Admin_reports extends Controller{
         }
 
         // $this->dateFromDateToModel = $this->model('M_Admin_reports');
+
+
+        //get data from incomerecord table
+        $this->profitTableModel = $this->model('M_Admin_report');
         
     }
 
@@ -22,8 +28,12 @@ class Admin_reports extends Controller{
     //view admin report page
     
     public function view_admin_reports(){
-        $this->view('admin/reports');
+        $reportData = $this->profitTableModel->get_income_records();
+        $data = ['reportData' => $reportData];
+
+        $this->view('admin/reports', $data);
     }
+
 
     // public function Date_From_Date_To(){
 

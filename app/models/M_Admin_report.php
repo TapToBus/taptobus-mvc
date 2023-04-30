@@ -1,5 +1,23 @@
 <?php
 
+class M_Admin_report{
+
+    private $db;
+
+    public function __construct(){
+        $this->db = new Database();
+    }
+
+
+    public function get_income_records(){
+
+        $this->db->query('SELECT * FROM incomerecords');
+
+        return $this->db->resultSet();
+        
+    }
+}
+
 // class M_Admin_report{
 //     private $db;
 
