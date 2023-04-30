@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/owner-style/dashboard-style.css">
     <title><?php echo SITENAME; ?></title>
@@ -34,6 +34,44 @@
                 <h2>Weekly Income</h2>
             </div>
             <canvas id="myChart"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
+
+                new Chart("myChart", {
+                  type: "line",
+                  data: {
+                    responsive: true,
+                    labels: xValues,
+                    datasets: [{
+                      label: 'NB-1345',
+                      data: [100000, 90000, 80000, 60000, 60000, 50000, 40000],
+                      borderColor: "#22a7f0",
+                      fill: false
+                    }, {
+                      label: 'ND-1245',
+                      data: [40000, 60000, 70000, 80000, 70000, 60000, 50000],
+                      borderColor: "#48b5c4",
+                      fill: false
+                    }, {
+                      label: 'NC-5345',
+                      data: [50000, 50000, 50000, 50000, 55000, 90000, 65000],
+                      borderColor: "#a6d75b",
+                      fill: false
+                    }]
+                  },
+                  options: {
+                    legend: {
+                      display: true,
+                      position: 'bottom'
+                    },
+                    aspectRatio: 1.7
+                  }
+                });
+            </script>
+
+
         </div>
 
         <div class="boxes">
@@ -55,7 +93,7 @@
             <div class="box">
 
                 <div class="images">
-                <img src="<?php echo URLROOT; ?>/img/owner_img/user2.png">
+                    <img src="<?php echo URLROOT; ?>/img/owner_img/user2.png">
                 </div>
 
                 <div class="words">
@@ -71,7 +109,7 @@
             <div class="box">
 
                 <div class="images">
-                  <img src="<?php echo URLROOT; ?>/img/owner_img/user1.png">
+                    <img src="<?php echo URLROOT; ?>/img/owner_img/user1.png">
                 </div>
 
                 <div class="words">
@@ -83,10 +121,10 @@
 
         </div>
 
-        
+
     </div>
 
-    <script type = "text/javascript " src= "<?php echo URLROOT; ?>/js/owner-js/dashboard.js">  </script> 
+    <script type="text/javascript " src="<?php echo URLROOT; ?>/js/owner-js/dashboard.js"> </script>
 </body>
 
 </html>

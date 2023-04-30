@@ -51,31 +51,31 @@ document.getElementById("month").innerHTML = monthnew.substring(0, 3);
 // });
 
 
-var ctx = document.getElementById('myChart').getContext('2d');
-// var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
+// var ctx = document.getElementById('myChart').getContext('2d');
+// // var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
 
-new Chart("myChart", {
-  type: "line",
-  data: {
-    responsive: true,
-    labels: <?php echo json_encode(array_keys(reset($data))); ?>,
-    datasets: [{
-      label: 'NB-1345',
-      data: [100000, 90000, 80000, 60000, 60000, 50000, 40000],
-      borderColor: "#22a7f0",
-      fill: false
-    }]
-  },
+// new Chart("myChart", {
+//   type: "line",
+//   data: {
+//     responsive: true,
+//     labels: <?php echo json_encode(array_keys(reset($data))); ?>,
+//     datasets: [{
+//       label: 'NB-1345',
+//       data: [100000, 90000, 80000, 60000, 60000, 50000, 40000],
+//       borderColor: "#22a7f0",
+//       fill: false
+//     }]
+//   },
 
-  
-  options: {
-    legend: {
-      display: true,
-      position: 'bottom'
-    },
-    aspectRatio: 1.7
-  }
-});
+
+//   options: {
+//     legend: {
+//       display: true,
+//       position: 'bottom'
+//     },
+//     aspectRatio: 1.7
+//   }
+// });
 
 
 
