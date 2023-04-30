@@ -39,17 +39,17 @@
 
                         <div class="two-button">
 
-                        <div class="submit-reset-buttons">
-                            <div>
-                                <button type="submit" name="Generate-Report" class="report-search-button">Search</button>
+                            <div class="submit-reset-buttons">
+                                <div>
+                                    <button type="submit" name="Generate-Report" class="report-search-button">Search</button>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="generation-buttons">
-                            <div>
-                                <button type="submit" name="Generate-Report">Generate Report</button>
+                            <div class="generation-buttons">
+                                <div>
+                                    <button type="submit" name="Generate-Report">Generate Report</button>
+                                </div>
                             </div>
-                        </div>
 
                         </div>
 
@@ -59,8 +59,25 @@
 
             </div>
             <div class="report-sub-container">
-                
+
+                <div class="content-table">
+
+                    <table class="full-table">
+
+                        <tr>
+                            <th>Record ID</th>
+                            <th>Bus Number</th>
+                            <th>Date</th>
+                            <th>Profit</th>
+                        </tr>
+
+                    </table>
+
+                </div>
+
             </div>
+
+            
         </div>
 
         <div class="report-container">
