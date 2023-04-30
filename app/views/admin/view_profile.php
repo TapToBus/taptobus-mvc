@@ -15,7 +15,7 @@
     <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
 
     <div class="main">
-        <div class="content">
+        
             <h1 class="heading">PROFILE</h1>
 
             <div class="pro-details">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
 
     </div>
 
