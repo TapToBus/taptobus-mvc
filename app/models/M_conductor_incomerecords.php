@@ -23,7 +23,7 @@ class M_conductor_incomerecords
         $this->db->bind(':amount', $data['amount']);
 
         // execute
-        if ($this->db->execute()) {
+        if ($this->db->execute()) { 
             return true;
         } else {
             return false;
