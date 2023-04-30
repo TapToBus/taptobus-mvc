@@ -23,3 +23,10 @@ require_once 'helpers/session_helper.php';
 
 require_once 'libraries/fpdf/fpdf.php';
 
+//email 
+
+require_once 'helpers/mail_helper.php';
+
+//email template
+require_once 'helpers/temporery_pw_email_tmplt.php';
+

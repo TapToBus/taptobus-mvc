@@ -39,7 +39,7 @@ class Admin_add_staff_member extends Controller{
             ];
 
             if($this->addstaffmembersModel->add_staff_member($data)){
-                direct('admin/view_staff_member');
+                direct('Admin_view_user_dashboard/view_staff_member');
             }
 
         }

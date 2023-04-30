@@ -17,3 +17,12 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'taptobus');
+
+
+//email passing
+
+// mails and app passwords
+define('TAPTOBUS_EMAIL', 'taptobus001@gmail.com');
+define('TAPTOBUS_PASS', 'loulgbaampakmims');
+define('CUSTOMER_EMAIL', 'customer.taptobus@gmail.com');
+define('CUSTOMER_PASS', 'zbkckibpduppnxeo');
