@@ -5,6 +5,7 @@ class Owner_buses extends Controller{
     private $ownerModel;
     private $ownerModel1;
     private $ownerModel2;
+    private $ownerModel3;
 
     public function __construct(){
         if(! isLoggedIn()){
@@ -14,6 +15,7 @@ class Owner_buses extends Controller{
         $this->ownerModel = $this->model('m_owner_buses');
         $this->ownerModel1 = $this->model('m_owner_bus_requests');
         $this->ownerModel2 = $this->model('m_owner_conductors');
+        $this->ownerModel3 = $this->model('m_conductor_incomerecords');
     }
 
     public function add_bus(){
@@ -139,6 +141,7 @@ class Owner_buses extends Controller{
         $data = $this->ownerModel->bus_details($bus_no);
         $data1 = $this->ownerModel2->avail_conductors();
         $data2 = $this->ownerModel2->find_conductor_name($bus_no);
+        $data3 = $this->ownerModel3->get_income($bus_no);
         $this->view('owner/bus_details',$data,$data1,$data2); 
 
     }
