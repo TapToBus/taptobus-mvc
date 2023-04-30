@@ -22,8 +22,8 @@
 
         public function create_schedule(){
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                // var_dump($_POST);
-                // die();
+                var_dump($_POST);
+                die();
                 if(isset($_POST['createScheduleBtn'])){
                    $data = [
                         'bus_no' => $_POST['bus_no'],                    

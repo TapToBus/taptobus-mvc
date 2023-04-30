@@ -13,39 +13,45 @@
     <?php require APPROOT . '/views/inc/staff_navbar.php' ?>    
 
     <div class="container"> 
-        <div>
-            <a href="<?php echo URLROOT?>/Staff_schedule/create_schedule">Add New</a>
-        </div>     
-        <table>
-            <thead>
-                <tr>
-                    <th>Bus No</th>
-                    <th>Location From</th>
-                    <th>Location To</th>
-                    <th>Day</th>
-                    <th>Arrival time</th>
-                    <th>Departure time</th>
-                    <th>Ticket Price</th>
-                </tr>
-            </thead>
-            <tbody>
-               <?php
-               foreach($data as $schedule){
-                ?>
-                <tr>
-                    <td><?php echo $schedule->bus_no?></td>
-                    <td><?php echo $schedule->Location_from?></td>
-                    <td><?php echo $schedule->Location_to?></td>
-                    <td><?php echo $schedule->arrival_time?></td>
-                    <td><?php echo $schedule->departure_time?></td>
-                    <td><?php echo $schedule->ticket_price?></td>
-                </tr>
+        <div class="schedule-container">
+            <div class="addnewbtn">
+                 <a href="<?php echo URLROOT?>/Staff_schedule/create_schedule"><i class="fa-solid fa-circle-plus"></i>Add New</a>
+            </div>     
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Bus No</th>
+                        <th>Location From</th>
+                        <th>Location To</th>
+                        <th>Day</th>
+                        <th>Arrival time</th>
+                        <th>Departure time</th>
+                        <th>Ticket Price</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php
-               }
-               ?>
-            </tbody>
-        </table>
-
+                    $count = 0;
+                foreach($data as $schedule){
+                        $count = $count + 1;
+                    ?>
+                    <tr>
+                        <td><?php echo $count?></td>
+                        <td><?php echo $schedule->bus_no?></td>
+                        <td><?php echo $schedule->Location_from?></td>
+                        <td><?php echo $schedule->Location_to?></td>
+                        <td><?php echo $schedule->day?></td>
+                        <td><?php echo $schedule->arrival_time?></td>
+                        <td><?php echo $schedule->departure_time?></td>
+                        <td><?php echo $schedule->ticket_price?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
     </div>
         
 </body>
