@@ -38,6 +38,11 @@ class Admin_add_staff_member extends Controller{
                 'tele' => trim($_POST['tele'])
             ];
 
+            $password = uniqid(); //generate 13 characters length password
+            $password = substr($password,-10);                     
+            $hash = password_hash($password,PASSWORD_DEFAULT);  // get the hash of the password
+            
+
             if($this->addstaffmembersModel->add_staff_member($data)){
                 direct('Admin_view_user_dashboard/view_staff_member');
             }
