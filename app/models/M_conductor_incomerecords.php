@@ -59,7 +59,9 @@ class M_conductor_incomerecords
     public function view_incomerecords_forbus($bus_no)
     {
         // prepare query
-        $this->db->query('SELECT date,amount from incomerecords WHERE bus_no= :bus_no');
+        $this->db->query('SELECT date, amount
+        FROM incomerecords
+        WHERE date >= DATE(NOW()) - INTERVAL 7 DAY AND bus_no=:bus_no ORDER BY date ASC');
 
         $this->db->bind(':bus_no', $bus_no);
         $results = $this->db->resultSet();
