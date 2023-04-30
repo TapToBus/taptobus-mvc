@@ -23,7 +23,7 @@ class M_conductor_incomerecords
         $this->db->bind(':amount', $data['amount']);
 
         // execute
-        if ($this->db->execute()) { 
+        if ($this->db->execute()) {
             return true;
         } else {
             return false;
@@ -41,7 +41,6 @@ class M_conductor_incomerecords
         $this->db->bind(':nic', $id);
         $result = $this->db->single();
         return $result;
-       
     }
 
     public function view_incomerecords($bus_no)
@@ -69,18 +68,42 @@ class M_conductor_incomerecords
         $xValues = array();
         $yValues = array();
 
-        foreach($results as $row){
+        foreach ($results as $row) {
 
-           $xValues[] = $row->date;
-           $yValues[] = $row->amount;
-
+            $xValues[] = $row->date;
+            $yValues[] = $row->amount;
         }
-        
+
         return array(
 
             'xValues' => $xValues,
             'yValues' => $yValues
         );
+    }
+
+    public function view_incomerecords_forbusses()
+    {
+
+        $id = $_SESSION['user_id'];
+        // prepare query
+        $this->db->query('SELECT date, bus_no, amount
+        FROM incomerecords
+        WHERE date BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE()
+          AND bus_no IN (SELECT bus_no FROM bus WHERE owner_nic = :owner_nic)
+        GROUP BY date, bus_no');
+
+        $this->db->bind(':owner_nic', $id);
+        $results = $this->db->resultSet();
+
+        $data = array();
+        foreach ($results as $row) {
+            $date = $row->date;
+            $bus_id = $row->bus_no;
+            $amount = $row->amount;
+            $data[$bus_id][$date] = $amount;
+        }
+
+        return $data;
     }
 
     public function delete_incomerecords($record_id)
