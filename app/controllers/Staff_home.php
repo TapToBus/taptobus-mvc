@@ -3,6 +3,7 @@
     class Staff_home extends Controller{
 
         private $staffModel;
+        private $announcementModel;
 
         public function __construct()
         {
@@ -11,6 +12,7 @@
             }
             
             $this->staffModel = $this->model("M_Staff");
+            $this->announcementModel = $this->model("M_user_announcement");
             // this is the pages controller
         }
 
@@ -94,17 +96,15 @@
                     'result' => $results
                 ];
 
-               $this->view('staff/staffhome', $props);
-
-            
+               $this->view('staff/staffhome', $props);     // pass data to the specific view
         }
 
-
-
-
-
-
-
+        public function deleteAnnouncement(){
+            $notice_id = $_GET['notice_id'];
+            print_r($notice_id);
+            $this->announcementModel->deleteAnnouncementById($notice_id);
+            direct('Staff_home/staffhome');    //  call the controller and specific function
+        }
 
 
            /* public function editnotice(){
@@ -134,7 +134,7 @@
                         }
                         else {
                             // $props = ['error' => 'Invalid'];
-                            $props = ['alert' =>[ 'type' => 'error', 'message' => "Invalid oparation." ]];
+                            $props = ['alert' =>[ 'type' => 'error', 'message' => "Invalid operation." ]];
 
                         }
 

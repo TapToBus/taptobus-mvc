@@ -180,7 +180,7 @@
     justify-content: center;
 }
 
-.edit-delete-btns>button {
+.edit-delete-btns> a > button {
     padding: 10px 15px;
     border-radius: 10px;
     border: none;
