@@ -19,6 +19,10 @@ class Admin_reports extends Controller{
     public function view_admin_reports(){
         $this->view('admin/reports');
     }
+
+    public function Date_From_Date_To(){
+        
+    }
 }
 
 
