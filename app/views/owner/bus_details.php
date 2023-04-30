@@ -144,8 +144,8 @@
             <canvas id="myChart"></canvas>
 
             <script>
-                var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
-                var yValues = [100000, 90000, 80000, 70000, 60000, 50000, 40000];
+                var xValues = <?php echo json_encode($xValues); ?>;
+                var yValues = <?php echo json_encode($yValues); ?>;
                 var barColors = ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db"];
 
                 new Chart("myChart", {
