@@ -129,6 +129,10 @@
     border-radius: 5px;
 }
 
+#staff{
+    filter: grayscale(1);
+}
+
 
 /* =======  Available users  ========= */
 .available_users{

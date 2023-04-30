@@ -8,6 +8,8 @@ class M_Staff {
     }
 
 
+    //------------------ Notice part-----------------------
+
     public function addNotices($data){
         $this->db->query("INSERT INTO special_notices (staff_no, title, description, date_from, date_to) VALUES (:staff_no, :title, :description, :date_from, :date_to)");
         $this->db->bind(":staff_no", $data["staff_no"]);
@@ -51,7 +53,17 @@ class M_Staff {
         return $result;
     } 
 
-    // retrieve  all users details from the relavent tables 
+
+
+
+
+
+
+
+    
+
+
+    //-------------- retrieve  all users details from the relavent tables ---------------
 
     public function viewOwners(){
         $this->db->query("SELECT nic, fname, lname, email, mobileNo FROM owner where status = 'active' ");

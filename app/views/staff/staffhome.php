@@ -117,10 +117,10 @@
                     
                     <?php
                 }
-                    
                     ?>
 
                 </div>
+                
                 <!-- pop up model -->
                 <dialog class="notice-modal">
                     <div class="notice-container">
@@ -167,7 +167,7 @@
                                     </div>
                                     <div>
                                     <label>
-                                        <input type="checkbox" name="role[]" value="staff member">
+                                        <input type="checkbox" name="role[]" value="staff member" id="staff" checked >
                                         Staff Member
                                     </label>
                                     </div>

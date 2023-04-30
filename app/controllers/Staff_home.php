@@ -24,7 +24,7 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 if(isset($_POST['save'])){
-                    if(isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["date_from"]) && isset($_POST["date_to"]) && isset($_POST["role"])){
+                    if(!empty($_POST["title"]) && !empty($_POST["description"]) && !empty($_POST["date_from"]) && !empty($_POST["date_to"]) && !empty($_POST["role"])){
                         
                         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                         
@@ -38,8 +38,10 @@
                             'description_error' =>''
                         ];
 
-               
+
                         $roles = $_POST["role"];
+                        // var_dump($_POST["role"]);
+                        // die();
             
 
                         if($this->staffModel->addNotices($data)){
@@ -57,13 +59,18 @@
                         }
 
                     }else{
+                        print_r("entered");
+                        die();
+                        // should not allow to submit without filling inputs
                         if(empty($_POST['title'])){
                             $data['title_err'] = 'Please enter a title';
                         }else if(empty($_POST['description'])){
                             $data['description_err'] = 'Please enter a description';
-                        }
-                        // continue... error handling for date and users
-                         
+                        }else if(empty($_POST['date_from']) || empty($_POST['date_to'])){
+                            $data['description_err'] = 'Please enter a date';
+                        }else{
+                            die("Please enter data");
+                        }                        
                     }
                 }   
             }
@@ -92,7 +99,15 @@
             
         }
 
-       /* public function editnotice(){
+
+
+
+
+
+
+
+
+           /* public function editnotice(){
             $props = [];
             $staff_no = $_SESSION['user_id'];
             
