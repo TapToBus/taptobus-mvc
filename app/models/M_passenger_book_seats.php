@@ -197,7 +197,7 @@ class M_passenger_book_seats{
         $this->db->bind(':bus_no', $bus_no);
         $this->db->bind(':count', $count);
         $this->db->bind(':seats', $seats);
-        $this->db->bind(':price', $price);
+        $this->db->bind(':price', $price * $count);
         $this->db->bind(':code', $code);
         $this->db->bind(':boks_id', $boks_id);
         $this->db->bind(':sch_id', $sch_id);
