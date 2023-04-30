@@ -34,6 +34,41 @@ class Admin_reports extends Controller{
         $this->view('admin/reports', $data);
     }
 
+    public function adminReportSearch(){
+
+        //check if form is submitted
+        if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+            //get data form data array
+            $_GET = filter_input_array(INPUT_GET,FILTER_SANITIZE_STRING);
+
+            $date_from=trim($_GET['date_from']);
+            $date_to=trim($_GET['date_to']);
+
+            $reportData = $this->profitTableModel->get_search_income_records($date_from,$date_to);
+
+            $data=[
+
+                'reportData'=>$reportData,
+                'date_from'=>$date_from,
+                'date_to'=>$date_to
+
+            ];
+
+            $this->view('admin/reports',$data);
+        }
+        else{
+            $data=[
+                'reportData'=>'',
+                'date_from'=>'',
+                'date_to'=>''
+            ];
+
+            $this->view('admin/reports',$data);
+        }
+
+    }
+
 
     // public function Date_From_Date_To(){
 

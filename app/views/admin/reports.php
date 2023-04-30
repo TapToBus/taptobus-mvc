@@ -22,16 +22,16 @@
 
         <div class="report-container">
             <div class="report-sub-container">
-                <form action="<?php echo URLROOT ?>/Admin_reports/Date_From_Date_To" method="POST" class="report-container-form">
+                <form action="<?php echo URLROOT; ?>/Admin_reports/adminReportSearch" method="GET" class="report-container-form">
 
                     <h2 class="report-container-heading">Profit Report</h2>
 
                     <div class="report-container-form-input-labels">
                         <label for="Date_From" class="report_date_la">Date From :</label>
-                        <input type="date" name="date_from" id="date_from" class="datapicker_report" data-validation="required">
+                        <input type="date" name="date_from" id="date_from" class="datapicker_report">
 
                         <label for="Date_To" class="report_date_la">Date To :</label>
-                        <input type="date" name="date_to" id="date_to" class="datapicker_report" data-validation="required">
+                        <input type="date" name="date_to" id="date_to" class="datapicker_report" >
 
                         <select name="busNo" id="" class="" data-validation="required">
                             <option value="AB">All Bus</option>
@@ -73,13 +73,13 @@
 
                         <?php foreach($data['reportData'] as $reportData) :?>
                             <tr>
-                                <td><?php echo $reportData->record_id; ?></td>
-                                <td><?php echo $reportData->bus_no; ?></td>
-                                <td><?php echo $reportData->date; ?></td>
+                                <td><?php echo $reportData->record_id ?></td>
+                                <td><?php echo $reportData->bus_no ?></td>
+                                <td><?php echo $reportData->date ?></td>
                                 <td>LKR <?php echo number_format($reportData->profit, 2, '.', ',')?></td>
                             </tr>
 
-                        <?php endforeach ?>    
+                        <?php endforeach; ?>    
 
                     </table>
 

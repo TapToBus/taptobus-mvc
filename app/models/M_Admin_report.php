@@ -16,6 +16,14 @@ class M_Admin_report{
         return $this->db->resultSet();
         
     }
+
+    public function get_search_income_records($date_from,$date_to){
+
+        $this->db->query("SELECT record_id, bus_no, date, (5*amount)/100 AS profit FROM incomerecords WHERE date BETWEEN '$date_from' AND '$date_to'");
+        $result = $this->db->resultSet();
+        return $result;
+
+    }
 }
 
 // class M_Admin_report{
