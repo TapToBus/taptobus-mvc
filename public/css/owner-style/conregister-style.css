@@ -1,0 +1,198 @@
+@import url(../main.css);
+@import url(../owner-style/navbar-style.css);
+
+
+.container{
+    
+    padding: 4.345rem 0rem 0rem 0rem;
+    margin-left: 14.3%;
+    background-color: white;
+   
+}
+
+
+.right{
+    width: 50%;
+    /* background-color:white; */
+    position: absolute;
+    top: 0;
+    left: 32%;
+    height: 100vh;
+}
+
+.box{
+    /* background: white; */
+    background-color: #f2f2f2;
+    width: 85%;
+    height: auto;
+    position: absolute;
+    top: 50.35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid ;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+    border-color: hsl(231, 72%, 37%);
+    border-radius: 10px; 
+    padding: 25px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+}
+
+.box h2{
+    text-align: center;
+    margin-bottom: 15px;
+    color: hsl(231, 72%, 37%);;
+}
+
+.box .fname label, .lname label, .nic label,.ntcNo label, .email label, .mobileNo label, .dob label, .address label{
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 10px;
+    font-style: normal;
+}
+
+.box input{
+    width: 100%;
+    /* border: white;
+    border-radius: 5px; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* background: rgb(230, 230, 230); */
+    background-color: white;
+    height: 40px;
+    color: black;
+    font-size: 15px;
+    margin-top: 2px;
+    /* margin-bottom: 2px; */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.box input:focus{
+    outline: 2px solid #00BFFF;
+    border: 2px solid transparent;
+}
+
+.box .btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.box .btn button{
+    width: 100%;
+    padding: 8px 0 8px 0;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.box .btn span{
+    background: black;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.box .btn button:hover span{
+    width: 100%;
+}
+
+.box .btn button:hover{
+    border: 2px solid transparent;
+    color: white;
+}
+
+.box .fname span, .lname span, .nic span, .ntcNo span, .email span, .mobileNo span, .dob span, .address span, .agree span{
+    color: red;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+.box .field1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .fname, .box .lname{
+    width: 100%;
+}
+
+.box .fname{
+    margin-right: 10px;
+}
+
+.box .lname{
+    margin-left: 10px;
+}
+
+
+.box .field4{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .nic, .box .ntcNo{
+    width: 100%;
+}
+
+.box .nic{
+    margin-right: 10px;
+   
+}
+
+.box .ntcNo{
+    margin-left: 10px;
+  
+}
+
+
+.box .field2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .email, .box .mobileNo{
+    width: 100%;
+}
+
+.box .email{
+    margin-right: 10px;
+}
+
+.box .mobileNo{
+    margin-left: 10px;
+}
+
+.box .field3{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .dob, .box .address{
+    width: 100%;
+}
+
+.box .dob{
+    margin-right: 10px;
+}
+
+.box .address{
+    margin-left: 10px;
+}
+
+.fname, .lname, .nic, .ntcNo, .email, .mobileNo, .dob, .address{
+    margin-bottom: 10px;
+}

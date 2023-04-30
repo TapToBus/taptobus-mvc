@@ -16,7 +16,7 @@
 <body>
 
     <?php require APPROOT . '/views/inc/owner_navbar.php' ?>
-    
+
     <div class="container">
 
         <div class="bus_no">
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="box">
-                    
+
                     <i class="fa-solid fa-wifi fa-2x"></i>
                     <i class="fa-solid fa-tv fa-2x"></i>
                     <i class="fa-brands fa-usb fa-2x"></i>
@@ -75,81 +75,50 @@
                 </div>
 
                 <form id="change_name" action="<?php echo URLROOT; ?>/owner_buses/change_conductor" method="POST">
-                  
-                  <input type="hidden" name="bus_no" value="<?php echo $data->bus_no; ?>">
 
-                  <?php if(isset($data2->ntcNo)):?>
-                     <input type="hidden" name="old_con_id" value="<?php echo $data2->ntcNo; ?>">
-                  <?php else : ?>
-                  <?php endif;?>    
+                    <input type="hidden" name="bus_no" value="<?php echo $data->bus_no; ?>">
 
-                  <select class="choose" name="con_name" id="con_name">
-
-                    <?php if(isset($data2->fname)):?>
-                        <option value="<?php echo $data2->fname; ?>" selected ><?php echo $data2->fname; ?></option>
+                    <?php if (isset($data2->ntcNo)) : ?>
+                        <input type="hidden" name="old_con_id" value="<?php echo $data2->ntcNo; ?>">
                     <?php else : ?>
-                        <option value="" selected ></option>  
-                    <?php endif;?>       
+                        <input type="hidden" name="old_con_id" value="NULL">
+                    <?php endif; ?>
 
-                    <?php foreach ($data1 as $row): ?>
-                        <option value = "<?php echo $row->fname; ?>"><?php echo $row->fname; ?></option> 
-                        <!-- aluth db ekee nama wenas ntcNo kiyna eka -->
-                    <?php endforeach; ?>
-            
-                  </select>
+                    <select class="choose" name="con_name" id="con_name">
 
-                </form> 
+                        <?php if (isset($data2->fname)) : ?>
+                            <option value="<?php echo $data2->fname; ?>" selected><?php echo $data2->fname; ?></option>
+                        <?php else : ?>
+                            <option value="" selected></option>
+                        <?php endif; ?>
 
-                
+                        <?php foreach ($data1 as $row) : ?>
+                            <option value="<?php echo $row->fname; ?>"><?php echo $row->fname; ?></option>
+                            <!-- aluth db ekee nama wenas ntcNo kiyna eka -->
+                        <?php endforeach; ?>
+
+                    </select>
+
+                </form>
+
+
                 <script>
-                        
-                        var form = document.querySelector('#change_name');
-                        var select = document.getElementById('con_name');
-                        var selectedValue = select.value;
-
-                        form.addEventListener('change',function(event){
-                          
-                          // Prevent the form from submitting normally
-                          event.preventDefault();
-                          // Get the selected value
-                          var selectedConductor = select.value;
-  
-                          form.submit();
-  
-                      });
-
-                </script>
-                
-                <!-- <script>
-                    
                     var form = document.querySelector('#change_name');
-                    // Get a reference to the select element
-                    var select = form.querySelector('.choose');
-                    
-                    // Set the default value of the select box to the first option
-                    // select.selectedIndex = 0;
+                    var select = document.getElementById('con_name');
+                    var selectedValue = select.value;
 
-                    // Check if there is a saved selected value in local storage
-                    if(localStorage.getItem('selectedConductor')){
+                    form.addEventListener('change', function(event) {
 
-                        select.value = localStorage.getItem('selectedConductor');
-                    }
-
-                    // Add an event listener for when the user selects an option
-                    form.addEventListener('change',function(event){
-                          
                         // Prevent the form from submitting normally
                         event.preventDefault();
                         // Get the selected value
                         var selectedConductor = select.value;
-                       
-                        localStorage.setItem('selectedConductor',selectedConductor);
 
                         form.submit();
 
                     });
+                </script>
 
-                </script> -->
 
             </div>
 

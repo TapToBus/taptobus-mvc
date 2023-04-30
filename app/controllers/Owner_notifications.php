@@ -13,13 +13,14 @@ class Owner_notifications extends Controller{
  
     }
 
-    public function view_conductors(){
+    public function view_notifications(){
 
-        $data = $this->ownerModel->view_conductors();
-        $this->view('owner/view_conductors',$data);
-
+        $data = $this->ownerModel->view_notifications();
+        $this->view('owner/view_notifications',$data);
+        // $this->ownerModel->not_status_change();
     
     }
+
 
 
 }

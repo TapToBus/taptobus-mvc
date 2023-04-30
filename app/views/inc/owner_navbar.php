@@ -40,7 +40,7 @@
     <a href="<?php echo URLROOT; ?>/owner_conductors/view_conductors"><i class="fa-solid fa-user"></i><span>My Conductors</span></a>
     <a href="<?php echo URLROOT; ?>/owner_drivers/view_drivers"><i class="fa-solid fa-user"></i><span>My Drivers</span></a>
     <a href="<?php echo URLROOT; ?>/owner_leaverequests/view_leaverequests"><i class="fa-solid fa-newspaper"></i><span>Leave Requests</span></a>
-    <a href="#"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
+    <a href="<?php echo URLROOT; ?>/owner_notifications/view_notifications"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
     <a href="#"><i class="fa-solid fa-user"></i><span>Profile</span></a>
     <a href="<?php echo URLROOT; ?>/users/logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 </div>

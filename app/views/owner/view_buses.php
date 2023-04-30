@@ -45,7 +45,8 @@
 
                         <p class="product_name">Bus No - <?php echo $row->bus_no; ?></p>
                         <p class="price">Root No - <?php echo $row->root_no; ?></p>
-                        <p class="discount">Owner Name - <?php echo $row->owner_name; ?></p>
+                        <!-- <p class="discount">Owner Name - <?php echo $row->owner_name; ?></p> -->
+                        <p class="discount">Capacity - <?php echo $row->capacity; ?>
                         <a href="<?php echo URLROOT; ?>/owner_buses/bus_details?bus_no=<?php echo $row->bus_no; ?>"> <button class="view" >View</button> </a>
                     </div>
                 </div>

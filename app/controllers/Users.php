@@ -31,7 +31,7 @@ class Users extends Controller{
                     direct('passenger_register/register');
                 }elseif($data['type'] == 'owner'){
                     // direct to the owner register form
-                    die('Owner register');
+                    direct('owner_register/register');
                 }
             }else{
                 // load the view with error
@@ -65,7 +65,7 @@ class Users extends Controller{
             // validate username
             if(empty($data['username'])){
                 $data['username_err'] = "Username is required";
-            }elseif(! $this->userModel->findUserByEmail($data['username'])){
+            }elseif(! $this->userModel->findUserByEmail($data['username'],$data['password'])){
                 // user not found
                 $data['username_err'] = 'User doesn\'t exist';
             }

@@ -43,7 +43,8 @@
     border: 2px solid hsl(231, 61%, 40%);
     height: 55px;
     width : 150px;
-    margin: 25px 42px;
+    margin-top: 90px;
+    margin-left: 45px;
     border-radius: 10px;
     
 
@@ -53,7 +54,8 @@
 
     position: relative;
     margin-left: 3.5%;
-    margin-bottom: 20px;
+    margin-top: -110px ;
+    margin-bottom: 70px;
     color: hsl(231, 61%, 40%);
     font-size: 30px;
 }

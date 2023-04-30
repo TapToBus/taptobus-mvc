@@ -55,6 +55,31 @@ class M_conductor_incomerecords
         return $results;
     }
 
+    public function view_incomerecords_forbus($bus_no)
+    {
+        // prepare query
+        $this->db->query('SELECT date,amount from incomerecords WHERE bus_no= :bus_no');
+
+        $this->db->bind(':bus_no', $bus_no);
+        $results = $this->db->resultSet();
+
+        $xValues = array();
+        $yValues = array();
+
+        foreach($results as $row){
+
+           $xValues[] = $row->date;
+           $yValues[] = $row->amount;
+
+        }
+        
+        return array(
+
+            'xValues' => $xValues,
+            'yValues' => $yValues
+        );
+    }
+
     public function delete_incomerecords($record_id)
     {
 

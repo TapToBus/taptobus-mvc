@@ -5,6 +5,7 @@ class Owner_buses extends Controller{
     private $ownerModel;
     private $ownerModel1;
     private $ownerModel2;
+    private $ownerModel3;
 
     public function __construct(){
         if(! isLoggedIn()){
@@ -14,6 +15,7 @@ class Owner_buses extends Controller{
         $this->ownerModel = $this->model('m_owner_buses');
         $this->ownerModel1 = $this->model('m_owner_bus_requests');
         $this->ownerModel2 = $this->model('m_owner_conductors');
+        $this->ownerModel3 = $this->model('m_conductor_incomerecords');
     }
 
     public function add_bus(){
@@ -44,7 +46,7 @@ class Owner_buses extends Controller{
             $data = [
                 'bus_no' => $_POST['bus_no'],
                 'root_no' => $_POST['root_no'],
-                'owner_name' => $_POST['owner_name'],
+                // 'owner_name' => $_POST['owner_name'],
                 'capacity'  => $_POST['capacity'],
                 'bus_image'  => $_POST['bus_image'],
                 'permit_image'  => $_POST['permit_image'],
@@ -139,7 +141,9 @@ class Owner_buses extends Controller{
         $data = $this->ownerModel->bus_details($bus_no);
         $data1 = $this->ownerModel2->avail_conductors();
         $data2 = $this->ownerModel2->find_conductor_name($bus_no);
-        $this->view('owner/bus_details',$data,$data1,$data2); 
+        $data3 = $this->ownerModel3->view_incomerecords_forbus($bus_no);
+        var_dump($data3);
+        $this->view('owner/bus_details',$data,$data1,$data2,$data3); 
 
     }
 
