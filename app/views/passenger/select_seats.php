@@ -121,8 +121,10 @@
                             <?php endwhile; ?>
 
                             <div class="btn">
-                                <button class="btn-left">Back</button>
-                                <button class="btn-right">Next</button>
+                                <!-- <button class="btn-left">Back</button>
+                                <button class="btn-right">Next</button> -->
+                                <input class="btn-left" type="button" value="Back">
+                                <input class="btn-right" type="submit" value="Next">
                             </div>
                         </form>
                     </div>

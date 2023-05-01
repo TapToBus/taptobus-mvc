@@ -186,12 +186,43 @@
 
 .main .content .details .right .btn{
 	display: flex;
-    justify-content: right;
+    justify-content: center;
     gap: 10px;
 	margin-top: 20px;
 }
 
-.main .content .details .right .btn button{
+/* .main .content .details .right .btn button{
+	width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.main .content .details .right .btn .btn-left{
+	color: var(--clr-navbar-top);
+    background-color: white;
+    border: 1px solid var(--clr-navbar-top);
+}
+
+.main .content .details .right .btn .btn-left:hover{
+	background-color: var(--clr-table-title-bg);
+    transition: 0.3s;
+}
+
+.main .content .details .right .btn .btn-right{
+	color: var(--clr-white);
+    background-color: var(--clr-button);
+    border: 1px solid var(--clr-navbar-top);
+}
+
+.main .content .details .right .btn .btn-right:hover{
+	background-color: var(--clr-button-hover);
+    transition: 0.3s
+} */
+
+.main .content .details .right .btn input{
 	width: 130px;
     height: 40px;
     border-radius: 5px;
