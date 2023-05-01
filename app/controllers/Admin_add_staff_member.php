@@ -67,6 +67,18 @@ class Admin_add_staff_member extends Controller{
                 }
             }
 
+            //validate email
+            if(! filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+                $data['email_err'] = "A valid email is required";
+            }
+            else{
+                if($this->addstaffmembersModel->findstaffmemberByEmail($data['email'])){
+                    $data['email_err'] = 'Email is already taken';
+                }
+            }
+
+            //validate 
+
 
             $password = uniqid(); //generate 13 characters length password
             $password = substr($password,-10);                     
