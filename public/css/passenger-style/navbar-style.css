@@ -115,6 +115,10 @@ body{
     top: 45%;
 }
 
+/* .navbar-side .logout{
+    margin-top: 110px !important;
+} */
+
 .navbar-side a:hover{
     background-color:var(--clr-navbar-side-hover);
     border-radius: 5px;
@@ -127,10 +131,6 @@ body{
     padding-left: 10px;
     margin-right: 5px;
 }
-
-/* .navbar-side .logout{
-    margin-top: 110px !important;
-} */
 
 .main{
     margin-left: clamp(100px, 22%, 200px);
