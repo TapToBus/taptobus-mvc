@@ -33,13 +33,29 @@
                         <label for="Date_To" class="report_date_la">Date To :</label>
                         <input type="date" name="date_to" id="date_to" class="datapicker_report" >
 
-                        <select name="busNo" id="busNo" class="" data-validation="required">
-                            <option value="AB">All Bus</option>
-                        </select>
+
+
+
+                        <!-- <select name="busNo" id="busNo">
+                            <?php
+                            if(isset($busno) && empty($busno)){
+                                echo "<option value = ''>No bus found</option>";
+                            }else{
+                                foreach($busno as $busNo){
+                            ?>
+                                    <option value='<?php echo $busNo['bus_no'] ?>'><?php echo $busNo['bus_no'] ?> </option>    
+                            <?php
+                                }    
+                            }  
+                            ?>
+                        </select> -->
+
+
+
 
                         <div class="two-button">
 
-                            <div class="submit-reset-buttons">
+                            <div class="search-button">
                                 <div>
                                     <button type="submit" name="Generate-Report" class="report-search-button">Search</button>
                                 </div>
@@ -93,7 +109,7 @@
         <div class="report-container">
 
             <div class="report-sub-container">
-                <p>xxxxxxxxxxxxxxxx</p>
+                <p></p>
             </div>
 
         </div>

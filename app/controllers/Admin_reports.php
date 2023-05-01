@@ -52,6 +52,7 @@ class Admin_reports extends Controller{
                 'reportData'=>$reportData,
                 'date_from'=>$date_from,
                 'date_to'=>$date_to
+                
 
             ];
 
