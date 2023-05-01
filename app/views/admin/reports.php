@@ -57,13 +57,14 @@
 
                             <div class="search-button">
                                 <div>
-                                    <button type="submit" name="Generate-Report" class="report-search-button">Search</button>
+                                    <button type="submit" name="Search-report-records">Search</button>
                                 </div>
                             </div>
 
                             <div class="generation-buttons">
                                 <div>
-                                    <button type="submit" name="Generate-Report">Generate Report</button>
+                                    <a href="<?php echo URLROOT; ?>/Admin_reports/generate_pdf_report">generate_pdf_report</a>
+                                    <!-- <button type="submit" name="Generate-Report">Generate Report</button> -->
                                 </div>
                             </div>
 

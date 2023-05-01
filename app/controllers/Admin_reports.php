@@ -45,6 +45,14 @@ class Admin_reports extends Controller{
             $date_from=trim($_GET['date_from']);
             $date_to=trim($_GET['date_to']);
 
+            if(isset($_GET['date_from'])){
+                $_SESSION['date_from'] = $_GET['date_from'];
+            }
+          
+            if(isset($_GET['date_to'])){
+                $_SESSION['date_to'] = $_GET['date_to'];
+            }
+
             $reportData = $this->profitTableModel->get_search_income_records($date_from,$date_to);
 
             $data=[
@@ -71,6 +79,92 @@ class Admin_reports extends Controller{
     }
 
 
+    // Generate the PDF report using the FPDF library
+   public function generate_pdf_report(){
+
+    if(empty($_SESSION['date_from'])){
+        $_SESSION['date_from'] = 2022-01-01;
+    }
+  
+    if(empty($_SESSION['date_to'])){
+        $_SESSION['date_to'] = date('Y-m-d'); 
+    }
+
+    $reportData = $this->profitTableModel->get_search_income_records($_SESSION['date_from'],$_SESSION['date_to']);
+
+    $pdf = new FPDF();
+       
+    // creating a new PDF document with landscape orientation and A4 page size 
+    $pdf->AddPage('L','A4');
+   
+          
+    $pdf->SetFont('Arial', 'B', 20);
+
+    $pdf->Cell(0, 10, 'TapToBus '. $_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Profit Details', 0, 1, 'C');
+    $pdf->Cell(0, 10,' ', 0, 1, 'C');
+   
+   
+    $pdfWidth = $pdf->GetPageWidth();
+    $pdfHeight = $pdf->GetPageHeight();
+
+    $pdf->Rect(5, 5, $pdfWidth-8, $pdfHeight-10, 'D');    
+
+    $pdf->SetFont('Arial', 'B', 14);
+    $pdf->SetTitle('TapToBus Profit Details Report');
+    $pdf->SetTextColor(255, 255, 255);
+   
+
+
+    $pdf->Cell(109, 10, 'Record ID', 1 , 0, 'C',1);
+    $pdf->Cell(30, 10, 'Bus Number', 1 , 0, 'C',1);
+    $pdf->Cell(60, 10, 'Date', 1 , 0, 'C',1);
+    $pdf->Cell(30, 10, 'Profit', 1 , 0, 'C',1);
+
+     $pdf->Ln();
+    
+    $pdf->SetTextColor(0, 0, 0);
+    
+    $pdf->SetFont('Arial', '', 12);
+    foreach ($reportData as $row) {
+    
+      
+
+        $pdf->Cell(109,10, $row->record_id, 1 , 0, 'C');
+        $pdf->Cell(30,10, $row->bus_no, 1 , 0, 'C');
+        $pdf->Cell(60,10, $row->date, 1 , 0, 'C');
+        $pdf->Cell(30,10, $row->profit, 1 , 0, 'C');
+       
+
+       
+         
+       
+
+   $pdf->Ln();
+
+
+    }
+
+   
+    
+    $pdf->AliasNbPages();
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(0, 10, 'Page ' . $pdf->PageNo() . ' of {nb}', 0, 0, 'C');
+    
+
+    // $pdf->Output();
+     $pdf->Output('TapToBus.pdf', 'D');
+   
+     
+           
+  }
+
+}
+
+
+
+
+
+
     // public function Date_From_Date_To(){
 
     //     //check if form is submitted
@@ -87,7 +181,3 @@ class Admin_reports extends Controller{
     //     }
 
     // }
-}
-
-
-?>
