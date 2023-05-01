@@ -107,7 +107,7 @@
 
 .content .bottom{
     display: grid;
-    grid-template-columns: 49.5% 49.5%;
+    grid-template-columns: 49% 49%;
     column-gap: 10px;
     margin-bottom: 15px;
     align-items: center;
