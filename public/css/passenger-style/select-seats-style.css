@@ -146,18 +146,23 @@
 .main .content .details .right .form .title{
 	font-size: 18px;
 	font-weight: 450;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	text-align: center;
 }
 
-/* .main .content .details .right .form .inst{
-	margin-bottom: 10px;
-} */
+.main .content .details .right .form .err{
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 14;
+	color: red;
+
+}
 
 .main .content .details .right .field{
 	display: grid;
 	grid-template-columns: 20% 80%;
 	align-items: center;
+	margin-top: 5px;
 	margin-bottom: 10px;
 }
 

@@ -113,7 +113,9 @@
                     <div class="form">
                         <div class="title">Select seats</div>
 
-                        <!-- <div class="inst">You can select 4 seats</div> -->
+                        <?php if(! empty($data['err'])): ?>
+                            <div class="err"><?php echo $data['err'] ?></div>
+                        <?php endif; ?>
 
                         <form action="<?php echo URLROOT; ?>/passenger_book_seats/select_seats" method="post">
                             <?php $i = 1; ?>

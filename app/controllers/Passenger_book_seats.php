@@ -150,22 +150,53 @@ class Passenger_book_seats extends Controller{
         }*/
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            print_r($_POST);
+            $data = [
+                'sch_id' => $_POST['sch_id'],
+                'boks_id' => $_POST['boks_id'],
+                'count' => $_POST['count'],
+                'bus' => '',
+                'seats' => '',
+                'err' => ''
+            ];
+
+            $busNo = $this->scheduleModel->getBusNo($data['sch_id']);
+
+            $data['bus'] = $this->busModel->getBusDetails($busNo->bus_no);
+            $data['seats'] = $this->scheduleModel->getBookedSeatsDate($data['boks_id']);
+
+            $i = 1;
+            while ($i <= $data['count']) {
+                $selected['seat' . $i] = $_POST['choice' . $i];
+                $i++;
+            }
+
+            // check if there are any element in $selected is equal to 'default'
+            if(in_array('default', $selected)){
+                $data['err'] = 'You must select ' . $data['count'] . ' seats';
+
+                $this->view('passenger/select_seats', $data);
+            }else{
+                echo 'Ok';
+            }
+
+
+            //print_r($selected);
+            //print_r($_POST);
         }else{
             if(isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])){
-                $sch_id = $_GET['sch_id'];
-                $boks_id = $_GET['boks_id'];
-                $count = $_GET['count'];
-                
-                $busNo = $this->scheduleModel->getBusNo($sch_id);
-    
                 $data = [
-                    'sch_id' => $sch_id,
-                    'boks_id' => $boks_id,
-                    'count' => $count,
-                    'bus' => $this->busModel->getBusDetails($busNo->bus_no),
-                    'seats' => $this->scheduleModel->getBookedSeatsDate($boks_id)
+                    'sch_id' => $_GET['sch_id'],
+                    'boks_id' => $_GET['boks_id'],
+                    'count' => $_GET['count'],
+                    'bus' => '',
+                    'seats' => '',
+                    'err' => ''
                 ];
+
+                $busNo = $this->scheduleModel->getBusNo($data['sch_id']);
+
+                $data['bus'] = $this->busModel->getBusDetails($busNo->bus_no);
+                $data['seats'] = $this->scheduleModel->getBookedSeatsDate($data['boks_id']);
                 
                 $this->view('passenger/select_seats', $data);
             }else{
