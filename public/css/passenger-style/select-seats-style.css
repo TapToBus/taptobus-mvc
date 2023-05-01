@@ -22,27 +22,28 @@
 .main .content .details{
 	display: grid;
 	grid-template-columns: 41% 56%;
-	column-gap: 15px;
+	column-gap: 20px;
 }
 
 .main .content .details .left{
-	background-color: orange;
+	/* background-color: rgb(240, 240, 250); */
+	background-color: rgb(230, 230, 230);
 	padding-left: 15px;
 	padding-right: 20px;
 	padding-bottom: 10px;
 	border-radius: 10px;
+	border: 1px solid gray;
 }
 
 .main .content .details .right{
-	background-color: blue;
+	/* background-color: blue; */
 }
 
 .main .content .details .left .front{
 	text-align: center;
 	/* background-color: gray; */
 	
-	padding-top: 15px;
-	padding-bottom: 5px;
+	padding-top: 20px;
 	font-weight: 500;
 }
 
@@ -58,9 +59,10 @@
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	justify-content: center;
+	align-items: center;
 	column-gap: 5px;
 
-	background-color: aqua;
+	/* background-color: aqua; */
 }
 
 .main .content .details .left .col{
@@ -73,6 +75,7 @@
 
 .main .content .details .left i{
 	font-size: 35px;
+	color: gray;
 }
 
 .main .content .details .left .snum{

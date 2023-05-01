@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="right">
-                    <h1>Hello</h1>
+                    
                 </div>
             </div>
         </div>
