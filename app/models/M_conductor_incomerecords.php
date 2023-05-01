@@ -98,9 +98,9 @@ class M_conductor_incomerecords
         $data = array();
         foreach ($results as $row) {
             $date = $row->date;
-            $bus_id = $row->bus_no;
+            $bus_no = $row->bus_no;
             $amount = $row->amount;
-            $data[$bus_id][$date] = $amount;
+            $data[$bus_no][$date] = $amount;
         }
 
         return $data;

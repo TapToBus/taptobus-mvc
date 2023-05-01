@@ -40,10 +40,11 @@
                 var ctx = document.getElementById('myChart').getContext('2d');
 
                 $.ajax({
-                    url: 'owner/view_dashboard',
+                    url: 'owner_buses/bus_details',
                     method: 'GET',
                     success: function(response) {
                         var data = response.data;
+                        console.log(data);
 
                         var datasets = [];
                         Object.entries(data).forEach(([bus_no, bus_data]) => {
