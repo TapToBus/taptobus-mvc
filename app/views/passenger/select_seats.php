@@ -121,7 +121,7 @@
 
                                 <div class="field">
                                     <span class="col1">
-                                        <label for="choice1">Seat <?php echo $i; ?>: </label>
+                                        <label for="choice<?php echo $i; ?>">Seat <?php echo $i; ?>: </label>
                                     </span>
                                     <span class="col2">
                                         <select name="choice<?php echo $i; ?>">
@@ -139,11 +139,17 @@
                                 <?php $i++; ?>
                             <?php endwhile; ?>
 
+
+                            <!-- hidden input fields -->
+                            <input type="hidden" name="sch_id" value="<?php echo $data['sch_id']; ?>">
+                            <input type="hidden" name="boks_id" value="<?php echo $data['boks_id']; ?>">
+                            <input type="hidden" name="count" value="<?php echo $data['count']; ?>">
+                            <!--  -->
+
+
                             <div class="btn">
                                 <button class="btn-left" onclick="goBack()" type="button">Back</button>
                                 <button class="btn-right" type="submit">Next</button>
-                                <!-- <input class="btn-left" type="button" value="Back" onclick="goBack()">
-                                <input class="btn-right" type="submit" value="Next"> -->
                             </div>
                         </form>
                     </div>
@@ -158,7 +164,7 @@
             window.history.back();
         }
 
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             var selectElements = document.querySelectorAll('select');
             for (var i = 0; i < selectElements.length; i++) {

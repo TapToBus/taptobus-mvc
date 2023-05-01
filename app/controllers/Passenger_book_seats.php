@@ -127,7 +127,7 @@ class Passenger_book_seats extends Controller{
 
 
     public function select_seats(){
-        if(isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])){
+        /*if(isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])){
             $sch_id = $_GET['sch_id'];
             $boks_id = $_GET['boks_id'];
             $count = $_GET['count'];
@@ -135,18 +135,42 @@ class Passenger_book_seats extends Controller{
             $busNo = $this->scheduleModel->getBusNo($sch_id);
 
             $data = [
+                'count' => $count,
                 'bus' => $this->busModel->getBusDetails($busNo->bus_no),
-                'seats' => $this->scheduleModel->getBookedSeatsDate($boks_id),
-                'count' => $count
+                'seats' => $this->scheduleModel->getBookedSeatsDate($boks_id)
             ];
 
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                die("Hello...!");
+                print_r($_POST);
             }else{
                 $this->view('passenger/select_seats', $data);
             }
         }else{
             direct('passenger_book_seats/journey_details');
+        }*/
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            print_r($_POST);
+        }else{
+            if(isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])){
+                $sch_id = $_GET['sch_id'];
+                $boks_id = $_GET['boks_id'];
+                $count = $_GET['count'];
+                
+                $busNo = $this->scheduleModel->getBusNo($sch_id);
+    
+                $data = [
+                    'sch_id' => $sch_id,
+                    'boks_id' => $boks_id,
+                    'count' => $count,
+                    'bus' => $this->busModel->getBusDetails($busNo->bus_no),
+                    'seats' => $this->scheduleModel->getBookedSeatsDate($boks_id)
+                ];
+                
+                $this->view('passenger/select_seats', $data);
+            }else{
+                direct('passenger_book_seats/journey_details');
+            }
         }
     }
 
