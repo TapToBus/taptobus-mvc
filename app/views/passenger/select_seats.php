@@ -20,39 +20,10 @@
                 <div class="left">
                     <div class="front">Front</div>
 
-                    <!-- <div class="seats"> -->
-                        <?php $line = 1;
-                        $j = 0; ?>
-                        <?php while ($line <= (33 - 5) / 4) : ?>
+                    <?php $line = 1;
+                    $j = 0; ?>
 
-                            <div class="row">
-                                <span class="col">
-                                    <span class="snum"><?php echo $line + $j; ?></span>
-                                    <span class="seat"><i class="fas fa-square"></i></span>
-                                    <?php $j++; ?>
-                                </span>
-                                <span class="col">
-                                    <span class="snum"><?php echo $line + $j; ?></span>
-                                    <span class="seat"><i class="fas fa-square"></i></span>
-                                    <?php $j++; ?>
-                                </span>
-                                <span class="col">
-                                    <!--  -->
-                                </span>
-                                <span class="col">
-                                    <span class="snum"><?php echo $line + $j; ?></span>
-                                    <span class="seat"><i class="fas fa-square"></i></span>
-                                    <?php $j++; ?>
-                                </span>
-                                <span class="col">
-                                    <span class="snum"><?php echo $line + $j; ?></span>
-                                    <span class="seat"><i class="fas fa-square"></i></span>
-                                </span>
-                            </div>
-
-                            <?php $line++; ?>
-                        <?php endwhile; ?>
-
+                    <?php while ($line <= (33 - 5) / 4) : ?>
                         <div class="row">
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
@@ -65,9 +36,7 @@
                                 <?php $j++; ?>
                             </span>
                             <span class="col">
-                                <span class="snum"><?php echo $line + $j; ?></span>
-                                <span class="seat"><i class="fas fa-square"></i></span>
-                                <?php $j++; ?>
+                                
                             </span>
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
@@ -79,17 +48,51 @@
                                 <span class="seat"><i class="fas fa-square"></i></span>
                             </span>
                         </div>
-                    <!-- </div> -->
+                    <?php $line++; ?>
+                    <?php endwhile; ?>
+
+                    <div class="row">
+                        <span class="col">
+                            <span class="snum"><?php echo $line + $j; ?></span>
+                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <?php $j++; ?>
+                        </span>
+                        <span class="col">
+                            <span class="snum"><?php echo $line + $j; ?></span>
+                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <?php $j++; ?>
+                        </span>
+                        <span class="col">
+                            <span class="snum"><?php echo $line + $j; ?></span>
+                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <?php $j++; ?>
+                        </span>
+                        <span class="col">
+                            <span class="snum"><?php echo $line + $j; ?></span>
+                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <?php $j++; ?>
+                        </span>
+                        <span class="col">
+                            <span class="snum"><?php echo $line + $j; ?></span>
+                            <span class="seat"><i class="fas fa-square"></i></span>
+                        </span>
+                    </div>
                 </div>
 
                 <div class="right">
-                    
+                    <div class="legend">
+                        <i class="fas fa-square"></i>
+                    </div>
+
+                    <div class="form">
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="<?php echo URLROOT; ?>/js/passenger-js/select-seats-js.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/select-seats-js.js"></script> -->
 </body>
 
 </html>
