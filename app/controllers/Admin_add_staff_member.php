@@ -35,8 +35,38 @@ class Admin_add_staff_member extends Controller{
                 'dob' => trim($_POST['dob']),
                 'email' => trim($_POST['email']),
                 'mobile' => trim($_POST['mobile']),
-                'tele' => trim($_POST['tele'])
+                'tele' => trim($_POST['tele']),
+
+                'fname_err' => '',
+                'lname_err' => '',
+                'nic_err' => '',
+                'email_err' => '',
+                'mobileNo_err' => '',
+                'tele_err' => ''
             ];
+
+            //validate
+
+            //validate first name
+            if(! preg_match("/^[a-zA-Z]+$/", $data['firstname']) || strlen($data['firstname']) <3){
+                $data['fname_err'] = "A valid first name is required";
+            }
+
+            //validate last name
+            if(! preg_match("/^[a-zA-Z]+$/", $data['lastname']) || strlen($data['lastname']) < 5){
+                $data['lname_err'] = "A valid last name is required";
+            }
+
+            //validate nic
+            if((strlen($data['nic']) == 10 && !preg_match("/^[0-9]{9}[V]+$/", $data['nic'])) || (strlen($data['nic']) == 12 && !preg_match("/^[0-9]{12}+$/", $data['nic'])) || strlen($data['nic']) <10){
+                $data['nic_err'] = "A valid NIC number is required";
+            }
+            else{
+                if($this->addstaffmembersModel->findstaffmemberByNIC($data['nic'])){
+                    $data['nic_err'] = 'NIC is already taken';
+                }
+            }
+
 
             $password = uniqid(); //generate 13 characters length password
             $password = substr($password,-10);                     
