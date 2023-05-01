@@ -110,6 +110,11 @@ body{
     transition: 0.4s;
 }
 
+.navbar-side a.logout {
+    position: relative;
+    top: 45%;
+}
+
 .navbar-side a:hover{
     background-color:var(--clr-navbar-side-hover);
     border-radius: 5px;

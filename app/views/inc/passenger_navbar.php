@@ -19,5 +19,6 @@
     <!-- <a href="<?php echo URLROOT; ?>/passenger_map/map"><i class="fa-solid fa-location-dot"></i><span>Map</span></a> -->
     <a href="<?php echo URLROOT; ?>/passenger_notifications/notifications"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
     <a href="<?php echo URLROOT; ?>/passenger_profile/profile"><i class="fa-solid fa-user"></i><span>Profile</span></a>
-    <a href="<?php echo URLROOT; ?>/users/logout" class="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    <a href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+    <a class="logout" href="<?php echo URLROOT; ?>/users/logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 </div>
