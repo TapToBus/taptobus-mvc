@@ -29,6 +29,26 @@ class M_admin_add_staff_member{
         }
      }
 
+     //find staff member by nic
+     public function findstaffmemberByNIC($nic){
+
+        //prepare query
+        $this->db->query("SELECT * FROM staffmember WHERE nic = :nic");
+
+        //bind value
+        $this->db->bind(':nic', $nic);
+
+        $row = $this->db->single();
+
+        //check row is eexist or not
+        if($this->db->rowCount() >0){
+            return true;
+        }
+        else{
+            return false;
+        }
+     }
+
     
 
     
