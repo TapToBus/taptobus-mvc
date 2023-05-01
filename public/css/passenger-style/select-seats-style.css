@@ -3,8 +3,14 @@
 
 
 .main .content{
-    margin-left: 160px;
-    margin-right: 160px;
+    /* margin-left: 160px;
+    margin-right: 160px; */
+
+	width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
 }
 
 .main .content .heading{

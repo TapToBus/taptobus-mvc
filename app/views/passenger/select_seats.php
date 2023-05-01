@@ -26,29 +26,47 @@
 
                         <?php while($line <= ($data['bus']->capacity - 5)/4): ?>
                             <div class="row">
-                                <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                                <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                    id="s<?php echo $line + $j; ?>" class="seat" 
+                                    <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                                 <?php $j++; ?>
-                                <span class="col2"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                                <span class="col2"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                    id="s<?php echo $line + $j; ?>" class="seat" 
+                                    <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                                 <?php $j++; ?>
                                 <span class="col3"></span>
-                                <span class="col4"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                                <span class="col4"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                    id="s<?php echo $line + $j; ?>" class="seat" 
+                                    <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                                 <?php $j++; ?>
-                                <span class="col5"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                                <span class="col5"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                    id="s<?php echo $line + $j; ?>" class="seat" 
+                                    <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                             </div>
 
                             <?php $line++; ?>
                         <?php endwhile; ?>
 
                         <div class="row">
-                            <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                            <span class="col1"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                id="s<?php echo $line + $j; ?>" class="seat" 
+                                <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                             <?php $j++; ?>
-                            <span class="col2"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                            <span class="col2"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                id="s<?php echo $line + $j; ?>" class="seat" 
+                                <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                             <?php $j++; ?>
-                            <span class="col3"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                            <span class="col3"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                id="s<?php echo $line + $j; ?>" class="seat" 
+                                <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                             <?php $j++; ?>
-                            <span class="col4"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                            <span class="col4"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                id="s<?php echo $line + $j; ?>" class="seat" 
+                                <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                             <?php $j++; ?>
-                            <span class="col5"><input type="checkbox" name="s<?php echo $line + $j; ?>" id="s<?php echo $line + $j; ?>" class="seat" <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
+                            <span class="col5"><input type="checkbox" name="s<?php echo $line + $j; ?>" 
+                                id="s<?php echo $line + $j; ?>" class="seat" 
+                                <?php if($data['seats']->{'s' . ($line + $j)} != '0'){ echo 'checked disabled'; } ?>></span>
                         </div>
                     </div>
                 </div>
