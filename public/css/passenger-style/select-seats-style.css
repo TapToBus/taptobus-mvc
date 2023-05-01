@@ -21,22 +21,71 @@
   
 .main .content .details{
 	display: grid;
-	grid-template-columns: 40% 60%;
+	grid-template-columns: 41% 56%;
+	column-gap: 15px;
 }
 
 .main .content .details .left{
-	background-color: yellow;
+	background-color: orange;
+	padding-left: 15px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	border-radius: 10px;
 }
 
 .main .content .details .right{
 	background-color: blue;
 }
 
+.main .content .details .left .front{
+	text-align: center;
+	/* background-color: gray; */
+	
+	padding-top: 15px;
+	padding-bottom: 5px;
+	font-weight: 500;
+}
+
+/* .main .content .details .left .seats{
+	background-color: gray;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+} */
+
 .main .content .details .left .row{
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
+	justify-content: center;
+	column-gap: 5px;
+
+	background-color: aqua;
 }
 
+.main .content .details .left .col{
+	display: grid;
+	grid-template-columns: 35% 65%;
+	align-items: center;
+	justify-content: right;
+}
+
+
 .main .content .details .left i{
-	font-size: 40px;
+	font-size: 35px;
+}
+
+.main .content .details .left .snum{
+	text-align: center;
+	font-size: 15px;
+	/* background-color: green; */
+}
+
+.main .content .details .left .seat{
+	/* background-color: red; */
+	text-align: center;
+}
+
+.main .content .details .left .row{
+	margin-top: 30px;
 }

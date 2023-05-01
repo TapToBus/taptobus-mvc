@@ -20,34 +20,7 @@
                 <div class="left">
                     <div class="front">Front</div>
 
-                    <div class="seats">
-                        <!-- <?php $line = 1;
-                                $j = 0; ?>
-                        <?php while ($line <= (33 - 5) / 4) : ?>
-                            <div class="row">
-                                <span class="seat col1"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                                <?php $j++; ?>
-                                <span class="seat col2"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                                <?php $j++; ?>
-                                <span class="seat col3"></span>
-                                <span class="seat col4"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                                <?php $j++; ?>
-                                <span class="seat col5"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                            </div>
-                            <?php $line++; ?>
-                        <?php endwhile; ?>
-                        <div class="row">
-                            <span class="seat col1"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                            <?php $j++; ?>
-                            <span class="seat col2"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                            <?php $j++; ?>
-                            <span class="seat col3"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                            <?php $j++; ?>
-                            <span class="seat col4"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                            <?php $j++; ?>
-                            <span class="seat col5"><?php echo $line + $j; ?><i class="fas fa-square"></i></span>
-                        </div> -->
-
+                    <!-- <div class="seats"> -->
                         <?php $line = 1;
                         $j = 0; ?>
                         <?php while ($line <= (33 - 5) / 4) : ?>
@@ -106,7 +79,7 @@
                                 <span class="seat"><i class="fas fa-square"></i></span>
                             </span>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
 
                 <div class="right">
