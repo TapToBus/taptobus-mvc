@@ -36,7 +36,7 @@
                                 <?php $j++; ?>
                             </span>
                             <span class="col">
-                                
+
                             </span>
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
@@ -48,7 +48,7 @@
                                 <span class="seat"><i class="fas fa-square"></i></span>
                             </span>
                         </div>
-                    <?php $line++; ?>
+                        <?php $line++; ?>
                     <?php endwhile; ?>
 
                     <div class="row">
@@ -93,17 +93,32 @@
                     </div>
 
                     <div class="form">
-                        <div>Select seats</div>
+                        <div class="title">Select seats</div>
 
-                        <form action="">
-                            <label for="seat1">Seat 1: </label>
-                            <select name="s1" id="s1">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select> <br>
+                        <!-- <div class="inst">You can select 4 seats</div> -->
+
+                        <form action="" method="POST">
+                            <?php $i = 1; ?>
+                            <?php while ($i <= 5) : ?>
+
+                                <div class="field">
+                                    <span class="col1">
+                                        <label for="choice1">Choice <?php echo $i; ?>: </label>
+                                    </span>
+                                    <span class="col2">
+                                        <select name="choice<?php echo $i; ?>">
+                                            <?php $s = 1; ?>
+                                            <option value="default">Chose from here</option>
+                                            <?php while ($s <= 33) : ?>
+                                                <option value="s<?php echo $s; ?>"><?php echo $s; ?></option>
+                                                <?php $s++; ?>
+                                            <?php endwhile; ?>
+                                        </select>
+                                    </span>
+                                </div>
+
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
 
                             <div class="btn">
                                 <button class="btn-left">Back</button>
