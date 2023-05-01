@@ -8,26 +8,26 @@ class M_staff_requests{
     }
     //-------------- get pending requests --------------
     public function ownerRequests(){
-        $this->db->query("SELECT nic, fname, lname, email, mobileNo FROM owner where status = 'pending' ");
+        $this->db->query("SELECT owner_nic, DATE(date_and_time) AS date, TIME(date_and_time) AS time FROM owner_request where status = 'pending' order by date_and_time asc");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function driverRequests(){
         
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'pending'");
+        $this->db->query("SELECT driver_ntc , DATE(date_and_time) AS date , TIME(date_and_time) AS time FROM driver_request where status = 'pending' order by date_and_time asc");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function conductorRequests(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM conductor where status = 'pending' ");
+        $this->db->query("SELECT conductor_ntc , DATE(date_and_time) AS date, TIME(date_and_time) AS time FROM conductor_request where status = 'pending'order by date_and_time asc ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function busRequests(){
-        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where status = 'pending' ");
+        $this->db->query("SELECT bus_no , DATE(date_and_time) AS date , TIME(date_and_time) AS time FROM bus_request where status = 'pending' order by date_and_time asc");
         $result = $this->db->resultSet();
         return $result;
     }
@@ -69,16 +69,16 @@ class M_staff_requests{
         return $result;
     }
 
-    public function conductorRequestedDetails($conductor_nic){
-        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo ,ntcNo ,owner_nic FROM conductor WHERE nic = :conductor_nic");
-        $this->db->bind(":conductor_nic",$conductor_nic);
+    public function conductorRequestedDetails($conductor_ntc){
+        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo ,ntcNo ,owner_nic FROM conductor WHERE ntcNo = :conductor_ntc");
+        $this->db->bind(":conductor_ntc",$conductor_ntc);
         $result = $this->db->Single();
         return $result;
     }
 
-    public function driverRequestedDetails($driver_nic){
-        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo , ntcNo, owner_nic FROM driver where nic = :driver_nic");
-        $this->db->bind(":driver_nic",$driver_nic);
+    public function driverRequestedDetails($driver_ntc){
+        $this->db->query("SELECT nic , fname, lname, email, pic, mobileNo , ntcNo, owner_nic FROM driver where ntcNo = :driver_ntc");
+        $this->db->bind(":driver_ntc",$driver_ntc);
         $result = $this->db->Single();
         return $result;
     }

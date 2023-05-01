@@ -26,11 +26,12 @@
                 ?>
                     <div class="row">
                         <div class="data">
-                            <span class="row1"><?php echo $driverRequest->nic?></span>       
-                            <span class="date">2023/01/07</span> 
+                            <span class="row1"><?php echo $driverRequest->driver_ntc?></span>       
+                            <span class="date"><?php echo $driverRequest->date?></span> 
+                            <span class="time"><?php echo $driverRequest->time?></span> 
                         </div>               
                         
-                        <a href="<?php echo URLROOT?>/Staff_view_requests/driver_requests_details?nic=<?php echo $driverRequest->nic?>">
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/driver_requests_details?nic=<?php echo $driverRequest->driver_ntc?>">
                         <span class="Vbutton">View</span>
                         </a>                      
                     </div> 

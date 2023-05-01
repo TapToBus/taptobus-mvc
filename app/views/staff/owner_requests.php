@@ -21,17 +21,18 @@
             <div class="result">
                 <?php
                     $result =  $data['ownerRequests'];
-
+                   
                     foreach ($result as $ownerRequest){
                 ?> 
                     <!-- this part is repeating according to the no of rows in the requests table -->
                     <div class="row">
                         <div class="data">
-                            <span class="row1"> <?php echo $ownerRequest->nic?></span>        
-                            <span class="date">2023/01/07</span> 
+                            <span class="row1"> <?php echo $ownerRequest->owner_nic?></span>        
+                            <span class="date"><?php echo $ownerRequest->date ?></span> 
+                            <span class="time"><?php echo $ownerRequest->time ?></span> 
                         </div>               
         
-                        <a href="<?php echo URLROOT?>/Staff_view_requests/owner_requests_details?nic=<?php echo $ownerRequest->nic?>">
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/owner_requests_details?nic=<?php echo $ownerRequest->owner_nic?>">
                         <span class="Vbutton">View </span>
                         </a>
                        

@@ -23,9 +23,6 @@
         public function bus_requests(){            
             $busRequests = $this->busModel->busRequests();
             $data = ['busRequests' => $busRequests];
-            // $bus_no = $data['busRequests'][0]->bus_no; // to get date 
-            // print_r($bus_no);
-            // die();
             $this->view('staff/bus_requests' , $data);
         }
 
@@ -49,6 +46,37 @@
             $this->view('staff/conductor_requests',$data);
             
         }
+
+//  get the requested dates
+
+        public function owner_request_dates(){
+            $owner_nic = $_GET['nic'];
+            $ownerRequestedDate = $this->ownerModel->ownereRequestsdate($owner_nic);
+            $data = ['ownerRequestedDate' => $ownerRequestedDate];
+            $this->view('staff/owner_requests',$data);
+        }
+        public function conductor_request_dates(){
+            $conductor_nic = $_GET['nic'];
+            $conductorRequestedDate = $this->conductorModel->conductorRequestsdate($conductor_nic);
+            $data = ['conductorRequestedDate' => $conductorRequestedDate];
+            $this->view('staff/conductor_requests',$data);
+            
+        }
+        public function driver_request_dates(){
+            $driver_nic = $_GET['nic'];
+            $driverRequestedDate = $this->driverModel->driverRequestsdate($driver_nic);
+            $data = ['driverRequestedDate' => $driverRequestedDate];
+            $this->view('staff/driver_requests',$data);
+            
+        }
+        public function bus_request_dates(){
+            $bus_no  = $_GET['bus_no'];
+            $busRequestedDate = $this->busModel->busRequestsdate($bus_no);
+            $data = ['busRequestedDate' => $busRequestedDate];
+            $this->view('staff/bus_requests',$data);
+            
+        }
+
 
 // view requests details
 
