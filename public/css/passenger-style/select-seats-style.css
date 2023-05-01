@@ -18,4 +18,25 @@
 	color: var(--clr-navbar-top);
 	margin-bottom: 15px;
 }
+  
+.main .content .details{
+	display: grid;
+	grid-template-columns: 40% 60%;
+}
 
+.main .content .details .left{
+	background-color: yellow;
+}
+
+.main .content .details .right{
+	background-color: blue;
+}
+
+.main .content .details .left .row{
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.main .content .details .left i{
+	font-size: 40px;
+}
