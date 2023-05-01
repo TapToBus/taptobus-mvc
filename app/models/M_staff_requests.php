@@ -31,7 +31,28 @@ class M_staff_requests{
         $result = $this->db->resultSet();
         return $result;
     }
-
+    // --------------------- get pending request count --------------
+    public function ownerRequestscount() {
+        $this->db->query("SELECT COUNT(*) AS pending_counts from owner_request WHERE status = 'pending'");
+        $result = $this->db->single();
+        return $result;
+    }
+    public function conductorRequestscount() {
+        $this->db->query("SELECT COUNT(*) AS pending_counts from conductor_request WHERE status = 'pending'");
+        $result = $this->db->single();
+        return $result;
+    }
+    public function driverRequestscount() {
+        $this->db->query("SELECT COUNT(*) AS pending_counts from driver_request WHERE status = 'pending'");
+        $result = $this->db->single();
+        return $result;
+    }
+    public function busRequestscount() {
+        $this->db->query("SELECT COUNT(*) AS pending_counts from bus_request WHERE status = 'pending'");
+        $result = $this->db->single();
+        return $result;
+    }
+    
     //---------------get Request details----------------
 
     public function ownerRequestedDetails($owner_nic){

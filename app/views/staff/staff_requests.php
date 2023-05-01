@@ -10,30 +10,37 @@
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffrequest-style.css" />
 </head>
 <body>
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
-
+    <?php 
+        require APPROOT . '/views/inc/staff_navbar.php';
+        $ownercount = $data['ownercount'];
+        $conductorcount  = $data['conductorcount'];
+        $drivercount = $data['drivercount'];
+        $buscount = $data['buscount'];
+     ?>
+     
     <div class="container">      
         <p>  
             <h1>Pending Requests</h1>
                 <div class="grid-container">
                   
                     <a href= "<?php echo URLROOT; ?>/Staff_view_requests/owner_requests" class="grid-items">
-                        <span class = "icon-button__badge">6</span>
+                        <span class = "icon-button__badge"><?php echo $ownercount?></span>
                         <i class="fa-solid fa-person"></i>
                         <p>Bus owners</p> 
                     </a>
                     <a href= "<?php echo URLROOT; ?>/Staff_view_requests/driver_requests" class="grid-items">
-                        <span class = "icon-button__badge">3</span>
+                        <span class = "icon-button__badge"><?php echo $drivercount?></span>
                         <i class="fa-solid fa-user"></i>
                         <p>Drivers</p> 
                     </a>
                     <a href= "<?php echo URLROOT; ?>/Staff_view_requests/conductor_requests" class="grid-items">
+                        <span class = "icon-button__badge"><?php echo $conductorcount?></span>
                         <i class="fa-regular fa-user"></i>
                         <p>Conductors</p> 
                     </a>
                 
                     <a href= "<?php echo URLROOT; ?>/Staff_view_requests/bus_requests" class="grid-items">
-                        <span class = "icon-button__badge">5</span>
+                        <span class = "icon-button__badge"><?php echo $buscount?></span>
                         <i class="fa-solid fa-bus"></i>
                         <p>Buses</p> 
                     </a>
