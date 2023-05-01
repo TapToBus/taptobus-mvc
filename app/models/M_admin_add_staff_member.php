@@ -49,6 +49,61 @@ class M_admin_add_staff_member{
         }
      }
 
+     // find staff member by email
+    public function findstaffmemberByEmail($email){
+        // prepare query
+        $this->db->query('SELECT * FROM staffmember WHERE email = :email');
+
+        // bind value
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }  
+    
+    // find staff member by mobile no
+    public function findstaffmemberByMobileNo($mobile){
+        // prepare query
+        $this->db->query('SELECT * FROM staffmember WHERE mobile_no = :mobile_no');
+
+        // bind value
+        $this->db->bind(':mobile_no', $mobile);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    // find staff member by telephone no
+    public function findstaffmemberByTeleNo($tele){
+        // prepare query
+        $this->db->query('SELECT * FROM staffmember WHERE tele_no = :tele_no');
+
+        // bind value
+        $this->db->bind(':tele_no', $tele);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     
 
     
