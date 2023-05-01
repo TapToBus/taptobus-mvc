@@ -34,46 +34,45 @@
                 <h2>Weekly Income</h2>
             </div>
 
-            <!-- <?php foreach ($data as $key => $value) : ?>
-                <p>Key: <?php echo $key ?></p>
-                <p>Value: <?php print_r($value) ?></p>
-            <?php endforeach; ?> -->
-
-            <div id="my-data" data="<?php echo htmlspecialchars(json_encode($data), ENT_QUOTES, 'UTF-8'); ?>"></div>
             <canvas id="myChart"></canvas>
 
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
-                // var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
 
-                console.log(document.getElementById('my-data').getAttribute('data'));
-                var data = JSON.parse(document.getElementById('my-data').getAttribute('data'));
-                var datasets = [];
-                console.log(data);
+                $.ajax({
+                    url: 'owner/view_dashboard',
+                    method: 'GET',
+                    success: function(response) {
+                        var data = response.data;
 
+                        var datasets = [];
+                        Object.entries(data).forEach(([bus_no, bus_data]) => {
+                            datasets.push({
+                                label: 'Bus ' + bus_no,
+                                data: Object.values(bus_data),
+                                borderColor: '#22a7f0',
+                                fill: false
+                            });
+                        });
 
-                Object.entries(data).forEach(([bus_no, bus_data]) => {
-                    datasets.push({
-                        label: 'Bus ' + bus_no,
-                        data: Object.values(bus_data),
-                        borderColor: '#22a7f0',
-                        fill: false
-                    });
-                });
-
-                new Chart("myChart", {
-                    type: "line",
-                    data: {
-                        responsive: true,
-                        labels: Object.keys(data[1]),
-                        datasets: datasets
+                        new Chart("myChart", {
+                            type: "line",
+                            data: {
+                                responsive: true,
+                                labels: Object.keys(data[1]),
+                                datasets: datasets
+                            },
+                            options: {
+                                legend: {
+                                    display: true,
+                                    position: 'bottom'
+                                },
+                                aspectRatio: 1.7
+                            }
+                        });
                     },
-                    options: {
-                        legend: {
-                            display: true,
-                            position: 'bottom'
-                        },
-                        aspectRatio: 1.7
+                    error: function(error) {
+                        console.log(error);
                     }
                 });
             </script>
