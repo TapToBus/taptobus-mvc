@@ -113,12 +113,10 @@ class Admin_reports extends Controller{
     $pdf->SetTitle('TapToBus Profit Details Report');
     $pdf->SetTextColor(255, 255, 255);
    
-
-
-    $pdf->Cell(109, 10, 'Record ID', 1 , 0, 'C',1);
-    $pdf->Cell(30, 10, 'Bus Number', 1 , 0, 'C',1);
-    $pdf->Cell(60, 10, 'Date', 1 , 0, 'C',1);
-    $pdf->Cell(30, 10, 'Profit', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Record ID', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Bus Number', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Date', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Profit', 1 , 0, 'C',1);
 
      $pdf->Ln();
     
@@ -127,35 +125,22 @@ class Admin_reports extends Controller{
     $pdf->SetFont('Arial', '', 12);
     foreach ($reportData as $row) {
     
-      
-
-        $pdf->Cell(109,10, $row->record_id, 1 , 0, 'C');
-        $pdf->Cell(30,10, $row->bus_no, 1 , 0, 'C');
-        $pdf->Cell(60,10, $row->date, 1 , 0, 'C');
-        $pdf->Cell(30,10, $row->profit, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->record_id, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->bus_no, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->date, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->profit, 1 , 0, 'C');
        
-
-       
-         
-       
-
    $pdf->Ln();
-
 
     }
 
-   
-    
     $pdf->AliasNbPages();
     $pdf->SetFont('Arial', 'B', 12);
     $pdf->Cell(0, 10, 'Page ' . $pdf->PageNo() . ' of {nb}', 0, 0, 'C');
     
-
     // $pdf->Output();
      $pdf->Output('TapToBus.pdf', 'D');
-   
-     
-           
+      
   }
 
 }

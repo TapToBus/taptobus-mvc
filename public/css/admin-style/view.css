@@ -799,19 +799,19 @@ a{
   padding: 8px 0 8px 0;
   border-radius: 25px;
   font-weight: bold;
-  border: 2px solid rgba(5, 1, 224, 0.7);
+  border: 2px solid rgba(4, 1, 153, 0.7);
   background: transparent;
-  color: rgba(5, 1, 224, 0.7);
+  color: rgba(4, 1, 153, 0.7);
   cursor: pointer;
   position: relative;
   overflow: hidden;
   font-size: 16px;
-  margin-left: 10px;
+  margin-left: 20px;
 
 }
 
 .search-button span{
-  background:rgba(5, 1, 224, 0.7);
+  background:rgba(4, 1, 153, 0.7);
   height: 100%;
   width: 0;
   border-radius: 25px;
@@ -829,15 +829,14 @@ a{
 .search-button button:hover{
   border: 2px solid transparent;
   color: white;
-  background-color:rgba(5, 1, 224, 0.7);
-  border:rgba(5, 1, 224, 0.7);
+  background-color:rgba(4, 1, 153, 0.7);
+  border:rgba(4, 1, 153, 0.7);
   
 }
 
-.generation-buttons button{
+.generation-buttons a{
 
-  width: 200px;
-  padding: 8px 0 8px 0;
+  padding: 8px 15px 8px 15px;
   border-radius: 25px;
   font-weight: bold;
   border: 2px solid rgb(189, 167, 0);
@@ -848,6 +847,7 @@ a{
   overflow: hidden;
   font-size: 16px;
   margin-left: 20px;
+
 
 }
 
@@ -863,11 +863,11 @@ a{
   transition: 0.5s;
 }
 
-.generation-buttons button:hover span{
+.generation-buttons a:hover span{
   width: 100%;
 }
 
-.generation-buttons button:hover{
+.generation-buttons a:hover{
   border: 2px solid transparent;
   color: rgba(255, 255, 255, 0.908);
   background-color:  rgba(189, 167, 0, 0.808) ;

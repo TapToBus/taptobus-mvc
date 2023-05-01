@@ -63,7 +63,7 @@
 
                             <div class="generation-buttons">
                                 <div>
-                                    <a href="<?php echo URLROOT; ?>/Admin_reports/generate_pdf_report">generate_pdf_report</a>
+                                    <a href="<?php echo URLROOT; ?>/Admin_reports/generate_pdf_report">Generate Report</a>
                                     <!-- <button type="submit" name="Generate-Report">Generate Report</button> -->
                                 </div>
                             </div>
