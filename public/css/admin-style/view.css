@@ -950,34 +950,20 @@ a{
 
    display: flex;
    flex-direction: row;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center; */
+
 
     height: 45vh;
-    margin-top: 70px;
-
-    /* background-color: white;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-    margin-bottom: 10px; */
+    margin-top: 50px;
+    
 }
 
 .pro-details .left{
 
-    /* height: 80%;
-    width: 65%;
     position: relative;
-
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
     margin-left: 40px;
-    width: 500px;
+    width: 600px;
     display: flex;
 
 }
@@ -988,19 +974,12 @@ a{
     min-width: 75%;
     min-height: 75%;
     object-fit: cover;
-    border-radius: 100%;
-    margin-left: 2px;
+    margin-left: 100px;
 
     justify-content: center;
     align-items: center;
 }
 
-.pro-details .right{
-
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  margin-left: 40px;
-}
 
 .pro-details .right .name{
     font-size: 20px;
@@ -1010,47 +989,84 @@ a{
     margin-bottom: 10px;
 }
 
-.content .pro-details .right .details{
+.pro-details .right .details{
     margin-bottom: 15px;
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
+    margin-left: 40px;
+  
+    height: 47vh;
+    padding: 25px 20px 25px 20px;
+    width: 35VW;
 }
 
-.content .pro-details .right .details .row{
+.pro-details .right .edit-profile-delete-profile-buttons{
+  margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+  width: 35vw;
+  margin-left: 40px;
+  height: 10vh;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.pro-details .right .details .row{
     display:  grid;
     grid-template-columns: 25% 60%;
     justify-content: center;
-    line-height: 30px;
+    line-height: 40px;
+    width: 900px;
 }
 
-.content .pro-details .right .details .row .col1{
+.pro-details .right .details .row .col1{
     font-weight: 450;
+
 }
 
-.content .pro-details .right .btn{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
 
-.content .pro-details .right .btn button{
+.pro-details .right .edit-profile-delete-profile-buttons .btn{
+
+  padding: 0 10px 0 10px;
+
+}
+.pro-details .right .edit-profile-delete-profile-buttons .btn button{
     width: 120px;
-    height: 25px;
+    height: 37px;
     cursor: pointer;
+    padding: 0 10px 0 10px;
 }
 
-.content .pro-details .right .btn .delete{
+.pro-details .right .edit-profile-delete-profile-buttons .btn .delete{
     color: red;
     border: 1px solid red;
     border-radius: 5px;
 }
 
-.content .pro-details .right .btn button:hover{
-    background-color: var(--clr-table-title-bg);
+
+
+.pro-details .right .edit-profile-delete-profile-buttons .btn .delete:hover{
+
+    background-color: rgba(255, 0, 0, 0.689);
+    color: white;
     transition: 0.3s;
 }
 
-.content .pro-details .right .btn .edit{
-    color: var(--clr-navbar-top);
-    border: 1px solid var(--clr-navbar-top);
-    border-radius: 5px;
+.pro-details .right .edit-profile-delete-profile-buttons .btn .edit{
+
+  color: rgb(0, 42, 255);
+  border: 1px solid  rgb(0, 42, 255);
+  border-radius: 5px;
+
+}
+
+.pro-details .right .edit-profile-delete-profile-buttons .btn .edit:hover{
+
+  background-color: rgb(0, 42, 255, 0.689);
+  color: white;
+  transition: 0.3s;
 }
 
