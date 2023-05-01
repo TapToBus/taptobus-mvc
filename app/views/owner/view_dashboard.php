@@ -33,16 +33,24 @@
             <div>
                 <h2>Weekly Income</h2>
             </div>
-            <div id="my-data" data="{{ json_encode($data) }}"></div>
+
+            <!-- <?php foreach ($data as $key => $value) : ?>
+                <p>Key: <?php echo $key ?></p>
+                <p>Value: <?php print_r($value) ?></p>
+            <?php endforeach; ?> -->
+
+            <div id="my-data" data="<?php echo htmlspecialchars(json_encode($data), ENT_QUOTES, 'UTF-8'); ?>"></div>
             <canvas id="myChart"></canvas>
 
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
                 // var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
 
+                console.log(document.getElementById('my-data').getAttribute('data'));
                 var data = JSON.parse(document.getElementById('my-data').getAttribute('data'));
                 var datasets = [];
-               
+                console.log(data);
+
 
                 Object.entries(data).forEach(([bus_no, bus_data]) => {
                     datasets.push({
@@ -57,7 +65,7 @@
                     type: "line",
                     data: {
                         responsive: true,
-                        labels:  Object.keys(data[1]),
+                        labels: Object.keys(data[1]),
                         datasets: datasets
                     },
                     options: {
