@@ -96,6 +96,10 @@
 	margin-top: 30px;
 }
 
+.main .content .details .left .row .not_available{
+	color: gray !important;
+}
+
 .main .content .details .right .legend{
 	background-color: white;
 	border-radius: 10px;

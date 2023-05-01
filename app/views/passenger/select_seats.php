@@ -23,16 +23,20 @@
                     <?php $line = 1;
                     $j = 0; ?>
 
-                    <?php while ($line <= ($data['bus']->capacity - 5)/4) : ?>
+                    <?php while ($line <= ($data['bus']->capacity - 5) / 4) : ?>
                         <div class="row">
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
-                                <span class="seat"><i class="fas fa-square"></i></span>
+                                <span class="seat">
+                                    <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                                </span>
                                 <?php $j++; ?>
                             </span>
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
-                                <span class="seat"><i class="fas fa-square"></i></span>
+                                <span class="seat">
+                                    <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                                </span>
                                 <?php $j++; ?>
                             </span>
                             <span class="col">
@@ -40,12 +44,16 @@
                             </span>
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
-                                <span class="seat"><i class="fas fa-square"></i></span>
+                                <span class="seat">
+                                    <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                                </span>
                                 <?php $j++; ?>
                             </span>
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
-                                <span class="seat"><i class="fas fa-square"></i></span>
+                                <span class="seat">
+                                    <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                                </span>
                             </span>
                         </div>
                         <?php $line++; ?>
@@ -54,27 +62,37 @@
                     <div class="row">
                         <span class="col">
                             <span class="snum"><?php echo $line + $j; ?></span>
-                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <span class="seat">
+                                <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                            </span>
                             <?php $j++; ?>
                         </span>
                         <span class="col">
                             <span class="snum"><?php echo $line + $j; ?></span>
-                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <span class="seat">
+                                <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                            </span>
                             <?php $j++; ?>
                         </span>
                         <span class="col">
                             <span class="snum"><?php echo $line + $j; ?></span>
-                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <span class="seat">
+                                <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                            </span>
                             <?php $j++; ?>
                         </span>
                         <span class="col">
                             <span class="snum"><?php echo $line + $j; ?></span>
-                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <span class="seat">
+                                <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                            </span>
                             <?php $j++; ?>
                         </span>
                         <span class="col">
                             <span class="snum"><?php echo $line + $j; ?></span>
-                            <span class="seat"><i class="fas fa-square"></i></span>
+                            <span class="seat">
+                                <i class="fas fa-square <?php echo ($data['seats']->{'s' . ($line + $j)} != '0') ? 'not_available' : ''; ?>"></i>
+                            </span>
                         </span>
                     </div>
                 </div>
@@ -138,6 +156,8 @@
         function goBack() {
             window.history.back();
         }
+
+        
     </script>
 </body>
 
