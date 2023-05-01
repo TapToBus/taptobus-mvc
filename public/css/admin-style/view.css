@@ -974,10 +974,11 @@ a{
     left: 50%;
     transform: translate(-50%, -50%); */
 
-    border-radius: 400px;
+    border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
     margin-left: 40px;
     width: 500px;
+    display: flex;
 
 }
 
@@ -989,6 +990,9 @@ a{
     object-fit: cover;
     border-radius: 100%;
     margin-left: 2px;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .pro-details .right{

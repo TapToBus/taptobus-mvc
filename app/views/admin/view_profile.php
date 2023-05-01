@@ -24,33 +24,42 @@
                 </div>
 
                 <div class="right">
-                    <div class="name"><?php echo $data['profile']->fname . ' ' . $data['profile']->lname; ?></div>
 
                     <div class="details">
 
                         <div class="row">
                             <span class="col1">Admin ID: </span>
-                            <span class="col2"><?php echo $data['profile']->admin_id ?></span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->admin_id; ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">NIC: </span>
-                            <span class="col2"><?php echo $data['profile']->nic ?></span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->nic; ?></span>
+                        </div>
+
+                        <div class="row">
+                            <span class="col1">First Name: </span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->fname; ?></span>
+                        </div>
+
+                        <div class="row">
+                            <span class="col1">Last Name: </span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->lname; ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Email: </span>
-                            <span class="col2"><?php echo $data['profile']->email ?></span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->email; ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Mobile Number: </span>
-                            <span class="col2"><?php echo $data['profile']->mobileNo ?></span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->mobileNo; ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Telephone Number: </span>
-                            <span class="col2"><?php echo $data['profile']->telNo ?></span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->telNo; ?></span>
                         </div>
 
                     </div>
