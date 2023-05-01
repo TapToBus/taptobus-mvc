@@ -80,7 +80,7 @@
                                     datasets:[{
                                         label:'User count over month',
                                         data:counts,
-                                        borderColor: 'rgb(75, 192, 192)',
+                                        borderColor: '#071355',
                                         tension: 0.1
                                     }]
                                 },
@@ -115,8 +115,8 @@
                                     datasets:[{
                                         data:counts,
                                         backgroundColor: [
-                                        '#6666ff',
-                                        '#0000e6',
+                                        '#141E61',
+                                        '#47508d',
                                         '#000080'
                                     ],
                                         borderColor: [
