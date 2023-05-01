@@ -123,7 +123,7 @@
                             <div class="btn">
                                 <!-- <button class="btn-left">Back</button>
                                 <button class="btn-right">Next</button> -->
-                                <input class="btn-left" type="button" value="Back">
+                                <input class="btn-left" type="button" value="Back" onclick="goBack()">
                                 <input class="btn-right" type="submit" value="Next">
                             </div>
                         </form>
@@ -134,6 +134,11 @@
     </div>
 
     <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/select-seats-js.js"></script> -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 
 </html>
