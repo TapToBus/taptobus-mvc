@@ -22,6 +22,20 @@
 </div>
 
 <div class="side-menu">
+    <!-- active tab -->
+    <?php     
+        // show the active tab
+        // function highlight($active, $link){
+        //     if(isset($astive)){
+        //         if($active == $link){
+        //             echo "active";
+        //         }else{
+        //             echo "";
+        //         }
+        //     }
+        // }    
+    ?>
+    <!-- -------------->
     <div class="side-heading">
         <a href="<?php echo URLROOT; ?>/pages/index">
             <img src="<?php echo URLROOT; ?>/img/logo-black.png" alt="Logo" srcset="">
@@ -30,6 +44,7 @@
             <i class="fa fa-times"></i>
         </label>
     </div>
+    <!-- <a href="<?php echo URLROOT; ?>/Staff_dashboard/staff_dash" class="<?php //highlight($active, "dashboard") ?>"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a> -->
     <a href="<?php echo URLROOT; ?>/Staff_dashboard/staff_dash" class="active"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
     <a href="<?php echo URLROOT; ?>/Staff_home/staffhome" class="active"><i class="fa-solid fa-scroll"></i><span>Announcement</span></a>
     <a href="<?php echo URLROOT; ?>/Staff_view_users/view_users"><i class="fa-solid fa-users"></i><span>Users</span></a>

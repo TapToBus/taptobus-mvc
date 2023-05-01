@@ -11,7 +11,10 @@
 
 </head>
 <body>    
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
+    <?php 
+        $active = "dashboard";
+        require APPROOT . '/views/inc/staff_navbar.php' 
+    ?>
 
         <div class="container">
             <h2>Dashboard</h2>
