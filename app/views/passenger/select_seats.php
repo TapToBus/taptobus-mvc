@@ -23,7 +23,7 @@
                     <?php $line = 1;
                     $j = 0; ?>
 
-                    <?php while ($line <= (33 - 5) / 4) : ?>
+                    <?php while ($line <= ($data['bus']->capacity - 5)/4) : ?>
                         <div class="row">
                             <span class="col">
                                 <span class="snum"><?php echo $line + $j; ?></span>
@@ -97,19 +97,19 @@
 
                         <!-- <div class="inst">You can select 4 seats</div> -->
 
-                        <form action="" method="POST">
+                        <form action="<?php echo URLROOT; ?>/passenger_book_seats/select_seats" method="POST">
                             <?php $i = 1; ?>
-                            <?php while ($i <= 5) : ?>
+                            <?php while ($i <= $data['count']) : ?>
 
                                 <div class="field">
                                     <span class="col1">
-                                        <label for="choice1">Choice <?php echo $i; ?>: </label>
+                                        <label for="choice1">Seat <?php echo $i; ?>: </label>
                                     </span>
                                     <span class="col2">
                                         <select name="choice<?php echo $i; ?>">
                                             <?php $s = 1; ?>
                                             <option value="default">Chose from here</option>
-                                            <?php while ($s <= 33) : ?>
+                                            <?php while ($s <= ($data['bus']->capacity)) : ?>
                                                 <option value="s<?php echo $s; ?>"><?php echo $s; ?></option>
                                                 <?php $s++; ?>
                                             <?php endwhile; ?>

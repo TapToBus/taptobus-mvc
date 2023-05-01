@@ -152,7 +152,7 @@
 
 .main .content .details .right .field{
 	display: grid;
-	grid-template-columns: 22% 78%;
+	grid-template-columns: 20% 80%;
 	align-items: center;
 	margin-bottom: 10px;
 }
