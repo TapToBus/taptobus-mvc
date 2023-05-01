@@ -8,7 +8,7 @@
         }
 
         public function createSchedule($data){
-            $this->db->query("INSERT INTO schedule(bus_no, Location_from,Location_To,day,arrival_time,departure_time,ticket_price) VALUES(:bus_no, :location_from, :location_to, :day, :arrival_time, :depart ure_time, :ticket_price)");
+            $this->db->query("INSERT INTO schedule(bus_no, Location_from,Location_To,day,arrival_time,departure_time,ticket_price) VALUES(:bus_no, :location_from, :location_to, :day, :arrival_time, :departure_time, :ticket_price)");
             $this->db->bind(":bus_no",$data['bus_no']);
             $this->db->bind(":location_from",$data['Location_from']);
             $this->db->bind(":location_to",$data['Location_to']);
@@ -21,7 +21,7 @@
         }
 
         public function viewSchedules(){
-            $this->db->query("SELECT * FROM schedule ");
+            $this->db->query("SELECT * FROM schedule order by day ");
             return $this->db->resultSet();
 
         }

@@ -9,7 +9,6 @@
                 direct('users/login');
             }
             $this->scheduleModel = $this->model("M_staff_schedule");
-
         }
 
 
@@ -20,10 +19,15 @@
 
         }
 
-        public function create_schedule(){
+        public function view_create_form(){
+            $this->view('staff/create_schedule');
+        }
+
+        public function create_schedule(){           
+
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                var_dump($_POST);
-                die();
+                // var_dump($_POST);
+                // die();
                 if(isset($_POST['createScheduleBtn'])){
                    $data = [
                         'bus_no' => $_POST['bus_no'],                    
@@ -33,14 +37,14 @@
                         'arrival_time' => $_POST['arrival_time'],
                         'depature_time' => $_POST['departrue_time'],
                         'ticket_price' => $_POST['ticket_price']
-                   ];
-                  
+                   ];                  
                 }
                 
                 $this->scheduleModel->createSchedule($data);
+                direct('Staff_schedule/view_schedule');
             }
 
-            $this->view('staff/create_schedule');
+            
         }
 
     }

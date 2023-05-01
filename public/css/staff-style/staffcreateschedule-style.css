@@ -1,0 +1,26 @@
+.container {
+    padding-left: calc(var(--sidebar-area) + 1rem);
+    padding-right: 1rem;
+    padding-top: 4.375rem;
+    height: 100vh;   
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+form{
+    background-color: rgb(204, 194, 194);
+    margin: 0;
+    border-radius: .5rem;
+}
+
+.form_control{
+    padding: 1rem;
+    margin-inline: 3rem;
+}
+
+.form_control input{
+    padding: 5px 0;
+    border: none;
+    border-radius: .5rem;
+}

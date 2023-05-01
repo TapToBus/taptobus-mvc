@@ -7,14 +7,14 @@
     <title><?php echo  SITENAME; ?></title>
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/main.css"/>
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffnavbar-style.css" />
-    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffschedule-style.css" />
+    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffcreateschedule-style.css" />
 </head>
 <body>
     <?php require APPROOT . '/views/inc/staff_navbar.php' ?>    
 
     <div class="container">     
 
-        <form action="" method="POST">
+        <form action="<?php echo URLROOT?>/Staff_schedule/create_schedule" method="POST">
             <div class="form_control">
                 <label for="bus_no">Bus No</label>
                 <input type="text" name="bus_no" id="bus_no"/>

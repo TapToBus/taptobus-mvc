@@ -16,6 +16,7 @@
     --send:rgb(10, 10, 219);
     --cancel:rgb(34, 32, 32);
     --popup-background:#fff;
-    --clr-btn1:rgb(48, 48, 172);
+    --clr-btn1:rgba(41, 41, 132, 0.555);
+    --clr-tbl-heading:rgb(80, 80, 159);
 
 }

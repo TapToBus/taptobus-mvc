@@ -14,10 +14,24 @@
 
     <div class="container"> 
         <div class="schedule-container">
-            <div class="addnewbtn">
-                 <a href="<?php echo URLROOT?>/Staff_schedule/create_schedule"><i class="fa-solid fa-circle-plus"></i>Add New</a>
-            </div>     
-            <table>
+            <div class="top">
+                <h2>Bus Schedule</h2>
+                <div class="add-edit-btns">
+                    <a href="<?php echo URLROOT?>/Staff_schedule/view_create_form">
+                        <button class="button1">
+                            <span class="button__text">Add New</span>
+                            <span class="button__icon"><i class="fa-solid fa-circle-plus"></i></span>
+                        </button>                    
+                    </a> 
+                    <a href="#">
+                        <button class="button2">
+                            <span class="button__text">Edit</span>
+                            <span class="button__icon"><i class="fa-solid fa-pen"></i></span>
+                        </button>                    
+                    </a> 
+                </div> 
+            </div>             
+            <table class="content-tabel">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -27,7 +41,7 @@
                         <th>Day</th>
                         <th>Arrival time</th>
                         <th>Departure time</th>
-                        <th>Ticket Price</th>
+                        <th>Ticket Price (LKR)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +58,7 @@
                         <td><?php echo $schedule->day?></td>
                         <td><?php echo $schedule->arrival_time?></td>
                         <td><?php echo $schedule->departure_time?></td>
-                        <td><?php echo $schedule->ticket_price?></td>
+                        <td><?php echo $schedule->ticket_price.'.00'?></td>
                     </tr>
                     <?php
                 }

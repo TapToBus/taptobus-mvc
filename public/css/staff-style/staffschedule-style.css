@@ -10,25 +10,100 @@
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
+} 
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-.container> .schedule-container > .addnewbtn {
-    margin: 1rem;
-    width: 8rem;
-    height: 3rem;
-    padding: 1rem;
-    background-color: var(--clr-btn1);
-    border-radius: 0.5rem;
-    text-align: right;
-    float: right;
-
+.top h2{
+    color: var(--clr-sidetext);
 }
-
-.container > .schedule-container >.addnewbtn > a{
-    text-decoration: none;
-    font-size: 16px;
-    color: var(--clr-icon);
+.add-edit-btns{
+    display: flex;
+    /* flex-direction: column; */
+    /* max-width: 200px; */
+    align-items: right;
+    /* margin-left: 60rem; */
+    justify-content: space-between;
+    padding: 15px;
+    gap: 1rem;
+}
+.add-edit-btns .button1, .button2{
     width: 100%;
-    height: 100%;
+    padding: 8px 17px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: rgb(0,0,0,0.19) 0px 10px 20px , rgb(0 , 0 , 0 , 0.23) 0px 6px 6px;
+    transition: all 160ms ease-in;
+}
+.schedule-container  .button1 {
+    background-color: #007598f4;
+}
+.schedule-container  .button2 {
+    background-color: #008167e6;
+}
+.button1:hover{
+    background-color: #007598;
+}
+ .button2:hover{
+    background-color: #008168;
+}
+
+.button1:active{
+    transform: scale(.8);
+    background-color: #035e7acb;
+}
+.button2:active{
+    transform: scale(.8);
+    background-color: #036552b3;
+}
+.button__text , .button__icon{
+    padding: 0 6px;
+    color: rgb(226, 226, 226);
+}
+ .button__icon{
+    margin-left: .4rem;
+    font-size: 1.4rem;
+ }
+
+.content-tabel{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 200px;
+    max-width: 1200px;
+    border-radius: 0.75rem 0.75rem 0 0 ;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(0, 0, 0,0.15);
+}
+
+.content-tabel thead tr{
+    background-color: var( --clr-tbl-heading);
+    text-align: center;
+    color: var(--clr-text);
+    font-weight: bold;
+}
+
+.content-tabel th, .content-tabel td{
+    padding: 12px 15px;
+}
+
+.content-tabel tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+.content-tabel tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.content-tabel tbody tr:last-of-type{
+    border-bottom: 2px solid var(--clr-tbl-heading);
 }
