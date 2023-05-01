@@ -119,21 +119,6 @@
                             <?php $i = 1; ?>
                             <?php while ($i <= $data['count']) : ?>
 
-                                <!-- <div class="field">
-                                    <span class="col1">
-                                        <label for="choice1">Seat <?php echo $i; ?>: </label>
-                                    </span>
-                                    <span class="col2">
-                                        <select name="choice<?php echo $i; ?>">
-                                            <?php $s = 1; ?>
-                                            <option value="default">Chose from here</option>
-                                            <?php while ($s <= ($data['bus']->capacity)) : ?>
-                                                <option value="s<?php echo $s; ?>"><?php echo $s; ?></option>
-                                                <?php $s++; ?>
-                                            <?php endwhile; ?>
-                                        </select>
-                                    </span>
-                                </div> -->
                                 <div class="field">
                                     <span class="col1">
                                         <label for="choice1">Seat <?php echo $i; ?>: </label>
