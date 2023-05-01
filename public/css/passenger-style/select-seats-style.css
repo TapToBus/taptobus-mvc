@@ -23,6 +23,7 @@
 	display: grid;
 	grid-template-columns: 41% 56%;
 	column-gap: 20px;
+	align-items: center;
 }
 
 .main .content .details .left{
@@ -38,7 +39,7 @@
 
 .main .content .details .right{
 	/* background-color: blue; */
-	background-color: gray;
+	/* background-color: gray; */
 }
 
 .main .content .details .left .front{
@@ -93,4 +94,84 @@
 
 .main .content .details .left .row{
 	margin-top: 30px;
+}
+
+.main .content .details .right .legend{
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	display: grid;
+	grid-template-columns: 35% 35%;
+	column-gap: 20px;
+	align-items: center;
+	justify-content: center;
+
+	padding-top: 8px;
+	padding-bottom: 5px;
+
+	margin-bottom: 15px;
+}
+
+.main .content .details .right .legend .col{
+	/* background-color: red; */
+	align-items: center;
+}
+
+.main .content .details .right .legend i{
+	font-size: 25px;
+	margin-right: 5px;
+	color: #66FF00;
+}
+
+.main .content .details .booked{
+	color: gray !important;
+}
+
+.main .content .details .right .form{
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+.main .content .details .right .btn{
+	display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.main .content .details .right .btn button{
+	width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.main .content .details .right .btn .btn-left{
+	color: var(--clr-navbar-top);
+    background-color: white;
+    border: 1px solid var(--clr-navbar-top);
+}
+
+.main .content .details .right .btn .btn-left:hover{
+	background-color: var(--clr-table-title-bg);
+    transition: 0.3s;
+}
+
+.main .content .details .right .btn .btn-right{
+	color: var(--clr-white);
+    background-color: var(--clr-button);
+    border: 1px solid var(--clr-navbar-top);
+}
+
+.main .content .details .right .btn .btn-right:hover{
+	background-color: var(--clr-button-hover);
+    transition: 0.3s
 }

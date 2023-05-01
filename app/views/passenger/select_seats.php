@@ -81,11 +81,35 @@
 
                 <div class="right">
                     <div class="legend">
-                        <i class="fas fa-square"></i>
+                        <span class="col">
+                            <i class="fas fa-square"></i>
+                            <span>Available</span>
+                        </span>
+
+                        <span class="col">
+                            <i class="fas fa-square booked"></i>
+                            <span>Unavailable</span>
+                        </span>
                     </div>
 
                     <div class="form">
-                        
+                        <div>Select seats</div>
+
+                        <form action="">
+                            <label for="seat1">Seat 1: </label>
+                            <select name="s1" id="s1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select> <br>
+
+                            <div class="btn">
+                                <button class="btn-left">Back</button>
+                                <button class="btn-right">Next</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
