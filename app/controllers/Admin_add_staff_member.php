@@ -84,7 +84,16 @@ class Admin_add_staff_member extends Controller{
                 if($this->addstaffmembersModel->findstaffmemberByMobileNo($data['mobile'])){
                     $data['mobile_err'] = 'Mobile no is already taken';
                 }
-            }            
+            }      
+            
+             //validate telephone number
+            if(! preg_match('/^[0-9]{10}+$/', $data['tele'])){
+                $data['tele_err'] = 'A valid telephone no is required';
+            }else{
+                if($this->addstaffmembersModel->findstaffmemberByTeleNo($data['tele'])){
+                    $data['tele_err'] = 'telephone no is already taken';
+                }
+            }  
 
 
             $password = uniqid(); //generate 13 characters length password
