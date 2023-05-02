@@ -151,7 +151,7 @@
 
                             <div class="btn">
                                 <button class="btn-left" onclick="goBack()" type="button">Back</button>
-                                <button class="btn-right" type="submit">Next</button>
+                                <button class="btn-right" type="submit">Pay</button>
                             </div>
                         </form>
                     </div>
