@@ -36,31 +36,67 @@
 
             <canvas id="myChart"></canvas>
 
-            <?php var_dump($data)?>
+            <?php var_dump($data) ?>
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var data = <?php echo json_encode($data); ?>;
-                console.log(data);
+
+                const labels = Object.keys(data);
+
+                const dates = []
+                let today = new Date();
+                for (let i = 0; i < 7; i++) {
+                    let date = new Date(today);
+                    date.setDate(date.getDate() - i);
+                    let formattedDate = date.toISOString().substr(0, 10);
+                    dates.push(formattedDate);
+                }
+
+                const extractData = (row) => {
+                    temp = [0, 0, 0, 0, 0, 0, 0]
+                    for (d in row) {
+                        if (dates.includes(d)) {
+                            temp[dates.indexOf(d)] = row[d]
+                        }
+                    }
+                    return temp
+                }
+
+                data1 = extractData(data[labels[0]])
+                data2 = extractData(data[labels[1]])
+                data3 = extractData(data[labels[2]])
+
+                console.log(labels, dates, data1, data2, data3)
 
                 new Chart("myChart", {
-                    type: "line",
-                    data: {
-                        responsive: true,
-                        labels: date,
-                        datasets: [{
-                            label: 'bus_no',
-                            data: amount,
-                            borderColor: "#22a7f0",
-                            fill: false
-                        }]
+                  type: "line",
+                  data: {
+                    responsive: true,
+                    labels: dates,
+                    datasets: [{
+                      label: labels[0],
+                      data: extractData(data[labels[0]]),
+                      borderColor: "#22a7f0",
+                      fill: false
+                    }, {
+                      label: labels[1],
+                      data: extractData(data[labels[1]]),
+                      borderColor: "#48b5c4",
+                      fill: false
+                    }, {
+                      label: labels[2],
+                      data: extractData(data[labels[2]]),
+                      borderColor: "#a6d75b",
+                      fill: false
+                    }]
+                  },
+                  options: {
+                    legend: {
+                      display: true,
+                      position: 'bottom'
                     },
-                    options: {
-                        legend: {
-                            display: true,
-                            position: 'bottom'
-                        },
-                        aspectRatio: 1.7
-                    }
+                    aspectRatio: 1.7
+                  }
                 });
             </script>
 
