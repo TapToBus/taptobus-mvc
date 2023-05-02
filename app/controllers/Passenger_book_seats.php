@@ -149,20 +149,6 @@ class Passenger_book_seats extends Controller{
                 $selected['seat' . $i] = $_POST['choice' . $i];
                 $i++;
             }
-
-            // check if there are any element in $selected is equal to 'default'
-            /*if(in_array('default', $selected)){
-                $data['err'] = 'You must select ' . $data['count'] . ' seats';
-
-                $this->view('passenger/select_seats', $data);
-            }else{
-                if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
-                    echo 'Ok';
-                }else{
-                    echo 'Sorry! something went wrong';
-                }
-            }*/
-
             
             //check if there are any element in $selected is equal to 'default'
             if(in_array('default', $selected)){
