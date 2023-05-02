@@ -6,6 +6,7 @@ class Passenger_book_seats extends Controller{
     private $scheduleModel;
     private $driverModel;
     private $conductorModel;
+    private $seatModel;
 
 
     public function __construct(){
@@ -18,6 +19,7 @@ class Passenger_book_seats extends Controller{
         $this->scheduleModel = $this->model('m_passenger_book_seats');
         $this->driverModel = $this->model('m_passenger_book_seats');
         $this->conductorModel = $this->model('m_passenger_book_seats');
+        $this->seatModel = $this->model('m_passenger_book_seats');
     }
 
 
@@ -176,7 +178,11 @@ class Passenger_book_seats extends Controller{
 
                 $this->view('passenger/select_seats', $data);
             }else{
-                echo 'Ok';
+                if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
+                    echo 'Ok';
+                }else{
+                    echo 'Sorry! something went wrong';
+                }
             }
 
 

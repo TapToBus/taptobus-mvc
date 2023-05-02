@@ -132,4 +132,24 @@ class M_passenger_book_seats{
 
         return $result;
     }
+
+
+    public function markSeats($boks_id, $selected, $count){
+        $new_value = 1;
+    
+        $query_part = array();
+        foreach ($selected as $key => $col) {
+            $query_part[] = "$col = $new_value";
+        }
+        $column_value = implode(', ', $query_part);
+    
+        $this->db->query("UPDATE booked_seats SET $column_value, available_seats_count = available_seats_count - :count WHERE id = :boks_id");
+        
+        $this->db->bind(':boks_id', $boks_id);
+        $this->db->bind(':count', $count);
+        $result = $this->db->execute();
+    
+        return $result;
+    }
+    
 }
