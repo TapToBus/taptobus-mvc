@@ -146,6 +146,7 @@
             <script>
                 var data3 = <?php echo json_encode($data3); ?>;
                 var xValues = data3.xValues;
+                console.log(xValues);
                 var yValues = data3.yValues;
                 var barColors = ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db"];
 

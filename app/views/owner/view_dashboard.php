@@ -36,44 +36,36 @@
 
             <canvas id="myChart"></canvas>
 
+            <?php print_r($bus_no);?>
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
+                var data = <?php echo json_encode($data); ?>;
+                // console.log(data);
 
-                $.ajax({
-                    url: 'owner_buses/bus_details',
-                    method: 'GET',
-                    success: function(response) {
-                        var data = response.data;
-                        console.log(data);
+                var bus_no = <?php echo json_encode($bus_no); ?>;
+                var date = <?php echo json_encode($date); ?>;
+                var amount = <?php echo json_encode($amount); ?>;
+                
+                // var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
 
-                        var datasets = [];
-                        Object.entries(data).forEach(([bus_no, bus_data]) => {
-                            datasets.push({
-                                label: 'Bus ' + bus_no,
-                                data: Object.values(bus_data),
-                                borderColor: '#22a7f0',
-                                fill: false
-                            });
-                        });
-
-                        new Chart("myChart", {
-                            type: "line",
-                            data: {
-                                responsive: true,
-                                labels: Object.keys(data[1]),
-                                datasets: datasets
-                            },
-                            options: {
-                                legend: {
-                                    display: true,
-                                    position: 'bottom'
-                                },
-                                aspectRatio: 1.7
-                            }
-                        });
+                new Chart("myChart", {
+                    type: "line",
+                    data: {
+                        responsive: true,
+                        labels: date,
+                        datasets: [{
+                            label: 'bus_no',
+                            data: amount,
+                            borderColor: "#22a7f0",
+                            fill: false
+                        }]
                     },
-                    error: function(error) {
-                        console.log(error);
+                    options: {
+                        legend: {
+                            display: true,
+                            position: 'bottom'
+                        },
+                        aspectRatio: 1.7
                     }
                 });
             </script>

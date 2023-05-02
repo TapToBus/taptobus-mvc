@@ -102,6 +102,7 @@ class M_conductor_incomerecords
             $amount = $row->amount;
             $data[$bus_no][$date] = $amount;
         }
+        
 
         return $data;
     }
