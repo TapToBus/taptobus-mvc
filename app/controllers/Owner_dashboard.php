@@ -17,7 +17,7 @@ class Owner_dashboard extends Controller{
       
 
       $data = $this->ownerModel->view_incomerecords_forbusses();
-      var_dump($data);
+      // var_dump($data);
       $this->view('owner/view_dashboard',$data);
     }
 }

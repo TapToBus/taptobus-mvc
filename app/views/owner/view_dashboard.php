@@ -36,38 +36,36 @@
 
             <canvas id="myChart"></canvas>
 
-            <?php print_r($bus_no);?>
+            <?php var_dump($data)?>
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var data = <?php echo json_encode($data); ?>;
-                // console.log(data);
+                console.log(data);
+                var lable = Array.from(data).map((key,value)=>key)
 
-                var bus_no = <?php echo json_encode($bus_no); ?>;
-                var date = <?php echo json_encode($date); ?>;
-                var amount = <?php echo json_encode($amount); ?>;
-                
+                console.log(lable );
                 // var xValues = ['2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23', '2023-02-23'];
 
-                new Chart("myChart", {
-                    type: "line",
-                    data: {
-                        responsive: true,
-                        labels: date,
-                        datasets: [{
-                            label: 'bus_no',
-                            data: amount,
-                            borderColor: "#22a7f0",
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        legend: {
-                            display: true,
-                            position: 'bottom'
-                        },
-                        aspectRatio: 1.7
-                    }
-                });
+                // new Chart("myChart", {
+                //     type: "line",
+                //     data: {
+                //         responsive: true,
+                //         labels: date,
+                //         datasets: [{
+                //             label: 'bus_no',
+                //             data: amount,
+                //             borderColor: "#22a7f0",
+                //             fill: false
+                //         }]
+                //     },
+                //     options: {
+                //         legend: {
+                //             display: true,
+                //             position: 'bottom'
+                //         },
+                //         aspectRatio: 1.7
+                //     }
+                // });
             </script>
 
 
