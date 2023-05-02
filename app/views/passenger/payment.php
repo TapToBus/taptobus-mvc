@@ -21,12 +21,12 @@
         </div>
         <button id="submit">
             <div class="spinner hidden" id="spinner"></div>
-            <span id="button-text">Pay now</span>
+            <span id="button-text">Pay <?php echo '  ' . 'LKR' . ' ' . ($data['count'] * $data['schedule']->ticket_price . '.00');  ?></span>
         </button>
         <div id="payment-message" class="hidden"></div>
     </form>
 
-    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/payment-js.js"></script> -->
+
     <script>
         // This is your test publishable API key.
         const stripe = Stripe('<?php echo STRIPE_PK; ?>');
@@ -49,8 +49,12 @@
 
             const {clientSecret} = await fetch(url, {
                 method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({items}),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    items
+                }),
             }).then((r) => r.json());
 
             elements = stripe.elements({clientSecret});

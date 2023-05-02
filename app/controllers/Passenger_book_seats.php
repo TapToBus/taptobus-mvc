@@ -189,6 +189,7 @@ class Passenger_book_seats extends Controller{
                 }*/
 
                 $data['selected'] = $selected;
+                $data['schedule'] = $this->scheduleModel->getScheduleDetails($data['sch_id']);
 
                 $this->view('passenger/payment', $data);
             }else{
@@ -224,19 +225,11 @@ class Passenger_book_seats extends Controller{
 
         \Stripe\Stripe::setApiKey(STRIPE_SK);
 
-        /*function calculateOrderAmount(array $items): int{
-            // Replace this constant with a calculation of the order's amount
-            // Calculate the order total on the server to prevent
-            // people from directly manipulating the amount on the client
-            return 1400;
-        }*/
-
         header('Content-Type: application/json');
 
         try {
             // retrieve JSON from POST body
             $jsonStr = file_get_contents('php://input');
-            //$jsonObj = json_decode($jsonStr);
 
             // Create a PaymentIntent with amount and currency
             $paymentIntent = \Stripe\PaymentIntent::create([
