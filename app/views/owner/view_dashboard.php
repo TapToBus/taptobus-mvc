@@ -37,14 +37,16 @@
             <canvas id="myChart"></canvas>
 
             <script>
+
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var data = <?php echo json_encode($data); ?>;
 
                 const labels = Object.keys(data);
+                var barColors = ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db"];
 
                 const dates = []
                 let today = new Date();
-                for (let i = 0; i < 7; i++) {
+                for (let i = 6; i >=0; i--) {
                     let date = new Date(today);
                     date.setDate(date.getDate() - i);
                     let formattedDate = date.toISOString().substr(0, 10);
@@ -61,42 +63,35 @@
                     return temp;
                 }
 
-                data1 = extractData(data[labels[0]])
-                data2 = extractData(data[labels[1]])
-                data3 = extractData(data[labels[2]])
+                const datasets = [];
+                for (let i = 0; i < labels.length; i++) {
+                    const dataset = {
+                        label: labels[i],
+                        data: extractData(data[labels[i]]),
+                        borderColor: barColors[i],
+                        fill: false
+                    };
+                    datasets.push(dataset);
+                }
 
-                console.log(labels, dates, data1, data2, data3)
 
                 new Chart("myChart", {
-                  type: "line",
-                  data: {
-                    responsive: true,
-                    labels: dates,
-                    datasets: [{
-                      label: labels[0],
-                      data: extractData(data[labels[0]]),
-                      borderColor: "#22a7f0",
-                      fill: false
-                    }, {
-                      label: labels[1],
-                      data: extractData(data[labels[1]]),
-                      borderColor: "#48b5c4",
-                      fill: false
-                    }, {
-                      label: labels[2],
-                      data: extractData(data[labels[2]]),
-                      borderColor: "#a6d75b",
-                      fill: false
-                    }]
-                  },
-                  options: {
-                    legend: {
-                      display: true,
-                      position: 'bottom'
+                    type: "line",
+                    data: {
+                        responsive: true,
+                        labels: dates,
+                        datasets: datasets
                     },
-                    aspectRatio: 1.7
-                  }
+                    options: {
+                        legend: {
+                            display: true,
+                            position: 'bottom'
+                        },
+                        aspectRatio: 1.7
+                    }
                 });
+
+
             </script>
 
 
@@ -152,7 +147,7 @@
 
     </div>
 
-    <!-- <script type="text/javascript " src="<?php echo URLROOT; ?>/js/owner-js/dashboard.js"> </script> -->
+    <script type="text/javascript " src="<?php echo URLROOT; ?>/js/owner-js/dashboard.js"> </script>
 </body>
 
 </html>
