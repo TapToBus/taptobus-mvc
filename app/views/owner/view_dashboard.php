@@ -36,7 +36,6 @@
 
             <canvas id="myChart"></canvas>
 
-            <?php var_dump($data) ?>
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var data = <?php echo json_encode($data); ?>;
@@ -59,7 +58,7 @@
                             temp[dates.indexOf(d)] = row[d]
                         }
                     }
-                    return temp
+                    return temp;
                 }
 
                 data1 = extractData(data[labels[0]])
