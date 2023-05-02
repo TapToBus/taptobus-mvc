@@ -60,13 +60,14 @@ class M_Admin_dashboard{
 
     //get system profit from income (incomerecordes and bus table)
     public function getProfit(){
-        $this->db->query('SELECT b.owner_nic, MONTHNAME(i.date) as month, SUM(i.amount)*0.05 as profit FROM bus b JOIN incomerecords i ON b.bus_no = i.bus_no GROUP BY b.owner_nic, MONTH(i.date)');
+        // $this->db->query('SELECT b.owner_nic, MONTHNAME(i.date) as month, SUM(i.amount)*0.05 as profit FROM bus b JOIN incomerecords i ON b.bus_no = i.bus_no GROUP BY b.owner_nic, MONTH(i.date)');
+        $this->db->query('SELECT bu.owner_nic, MONTHNAME(bo.booked_datetime) as month, SUM(bo.price)*0.05 as profit FROM bus bu JOIN bookings bo ON bu.bus_no = bo.bus_no GROUP BY bu.owner_nic, MONTH(bo.booked_datetime)');
         return $this->db->resultSet();
     }
 
     //get system profit into chart
     public function getProfitChart(){
-        $this->db->query('SELECT MONTHNAME(i.date) as month, SUM(i.amount)*0.05 as profit FROM bus b JOIN incomerecords i ON b.bus_no = i.bus_no GROUP BY MONTH(i.date)');
+        $this->db->query('SELECT MONTHNAME(bo.booked_datetime) as month, SUM(bo.price)*0.05 as profit FROM bus bu JOIN bookings bo ON bu.bus_no = bo.bus_no GROUP BY MONTH(bo.booked_datetime)');
     } 
 
 }

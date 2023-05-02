@@ -70,7 +70,7 @@
 
         <div class="admin-charts-pair">
             <div class="admin-chart-pair">
-                <h2> New Users (Monthly) </h2>
+                <h2> Users (Monthly) </h2>
                 <canvas id="monthly-users-line-chart"></canvas>
 
                 <script>
@@ -135,7 +135,7 @@
         <div class="second-line-charts"> 
         <!-- admin-chart -->
             <div class="second-line-sub-chart">
-                <h2> New Passengers (Monthly) </h2>
+                <h2> Passengers (Monthly) </h2>
                 <canvas id="monthly-passenger-line-chart"></canvas>
 
                 <script>
@@ -166,7 +166,7 @@
 
 
             <div class="second-line-sub-chart">
-                <h2> New Buses (Monthly) </h2>
+                <h2> Buses (Monthly) </h2>
                 <canvas id="admin-bus-bar-chart"></canvas>
 
                 <script>
