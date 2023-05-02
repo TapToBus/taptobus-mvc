@@ -124,7 +124,7 @@ class M_passenger_book_seats{
     }
 
     
-    public function getBookedSeatsDate($boks_id){
+    public function getBookedSeatsData($boks_id){
         $this->db->query('SELECT * FROM booked_seats WHERE id = :boks_id;');
         
         $this->db->bind(':boks_id', $boks_id);
