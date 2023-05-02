@@ -138,6 +138,7 @@ class Passenger_book_seats extends Controller{
                 'count' => $_POST['count'],
                 'bus' => '',
                 'seats' => '',
+                'selected' => '',
                 'err' => ''
             ];
 
@@ -159,7 +160,7 @@ class Passenger_book_seats extends Controller{
 
             // check if there is error or not
             if(empty($data['err'])){
-                $schedule = $this->scheduleModel->getScheduleDetails($data['sch_id']);
+                /*$schedule = $this->scheduleModel->getScheduleDetails($data['sch_id']);
 
                 $date = $data['seats']->date;
                 $time = $schedule->departure_time;
@@ -170,7 +171,7 @@ class Passenger_book_seats extends Controller{
                 $rand = mt_rand(100000, 999999);
                 $code = 'TC' . $rand;
 
-                /*if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
+                if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
                     //$this->bookingModel->addBooking($schedule->from, $schedule->to, $departure_datetime, $schedule->bus_no, $data['count'], $seats, $schedule->price, $code, $data['boks_id'], $data['sch_id'], $_SESSION['user_id']);
                     print_r($schedule);
                     echo '<br>';
@@ -187,7 +188,9 @@ class Passenger_book_seats extends Controller{
                     echo 'Sorry! something went wrong';
                 }*/
 
-                
+                $data['selected'] = $selected;
+
+                $this->view('passenger/payment', $data);
             }else{
                 $this->view('passenger/select_seats', $data);
             }
@@ -199,6 +202,7 @@ class Passenger_book_seats extends Controller{
                     'count' => $_GET['count'],
                     'bus' => '',
                     'seats' => '',
+                    'selected' => '',
                     'err' => ''
                 ];
 

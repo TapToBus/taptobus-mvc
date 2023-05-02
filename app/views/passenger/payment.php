@@ -10,13 +10,9 @@
 </head>
 
 <body>
-    <?php require APPROOT . '/views/inc/passenger_navbar.php' ?>
+    <!-- <?php print_r($data); ?> -->
 
-    <div class="main">
-        
-    </div>
-
-    <script src="<?php echo URLROOT; ?>/js/passenger-js/payment-js.js"></script>
+    
 </body>
 
 </html>
