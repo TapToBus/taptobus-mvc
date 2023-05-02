@@ -170,7 +170,7 @@ class Passenger_book_seats extends Controller{
                 $rand = mt_rand(100000, 999999);
                 $code = 'TC' . $rand;
 
-                if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
+                /*if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
                     //$this->bookingModel->addBooking($schedule->from, $schedule->to, $departure_datetime, $schedule->bus_no, $data['count'], $seats, $schedule->price, $code, $data['boks_id'], $data['sch_id'], $_SESSION['user_id']);
                     print_r($schedule);
                     echo '<br>';
@@ -185,7 +185,9 @@ class Passenger_book_seats extends Controller{
                     echo 'Ok';
                 }else{
                     echo 'Sorry! something went wrong';
-                }
+                }*/
+
+                
             }else{
                 $this->view('passenger/select_seats', $data);
             }
