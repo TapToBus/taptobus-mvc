@@ -86,11 +86,12 @@ class M_conductor_incomerecords
 
         $id = $_SESSION['user_id'];
         // prepare query
-        $this->db->query('SELECT date, bus_no, amount
-        FROM incomerecords
-        WHERE date BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE()
-          AND bus_no IN (SELECT bus_no FROM bus WHERE owner_nic = :owner_nic)
-        GROUP BY date, bus_no');
+        $this->db->query('SELECT ir.date, ir.bus_no, COALESCE(SUM(b.price), 0) + ir.amount AS amount
+        FROM incomerecords ir
+        LEFT JOIN bookings b ON b.bus_no = ir.bus_no AND DATE_FORMAT(b.booked_datetime,"%Y-%m-%d") = ir.date
+        WHERE ir.date BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE()
+          AND ir.bus_no IN (SELECT bus_no FROM bus WHERE owner_nic = :owner_nic)
+        GROUP BY ir.date, ir.bus_no');
 
         $this->db->bind(':owner_nic', $id);
         $results = $this->db->resultSet();
