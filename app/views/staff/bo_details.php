@@ -21,10 +21,12 @@
             <h1>Bus Owners</h1>
         </div>
 
-        <div class="search">
-            <input type="text" name="search" placeholder="search here">
-            <label for="search"><i class="fas fa-search"></i></label>
-        </div> 
+        <form action="" method="post">
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <Button><i class="fas fa-search"></i></Button>
+            </div> 
+        </form>       
 
         <div class="content-table">
             <table class="full-table">

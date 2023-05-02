@@ -100,5 +100,14 @@ class M_Staff {
 
     // }
 
+
+    //---------- search bar for the user details-------------
+
+        public  function searchUsers($searchKey){
+            $this->db->query("SELECT nic, fname , lname ,mobileNo, email FROM owner WHERE nic like '%$searchKey%' OR fname like '%$searchKey% OR lname like '%$searchKey% OR mobileNo like '%$searchKey% OR email like '%$searchKey%");
+            $result = $this->db->resultSet();
+            return $result;
+        }
+
 }
 ?>

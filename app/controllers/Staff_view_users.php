@@ -53,5 +53,12 @@
             $this->view('staff/bus_details', $data);
         }
 
+        public function searchUsers(){
+            $searchKey  = $_POST['search'];
+            $result = $this->ownerModel->searchUsers($searchKey);
+            print_r($result);
+            die();
+        }
+
     }
 ?>
