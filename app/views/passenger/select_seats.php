@@ -129,9 +129,9 @@
                                         <select name="choice<?php echo $i; ?>">
                                             <?php $s = 0; ?>
                                             <option value="default">Chose from here</option>
-                                            <?php while ($s <= ($data['bus']->capacity)) : ?>
+                                            <?php while ($s < ($data['bus']->capacity)) : ?>
                                                 <?php $s++; ?>
-                                                <?php if ($data['seats']->{'s' .  $s} != '0') continue; ?>
+                                                <?php if ($data['seats']->{'s' .  $s} != 0) continue; ?>
                                                 <option value="s<?php echo $s; ?>"><?php echo $s; ?></option>
                                             <?php endwhile; ?>
                                         </select>

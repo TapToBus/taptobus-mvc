@@ -142,7 +142,7 @@ class Passenger_book_seats extends Controller{
             $busNo = $this->scheduleModel->getBusNo($data['sch_id']);
 
             $data['bus'] = $this->busModel->getBusDetails($busNo->bus_no);
-            $data['seats'] = $this->scheduleModel->getBookedSeatsData($data['boks_id']);
+            $data['seats'] = $this->scheduleModel->getBookedSeatsDetails($data['boks_id']);
 
             $i = 1;
             while ($i <= $data['count']) {
@@ -151,7 +151,7 @@ class Passenger_book_seats extends Controller{
             }
 
             // check if there are any element in $selected is equal to 'default'
-            if(in_array('default', $selected)){
+            /*if(in_array('default', $selected)){
                 $data['err'] = 'You must select ' . $data['count'] . ' seats';
 
                 $this->view('passenger/select_seats', $data);
@@ -161,6 +161,23 @@ class Passenger_book_seats extends Controller{
                 }else{
                     echo 'Sorry! something went wrong';
                 }
+            }*/
+
+            
+            //check if there are any element in $selected is equal to 'default'
+            if(in_array('default', $selected)){
+                $data['err'] = 'You must select ' . $data['count'] . ' seats';
+            }
+
+            // check if there is error or not
+            if(empty($data['err'])){
+                if($this->seatModel->markSeats($data['boks_id'], $selected, $data['count'])){
+                    echo 'Ok';
+                }else{
+                    echo 'Sorry! something went wrong';
+                }
+            }else{
+                $this->view('passenger/select_seats', $data);
             }
         }else{
             if(isset($_GET['sch_id'], $_GET['boks_id'], $_GET['count'])){
@@ -176,7 +193,7 @@ class Passenger_book_seats extends Controller{
                 $busNo = $this->scheduleModel->getBusNo($data['sch_id']);
 
                 $data['bus'] = $this->busModel->getBusDetails($busNo->bus_no);
-                $data['seats'] = $this->scheduleModel->getBookedSeatsData($data['boks_id']);
+                $data['seats'] = $this->scheduleModel->getBookedSeatsDetails($data['boks_id']);
                 
                 $this->view('passenger/select_seats', $data);
             }else{
