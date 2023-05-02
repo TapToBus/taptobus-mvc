@@ -1,0 +1,169 @@
+.modal {
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    min-width: 600px;
+    border-radius: 5px;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* background blur */
+    backdrop-filter: blur(1px);
+}
+
+.alertModal {
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    border-radius: 5px;
+}
+
+.alertModal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* background blur */
+    backdrop-filter: blur(1px);
+}
+
+.caption {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.caption h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+form {
+    margin-top: 1rem;
+    padding:0 1rem;
+
+}
+
+form .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form_control {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.form_control label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form_control input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form_control select {
+    width: 100%;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.button_control {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button_control button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: var(--clr-bg, #1d5af1);
+    color: var(--clr-text, #fff);
+}
+
+
+.button_control button:first-of-type {
+    background-color: #292929;
+    color: var(--clr-text, #fff);
+}
+
+.alert__container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.alert__container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;   
+}
+
+.alert__container p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.alert__container i {
+    font-size: 3rem;
+    color: #f00;
+}
+
+.table__button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #d2d2d2;
+    transition: all 0.2s ease-in-out;
+}
+
+.table__button:hover {
+    background-color: var(--clr-bg);
+    color: #fff;
+}
+
+.table__button:disabled {
+    position: relative;
+    background-color: #d2d2d2;
+    color: #9c9c9c;   
+}
+.table__button:disabled:hover::after {
+      content: "This bus has reservations";
+      position: absolute;
+      top: -0.5rem;
+      transform: translate(50%, -50%);
+      right: 0;
+      z-index: 2;
+      width: 120px;
+      padding: 0.1rem;
+      background-color: rgb(255, 255, 255);
+      color: #000;
+      font-size: 0.6rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+

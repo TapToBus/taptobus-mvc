@@ -107,3 +107,16 @@
 .content-tabel tbody tr:last-of-type{
     border-bottom: 2px solid var(--clr-tbl-heading);
 }
+
+
+.addNew__button{
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    justify-content: center;
+    background-color: var(--clr-bg, #1d5af1);
+    color: var(--clr-text, #fff);
+}
