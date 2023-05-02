@@ -163,7 +163,7 @@ class M_passenger_book_seats{
     }
 
 
-    /*public function addBooking($from, $to, $datetime, $bus_no, $count, $seats, $price, $code, $boks_id, $sch_id, $passenger_nic){
+    public function addBooking($from, $to, $datetime, $bus_no, $count, $seats, $price, $code, $boks_id, $sch_id, $passenger_nic){
         $this->db->query('INSERT INTO bookings(`from`, `to`, departure_datetime, bus_no, passenger_count, booked_seats, price, booking_code, booked_seats_id, schedule_id, passenger_nic)
                             VALUES(:from, :to, :datetime, :bus_no, :count, :seats, :price, :code, :boks_id, :sch_id, :passenger_nic);');
 
@@ -182,5 +182,5 @@ class M_passenger_book_seats{
         $result = $this->db->execute();
 
         return $result;
-    }*/
+    }
 }
