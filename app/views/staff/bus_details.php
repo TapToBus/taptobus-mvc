@@ -21,10 +21,10 @@
             <h1>Buses</h1>
         </div>
 
-        <div class="search">
-            <input type="text" name="search" placeholder="search here">
-            <label for="search"><i class="fas fa-search"></i></label>
-        </div> 
+        <form class="search" action="<?php echo URLROOT; ?>/Staff_view_users/searchBus" method="GET">
+            <input type="text" id="search" name="search" placeholder="Search Here...">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
         
         <div class="content-table">
             <table class="full-table">

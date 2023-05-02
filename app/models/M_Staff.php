@@ -54,25 +54,25 @@ class M_Staff {
     // retrieve  all users details from the relavent tables 
 
     public function viewOwners(){
-        $this->db->query("SELECT nic, fname, lname, email, mobileNo FROM owner where status = 'accepted' ");
+        $this->db->query("SELECT nic, fname, lname, email, mobileNo FROM owner where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function viewDrivers(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'accepted' ");
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function viewConductors(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM conductor where status = 'accepted' ");
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM conductor where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function viewBuses(){
-        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where status = 'accepted' ");
+        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
@@ -87,6 +87,35 @@ class M_Staff {
     //     return $this->db->execute();    
 
     // }
+
+    // ----------------------- search bar for user details ------------------
+
+    public function searchOwner($search)
+    {
+      $this->db->query("SELECT * FROM owner WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search' OR email LIKE '%$search'");
+      $result = $this->db->resultSet();
+      return $result;
+    }
+
+    public function searchConductor($search){
+        $this->db->query("SELECT * FROM conductor WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search%' OR email LIKE '%$search%' OR ntcNo LIKE '%$search%'");
+        $result = $this->db->resultSet();
+        return $result;
+    }
+
+    public function searchDriver($search){
+        $this->db->query("SELECT * FROM driver WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search% OR mobileNo LIKE '%$search%' OR email LIKE '%$search' OR ntcNo LIKE '%$search%'");
+        $result = $this->db->resultSet();
+        return $result;
+    }
+
+    public function searchBus($search){
+        $this->db->query("SELECT * FROM bus WHERE bus_no LIKE '%$search%' OR root_no LIKE '%$search%' OR capacity LIKE '%$search%' OR owner_nic LIKE '%$search%'");
+        $result = $this->db->resultSet();
+        return $result;
+    }
+    
+
 
 }
 ?>
