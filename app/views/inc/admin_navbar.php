@@ -15,9 +15,7 @@
 
     <div class="topright">
 
-        <div class="vl"></div>
-
-        <small><b>Hi! Kithsandu</b></small>
+        <small><b>Hi  Kithsandu</b></small>
 
         <div class="picon">
             <img src="<?php echo URLROOT; ?>/img/profile-pic/AdminProfilePicture.png" alt="Profile Pic">

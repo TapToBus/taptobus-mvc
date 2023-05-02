@@ -25,8 +25,8 @@ require_once 'libraries/fpdf/fpdf.php';
 
 //email 
 
-// require_once 'helpers/mail_helper.php';
+require_once 'helpers/mail_helper.php';
 
-// //email template
-// require_once 'helpers/staff_tempory_PW_template.php';
+//email template
+require_once 'helpers/staff_tempory_PW_template.php';
 

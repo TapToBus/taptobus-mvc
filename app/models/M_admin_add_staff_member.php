@@ -10,6 +10,7 @@ class M_admin_add_staff_member{
         
         // insert query
         $this->db->query('INSERT INTO staffmember (staff_no,first_name,last_name,nic,mobile_no,tele_no,email) VALUES( :staff_no, :first_name, :last_name, :nic, :mobile_no, :tele_no, :email)');
+        
 
         // get data from controller and move to the database
         $this->db->bind(":staff_no", $data['staffid']);
