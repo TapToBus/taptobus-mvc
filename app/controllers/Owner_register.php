@@ -2,7 +2,6 @@
 
 class owner_register extends Controller{
     private $ownerModel;
-    private $userModel;
     private $requestModel;
 
     public function __construct(){
@@ -13,7 +12,6 @@ class owner_register extends Controller{
            (PDO is some sort of worker , that work intermedially that connects php stuffs and mysql stuffs )
         */ 
         $this->ownerModel = $this->model('m_owner_register');
-        $this->userModel = $this->model('m_users');
         $this->requestModel = $this->model('m_owner_requests');
     }
 
@@ -28,16 +26,12 @@ class owner_register extends Controller{
                 'nic' => $_POST['nic'],
                 'email' => $_POST['email'],
                 'mobileNo' => $_POST['mobileNo'],
-                'password' => $_POST['password'],
-                'confirmPassword' => $_POST['confirmPassword'],
                 'agree' => $_POST['agree'],
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',
                 'email_err' => '',
                 'mobileNo_err' => '',
-                'password_err' => '',
-                'confirmPassword_err' => '',
                 'agree_err' => '',
                 
             ];
@@ -85,25 +79,7 @@ class owner_register extends Controller{
                 }
             }
 
-            // validate password
-            if(empty($data['password'])){
-                $data['password_err'] = 'Passworrd is required';
-            }elseif(strlen($data['password']) < 8){
-                $data['password_err'] = 'Password must contain at least 8 characters';
-            }elseif(! preg_match("/[0-9]/", $data['password'])){
-                $data['password_err'] = 'Password must contain at least 1 number';
-            }elseif(! preg_match("/[a-z]/i", $data['password'])){
-                $data['password_err'] = 'Password must contain at least 1 letter';
-            }elseif(! preg_match("/[^\w]/", $data['password'])){
-                $data['password_err'] = 'Password must contain at least 1 special character';
-            }
-
-            //validate confirm password
-            if(empty($data['confirmPassword'])){
-                $data['confirmPassword_err'] = 'Confirm password is required';
-            }elseif($data['confirmPassword'] != $data['password']){
-                $data['confirmPassword_err'] = 'Paswords must match';
-            }
+           
 
             // validate checkbox
             if(empty($_POST['agree'])){
@@ -113,16 +89,11 @@ class owner_register extends Controller{
             // make sure errors are empty
             if(empty($data['fname_err']) && empty($data['lname_err']) && 
             empty($data['nic_err']) && empty($data['email_err']) && 
-            empty($data['mobileNo_err']) && empty($data['password_err']) && 
-            empty($data['confirmPassword_err']) && empty($data['agree_err']) ){
+            empty($data['mobileNo_err']) && empty($data['agree_err']) ){
                     
-                // hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-
                 // register owner
-                if( $this->ownerModel->register($data) &&
-                $this->userModel->addUser($data['nic'],$data['fname'],$data['lname'],$data['email'], $data['password'],'owner') && $this->requestModel->add_owner_request($data) ){
-                    direct('users/login');
+                if( $this->ownerModel->register($data)  && $this->requestModel->add_owner_request($data) ){
+                    direct('pages/index');
                    
                 }else{
                     die('Sorry! Something went wrong');
@@ -142,16 +113,12 @@ class owner_register extends Controller{
                 'nic' => '',
                 'email' => '',
                 'mobileNo' => '',
-                'password' => '',
-                'confirmPassword' => '',
                 'agree' => '',
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',
                 'email_err' => '',
                 'mobileNo_err' => '',
-                'password_err' => '',
-                'confirmPassword_err' => '',
                 'agree_err' => '',
                 
             ];
