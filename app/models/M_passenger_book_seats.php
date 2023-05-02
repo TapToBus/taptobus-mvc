@@ -151,5 +151,36 @@ class M_passenger_book_seats{
     
         return $result;
     }
-    
+
+
+    public function getScheduleDetails($sch_id){
+        $this->db->query('SELECT * FROM schedule WHERE id = :sch_id;');
+        
+        $this->db->bind(':sch_id', $sch_id);
+        $result = $this->db->single();
+
+        return $result;
+    }
+
+
+    /*public function addBooking($from, $to, $datetime, $bus_no, $count, $seats, $price, $code, $boks_id, $sch_id, $passenger_nic){
+        $this->db->query('INSERT INTO bookings(`from`, `to`, departure_datetime, bus_no, passenger_count, booked_seats, price, booking_code, booked_seats_id, schedule_id, passenger_nic)
+                            VALUES(:from, :to, :datetime, :bus_no, :count, :seats, :price, :code, :boks_id, :sch_id, :passenger_nic);');
+
+        $this->db->bind(':from', $from);
+        $this->db->bind(':to', $to);
+        $this->db->bind(':datetime', $datetime);
+        $this->db->bind(':bus_no', $bus_no);
+        $this->db->bind(':count', $count);
+        $this->db->bind(':seats', $seats);
+        $this->db->bind(':price', $price);
+        $this->db->bind(':code', $code);
+        $this->db->bind(':boks_id', $boks_id);
+        $this->db->bind(':sch_id', $sch_id);
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        $result = $this->db->execute();
+
+        return $result;
+    }*/
 }
