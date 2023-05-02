@@ -82,16 +82,20 @@
                     <table class="full-table">
 
                         <tr>
-                            <th>Record ID</th>
+                            <th>Start</th>
+                            <th>Destination</th>
                             <th>Bus Number</th>
+                            <th>Bookings Count</th>
                             <th>Date</th>
                             <th>Profit</th>
                         </tr>
 
                         <?php foreach($data['reportData'] as $reportData) :?>
                             <tr>
-                                <td><?php echo $reportData->record_id ?></td>
+                                <td><?php echo $reportData->location_from ?></td>
+                                <td><?php echo $reportData->location_to ?></td>
                                 <td><?php echo $reportData->bus_no ?></td>
+                                <td><?php echo $reportData->passenger_count ?></td>
                                 <td><?php echo $reportData->date ?></td>
                                 <td>LKR <?php echo number_format($reportData->profit, 2, '.', ',')?></td>
                             </tr>
@@ -110,7 +114,7 @@
         <div class="report-container">
 
             <div class="report-sub-container">
-                <p></p>
+
             </div>
 
         </div>
