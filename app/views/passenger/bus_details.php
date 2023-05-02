@@ -166,7 +166,6 @@
         </div>
     </div>
 
-    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bus-details-js.js"></script> -->
 
     <script>
         function goBack() {
@@ -180,5 +179,4 @@
         }
     </script>
 </body>
-
 </html>
