@@ -53,7 +53,6 @@
 
         <?php else : ?>
             <?php foreach ($data['availableBuses'] as $recode) : ?>
-                <!-- <div class="result" onclick="goNext('<?php echo $data['from']; ?>', '<?php echo $data['to']; ?>', '<?php echo $data['date']; ?>', '<?php echo $data['count']; ?>', '<?php echo $recode->sch_id; ?>', '<?php echo $recode->boks_id; ?>', '<?php echo $recode->bus_no; ?>')"> -->
                 <div class="result" onclick="goNext('<?php echo $recode->sch_id; ?>', '<?php echo $recode->boks_id; ?>', '<?php echo $data['count']; ?>')">
 
                     <span class="result1"><?php echo $recode->bus_no; ?></span>
@@ -96,25 +95,17 @@
         </div>
     </div>
 
-    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/available-buses-js.js"></script> -->
 
     <script>
         function goBack() {
             window.history.back();
         }
 
-
-        /*function goNext(from, to, date, count, sch_id, boks_id, bus_no) {
-            const url = "http://localhost/taptobus/passenger_book_seats/bus_details?from=" + from + "&to=" + to + "&date=" + date + "&count=" + count + "&sch_id=" + sch_id + "&boks_id=" + boks_id + "&bus_no=" + bus_no;
-            window.location.href = url;
-        }*/
-
         function goNext(sch_id, boks_id, count){
             const url = "http://localhost/taptobus/passenger_book_seats/bus_details?sch_id=" + sch_id + "&boks_id=" + boks_id + "&count=" + count;
             window.location.href = url;
         }
     </script>
-
 </body>
 
 </html>
