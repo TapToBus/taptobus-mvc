@@ -14,7 +14,19 @@
 
     <div class="main">
         <h1 class="heading">Notifications</h1>
-        
+
+        <?php if (empty($data)) : ?>
+            <div class="no-data">
+                <i class="fa-solid fa-circle-exclamation"></i> <br>
+                <span>No notifications to display</span>
+            </div>
+        <?php else : ?>
+            <?php foreach ($data as $row) : ?>
+                <div class="result" id="result">
+                    <?php echo print_r($row); ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 </body>
 
