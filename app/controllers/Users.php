@@ -125,7 +125,6 @@ class Users extends Controller{
             };
 
             case 'conductor': {
-                //
                 direct('conductor_bookings/check_bookings');
                 break;
             };
@@ -162,7 +161,36 @@ class Users extends Controller{
 
     
     public function forgot_password(){
-        die('Forgot password page');
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $data = [
+                'email' => $_POST['email'],
+                'email_err' => ''
+            ];
+
+            if(empty($data['email'])){
+                $data['email_err'] = 'Email is required';
+            }else{
+                if(! $this->userModel->findUserByEmail($data['email'])){
+                    $data['email_err'] = 'User soesn\'t exist';
+                }
+            }
+
+            if(empty($data['email_err'])){
+                $user = $this->userModel->findUserDetails($data['email']);
+                print_r($user);
+            }else{
+                $this->view('users/forgot_password', $data);
+            }
+
+            //print_r($data);
+        }else{
+            $data = [
+                'email' => '',
+                'email_err' => ''
+            ];
+
+            $this->view('users/forgot_password', $data);
+        }
     }
 
 

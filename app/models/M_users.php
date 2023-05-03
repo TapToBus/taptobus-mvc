@@ -73,4 +73,12 @@ class M_users{
             return false;
         }
     }
+
+
+    public function findUserDetails($email){
+        $this->db->query('SELECT * FROM user WHERE email = :email');
+        $this->db->bind(':email', $email);
+
+        return $this->db->single();
+    }
 }
