@@ -67,7 +67,9 @@ class Pages extends Controller{
 
 
              // make sure errors are empty
-            if(empty($data['name_err']) && empty($data['email_err']) && empty($data['mobileNo_err']) && empty($data['subject_err']) &&  empty($data['message_err'])){
+            if(empty($data['name_err']) && empty($data['email_err']) 
+            && empty($data['mobileNo_err']) && empty($data['subject_err']) 
+            &&  empty($data['message_err'])){
 
                 $mailer = new Mailer(CUSTOMER_EMAIL, CUSTOMER_PASS, $data['name']);
 
@@ -75,10 +77,11 @@ class Pages extends Controller{
                 $body = contact_us_body($data['message'], $data['name'], $data['email'], $data['mobileNo']);
 
                 if($mailer->send(TAPTOBUS_EMAIL, $subject, $body)){
-                    die('Success');
+                    echo 'Success';
                 }else{
-                    die('Failed');
+                    echo 'Error';
                 }
+                
 
             }else{
                 // load view with errors

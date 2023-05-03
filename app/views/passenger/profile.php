@@ -13,102 +13,60 @@
     <?php require APPROOT . '/views/inc/passenger_navbar.php' ?>
 
     <div class="main">
-        <div class="main-box">
+        <div class="content">
             <h1 class="heading">Profile</h1>
 
-            <div class="content">
+            <div class="pro-details">
                 <div class="left">
-                    <div class="field1">
-                        <div class="pic">
-                            <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['proDetails']->pic; ?>" alt="Profile Pic">
-                        </div>
-                    </div>
+                    <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['profile']->pic; ?>" alt="<?php echo $data['profile']->nic; ?>">
+                </div>
 
-                    <div class="field2">
-                        <div class="name"><?php echo $data['proDetails']->fname . ' ' . $data['proDetails']->lname; ?></div>
+                <div class="right">
+                    <div class="name"><?php echo $data['profile']->fname . ' ' . $data['profile']->lname; ?></div>
 
+                    <div class="details">
                         <div class="row">
                             <span class="col1">NIC:</span>
-                            <span class="col2"><?php echo $data['proDetails']->nic; ?></span>
+                            <span class="col2"><?php echo $data['profile']->nic ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Email:</span>
-                            <span class="col2"><?php echo $data['proDetails']->email; ?></span>
+                            <span class="col2"><?php echo $data['profile']->email ?></span>
                         </div>
 
                         <div class="row">
                             <span class="col1">Mobile No:</span>
-                            <span class="col2"><?php echo $data['proDetails']->mobile_no; ?></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right">
-                    <div class="box1">
-                        <div class="title">Summary</div>
-
-                        <div class="row">
-                            <span class="col1">Total bookings:</span>
-                            <span class="col2"><?php echo $data['totBookings']->count; ?></span>
-                        </div>
-
-                        <div class="row">
-                            <span class="col1">Total journies:</span>
-                            <span class="col2"><?php echo $data['totJourneies']->count; ?></span>
-                        </div>
-
-                        <div class="row">
-                            <span class="col1">Total cancelations:</span>
-                            <span class="col2"><?php echo $data['totBookings']->count - $data['totJourneies']->count; ?></span>
+                            <span class="col2"><?php echo $data['profile']->mobile_no ?></span>
                         </div>
                     </div>
 
-                    <div class="box2">
-                        <div class="title">Bookings</div>
-
-                        <div class="field1">
-                            <div class="row">
-                                <span class="col1">Recent:</span>
-                                    <span class="col2"><?php echo $data['recentBooking']->from; ?> > <?php echo $data['recentBooking']->to; ?></span>
-                            </div>
-
-                            <div class="row">
-                                <span class="col1">On:</span>
-                                <span class="col2"><?php echo $data['recentBooking']->date; ?></span>
-                            </div>
-
-                            <div class="row">
-                                <span class="col1">At:</span>
-                                <span class="col2"><?php echo $data['recentBooking']->departure_time; ?></span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <div class="field2">
-                            <div class="row">
-                                <span class="col1">Previous:</span>
-                                <span class="col2"><?php echo $data['recentHistory']->from; ?> > <?php echo $data['recentHistory']->to; ?></span>
-                            </div>
-
-                            <div class="row">
-                                <span class="col1">On:</span>
-                                <span class="col2"><?php echo $data['recentHistory']->date; ?></span>
-                            </div>
-
-                            <div class="row">
-                                <span class="col1">Status:</span>
-                                <span class="col2"><?php echo $data['recentHistory']->status; ?></span>
-                            </div>
-                        </div>
+                    <div class="btn">
+                        <button class="delete">Delete profile</button>
+                        <a href="<?= URLROOT; ?>/passenger_profile/edit_profile"><button class="edit">Edit profile</button></a>
                     </div>
                 </div>
             </div>
 
-            <div class="btn">
-                <button class="delete">Delete</button>
-                <button class="edit">Edit</button>
+            <div class="pro-summary">
+                <div class="left">
+                    <span class="journeys">
+                        <span class="col1">Journeys:</span>
+                        <span class="col2"><?php echo isset($data['journeysCount']) ? $data['journeysCount'] : '0'; ?></span>
+                    </span>
+
+                    <span class="cancellations">
+                        <span class="col1">Cancellations:</span>
+                        <span class="col2"><?php echo isset($data['cancelCount']) ? $data['cancelCount'] : '0'; ?></span>
+                    </span>
+                </div>
+
+                <div class="right">
+                    <span class="col1">Upcoming journey:</span>
+                    <span class="col2">
+                        <?php echo ! empty($data['upcomingJourney']) ? ($data['upcomingJourney']->from . ' > ' . $data['upcomingJourney']->to): '--'; ?>
+                    </span>
+                </div>
             </div>
         </div>
     </div>

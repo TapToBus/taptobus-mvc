@@ -14,14 +14,16 @@
     column-gap: 25px;
     margin-bottom: 25px;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 25px;
+    line-height: 30px;
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    background-color: white;
 }
 
 .summary .sub-col1{
@@ -41,13 +43,12 @@
 
 .title{
     display: grid;
-    /* grid-template-columns: auto auto auto auto auto; */
     grid-template-columns: 16.5% 20% 20% 15% auto;
     column-gap: 20px;
     margin-bottom: 10px;
 
     background-color: var(--clr-table-title-bg);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -60,18 +61,17 @@
 
 .result{
     display: grid;
-    /* grid-template-columns: auto auto auto auto auto; */
     grid-template-columns: 16.5% 20% 20% 15% auto;
     column-gap: 20px;
     margin-bottom: 10px;
 
     background-color: var(--clr-white);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 25px;
+    line-height: 40px;
 
     text-align: center;
 
@@ -97,6 +97,11 @@
     color: gray;
 }
 
+.result .capacity{
+    font-size: 12px;
+    color: gray;
+}
+
 .btn{
     display: flex;
     justify-content: right;
@@ -104,8 +109,8 @@
 
 .btn > button{
     margin-top: 10px;
-    width: 150px;
-    height: 45px;
+    width: 130px;
+    height: 40px;
     border-radius: 5px;
 
     font-size: 15px;
@@ -137,4 +142,9 @@
 .no-data > span{
     font-size: 25px;
     font-weight: 400;
+}
+
+.main .result-link{
+    text-decoration: none;
+    color: black;
 }

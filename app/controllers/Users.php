@@ -115,7 +115,6 @@ class Users extends Controller{
 
         switch($user->type){
             case 'passenger': {
-                //die($_SESSION['user_id'] . '<br>' . $_SESSION['user_fname'] . ' ' . $_SESSION['user_lname'] . '<br>' . $_SESSION['user_pic'] . '<br>' . $_SESSION['user_type']);
                 direct('passenger_book_seats/journey_details');
                 break;
             };
@@ -132,13 +131,12 @@ class Users extends Controller{
             };
 
             case 'owner': {
-                //
                 direct('owner_dashboard/view_dashboard');
                 break;
             };
 
             case 'staff': {
-                direct('Staff_dashboard/staff_dash');
+                direct('staff_dashboard/staff_dash');
                 break;
             };
 

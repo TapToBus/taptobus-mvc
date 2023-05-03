@@ -3,79 +3,72 @@
 
 body{
     width: 100%;
-    height: auto;
+    height: 100vh;
     background-image: linear-gradient(
                         rgba(0,0,0,0.65), 
                         rgba(0,0,0,0.65)
                     ), 
                     url(../../img/contact-us-background.jpg);
     background-size: cover;
-    /* background-position: center; */
 }
 
 h1{
-    font-size: 30px;
-    margin-bottom: 15px;
-    padding-left: 25px;
+    font-size: 1.875rem;
+    margin-bottom: 0.9375rem;
+    padding-left: 1.5625rem;
     color: white;
 }
 
 form{
-    padding-left: 25px;
+    padding-left: 1.5625rem;
 }
 
 form label{
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
-    padding-left: 8px;
+    padding-left: 0.5rem;
     font-style: normal;
 }
 
 form .name, .email, .mobileNo, .subject, .message{
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
     width: 35%;
-
-    /* background-color: red; */
 }
 
 .btn{
-    /* padding-bottom: 15px;
-    padding-top: 5px; */
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
 }
 
 form input{
     width: 100%;
-    border: 1px solid white;
-    border-radius: 5px;
+    border: 0.0625rem solid white;
+    border-radius: 0.3125rem;
     background: transparent;
-    height: 35px;
+    height: 2.1875rem;
     color: white;
-    font-size: 15px;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-top: 3px;
-    /* margin-bottom: 2px; */
+    font-size: 0.9375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 0.1875rem;
 }
 
 form select{
     width: 100%;
-    border: 1px solid white;
-    border-radius: 5px;
+    border: 0.0625rem solid white;
+    border-radius: 0.3125rem;
     background: transparent;
-    height: 35px;
+    height: 2.1875rem;
     color: white;
-    font-size: 15px;
-    padding-left: 6px;
-    margin-top: 3px;
-    /* margin-bottom: 2px; */
+    font-size: 0.9375rem;
+    padding-left: 0.375rem;
+    margin-top: 0.1875rem;
     cursor: pointer;
 }
 
 form option{
     color: black;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 form textarea{
@@ -83,57 +76,54 @@ form textarea{
     border: 1px solid white;
     border-radius: 5px;
     background: transparent;
-    height: 100px;
+    height: 6.25rem;
     color: white;
-    font-size: 15px;
-    padding: 8px;
-    margin-top: 3px;
-    /* margin-bottom: 2px; */
+    font-size: 0.9375rem;
+    padding: 0.5rem;
+    margin-top: 0.1875rem;
 }
 
 form input:focus{
-    outline: 2px solid #335c7d;
-    border: 2px solid transparent;
+    outline: 0.125rem solid #335c7d;
+    border: 0.125rem solid transparent;
 }
 
 form select:focus{
-    outline: 2px solid #335c7d;
-    border: 2px solid transparent;
+    outline: 0.125rem solid #335c7d;
+    border: 0.125rem solid transparent;
 }
 
 form textarea:focus{
-    outline: 2px solid #335c7d;
-    border: 2px solid transparent;
+    outline: 0.125rem solid #335c7d;
+    border: 0.125rem solid transparent;
 }
 
 form > .name span, .email span, .mobileNo span, .subject span, .message span{
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: #00BFFF;
     font-style: italic;
-
-    /* background-color: blue; */
 }
 
 form .btn button{
-    width: 150px;
-    padding: 12px 0 12px 0;
+    width: 9.375rem;
+    padding: 0.75rem 0;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     font-weight: bold;
-    border: 2px solid #00BFFF;
+    border: 0.125rem solid #00BFFF;
     background: transparent;
     color: white;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 form .btn span{
     background: #00BFFF;
     height: 100%;
     width: 0;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -146,5 +136,5 @@ form .btn button:hover span{
 }
 
 form .btn button:hover{
-    border: 2px solid transparent;
+    border: 0.125rem solid transparent;
 }

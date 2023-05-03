@@ -24,6 +24,7 @@
                     <option value="Makumbura" <?php if (isset($_POST['from']) && $_POST['from'] == 'Makumbura') echo 'selected'; ?>>Makumbura</option>
                     <option value="Matara" <?php if (isset($_POST['from']) && $_POST['from'] == 'Matara') echo 'selected'; ?>>Matara</option>
                 </select>
+                <span class="err"><?php echo $data['from_err']; ?></span>
             </div>
 
             <div class="to">
@@ -34,11 +35,13 @@
                     <option value="Makumbura" <?php if (isset($_POST['to']) && $_POST['to'] == 'Makumbura') echo 'selected'; ?>>Makumbura</option>
                     <option value="Matara" <?php if (isset($_POST['to']) && $_POST['to'] == 'Matara') echo 'selected'; ?>>Matara</option>
                 </select>
+                <span class="err"><?php echo $data['to_err']; ?></span>
             </div>
 
             <div class="date">
                 <label for="date">Date</label> <br>
                 <input type="date" name="date" id="date" value="<?php echo isset($_POST['date']) ? $_POST['date'] : ''; ?>">
+                <span class="err"><?php echo $data['date_err']; ?></span>
             </div>
 
             <div class="count">
@@ -51,6 +54,7 @@
                     <option value="4" <?php if (isset($_POST['count']) && $_POST['count'] == '4') echo 'selected'; ?>>4</option>
                     <option value="5" <?php if (isset($_POST['count']) && $_POST['count'] == '5') echo 'selected'; ?>>5</option>
                 </select>
+                <span class="err"><?php echo $data['count_err']; ?></span>
             </div>
 
             <div class="btn">
@@ -61,5 +65,4 @@
 
     <script src="<?php echo URLROOT; ?>/js/passenger-js/journey-details-js.js"></script>
 </body>
-
 </html>

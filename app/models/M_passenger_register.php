@@ -12,8 +12,8 @@ class M_passenger_register{
     // register passenger
     public function register($data){
         // prepare query
-        $this->db->query('INSERT INTO passenger(nic, fname, lname, email, mobile_no, password_hash)
-        VALUES (:nic, :fname, :lname, :email, :mobile_no, :password_hash)');
+        $this->db->query('INSERT INTO passenger(nic, fname, lname, email, mobile_no, password_hash, joined_datetime)
+        VALUES (:nic, :fname, :lname, :email, :mobile_no, :password_hash, CURRENT_TIMESTAMP)');
 
         // bind values
         $this->db->bind(':nic', $data['nic']);
@@ -86,5 +86,37 @@ class M_passenger_register{
         }else{
             return false;
         }
+    }
+
+
+    // set passenger OTP
+    public function setPassengerOTP($passenger_nic, $otp){
+        $this->db->query('UPDATE passenger SET otp = :otp WHERE nic = :passenger_nic;');
+        $this->db->bind(':otp', $otp);
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    public function getPassengerDetails($passenger_nic){
+        $this->db->query('SELECT * FROM passenger WHERE nic = :passenger_nic');
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        return $this->db->single();
+    }
+
+
+    public function activePassenger($passenger_nic){
+        // $this->db->query('UPDATE passenger SET status = :status WHERE nic = :passenger_nic');
+        $this->db->query('UPDATE passenger SET status = :status, joined_datetime = CURRENT_TIMESTAMP WHERE nic = :passenger_nic');
+        $this->db->bind(':status', 'active');
+        $this->db->bind(':passenger_nic', $passenger_nic);
+
+        return $this->db->execute();
     }
 }

@@ -113,11 +113,35 @@ class Passenger_register extends Controller{
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
                 // register passenger and add passenger to the passenger table
-                if($this->passengerModel->register($data) &&
+                /*if($this->passengerModel->register($data) &&
                 $this->userModel->addUser($data['nic'], $data['fname'], $data['lname'], $data['email'], $data['password'], 'passenger')){
                     direct('users/login');
                 }else{
                     die('Sorry! Something went wrong');
+                }*/
+
+
+                if($this->passengerModel->register($data)){
+                    $otp = generateOTP();
+
+                    if($this->passengerModel->setPassengerOTP($data['nic'], $otp)){
+                        // direct('passenger_register/verify_otp?id=' . $data['nic']);
+
+                        $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, 'TapToBus');
+
+                        $subject = emailVerSubject();
+                        $body = emailVerBody($otp);
+
+                        if($mailer->send($data['email'], $subject, $body)){
+                            direct('passenger_register/verify_otp?id=' . $data['nic']);
+                        }else{
+                            die('Sorry! Something went wrong 1');
+                        }
+                    }else{
+                        die('Sorry! Something went wrong 2');    
+                    }
+                }else{
+                    die('Sorry! Something went wrong 3');
                 }
 
             }else{
@@ -147,6 +171,74 @@ class Passenger_register extends Controller{
 
             // load the view with the default data
             $this->view('passenger/register', $data);
+        }
+    }
+
+
+    public function verify_otp(){
+        $data = [
+            'otp' => '',
+            'otp_err' => ''
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $nic = $_GET['id'];
+            $data['otp'] = $_POST['otp'];
+
+
+            // if OTP is not enter
+            if(empty($data['otp'])){
+                $data['otp_err'] = 'OTP is required';
+            }
+
+
+            // if there is no error
+            if(empty($data['otp_err'])){
+                $details = $this->passengerModel->getPassengerDetails($nic);
+
+                if($details){
+                    $pNIC = $details->nic;
+                    $pFname = $details->fname;
+                    $pLname = $details->lname;
+                    $pEmail = $details->email;
+                    $pPasswordHash = $details->password_hash;
+                    $pOTP = $details->otp;
+
+                    
+                    // compare otps
+                    if( ($data['otp'] == $pOTP) && ($nic == $pNIC) ){
+                        // if($this->passengerModel->activePassenger($pNIC)){
+
+                        //     if ($this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')) {
+                        //         direct('users/login');
+                        //     } else {
+                        //         die('Sorry! Something went wrong 1');
+                        //     }
+                                                                                        
+                        // }else{
+                        //     die('Sorry! Something went wrong 2');
+                        // }
+
+                        if($this->passengerModel->activePassenger($pNIC) && 
+                        $this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')){
+                            direct('users/login');
+                        }else{
+                            die('Sorry! Something went wrong');
+                        }
+
+                    }else{
+                        $data['otp_err'] = 'Incorrect OTP';
+                        $this->view('passenger/verify_otp', $data);
+                    }
+                }else{
+                    die('Something is not right!');
+                }
+            }else{
+                $this->view('passenger/verify_otp', $data);
+            }
+
+        } else {
+            $this->view('passenger/verify_otp', $data);
         }
     }
 }

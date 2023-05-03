@@ -24,7 +24,7 @@
             <span class="title5">Time Remaining</span>
         </div>
 
-        <?php if ($data['bookings'] == NULL) : ?>
+        <?php if (empty($data)) : ?>
 
             <div class="no-data">
                 <i class="fa-solid fa-circle-exclamation"></i> <br>
@@ -33,21 +33,39 @@
 
         <?php else : ?>
 
-            <?php foreach ($data['bookings'] as $booking) : ?>
-                <div class="result">
+            <?php foreach ($data as $booking) : ?>
+                <div class="result" onclick="goNext('<?php echo $booking->booking_id; ?>')">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
                     <span class="result2"><?php echo $booking->from; ?></span>
                     <span class="result3"><?php echo $booking->to; ?></span>
-                    <span class="result4"><?php echo $booking->date; ?></span>
-                    <span class="result5"><?php echo date('h:i A', strtotime($booking->departure_time)); ?></span>
-                    <span class="result6">2d : 23h : 42m : 23s</span>
+                    <span class="result4"><?php echo $booking->departure_date; ?></span>
+                    <span class="result5"><?php echo $booking->departure_time; ?></span>
+
+                    <?php if ($booking->remaining_days > 0 && $booking->remaining_hours >= 0) : ?>
+                        <span class="result6 low-priority"><?php echo 'More than ' . $booking->remaining_days . ' days'; ?></span>
+                    <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours > 1) : ?>
+                        <span class="result6 middle-priority"><?php echo 'More than ' . $booking->remaining_hours . ' hours'; ?></span>
+                    <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 1) : ?>
+                        <span class="result6 middle-priority"><?php echo 'More than ' . $booking->remaining_hours . ' hour'; ?></span>
+                    <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 0) : ?>
+                        <span class="result6 high-priority"><?php echo 'Less than 1 hour'; ?></span>
+                    <?php endif; ?>
+
+                    <!-- <span class="result6"><?php echo $booking->remaining_days . ' d : ' . $booking->remaining_hours . ' h'; ?></span> -->
                 </div>
             <?php endforeach; ?>
 
         <?php endif; ?>
     </div>
 
-    <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script> -->
+
+    <script>
+        function goNext(booking_id) {
+            const url = "http://localhost/taptobus/passenger_bookings/booking_details?bok_id=" + booking_id;
+            window.location.href = url;
+        }
+    </script>
 </body>
 
 </html>
