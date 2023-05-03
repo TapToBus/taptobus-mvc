@@ -58,6 +58,11 @@
                         <td><?php echo $buses->ratings ?></td>
                         <td><?php echo $buses->total_ratings ?></td>
                         <td><?php echo $buses->responses ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $buses->bus_no ?>')">Delete</button>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
 
