@@ -58,7 +58,7 @@
                         <div class="download-pic">
                             Bus permit <br><br>
                             <i class="fa-solid fa-download"></i>
-                            <a href="#">Download here</a>
+                            <a href="<?php echo URLROOT?>/Staff_view_requests/download_bus_permit?bus_no=<?php echo $result->bus_no?>">Download here</a>
                         </div>
                         <div class="action-btn">
                             <button id ="accept"class="accept" onclick="showConfirmation()">Accept</button>
@@ -73,7 +73,7 @@
                     <p>Are you sure that you want to add <?php echo $result->bus_no?> to the system?</p>                    
                 </div>
                 <div class="confirm-btns">
-                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php echo $result->bus_no?>">
+                    <a href="<?php echo URLROOT?>/Staff_view_requests/accept_bus_requests?bus_no=<?php echo $result->bus_no?>&owner_nic=<?php echo $result->owner_nic?>">
                         <button class = "yes" onclick="">Yes</button>
                     </a>
                     <button class = "no" onclick="hideConfirmation()">No</button>
@@ -82,7 +82,7 @@
 
             <!-- Rejection pop-up Moodel   -->
             <dialog id="rejection-dialog" class="rejection-box">
-                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>" method="POST" onsubmit="return validateForm()">
+                <form action="<?php echo URLROOT?>/Staff_view_requests/reject_bus_requests?bus_no=<?php echo $result->bus_no?>&owner_nic=<?php echo $result->owner_nic?>" method="POST" onsubmit="return validateForm()">
                     <div class = "reject-msg">
                         <p>Please enter the reason for the rejection</p>  
                         <textarea id="reject-reason" type="text" placeholder="Type the reason here" name="reject_reason"></textarea>               
@@ -94,8 +94,7 @@
                         <button class = "cancel" name="cancel" onclick="hideRejection()">cancel</button>
                     </div>
                 </form>
-            </dialog>
-        
+            </dialog>        
     </div>
   
     <script  src="<?php echo URLROOT;?>/js/staff/popup-msg.js" ></script>
@@ -103,3 +102,5 @@
 
 </html>
      
+<!-- http://localhost/taptobus/passenger_book_seats/available_buses?from=Galle&to=Makumbura&date=2023-04-20&count=2 -->
+<!-- href="<?php echo URLROOT ?>/passenger_book_seats/bus_details?bus_no=<?php echo $recode->bus_no; ?>&schedule_id=<?php echo $recode->schedule_id; ?>&booked_seats_id=<?php echo $recode->booked_seats_id; ?>&count=<?php echo $data['count']; ?>" -->

@@ -27,7 +27,8 @@
                                 <!-----this part should repeat ( according to the no of rows in request table)------>
                                 <div class="data">
                                     <span class="row1"> <?php echo $busRequest->bus_no?></span>    
-                                    <!-- <span class="date">2023/01/07</span>  -->
+                                    <span class="date"><?php echo $busRequest->date?></span> 
+                                    <span class="time"><?php echo $busRequest->time?></span> 
                                 </div>  
                             
                                 <a href="<?php echo URLROOT?>/Staff_view_requests/bus_requests_details?bus_no=<?php echo $busRequest->bus_no?>">

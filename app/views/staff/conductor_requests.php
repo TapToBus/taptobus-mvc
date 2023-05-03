@@ -20,19 +20,21 @@
             <div class="result">
                 <?php 
                 $result = $data['conductorRequests'];
+                // print_r($result);
+                // die();
 
                 foreach ( $result as $conductorRequest){
                 ?>
                   <div class="row">
                         <div class="data">
-                            <span class="row1"><?php echo $conductorRequest->nic?></span>        
-                            <span class="date">2023/01/07</span> 
+                            <span class="row1"><?php echo $conductorRequest->conductor_ntc?></span>        
+                            <span class="date"><?php echo $conductorRequest->date?></span> 
+                            <span class="time"><?php echo $conductorRequest->time?></span> 
                         </div>         
                               
-                        <a href="<?php echo URLROOT?>/Staff_view_requests/conductor_requests_details?nic=<?php echo $conductorRequest->nic?>">
+                        <a href="<?php echo URLROOT?>/Staff_view_requests/conductor_requests_details?nic=<?php echo $conductorRequest->conductor_ntc?>">
                         <span class="Vbutton">View</span>
-                        </a>
-                        
+                        </a>                        
                     </div>  
 
                 <?php

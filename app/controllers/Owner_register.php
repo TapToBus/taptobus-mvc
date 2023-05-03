@@ -124,6 +124,12 @@ class owner_register extends Controller{
                 $this->userModel->addUser($data['nic'],$data['fname'],$data['lname'],$data['email'], $data['password'],'owner') && $this->requestModel->add_owner_request($data) ){
                     direct('users/login');
                    
+                // }else{
+                //     die('Sorry! Something went wrong');
+                // }
+                // newly added
+                if($this->ownerModel->register($data)){
+                    direct('pages/index');
                 }else{
                     die('Sorry! Something went wrong');
                 }
