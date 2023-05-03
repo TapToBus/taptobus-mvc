@@ -16,6 +16,14 @@ class M_Admin_bus_details {
 
     }
 
+    //delete bus from users bus table
+    public function deletebuses($bus_no){
+        $this->db->query('UPDATE bus SET status = "deleted" WHERE bus_no = :bus_no');
+        $this->db->bind(":bus_no", $bus_no);
+        return $this->db->execute();    
+
+    }
+
     //function for get data to restore bus table
     public function removebuses(){
         $this->db->query('SELECT * FROM bus WHERE status = "deleted"');
