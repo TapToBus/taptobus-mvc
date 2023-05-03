@@ -1,6 +1,6 @@
 <?php
 
-class owner_register extends Controller{
+class Owner_register extends Controller{
     private $ownerModel;
     private $requestModel;
 
