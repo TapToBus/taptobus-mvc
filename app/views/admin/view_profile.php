@@ -28,24 +28,27 @@
                 <div class="details">
 
                     <div class="row">
-                        <label for="Admin_ID" class="col1">Admin ID</label>
+                        <label for="Admin_ID" class="col1">Admin ID: </label>
+                        <input type="text" id="Admin_ID" name="Admin_ID" class="col2" value="<?php echo $data['ProfileDetails']->admin_id; ?>">
 
-                        <span class="col2"><?php echo $data['ProfileDetails']->admin_id; ?></span>
                     </div>
 
                     <div class="row">
-                        <span class="col1">NIC: </span>
-                        <span class="col2"><?php echo $data['ProfileDetails']->nic; ?></span>
-                    </div>
+                        <label for="NIC" class="col1">NIC: </label>
+                        <input type="text" id="NIC" name="NIC" class="col2" value="<?php echo $data['ProfileDetails']->nic; ?>">
 
-                    <div class="row">
-                        <span class="col1">First Name: </span>
-                        <span class="col2"><?php echo $data['ProfileDetails']->fname; ?></span>
                     </div>
+                    <div class="parent-row">
+                        <div class="row">
+                            <label for="First_name" class="col1">First Name</label>
+                            <input type="text" id="First_name" class="col2" value="<?php echo $data['ProfileDetails']->fname; ?>">
+                        </div>
 
-                    <div class="row">
-                        <span class="col1">Last Name: </span>
-                        <span class="col2"><?php echo $data['ProfileDetails']->lname; ?></span>
+                        <div class="row">
+                            <label for="Last_name" ></label>
+                            <span class="col1">Last Name: </span>
+                            <span class="col2"><?php echo $data['ProfileDetails']->lname; ?></span>
+                        </div>
                     </div>
 
                     <div class="row">

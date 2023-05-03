@@ -920,6 +920,7 @@ a{
   background-color: #737373;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
+  margin: 10px 100px 0 100px;
 
   display: flex;
   flex-direction: column;
@@ -945,6 +946,11 @@ a{
     margin-top: 10px;
 
 
+}
+
+.parent-row{
+  display: flex;
+  flex-direction: row;
 }
 
 
