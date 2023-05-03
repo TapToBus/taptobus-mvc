@@ -227,6 +227,7 @@
                     fetch('<?php echo URLROOT ?>/Admin_api_controller/adminProfitLineChart')
                         .then(response=>response.json())
                         .then(result=>{
+                            console.log(result);
                             const months = result.map(item=>item.month)
                             const profits = result.map(item=>item.profit)
 
