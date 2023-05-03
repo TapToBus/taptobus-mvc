@@ -167,5 +167,6 @@ class owner_register extends Controller{
         }
     }
 }
+}
 
 ?>
