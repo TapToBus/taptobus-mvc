@@ -14,7 +14,7 @@
         </div>
         <div class="head"><?php echo $data['head'] ?></div>
         <div class="desc"><?php echo $data['desc'] ?></div>
-        <div class="btn"><a href="<?php echo $data['success-link'] ?>"><button>Ok</button></a></div>
+        <div class="btn"><a href="<?php echo $data['link'] ?>"><button>Ok</button></a></div>
     </div>
 </body>
 </html>

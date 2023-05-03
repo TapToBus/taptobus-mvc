@@ -112,15 +112,6 @@ class Passenger_register extends Controller{
                 // hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                // register passenger and add passenger to the passenger table
-                /*if($this->passengerModel->register($data) &&
-                $this->userModel->addUser($data['nic'], $data['fname'], $data['lname'], $data['email'], $data['password'], 'passenger')){
-                    direct('users/login');
-                }else{
-                    die('Sorry! Something went wrong');
-                }*/
-
-
                 if($this->passengerModel->register($data)){
                     $otp = generateOTP();
 
@@ -128,20 +119,19 @@ class Passenger_register extends Controller{
                         // direct('passenger_register/verify_otp?id=' . $data['nic']);
 
                         $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, 'TapToBus');
-
                         $subject = emailVerSubject();
                         $body = emailVerBody($otp);
 
                         if($mailer->send($data['email'], $subject, $body)){
                             direct('passenger_register/verify_otp?id=' . $data['nic']);
                         }else{
-                            die('Sorry! Something went wrong 1');
+                            die('Sorry! Something went wrong');
                         }
                     }else{
-                        die('Sorry! Something went wrong 2');    
+                        die('Sorry! Something went wrong');    
                     }
                 }else{
-                    die('Sorry! Something went wrong 3');
+                    die('Sorry! Something went wrong');
                 }
 
             }else{
@@ -207,21 +197,18 @@ class Passenger_register extends Controller{
                     
                     // compare otps
                     if( ($data['otp'] == $pOTP) && ($nic == $pNIC) ){
-                        // if($this->passengerModel->activePassenger($pNIC)){
-
-                        //     if ($this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')) {
-                        //         direct('users/login');
-                        //     } else {
-                        //         die('Sorry! Something went wrong 1');
-                        //     }
-                                                                                        
-                        // }else{
-                        //     die('Sorry! Something went wrong 2');
-                        // }
-
                         if($this->passengerModel->activePassenger($pNIC) && 
                         $this->userModel->addUser($pNIC, $pFname, $pLname, $pEmail, $pPasswordHash, 'passenger')){
-                            direct('users/login');
+                            //direct('users/login');
+
+                            $data = [
+                                'pic' => 'success',
+                                'head' => 'Registration success!',
+                                'desc' => 'You can now login to the system',
+                                'link' => URLROOT . '/users/login'
+                            ];
+                    
+                            $this->view('passenger/popup', $data);
                         }else{
                             die('Sorry! Something went wrong');
                         }
