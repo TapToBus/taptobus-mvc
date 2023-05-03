@@ -257,8 +257,8 @@ class Passenger_book_seats extends Controller{
         $data = [
             'pic' => 'success',
             'head' => 'Payment success!',
-            'desc' => 'Check you mail for booking Code',
-            'success-link' => URLROOT . '/passenger_bookings/bookings',
+            'desc' => 'Check you mail for the booking Code',
+            'success-link' => URLROOT . '/passenger_book_seats/journey_details',
             'fail-link' => ''
         ];
 
