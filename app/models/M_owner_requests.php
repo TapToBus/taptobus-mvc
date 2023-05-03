@@ -10,7 +10,7 @@ class M_owner_requests{
 
     public function add_owner_request($data){
 
-        $id = $_SESSION['user_id'];
+        $id = $data['nic'];
 
         // prepare query 
         $this->db->query('INSERT INTO owner_request (owner_nic) VALUES (:owner_nic)');
