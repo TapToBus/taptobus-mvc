@@ -102,8 +102,15 @@ class Admin_reports extends Controller{
    
           
     $pdf->SetFont('Arial', 'B', 20);
+    $pdf->Cell(0, 10, '- TapToBus - ', 0, 1, 'C');
+    $pdf->Cell(0, 0,' ', 0, 1, 'C');
 
-    $pdf->Cell(0, 10, 'TapToBus '. $_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Profit Details', 0, 1, 'C');
+    $pdf->SetFont('Arial', 'B', 10);
+    $pdf->Cell(0, 10, 'Online Expressway Bus ticket Booking System ', 0, 1, 'C');
+    $pdf->Cell(0, 5,' ', 0, 1, 'C');
+
+    $pdf->SetFont('Arial', 'B', 16);
+    $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Profit Details', 0, 1, 'C');
     $pdf->Cell(0, 10,' ', 0, 1, 'C');
    
    
@@ -116,12 +123,12 @@ class Admin_reports extends Controller{
     $pdf->SetTitle('TapToBus Profit Details Report');
     $pdf->SetTextColor(255, 255, 255);
    
-    $pdf->Cell(70, 10, 'Start', 1 , 0, 'C',1);
-    $pdf->Cell(70, 10, 'Destination', 1 , 0, 'C',1);
-    $pdf->Cell(70, 10, 'Bus Number', 1 , 0, 'C',1);
-    $pdf->Cell(70, 10, 'Booking Count', 1 , 0, 'C',1);
-    $pdf->Cell(70, 10, 'Date', 1 , 0, 'C',1);
-    $pdf->Cell(70, 10, 'Profit', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Start', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Destination', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Bus Number', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Booking Count', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Date', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Profit', 1 , 0, 'C',1);
 
      $pdf->Ln();
     
@@ -130,12 +137,12 @@ class Admin_reports extends Controller{
     $pdf->SetFont('Arial', '', 12);
     foreach ($reportData as $row) {
     
-        $pdf->Cell(70,10, $row->location_from, 1 , 0, 'C');
-        $pdf->Cell(70,10, $row->location_to, 1 , 0, 'C');
-        $pdf->Cell(70,10, $row->bus_no, 1 , 0, 'C');
-        $pdf->Cell(70,10, $row->passenger_count, 1 , 0, 'C');
-        $pdf->Cell(70,10, $row->date, 1 , 0, 'C');
-        $pdf->Cell(70,10, $row->profit, 1 , 0, 'C');
+        $pdf->Cell(46.5,10, $row->from, 1 , 0, 'C');
+        $pdf->Cell(46.5,10, $row->to, 1 , 0, 'C');
+        $pdf->Cell(46.5,10, $row->bus_no, 1 , 0, 'C');
+        $pdf->Cell(46.5,10, $row->passenger_count, 1 , 0, 'C');
+        $pdf->Cell(46.5,10, $row->date, 1 , 0, 'C');
+        $pdf->Cell(46.5,10, $row->profit, 1 , 0, 'C');
        
    $pdf->Ln();
 
