@@ -253,15 +253,5 @@ class Passenger_book_seats extends Controller{
 
 
 
-    public function paid(){
-        $data = [
-            'pic' => 'success',
-            'head' => 'Payment success!',
-            'desc' => 'Check you mail for booking Code',
-            'success-link' => URLROOT . '/passenger_bookings/bookings',
-            'fail-link' => ''
-        ];
-
-        $this->view('passenger/popup', $data);
-    }
+    
 }
