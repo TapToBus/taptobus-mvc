@@ -82,6 +82,8 @@
         </div>
     </dialog>
 
+    <script src="<?php echo URLROOT; ?> /js/admin-js/delete-bus-popup.js"></script>
+
 
 
 </body>
