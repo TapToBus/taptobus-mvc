@@ -1,6 +1,6 @@
 <?php
 
-class passenger_profile extends Controller{
+class Passenger_profile extends Controller{
     private $profileModel;
     
 
