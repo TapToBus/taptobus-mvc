@@ -21,11 +21,13 @@ class M_Admin_staff_member_details{
         return $this->db->execute();
     }
 
+    //function for deleted staff member
     public function removestaffmembers(){
         $this->db->query('SELECT * FROM staffmember WHERE status = "deleted"');
         return $this->db->resultSet();
     }
 
+    //function for update deleted staff member in to active 
     public function reset_staff_member($staff_no){
         $this->db->query("UPDATE staffmember SET status = 'active' WHERE staff_no = :staff_no");
         $this->db->bind(":staff_no", $staff_no);
