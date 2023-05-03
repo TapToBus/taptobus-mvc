@@ -92,8 +92,8 @@
 
                         <?php foreach($data['reportData'] as $reportData) :?>
                             <tr>
-                                <td><?php echo $reportData->location_from ?></td>
-                                <td><?php echo $reportData->location_to ?></td>
+                                <td><?php echo $reportData->from ?></td>
+                                <td><?php echo $reportData->to ?></td>
                                 <td><?php echo $reportData->bus_no ?></td>
                                 <td><?php echo $reportData->passenger_count ?></td>
                                 <td><?php echo $reportData->date ?></td>

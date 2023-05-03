@@ -53,6 +53,9 @@ class Admin_reports extends Controller{
                 $_SESSION['date_to'] = $_GET['date_to'];
             }
 
+            // var_dump($date_from);
+            // die();
+
             $reportData = $this->profitTableModel->get_search_income_records($date_from,$date_to);
 
             $data=[
@@ -113,8 +116,10 @@ class Admin_reports extends Controller{
     $pdf->SetTitle('TapToBus Profit Details Report');
     $pdf->SetTextColor(255, 255, 255);
    
-    $pdf->Cell(70, 10, 'Record ID', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Start', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Destination', 1 , 0, 'C',1);
     $pdf->Cell(70, 10, 'Bus Number', 1 , 0, 'C',1);
+    $pdf->Cell(70, 10, 'Booking Count', 1 , 0, 'C',1);
     $pdf->Cell(70, 10, 'Date', 1 , 0, 'C',1);
     $pdf->Cell(70, 10, 'Profit', 1 , 0, 'C',1);
 
@@ -125,8 +130,10 @@ class Admin_reports extends Controller{
     $pdf->SetFont('Arial', '', 12);
     foreach ($reportData as $row) {
     
-        $pdf->Cell(70,10, $row->record_id, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->location_from, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->location_to, 1 , 0, 'C');
         $pdf->Cell(70,10, $row->bus_no, 1 , 0, 'C');
+        $pdf->Cell(70,10, $row->passenger_count, 1 , 0, 'C');
         $pdf->Cell(70,10, $row->date, 1 , 0, 'C');
         $pdf->Cell(70,10, $row->profit, 1 , 0, 'C');
        
