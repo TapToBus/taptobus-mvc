@@ -12,11 +12,13 @@
     <div class="topright">        
         <small><b>Hi! <?php echo $_SESSION['user_fname'] ?></b></small>
         <div class="picon">            
-            <?php if(isset($_SESSION['user_pic'])): ?>
-                <!--  -->
+            <!-- <?php if(isset($_SESSION['user_pic'])): ?>
+               
             <?php else: ?>
-                <img src="<?php echo URLROOT; ?>/img/profile.jpeg" alt="Profile Pic">
-            <?php endif; ?>
+                <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $_SESSION['user_pic']; ?>" alt="Pic">
+            <?php endif; ?> -->
+            <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $_SESSION['user_pic']; ?>" alt="Pic">
+
         </div>
     </div>
 </div>
