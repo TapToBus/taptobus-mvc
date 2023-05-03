@@ -914,6 +914,65 @@ a{
 
 
 
+/* admin profile styles */
+
+.pro-details{
+  background-color: #737373;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
+
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.pro-details .left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.pro-details .left img{
+    max-width: 10%;
+    max-height: 10%;
+    /* min-width: 10%;
+    min-height: 10%; */
+    object-fit: cover;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -922,12 +981,12 @@ a{
 
 /* admin profile styles */
 
-.content{
+/* .content{
     margin-left: 200px;
     margin-right: 200px;
-}
+} */
 
-.content .heading{
+/* .heading{
     font-size: 25px;
     color: var(--clr-navbar-top);
     margin-bottom: 10px;
@@ -936,48 +995,49 @@ a{
 
 .pro-details{
 
-   display: flex;
-   flex-direction: row;
-
-
-    height: 45vh;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 45vh;
+  margin-top: 50px;
     
 }
 
 .pro-details .left{
 
-    position: relative;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
-    margin-left: 40px;
-    width: 600px;
-    display: flex;
+    /* position: relative; */
 
-}
 
-.pro-details .left img{
+ 
+
+/* .pro-details .left img{
     max-width: 100%;
     max-height: 100%;
     min-width: 75%;
     min-height: 75%;
     object-fit: cover;
-    margin-left: 100px;
-
     justify-content: center;
     align-items: center;
-}
+} */
 
 
-.pro-details .right .name{
+/* .pro-details .right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+} */
+/* .pro-details .right .name{
     font-size: 20px;
     font-weight:600;
     text-align: center;
 
     margin-bottom: 10px;
-}
+} */
 
-.pro-details .right .details{
+/* .pro-details .right .details{
     margin-bottom: 15px;
 
     border-radius: 20px;
@@ -987,9 +1047,9 @@ a{
     height: 47vh;
     padding: 25px 20px 25px 20px;
     width: 35VW;
-}
+} */
 
-.pro-details .right .edit-profile-delete-profile-buttons{
+/* .pro-details .right .edit-profile-delete-profile-buttons{
   margin-top: 50px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
   width: 35vw;
@@ -1000,28 +1060,28 @@ a{
   justify-content: center;
   align-items: center;
 
-}
+} */
 
-.pro-details .right .details .row{
+/* .pro-details .right .details .row{
     display:  grid;
     grid-template-columns: 25% 60%;
     justify-content: center;
     line-height: 40px;
     width: 900px;
-}
+} */
 
-.pro-details .right .details .row .col1{
+/* .pro-details .right .details .row .col1{
     font-weight: 450;
 
-}
+} */
 
 
-.pro-details .right .edit-profile-delete-profile-buttons .btn{
+/* .pro-details .right .edit-profile-delete-profile-buttons .btn{
 
   padding: 0 10px 0 10px;
 
-}
-.pro-details .right .edit-profile-delete-profile-buttons .btn button{
+} */
+/* .pro-details .right .edit-profile-delete-profile-buttons .btn button{
     width: 120px;
     height: 37px;
     cursor: pointer;
@@ -1056,5 +1116,5 @@ a{
   background-color: rgb(0, 42, 255, 0.689);
   color: white;
   transition: 0.3s;
-}
+} */
 
