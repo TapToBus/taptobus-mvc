@@ -45,9 +45,8 @@
                         </div>
 
                         <div class="row">
-                            <label for="Last_name" ></label>
-                            <span class="col1">Last Name: </span>
-                            <span class="col2"><?php echo $data['ProfileDetails']->lname; ?></span>
+                            <label for="Last_name" class="col1">Last Name</label>
+                            <input type="text" id="Last_name" class="col2" value="<?php echo $data['ProfileDetails']->lname; ?>">
                         </div>
                     </div>
 
