@@ -126,7 +126,7 @@ class Users extends Controller{
 
             case 'conductor': {
                 //
-                direct('conductor_dashboard/view_dashboard');
+                direct('conductor_bookings/check_bookings');
                 break;
             };
 

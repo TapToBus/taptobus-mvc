@@ -142,7 +142,6 @@ class Owner_buses extends Controller{
         $data1 = $this->ownerModel2->avail_conductors();
         $data2 = $this->ownerModel2->find_conductor_name($bus_no);
         $data3 = $this->ownerModel3->view_incomerecords_forbus($bus_no);
-        var_dump($data3);
         $this->view('owner/bus_details',$data,$data1,$data2,$data3); 
 
     }

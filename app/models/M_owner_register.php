@@ -12,7 +12,7 @@ class M_owner_register{
     // register passenger
     public function register($data){
         // prepare query
-        $this->db->query('INSERT INTO owner (nic, fname, lname,email,mobileNo,password) VALUES (:nic, :fname, :lname,:email, :mobileNo, :password)');
+        $this->db->query('INSERT INTO owner (nic, fname, lname,email,mobileNo) VALUES (:nic, :fname, :lname,:email, :mobileNo)');
 
         // bind values
         $this->db->bind(':nic', $data['nic']);
@@ -20,7 +20,6 @@ class M_owner_register{
         $this->db->bind(':lname', $data['lname']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':mobileNo', $data['mobileNo']);
-        $this->db->bind(':password', $data['password']);
 
         // execute
         if($this->db->execute()){

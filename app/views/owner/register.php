@@ -64,21 +64,6 @@
                     </div>
                 </div>
 
-                <div class="field3">
-                    <div class="password">
-                        <label for="password">Password</label> <br>
-                        <input type="password" name="password" placeholder="Enter a password"
-                        value="<?php echo $data['password']; ?>" maxlength="10"> <br>
-                        <span><?php echo $data['password_err']; ?></span>
-                    </div>
-
-                    <div class="confirmPassword">
-                        <label for="confirmPassword">Confirm Password</label> <br>
-                        <input type="password" name="confirmPassword" placeholder="Confirm password"
-                        value="<?php echo $data['confirmPassword']; ?>" maxlength="10"> <br>
-                        <span><?php echo $data['confirmPassword_err']; ?></span>
-                    </div>
-                </div>
 
                 <div class="agree">
                     <div class="inner-field">
