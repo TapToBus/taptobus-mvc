@@ -20,5 +20,11 @@ class M_user_announcement{
         return $this->db->single();
     }
 
+    public function deleteAnnouncementById($notice_id){
+        $this->db->query("DELETE FROM special_notices WHERE notice_id = :notice_id");
+        $this->db->bind(':notice_id', $notice_id);
+        return $this->db->execute();
+    }
+
 }
 ?>

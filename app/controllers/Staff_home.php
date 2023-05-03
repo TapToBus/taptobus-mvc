@@ -3,6 +3,7 @@
     class Staff_home extends Controller{
 
         private $staffModel;
+        private $announcementModel;
 
         public function __construct()
         {
@@ -11,6 +12,7 @@
             }
             
             $this->staffModel = $this->model("M_Staff");
+            $this->announcementModel = $this->model("M_user_announcement");
             // this is the pages controller
         }
 
@@ -24,7 +26,7 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 if(isset($_POST['save'])){
-                    if(isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["date_from"]) && isset($_POST["date_to"]) && isset($_POST["role"])){
+                    if(!empty($_POST["title"]) && !empty($_POST["description"]) && !empty($_POST["date_from"]) && !empty($_POST["date_to"]) && !empty($_POST["role"])){
                         
                         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                         
@@ -38,8 +40,10 @@
                             'description_error' =>''
                         ];
 
-               
+
                         $roles = $_POST["role"];
+                        // var_dump($_POST["role"]);
+                        // die();
             
 
                         if($this->staffModel->addNotices($data)){
@@ -57,13 +61,18 @@
                         }
 
                     }else{
+                        print_r("entered");
+                        die();
+                        // should not allow to submit without filling inputs
                         if(empty($_POST['title'])){
                             $data['title_err'] = 'Please enter a title';
                         }else if(empty($_POST['description'])){
                             $data['description_err'] = 'Please enter a description';
-                        }
-                        // continue... error handling for date and users
-                         
+                        }else if(empty($_POST['date_from']) || empty($_POST['date_to'])){
+                            $data['description_err'] = 'Please enter a date';
+                        }else{
+                            die("Please enter data");
+                        }                        
                     }
                 }   
             }
@@ -87,12 +96,18 @@
                     'result' => $results
                 ];
 
-               $this->view('staff/staffhome', $props);
-
-            
+               $this->view('staff/staffhome', $props);     // pass data to the specific view
         }
 
-       /* public function editnotice(){
+        public function deleteAnnouncement(){
+            $notice_id = $_GET['notice_id'];
+            print_r($notice_id);
+            $this->announcementModel->deleteAnnouncementById($notice_id);
+            direct('Staff_home/staffhome');    //  call the controller and specific function
+        }
+
+
+           /* public function editnotice(){
             $props = [];
             $staff_no = $_SESSION['user_id'];
             
@@ -119,7 +134,7 @@
                         }
                         else {
                             // $props = ['error' => 'Invalid'];
-                            $props = ['alert' =>[ 'type' => 'error', 'message' => "Invalid oparation." ]];
+                            $props = ['alert' =>[ 'type' => 'error', 'message' => "Invalid operation." ]];
 
                         }
 

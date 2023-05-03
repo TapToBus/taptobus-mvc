@@ -30,8 +30,8 @@
             <table class="full-table">
                 <tr>
                     <th>NTC No</th>
-                    <th>Name</th>
                     <th>NIC</th>
+                    <th>Name</th>                    
                     <th>Mobile no</th>
                     <th>Email</th>   
                 </tr>
@@ -41,8 +41,8 @@
                 ?>
                     <tr>
                         <td><?php echo $driverdetail->ntcNo ?></td>
-                        <td><?php echo $driverdetail->fname ."  ". $driverdetail->lname ?></td>
                         <td><?php echo $driverdetail->nic ?></td>
+                        <td><?php echo $driverdetail->fname ."  ". $driverdetail->lname ?></td>                        
                         <td><?php echo $driverdetail->mobileNo ?></td>
                         <td><?php echo $driverdetail->email ?></td>            
                     </tr>  

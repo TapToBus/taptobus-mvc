@@ -101,7 +101,9 @@
                         <?php if($result->staff_no == $_SESSION['user_id']):?>
                             <div class="edit-delete-btns">
                                 <!-- <button class="edit-btn" onclick="enableEdit(<?php //echo $result->notice_id ?>)"><i class="fa-solid fa-pen"></i></button> -->
-                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                <a href="<?php echo URLROOT?>/Staff_home/deleteAnnouncement?notice_id=<?php echo $result->notice_id?>">
+                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                </a>
                             </div>
                         <?php endif;?>
                     </div>   
@@ -117,10 +119,10 @@
                     
                     <?php
                 }
-                    
                     ?>
 
                 </div>
+                
                 <!-- pop up model -->
                 <dialog class="notice-modal">
                     <div class="notice-container">
@@ -167,7 +169,7 @@
                                     </div>
                                     <div>
                                     <label>
-                                        <input type="checkbox" name="role[]" value="staff member">
+                                        <input type="checkbox" name="role[]" value="staff member" id="staff" checked >
                                         Staff Member
                                     </label>
                                     </div>
