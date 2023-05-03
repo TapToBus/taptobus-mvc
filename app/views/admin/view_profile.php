@@ -28,7 +28,8 @@
                 <div class="details">
 
                     <div class="row">
-                        <span class="col1">Admin ID: </span>
+                        <label for="Admin_ID" class="col1">Admin ID</label>
+
                         <span class="col2"><?php echo $data['ProfileDetails']->admin_id; ?></span>
                     </div>
 
