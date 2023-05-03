@@ -13,8 +13,6 @@
         <div class="head"><?php echo $data['head'] ?></div>
         <div class="desc"><?php echo $data['desc'] ?></div>
         <div class="btn"><a href="<?php echo $data['success-link'] ?>"><button>Ok</button></a></div>
-
-        <h1><?php echo $data['success-link'] ?></h1>
     </div>
 </body>
 </html>
