@@ -9,7 +9,9 @@
 </head>
 <body>
     <div class="box">
-        <img src="<?php echo URLROOT; ?>/img/<?php echo $data['pic']; ?>.png" alt="Success">
+        <div class="image">
+            <img src="<?php echo URLROOT; ?>/img/<?php echo $data['pic']; ?>.png" alt="Success">
+        </div>
         <div class="head"><?php echo $data['head'] ?></div>
         <div class="desc"><?php echo $data['desc'] ?></div>
         <div class="btn"><a href="<?php echo $data['success-link'] ?>"><button>Ok</button></a></div>
