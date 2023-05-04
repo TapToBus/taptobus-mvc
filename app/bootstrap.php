@@ -23,3 +23,4 @@ require_once 'helpers/temporery_pw_email_tmplt.php';
 require_once 'helpers/mail_helper.php';
 require_once 'helpers/otp_helper.php';
 require_once 'helpers/email_verify_tmplt.php';
+require_once 'helpers/send_booking_code_tmplt.php';

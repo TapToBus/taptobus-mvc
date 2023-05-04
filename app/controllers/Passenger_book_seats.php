@@ -184,6 +184,8 @@ class Passenger_book_seats extends Controller{
 
                     echo 'Ok';*/
 
+                    
+
                     $data['schedule'] = $schedule;
 
                     $this->view('passenger/payment', $data);
