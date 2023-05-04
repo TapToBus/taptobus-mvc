@@ -53,7 +53,7 @@ class Owner_buses extends Controller{
                 else{
                     $target_file = basename($_FILES["bus_image"]["name"]);
                     $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                    $image = "img/uploads/"."bus".'/'.$fileName.'.'.$extension;
+                    $image = "img/"."bus".'/'.$fileName.'.'.$extension;
                     
                 }
             }
