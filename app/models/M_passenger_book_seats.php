@@ -13,6 +13,46 @@ class M_passenger_book_seats{
         // find day using date
         $day = date('l', strtotime($date));
 
+        $this->db->query('SELECT s.id, s.bus_no, b.capacity 
+                            FROM schedule s INNER JOIN bus b ON s.bus_no=b.bus_no 
+                            WHERE s.day=:day
+                            AND s.from=:from
+                            AND s.to=:to;');
+
+        $this->db->bind(':day', $day);
+        $this->db->bind(':from', $from);
+        $this->db->bind(':to', $to);
+
+        $row = $this->db->resultSet();
+
+        if(!empty($row)){
+            foreach($row as $x){
+                $this->db->query('SELECT id 
+                                    from booked_seats 
+                                    WHERE schedule_id=:id
+                                    AND date=:date;
+                                    AND bus_no=:bus_no');
+                $this->db->bind(':id', $x->id);
+                $this->db->bind(':date', $date);
+                $this->db->bind(':bus_no', $x->bus_no);
+
+                $temp = $this->db->resultSet();
+
+                if(empty($temp)){
+                    $this->db->query('INSERT INTO booked_seats(schedule_id, date, seats_capacity, available_seats_count, bus_no)
+                                        VALUES (:sch_id, :date, :capacity, :available, :bus_no);');
+                    $this->db->bind(':sch_id', $x->id);
+                    $this->db->bind(':date', $date);
+                    $this->db->bind(':capacity', $x->capacity);
+                    $this->db->bind(':available', $x->capacity);
+                    $this->db->bind(':bus_no', $x->bus_no);
+
+                    $this->db->execute();
+
+                }
+            }
+        }
+
         $this->db->query('SELECT sch.id as sch_id, sch.departure_time, sch.ticket_price,
                     b.bus_no, b.capacity, b.ratings, b.responses,
                     boks.id as boks_id, boks.available_seats_count
