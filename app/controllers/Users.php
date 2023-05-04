@@ -242,20 +242,59 @@ class Users extends Controller{
     
             
         }else{
-            direct('pages/index');
+            
         }
     }
 
 
     public function reset_password(){
-        $data = [
-            'new_pwd' => '',
-            'confirm_pwd' => '',
-            'new_pwd_err' => '',
-            'confirm_pwd_err' => ''
-        ];
+        if(isset($_SESSION['temp_id'])){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $data = [
+                    'new_pwd' => $_POST['new_pwd'],
+                    'confirm_pwd' => $_POST['confirm_pwd'],
+                    'new_pwd_err' => '',
+                    'confirm_pwd_err' => ''
+                ];
 
-        $this->view('users/reset_password', $data);
+                // validate password
+                if (empty($data['new_pwd'])) {
+                    $data['new_pwd_err'] = 'Passworrd is required';
+                } elseif (strlen($data['new_pwd']) < 8) {
+                    $data['new_pwd_err'] = 'Password must contain at least 8 characters';
+                } elseif (!preg_match("/[0-9]/", $data['new_pwd'])) {
+                    $data['new_pwd_err'] = 'Password must contain at least 1 number';
+                } elseif (!preg_match("/[a-z]/i", $data['new_pwd'])) {
+                    $data['new_pwd_err'] = 'Password must contain at least 1 letter';
+                } elseif (!preg_match("/[^\w]/", $data['new_pwd'])) {
+                    $data['new_pwd_err'] = 'Password must contain at least 1 special character';
+                }
+
+                // validate confirm password
+                if (empty($data['confirm_pwd'])) {
+                    $data['confirm_pwd_err'] = 'Confirm password is required';
+                } elseif ($data['new_pwd'] != $data['confirm_pwd']) {
+                    $data['confirm_pwd_err'] = 'Paswords must match';
+                }
+
+                if(empty($data['new_pwd_err']) && empty($data['confirm_pwd_err'])){
+                    echo 'Ok';
+                }else{
+                    $this->view('users/reset_password', $data);
+                }
+            }else{
+                $data = [
+                    'new_pwd' => '',
+                    'confirm_pwd' => '',
+                    'new_pwd_err' => '',
+                    'confirm_pwd_err' => ''
+                ];
+
+                $this->view('users/reset_password', $data);
+            }
+        }else{
+            direct('pages/index');
+        }
     }
 
 
