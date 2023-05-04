@@ -67,13 +67,11 @@
                     $results = $data['result'];
 
                     foreach($results as $result){
-                        // print_r($result->roles);
-                        // die();
                         ?>
                     <div class="grid">
                         <div class="text-fields">
                             <div class="notice-author-timestamp">
-                                <div class="notice-author">
+                                <div class="notice-author"> Staff : 
                                     <p class="author-text"><?php echo $result->first_name?></p>
                                     <p class="author-text"><?php echo $result->last_name?></p>
                                 </div>
@@ -83,7 +81,7 @@
                                 <input type="text" name="edit-title" id="title-<?php echo $result->notice_id ?>" value="<?php echo $result->title; ?>" disabled>
                                 <textarea name="edit-description" id="text-area-<?php echo $result->notice_id ?>" cols="30" rows="5" disabled><?php echo $result->description; ?></textarea>
                                 <p>Annoucment for :</p>
-                                <ul>
+                                <ul class="usr">
                                     <?php foreach ($result->roles as $role) {
                                         ?>
                                             <li><?php echo $role?></li>

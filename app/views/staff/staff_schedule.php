@@ -63,7 +63,7 @@
                 </div>
                 <div class="form_control">
                     <label for="ticket_price">Ticket Price</label>
-                    <input type="text" name="ticket_price" id="ticket_price"/>
+                    <input type="number" name="ticket_price" id="ticket_price"/>
                 </div>
                 <div class="button_control">
                     <button type="button" onclick="closeAddNewScheduleModal()" >Cancel</button>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="form_control">
                     <label for="ticket_price">Ticket Price</label>
-                    <input type="text" name="ticket_price" id="u-ticket_price"/>
+                    <input type="number" name="ticket_price" id="u-ticket_price"/>
                 </div>
                 <div class="button_control">
                     <button type="button" onclick="closeEditScheduleModal()" >Cancel</button>
@@ -190,7 +190,7 @@
                         <td><?php echo $schedule->day?></td>
                         <td><?php echo $schedule->arrival_time?></td>
                         <td><?php echo $schedule->departure_time?></td>
-                        <td><?php echo $schedule->ticket_price.'.00'?></td>
+                        <td><?php echo $schedule->ticket_price?></td>
                         <td>                                                                                                                                      
                                                                                                                                                         <!-- pass all the retrieve data to the Model -->
                             <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick='openEditScheduleModal(<?php echo json_encode($schedule)?>)'><i class="fa fa-edit"></i></button>  
