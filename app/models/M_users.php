@@ -90,4 +90,12 @@ class M_users{
 
         return $this->db->execute();
     }
+
+
+    public function getUserDetails($id){
+        $this->db->query('SELECT * FROM user WHERE id=:id');
+        $this->db->bind(':id', $id);
+
+        return $this->db->single();
+    }
 }

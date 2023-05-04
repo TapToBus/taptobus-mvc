@@ -188,11 +188,8 @@ class Users extends Controller{
 
                 if ($mailer->send($data['email'], $subject, $body)) {
                     $_SESSION['temp_id'] = $user->id;
-                    
+
                     direct('users/verify_otp');
-                    
-                    echo $_SESSION['temp_id'];
-                    //direct('passenger_register/verify_otp?id=' . $data['nic']);
                 } else {
                     die('Sorry! Something went wrong');
                 }
@@ -218,15 +215,21 @@ class Users extends Controller{
                     'otp_err' => ''
                 ];
                 
-                // if OTP is not enter
+                // check the OTP is not enter or incorrect
                 if (empty($data['otp'])) {
                     $data['otp_err'] = 'OTP is required';
+                }else{
+                    $user = $this->userModel->getUserDetails($_SESSION['temp_id']);
+
+                    if($data['otp'] != $user->otp){
+                        $data['otp_err'] = 'Incorrect OTP';
+                    }
                 }
 
                 if(empty($data['otp_err'])){
-                    echo "ok";
+                    direct('users/reset_password');
                 }else{
-                    echo "error";
+                    $this->view('users/verify_otp', $data);
                 }
             }else{
                 $data = [
@@ -241,6 +244,18 @@ class Users extends Controller{
         }else{
             direct('pages/index');
         }
+    }
+
+
+    public function reset_password(){
+        $data = [
+            'new_pwd' => '',
+            'confirm_pwd' => '',
+            'new_pwd_err' => '',
+            'confirm_pwd_err' => ''
+        ];
+
+        $this->view('users/reset_password', $data);
     }
 
 

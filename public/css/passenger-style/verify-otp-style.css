@@ -115,6 +115,10 @@ body{
     height: auto;
 }
 
+.box .new-field{
+    margin-top: 15px;
+}
+
 
 
 /* to align image inside in logo div and add shadow */
