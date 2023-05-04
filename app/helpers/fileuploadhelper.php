@@ -3,6 +3,7 @@
 
 function upload_file($name,$destination_dir,$fileName=NULL,$fileTypes,$fileSize=500000,$isImage=FALSE,$overWrite=false)
 {
+    echo(1);
     $target_dir = "img/".$destination_dir."/";
     // Create the directory if it does not exist
 	if (!file_exists($target_dir)) {

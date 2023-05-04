@@ -46,6 +46,7 @@ class Owner_buses extends Controller{
             {
                 $fileName = "user";
                 $msg = upload_file("profilePicture","bus",$fileName,['png','jpeg','jpg'],50000000,TRUE,TRUE);
+                echo($msg);
                 if(!empty($msg))
                 {
                     $image = "";
@@ -54,6 +55,7 @@ class Owner_buses extends Controller{
                     $target_file = basename($_FILES["bus_image"]["name"]);
                     $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                     $image = "img/"."bus".'/'.$fileName.'.'.$extension;
+                    echo($image);
                     
                 }
             }
