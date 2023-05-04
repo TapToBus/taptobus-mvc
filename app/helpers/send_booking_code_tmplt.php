@@ -1,7 +1,7 @@
 <?php
 
 function bookingCodeSubject(){
-    $sub = 'Booking Code';
+    $sub = 'TapToBus Booking Code';
     return $sub;
 }
 

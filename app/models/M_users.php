@@ -81,4 +81,13 @@ class M_users{
 
         return $this->db->single();
     }
+
+
+    public function setUserOTP($id, $otp){
+        $this->db->query('UPDATE user SET otp=:otp WHERE id=:id;');
+        $this->db->bind(':otp', $otp);
+        $this->db->bind(':id', $id);
+
+        return $this->db->execute();
+    }
 }

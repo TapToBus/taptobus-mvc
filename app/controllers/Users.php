@@ -177,12 +177,28 @@ class Users extends Controller{
 
             if(empty($data['email_err'])){
                 $user = $this->userModel->findUserDetails($data['email']);
-                print_r($user);
+                $otp = generateOTP();
+
+                $this->userModel->setUserOTP($user->id, $otp);
+
+                $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, 'TapToBus');
+                
+                $subject = forgotPassSubject();
+                $body = forgotPassBody($otp);
+
+                if ($mailer->send($data['email'], $subject, $body)) {
+                    $_SESSION['temp_id'] = $user->id;
+                    
+
+                    
+                    echo $_SESSION['temp_id'];
+                    //direct('passenger_register/verify_otp?id=' . $data['nic']);
+                } else {
+                    die('Sorry! Something went wrong');
+                }
             }else{
                 $this->view('users/forgot_password', $data);
             }
-
-            //print_r($data);
         }else{
             $data = [
                 'email' => '',
