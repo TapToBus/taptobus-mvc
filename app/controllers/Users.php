@@ -189,7 +189,7 @@ class Users extends Controller{
                 if ($mailer->send($data['email'], $subject, $body)) {
                     $_SESSION['temp_id'] = $user->id;
                     
-
+                    direct('users/verify_otp');
                     
                     echo $_SESSION['temp_id'];
                     //direct('passenger_register/verify_otp?id=' . $data['nic']);
@@ -206,6 +206,40 @@ class Users extends Controller{
             ];
 
             $this->view('users/forgot_password', $data);
+        }
+    }
+
+
+    public function verify_otp(){
+        if(isset($_SESSION['temp_id'])){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $data = [
+                    'otp' => $_POST['otp'],
+                    'otp_err' => ''
+                ];
+                
+                // if OTP is not enter
+                if (empty($data['otp'])) {
+                    $data['otp_err'] = 'OTP is required';
+                }
+
+                if(empty($data['otp_err'])){
+                    echo "ok";
+                }else{
+                    echo "error";
+                }
+            }else{
+                $data = [
+                    'otp' => '',
+                    'otp_err' => ''
+                ];
+
+                $this->view('users/verify_otp', $data);
+            }
+    
+            
+        }else{
+            direct('pages/index');
         }
     }
 
