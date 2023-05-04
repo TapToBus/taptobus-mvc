@@ -188,6 +188,7 @@ class Users extends Controller{
 
                 if ($mailer->send($data['email'], $subject, $body)) {
                     $_SESSION['temp_id'] = $user->id;
+                    $_SESSION['temp_type'] = $user->type;
 
                     direct('users/verify_otp');
                 } else {
@@ -278,7 +279,10 @@ class Users extends Controller{
                 }
 
                 if(empty($data['new_pwd_err']) && empty($data['confirm_pwd_err'])){
-                    echo 'Ok';
+                    $hash_pwd = password_hash($data['new_pwd'], PASSWORD_DEFAULT);
+
+                    // -------------
+                    echo $_SESSION['temp_id'] . '  ' . $_SESSION['temp_type'] . '  ' . $hash_pwd;
                 }else{
                     $this->view('users/reset_password', $data);
                 }
