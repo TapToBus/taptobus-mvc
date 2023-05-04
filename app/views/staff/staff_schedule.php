@@ -12,7 +12,7 @@
 </head>
 <body>
 
-
+<!-- Add new schedule Model -->
 <dialog id="addNewScheduleModal" class="modal">
         <div class="modal__container">
             <div class="caption">
@@ -25,14 +25,14 @@
                 </div>
                 <div class="row">
                     <div class="form_control">
-                        <label for="bus_no">Location From</label>
+                        <label for="location_from">Location From</label>
                         <select name="location_from" id="location_from">
                             <option value="Galle">Galle</option>
                             <option value="Makubura">Makubura</option>
                         </select>
                     </div>
                     <div class="form_control">
-                        <label for="bus_no">Location To</label>
+                        <label for="location_to">Location To</label>
                         <select name="location_to" id="location_to">
                             <option value="Galle">Galle</option>
                             <option value="Makubura">Makubura</option>
@@ -40,11 +40,11 @@
                     </div>
                 </div>
                 <div class="form_control">
-                    <label for="bus_no">Day</label>
+                    <label for="day">Day</label>
                     <select name="day" id="day">
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
-                        <option value="Wednessday">Wednessday</option>
+                        <option value="Wednesday">Wednesday</option>
                         <option value="Thursday">Thursday</option>
                         <option value="Friday">Friday</option>
                         <option value="Satureday">Satureday</option>
@@ -72,7 +72,7 @@
             </form>
         </div>
     </dialog>
-
+   <!-- Delete schedule Model -->
     <dialog id="deleteConfirmModal" class="alertModal">
         <div class="alert__container">
                 <i class="fa-solid fa-circle-xmark"></i>
@@ -86,7 +86,7 @@
         </div>
     </dialog>
 
-
+<!-- Edit schedule Model -->
     <dialog id="editScheduleModal" class="modal">
         <div class="modal__container">
             <div class="caption">
@@ -118,7 +118,7 @@
                     <select name="day" id="u-day">
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
-                        <option value="Wednessday">Wednessday</option>
+                        <option value="Wednesday">Wednesday</option>
                         <option value="Thursday">Thursday</option>
                         <option value="Friday">Friday</option>
                         <option value="Satureday">Satureday</option>
@@ -180,19 +180,21 @@
                     $count = 0;
                 foreach($data as $schedule){
                         $count = $count + 1;
+                        
                     ?>
                     <tr>
                         <td><?php echo $count?></td>
                         <td><?php echo $schedule->bus_no?></td>
-                        <td><?php echo $schedule->Location_from?></td>
-                        <td><?php echo $schedule->Location_to?></td>
+                        <td><?php echo $schedule->from?></td>
+                        <td><?php echo $schedule->to?></td>
                         <td><?php echo $schedule->day?></td>
                         <td><?php echo $schedule->arrival_time?></td>
                         <td><?php echo $schedule->departure_time?></td>
                         <td><?php echo $schedule->ticket_price.'.00'?></td>
-                        <td>
-                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick='openEditScheduleModal(<?php echo json_encode($schedule)?>)'><i class="fa fa-edit"></i></button>
-                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick= 'openDeleteConfirmationModal("<?php echo $schedule->schedule_id ?>", "<?php echo $schedule->bus_no ?>")'><i class="fa fa-trash"></i></button>
+                        <td>                                                                                                                                      
+                                                                                                                                                        <!-- pass all the retrieve data to the Model -->
+                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick='openEditScheduleModal(<?php echo json_encode($schedule)?>)'><i class="fa fa-edit"></i></button>  
+                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick= 'openDeleteConfirmationModal("<?php echo $schedule->id ?>", "<?php echo $schedule->bus_no ?>")'><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                     <?php
@@ -214,17 +216,17 @@
                 addNewScheduleModal.close()
             }
 
-            function openEditScheduleModal(data){
-                console.log(data);
+            function openEditScheduleModal(data){  // don't use $ mark when passing data to the JS function.
+                console.log(data);  //  use to print passed data on the console.
                 const editScheduleModal = document.getElementById('editScheduleModal')
                 document.getElementById('u-bus_no').value = data.bus_no
-                document.getElementById('u-location_from').value = data.Location_from
-                document.getElementById('u-location_to').value = data.Location_to
+                document.getElementById('u-location_from').value = data.from
+                document.getElementById('u-location_to').value = data.to
                 document.getElementById('u-day').value = data.day
                 document.getElementById('u-arrival_time').value = data.arrival_time
                 document.getElementById('u-departrue_time').value = data.departure_time
                 document.getElementById('u-ticket_price').value = data.ticket_price
-                document.getElementById('editBtn').value = data.schedule_id
+                document.getElementById('editBtn').value = data.id
                 editScheduleModal.showModal()
             }
 

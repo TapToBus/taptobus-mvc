@@ -8,7 +8,7 @@
         }
 
         public function createSchedule($data){
-            $this->db->query("INSERT INTO schedule(bus_no, Location_from,Location_To,day,arrival_time,departure_time,ticket_price) VALUES(:bus_no, :location_from, :location_to, :day, :arrival_time, :departure_time, :ticket_price)");
+            $this->db->query("INSERT INTO schedule(bus_no, `from`,`to`,`day`,arrival_time,departure_time,ticket_price) VALUES(:bus_no, :location_from, :location_to, :day, :arrival_time, :departure_time, :ticket_price)");
             $this->db->bind(":bus_no",$data['bus_no']);
             $this->db->bind(":location_from",$data['Location_from']);
             $this->db->bind(":location_to",$data['Location_to']);
@@ -20,14 +20,14 @@
             return $this->db->execute();
         }
 
-        public function viewSchedules(){
-            $this->db->query("SELECT s.schedule_id, s.bus_no, s.Location_from, s.Location_to, s.day, s.arrival_time, s.departure_time, s.ticket_price, b.id as bid FROM schedule s LEFT JOIN bookings b ON s.bus_no = b.bus_no order by day ");
+        public function viewSchedules(){   // booking tabel eke schedule_id column eka ekka check krnn ona   
+            $this->db->query("SELECT s.id, s.bus_no, s.from, s.to, s.day, s.arrival_time, s.departure_time, s.ticket_price, b.id as bid FROM schedule s LEFT JOIN bookings b ON s.bus_no = b.bus_no order by s.day , s.arrival_time");
             return $this->db->resultSet();
-
+           // (left join ekk damme schedul tabel eke serma data tika ganna saha booking tabel eke booking thiyn id tika ganna)
         }
 
         public function updateSchedule($data){
-            $this->db->query("UPDATE schedule SET bus_no = :bus_no, Location_from = :location_from, Location_to = :location_to, day = :day, arrival_time = :arrival_time, departure_time = :departure_time, ticket_price = :ticket_price WHERE schedule_id = :schedule_id");
+            $this->db->query("UPDATE schedule SET bus_no = :bus_no, `from` = :location_from, `to` = :location_to, day = :day, arrival_time = :arrival_time, departure_time = :departure_time, ticket_price = :ticket_price WHERE id = :schedule_id");
             $this->db->bind(":bus_no",$data['bus_no']);
             $this->db->bind(":location_from",$data['Location_from']);
             $this->db->bind(":location_to",$data['Location_to']);
@@ -40,7 +40,7 @@
         }
 
         public function deleteSchedule($schedule_id){
-            $this->db->query("DeLETE FROM schedule WHERE schedule_id = :schedule_id");
+            $this->db->query("DeLETE FROM schedule WHERE id = :schedule_id");
             $this->db->bind(":schedule_id",$schedule_id);
             return $this->db->execute();
         }

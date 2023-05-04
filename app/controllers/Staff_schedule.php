@@ -19,9 +19,9 @@
 
         }
 
-        public function view_create_form(){
-            $this->view('staff/create_schedule');
-        }
+        // public function view_create_form(){
+        //     $this->view('staff/create_schedule');
+        // }
 
         public function create_schedule(){           
 
