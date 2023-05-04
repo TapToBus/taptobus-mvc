@@ -8,6 +8,7 @@ class Passenger_book_seats extends Controller{
     private $conductorModel;
     private $seatModel;
     private $bookingModel;
+    private $passengerModel;
 
 
     public function __construct(){
@@ -22,6 +23,7 @@ class Passenger_book_seats extends Controller{
         $this->conductorModel = $this->model('m_passenger_book_seats');
         $this->seatModel = $this->model('m_passenger_book_seats');
         $this->bookingModel = $this->model('m_passenger_book_seats');
+        $this->passengerModel = $this->model('m_passenger_book_seats');
     }
 
 
@@ -184,11 +186,25 @@ class Passenger_book_seats extends Controller{
 
                     echo 'Ok';*/
 
+                    $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, 'TapToBus');
+
+                    $subject = bookingCodeSubject();
+                    $body = bookingCodeBody($_SESSION['user_fname'], $code);
                     
+                    $result = $this->passengerModel->findPassengerEmail($_SESSION['user_id']);
 
-                    $data['schedule'] = $schedule;
+                    if($mailer->send($result->email, $subject, $body)){
+                        //echo 'Success';
+                        $data['schedule'] = $schedule;
 
-                    $this->view('passenger/payment', $data);
+                        $this->view('passenger/payment', $data);
+                    }else{
+                        echo 'Sorry! something went wrong';
+                    }
+
+                    /*$data['schedule'] = $schedule;
+
+                    $this->view('passenger/payment', $data);*/
                 }else{
                     echo 'Sorry! something went wrong';
                 }

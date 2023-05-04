@@ -207,4 +207,12 @@ class M_passenger_book_seats{
 
         return $result;
     }
+
+
+    public function findPassengerEmail($nic){
+        $this->db->query('SELECT email FROM passenger WHERE nic=:nic');
+        $this->db->bind(':nic', $nic);
+
+        return $this->db->single();
+    }
 }

@@ -25,7 +25,8 @@ class Mailer{
 
     public function send($to, $subject, $body){
         try{
-            $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;;
+            //$this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $this->mail->SMTPDebug = 0;
             $this->mail->isSMTP();
             $this->mail->Host = 'smtp.gmail.com';
             $this->mail->SMTPAuth = true;
