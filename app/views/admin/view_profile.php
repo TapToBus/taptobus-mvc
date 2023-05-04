@@ -25,56 +25,60 @@
 
             <div class="right">
 
-                <div class="details">
+                <form class="details" action="<?php echo URLROOT?>/Admin_profile/update_profile/<?php echo $data['admin_id']; ?>" method="POST">
 
                     <div class="row">
                         <label for="Admin_ID" class="col1">Admin ID: </label>
-                        <input type="text" id="Admin_ID" name="Admin_ID" class="col2" value="<?php echo $data['ProfileDetails']->admin_id; ?>">
+                        <input type="text" id="Admin_ID" name="Admin_ID" class="col2" value="   <?php echo $data['admin_id']; ?>" disabled = "true">
 
                     </div>
 
                     <div class="row">
                         <label for="NIC" class="col1">NIC: </label>
-                        <input type="text" id="NIC" name="NIC" class="col2" value="<?php echo $data['ProfileDetails']->nic; ?>">
+                        <input type="text" id="NIC" name="NIC" class="col2" value="   <?php echo $data['nic']; ?>"disabled = "true">
 
                     </div>
                     <div class="parent-row">
                         <div class="row">
-                            <label for="First_name" class="col1">First Name</label>
-                            <input type="text" id="First_name" class="col2" value="<?php echo $data['ProfileDetails']->fname; ?>">
+                            <label for="First_name" class="col1">First Name: </label>
+                            <input type="text" id="First_name" name="first_name" class="col2" value="   <?php echo $data['firstname']; ?>">
+                            <span><?php echo $data['fname_err'] ?></span>
                         </div>
 
-                        <div class="row">
-                            <label for="Last_name" class="col1">Last Name</label>
-                            <input type="text" id="Last_name" class="col2" value="<?php echo $data['ProfileDetails']->lname; ?>">
+                        <div class="row-1">
+                            <label for="Last_name" class="col1">Last Name: </label>
+                            <input type="text" id="Last_name"  name="last_name" class="col2" value="   <?php echo $data['lastname']; ?>">
+                            <span><?php echo $data['lname_err'] ?></span>
                         </div>
                     </div>
 
                     <div class="row">
-                        <span class="col1">Email: </span>
-                        <span class="col2"><?php echo $data['ProfileDetails']->email; ?></span>
+                        <label for="Email" class="col1">Email: </label>
+                        <input type="email" id="Email" class="col2" value="   <?php echo $data['email']; ?>" disabled = "true">
                     </div>
 
                     <div class="row">
-                        <span class="col1">Mobile Number: </span>
-                        <span class="col2"><?php echo $data['ProfileDetails']->mobileNo; ?></span>
+                        <label for="Mobile_number" class="col1">Mobile Number: </label>
+                        <input type="text" id="Mobile_no" name="mobile" class="col2" value="   <?php echo $data['mobile']; ?>">
+                        <span><?php echo $data['mobile_err'] ?></span>
+
                     </div>
 
                     <div class="row">
-                        <span class="col1">Telephone Number: </span>
-                        <span class="col2"><?php echo $data['ProfileDetails']->telNo; ?></span>
+                        <label for="Telephone_number" class="col1">Telephone Number: </label>
+                        <input type="text" id="Telephone_no"  name="tele" class="col2" value="   <?php echo $data['tele']; ?>">
+                        <span><?php echo $data['tele_err'] ?></span>
+
                     </div>
 
-                </div>
+                    <div class="edit-profile-buttons">
+                        <div class="btn">
+                            <button type="submit" class="edit">Edit profile</button></a>
+                        </div>
 
-                <div class="edit-profile-delete-profile-buttons">
-                    <div class="btn">
-                        <button class="delete">Delete Profile</button>
-                        <button class="edit">Edit profile</button></a>
                     </div>
 
-                </div>
-
+                </form>
 
             </div>
         </div>

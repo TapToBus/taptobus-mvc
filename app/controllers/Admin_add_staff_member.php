@@ -20,7 +20,17 @@ class Admin_add_staff_member extends Controller
 
     public function add_staff_member()
     {
-        $this->view('admin/add_new_staff_member');
+
+        $data = [
+            'fname_err' => '',
+            'lname_err' => '',
+            'nic_err' => '',
+            'email_err' => '',
+            'mobile_err' => '',
+            'tele_err' => ''
+        ];
+        $this->view('admin/add_new_staff_member', $data);
+
     }
 
     public function insert_new_staff_member()
@@ -125,44 +135,48 @@ class Admin_add_staff_member extends Controller
             // // else{
             // //     die("Mail failed to send");
             // // }
+            if (empty($data['fname_err']) && empty($data['lname_err']) && empty($data['nic_err']) && empty($data['email_err']) && empty($data['mobile_err']) && empty($data['tele_err'])) {
 
 
 
+                if ($this->addstaffmembersModel->add_staff_member($data)) {
+                    // direct('Admin_view_user_dashboard/view_staff_member');
 
-            if ($this->addstaffmembersModel->add_staff_member($data)) {
-                // direct('Admin_view_user_dashboard/view_staff_member');
+                    if ($this->userModel->addUser($data['staffid'], $data['firstname'], $data['lastname'], $data['email'], $hash, 'staff')) {
 
-                if ($this->userModel->addUser($data['staffid'], $data['firstname'], $data['lastname'], $data['email'], $hash, 'staff')) {
+                        $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, SITENAME);
 
-                    $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, SITENAME);
+                        $Subject = 'Successfully added to TapToBus';
 
-                    $Subject = 'Successfully added to TapToBus';
+                        $email_data = [
+                            'fname' => $fname,
+                            'password' => $password,
+                            'type' => 'staff member'
+                        ];
 
-                    $email_data = [
-                        'fname' => $fname,
-                        'password' => $password,
-                        'type' => 'staff member'
-                    ];
+                        //email body
+                        $Body = temporery_password_email($email_data['fname'], $email_data['password'], $email_data['type']);
 
-                    //email body
-                    $Body = temporery_password_email($email_data['fname'], $email_data['password'], $email_data['type']);
+                        if ($mailer->send($staffmemberemail, $Subject, $Body)) {
 
-                    if ($mailer->send($staffmemberemail, $Subject,$Body)){
-                        
-                        // die("successfully send");
-                        direct('Admin_view_user_dashboard/view_staff_member');
-
+                            // die("successfully send");
+                            direct('Admin_view_user_dashboard/view_staff_member');
+                        } else {
+                            die("Mail failed to send");
+                        }
                     }
-                    else{
-                        die("Mail failed to send");
-                    }
+                    // else{
 
+                    //     $this
+
+                    // }
                 }
-                // else{
+            }
 
-                //     $this
+            else{
 
-                // }
+                $this->view('admin/add_new_staff_member', $data);
+
             }
         }
     }

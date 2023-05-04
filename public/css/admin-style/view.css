@@ -917,10 +917,10 @@ a{
 /* admin profile styles */
 
 .pro-details{
-  background-color: #737373;
+  background-color: #f0f0f0;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
-  margin: 10px 100px 0 100px;
+  margin: 10px 220px 0 220px;
 
   display: flex;
   flex-direction: column;
@@ -943,16 +943,72 @@ a{
     object-fit: cover;
     align-items: center;
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 
+}
+
+.pro-details .right .details .row{
+  margin-bottom: 15px;
 }
 
 .parent-row{
   display: flex;
   flex-direction: row;
+
 }
 
+.parent-row .row-1{
+  margin-left: 100px;
+
+}
+
+.details{
+  margin-left: 50px;
+}
+
+.pro-details .right .details .row input{
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 20px;
+  border: none;
+
+}
+
+.pro-details .right .details .parent-row .row-1 input{
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 20px;
+  border: none;
+}
+
+.pro-details .right .details .edit-profile-buttons{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pro-details .right .details .edit-profile-buttons .btn .edit{
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.pro-details .right .details .edit-profile-buttons .btn button{ 
+  color: rgb(0, 42, 255);
+  border: 1px solid  rgb(0, 42, 255);
+  border-radius: 20px;
+}
+
+.pro-details .right .details .edit-profile-buttons .btn button:hover{
+  background-color: rgba(0, 42, 255, 0.522);
+  color: white;
+  transition: 0.3s;
+}
 
 
 
