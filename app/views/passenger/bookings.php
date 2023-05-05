@@ -32,16 +32,16 @@
             </div>
 
         <?php else : ?>
-            
+
             <?php foreach ($data['bookings'] as $booking) : ?>
 
-                <div class="result" onclick="goNext('<?php echo $booking->id; ?>')">
+                <div class="result" onclick="">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
                     <span class="result2"><?php echo $booking->from; ?></span>
                     <span class="result3"><?php echo $booking->to; ?></span>
                     <span class="result4"><?php echo $booking->date; ?></span>
                     <span class="result5"><?php echo date('h:i A', strtotime($booking->time)); ?></span>
-                    
+
                     <?php
                         // Convert the departureDateTime and currentDateTime strings to DateTime objects.
                         $departureDate = new DateTime($booking->departure_datetime);
