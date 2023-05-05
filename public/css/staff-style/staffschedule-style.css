@@ -125,9 +125,13 @@
     position: relative;
 }
 .required::after{
-    content: "required";
-    color: red;
-    font-size: 12px;
+    content: "*";
+    color: #ff0000;
+    font-size: 16px;
     margin-left: 8px;
     font-weight: 400;
+}
+
+button{
+cursor: pointer;
 }

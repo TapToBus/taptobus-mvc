@@ -34,10 +34,10 @@ document.getElementById("staff").addEventListener("click", function(event) {
 //   The resulting string is then split at the letter 'T',
 //  which separates the date and time portions of the string. 
 // The [0] index is used to retrieve only the date portion of the string in the format 'YYYY-MM-DD'.
-  const todaty = new Date().toISOString().split('T')[0];
+  const today = new Date().toISOString().split('T')[0];
 
 // date_from min value should be today date
-   date_from.setAttribute('min', todaty);
+   date_from.setAttribute('min', today);
 
 // date_to shoud be disable until user select date_from
    date_to.disabled = true;

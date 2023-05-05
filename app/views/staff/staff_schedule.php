@@ -20,28 +20,28 @@
             </div>
             <form action="<?php echo URLROOT?>/Staff_schedule/create_schedule" method="POST">
                 <div class="form_control">
-                    <label for="bus_no">Bus No</label>
-                    <input type="text" name="bus_no" id="bus_no"/>
+                    <label for="bus_no" class="required">Bus No</label>
+                    <input type="text" name="bus_no" id="bus_no" required/>
                 </div>
                 <div class="row">
                     <div class="form_control">
-                        <label for="location_from">Location From</label>
-                        <select name="location_from" id="location_from">
-                            <option value="Galle">Galle</option>
+                        <label for="location_from" >Location From</label>
+                        <select name="location_from" id="location_from"  class="location-select">
                             <option value="Makubura">Makumbura</option>
+                            <option value="Galle">Galle</option>
                         </select>
                     </div>
                     <div class="form_control">
-                        <label for="location_to">Location To</label>
-                        <select name="location_to" id="location_to">
+                        <label for="location_to" >Location To</label>
+                        <select name="location_to" id="location_to"  class="location-select">
                             <option value="Galle">Galle</option>
                             <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                 </div>
                 <div class="form_control">
-                    <label for="day">Day</label>
-                    <select name="day" id="day">
+                    <label for="day" >Day</label>
+                    <select name="day" id="day"  required>
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
                         <option value="Wednesday">Wednesday</option>
@@ -53,17 +53,17 @@
                 </div>
                 <div class="row">
                     <div class="form_control">
-                        <label for="arrival_time">Arrival Time</label>
-                        <input type="time" name="arrival_time" id="arrival_time"/>
+                        <label for="arrival_time"  class="required">Arrival Time</label>
+                        <input type="time" name="arrival_time" id="arrival_time" required/>
                     </div>
                     <div class="form_control">
-                        <label for="departrue_time">Departure Time</label>
-                        <input type="time" name="departrue_time" id="departrue_time"/>
+                        <label for="departrue_time"  class="required">Departure Time</label>
+                        <input type="time" name="departrue_time" id="departrue_time" required/>
                     </div>
                 </div>
                 <div class="form_control">
-                    <label for="ticket_price">Ticket Price</label>
-                    <input type="number" name="ticket_price" id="ticket_price"/>
+                    <label for="ticket_price"  class="required">Ticket Price</label>
+                    <input type="number" name="ticket_price" id="ticket_price" required/>
                 </div>
                 <div class="button_control">
                     <button type="button" onclick="closeAddNewScheduleModal()" >Cancel</button>
@@ -204,97 +204,6 @@
             </table>
         </div>
     </div>
-        <script>
-
-            function openAddNewScheduleModal(){
-                const addNewScheduleModal = document.getElementById('addNewScheduleModal')
-                addNewScheduleModal.showModal()
-            }
-
-            function closeAddNewScheduleModal(){
-                const addNewScheduleModal = document.getElementById('addNewScheduleModal')
-                addNewScheduleModal.close()
-            }
-
-            function openEditScheduleModal(data){  // don't use $ mark when passing data to the JS function.
-                console.log(data);  //  use to print passed data on the console.
-                const editScheduleModal = document.getElementById('editScheduleModal')
-                document.getElementById('u-bus_no').value = data.bus_no
-                document.getElementById('u-location_from').value = data.from
-                document.getElementById('u-location_to').value = data.to
-                document.getElementById('u-day').value = data.day
-                document.getElementById('u-arrival_time').value = data.arrival_time
-                document.getElementById('u-departrue_time').value = data.departure_time
-                document.getElementById('u-ticket_price').value = data.ticket_price
-                document.getElementById('editBtn').value = data.id
-                editScheduleModal.showModal()
-            }
-
-            function closeEditScheduleModal(){
-                const editScheduleModal = document.getElementById('editScheduleModal')
-                editScheduleModal.close()
-            }
-
-            function openDeleteConfirmationModal(id, bus_no) {
-                const deleteConfirmModal = document.getElementById('deleteConfirmModal')
-                document.getElementById('d-bus_no').value = bus_no
-                document.getElementById('deleteBtn').value = id
-                deleteConfirmModal.showModal()
-            }
-
-            function closeDeleteConfirmationModal(){
-                const deleteConfirmModal = document.getElementById('deleteConfirmModal')
-                deleteConfirmModal.close()
-            }
-
-            // ------------------ Add schedule form validation -----------------------
-
-            function validateAddScheduleForm(){
-                // Get the form fields
-                 var bus_no = document.forms['addNewScheduleModal']['bus_no'].value;
-                 var location_from = document.forms['addNewScheduleModal']['location_from'].value;
-                 var location_to = document.forms['addNewScheduleModal']['location_to'].value;
-                 var day = document.forms["addNewScheduleForm"]["day"].value;
-                 var arrival_time = document.forms["addNewScheduleForm"]["arrival_time"].value;
-                 var departure_time = document.forms["addNewScheduleForm"]["departure_time"].value;
-                 var ticket_price = document.forms["addNewScheduleForm"]["ticket_price"].value;
-
-                 // Validate the form fields
-                    if (bus_no == "") {
-                        alert("Please enter a bus number");
-                        return false;
-                    }
-                    if (location_from == "") {
-                        alert("Please select a location from");
-                        return false;
-                    }
-                    if (location_to == "") {
-                        alert("Please select a location to");
-                        return false;
-                    }
-                    if (day == "") {
-                        alert("Please select a day");
-                        return false;
-                    }
-                    if (arrival_time == "") {
-                        alert("Please enter an arrival time");
-                        return false;
-                    }
-                    if (departure_time == "") {
-                        alert("Please enter a departure time");
-                        return false;
-                    }
-                    if (ticket_price == "") {
-                        alert("Please enter a ticket price");
-                        return false;
-                    }
-
-                    // If all fields are valid, return true to submit the form
-                    return true;
-
-            }
-
-
-        </script>
+    <script  src="<?php echo URLROOT;?>/js/staff/scheduleValidation.js" ></script>
 </body>
 </html>
