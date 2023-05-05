@@ -58,7 +58,7 @@ class M_owner_conductors{
     public function avail_conductors(){
         // prepare query
         
-        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic AND status="leave" ');
+        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic AND status="leave" OR status="active" AND bus_no = NULL');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
         $results = $this->db->resultSet();
