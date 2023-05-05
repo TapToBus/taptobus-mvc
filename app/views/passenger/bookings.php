@@ -32,30 +32,8 @@
             </div>
 
         <?php else : ?>
-
-            <!-- <?php foreach ($data as $booking) : ?>
-                <div class="result" onclick="goNext('<?php echo $booking->booking_id; ?>')">
-                    <span class="result1"><?php echo $booking->bus_no; ?></span>
-                    <span class="result2"><?php echo $booking->from; ?></span>
-                    <span class="result3"><?php echo $booking->to; ?></span>
-                    <span class="result4"><?php echo $booking->departure_date; ?></span>
-                    <span class="result5"><?php echo $booking->departure_time; ?></span>
-
-                    <?php if ($booking->remaining_days > 0 && $booking->remaining_hours >= 0) : ?>
-                        <span class="result6 low-priority"><?php echo 'More than ' . $booking->remaining_days . ' days'; ?></span>
-                    <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours > 1) : ?>
-                        <span class="result6 middle-priority"><?php echo 'More than ' . $booking->remaining_hours . ' hours'; ?></span>
-                    <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 1) : ?>
-                        <span class="result6 middle-priority"><?php echo 'More than ' . $booking->remaining_hours . ' hour'; ?></span>
-                    <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 0) : ?>
-                        <span class="result6 high-priority"><?php echo 'Less than 1 hour'; ?></span>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?> -->
-
-            <?php
-
-            foreach ($data['bookings'] as $booking) : ?>
+            
+            <?php foreach ($data['bookings'] as $booking) : ?>
 
                 <div class="result" onclick="goNext('<?php echo $booking->id; ?>')">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
