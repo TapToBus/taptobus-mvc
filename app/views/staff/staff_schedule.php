@@ -13,7 +13,7 @@
 <body>
 
 <!-- Add new schedule Model -->
-<dialog id="addNewScheduleModal" class="modal">
+<dialog id="addNewScheduleModal" class="modal" onsubmit="return validateAddScheduleForm()">
         <div class="modal__container">
             <div class="caption">
                 <h1>Add New Schedule</h1>
@@ -28,14 +28,14 @@
                         <label for="location_from">Location From</label>
                         <select name="location_from" id="location_from">
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                     <div class="form_control">
                         <label for="location_to">Location To</label>
                         <select name="location_to" id="location_to">
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                 </div>
@@ -102,14 +102,14 @@
                         <label for="bus_no">Location From</label>
                         <select name="location_from" id="u-location_from">
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                     <div class="form_control">
                         <label for="bus_no">Location To</label>
                         <select name="location_to" id="u-location_to">
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                 </div>
@@ -246,6 +246,54 @@
                 const deleteConfirmModal = document.getElementById('deleteConfirmModal')
                 deleteConfirmModal.close()
             }
+
+            // ------------------ Add schedule form validation -----------------------
+
+            function validateAddScheduleForm(){
+                // Get the form fields
+                 var bus_no = document.forms['addNewScheduleModal']['bus_no'].value;
+                 var location_from = document.forms['addNewScheduleModal']['location_from'].value;
+                 var location_to = document.forms['addNewScheduleModal']['location_to'].value;
+                 var day = document.forms["addNewScheduleForm"]["day"].value;
+                 var arrival_time = document.forms["addNewScheduleForm"]["arrival_time"].value;
+                 var departure_time = document.forms["addNewScheduleForm"]["departure_time"].value;
+                 var ticket_price = document.forms["addNewScheduleForm"]["ticket_price"].value;
+
+                 // Validate the form fields
+                    if (bus_no == "") {
+                        alert("Please enter a bus number");
+                        return false;
+                    }
+                    if (location_from == "") {
+                        alert("Please select a location from");
+                        return false;
+                    }
+                    if (location_to == "") {
+                        alert("Please select a location to");
+                        return false;
+                    }
+                    if (day == "") {
+                        alert("Please select a day");
+                        return false;
+                    }
+                    if (arrival_time == "") {
+                        alert("Please enter an arrival time");
+                        return false;
+                    }
+                    if (departure_time == "") {
+                        alert("Please enter a departure time");
+                        return false;
+                    }
+                    if (ticket_price == "") {
+                        alert("Please enter a ticket price");
+                        return false;
+                    }
+
+                    // If all fields are valid, return true to submit the form
+                    return true;
+
+            }
+
 
         </script>
 </body>
