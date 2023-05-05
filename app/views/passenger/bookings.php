@@ -33,7 +33,7 @@
 
         <?php else : ?>
 
-            <?php foreach ($data as $booking) : ?>
+            <!-- <?php foreach ($data as $booking) : ?>
                 <div class="result" onclick="goNext('<?php echo $booking->booking_id; ?>')">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
                     <span class="result2"><?php echo $booking->from; ?></span>
@@ -50,9 +50,46 @@
                     <?php elseif ($booking->remaining_days == 0 && $booking->remaining_hours == 0) : ?>
                         <span class="result6 high-priority"><?php echo 'Less than 1 hour'; ?></span>
                     <?php endif; ?>
-
-                    <!-- <span class="result6"><?php echo $booking->remaining_days . ' d : ' . $booking->remaining_hours . ' h'; ?></span> -->
                 </div>
+            <?php endforeach; ?> -->
+
+            <?php
+
+            foreach ($data['bookings'] as $booking) : ?>
+
+                <div class="result" onclick="goNext('<?php echo $booking->id; ?>')">
+                    <span class="result1"><?php echo $booking->bus_no; ?></span>
+                    <span class="result2"><?php echo $booking->from; ?></span>
+                    <span class="result3"><?php echo $booking->to; ?></span>
+                    <span class="result4"><?php echo $booking->date; ?></span>
+                    <span class="result5"><?php echo date('h:i A', strtotime($booking->time)); ?></span>
+                    
+                    <?php
+                        // Convert the departureDateTime and currentDateTime strings to DateTime objects.
+                        $departureDate = new DateTime($booking->departure_datetime);
+                        $currentDate = new DateTime(date('Y-m-d H:i:s'));   // create an object ysing current date and time
+
+                        // Calculate the difference between the departureDate and the currentDate DateTime objects.
+                        $diff = $departureDate->diff($currentDate);
+
+                        $days = $diff->days;   // for get days
+                        $hours = $diff->h;     // for get hours
+                        $minutes = $diff->i;   // for get minutes
+                    ?>
+
+                    <?php if ($days > 1) : ?>
+                        <span class="result6 low-priority"><?php echo 'More than ' . $days . ' days'; ?></span>
+                    <?php elseif ($days == 1) : ?>
+                        <span class="result6 low-priority"><?php echo 'More than 1 day'; ?></span>
+                    <?php elseif ($hours > 1) : ?>
+                        <span class="result6 middle-priority"><?php echo 'More than ' . $hours . ' hours'; ?></span>
+                    <?php elseif ($hours == 1) : ?>
+                        <span class="result6 high-priority"><?php echo 'More than 1 hour'; ?></span>
+                    <?php else : ?>
+                        <span class="result6 high-priority"><?php echo 'Less than 1 hour'; ?></span>
+                    <?php endif; ?>
+                </div>
+
             <?php endforeach; ?>
 
         <?php endif; ?>
@@ -61,10 +98,10 @@
     <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script> -->
 
     <script>
-        function goNext(booking_id) {
+        /*function goNext(booking_id) {
             const url = "http://localhost/taptobus/passenger_bookings/booking_details?bok_id=" + booking_id;
             window.location.href = url;
-        }
+        }*/
     </script>
 </body>
 

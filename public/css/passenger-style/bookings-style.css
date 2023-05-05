@@ -73,38 +73,38 @@
 }
 
 .result .low-priority{
-    /* color: blue;
-    font-weight: 450; */
-    background-color: blue;
+    color: blue;
+    font-weight: 500;
+    /* background-color: blue;
     color: white;
     font-weight: 500;
     border-radius: 15px;
 
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 
 .result .middle-priority{
-    /* color: green;
-    font-weight: 500; */
-    background-color: green;
+    color: green;
+    font-weight: 500;
+    /* background-color: green;
     color: white;
     font-weight: 500;
     border-radius: 15px;
 
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 
 .result .high-priority{
-    /* color: red;
-    font-weight: 550; */
-    background-color: red;
+    color: red;
+    font-weight: 500;
+    /* background-color: red;
     color: white;
     font-weight: 500;
     border-radius: 15px;
 
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 

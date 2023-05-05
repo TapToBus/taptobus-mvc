@@ -18,9 +18,6 @@ class Passenger_history extends Controller{
             'fullHistory' => '',
         ];
 
-        // $data1 = ['details' => $this->historyModel->getFullHistory(6)];
-        // echo $data1['details']->from;
-
         $this->view('passenger/history', $data);
     }
 }
