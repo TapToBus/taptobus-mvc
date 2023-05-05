@@ -43,16 +43,16 @@
                     <span class="result5"><?php echo date('h:i A', strtotime($booking->time)); ?></span>
 
                     <?php
-                        // Convert the departureDateTime and currentDateTime strings to DateTime objects.
-                        $departureDate = new DateTime($booking->departure_datetime);
-                        $currentDate = new DateTime(date('Y-m-d H:i:s'));   // create an object ysing current date and time
+                    // Convert the departureDateTime and currentDateTime strings to DateTime objects.
+                    $departureDate = new DateTime($booking->departure_datetime);
+                    $currentDate = new DateTime(date('Y-m-d H:i:s'));   // create an object ysing current date and time
 
-                        // Calculate the difference between the departureDate and the currentDate DateTime objects.
-                        $diff = $departureDate->diff($currentDate);
+                    // Calculate the difference between the departureDate and the currentDate DateTime objects.
+                    $diff = $departureDate->diff($currentDate);
 
-                        $days = $diff->days;   // for get days
-                        $hours = $diff->h;     // for get hours
-                        $minutes = $diff->i;   // for get minutes
+                    $days = $diff->days;   // for get days
+                    $hours = $diff->h;     // for get hours
+                    $minutes = $diff->i;   // for get minutes
                     ?>
 
                     <?php if ($days > 1) : ?>
