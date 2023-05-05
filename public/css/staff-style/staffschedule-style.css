@@ -120,3 +120,14 @@
     background-color: var(--clr-bg, #1d5af1);
     color: var(--clr-text, #fff);
 }
+
+.required{
+    position: relative;
+}
+.required::after{
+    content: "required";
+    color: red;
+    font-size: 12px;
+    margin-left: 8px;
+    font-weight: 400;
+}

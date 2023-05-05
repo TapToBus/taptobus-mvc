@@ -139,7 +139,7 @@
     box-shadow: 0 0 20px rgb(0, 0, 0,0.15);
 }
 
-.text-fields > form > input {
+.text-fields > form input {
     margin: 0.5rem 0;
     padding: 10px 15px;
     border: none;
@@ -152,7 +152,7 @@
     color: #fff;
 }
 
-.text-fields>form>textarea {
+.text-fields>form textarea {
     min-height: 100px;
     margin: 0.5rem 0;
     padding: 10px 15px;
@@ -210,8 +210,18 @@
     color: #fff;
 }
 
-/* @media screen and (max-width: 877px) {
-    .calander-container{
-        display: none;
-    }
-} */
+.required{
+    position: relative;
+}
+.required::after{
+    content: "required";
+    color: red;
+    font-size: 12px;
+    margin-left: 8px;
+    font-weight: 400;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}

@@ -29,11 +29,10 @@
 
                     <?php
                     // controlller eken pass krana $data kiyna associative array eka athule thamyi result obj eka tyenne. ekanisaa result access karann nm me vidiyta gann one. 
-                    // var_dump($results);
-                    // -------------
-                    
                     if(isset($data['alert'])){
                         $alert = $data['alert'];
+                        echo($alert);
+                        die();
                         ?>
                         <div>
                             <h1><?php echo $alert['message']?></h1>
@@ -41,25 +40,25 @@
                         <?php
 
 
-                        //if($alert['type'] == 'success'){
+                        if($alert['type'] == 'success'){
                             ?>
-                            <!-- <div>
+                             <div>
                                 <h1>Successfully</h1>
-                            </div> -->
+                            </div> 
                             <?php
-                        //}
+                        }
 
-                        //if($alert['type'] == 'error'){
+                        if($alert['type'] == 'error'){
                             ?>
-                            <!-- <div>
+                            <div>
                                 <h1>Error</h1>
-                            </div> -->
+                            </div> 
                             <?php
-                        //}
+                        }
                     }
                     ?>
-                        <!-- for checked the loged user -->
-                        <!-- <h3>User -- > <?php //echo $_SESSION['user_id'] ;?></h3> --> 
+                         <!-- for checked the loged user 
+                         <h3>User -- > <?php echo $_SESSION['user_id'] ;?></h3>  -->
                     <?php
 
                     
@@ -134,12 +133,12 @@
                             <div class="date">
                                 <label class="valid_period">Valid - </label><br>
                                 <div class="fromD">
-                                    <label for="">From : </label>
-                                    <input type="date" class="date_from" id="date_from" name="date_from">
+                                    <label for="date_from" class ="required">From : </label>
+                                    <input type="date" class="date_from" id="date_from" name="date_from" required>
                                 </div>
                                 <div class="toD">
-                                    <label for="">To : </label>
-                                    <input type="date" class="date_to" id="date_to" name="date_to">    
+                                    <label for="date_to" class ="required">To : </label>
+                                    <input type="date" class="date_to" id="date_to" name="date_to"required>    
                                 </div>
                             </div>
                             <div class="available_users">
@@ -179,9 +178,17 @@
                                     </div>
                                </div>
                             </div>
+                            <div class="form-control">
+                                <label for="title" class ="required"> </label>
+                                <input type="text" placeholder="Title" name="title" id = "title"  required>
+                            </div>
 
-                            <input type="text" placeholder="Title" name="title">
-                            <textarea name="description" placeholder="Notice description..."></textarea>
+                            <div class="form-control">
+                                <label for="description" class ="required">  </label>
+                                <textarea name="description" placeholder="Notice description..." id="description"  required></textarea>
+                            </div>
+                            
+
                             <button type="submit" name="save" id="addNotice">Add</button>
                         </form>
                     </div>
