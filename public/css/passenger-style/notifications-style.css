@@ -25,14 +25,13 @@
 }
 
 .content{
-    margin-left: 150px;
-    margin-right: 150px;
+    /* margin-left: 150px;
+    margin-right: 150px; */
 
-    /* width: 55%;
+    width: 55%;
     position: absolute;
-    top: 50%;
-    left: 58%;
-    transform: translate(-50%, -50%); */
+    left: 57%;
+    transform: translate(-50%, 0);
 }
 
 .content .result{
@@ -46,7 +45,7 @@
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
     border-left: 5px solid blue;
 
