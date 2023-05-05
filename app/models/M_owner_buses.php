@@ -40,7 +40,7 @@ class M_owner_buses{
 
     public function view_buses(){
         // prepare query
-        $this->db->query('SELECT * from bus WHERE owner_nic= :nic');
+        $this->db->query('SELECT * from bus WHERE owner_nic= :nic AND status="active" ');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
         $results = $this->db->resultSet();

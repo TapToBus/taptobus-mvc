@@ -36,7 +36,7 @@ class M_owner_conductors{
     public function view_conductors(){
         // prepare query
         
-        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic');
+        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic AND status = "active"');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
         $results = $this->db->resultSet();
