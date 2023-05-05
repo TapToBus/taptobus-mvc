@@ -13,6 +13,7 @@ class M_passenger_book_seats{
         // find day using date
         $day = date('l', strtotime($date));
 
+        // if there is no entry in the booked_seats create a new one
         $this->db->query('SELECT s.id, s.bus_no, b.capacity 
                             FROM schedule s INNER JOIN bus b ON s.bus_no=b.bus_no 
                             WHERE s.day=:day
@@ -53,6 +54,7 @@ class M_passenger_book_seats{
             }
         }
 
+        // search for available bus
         $this->db->query('SELECT sch.id as sch_id, sch.departure_time, sch.ticket_price,
                     b.bus_no, b.capacity, b.ratings, b.responses,
                     boks.id as boks_id, boks.available_seats_count
