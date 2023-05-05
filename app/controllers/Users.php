@@ -171,7 +171,7 @@ class Users extends Controller{
                 $data['email_err'] = 'Email is required';
             }else{
                 if(! $this->userModel->findUserByEmail($data['email'])){
-                    $data['email_err'] = 'User soesn\'t exist';
+                    $data['email_err'] = 'User doesn\'t exist';
                 }
             }
 
@@ -281,8 +281,13 @@ class Users extends Controller{
                 if(empty($data['new_pwd_err']) && empty($data['confirm_pwd_err'])){
                     $hash_pwd = password_hash($data['new_pwd'], PASSWORD_DEFAULT);
 
-                    // -------------
-                    echo $_SESSION['temp_id'] . '  ' . $_SESSION['temp_type'] . '  ' . $hash_pwd;
+                    $this->userModel->updateUserPassword($_SESSION['temp_id'], $hash_pwd);
+                    $this->userModel->updateRelevantUserTable($_SESSION['temp_id'], $hash_pwd, $_SESSION['temp_type']);
+
+                    unset($_SESSION['temp_id']);
+                    unset($_SESSION['temp_type']);
+
+                    direct('users/login');
                 }else{
                     $this->view('users/reset_password', $data);
                 }

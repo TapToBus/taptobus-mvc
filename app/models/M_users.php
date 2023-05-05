@@ -98,4 +98,62 @@ class M_users{
 
         return $this->db->single();
     }
+
+
+    public function updateUserPassword($id, $pwd){
+        $this->db->query('UPDATE user SET password_hash=:pwd WHERE id=:id;');
+        $this->db->bind(':pwd', $pwd);
+        $this->db->bind(':id', $id);
+
+        return $this->db->execute();
+    }
+
+
+    public function updateRelevantUserTable($id, $pwd, $type){
+        switch($type){
+            case 'passenger': {
+                $this->db->query('UPDATE passenger SET password_hash=:pwd WHERE nic=:id;');
+                $this->db->bind(':pwd', $pwd);
+                $this->db->bind(':id', $id);
+                break;
+            }
+
+            case 'staff': {
+                $this->db->query('UPDATE staffmember SET password_hash=:pwd WHERE staff_no=:id;');
+                $this->db->bind(':pwd', $pwd);
+                $this->db->bind(':id', $id);
+                break;
+            }
+
+            case 'driver': {
+                $this->db->query('UPDATE driver SET password=:pwd WHERE ntcNo=:id;');
+                $this->db->bind(':pwd', $pwd);
+                $this->db->bind(':id', $id);
+                break;
+            }
+
+            case 'conductor': {
+                $this->db->query('UPDATE conductor SET password=:pwd WHERE ntcNo=:id;');
+                $this->db->bind(':pwd', $pwd);
+                $this->db->bind(':id', $id);
+                break;
+            }
+
+            case 'owner': {
+                $this->db->query('UPDATE owner SET password=:pwd WHERE nic=:id;');
+                $this->db->bind(':pwd', $pwd);
+                $this->db->bind(':id', $id);
+                break;
+            }
+
+            case 'admin': {
+                $this->db->query('UPDATE admin SET password=:pwd WHERE admin_id=:id;');
+                $this->db->bind(':pwd', $pwd);
+                $this->db->bind(':id', $id);
+                break;
+            }
+        }
+
+        return $this->db->execute();
+    }
 }
