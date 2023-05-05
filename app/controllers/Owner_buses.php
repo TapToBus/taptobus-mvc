@@ -49,15 +49,16 @@ class Owner_buses extends Controller{
                 echo($msg);
                 if(!empty($msg))
                 {
+                    echo "Error uploading file: " . $msg;
                     $image = "";
                 }
                 else{
                     $target_file = basename($_FILES["bus_image"]["name"]);
                     $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                    $image = "img/"."bus".'/'.$fileName.'.'.$extension;
+                    $image = "img/"."bus".'/'.$extension;
                     echo($image);
                     
-                }
+                } 
             }
 
             $data = [
@@ -87,7 +88,7 @@ class Owner_buses extends Controller{
             
 
             //validate root no
-            if(! preg_match('/^[E]-[1-6]$/', $data['root_no'])){ 
+            if(! preg_match('/^[E]-[1]$/', $data['root_no'])){ 
                 $data['root_no_err'] = 'A valid root number is required';
             }
    
