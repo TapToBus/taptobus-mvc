@@ -71,27 +71,25 @@
 }
 
 .result .used{
-    /* color: green;
-    font-weight: 500; */
-    
-    /* background-color: green; */
-    background-color: green;
+    color: green;
+    font-weight: 500;
+    /* background-color: green;
     color: white;
     font-weight: 500;
     border-radius: 15px;
 
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 
 .result .cancelled{
-    /* color: red;
-    font-weight: 550; */
-    background-color: rgb(255, 0, 0);
+    color: red;
+    font-weight: 500;
+    /* background-color: rgb(255, 0, 0);
     color: white;
     font-weight: 500;
     border-radius: 15px;
 
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }

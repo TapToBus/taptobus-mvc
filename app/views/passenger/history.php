@@ -44,7 +44,6 @@
                     <span class="result3"><?php echo date('Y-m-d', strtotime($history->started_datetime)); ?></span>
                     <span class="result4"><?php echo date('h:i a', strtotime($history->started_datetime)); ?></span>
                     <span class="result5"><?php echo $history->bus_no; ?></span>
-                    <!-- <span class="result6"><?php echo $history->status; ?></span> -->
                     <?php if($history->status == 'Used'): ?>
                         <span class="result6 used"><?php echo $history->status; ?>
                     <?php else: ?>
