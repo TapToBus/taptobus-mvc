@@ -42,32 +42,14 @@ class Owner_buses extends Controller{
                 $tv = 0;
             }
 
-            if(!empty($_FILES["bus_image"]) && is_uploaded_file($_FILES['bus_image']['tmp_name']))
-            {
-                $fileName = "user";
-                $msg = upload_file("profilePicture","bus",$fileName,['png','jpeg','jpg'],50000000,TRUE,TRUE);
-                echo($msg);
-                if(!empty($msg))
-                {
-                    echo "Error uploading file: " . $msg;
-                    $image = "";
-                }
-                else{
-                    $target_file = basename($_FILES["bus_image"]["name"]);
-                    $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                    $image = "img/"."bus".'/'.$extension;
-                    echo($image);
-                    
-                } 
-            }
 
             $data = [
                 'bus_no' => $_POST['bus_no'],
                 'root_no' => $_POST['root_no'],
                 // 'owner_name' => $_POST['owner_name'],
                 'capacity'  => $_POST['capacity'],
-                'bus_image'  => $image,
-                'permit_image'  => $_POST['permit_image'],
+                'bus_image'  => $_POST['bus_image'],
+                // 'permit_image'  => $_POST['permit_image'],
                 'wifi'  => $wifi,
                 'usb'  => $usb,
                 'tv'  => $tv,
@@ -126,7 +108,6 @@ class Owner_buses extends Controller{
                 'nic' => '',
                 'capacity'  => '',
                 'bus_image'  => '',
-                'permit_image'  =>'',
                 'wifi'  => '',
                 'usb'  => '',
                 'tv'  => '',
