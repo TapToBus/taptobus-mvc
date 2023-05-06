@@ -1,6 +1,6 @@
 <?php
 
-function temporery_password_email($fname, $password,$type){
+function staff_temporery_password_email($fname, $password,$type){
     $body = '<p style = "font-weigth:500;">Hi <b> ' . $fname.'</b> <br>'.
 
             'Welcome to <B><a href="#">TapToBus!</a></B><br><br>

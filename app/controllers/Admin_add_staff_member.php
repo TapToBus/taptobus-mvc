@@ -155,7 +155,7 @@ class Admin_add_staff_member extends Controller
                         ];
 
                         //email body
-                        $Body = temporery_password_email($email_data['fname'], $email_data['password'], $email_data['type']);
+                        $Body = staff_temporery_password_email($email_data['fname'], $email_data['password'], $email_data['type']);
 
                         if ($mailer->send($staffmemberemail, $Subject, $Body)) {
 
