@@ -42,14 +42,12 @@
                     <th>First name</th>
                     <th>Last name</th>
                     <th>DOB</th>
-                    <th>Address</th>
                     <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
                     <th>Rating</th>
-                    <th>Total Ratings</th>
-                    <th>Response</th>
                     <th>Owner NIC</th>
+                    <th>Bus number</th>
                     <th class="delete-button"></th>
                 </tr>
 
@@ -60,14 +58,12 @@
                         <td><?php echo $conductors->fname; ?></td>
                         <td><?php echo $conductors->lname; ?></td>
                         <td><?php echo $conductors->dob; ?></td>
-                        <td><?php echo $conductors->address; ?></td>
                         <td><?php echo $conductors->email; ?></td>
                         <td><?php echo $conductors->mobileNo; ?></td>
                         <td><?php echo $conductors->telNo; ?></td>
                         <td><?php echo $conductors->ratings; ?></td>
-                        <td><?php echo $conductors->total_ratings; ?></td>
-                        <td><?php echo $conductors->responses; ?></td>
                         <td><?php echo $conductors->owner_nic; ?></td>
+                        <td><?php echo $conductors->bus_no; ?></td>
                         <td>
                             <div class="delete-button">
                                 <button class="delete-btn" type="button" onclick="openModal('<?php echo $conductors->ntcNo ?>')">Delete</button>
