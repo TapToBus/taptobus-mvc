@@ -22,7 +22,7 @@
 
 .container .new{
 
-    min-width: 1200px;
+    min-width: 600px;
     /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
@@ -83,7 +83,7 @@ header{
     /* margin: 20px; */
     display: flex;
     justify-content: space-between;
-    width: 45%;
+    width: 100%;
     border-radius: 10px;
 }
 .container .new h2{

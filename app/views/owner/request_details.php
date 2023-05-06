@@ -49,7 +49,7 @@
 
                     <div class="row">
 
-                           <form id="myform" action="<?php echo URLROOT; ?>/owner_leaverequests/update_assigned_bus" method="POST">
+                           <form id="myform" action="<?php echo URLROOT; ?>/owner_leaverequests/remove_leaverequest" method="POST">
                              
                                <input type="hidden" name="request_id" value="<?php echo $row->request_id;?>">
                                <input type="hidden" name="user_ntc" value="<?php echo $row->user_ntc;?>">

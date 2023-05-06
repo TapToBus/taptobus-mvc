@@ -11,7 +11,7 @@ class M_owner_drivers{
     public function view_drivers(){
         // prepare query
         
-        $this->db->query('SELECT * from driver WHERE owner_nic= :nic');
+        $this->db->query('SELECT * from driver WHERE owner_nic= :nic AND status="active"');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
         $results = $this->db->resultSet();

@@ -36,7 +36,7 @@ class M_owner_conductors{
     public function view_conductors(){
         // prepare query
         
-        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic');
+        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic AND status = "active"');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
         $results = $this->db->resultSet();
@@ -58,7 +58,7 @@ class M_owner_conductors{
     public function avail_conductors(){
         // prepare query
         
-        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic AND bus_no IS NULL ');
+        $this->db->query('SELECT * from conductor WHERE owner_nic= :nic AND (status="leave" OR status="active") AND bus_no IS NULL');
         $id = $_SESSION['user_id'];
         $this->db->bind(':nic',$id);
         $results = $this->db->resultSet();
@@ -89,7 +89,7 @@ class M_owner_conductors{
     public function reomve_assigned_conductor($old_con){
         // prepare query
         
-        $this->db->query('UPDATE conductor SET bus_no = NULL WHERE ntcNo= :con_id');
+        $this->db->query('UPDATE conductor SET bus_no = NULL,status="leave" WHERE ntcNo= :con_id');
         $this->db->bind(':con_id',$old_con);   
         $this->db->execute(); 
 

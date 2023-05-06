@@ -30,12 +30,12 @@
                 <i class="fa-solid fa-star "></i>
                 <a>)</a>
             </div>
-        </div>
+        </div> 
 
         <div class="full">
 
             <div class="images">
-                <img src="<?php echo URLROOT ?>/img/owner_img/bus_image.jpg" alt="" />
+                <img src="<?php echo URLROOT ?>/img/bus/<?php echo $data->bus_image; ?>" alt="" />
             </div>
 
             <!-- <h2>Bus Details</h2> -->

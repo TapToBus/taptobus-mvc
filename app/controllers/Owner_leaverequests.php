@@ -33,41 +33,41 @@ class Owner_leaverequests extends Controller{
         $this->view('owner/request_details',$data);
     }
 
-    public function update_assigned_bus(){
+    // public function update_assigned_bus(){
         
-        $user_ntc = $_POST['user_ntc'];
-        $type     = $_POST['type'];
-        $owner_nic     = $_POST['owner_nic'];
-        $heading    = $_POST['heading'];
-        $description     = $_POST['description'];
+    //     $user_ntc = $_POST['user_ntc'];
+    //     $type     = $_POST['type'];
+    //     $owner_nic     = $_POST['owner_nic'];
+    //     $heading    = $_POST['heading'];
+    //     $description     = $_POST['description'];
 
-        $data = $this->ownerModel->update_assigned_bus($user_ntc,$type);
-        $bus_no = $data->bus_no;
-        $this->create_assign_con_notification($user_ntc,$bus_no,$owner_nic,$heading,$description);
+    //     $data = $this->ownerModel->update_assigned_bus($user_ntc,$type);
+    //     $bus_no = $data->bus_no;
+    //     // $this->create_assign_con_notification($user_ntc,$bus_no,$owner_nic,$heading,$description);
         
-    }
+    // }
 
-    public function create_assign_con_notification($user_ntc,$bus_no,$owner_nic,$heading,$description){
+    // public function create_assign_con_notification($user_ntc,$bus_no,$owner_nic,$heading,$description){
          
-        $this->ownerModel2->create_assign_con_notification($owner_nic,$heading,$description);
-        $this->remove_leaverequest($user_ntc,$bus_no);
-    }
+    //     $this->ownerModel2->create_assign_con_notification($owner_nic,$heading,$description);
+    //     $this->remove_leaverequest($user_ntc,$bus_no);
+    // }
 
-    public function remove_leaverequest($user_ntc,$bus_no){
+    public function remove_leaverequest(){
        
+        $request_id = $_POST['request_id'];
         $this->ownerModel->remove_leaverequest($request_id);
-        $data = $this->ownerModel1->bus_details($bus_no);
-        $this->view('owner/bus_details',$data); 
+        $data = $this->ownerModel->view_leaverequests();
+        $this->view('owner/view_leaverequests',$data);
     }
 
-    public function reject_leaverequest($request_id,$bus_no){
+    public function reject_leaverequest(){
        
+        $request_id = $_GET['request_id'];
         $this->ownerModel->reject_leaverequest($request_id);
-        $data = $this->ownerModel1->bus_details($bus_no);
-        $data1 = $this->ownerModel3->avail_conductors();
-        $data2 = $this->ownerModel3->find_conductor_name($bus_no);
-        $this->view('owner/bus_details',$data,$data1,$data2); 
-    }
+        $data = $this->ownerModel->view_leaverequests();
+        $this->view('owner/view_leaverequests',$data);
+    }      
 
     // public function reject_leaverequest($request_id,$bus_no){
        

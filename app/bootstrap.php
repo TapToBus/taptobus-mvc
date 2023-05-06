@@ -15,6 +15,8 @@ spl_autoload_register(
 // load helpers
 require_once 'helpers/url_helper.php';
 require_once 'helpers/session_helper.php';
+require_once 'helpers/fileuploadhelper.php';
+
 require_once 'libraries/fpdf/fpdf.php';
 require_once 'helpers/mail_helper.php';
 require_once 'helpers/contact_us_sub_tmplt.php';
