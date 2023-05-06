@@ -30,8 +30,8 @@
 
     width: 55%;
     position: absolute;
-    left: 57%;
-    transform: translate(-50%, 0);
+    left: 57.5%;
+    transform: translateX(-50%);
 }
 
 .content .result{
