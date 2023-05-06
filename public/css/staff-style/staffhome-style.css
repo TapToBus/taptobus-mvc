@@ -152,7 +152,7 @@
     color: #fff;
 }
 
-.text-fields>form textarea {
+.text-fields >  form textarea {
     min-height: 100px;
     margin: 0.5rem 0;
     padding: 10px 15px;
@@ -193,7 +193,7 @@
     justify-content: center;
 }
 
-.edit-delete-btns> a > button {
+.edit-delete-btns > button {
     padding: 10px 15px;
     border-radius: 10px;
     border: none;
@@ -214,14 +214,93 @@
     position: relative;
 }
 .required::after{
-    content: "required";
-    color: red;
+    content: "Required";
+    color: rgba(255, 0, 0, 0.421);
     font-size: 12px;
     margin-left: 8px;
-    font-weight: 400;
+    font-weight: 300;
+    
 }
 .form-control{
     display: flex;
     flex-direction: column;
     gap:5px;
 }
+.form-control > input{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-color: #0000005e;
+}
+.form-control > textarea{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-color: #0000005e;
+}
+
+/* popup style */
+.dlt_popup{
+    width: 350px;
+    background: rgb(51, 51, 124);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    text-align: center;
+    padding:30px 30px;
+    color: #fff;
+    transition: transform 0.4s, top 0.4s;
+}
+
+
+.alert__container a button {
+    width: 70px;
+    margin-top: 50px;
+    padding: 6px 0;
+    background: #000;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dlt_popup{
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    border-radius: 5px;
+}
+.dlt_popup::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* background blur */
+    backdrop-filter: blur(1px);
+}
+.alert__container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.alert__container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;   
+}
+
+.alert__container i {
+    font-size: 3rem;
+    color: rgb(22, 232, 92);
+}
+
+

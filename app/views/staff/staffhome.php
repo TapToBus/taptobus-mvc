@@ -70,15 +70,15 @@
                     <div class="grid">
                         <div class="text-fields">
                             <div class="notice-author-timestamp">
-                                <div class="notice-author"> Staff : 
+                                <div class="notice-author"> <i>Staff :</i> 
                                     <p class="author-text"><?php echo $result->first_name?></p>
                                     <p class="author-text"><?php echo $result->last_name?></p>
                                 </div>
                                 <p class="time"><?php echo $result->time_stamp?></p>
                             </div>
                             <form action="<?php echo URLROOT?>/Staff_home/editnotice" method="POST">
-                                <input type="text" name="edit-title" id="title-<?php echo $result->notice_id ?>" value="<?php echo $result->title; ?>" disabled>
-                                <textarea name="edit-description" id="text-area-<?php echo $result->notice_id ?>" cols="30" rows="5" disabled><?php echo $result->description; ?></textarea>
+                                <input class="ttl" type="text" name="edit-title" id="title-<?php echo $result->notice_id ?>" value="<?php echo $result->title; ?>" disabled>
+                                <textarea class="des" name="edit-description" id="text-area-<?php echo $result->notice_id ?>" cols="30" rows="5" disabled><?php echo $result->description; ?></textarea>
                                 <p>Annoucment for :</p>
                                 <ul class="usr">
                                     <?php foreach ($result->roles as $role) {
@@ -95,13 +95,26 @@
                             </form>         
                         </div>
                         <!-- display the edit buttons to the authorized user only -->
+
                         <?php if($result->staff_no == $_SESSION['user_id']):?>
                             <div class="edit-delete-btns">
                                 <!-- <button class="edit-btn" onclick="enableEdit(<?php //echo $result->notice_id ?>)"><i class="fa-solid fa-pen"></i></button> -->
-                                <a href="<?php echo URLROOT?>/Staff_home/deleteAnnouncement?notice_id=<?php echo $result->notice_id?>">
-                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                </a>
+                                <!-- <a href="<?php //echo URLROOT?>/Staff_home/deleteAnnouncement?notice_id=<?php //echo $result->notice_id?>"> -->
+                                    <button type= "submit" class="delete-btn" onclick="openconfirmdelete()"><i class="fa-solid fa-trash"></i></button>
+                                <!-- </a> -->
                             </div>
+
+                            <!-- popup model -------------------->
+                            <dialog id="dlt_popup" class = "dlt_popup">
+                                <div class="alert__container" >
+                                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                    <h2>Succesfully deleted!</h2>
+                                    <a href="<?php echo URLROOT?>/Staff_home/deleteAnnouncement?notice_id=<?php echo $result->notice_id?>">
+                                        <button class="dlt-btn" type="submit" onclick="closeconfirmdelete()">OK</button>
+                                    </a>
+                                </div>
+                            </dialog> 
+                            <!--------------------------------->
                         <?php endif;?>
                     </div>   
                      <?php
