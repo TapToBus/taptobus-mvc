@@ -52,7 +52,7 @@
                         <td><?php echo $removeowners->mobileNo; ?></td>
                         <td>
                             <div class="delete-button">
-                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removeowners->nic ?>')">Reset</button>
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removeowners->nic ?>')">Restore</button>
                             </div>
                         </td>
                     </tr>

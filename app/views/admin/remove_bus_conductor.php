@@ -60,7 +60,7 @@
                         <td><?php echo $removeconductors->owner_nic; ?></td>
                         <td>
                             <div class="delete-button">
-                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removeconductors->ntcNo ?>')">Reset</button>
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removeconductors->ntcNo ?>')">Restore</button>
                             </div>
                         </td>
                     </tr>

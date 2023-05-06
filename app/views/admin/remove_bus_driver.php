@@ -61,7 +61,7 @@
                         <td><?php echo $removedrivers->owner_nic; ?></td>
                         <td>
                             <div class="delete-button">
-                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removedrivers->ntcNo ?>')">Reset</button>
+                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removedrivers->ntcNo ?>')">Restore</button>
                             </div>
                         </td>
                     </tr>
