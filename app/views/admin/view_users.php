@@ -46,10 +46,10 @@
                 <i class="fa-solid fa-user-tie"></i>
                 <p>Staff members</p>
             </a>
-            <a href="<?php echo URLROOT; ?>/Admin_view_user_dashboard/view_bus" class="grid-items">
+            <!-- <a href="<?php echo URLROOT; ?>/Admin_view_user_dashboard/view_bus" class="grid-items">
                 <i class="fa-solid fa-bus"></i>
                 <p>Buses</p>
-            </a>
+            </a> -->
         </div>
         </p>
     </div>

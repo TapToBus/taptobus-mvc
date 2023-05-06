@@ -37,6 +37,7 @@
 
     <a href="<?php echo URLROOT; ?>/Admin_dashboard/view_admin_dashboard"><i class="fa-solid fa-chart-line"></i><span>Dashboard </span></a>
     <a href="<?php echo URLROOT; ?>/Admin_view_user_dashboard/view_user_dashboard"><i class="fa-solid fa-person"></i><span>Users </span></a>
+    <a href="<?php echo URLROOT; ?>/Admin_view_user_dashboard/view_bus"><i class="fa-solid fa-bus"></i><span>Buses </span></a>
     <a href="<?php echo URLROOT; ?>/Admin_remove_user_dashboard/remove_user_dashboard"><i class="fa-solid fa-clock-rotate-left"></i><span>Restore</span></a>
     <a href="<?php echo URLROOT; ?>/Admin_reports/view_admin_reports"><i class="fa-solid fa-file"></i><span>Reports</span></a>
     <a href="<?php echo URLROOT; ?>/Admin_profile/update_profile/<?php echo $_SESSION['user_id']?>"><i class="fa-solid fa-address-card"></i><span>Profile</span></a>
