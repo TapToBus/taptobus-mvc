@@ -43,14 +43,12 @@
                     <th>First name</th>
                     <th>Last name</th>
                     <th>DOB</th>
-                    <th>Address</th>
                     <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
                     <th>Rating</th>
-                    <th>Total Ratings</th>
-                    <th>Response</th>
                     <th>Owner NIC</th>
+                    <th>Bus number</th>
                     <th class="delete-button"></th>
 
                 </tr>
@@ -62,14 +60,12 @@
                         <td><?php echo $drivers->fname; ?></td>
                         <td><?php echo $drivers->lname; ?></td>
                         <td><?php echo $drivers->dob; ?></td>
-                        <td><?php echo $drivers->address; ?></td>
                         <td><?php echo $drivers->email; ?></td>
                         <td><?php echo $drivers->mobileNo; ?></td>
                         <td><?php echo $drivers->telNo; ?></td>
                         <td><?php echo $drivers->ratings; ?></td>
-                        <td><?php echo $drivers->total_ratings; ?></td>
-                        <td><?php echo $drivers->responses; ?></td>
                         <td><?php echo $drivers->owner_nic; ?></td>
+                        <td><?php echo $drivers->bus_no; ?></td>
                         <td>
                             <div class="delete-button">
                                 <button class="delete-btn" type="button" onclick="openModal('<?php echo $drivers->ntcNo ?>')">Delete</button>
