@@ -16,7 +16,7 @@ class Owner_register extends Controller{
     }
 
     
-    // passenger register
+    // owner register
     public function register(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // initialize data
@@ -35,7 +35,7 @@ class Owner_register extends Controller{
                 'agree_err' => '',
                 
             ];
- 
+            
             // validate
 
             // validate first name
@@ -112,6 +112,7 @@ class Owner_register extends Controller{
             }
         }
         else{
+
             // initialize default values
             $data = [
                 'fname' => '',
@@ -128,7 +129,7 @@ class Owner_register extends Controller{
                 'agree_err' => '',
                 
             ];
-
+          
             // load the view with the default data
             $this->view('owner/register', $data);
         }

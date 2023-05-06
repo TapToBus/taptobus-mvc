@@ -75,7 +75,7 @@ class Owner_buses extends Controller{
             }
    
              //validate capacity
-             if(! preg_match('/^[4-5][0-9]$|^60$/', $data['capacity'])){
+             if(! preg_match('/^(25|33)$/', $data['capacity'])){
                 $data['capacity_err'] = 'A valid capacity is required';
             }
 

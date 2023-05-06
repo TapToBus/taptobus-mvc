@@ -71,7 +71,7 @@
 
                 <p>Conductor</p>
                 <div class="images">
-                    <img src="<?php echo URLROOT ?>/img/owner_img/dr4.jpg" alt="" />
+                    <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data2->pic; ?>" alt="" />
                 </div>
 
                 <form id="change_name" action="<?php echo URLROOT; ?>/owner_buses/change_conductor" method="POST">
