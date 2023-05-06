@@ -126,28 +126,28 @@
 
                 <p>Driver</p>
                 <div class="images">
-                    <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data2->pic; ?>" alt="" />
+                    <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data5->pic; ?>" alt="" />
                 </div>
 
                 <form id="change_name" action="<?php echo URLROOT; ?>/owner_buses/change_driver" method="POST">
 
                     <input type="hidden" name="bus_no" value="<?php echo $data->bus_no; ?>">
 
-                    <?php if (isset($data2->ntcNo)) : ?>
-                        <input type="hidden" name="old_dr_id" value="<?php echo $data2->ntcNo; ?>">
+                    <?php if (isset($data5->ntcNo)) : ?>
+                        <input type="hidden" name="old_dr_id" value="<?php echo $data5->ntcNo; ?>">
                     <?php else : ?>
                         <input type="hidden" name="old_dr_id" value="NULL">
                     <?php endif; ?>
 
                     <select class="choose" name="dr_name" id="dr_name">
 
-                        <?php if (isset($data2->fname)) : ?>
-                            <option value="<?php echo $data2->fname; ?>" selected><?php echo $data2->fname; ?></option>
+                        <?php if (isset($data5->fname)) : ?>
+                            <option value="<?php echo $data5->fname; ?>" selected><?php echo $data5->fname; ?></option>
                         <?php else : ?>
                             <option value="" selected></option>
                         <?php endif; ?>
 
-                        <?php foreach ($data1 as $row) : ?>
+                        <?php foreach ($data4 as $row) : ?>
                             <option value="<?php echo $row->fname; ?>"><?php echo $row->fname; ?></option>
                             <!-- aluth db ekee nama wenas ntcNo kiyna eka -->
                         <?php endforeach; ?>
