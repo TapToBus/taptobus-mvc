@@ -16,7 +16,7 @@
 
     // function for delete the row from the table
     public function deleteowners($nic){
-        $this->db->query('UPDATE owner SET status = "pending" WHERE nic = :nic');
+        $this->db->query('UPDATE owner SET status = "deleted" WHERE nic = :nic');
         $this->db->bind(":nic", $nic);
         return $this->db->execute();
     }
