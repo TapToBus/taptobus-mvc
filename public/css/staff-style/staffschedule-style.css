@@ -120,3 +120,18 @@
     background-color: var(--clr-bg, #1d5af1);
     color: var(--clr-text, #fff);
 }
+
+.required{
+    position: relative;
+}
+.required::after{
+    content: "*";
+    color: #ff0000;
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+button{
+cursor: pointer;
+}

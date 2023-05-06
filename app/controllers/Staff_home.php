@@ -61,18 +61,16 @@
                         }
 
                     }else{
-                        print_r("entered");
-                        die();
                         // should not allow to submit without filling inputs
-                        if(empty($_POST['title'])){
+                        if(empty($_POST['title']) || empty($_POST['description'])||empty($_POST['date_from']) || empty($_POST['date_to'])){
+                            $data['error'] ='plese fill the form properly';
+                        }else if(empty($_POST['title'])){                         
                             $data['title_err'] = 'Please enter a title';
                         }else if(empty($_POST['description'])){
                             $data['description_err'] = 'Please enter a description';
                         }else if(empty($_POST['date_from']) || empty($_POST['date_to'])){
-                            $data['description_err'] = 'Please enter a date';
-                        }else{
-                            die("Please enter data");
-                        }                        
+                            $data['date_err'] = 'Please enter  dates properly';
+                        }                      
                     }
                 }   
             }

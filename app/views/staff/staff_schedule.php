@@ -12,39 +12,39 @@
 </head>
 <body>
 
-
-<dialog id="addNewScheduleModal" class="modal">
+<!-- Add new schedule Model -->
+<dialog id="addNewScheduleModal" class="modal" onsubmit="return validateAddScheduleForm()">
         <div class="modal__container">
             <div class="caption">
                 <h1>Add New Schedule</h1>
             </div>
             <form action="<?php echo URLROOT?>/Staff_schedule/create_schedule" method="POST">
                 <div class="form_control">
-                    <label for="bus_no">Bus No</label>
-                    <input type="text" name="bus_no" id="bus_no"/>
+                    <label for="bus_no" class="required">Bus No</label>
+                    <input type="text" name="bus_no" id="bus_no" required/>
                 </div>
                 <div class="row">
                     <div class="form_control">
-                        <label for="bus_no">Location From</label>
-                        <select name="location_from" id="location_from">
+                        <label for="location_from" >Location From</label>
+                        <select name="location_from" id="location_from"  class="location-select">
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                     <div class="form_control">
-                        <label for="bus_no">Location To</label>
-                        <select name="location_to" id="location_to">
+                        <label for="location_to" >Location To</label>
+                        <select name="location_to" id="location_to"  class="location-select">
+                            <option value="Makubura">Makumbura</option>
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
                         </select>
                     </div>
                 </div>
                 <div class="form_control">
-                    <label for="bus_no">Day</label>
-                    <select name="day" id="day">
+                    <label for="day" >Day</label>
+                    <select name="day" id="day"  required>
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
-                        <option value="Wednessday">Wednessday</option>
+                        <option value="Wednesday">Wednesday</option>
                         <option value="Thursday">Thursday</option>
                         <option value="Friday">Friday</option>
                         <option value="Satureday">Satureday</option>
@@ -53,17 +53,17 @@
                 </div>
                 <div class="row">
                     <div class="form_control">
-                        <label for="arrival_time">Arrival Time</label>
-                        <input type="time" name="arrival_time" id="arrival_time"/>
+                        <label for="arrival_time"  class="required">Arrival Time</label>
+                        <input type="time" name="arrival_time" id="arrival_time" required/>
                     </div>
                     <div class="form_control">
-                        <label for="departrue_time">Departure Time</label>
-                        <input type="time" name="departrue_time" id="departrue_time"/>
+                        <label for="departrue_time"  class="required">Departure Time</label>
+                        <input type="time" name="departrue_time" id="departrue_time" required/>
                     </div>
                 </div>
                 <div class="form_control">
-                    <label for="ticket_price">Ticket Price</label>
-                    <input type="text" name="ticket_price" id="ticket_price"/>
+                    <label for="ticket_price"  class="required">Ticket Price</label>
+                    <input type="number" name="ticket_price" id="ticket_price" required/>
                 </div>
                 <div class="button_control">
                     <button type="button" onclick="closeAddNewScheduleModal()" >Cancel</button>
@@ -72,7 +72,7 @@
             </form>
         </div>
     </dialog>
-
+   <!-- Delete schedule Model -->
     <dialog id="deleteConfirmModal" class="alertModal">
         <div class="alert__container">
                 <i class="fa-solid fa-circle-xmark"></i>
@@ -86,7 +86,7 @@
         </div>
     </dialog>
 
-
+<!-- Edit schedule Model -->
     <dialog id="editScheduleModal" class="modal">
         <div class="modal__container">
             <div class="caption">
@@ -100,16 +100,16 @@
                 <div class="row">
                     <div class="form_control">
                         <label for="bus_no">Location From</label>
-                        <select name="location_from" id="u-location_from">
+                        <select name="location_from" id="u-location_from"  class="u-location-select">
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                     <div class="form_control">
                         <label for="bus_no">Location To</label>
-                        <select name="location_to" id="u-location_to">
+                        <select name="location_to" id="u-location_to" class="u-location-select">
+                            <option value="Makubura">Makumbura</option>
                             <option value="Galle">Galle</option>
-                            <option value="Makubura">Makubura</option>
                         </select>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                     <select name="day" id="u-day">
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
-                        <option value="Wednessday">Wednessday</option>
+                        <option value="Wednesday">Wednesday</option>
                         <option value="Thursday">Thursday</option>
                         <option value="Friday">Friday</option>
                         <option value="Satureday">Satureday</option>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="form_control">
                     <label for="ticket_price">Ticket Price</label>
-                    <input type="text" name="ticket_price" id="u-ticket_price"/>
+                    <input type="number" name="ticket_price" id="u-ticket_price"/>
                 </div>
                 <div class="button_control">
                     <button type="button" onclick="closeEditScheduleModal()" >Cancel</button>
@@ -180,19 +180,21 @@
                     $count = 0;
                 foreach($data as $schedule){
                         $count = $count + 1;
+                        
                     ?>
                     <tr>
                         <td><?php echo $count?></td>
                         <td><?php echo $schedule->bus_no?></td>
-                        <td><?php echo $schedule->Location_from?></td>
-                        <td><?php echo $schedule->Location_to?></td>
+                        <td><?php echo $schedule->from?></td>
+                        <td><?php echo $schedule->to?></td>
                         <td><?php echo $schedule->day?></td>
                         <td><?php echo $schedule->arrival_time?></td>
                         <td><?php echo $schedule->departure_time?></td>
-                        <td><?php echo $schedule->ticket_price.'.00'?></td>
-                        <td>
-                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick='openEditScheduleModal(<?php echo json_encode($schedule)?>)'><i class="fa fa-edit"></i></button>
-                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick= 'openDeleteConfirmationModal("<?php echo $schedule->schedule_id ?>", "<?php echo $schedule->bus_no ?>")'><i class="fa fa-trash"></i></button>
+                        <td><?php echo $schedule->ticket_price?></td>
+                        <td>                                                                                                                                      
+                                                                                                                                                        <!-- pass all the retrieve data to the Model -->
+                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick='openEditScheduleModal(<?php echo json_encode($schedule)?>)'><i class="fa fa-edit"></i></button>  
+                            <button class="table__button" <?php if(isset($schedule->bid)) echo "disabled"?> onclick= 'openDeleteConfirmationModal("<?php echo $schedule->id ?>", "<?php echo $schedule->bus_no ?>")'><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                     <?php
@@ -202,49 +204,6 @@
             </table>
         </div>
     </div>
-        <script>
-
-            function openAddNewScheduleModal(){
-                const addNewScheduleModal = document.getElementById('addNewScheduleModal')
-                addNewScheduleModal.showModal()
-            }
-
-            function closeAddNewScheduleModal(){
-                const addNewScheduleModal = document.getElementById('addNewScheduleModal')
-                addNewScheduleModal.close()
-            }
-
-            function openEditScheduleModal(data){
-                console.log(data);
-                const editScheduleModal = document.getElementById('editScheduleModal')
-                document.getElementById('u-bus_no').value = data.bus_no
-                document.getElementById('u-location_from').value = data.Location_from
-                document.getElementById('u-location_to').value = data.Location_to
-                document.getElementById('u-day').value = data.day
-                document.getElementById('u-arrival_time').value = data.arrival_time
-                document.getElementById('u-departrue_time').value = data.departure_time
-                document.getElementById('u-ticket_price').value = data.ticket_price
-                document.getElementById('editBtn').value = data.schedule_id
-                editScheduleModal.showModal()
-            }
-
-            function closeEditScheduleModal(){
-                const editScheduleModal = document.getElementById('editScheduleModal')
-                editScheduleModal.close()
-            }
-
-            function openDeleteConfirmationModal(id, bus_no) {
-                const deleteConfirmModal = document.getElementById('deleteConfirmModal')
-                document.getElementById('d-bus_no').value = bus_no
-                document.getElementById('deleteBtn').value = id
-                deleteConfirmModal.showModal()
-            }
-
-            function closeDeleteConfirmationModal(){
-                const deleteConfirmModal = document.getElementById('deleteConfirmModal')
-                deleteConfirmModal.close()
-            }
-
-        </script>
+    <script  src="<?php echo URLROOT;?>/js/staff/scheduleValidation.js" ></script>
 </body>
 </html>

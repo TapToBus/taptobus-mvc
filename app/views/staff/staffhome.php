@@ -29,11 +29,10 @@
 
                     <?php
                     // controlller eken pass krana $data kiyna associative array eka athule thamyi result obj eka tyenne. ekanisaa result access karann nm me vidiyta gann one. 
-                    // var_dump($results);
-                    // -------------
-                    
                     if(isset($data['alert'])){
                         $alert = $data['alert'];
+                        echo($alert);
+                        die();
                         ?>
                         <div>
                             <h1><?php echo $alert['message']?></h1>
@@ -41,25 +40,25 @@
                         <?php
 
 
-                        //if($alert['type'] == 'success'){
+                        if($alert['type'] == 'success'){
                             ?>
-                            <!-- <div>
+                             <div>
                                 <h1>Successfully</h1>
-                            </div> -->
+                            </div> 
                             <?php
-                        //}
+                        }
 
-                        //if($alert['type'] == 'error'){
+                        if($alert['type'] == 'error'){
                             ?>
-                            <!-- <div>
+                            <div>
                                 <h1>Error</h1>
-                            </div> -->
+                            </div> 
                             <?php
-                        //}
+                        }
                     }
                     ?>
-                        <!-- for checked the loged user -->
-                        <!-- <h3>User -- > <?php //echo $_SESSION['user_id'] ;?></h3> --> 
+                         <!-- for checked the loged user 
+                         <h3>User -- > <?php echo $_SESSION['user_id'] ;?></h3>  -->
                     <?php
 
                     
@@ -67,13 +66,11 @@
                     $results = $data['result'];
 
                     foreach($results as $result){
-                        // print_r($result->roles);
-                        // die();
                         ?>
                     <div class="grid">
                         <div class="text-fields">
                             <div class="notice-author-timestamp">
-                                <div class="notice-author">
+                                <div class="notice-author"> Staff : 
                                     <p class="author-text"><?php echo $result->first_name?></p>
                                     <p class="author-text"><?php echo $result->last_name?></p>
                                 </div>
@@ -83,7 +80,7 @@
                                 <input type="text" name="edit-title" id="title-<?php echo $result->notice_id ?>" value="<?php echo $result->title; ?>" disabled>
                                 <textarea name="edit-description" id="text-area-<?php echo $result->notice_id ?>" cols="30" rows="5" disabled><?php echo $result->description; ?></textarea>
                                 <p>Annoucment for :</p>
-                                <ul>
+                                <ul class="usr">
                                     <?php foreach ($result->roles as $role) {
                                         ?>
                                             <li><?php echo $role?></li>
@@ -136,12 +133,12 @@
                             <div class="date">
                                 <label class="valid_period">Valid - </label><br>
                                 <div class="fromD">
-                                    <label for="">From : </label>
-                                    <input type="date" class="date_from" id="date_from" name="date_from">
+                                    <label for="date_from" class ="required">From : </label>
+                                    <input type="date" class="date_from" id="date_from" name="date_from" required>
                                 </div>
                                 <div class="toD">
-                                    <label for="">To : </label>
-                                    <input type="date" class="date_to" id="date_to" name="date_to">    
+                                    <label for="date_to" class ="required">To : </label>
+                                    <input type="date" class="date_to" id="date_to" name="date_to"required>    
                                 </div>
                             </div>
                             <div class="available_users">
@@ -181,9 +178,17 @@
                                     </div>
                                </div>
                             </div>
+                            <div class="form-control">
+                                <label for="title" class ="required"> </label>
+                                <input type="text" placeholder="Title" name="title" id = "title"  required>
+                            </div>
 
-                            <input type="text" placeholder="Title" name="title">
-                            <textarea name="description" placeholder="Notice description..."></textarea>
+                            <div class="form-control">
+                                <label for="description" class ="required">  </label>
+                                <textarea name="description" placeholder="Notice description..." id="description"  required></textarea>
+                            </div>
+                            
+
                             <button type="submit" name="save" id="addNotice">Add</button>
                         </form>
                     </div>

@@ -49,7 +49,7 @@ class M_Staff {
         $this->db->query("SELECT sn.title, sn.description, sn.date_from, sn.date_to, sn.time_stamp,sn.staff_no,sn.notice_id,sm.first_name,sm.last_name FROM special_notices as sn inner join staffmember as sm ON sn.staff_no = sm.staff_no  order by sn.time_stamp desc");
         // $this->db->bind(":staff_no", $id);
         $result = $this->db->resultSet();
-     
+        
         return $result;
     } 
 
