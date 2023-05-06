@@ -27,15 +27,15 @@
                     <div class="form_control">
                         <label for="location_from" >Location From</label>
                         <select name="location_from" id="location_from"  class="location-select">
-                            <option value="Makubura">Makumbura</option>
                             <option value="Galle">Galle</option>
+                            <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                     <div class="form_control">
                         <label for="location_to" >Location To</label>
                         <select name="location_to" id="location_to"  class="location-select">
-                            <option value="Galle">Galle</option>
                             <option value="Makubura">Makumbura</option>
+                            <option value="Galle">Galle</option>
                         </select>
                     </div>
                 </div>
@@ -100,16 +100,16 @@
                 <div class="row">
                     <div class="form_control">
                         <label for="bus_no">Location From</label>
-                        <select name="location_from" id="u-location_from">
+                        <select name="location_from" id="u-location_from"  class="u-location-select">
                             <option value="Galle">Galle</option>
                             <option value="Makubura">Makumbura</option>
                         </select>
                     </div>
                     <div class="form_control">
                         <label for="bus_no">Location To</label>
-                        <select name="location_to" id="u-location_to">
-                            <option value="Galle">Galle</option>
+                        <select name="location_to" id="u-location_to" class="u-location-select">
                             <option value="Makubura">Makumbura</option>
+                            <option value="Galle">Galle</option>
                         </select>
                     </div>
                 </div>

@@ -42,13 +42,14 @@ function closeDeleteConfirmationModal(){
 
 // ------------------ Add schedule form location validation -----------------------
 
-const destinations = ['galle', 'makumbura']
+const destinations = ['Galle', 'Makubura']
 
 const selectboxs = document.querySelectorAll('.location-select')
 
 selectboxs.forEach((select, idx) => {
   select.addEventListener('change', () => {
     oposite = destinations[destinations.indexOf(select.value) ? 0 : 1]
+    console.log(oposite)
     selectboxs[idx ? 0 : 1].value = oposite
   })
 })  
@@ -56,12 +57,14 @@ selectboxs.forEach((select, idx) => {
 // ---------------- Add schedule form time validation ------------------------
 
 const arrival_time = document.getElementById('arrival_time');
-const departrue_time = document.getElementById('departure_time');
+const departrue_time = document.getElementById('departrue_time');
+
 
 departrue_time.disabled = true;
 
 arrival_time.addEventListener("change",()=>{
     let selectedArrivalTime = arrival_time.value;
+    console.log(selectedArrivalTime);
     departrue_time.setAttribute('min', selectedArrivalTime);
     departrue_time.disabled = false;
 
@@ -72,3 +75,18 @@ departrue_time.addEventListener("change", ()=>{
     arrival_time.setAttribute('max',selectedDepartureTime);
 });
 
+
+
+// Edit schedule form validation
+
+const e_destinations = ['Galle', 'Makubura']
+
+const e_selectboxs = document.querySelectorAll('.u-location-select')
+
+selectboxs.forEach((e_select, idx) => {
+    e_select.addEventListener('change', () => {
+    e_oposite = e_destinations[e_destinations.indexOf(e_select.value) ? 0 : 1]
+    console.log(e_oposite)
+    selectboxs[idx ? 0 : 1].value = e_oposite
+  })
+})  
