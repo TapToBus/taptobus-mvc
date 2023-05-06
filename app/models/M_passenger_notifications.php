@@ -13,7 +13,8 @@ class M_passenger_notifications{
                 FROM special_notices s
                 INNER JOIN notice_available_users nau
                 ON s.notice_id = nau.notice_id 
-                WHERE nau.user = \'passenger\';');
+                WHERE nau.user = \'passenger\'
+                ORDER BY time_stamp DESC;');
     
         return $this->db->resultSet();
     }    
