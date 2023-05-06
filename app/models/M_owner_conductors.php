@@ -89,7 +89,7 @@ class M_owner_conductors{
     public function reomve_assigned_conductor($old_con){
         // prepare query
         
-        $this->db->query('UPDATE conductor SET bus_no = NULL,status="leave" WHERE ntcNo= :con_id');
+        $this->db->query('UPDATE conductor SET bus_no = NULL WHERE ntcNo= :con_id');
         $this->db->bind(':con_id',$old_con);   
         $this->db->execute(); 
 
