@@ -8,9 +8,9 @@
 
 	width: 60%;
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     left: 58%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .main .content .heading{
@@ -83,7 +83,7 @@
 
 .main .content .details .left .snum{
 	text-align: center;
-	font-size: 15px;
+	font-size: 13px;
 	/* background-color: green; */
 }
 
