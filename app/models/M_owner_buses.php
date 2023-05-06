@@ -64,7 +64,7 @@ class M_owner_buses{
         $this->db->bind(':bus_no',$bus_no);
         $this->db->execute();
 
-        $this->db->query('UPDATE conductor SET bus_no=:bus_no  WHERE ntcNo= :con');
+        $this->db->query('UPDATE conductor SET bus_no=:bus_no,status="active"  WHERE ntcNo= :con');
         $this->db->bind(':con',$con);
         $this->db->bind(':bus_no',$bus_no);
         $this->db->execute(); 

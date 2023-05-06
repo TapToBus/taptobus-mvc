@@ -61,14 +61,13 @@ class Owner_leaverequests extends Controller{
         $this->view('owner/view_leaverequests',$data);
     }
 
-    public function reject_leaverequest($request_id,$bus_no){
+    public function reject_leaverequest(){
        
+        $request_id = $_GET['request_id'];
         $this->ownerModel->reject_leaverequest($request_id);
-        $data = $this->ownerModel1->bus_details($bus_no);
-        $data1 = $this->ownerModel3->avail_conductors();
-        $data2 = $this->ownerModel3->find_conductor_name($bus_no);
-        $this->view('owner/bus_details',$data,$data1,$data2); 
-    }
+        $data = $this->ownerModel->view_leaverequests();
+        $this->view('owner/view_leaverequests',$data);
+    }      
 
     // public function reject_leaverequest($request_id,$bus_no){
        
