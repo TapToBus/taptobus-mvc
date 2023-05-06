@@ -30,7 +30,7 @@
                 <i class="fa-solid fa-star "></i>
                 <a>)</a>
             </div>
-        </div> 
+        </div>
 
         <div class="full">
 
@@ -124,16 +124,55 @@
 
             <div class="emp">
 
-                <p class="emp_dr">Driver</p>
+                <p>Driver</p>
                 <div class="images">
-                    <img src="<?php echo URLROOT ?>/img/owner_img/con3.jpg" alt="" />
+                    <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data2->pic; ?>" alt="" />
                 </div>
-                <select class="choose">
-                    <option value="volvo" selected>Ransara</option>
-                    <option value="saab">Vihanga</option>
-                    <option value="mercedes">Mayura</option>
-                    <option value="audi">Nirodha</option>
-                </select>
+
+                <form id="change_name" action="<?php echo URLROOT; ?>/owner_buses/change_driver" method="POST">
+
+                    <input type="hidden" name="bus_no" value="<?php echo $data->bus_no; ?>">
+
+                    <?php if (isset($data2->ntcNo)) : ?>
+                        <input type="hidden" name="old_dr_id" value="<?php echo $data2->ntcNo; ?>">
+                    <?php else : ?>
+                        <input type="hidden" name="old_dr_id" value="NULL">
+                    <?php endif; ?>
+
+                    <select class="choose" name="dr_name" id="dr_name">
+
+                        <?php if (isset($data2->fname)) : ?>
+                            <option value="<?php echo $data2->fname; ?>" selected><?php echo $data2->fname; ?></option>
+                        <?php else : ?>
+                            <option value="" selected></option>
+                        <?php endif; ?>
+
+                        <?php foreach ($data1 as $row) : ?>
+                            <option value="<?php echo $row->fname; ?>"><?php echo $row->fname; ?></option>
+                            <!-- aluth db ekee nama wenas ntcNo kiyna eka -->
+                        <?php endforeach; ?>
+
+                    </select>
+
+                </form>
+
+
+                <script>
+                    var form = document.querySelector('#change_name');
+                    var select = document.getElementById('dr_name');
+                    var selectedValue = select.value;
+
+                    form.addEventListener('change', function(event) {
+
+                        // Prevent the form from submitting normally
+                        event.preventDefault();
+                        // Get the selected value
+                        var selectedConductor = select.value;
+
+                        form.submit();
+
+                    });
+                </script>
 
             </div>
 
