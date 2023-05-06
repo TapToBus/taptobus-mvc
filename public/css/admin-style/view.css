@@ -530,6 +530,24 @@ a{
 
 /* admin dashboard charts styles */
 
+.second-line-charts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.second-line-sub-chart{
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .admin-charts{
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -681,4 +699,484 @@ a{
   margin: 0;
   text-align: center;
 }
+
+
+/* admin report styles */
+
+/* .report-containers{
+  display: flex;
+  flex-direction: row;
+
+} */
+
+.report-container{
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+  margin-top: 20px;
+  
+
+}
+
+
+.report-sub-container{
+
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-bottom: 10px;
+ 
+}
+
+.report-container .report-sub-container .report-container-form{
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  margin: 5px 30px 5px 30px;
+
+}
+
+.report-container .report-sub-container .report-container-heading{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  margin-bottom:20px;
+  color: #404989;
+}
+
+.report-container .report-sub-container .datapicker_report{
+  margin-bottom: 30px;
+}
+
+.report-container .report-sub-container .report_date_la{
+  margin-top: 7px;
+  margin-right: 3px;
+}
+
+.report-container .report-sub-container .report-container-form-input-labels{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.report-container .report-sub-container .report-container-form-input-labels .datapicker_report{
+
+  width: 175px;
+  border: white;
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  height: 40px;
+  color: black;
+  font-size: 15px;
+  margin-top: 2px;
+  /* margin-bottom: 2px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.report-container .report-sub-container .report-container-form-input-labels input{
+  margin-right: 20px;
+}
+
+.report-container .report-sub-container .report-container-form-input-labels .report_date_la{
+  font-weight: 500;
+  font-size: 16px;
+  padding-right: 10px;
+  font-style: normal;
+}
+
+.search-button button{
+
+  width: 200px;
+  padding: 8px 0 8px 0;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid rgba(4, 1, 153, 0.7);
+  background: transparent;
+  color: rgba(4, 1, 153, 0.7);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  margin-left: 20px;
+
+}
+
+.search-button span{
+  background:rgba(4, 1, 153, 0.7);
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.search-button button:hover span{
+  width: 100%;
+}
+
+.search-button button:hover{
+  border: 2px solid transparent;
+  color: white;
+  background-color:rgba(4, 1, 153, 0.7);
+  border:rgba(4, 1, 153, 0.7);
+  
+}
+
+.generation-buttons a{
+
+  padding: 8px 15px 8px 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid rgb(189, 167, 0);
+  background: transparent;
+  color: rgb(189, 167, 0);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  margin-left: 20px;
+
+
+}
+
+.generation-buttons span{
+  background: black;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.generation-buttons a:hover span{
+  width: 100%;
+}
+
+.generation-buttons a:hover{
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.908);
+  background-color:  rgba(189, 167, 0, 0.808) ;
+  border: #000000;
+  
+}
+
+.two-button{
+  display: flex;
+  flex-direction: row;
+  margin-left: 150px;
+}
+
+
+
+
+
+
+
+
+
+.report-container-form-input-labels select{
+  width: 100px;
+  border: white;
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  height: 40px;
+  color: black;
+  font-size: 15px;
+  padding-left: 6px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.report-container-form-input-labels option{
+  color: black;
+  font-size: 15px;
+}
+
+.report-container-form-input-labels select:focus{
+  outline: 2px solid #00BFFF;
+  border: 2px solid transparent;
+}
+
+
+
+/* admin profile styles */
+
+.pro-details{
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
+  margin: 10px 220px 0 220px;
+
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.pro-details .left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.pro-details .left img{
+    max-width: 10%;
+    max-height: 10%;
+    /* min-width: 10%;
+    min-height: 10%; */
+    object-fit: cover;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+.pro-details .right .details .row{
+  margin-bottom: 15px;
+}
+
+.parent-row{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.parent-row .row-1{
+  margin-left: 100px;
+
+}
+
+.details{
+  margin-left: 50px;
+}
+
+.pro-details .right .details .row input{
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 20px;
+  border: none;
+
+}
+
+.pro-details .right .details .parent-row .row-1 input{
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 20px;
+  border: none;
+}
+
+.pro-details .right .details .edit-profile-buttons{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pro-details .right .details .edit-profile-buttons .btn .edit{
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.pro-details .right .details .edit-profile-buttons .btn button{ 
+  color: rgb(0, 42, 255);
+  border: 1px solid  rgb(0, 42, 255);
+  border-radius: 20px;
+}
+
+.pro-details .right .details .edit-profile-buttons .btn button:hover{
+  background-color: rgba(0, 42, 255, 0.522);
+  color: white;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* admin profile styles */
+
+/* .content{
+    margin-left: 200px;
+    margin-right: 200px;
+} */
+
+/* .heading{
+    font-size: 25px;
+    color: var(--clr-navbar-top);
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.pro-details{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 45vh;
+  margin-top: 50px;
+    
+}
+
+.pro-details .left{
+
+    /* position: relative; */
+
+
+ 
+
+/* .pro-details .left img{
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 75%;
+    min-height: 75%;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* .pro-details .right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+} */
+/* .pro-details .right .name{
+    font-size: 20px;
+    font-weight:600;
+    text-align: center;
+
+    margin-bottom: 10px;
+} */
+
+/* .pro-details .right .details{
+    margin-bottom: 15px;
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 50px, rgba(0, 0, 0, 0.23) 0px 3px 50px;
+    margin-left: 40px;
+  
+    height: 47vh;
+    padding: 25px 20px 25px 20px;
+    width: 35VW;
+} */
+
+/* .pro-details .right .edit-profile-delete-profile-buttons{
+  margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+  width: 35vw;
+  margin-left: 40px;
+  height: 10vh;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+/* .pro-details .right .details .row{
+    display:  grid;
+    grid-template-columns: 25% 60%;
+    justify-content: center;
+    line-height: 40px;
+    width: 900px;
+} */
+
+/* .pro-details .right .details .row .col1{
+    font-weight: 450;
+
+} */
+
+
+/* .pro-details .right .edit-profile-delete-profile-buttons .btn{
+
+  padding: 0 10px 0 10px;
+
+} */
+/* .pro-details .right .edit-profile-delete-profile-buttons .btn button{
+    width: 120px;
+    height: 37px;
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+}
+
+.pro-details .right .edit-profile-delete-profile-buttons .btn .delete{
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+
+
+.pro-details .right .edit-profile-delete-profile-buttons .btn .delete:hover{
+
+    background-color: rgba(255, 0, 0, 0.689);
+    color: white;
+    transition: 0.3s;
+}
+
+.pro-details .right .edit-profile-delete-profile-buttons .btn .edit{
+
+  color: rgb(0, 42, 255);
+  border: 1px solid  rgb(0, 42, 255);
+  border-radius: 5px;
+
+}
+
+.pro-details .right .edit-profile-delete-profile-buttons .btn .edit:hover{
+
+  background-color: rgb(0, 42, 255, 0.689);
+  color: white;
+  transition: 0.3s;
+} */
 

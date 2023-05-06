@@ -19,14 +19,14 @@ class M_Admin_bus_conductor_details{
 
     // function for delete the row from the table
     public function deleteconductors($ntcNo){
-        $this->db->query('UPDATE conductor SET status = "pending" WHERE ntcNo = :ntcNo');
+        $this->db->query('UPDATE conductor SET status = "deleted" WHERE ntcNo = :ntcNo');
         $this->db->bind(":ntcNo", $ntcNo);
         return $this->db->execute();
     }
 
     //function for get the values from database and display
     public function removeconductors(){
-        $this->db->query('SELECT * FROM conductor WHERE status = "pending"');
+        $this->db->query('SELECT * FROM conductor WHERE status = "deleted"');
         return $this->db->resultSet();
     }
 

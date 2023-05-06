@@ -82,6 +82,19 @@ class Admin_view_user_dashboard extends Controller{
     }
 
 
+    //delete bus from bus table
+
+    public function delete_bus(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['deleteBusBtn'])){
+                $bus_no = $_POST['deleteBusBtn'];
+                $response = $this->pagesModelBuses->deletebuses($bus_no);
+                $this->view_bus();
+            }
+        }
+    } 
+
+
     //bus  search
     public function  adminSearchBuses()
     {          

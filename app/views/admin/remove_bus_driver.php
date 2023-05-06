@@ -49,6 +49,7 @@
                     <th>Owner_nic</th>
                     <th class="delete-button"></th>
                 </tr>
+
                 <?php foreach ($data['removedrivers'] as $removedrivers) : ?>
                     <tr>
                         <td><?php echo $removedrivers->ntcNo; ?></td>

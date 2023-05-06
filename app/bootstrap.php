@@ -27,3 +27,8 @@ require_once 'helpers/otp_helper.php';
 require_once 'helpers/email_verify_tmplt.php';
 require_once 'helpers/send_booking_code_tmplt.php';
 require_once 'helpers/forgot_pass_otp_tmplt.php';
+
+
+//email template
+require_once 'helpers/staff_tempory_PW_template.php';
+

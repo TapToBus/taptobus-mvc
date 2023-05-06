@@ -58,13 +58,32 @@
                         <td><?php echo $buses->ratings ?></td>
                         <td><?php echo $buses->total_ratings ?></td>
                         <td><?php echo $buses->responses ?></td>
+                        <td>
+                            <div class="delete-button">
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $buses->bus_no ?>')">Delete</button>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
 
             </table>
         </div>
     </div>
-    <!-- </div> -->
+
+    <dialog id="DeletePopup" class="resetPopup">
+        <div class="resetPopup-contianer">
+            <h1>Are You Sure ?</h1>
+            <p>Do you really wants to delete this bus.</p>
+
+            <form action="<?php echo URLROOT ?>/Admin_view_user_dashboard/delete_bus" method="POST" class="delete-button">
+                <button class="delete-btn" type="submit" id="deleteBusBtn" name="deleteBusBtn">Yes</button>
+                <button class="delete-btn" type="button" onclick="closeModal()">No</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="<?php echo URLROOT; ?> /js/admin-js/delete-bus-popup.js"></script>
+
 
 
 </body>

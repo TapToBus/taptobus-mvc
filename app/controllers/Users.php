@@ -112,6 +112,7 @@ class Users extends Controller{
         $_SESSION['user_lname'] = $user->lname;
         $_SESSION['user_pic'] = $user->pic;
         $_SESSION['user_type'] = $user->type;
+        
 
         switch($user->type){
             case 'passenger': {

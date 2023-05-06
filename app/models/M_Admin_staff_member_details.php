@@ -16,16 +16,18 @@ class M_Admin_staff_member_details{
 
     // function for delete the row from the table
     public function deletestaffmembers($staff_no){
-        $this->db->query('UPDATE staffmember SET status = "pending" WHERE staff_no = :staff_no');
+        $this->db->query('UPDATE staffmember SET status = "deleted" WHERE staff_no = :staff_no');
         $this->db->bind(":staff_no", $staff_no);
         return $this->db->execute();
     }
 
+    //function for deleted staff member
     public function removestaffmembers(){
-        $this->db->query('SELECT * FROM staffmember WHERE status = "pending"');
+        $this->db->query('SELECT * FROM staffmember WHERE status = "deleted"');
         return $this->db->resultSet();
     }
 
+    //function for update deleted staff member in to active 
     public function reset_staff_member($staff_no){
         $this->db->query("UPDATE staffmember SET status = 'active' WHERE staff_no = :staff_no");
         $this->db->bind(":staff_no", $staff_no);

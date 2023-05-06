@@ -8,7 +8,7 @@ class M_admin_remove_bus_owner {
     }
 
     public function getremoveowner(){
-        $this->db->query("SELECT * FROM owner WHERE status = 'pending'");
+        $this->db->query("SELECT * FROM owner WHERE status = 'deleted'");
         return $this->db->resultSet();
     }
 
