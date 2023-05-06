@@ -24,7 +24,7 @@
             <span class="title5">Time Remaining</span>
         </div>
 
-        <?php if (empty($data)) : ?>
+        <?php if ($data['bookings'] == NULL) : ?>
 
             <div class="no-data">
                 <i class="fa-solid fa-circle-exclamation"></i> <br>

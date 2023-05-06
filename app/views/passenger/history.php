@@ -29,7 +29,7 @@
 
             <div class="no-data">
                 <i class="fa-solid fa-circle-exclamation"></i> <br>
-                <span>No data to display</span>
+                <span>No history to display</span>
             </div>
 
         <?php else : ?>
