@@ -13,19 +13,22 @@
 </head>
 
 <body>
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
+    <?php 
+        $active = 'profile';
+        require APPROOT . '/views/inc/staff_navbar.php' 
+    ?>
 
     <div class="main">
         <div class="content">
             <h1 class="heading">Profile</h1>
-
+            
             <div class="pro-details">
-                <!-- <div class="left">
+                <div class="left">
                     <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['profile']->pic; ?>" alt="<?php echo $data['profile']->nic; ?>">
                 </div>
 
                 <div class="right">
-                    <div class="name"><?php echo $data['profile']->fname . ' ' . $data['profile']->lname; ?></div>
+                    <div class="name"><?php echo $data['profile']->first_name . ' ' . $data['profile']->last_name; ?></div>
 
                     <div class="details">
                         <div class="row">
@@ -42,22 +45,26 @@
                             <span class="col1">Mobile No:</span>
                             <span class="col2"><?php echo $data['profile']->mobile_no ?></span>
                         </div>
+
+                        <div class="row">
+                            <span class="col1">Tele No:</span>
+                            <span class="col2"><?php echo $data['profile']->tele_no ?></span>
+                        </div>
                     </div>
 
                     <div class="btn">
-                        <button class="delete">Delete profile</button>
                         <a href="<?= URLROOT; ?>/passenger_profile/edit_profile"><button class="edit">Edit profile</button></a>
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <div class="pro-summary">
-                <div class="left">
-                   
+                <div class="left">                    
+                        <span class="col1">Accepted Requests count:<?php echo !empty($data['TotalAccept']) ? $data['TotalAccept'] : '0'; ?></span>           
                 </div>
 
                 <div class="right">
-                   
+                        <span class="col1">Rejected Requests count:<?php echo !empty($data['TotalAccept']) ? $data['TotalReject'] : '0'; ?></span>                  
                 </div>
             </div>
         </div>
