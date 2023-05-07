@@ -63,8 +63,10 @@
 
                 <thead>
                     <tr>
-                        <th>Request ID</th>
+                        <th>Bus No</th>
+                        <th>NTC No</th>
                         <th>Date From</th>
+                        <th>Date To</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -77,8 +79,10 @@
                     ?>
 
                         <tr>
-                            <td><?php echo $row->request_id; ?></td>
+                            <td><?php echo $row->bus_no; ?></td>
+                            <td><?php echo $row->ntcNo; ?></td>
                             <td><?php echo $row->date_from; ?></td>
+                            <td><?php echo $row->date_to; ?></td>
                             <td><?php echo $row->status; ?></td>
                         </tr>
 

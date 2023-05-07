@@ -19,6 +19,17 @@ class M_owner_leaverequests{
 
     }
 
+    public function view_leaverequests2(){
+        // prepare query
+        
+        $this->db->query('SELECT * from leave_request WHERE owner_nic= :nic AND (status="accept" OR status="reject")');
+        $id = $_SESSION['user_id'];
+        $this->db->bind(':nic',$id);
+        $results = $this->db->resultSet();
+        return $results;
+
+    }
+
     public function request_details($request_id){
         // prepare query
 

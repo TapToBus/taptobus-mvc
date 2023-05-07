@@ -20,8 +20,10 @@ class Owner_leaverequests extends Controller{
 
     public function view_leaverequests(){
 
+
         $data = $this->ownerModel->view_leaverequests();
-        $this->view('owner/view_leaverequests',$data);
+        $data2 = $this->ownerModel->view_leaverequests2();
+        $this->view('owner/view_leaverequests',$data,$data2);
 
     
     }
