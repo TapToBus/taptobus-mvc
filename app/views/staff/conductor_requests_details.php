@@ -22,7 +22,7 @@
     ?>
 
             
-            <h2>Conductor:- <?php echo ' '. $result->fname.' '.$result->lname?></h2>
+            <h2>Conductor: <?php echo ' '. $result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">

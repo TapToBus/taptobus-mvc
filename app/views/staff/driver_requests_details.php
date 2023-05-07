@@ -20,7 +20,7 @@
     <div class="container">
             <?php $result = $data['driverRequestDetails']?>
 
-            <h2>Driver:- <?php echo ' '. $result->fname.' '.$result->lname?></h2>
+            <h2>Driver: <?php echo ' '. $result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
