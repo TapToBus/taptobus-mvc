@@ -57,6 +57,44 @@
     </div>
 
 
+    <div class="container2">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Date From</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+
+                    foreach ($data1 as $row) :
+
+                    ?>
+
+                        <tr>
+                            <td><?php echo $row->request_id; ?></td>
+                            <td><?php echo $row->date_from; ?></td>
+                            <td><?php echo $row->status; ?></td>
+                        </tr>
+
+                    <?php
+
+                    endforeach;
+
+                    ?>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
 </body>
 
 </html>

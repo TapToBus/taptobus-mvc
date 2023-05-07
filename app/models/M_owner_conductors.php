@@ -154,6 +154,7 @@ class M_owner_conductors{
     // find conductor by ntc
     public function findConByNtcNo($ntc){
         // prepare query
+        echo($ntc);
         $this->db->query('SELECT * FROM conductor WHERE ntcNo = :ntc');
 
         // bind value

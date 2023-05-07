@@ -37,7 +37,6 @@
                         <label for=""><b>NIC  - </b> <?php echo $row->nic; ?></label>
                         <label for=""><b>Address  - </b> <?php echo $row->dob; ?></label>
                         <label for=""><b>Mobile No.  - </b> <?php echo $row->mobileNo; ?></label>
-                        <label for=""><b>Telephone No.  - </b> <?php echo $row->telNo; ?></label>
                         <label for=""><b>Email  - </b> <?php echo $row->email; ?></label>
                     </div>
                     <div class="row">
