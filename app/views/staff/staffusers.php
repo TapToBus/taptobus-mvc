@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/staff-style/staffusers-style.css" />
 </head>
 <body>
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
+    <?php 
+        $active = "users";
+        require APPROOT . '/views/inc/staff_navbar.php' 
+    ?>
 
     <div class="container">      
         <p>  

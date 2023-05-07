@@ -214,11 +214,11 @@
     position: relative;
 }
 .required::after{
-    content: "Required";
-    color: rgba(255, 0, 0, 0.421);
-    font-size: 12px;
+    content: "*";
+    color: rgb(235, 20, 20);
+    font-size: 16px;
     margin-left: 8px;
-    font-weight: 300;
+    font-weight: 400;
     
 }
 .form-control{

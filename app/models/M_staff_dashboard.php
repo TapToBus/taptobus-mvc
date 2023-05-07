@@ -48,7 +48,7 @@
         // ----------Line chart----------
 
         public function currentUsersLineChart(){
-            $this->db->query("SELECT MONTHNAME(DATE(active_date)) AS month, COUNT(*) AS count from user WHERE (type ='conductor' OR type = 'driver' OR type = 'owner') GROUP BY month");
+            $this->db->query("SELECT MONTHNAME(DATE(active_date)) AS month, COUNT(*) AS count from user WHERE (type ='conductor' OR type = 'driver' OR type = 'owner') GROUP BY month order by active_date");
             return $this->db->resultSet();            
         }
         

@@ -52,12 +52,7 @@
             $this->view('staff/bus_details', $data);
         }
 
-        public function viewNoOfRides() {
-            $noOfRides = $this->busModel->getNoOfRides();
-            $data = ['noOfRides' => $noOfRides];
-            $this->view('staff/bus_details', $data);
-        }
-
+      
         // ------------- search user details  from tabels -------------
 
         public function  searchOwner(){
@@ -83,51 +78,51 @@
             }
         }
 
-        // public function  searchConductor(){
+        public function  searchConductor(){
                         
-        //     if($_SERVER['REQUEST_METHOD']=='GET'){
-        //     $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+            if($_SERVER['REQUEST_METHOD']=='GET'){
+            $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
         
-        //         $search=trim($_GET['search']);            
-        //         $conductor= $this->conductorModel->searchConductor($search);
+                $search=trim($_GET['search']);            
+                $conductor= $this->conductorModel->searchConductor($search);
                 
-        //         $data=[                      
-        //             'conductordetails'=>$conductor,
-        //             'search'=>$search
-        //         ];
+                $data=[                      
+                    'conductordetails'=>$conductor,
+                    'search'=>$search
+                ];
 
-        //         $this->view('staff/c_details',$data);
-        //     }else{
-        //         $data=[                      
-        //             'conductordetails'=>'',
-        //             'search'=>''
-        //         ];
-        //         $this->view('staff/c_details',$data);
-        //     }
-        // }
+                $this->view('staff/c_details',$data);
+            }else{
+                $data=[                      
+                    'conductordetails'=>'',
+                    'search'=>''
+                ];
+                $this->view('staff/c_details',$data);
+            }
+        }
 
-        // public function  searchDriver(){
+        public function  searchDriver(){
                         
-        //     if($_SERVER['REQUEST_METHOD']=='GET'){
-        //     $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+            if($_SERVER['REQUEST_METHOD']=='GET'){
+            $_GET=filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
         
-        //         $search=trim($_GET['search']);            
-        //         $driver= $this->driverModel->searchDriver($search);
+                $search=trim($_GET['search']);            
+                $driver= $this->driverModel->searchDriver($search);
                 
-        //         $data=[                      
-        //             'driverdetails'=>$driver,
-        //             'search'=>$search
-        //         ];
+                $data=[                      
+                    'driverdetails'=>$driver,
+                    'search'=>$search
+                ];
 
-        //         $this->view('staff/d_details',$data);
-        //     }else{
-        //         $data=[                      
-        //             'driverdetails'=>'',
-        //             'search'=>''
-        //         ];
-        //         $this->view('staff/d_details',$data);
-        //     }
-        // }
+                $this->view('staff/d_details',$data);
+            }else{
+                $data=[                      
+                    'driverdetails'=>'',
+                    'search'=>''
+                ];
+                $this->view('staff/d_details',$data);
+            }
+        }
 
         public function  searchBus(){
                         

@@ -11,6 +11,7 @@
 </head>
 <body>
     <?php 
+         $active = "requests";
         require APPROOT . '/views/inc/staff_navbar.php';
         $ownercount = $data['ownercount'];
         $conductorcount  = $data['conductorcount'];

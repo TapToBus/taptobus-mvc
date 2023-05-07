@@ -148,7 +148,10 @@
     </dialog>
 
 
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>    
+    <?php 
+     $active = "schedule";
+    require APPROOT . '/views/inc/staff_navbar.php' 
+    ?>    
 
     <div class="container"> 
         <div class="schedule-container">

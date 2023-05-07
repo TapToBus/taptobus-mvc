@@ -150,6 +150,16 @@
     margin-left: var(--sidebar-area);
 }
 
+.side-menu .active{
+    background-color: var(--clr-bg);
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+.side-menu .active i {
+    color: #fff;
+}
+
 @media screen and (max-width: 877px) {
     :root {
         --sidebar-area: 5rem;
