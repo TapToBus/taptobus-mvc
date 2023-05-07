@@ -52,12 +52,7 @@
             $this->view('staff/bus_details', $data);
         }
 
-        public function viewNoOfRides() {
-            $noOfRides = $this->busModel->getNoOfRides();
-            $data = ['noOfRides' => $noOfRides];
-            $this->view('staff/bus_details', $data);
-        }
-
+      
         // ------------- search user details  from tabels -------------
 
         public function  searchOwner(){

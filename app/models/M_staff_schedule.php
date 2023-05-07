@@ -21,7 +21,7 @@
         }
 
         public function viewSchedules(){   // booking tabel eke schedule_id column eka ekka check krnn ona   
-            $this->db->query("SELECT s.id, s.bus_no, s.from, s.to, s.day, s.arrival_time, s.departure_time, s.ticket_price, b.id as bid FROM schedule s LEFT JOIN bookings b ON s.bus_no = b.bus_no order by s.day , s.arrival_time");
+            $this->db->query("SELECT s.id, s.bus_no, s.from, s.to, s.day, s.arrival_time, s.departure_time, s.ticket_price, b.id as bid FROM schedule s LEFT JOIN bookings b ON s.id = b.schedule_id order by s.day , s.arrival_time");
             return $this->db->resultSet();
            // (left join ekk damme schedul tabel eke serma data tika ganna saha booking tabel eke booking thiyn id tika ganna)
         }
