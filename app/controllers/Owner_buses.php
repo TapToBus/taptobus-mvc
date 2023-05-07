@@ -50,7 +50,7 @@ class Owner_buses extends Controller{
                 'root_no' => $_POST['root_no'],
                 // 'owner_name' => $_POST['owner_name'],
                 'capacity'  => $_POST['capacity'],
-                'bus_image'  => $_POST['bus_image'],
+                'bus_image'  => "",
                 // 'permit_image'  => $_POST['permit_image'],
                 'wifi'  => $wifi,
                 'usb'  => $usb,
@@ -60,6 +60,22 @@ class Owner_buses extends Controller{
                 'capacity_err' => '',
             ];
 
+            if(!empty($_FILES["bus_image"]) && is_uploaded_file($_FILES['bus_image']['tmp_name']))
+            {
+                // $fileName = "user";
+                $msg = upload_file("bus_image","bus",$data['bus_no'],['png','jpeg','jpg'],50000000,TRUE,TRUE);
+                if(!empty($msg))
+                {
+                    $image = "";
+                }
+                else{
+                    $target_file = basename($_FILES["bus_image"]["name"]);
+                    $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                    $image = $data['bus_no'].'.'.$extension;
+                    $data['bus_image'] = $image;
+                }
+            }
+
             //validate bus no
             if(! preg_match('/^[N][B-E]-\d{4}$/', $data['bus_no'])){
                 $data['bus_no_err'] = 'A valid bus number is required';
@@ -68,7 +84,6 @@ class Owner_buses extends Controller{
                     $data['bus_no_err'] = 'Bus No is already used';
                 }
             }
-
             
 
             //validate root no

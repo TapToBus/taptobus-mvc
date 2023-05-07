@@ -13,11 +13,13 @@ class Owner_register extends Controller{
         */ 
         $this->ownerModel = $this->model('m_owner_register');
         $this->requestModel = $this->model('m_owner_requests');
+      
     }
 
     
     // owner register
     public function register(){
+        
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // initialize data
             $data = [
@@ -72,8 +74,7 @@ class Owner_register extends Controller{
             //validate mobile no
             if(! preg_match('/^[0-9]{10}+$/', $data['mobileNo'])){
                 $data['mobileNo_err'] = 'A valid mobile no is required';
-            }
-            else{
+            }else{
                 if($this->ownerModel->findOwnerByMobileNo($data['mobileNo'])){
                     $data['mobileNo_err'] = 'Mobile no is already taken';
                 }
@@ -95,15 +96,15 @@ class Owner_register extends Controller{
                 if( $this->ownerModel->register($data)  && $this->requestModel->add_owner_request($data) ){
                     direct('pages/index');
                    
-                // }else{
-                //     die('Sorry! Something went wrong');
-                // }
-                // newly added
-                if($this->ownerModel->register($data)){
-                    direct('pages/index');
                 }else{
                     die('Sorry! Something went wrong');
                 }
+                // newly added
+                // if($this->ownerModel->register($data)){
+                //     direct('pages/index');
+                // }else{
+                //     die('Sorry! Something went wrong');
+                // }
 
             }else{
                 // load view with errors
@@ -111,9 +112,12 @@ class Owner_register extends Controller{
             
             }
         }
-        else{
+
+        else
+        {
 
             // initialize default values
+           
             $data = [
                 'fname' => '',
                 'lname' => '',
@@ -135,6 +139,3 @@ class Owner_register extends Controller{
         }
     }
 }
-}
-
-?>

@@ -39,7 +39,7 @@
                 <em id="error"></em>
             </div>
 
-            <form action="" method="post" name="addbus-form" onsubmit="return isValid()">
+            <form action="" method="post" name="addbus-form" onsubmit="return isValid()" enctype="multipart/form-data">
 
                 <div class="big">
                     <div class="row">
