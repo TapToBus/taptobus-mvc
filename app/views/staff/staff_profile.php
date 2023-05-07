@@ -13,12 +13,15 @@
 </head>
 
 <body>
-    <?php require APPROOT . '/views/inc/staff_navbar.php' ?>
+    <?php require APPROOT . '/views/inc/staff_navbar.php' ;
+        echo($data['profile']);
+        die();
+    ?>
 
     <div class="main">
         <div class="content">
             <h1 class="heading">Profile</h1>
-
+            
             <div class="pro-details">
                 <!-- <div class="left">
                     <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $data['profile']->pic; ?>" alt="<?php echo $data['profile']->nic; ?>">
