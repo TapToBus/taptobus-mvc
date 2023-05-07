@@ -193,6 +193,17 @@
     margin-left: 10px;
 }
 
+.box .field5{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .con_image{
+
+    margin-left: 0px;
+    width: 100%;
+}
+
 .fname, .lname, .nic, .ntcNo, .email, .mobileNo, .dob, .address{
     margin-bottom: 10px;
 }

@@ -81,7 +81,7 @@
                         <div class="b">
                             <input type="file" class="form-control" name="bus_image" id="bus_image"  accept="image/*">
                         </div>
-                    </div>
+                    </div>   
 
                    
 
