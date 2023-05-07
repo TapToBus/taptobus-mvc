@@ -151,6 +151,24 @@ class M_owner_drivers{
         }
     }
 
+    // find driver by ntc
+    public function findDrByNtcNo($ntc){
+        // prepare query
+        $this->db->query('SELECT * FROM driver WHERE ntcNo = :ntc');
+
+        // bind value
+        $this->db->bind(':ntc', $ntc);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
 
 ?>

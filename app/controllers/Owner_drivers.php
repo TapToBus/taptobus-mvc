@@ -79,7 +79,7 @@ class Owner_drivers extends Controller{
             }
 
              //validate ntcNo
-             if(! preg_match('/^C\d{5}$/', $data['ntcNo'])){
+             if(! preg_match('/^D\d{5}$/', $data['ntcNo'])){
                 $data['ntcNo_err'] = 'A valid NTC No is required';
             }
             else{

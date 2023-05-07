@@ -151,6 +151,25 @@ class M_owner_conductors{
         }
     }
 
+    // find conductor by ntc
+    public function findConByNtcNo($ntc){
+        // prepare query
+        $this->db->query('SELECT * FROM conductor WHERE ntcNo = :ntc');
+
+        // bind value
+        $this->db->bind(':ntc', $ntc);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 }
 
 ?>

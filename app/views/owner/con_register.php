@@ -18,7 +18,7 @@
         <!-- right side of the  page -->
         <div class="right">
             <div class="box">
-                <h2>Registration Form<Form></Form>
+                <h2>Conductor Registration Form<Form></Form>
                 </h2>
 
                 <!-- register form -->
