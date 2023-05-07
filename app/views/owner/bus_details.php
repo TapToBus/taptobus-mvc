@@ -129,7 +129,7 @@
                     <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data5->pic; ?>" alt="" />
                 </div>
 
-                <form id="change_name" action="<?php echo URLROOT; ?>/owner_buses/change_driver" method="POST">
+                <form id="change_name2" action="<?php echo URLROOT; ?>/owner_buses/change_driver" method="POST">
 
                     <input type="hidden" name="bus_no" value="<?php echo $data->bus_no; ?>">
 
@@ -158,7 +158,7 @@
 
 
                 <script>
-                    var form = document.querySelector('#change_name');
+                    var form = document.querySelector('#change_name2');
                     var select = document.getElementById('dr_name');
                     var selectedValue = select.value;
 
