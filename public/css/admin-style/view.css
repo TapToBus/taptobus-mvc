@@ -881,6 +881,13 @@ a{
   margin-left: 150px;
 }
 
+.add_new_staff_member_form span{
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+  margin-left: 80px;
+}
+
 
 
 
