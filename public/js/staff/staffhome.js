@@ -57,8 +57,21 @@ date_to.addEventListener("change",()=>{
 });
 
 
+// -------------- notice delete confirmation dialog box --------------
+
+let dltconfirmpopup = document.getElementById("dlt_popup");
+
+function openconfirmdelete(){
+   const opendeletepopup = document.getElementById("dlt_popup");
+   opendeletepopup.showModal();
+}
 
 
+function closeconfirmdelete(){
+    const opendeletepopup = document.getElementById("dlt_popup");
+    opendeletepopup.closeModal();
+ }
+ 
 
 
 

@@ -32,10 +32,16 @@
                     <th>Bus No</th>
                     <th>Root No</th>
                     <th>Capacity</th>
-                    <th>Owner NIC</th>   
+                    <th>Owner NIC</th>  
+                    <th>Ratings</th> 
+                    <th>Responses</th> 
                 </tr>
                 <?php 
-                $results = $data['busdetails'];
+                // $results = $data['busdetails'];
+                // echo "<br/>";
+                $resultsNew = $data['noOfRides'];
+                print_r($resultsNew);
+                die();
                
                 foreach($results as $busdetail){
             
@@ -46,6 +52,8 @@
                         <td><?php echo $busdetail->root_no ?></td>
                         <td><?php echo $busdetail->capacity?></td>
                         <td><?php echo $busdetail->owner_nic?></td>
+                        <td><?php echo $busdetail->ratings?></td>
+                        <td><?php echo $busdetail->responses?></td>
                     </tr>
                 <?php
                 }

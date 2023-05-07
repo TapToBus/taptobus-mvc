@@ -72,19 +72,19 @@ class M_Staff {
     }
 
     public function viewDrivers(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'active' ");
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo, ratings, responses FROM driver where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function viewConductors(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM conductor where status = 'active' ");
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo, ratings, responses FROM conductor where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function viewBuses(){
-        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where status = 'active' ");
+        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic, ratings, responses FROM bus where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
@@ -106,7 +106,8 @@ class M_Staff {
     {
       $this->db->query("SELECT * FROM owner WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search' OR email LIKE '%$search'");
       $result = $this->db->resultSet();
-      return $result;
+      return $result;   
+      
     }
 
     public function searchConductor($search){
@@ -127,6 +128,13 @@ class M_Staff {
         return $result;
     }
     
+
+    // ------------------ get no of rides------------
+    public function getNoOfRides() {
+        $this->db->query("SELECT COUNT(id) AS NoOfRides from history  group by bus_no");
+        $result = $this->db->resultSet();
+        return $result;
+    } 
 
 
 }

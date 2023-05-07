@@ -432,7 +432,7 @@
                             'Please let us know if you have any questions or concerns, and we will be happy to assist you.<br>
                             Thank you!.<br>                            
                             TapToBus Organization.';
-                        // $this->busModel->delete_bus_requests($bus_no); // delete the request from the bus table <<-- should be uncommented
+                        $this->busModel->delete_bus_requests($bus_no); // delete the request from the bus table <<-- should be uncommented
 
                         $data = [
                             'bus_no' => $bus_no,
@@ -488,7 +488,7 @@
                             'Please let us know if you have any questions or concerns, and we will be happy to assist you.<br>
                             Thank you!.<br>                            
                             TapToBus Organization.';
-                        // $this->ownerModel->delete_owner_requests($owner_nic); // delete the request from the owner table <<-- should be uncommented
+                        $this->ownerModel->delete_owner_requests($owner_nic); // delete the request from the owner table <<-- should be uncommented
 
                         $data = [
                             'owner_nic' => $owner_nic,
@@ -557,8 +557,8 @@
                             'Please let us know if you have any questions or concerns, and we will be happy to assist you.<br>
                             Thank you!.<br>                            
                             TapToBus Organization.';
-                        // $this->conductorModel->delete_conductor_requests($); // delete the request from the condutor table <<-- should be uncommented
-
+                             $this->conductorModel->delete_conductor_requests($conductor_ntc); // delete the request from the condutor table <<-- should be uncommented
+                            
                         $data = [
                             'conductor_ntc' => $conductor_ntc,
                             'staff_no' => $staff_no ,
@@ -625,7 +625,7 @@
                             'Please let us know if you have any questions or concerns, and we will be happy to assist you.<br>
                             Thank you!.<br>                            
                             TapToBus Organization.';
-                        // $this->driverModel->delete_driver_requests($); // delete the request from the condutor table <<-- should be uncommented
+                        $this->driverModel->delete_driver_requests($driver_ntc); // delete the request from the condutor table <<-- should be uncommented
                        
 
                         $data = [

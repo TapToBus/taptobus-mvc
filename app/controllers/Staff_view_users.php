@@ -31,7 +31,6 @@
             $busOwnerdetails = $this->ownerModel->viewOwners(); 
             $data = ['busOwnerdetails' => $busOwnerdetails];
             $this->view('staff/bo_details',$data);
-
         }
 
         public function view_driver(){
@@ -53,6 +52,11 @@
             $this->view('staff/bus_details', $data);
         }
 
+        public function viewNoOfRides() {
+            $noOfRides = $this->busModel->getNoOfRides();
+            $data = ['noOfRides' => $noOfRides];
+            $this->view('staff/bus_details', $data);
+        }
 
         // ------------- search user details  from tabels -------------
 
