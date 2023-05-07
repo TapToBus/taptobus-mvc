@@ -58,7 +58,7 @@
                             <div class="delete-button">
                                 <!-- pass the button to the js with row id staff_no -->
                                 <!-- if you press the button it will direct to the popup message -->
-                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removestaff->staff_no ?>')">Reset</button>
+                                <button class="delete-btn" type="button" onclick="openModal('<?php echo $removestaff->staff_no ?>')">Restore</button>
                             </div>
                         </td>
                     </tr>

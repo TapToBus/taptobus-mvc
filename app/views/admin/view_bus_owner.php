@@ -41,6 +41,10 @@
                     <th>Last name</th>
                     <th>Email</th>
                     <th>Mobile no</th>
+                    <th>Bus count</th>
+                    <th>Conductor count</th>
+                    <th>Driver count</th>
+
                     <th class="delete-button"></th>
                 </tr>
 
@@ -51,6 +55,9 @@
                         <td><?php echo $owners->lname; ?></td>
                         <td><?php echo $owners->email; ?></td>
                         <td><?php echo $owners->mobileNo; ?></td>
+                        <td><?php echo $owners->bus_count; ?></td>
+                        <td><?php echo $owners->conductor_count; ?></td>
+                        <td><?php echo $owners->driver_count; ?></td>
                         <td>
                             <div class="delete-button">
                                 <button class="delete-btn" type="button" onclick="openModal('<?php echo $owners->nic ?>')">Delete</button>

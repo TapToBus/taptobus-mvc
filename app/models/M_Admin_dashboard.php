@@ -35,27 +35,27 @@ class M_Admin_dashboard{
 
     //get all users count for admin dashboard doghtnut chart
     public function getUserChartCount(){
-        $this->db->query("SELECT type,COUNT(*) AS count FROM user GROUP BY type");
+        $this->db->query("SELECT type,COUNT(*) AS count FROM user GROUP BY type ");
         return $this->db->resultSet();
     }
 
     //get all users new adding to the system for new users line chart
     public function getUserAddDateChart(){
-        $this->db->query("SELECT MONTHNAME(active_date) AS month,COUNT(*) AS count FROM user GROUP BY month");
+        $this->db->query("SELECT MONTHNAME(active_date) AS month,COUNT(*) AS count FROM user WHERE(type = 'passenger' OR type = 'owner' OR type = 'conductor' OR type = 'driver') GROUP BY month ORDER BY active_date");
         // $this->db->query("SELECT MONTHNAME(active_date) AS month,COUNT(*) AS count FROM user WHERE type = 'passenger || owner || conductor || driver' GROUP BY month");
         return $this->db->resultSet();
     }
 
     //get all passenger new adding to the system for new passenger line chart
     public function getPassengerAddDateChart(){
-        $this->db->query("SELECT MONTHNAME(joined_datetime) AS month,COUNT(*) AS count FROM passenger WHERE status = 'active' GROUP BY month ");
+        $this->db->query("SELECT MONTHNAME(joined_datetime) AS month,COUNT(*) AS count FROM passenger WHERE status = 'active' GROUP BY month ORDER BY joined_datetime ");
         return $this->db->resultSet();
 
     }
 
     //get all buses new adding to the system for new bus bar chart
     public function getBusAddDateChart(){
-        $this->db->query("SELECT MONTHNAME(joined_datetime) AS month,COUNT(*) AS count FROM bus WHERE status = 'active' GROUP BY month");
+        $this->db->query("SELECT MONTHNAME(joined_datetime) AS month,COUNT(*) AS count FROM bus WHERE status = 'active' GROUP BY month ORDER BY joined_datetime");
         return $this->db->resultSet();
     }
 
@@ -70,7 +70,7 @@ class M_Admin_dashboard{
     public function getProfitChart(){
 
         // $this->db->query('SELECT MONTHNAME(bo.booked_datetime) as month, SUM((bo.price)*0.05) as profit FROM bus bu JOIN bookings bo ON bu.bus_no = bo.bus_no GROUP BY MONTH(bo.booked_datetime)');
-        $this->db->query('SELECT MONTHNAME(booked_datetime) as month, SUM((price)*0.05) as profit FROM bookings GROUP BY MONTH(booked_datetime)');
+        $this->db->query('SELECT MONTHNAME(booked_datetime) as month, SUM((price)*0.05) as profit FROM bookings GROUP BY MONTH(booked_datetime) ORDER BY booked_datetime');
         return $this->db->resultSet();
 
     } 

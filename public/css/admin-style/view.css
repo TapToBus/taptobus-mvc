@@ -843,10 +843,10 @@ a{
   background: transparent;
   color: rgb(189, 167, 0);
   cursor: pointer;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   font-size: 16px;
-  margin-left: 20px;
+  margin-left: 10px;
 
 
 }
@@ -879,6 +879,13 @@ a{
   display: flex;
   flex-direction: row;
   margin-left: 150px;
+}
+
+.add_new_staff_member_form span{
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+  margin-left: 80px;
 }
 
 

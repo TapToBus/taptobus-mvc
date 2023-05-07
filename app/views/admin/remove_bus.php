@@ -61,7 +61,7 @@
                         <td><?php echo $removebuses->responses ?></td>
                         <td>
                             <div class="delete-button">
-                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removebuses->bus_no ?>')">Reset</button>
+                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removebuses->bus_no ?>')">Restore</button>
                             </div>
                         </td>
                     </tr>

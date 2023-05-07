@@ -25,7 +25,7 @@
 
             <label for="nic" class="add_new_staff_member_label">NIC</label>
             <input type="text" name="nic" id="nic" class="add_new_staff_member_input">
-            <span><?php echo $data['nic_err'] ?></span>
+            <span class="admin-form-errors"><?php echo $data['nic_err'] ?></span>
 
             <label for="first_name" class="add_new_staff_member_label">First name</label>
             <input type="text" id="firstname" name="first_name" class="add_new_staff_member_input">

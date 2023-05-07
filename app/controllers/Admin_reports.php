@@ -101,12 +101,12 @@ class Admin_reports extends Controller{
     $pdf->AddPage('L','A4');
    
           
-    $pdf->SetFont('Arial', 'B', 20);
+    $pdf->SetFont('Arial', 'B', 25);
     $pdf->Cell(0, 10, '- TapToBus - ', 0, 1, 'C');
     $pdf->Cell(0, 0,' ', 0, 1, 'C');
 
     $pdf->SetFont('Arial', 'B', 10);
-    $pdf->Cell(0, 10, 'Online Expressway Bus ticket Booking System ', 0, 1, 'C');
+    $pdf->Cell(0, 10, 'Expressway Bus Management System ', 0, 1, 'C');
     $pdf->Cell(0, 5,' ', 0, 1, 'C');
 
     $pdf->SetFont('Arial', 'B', 16);

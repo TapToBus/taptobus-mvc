@@ -42,6 +42,7 @@
                     <th>Last name</th>
                     <th>Email</th>
                     <th>Mobile no</th>
+                    <th>Journey count</th>
                 </tr>
 
                 <?php foreach ($data['passengers'] as $passengers) : ?>
@@ -51,6 +52,7 @@
                         <td><?php echo $passengers->lname; ?></td>
                         <td><?php echo $passengers->email; ?></td>
                         <td><?php echo $passengers->mobile_no; ?></td>
+                        <td><?php echo $passengers->journey_count; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

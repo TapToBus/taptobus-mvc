@@ -10,7 +10,7 @@ class M_Admin_bus_conductor_details{
 
     //function for get the values from databse and display
     public function getconductors(){
-        $this->db->query('SELECT * FROM conductor WHERE status = "active"');
+        $this->db->query('SELECT ntcNo,nic,fname,lname,dob,email,mobileNo,telNo,ratings,owner_nic,bus_no FROM conductor WHERE status = "active"');
 
         return $this->db->resultSet();
         

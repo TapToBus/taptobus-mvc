@@ -21,7 +21,7 @@
                 <hr>
             </div> -->
 
-        <h1>REARRANGE USERS</h1>
+        <h1>RESTORE USERS</h1>
 
         <div class="grid-container">
 

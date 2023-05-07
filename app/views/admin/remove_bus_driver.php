@@ -39,13 +39,10 @@
                     <th>First name</th>
                     <th>Last name</th>
                     <th>DOB</th>
-                    <th>Address</th>
                     <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
                     <th>Ratings</th>
-                    <th>Total Ratings</th>
-                    <th>Responses</th>
                     <th>Owner_nic</th>
                     <th class="delete-button"></th>
                 </tr>
@@ -57,17 +54,14 @@
                         <td><?php echo $removedrivers->fname; ?></td>
                         <td><?php echo $removedrivers->lname; ?></td>
                         <td><?php echo $removedrivers->dob; ?></td>
-                        <td><?php echo $removedrivers->address; ?></td>
                         <td><?php echo $removedrivers->email; ?></td>
                         <td><?php echo $removedrivers->mobileNo; ?></td>
                         <td><?php echo $removedrivers->telNo; ?></td>
                         <td><?php echo $removedrivers->ratings; ?></td>
-                        <td><?php echo $removedrivers->total_ratings; ?></td>
-                        <td><?php echo $removedrivers->responses; ?></td>
                         <td><?php echo $removedrivers->owner_nic; ?></td>
                         <td>
                             <div class="delete-button">
-                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removedrivers->ntcNo ?>')">Reset</button>
+                                <button type="button" class="delete-btn" onclick="openModal('<?php echo $removedrivers->ntcNo ?>')">Restore</button>
                             </div>
                         </td>
                     </tr>

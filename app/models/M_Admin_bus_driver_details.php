@@ -10,7 +10,7 @@ class M_Admin_bus_driver_details{
 
     //function for get data from database to users driver table
     public function getdrivers(){
-        $this->db->query('SELECT * FROM driver WHERE status = "active"');
+        $this->db->query('SELECT ntcNo,nic,fname,lname,dob,email,mobileNo,telNo,ratings,owner_nic,bus_no FROM driver WHERE status = "active"');
 
         return $this->db->resultSet();
     }
