@@ -20,4 +20,9 @@ class M_passenger_bookings{
 
         return $result;
     }
+
+
+    public function getBookingDetails($boks_id){
+        
+    }
 }

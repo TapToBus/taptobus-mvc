@@ -35,7 +35,7 @@
 
             <?php foreach ($data['bookings'] as $booking) : ?>
 
-                <div class="result" onclick="">
+                <div class="result" onclick="goNext('<?php echo $booking->id ?>')">
                     <span class="result1"><?php echo $booking->bus_no; ?></span>
                     <span class="result2"><?php echo $booking->from; ?></span>
                     <span class="result3"><?php echo $booking->to; ?></span>
@@ -76,10 +76,10 @@
     <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script> -->
 
     <script>
-        /*function goNext(booking_id) {
+        function goNext(booking_id) {
             const url = "http://localhost/taptobus/passenger_bookings/booking_details?bok_id=" + booking_id;
             window.location.href = url;
-        }*/
+        }
     </script>
 </body>
 

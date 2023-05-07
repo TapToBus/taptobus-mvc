@@ -18,5 +18,10 @@ class Passenger_bookings extends Controller{
         ];
     
         $this->view('passenger/bookings', $data);
-    }    
+    }
+    
+    
+    public function booking_details(){
+        $this->view('passenger/booking_details');
+    }
 }
