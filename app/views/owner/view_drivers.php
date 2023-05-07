@@ -36,7 +36,7 @@
            ?>
                 <div class="card">
                     <div class="images">
-                        <img src="<?php echo URLROOT; ?>/img/owner_img/<?php echo $row->pic; ?>" alt="">
+                        <img src="<?php echo URLROOT; ?>/img/profile-pic/<?php echo $row->pic; ?>" alt="">
                     </div>
 
                     <div class="caption">

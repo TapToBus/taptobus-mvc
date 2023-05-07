@@ -26,9 +26,8 @@
             <div class="main_details">
                 <div class="main_left">
                     <div class="profile_pic">
-                        <img src="<?php echo URLROOT?>/img/owner_img/dr1.jpg" alt="" srcset="" id="photo">
-                        <!-- <label for="file" id="uploadBtn"><i class="fa-solid fa-pen-to-square"></i></label>
-                        <input type="file" id="file"> -->
+                        <img src="<?php echo URLROOT?>/img/profile-pic/<?php echo $row->pic; ?>" alt="" srcset="" id="photo">
+                        
                     </div>
                     <p class="user_name"><?php echo $row->fname; ?> <?php echo $row->lname; ?></p>
                         <hr>
