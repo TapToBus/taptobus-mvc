@@ -45,6 +45,7 @@ function closeDeleteConfirmationModal(){
 const destinations = ['Galle', 'Makubura']
 
 const selectboxs = document.querySelectorAll('.location-select')
+console.log(selectboxs);
 
 selectboxs.forEach((select, idx) => {
   select.addEventListener('change', () => {
@@ -82,6 +83,7 @@ departrue_time.addEventListener("change", ()=>{
 const e_destinations = ['Galle', 'Makubura']
 
 const e_selectboxs = document.querySelectorAll('.u-location-select')
+console.log(e_selectboxs);
 
 selectboxs.forEach((e_select, idx) => {
     e_select.addEventListener('change', () => {
