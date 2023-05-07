@@ -2,6 +2,7 @@
 
 class Passenger_bookings extends Controller{
     private $bookingsModel;
+    private $passengerModel;
 
     public function __construct(){
         if(! isLoggedIn()){
@@ -9,6 +10,7 @@ class Passenger_bookings extends Controller{
         }
 
         $this->bookingsModel = $this->model('m_passenger_bookings');
+        $this->passengerModel = $this->model(',_passenger_profile');
     }
 
     
@@ -25,7 +27,8 @@ class Passenger_bookings extends Controller{
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $bok_id = $_POST['booking_id'];
             $refund = $this->bookingsModel->updateHistory($bok_id);
-            
+            $passenger = $this->passengerModel->getPassengerDetails($_SESSION['user_id']);
+
             
         }else{
             $bok_id = $_GET['bok_id'];
