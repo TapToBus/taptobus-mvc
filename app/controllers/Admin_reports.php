@@ -94,6 +94,7 @@ class Admin_reports extends Controller{
     }
 
     $reportData = $this->profitTableModel->get_search_income_records($_SESSION['date_from'],$_SESSION['date_to']);
+    $totalprofit = $this->profitTableModel->get_total_income($_SESSION['date_from'],$_SESSION['date_to']);
 
     $pdf = new FPDF();
        
@@ -111,6 +112,10 @@ class Admin_reports extends Controller{
 
     $pdf->SetFont('Arial', 'B', 16);
     $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Profit Details', 0, 1, 'C');
+    $pdf->Cell(0, 10,' ', 0, 1, 'C');
+
+    $pdf->Cell(0, 8,'Total profit = '.$totalprofit->sum_profit, 0, 1, 'C');
+
     $pdf->Cell(0, 10,' ', 0, 1, 'C');
    
    
