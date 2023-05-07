@@ -26,7 +26,7 @@
 }
 
 .content .pro-details .left{
-       display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -77,11 +77,6 @@
     cursor: pointer;
 }
 
-.content .pro-details .right .btn .delete{
-    color: red;
-    border: 1px solid red;
-    border-radius: 5px;
-}
 
 .content .pro-details .right .btn button:hover{
     background-color: var(--clr-table-title-bg);
@@ -96,45 +91,24 @@
 
 .content .pro-summary{
     display: grid;
-    grid-template-columns: 49% 49.5%;
+    grid-template-columns: 1fr 1fr;
     column-gap: 10px;
+    margin-top: 2rem;
 }
 
+.content .pro-summary .right, .left{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;    
+    padding: 20px 10px;
+    text-align: center;
+}
 .content .pro-summary .left{
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-    padding-top: 20px;
-    padding-bottom: 20px;
-    
-    display: grid;
-    grid-template-columns: 50% 50%;
+    color: green;
 }
-
-.content .pro-summary .left .journeys{
-    text-align: center;
-}
-
-.content .pro-summary .left .col1{
-    font-weight: 450;
-}
-
-.content .pro-summary .left .cancellations{
-    text-align: center;
-}
-
 .content .pro-summary .right{
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    text-align: center;
+    color: red;
 }
-
-.content .pro-summary .right .col1{
-    font-weight: 450;
+.content .pro-summary .right,.left .col1{
+    font-weight: 600;
 }
