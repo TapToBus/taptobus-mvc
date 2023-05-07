@@ -25,7 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */
-    margin: 0px 5px;
+    margin: 0px 26px;
     padding: 0px 20px;
    
 }
@@ -44,7 +44,7 @@
     height: 45px;
     width : 90px;
     margin-top: 90px;
-    margin-left: 45px;
+    margin-left: 68px;
     border-radius: 10px;
     
 
@@ -53,7 +53,7 @@
 .container h2{
 
     position: relative;
-    margin-left: 3.5%;
+    margin-left: 5.4%;
     margin-top: -110px ;
     margin-bottom: 70px;
     color: hsl(231, 61%, 40%);
