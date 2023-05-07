@@ -78,7 +78,7 @@ class M_owner_buses{
         $this->db->bind(':bus_no',$bus_no);
         $this->db->execute();
 
-        $this->db->query('UPDATE driver SET bus_no=:bus_no  WHERE ntcNo= :dri');
+        $this->db->query('UPDATE driver SET bus_no=:bus_no,status="active"  WHERE ntcNo= :dri');
         $this->db->bind(':dri',$dri);
         $this->db->bind(':bus_no',$bus_no);
         $this->db->execute();

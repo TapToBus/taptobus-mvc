@@ -113,7 +113,7 @@
                     var select = document.getElementById('con_name');
                     var selectedValue = select.value;
 
-                    form.addEventListener('change', function(event) {
+                    select.addEventListener('change', function(event) {
 
                         // Prevent the form from submitting normally
                         event.preventDefault();
@@ -150,7 +150,6 @@
                     <?php endif; ?>
 
                     <select class="choose" name="dr_name" id="dr_name">
-
                         <?php if ($data5) : ?>
                             <option value="<?php echo $data5->fname; ?>" selected><?php echo $data5->fname; ?></option>
                         <?php else : ?>
@@ -168,18 +167,18 @@
 
 
                 <script>
-                    var form = document.querySelector('#change_name2');
-                    var select = document.getElementById('dr_name');
-                    var selectedValue = select.value;
+                    var form2 = document.querySelector('#change_name2');
+                    var select2 = document.getElementById('dr_name');
+                    var selectedValue = select2.value;
 
-                    form.addEventListener('change', function(event) {
+                    select2.addEventListener('change', function(event) {
 
                         // Prevent the form from submitting normally
                         event.preventDefault();
                         // Get the selected value
-                        var selectedConductor = select.value;
+                        var selectedConductor = select2.value;
 
-                        form.submit();
+                        form2.submit();
 
                     });
                 </script>
