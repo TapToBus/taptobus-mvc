@@ -62,6 +62,7 @@ class Owner_buses extends Controller
                 'capacity_err' => '',
             ];
 
+            
             if (!empty($_FILES["bus_image"]) && is_uploaded_file($_FILES['bus_image']['tmp_name'])) {
                 // $fileName = "user";
                 $msg = upload_file("bus_image", "bus", $data['bus_no'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);

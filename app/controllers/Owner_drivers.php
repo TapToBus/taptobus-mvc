@@ -41,6 +41,7 @@ class Owner_drivers extends Controller{
                 'mobileNo' => $_POST['mobileNo'],
                 'dob' => $_POST['dob'],
                 'address' => $_POST['address'],
+                'dr_image' => $_POST['dr_image'],
                
                 'fname_err' => '',
                 'lname_err' => '',
@@ -54,6 +55,20 @@ class Owner_drivers extends Controller{
                 
             ];
  
+
+            if (!empty($_FILES["dr_image"]) && is_uploaded_file($_FILES['dr_image']['tmp_name'])) {
+                // $fileName = "user";
+                $msg = upload_file("dr_image", "profile-pic", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
+                if (!empty($msg)) {
+                    $image = "";
+                } else {
+                    $target_file = basename($_FILES["bus_image"]["name"]);
+                    $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                    $image = $data['ntcNo'] . '.' . $extension;
+                    $data['dr_image'] = $image;
+                }
+            }    
+
             // validate
 
             // validate first name
@@ -122,7 +137,7 @@ class Owner_drivers extends Controller{
 
                 // register driver
                 if( $this->ownerModel->register($data) && $this->requestModel->add_dr_request($data) ){
-                    direct('users/login');
+                    direct('owner/view_drivers');
                    
                 }else{
                     die('Sorry! Something went wrong');
@@ -145,6 +160,7 @@ class Owner_drivers extends Controller{
                 'mobileNo' => '',
                 'dob' => '',
                 'address' => '',
+                'dr_image' => '',
                 'agree' => '',
                 'fname_err' => '',
                 'lname_err' => '',

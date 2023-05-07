@@ -80,6 +80,15 @@
                         </div>
                     </div>
 
+                    <div class="field5">
+                        <div class="dr_image">
+                            <label for="dr_image">Conductor Image</label> <br>
+                            <input type="file" name="dr_image"  > <br>
+                            
+                        </div>
+
+                    </div>
+
                    
                     <div class="btn">
                         <button><span></span>Register</button>
