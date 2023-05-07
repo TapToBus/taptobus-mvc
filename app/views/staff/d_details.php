@@ -33,7 +33,9 @@
                     <th>NIC</th>
                     <th>Name</th>                    
                     <th>Mobile no</th>
-                    <th>Email</th>   
+                    <th>Email</th>  
+                    <th>Ratings</th>
+                    <th>Responses</th> 
                 </tr>
                 <?php
                 $results = $data['driverdetails'];
@@ -44,7 +46,9 @@
                         <td><?php echo $driverdetail->nic ?></td>
                         <td><?php echo $driverdetail->fname ."  ". $driverdetail->lname ?></td>                        
                         <td><?php echo $driverdetail->mobileNo ?></td>
-                        <td><?php echo $driverdetail->email ?></td>            
+                        <td><?php echo $driverdetail->email ?></td>    
+                        <td><?php echo $driverdetail->ratings ?></td>
+                        <td><?php echo $driverdetail->responses ?></td>        
                     </tr>  
                  <?php
                 }

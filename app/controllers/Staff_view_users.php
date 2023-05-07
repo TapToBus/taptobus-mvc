@@ -31,7 +31,6 @@
             $busOwnerdetails = $this->ownerModel->viewOwners(); 
             $data = ['busOwnerdetails' => $busOwnerdetails];
             $this->view('staff/bo_details',$data);
-
         }
 
         public function view_driver(){

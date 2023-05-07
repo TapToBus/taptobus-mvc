@@ -33,7 +33,9 @@
                     <th>NIC</th>
                     <th>Name</th>                    
                     <th>Mobile no</th>
-                    <th>Email</th>   
+                    <th>Email</th>  
+                    <th>Ratings</th>
+                    <th>Responses</th> 
                 </tr>
                 <?php 
                 $results = $data['conductordetails'];
@@ -45,6 +47,8 @@
                         <td><?php echo $conductordetail->fname ." " .$conductordetail->lname?></td>                        
                         <td><?php echo $conductordetail->mobileNo?></td>
                         <td><?php echo $conductordetail->email ?></td>
+                        <td><?php echo $conductordetail->ratings ?></td>
+                        <td><?php echo $conductordetail->responses ?></td>
                     </tr>
                 <?php
                 }

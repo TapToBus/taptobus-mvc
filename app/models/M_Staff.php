@@ -72,13 +72,13 @@ class M_Staff {
     }
 
     public function viewDrivers(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM driver where status = 'active' ");
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo, ratings, responses FROM driver where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
 
     public function viewConductors(){
-        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo FROM conductor where status = 'active' ");
+        $this->db->query("SELECT ntcNo, nic, fname, lname, email, mobileNo, ratings, responses FROM conductor where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
