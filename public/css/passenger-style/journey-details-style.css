@@ -4,13 +4,15 @@
 form{
     background-color: var(--clr-white);
     height: auto;
-    width: 40%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
+    /* margin-left: 275px;
+    margin-right: 275px; */
+    width: 35%;
     position: absolute;
     top: 50%;
-    left: 58%;
+    left: 57.5%;
     transform: translate(-50%, -50%);
 
     padding-top: 10px;

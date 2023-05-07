@@ -48,7 +48,7 @@
 
             <div class="no-data">
                 <i class="fa-solid fa-circle-exclamation"></i> <br>
-                <span>No buses to display</span>
+                <span>No available buses to display</span>
             </div>
 
         <?php else : ?>

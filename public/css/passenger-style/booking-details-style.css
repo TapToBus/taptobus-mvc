@@ -34,6 +34,7 @@ body {
 .box h1{
     color: var(--clr-button);
     margin-bottom: 15px;
+    font-size: 25px;
     /* padding-left: 10px; */
 
     text-align: center;

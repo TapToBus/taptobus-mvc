@@ -92,13 +92,13 @@
 }
 
 .result .responses{
-    font-size: 11px;
+    font-size: 12px;
     padding-left: 5px;
     color: gray;
 }
 
 .result .capacity{
-    font-size: 12px;
+    font-size: 13px;
     color: gray;
 }
 

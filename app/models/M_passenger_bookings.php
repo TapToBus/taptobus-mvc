@@ -20,4 +20,11 @@ class M_passenger_bookings{
 
         return $result;
     }
+
+
+    public function getBookingDetails($bok_id){
+        $this->db->query('SELECT * FROM bookings WHERE id=:bok_id');
+        $this->db->bind(':bok_id', $bok_id);
+        return $this->db->single();
+    }
 }
