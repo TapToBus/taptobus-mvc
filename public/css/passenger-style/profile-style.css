@@ -79,7 +79,7 @@
 
 .content .pro-details .right .details .row{
     display:  grid;
-    grid-template-columns: 25% 60%;
+    grid-template-columns: 23% 62%;
     justify-content: center;
     line-height: 30px;
 }
