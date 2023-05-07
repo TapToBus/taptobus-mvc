@@ -37,7 +37,11 @@
                     <th>Responses</th> 
                 </tr>
                 <?php 
-                $results = $data['busdetails'];
+                // $results = $data['busdetails'];
+                // echo "<br/>";
+                $resultsNew = $data['noOfRides'];
+                print_r($resultsNew);
+                die();
                
                 foreach($results as $busdetail){
             

@@ -128,6 +128,13 @@ class M_Staff {
     }
     
 
+    // ------------------ get no of rides------------
+    public function getNoOfRides() {
+        $this->db->query("SELECT COUNT(id) AS NoOfRides from history  group by bus_no");
+        $result = $this->db->resultSet();
+        return $result;
+    } 
+
 
 }
 ?>
