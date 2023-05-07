@@ -12,7 +12,10 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php 
+        $active = "Profile";
+        require APPROOT . '/views/inc/admin_navbar.php' 
+    ?>
 
     <div class="main">
 
