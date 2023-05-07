@@ -4,7 +4,7 @@
 define('APPROOT', dirname(dirname(__FILE__)));
 define('ROOT',   dirname(dirname(dirname(__FILE__)))); // C:/xampp/htdocs/taptobus/
 
-define('ROOT', dirname(dirname(dirname(__FILE__))));
+
 
 
 // parent folder url
