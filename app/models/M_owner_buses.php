@@ -104,6 +104,47 @@ class M_owner_buses{
 
     }
 
+
+    public function count_of_buses(){
+        // prepare query
+        $this->db->query('SELECT COUNT(*) AS count FROM bus WHERE owner_nic = :nic AND status="active" ');
+
+        $id = $_SESSION['user_id'];
+        $this->db->bind(':nic',$id);
+
+        $result = $this->db->single();
+
+        return $result;
+        
+
+    }
+
+    public function count_of_conductors(){
+        // prepare query
+        $this->db->query('SELECT COUNT(*) AS count FROM conductor WHERE owner_nic = :nic AND status="active" ');
+
+        $id = $_SESSION['user_id'];
+        $this->db->bind(':nic',$id);
+
+        $result = $this->db->single();
+
+        return $result;
+
+    }
+
+    public function count_of_drivers(){
+        // prepare query
+        $this->db->query('SELECT COUNT(*) AS count FROM driver WHERE owner_nic = :nic AND status="active" ');
+
+        $id = $_SESSION['user_id'];
+        $this->db->bind(':nic',$id);
+
+        $result = $this->db->single();
+
+        return $result;
+
+    }
+
 }
 
 ?>
