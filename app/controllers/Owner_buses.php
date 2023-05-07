@@ -160,6 +160,7 @@ class Owner_buses extends Controller{
         $data3 = $this->ownerModel3->view_incomerecords_forbus($bus_no);
         $data4 = $this->ownerModel4->avail_drivers();
         $data5 = $this->ownerModel4->find_driver_name($bus_no);
+        // var_dump($data2->fname);
         $this->view('owner/bus_details',$data,$data1,$data2,$data3,$data4,$data5); 
 
     }
@@ -169,6 +170,7 @@ class Owner_buses extends Controller{
         $con = $_POST['con_name'];
         $bus_no = $_POST['bus_no'];
         $old_con = $_POST['old_con_id'];
+        echo($old_con);
         $new = $this->ownerModel2->find_conductor_ntc($con);
         $con_ntc = $new->ntcNo;
         $this->ownerModel->change_conductor($con_ntc,$bus_no);    

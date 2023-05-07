@@ -71,7 +71,12 @@
 
                 <p>Conductor</p>
                 <div class="images">
-                    <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data2->pic; ?>" alt="" />
+                    <?php if ($data2) : ?>
+                        <img src="<?php echo URLROOT ?>/img/profile-pic/<?php echo $data2->pic; ?>" alt="" />
+                    <?php else : ?>
+                        <img src="<?php echo URLROOT ?>/img/profile-pic/default.jpg ?>" alt="" />
+                    <?php endif; ?>
+
                 </div>
 
                 <form id="change_name" action="<?php echo URLROOT; ?>/owner_buses/change_conductor" method="POST">
@@ -86,7 +91,8 @@
 
                     <select class="choose" name="con_name" id="con_name">
 
-                        <?php if (isset($data2->fname)) : ?>
+
+                        <?php if ($data2) : ?>
                             <option value="<?php echo $data2->fname; ?>" selected><?php echo $data2->fname; ?></option>
                         <?php else : ?>
                             <option value="" selected></option>
@@ -126,7 +132,11 @@
 
                 <p>Driver</p>
                 <div class="images">
-                    <img src="<?php echo URLROOT ?>/img/owner_img/<?php echo $data5->pic; ?>" alt="" />
+                    <?php if ($data5) : ?>
+                        <img src="<?php echo URLROOT ?>/img/profile-pic/<?php echo $data5->pic; ?>" alt="" />
+                    <?php else : ?>
+                        <img src="<?php echo URLROOT ?>/img/profile-pic/default.jpg ?>" alt="" />
+                    <?php endif; ?>
                 </div>
 
                 <form id="change_name2" action="<?php echo URLROOT; ?>/owner_buses/change_driver" method="POST">
@@ -141,7 +151,7 @@
 
                     <select class="choose" name="dr_name" id="dr_name">
 
-                        <?php if (isset($data5->fname)) : ?>
+                        <?php if ($data5) : ?>
                             <option value="<?php echo $data5->fname; ?>" selected><?php echo $data5->fname; ?></option>
                         <?php else : ?>
                             <option value="" selected></option>
