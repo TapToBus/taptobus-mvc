@@ -151,7 +151,7 @@
 }
 
 .side-menu .active{
-    background-color: var(--clr-bg);
+    background-color: var( --clr-active);
     border-radius: 0.5rem;
     color: #fff;
 }
