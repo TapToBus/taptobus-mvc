@@ -15,14 +15,9 @@ class Owner_notifications extends Controller{
 
     public function view_notifications(){
 
-        $data = $this->ownerModel->view_notifications();
+        $data = $this->ownerModel->getNotifications();
         $this->view('owner/view_notifications',$data);
-        // $this->ownerModel->not_status_change();
-    
     }
-
-
-
 }
 
 ?>

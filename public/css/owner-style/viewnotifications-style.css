@@ -1,169 +1,100 @@
 @import url(../main.css);
 @import url(../owner-style/navbar-style.css);
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
-    /* color: black; */
-
+.heading{
+    font-size: 25px;
+    color: var(--clr-navbar-top);
+    margin-bottom: 10px;
 }
 
-
-.container{
-    
-    padding: 4.345rem 0rem 0rem 0rem;
-    margin-left: 14.3%;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-
-.container .new{
-
-    min-width: 1200px;
-    /* width: 100%; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 5%;
-    margin: 100px 35px;
-    padding: 0px 20px;
-    max-width: auto;
-   
-}
-
-/* .container .new1{
-
-    max-width: 600px;
-    width: 100%;
-    display: block;
-    justify-content: space-between;
-    margin: 100px 5px; 
-    padding: 0px 20px;
-    margin-left: auto;
-    margin-top: 10px;
-   
-} */
-
-.container h2{
-
-    position: absolute;
-    margin-left: 3.5%;
+.no-data{
+    text-align: center;
     margin-top: 40px;
+    margin-bottom: 40px;
+    color: var(--clr-no-data-to-display);
+}
+
+.no-data > i{
+    font-size: 80px;
     margin-bottom: 10px;
-    color: hsl(231, 61%, 40%);
-    font-size: 30px;
-} 
+}
 
-header{
+.no-data > span{
+    font-size: 25px;
+    font-weight: 400;
+}
 
+.content{
+    /* margin-left: 150px;
+    margin-right: 150px; */
+
+    width: 55%;
     position: absolute;
-    margin-left: 4%;
-    margin-top: 20px;
+    left: 57.5%;
+    transform: translateX(-50%);
+}
+
+.content .result{
+    background-color: var(--clr-white);
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-size: 15px;
     margin-bottom: 10px;
-    color: hsl(231, 61%, 40%);
-    font-size: 30px;
+
+    border-left: 5px solid blue;
+
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
-.header1{
-    margin-top: 50px;
+.result.expanded {
+    max-height: none;
 }
 
-.container .card{
+.content .result:hover{
+    background-color: var(--clr-table-result-hover);
+    transition: 0.3s;
+}
 
-    /* max-width: 600px;  */
-    
-    /* flex: 1 1 210px; */
-    text-align: center;
-    height: 160px;
-    /* min-width: 250px; */
-    border: 1px solid hsl(231, 61%, 40%);
-    /* margin: 20px; */
+.result .row1{
     display: flex;
     justify-content: space-between;
-    width: 45%;
-    border-radius: 10px;
-}
-.container .new h2{
-    
-    margin:auto ;
-}
-/* .view{
-
-    margin-top: 50px;
-} */
-.container .card .images{
-    
-    /* padding: 0% 0%;
-    height: 60%;
-    width: 60%;
-    display: flex;
-    margin-top: 5%;
-    margin-left: 3%; */
-    /* justify-content: center;
+    margin-bottom: 10px;
     align-items: center;
-    margin: auto; */
-    /* height: 73%;
-    width: 22%; */
-    /* padding: 0% 0%; 
-    height: 110px;
-    width: 120px; */
-    /* margin-bottom: 20px; */
-    margin-top: 8%;
-    margin-left: 5%;
-   
+}
+
+.result .row1 .title{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.result .row1 .date-time{
+    font-size: 14px;
+    color: gray;
+    font-style: italic;
+}
+
+.result .row2{
+    align-items: center;
+    display: none;
+}
+
+.result .row2.show {
+    display: block;
+}
+
+.result .row2 .desc{
+    text-align: justify;
+    line-height: 25px;
 }
 
 
-.container .card h2{
-    text-align: center;
-    margin-top: 1rem;
-    margin-left: 12rem;
-    font-size: 20px;
-
-   
-}
-
-.container .card .description{
-    padding-left: 0em;
-    text-align: left;
-    line-height: 2em;
-    height: 50%;
-    width: 80%;
-    margin-top: 4rem;
-    margin-left: 1.5rem;
-
-}
-
-.container .card .description p{
-    
-    font-size: 90%;
-    font-weight: bold ;
-    
-}
-/* .card > .btn-div{
-    margin: 0;
-}
-
-.container .card a{
-    width: 50%;
-}
-
-.container .card button {
-
-    border: 2px solid hsl(231, 61%, 40%);
-    padding: 0.5em;
-    width: 100px;
-    cursor: pointer;
-    margin-top:100px;
-    margin-right: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    position: relative;
-    
-    
-} */
 
 
