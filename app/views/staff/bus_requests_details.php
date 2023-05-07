@@ -51,14 +51,24 @@
                             </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="Bus image" srcset="">
+                            <img src="<?php echo URLROOT?>/public/img/bus/<?php echo $result->bus_image?>" alt="Bus image" srcset="">
                         </div>                       
                     </div>
                     <div class="details-bottom">
                         <div class="download-pic">
                             Bus permit <br><br>
-                            <i class="fa-solid fa-download"></i>
-                            <a href="<?php echo URLROOT?>/Staff_view_requests/download_bus_permit?bus_no=<?php echo $result->bus_no?>">Download here</a>
+                            <?php 
+                                if(isset($result->permit_image) && !empty($result->permit_image)){
+                                    ?> 
+                                    <i class="fa-solid fa-download"></i>
+                                    <a href="<?php echo URLROOT?>/public/img/permit/<?php echo $result->permit_image?>" download>Download here</a>
+                                     <?php 
+                                }else{
+                                    ?> <p>No permit attached.</p><?php
+                                    
+                                }
+                            ?>
+                           
                         </div>
                         <div class="action-btn">
                             <button id ="accept"class="accept" onclick="showConfirmation()">Accept</button>

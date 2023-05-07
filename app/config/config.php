@@ -3,6 +3,8 @@
 // app folder root
 define('APPROOT', dirname(dirname(__FILE__)));
 
+define('ROOT', dirname(dirname(dirname(__FILE__))));
+
 
 // parent folder url
 define('URLROOT', 'http://localhost/taptobus');
