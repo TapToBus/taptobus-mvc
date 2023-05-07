@@ -31,7 +31,7 @@
             // }
             ?>
 
-            <?php $result = $data['busRequestDetails']?>
+            <?php $result = $data['busRequestDetails']; ?>
 
             <h2><?php echo $result->bus_no?></h2>
             <div class="container-2">
@@ -49,6 +49,7 @@
                                 <span><?php echo ': '.$result->root_no?></span>
                                 <span><?php echo ': '.$result->capacity?></span>
                             </div>
+                            
                         </div>
                         <div class="top-right">
                             <img src="<?php echo URLROOT?>/public/img/bus/<?php echo $result->bus_image?>" alt="Bus image" srcset="">

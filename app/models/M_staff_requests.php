@@ -63,7 +63,7 @@ class M_staff_requests{
     }
 
     public function busRequestedDetails($bus_no){
-        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic, permit_image FROM bus where bus_no = :bus_no ");
+        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic, permit_image, bus_image FROM bus where bus_no = :bus_no ");
         $this->db->bind(":bus_no",$bus_no);
         $result = $this->db->Single();
         return $result;
