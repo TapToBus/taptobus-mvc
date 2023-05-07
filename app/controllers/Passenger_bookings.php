@@ -24,9 +24,9 @@ class Passenger_bookings extends Controller{
     public function booking_details(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $bok_id = $_POST['booking_id'];
-            
             $refund = $this->bookingsModel->updateHistory($bok_id);
-            echo $refund;
+            
+            
         }else{
             $bok_id = $_GET['bok_id'];
 

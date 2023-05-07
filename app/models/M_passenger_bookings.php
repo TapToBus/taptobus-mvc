@@ -88,7 +88,7 @@ class M_passenger_bookings{
         // Remove the trailing comma and space from the result string
         $result = substr($result, 0, -2);
     
-        $query = "UPDATE booked_seats SET $result, available_seats_count=available_seats_count-$count WHERE id=:boks_id;";
+        $query = "UPDATE booked_seats SET $result, available_seats_count=available_seats_count+$count WHERE id=:boks_id;";
         $this->db->query($query);
         $this->db->bind(':boks_id', $boks_id);
     
