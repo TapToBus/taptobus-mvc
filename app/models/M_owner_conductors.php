@@ -11,7 +11,7 @@ class M_owner_conductors{
     public function register($data){
 
         // prepare query
-        $this->db->query('INSERT INTO conductor (nic, ntcNo, fname, lname,email,mobileNo,dob,address,owner_nic,pic) VALUES (:nic,:ntcNo, :fname, :lname,:email, :mobileNo, :dob, :address,:owner_nic)');
+        $this->db->query('INSERT INTO conductor (nic, ntcNo, fname, lname,email,mobileNo,dob,address,owner_nic,pic) VALUES (:nic,:ntcNo, :fname, :lname,:email, :mobileNo, :dob, :address,:owner_nic,:pic)');
 
         $id = $_SESSION['user_id'];
         // bind values
