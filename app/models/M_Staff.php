@@ -84,7 +84,7 @@ class M_Staff {
     }
 
     public function viewBuses(){
-        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic FROM bus where status = 'active' ");
+        $this->db->query("SELECT bus_no, root_no, capacity, owner_nic, ratings, responses FROM bus where status = 'active' ");
         $result = $this->db->resultSet();
         return $result;
     }
