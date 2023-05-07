@@ -59,15 +59,15 @@ class Owner_conductors extends Controller{
                 // $fileName = "user";
                 $msg = upload_file("con_image", "profile-pic", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
                 if (!empty($msg)) {
-                    $image = "";
+                    $image = "default.jpg";
+                    $data['con_image'] = $image;
                 } else {
-                    $target_file = basename($_FILES["bus_image"]["name"]);
+                    $target_file = basename($_FILES["con_image"]["name"]);
                     $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
                     $image = $data['ntcNo'] . '.' . $extension;
                     $data['con_image'] = $image;
                 }
-            }      
-
+            }        
 
             // validate
 

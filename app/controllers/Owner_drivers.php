@@ -62,7 +62,7 @@ class Owner_drivers extends Controller{
                 if (!empty($msg)) {
                     $image = "";
                 } else {
-                    $target_file = basename($_FILES["bus_image"]["name"]);
+                    $target_file = basename($_FILES["dr_image"]["name"]);
                     $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
                     $image = $data['ntcNo'] . '.' . $extension;
                     $data['dr_image'] = $image;

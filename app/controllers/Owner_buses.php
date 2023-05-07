@@ -74,7 +74,7 @@ class Owner_buses extends Controller
                     $image = $data['bus_no'] . '.' . $extension;
                     $data['bus_image'] = $image;
                 }
-            }
+            } 
 
             //validate bus no
             if (!preg_match('/^[N][B-E]-\d{4}$/', $data['bus_no'])) {
