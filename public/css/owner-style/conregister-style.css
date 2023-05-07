@@ -45,7 +45,7 @@
     color: hsl(231, 72%, 37%);;
 }
 
-.box .fname label, .lname label, .nic label,.ntcNo label, .email label, .mobileNo label, .dob label, .address label{
+.box .fname label, .lname label, .nic label,.ntcNo label, .email label, .mobileNo label, .dob label, .address label, .con_image label{
     font-weight: 500;
     font-size: 16px;
     padding-left: 10px;
@@ -72,6 +72,12 @@
 .box input:focus{
     outline: 2px solid #00BFFF;
     border: 2px solid transparent;
+}
+
+input[type=file]{
+    width: 100%;
+    padding: 7px;
+    
 }
 
 .box .btn{
@@ -204,6 +210,6 @@
     width: 100%;
 }
 
-.fname, .lname, .nic, .ntcNo, .email, .mobileNo, .dob, .address{
+.fname, .lname, .nic, .ntcNo, .email, .mobileNo, .dob, .address,.con_image{
     margin-bottom: 10px;
 }
