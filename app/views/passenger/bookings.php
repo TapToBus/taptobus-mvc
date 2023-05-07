@@ -73,8 +73,7 @@
         <?php endif; ?>
     </div>
 
-    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-js.js"></script> -->
-
+    
     <script>
         function goNext(booking_id) {
             const url = "http://localhost/taptobus/passenger_bookings/booking_details?bok_id=" + booking_id;

@@ -10,65 +10,69 @@
 </head>
 
 <body>
+    <?php print_r($data); ?>
+
     <div class="box">
-        <h1>Galle > Matara</h1>
+        <h1><?php echo $data['booking']->from; ?> > <?php echo $data['booking']->to; ?></h1>
 
         <div class="content">
             <div class="left">
                 <div class="row">
                     <span class="col1">Date:</span>
-                    <span class="col2">2023-04-28</span>
+                    <span class="col2"><?php echo date("Y-m-d", strtotime($data['booking']->departure_datetime)) ?></span>
                 </div>
 
                 <div class="row">
                     <span class="col1">Departure time:</span>
-                    <span class="col2">09:05 PM</span>
+                    <span class="col2"><?php echo date("g:i A", strtotime($data['booking']->departure_datetime)) ?></span>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <span class="col1">Time remaining:</span>
                     <span class="col2">More than 12 days</span>
-                </div>
+                </div> -->
 
                 <div class="row">
                     <span class="col1">Passenger count:</span>
-                    <span class="col2">5</span>
+                    <span class="col2"><?php echo $data['booking']->passenger_count; ?></span>
                 </div>
 
                 <div class="row">
                     <span class="col1">Booked seats:</span>
-                    <span class="col2">12, 13, 14, 15, 16</span>
+                    <span class="col2"><?php echo $data['booking']->booked_seats; ?></span>
                 </div>
             </div>
 
             <div class="right">
                 <div class="row">
                     <span class="col1">Bus No:</span>
-                    <span class="col2">NB-1234</span>
+                    <span class="col2"><?php echo $data['booking']->bus_no; ?></span>
                 </div>
 
                 <div class="row">
                     <span class="col1">Booked on:</span>
-                    <span class="col2">2023-03-13 09:30 AM</span>
+                    <span class="col2"><?php echo date("Y-m-d g:i A", strtotime($data['booking']->booked_datetime)); ?></span>
                 </div>
 
                 <div class="row">
                     <span class="col1">Ticket price:</span>
-                    <span class="col2">LKR 4020.00</span>
+                    <span class="col2">LKR <?php echo $data['booking']->price; ?></span>
                 </div>
 
                 <div class="row">
                     <span class="col1">Booking code:</span>
-                    <span class="col2">TC123456</span>
+                    <span class="col2"><?php echo $data['booking']->booking_code; ?></span>
                 </div>
             </div>
         </div>
 
         <div class="btn">
             <button class="left-btn">Cancel</button>
-            <button class="right-btn">Ok</button>
+            <button class="right-btn" onclick="goBack()">Ok</button>
         </div>
     </div>
-</body>
 
+
+    <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-details-js.js"></script>
+</body>
 </html>

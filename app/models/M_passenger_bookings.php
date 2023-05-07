@@ -22,7 +22,9 @@ class M_passenger_bookings{
     }
 
 
-    public function getBookingDetails($boks_id){
-        $this->db->query('SELECT * FROM bookings WHERE id=:boks_id');
+    public function getBookingDetails($bok_id){
+        $this->db->query('SELECT * FROM bookings WHERE id=:bok_id');
+        $this->db->bind(':bok_id', $bok_id);
+        return $this->db->single();
     }
 }
