@@ -117,7 +117,7 @@ class M_Staff {
     }
 
     public function searchDriver($search){
-        $this->db->query("SELECT * FROM driver WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search% OR mobileNo LIKE '%$search%' OR email LIKE '%$search' OR ntcNo LIKE '%$search%'");
+        $this->db->query("SELECT * FROM driver WHERE CONCAT(fname,lname) LIKE '%$search%' OR nic LIKE '%$search%' OR mobileNo LIKE '%$search%' OR email LIKE '%$search%' OR ntcNo LIKE '%$search%'");
         $result = $this->db->resultSet();
         return $result;
     }
