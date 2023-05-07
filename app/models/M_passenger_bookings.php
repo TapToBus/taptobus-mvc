@@ -62,7 +62,7 @@ class M_passenger_bookings{
         $this->db->execute();
 
         // update booked seats table
-        //$this->updateBookedSeats($booking->booked_seats_id, $booking->booked_seats, $booking->passenger_count);
+        $this->updateBookedSeats($booking->booked_seats_id, $booking->booked_seats, $booking->passenger_count);
 
         // delete booking row
         $this->db->query('DELETE FROM bookings WHERE id=:id');
@@ -73,7 +73,25 @@ class M_passenger_bookings{
     }
 
 
-    /*function updateBookedSeats($boks_id, $columns, $count){
-        
-    }*/
+    function updateBookedSeats($boks_id, $seats, $count){
+        // Split the string into an array of variable names
+        $seat_no = explode(", ", $seats);
+    
+        // Initialize an empty string to store the result
+        $result = "";
+    
+        // Loop through each variable name in the array and add it to the result string
+        foreach ($seat_no as $name) {
+            $result .= "$name=0, ";
+        }
+    
+        // Remove the trailing comma and space from the result string
+        $result = substr($result, 0, -2);
+    
+        $query = "UPDATE booked_seats SET $result, available_seats_count=available_seats_count-$count WHERE id=:boks_id;";
+        $this->db->query($query);
+        $this->db->bind(':boks_id', $boks_id);
+    
+        return $this->db->execute();
+    }    
 }
