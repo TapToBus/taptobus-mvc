@@ -35,22 +35,35 @@
 }
 
 .container-2 > .details-top{
+    
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    background-color: #fff;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: #fff;
     margin: 1rem;
 }
 .container-2 > .details-top > .top-left{
     display: flex;
-    height: 90%;
+    /* height: 90%; */
     margin: 0;
 }
 .top-label , .top-data {
     display: flex;
     flex-direction: column;
+}
+.top-right{
+    min-width: 350px;
+    height: 200px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.top-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
  .container-2 span{
