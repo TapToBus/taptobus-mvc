@@ -10,8 +10,6 @@
 </head>
 
 <body>
-    <?php print_r($data); ?>
-
     <div class="box">
         <h1><?php echo $data['booking']->from; ?> > <?php echo $data['booking']->to; ?></h1>
 
@@ -39,7 +37,7 @@
 
                 <div class="row">
                     <span class="col1">Booked seats:</span>
-                    <span class="col2"><?php echo $data['booking']->booked_seats; ?></span>
+                    <span class="col2"><?php echo str_replace('s', '', $data['booking']->booked_seats); ?></span>
                 </div>
             </div>
 
