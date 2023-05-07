@@ -22,12 +22,18 @@ class Passenger_bookings extends Controller{
     
     
     public function booking_details(){
-        $bok_id = $_GET['bok_id'];
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $bok_id = $_POST['booking_id'];
+            
+            
+        }else{
+            $bok_id = $_GET['bok_id'];
 
-        $data = [
-            'booking' => $this->bookingsModel->getBookingDetails($bok_id)
-        ];
+            $data = [
+                'booking' => $this->bookingsModel->getBookingDetails($bok_id)
+            ];
 
-        $this->view('passenger/booking_details', $data);
+            $this->view('passenger/booking_details', $data);
+        }
     }
 }

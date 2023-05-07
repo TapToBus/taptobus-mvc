@@ -65,7 +65,10 @@
         </div>
 
         <div class="btn">
-            <button class="left-btn">Cancel</button>
+            <form method="POST" action="<?php echo URLROOT; ?>/passenger_bookings/booking_details">
+                <input type="hidden" name="booking_id" value="<?php echo $data['booking']->id; ?>">
+                <button class="left-btn" type="submit">Cancel</button>
+            </form>
             <button class="right-btn" onclick="goBack()">Ok</button>
         </div>
     </div>
@@ -73,4 +76,5 @@
 
     <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-details-js.js"></script>
 </body>
+
 </html>
