@@ -19,7 +19,7 @@
     <div class="container">
 
         <div>
-            <a href="<?php echo URLROOT; ?>/owner_drivers/view_drivers"><button class="addbtn">Add Driver</button></a>
+            <a href="<?php echo URLROOT; ?>/owner_drivers/register_driver"><button class="addbtn">Add Driver</button></a>
         </div>
        
          <div>
@@ -36,14 +36,14 @@
            ?>
                 <div class="card">
                     <div class="images">
-                        <img src="<?php echo URLROOT; ?>/img/owner_img/dr3.jpg" alt="">
+                        <img src="<?php echo URLROOT; ?>/img/owner_img/<?php echo $row->pic; ?>" alt="">
                     </div>
 
                     <div class="caption">
 
                         <p class="product_name">Name - <?php echo $row->fname; ?></p>
                         <p class="price">NTC No - <?php echo $row->ntcNo; ?></p>
-                        <a href="<?php echo URLROOT; ?>/owner_drivers/driver_details"><button class="view">View</button></a>
+                        <a href="<?php echo URLROOT; ?>/owner_drivers/driver_details?dr_id=<?php echo $row->ntcNo;?>"><button class="view" >View</button> </a>
                     </div>
                 </div>
 

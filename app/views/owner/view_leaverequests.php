@@ -57,6 +57,48 @@
     </div>
 
 
+    <div class="container2">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Bus No</th>
+                        <th>Name</th>
+                        <th>Date From</th>
+                        <th>Date To</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+
+                    foreach ($data1 as $row) :
+
+                    ?>
+
+                        <tr>
+                            <td><?php echo $row->bus_no; ?></td>
+                            <td><?php echo $row->user_fname; ?></td>
+                            <td><?php echo $row->date_from; ?></td>
+                            <td><?php echo $row->date_to; ?></td>
+                            <td><?php echo $row->status; ?></td>
+                        </tr>
+
+                    <?php
+
+                    endforeach;
+
+                    ?>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
 </body>
 
 </html>

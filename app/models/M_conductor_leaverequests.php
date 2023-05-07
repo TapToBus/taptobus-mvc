@@ -43,7 +43,7 @@ class M_conductor_leaverequests
         $id = $_SESSION['user_id'];
 
         // prepare query
-        $this->db->query('SELECT * from conductor WHERE nic= :nic');
+        $this->db->query('SELECT * from conductor WHERE ntcNo= :nic');
 
         $this->db->bind(':nic', $id);
         $result = $this->db->single();

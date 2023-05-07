@@ -39,7 +39,7 @@
                 <em id="error"></em>
             </div>
 
-            <form action="" method="post" name="addbus-form" onsubmit="return isValid()">
+            <form action="" method="post" name="addbus-form" onsubmit="return isValid()" enctype="multipart/form-data">
 
                 <div class="big">
                     <div class="row">
@@ -62,14 +62,7 @@
                         <span><?php echo $data['root_no_err']; ?></span>
                     </div>
 
-                    <div class="row">
-                        <div class="a">
-                            <label>Owner name</label>
-                        </div>
-                        <div class="b">
-                            <input type="text" class="form-control" name="owner_name" id="owner_name"   required>
-                        </div>
-                    </div>
+                   
 
                     <div class="row">
                         <div class="a">
@@ -90,14 +83,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="a">
-                            <label>Root Permit</label>
-                        </div>
-                        <div class="b">
-                            <input type="file" class="form-control" name="permit_image" id="permit_image" >
-                        </div>
-                    </div>
+                   
 
 
                     <div class="row">

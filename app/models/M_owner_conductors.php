@@ -89,7 +89,7 @@ class M_owner_conductors{
     public function reomve_assigned_conductor($old_con){
         // prepare query
         
-        $this->db->query('UPDATE conductor SET bus_no = NULL,status="leave" WHERE ntcNo= :con_id');
+        $this->db->query('UPDATE conductor SET bus_no = NULL WHERE ntcNo= :con_id');
         $this->db->bind(':con_id',$old_con);   
         $this->db->execute(); 
 
@@ -150,6 +150,26 @@ class M_owner_conductors{
             return false;
         }
     }
+
+    // find conductor by ntc
+    public function findConByNtcNo($ntc){
+        // prepare query
+        echo($ntc);
+        $this->db->query('SELECT * FROM conductor WHERE ntcNo = :ntc');
+
+        // bind value
+        $this->db->bind(':ntc', $ntc);
+
+        $row = $this->db->single();
+
+        // check row is exist or not
+        if($this->db->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 }
 

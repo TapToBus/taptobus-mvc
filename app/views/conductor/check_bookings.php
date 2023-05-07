@@ -43,7 +43,8 @@
             <label for="">Bus No.     - <?php echo $row->bus_no; ?></label>
             <label for="">From        - <?php echo $row->from; ?> </label>
             <label for="">To          -  <?php echo $row->to; ?></label>
-            <label for="">Time        -  <?php echo $row->departure_time; ?></label>
+            <label for="">Date        -  <?php echo date('d/m/Y', strtotime($row->departure_datetime)); ?></label>
+            <label for="">Departure Time          -  <?php echo date('h:i A', strtotime($row->departure_datetime)); ?></label>
             <label for="">Passenger Count -  <?php echo $row->passenger_count; ?></label> 
             <label for="">Seat Numbers    -  <?php echo $row->booked_seats; ?></label>
 
