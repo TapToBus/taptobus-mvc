@@ -84,7 +84,7 @@ class M_owner_drivers{
         $results = $this->db->single();
         return $results;
 
-    }
+    } 
     
     public function reomve_assigned_driver($old_dr){
         // prepare query
