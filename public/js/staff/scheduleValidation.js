@@ -77,7 +77,7 @@ departrue_time.addEventListener("change", ()=>{
 
 
 
-// Edit schedule form validation
+// Edit schedule form location validation
 
 const e_destinations = ['Galle', 'Makubura']
 
