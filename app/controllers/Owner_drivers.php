@@ -78,6 +78,17 @@ class Owner_drivers extends Controller{
                 }
             }
 
+             //validate ntcNo
+             if(! preg_match('/^C\d{5}$/', $data['ntcNo'])){
+                $data['ntcNo_err'] = 'A valid NTC No is required';
+            }
+            else{
+                if($this->ownerModel->findDrByNtcNo($data['ntcNo'])){
+                    $data['ntcNo_err'] = 'ntc no is already taken';
+                }
+            }
+
+
             //validate email
             if(! filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
                 $data['email_err'] = "A valid email is required";

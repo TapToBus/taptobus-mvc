@@ -19,7 +19,7 @@
     <div class="container">
 
         <div>
-            <a href="<?php echo URLROOT; ?>/owner_drivers/view_drivers"><button class="addbtn">Add Driver</button></a>
+            <a href="<?php echo URLROOT; ?>/owner_drivers/register_driver"><button class="addbtn">Add Driver</button></a>
         </div>
        
          <div>
