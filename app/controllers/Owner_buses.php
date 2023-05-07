@@ -172,6 +172,7 @@ class Owner_buses extends Controller{
     public function change_driver(){
 
         $dr = $_POST['dr_name'];
+        echo($dr);
         $bus_no = $_POST['bus_no'];
         $old_dr= $_POST['old_dr_id'];
         $new = $this->ownerModel4->find_driver_ntc($dr);

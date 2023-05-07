@@ -69,7 +69,7 @@ class M_owner_drivers{
     public function find_driver_ntc($dr){
         // prepare query
         
-        $this->db->query('SELECT * from driverWHERE fname= :fname');
+        $this->db->query('SELECT * from driver WHERE fname= :fname');
         $this->db->bind(':fname',$dr);
         $results = $this->db->single();
         return $results;
