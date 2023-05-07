@@ -25,11 +25,11 @@ class Passenger_profile extends Controller{
     }
 
 
-    /*public function edit_profile(){
+    public function edit_profile(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
             
         }else{
-            $this->view('passenger/edit_profile');
+            //$this->view('passenger/edit_profile');
         }
-    }*/
+    }
 }
