@@ -52,12 +52,11 @@ class Owner_conductors extends Controller{
                 'dob_err' => '',
                 'address_err' => '',
                
-                
             ];
  
             if (!empty($_FILES["con_image"]) && is_uploaded_file($_FILES['con_image']['tmp_name'])) {
                 // $fileName = "user";
-                $msg = upload_file("con_image", "profile-pic", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
+                $msg = upload_file("con_image", "owner_img", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
                 if (!empty($msg)) {
                     $image = "";
                 } else {

@@ -53,7 +53,7 @@ class Owner_buses extends Controller
                 // 'owner_name' => $_POST['owner_name'],
                 'capacity'  => $_POST['capacity'],
                 'bus_image'  => "",
-                // 'permit_image'  => $_POST['permit_image'],
+                'permit_image'  =>"",
                 'wifi'  => $wifi,
                 'usb'  => $usb,
                 'tv'  => $tv,
@@ -73,6 +73,21 @@ class Owner_buses extends Controller
                     $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
                     $image = $data['bus_no'] . '.' . $extension;
                     $data['bus_image'] = $image;
+                }
+            } 
+
+            if (!empty($_FILES["permit_image"]) && is_uploaded_file($_FILES['permit_image']['tmp_name'])) {
+                // $fileName = "user";
+                
+                $uni = uniqid();
+                $msg = upload_file("permit_image", "permit",$uni, ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
+                if (!empty($msg)) {
+                    $image = "";
+                } else {
+                    $target_file = basename($_FILES["permit_image"]["name"]);
+                    $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                    $image = $uni . '.' . $extension;
+                    $data['permit_image'] = $image;
                 }
             } 
 
@@ -102,11 +117,11 @@ class Owner_buses extends Controller
                     direct('owner_buses/view_buses');
                 } else {
                     die('Sorry! Something went wrong');
-                }
+                } 
             } else {
                 // load view with errors
                 $this->view('owner/add_bus', $data);
-            }
+            } 
         } else {
             // intialize default values
             $data = [
@@ -117,6 +132,7 @@ class Owner_buses extends Controller
                 'nic' => '',
                 'capacity'  => '',
                 'bus_image'  => '',
+                'permit_image'  => '',
                 'wifi'  => '',
                 'usb'  => '',
                 'tv'  => '',

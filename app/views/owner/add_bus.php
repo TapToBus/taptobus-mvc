@@ -81,7 +81,16 @@
                         <div class="b">
                             <input type="file" class="form-control" name="bus_image" id="bus_image"  accept="image/*">
                         </div>
-                    </div>   
+                    </div>  
+                    
+                    <div class="row">
+                        <div class="a">
+                            <label>Root Permit</label>
+                        </div>
+                        <div class="b">
+                            <input type="file" class="form-control" name="permit_image" id="permit_image"  accept="image/*">
+                        </div>
+                    </div>  
 
                    
 
