@@ -213,7 +213,7 @@
                         },
                         title: {
                             display: true,
-                            text: "Weekly Income",
+                            text: "Daily Income",
                             fontSize: 20,
                             color: 'red'
 
