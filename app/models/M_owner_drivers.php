@@ -11,7 +11,7 @@ class M_owner_drivers{
     public function register($data){
 
         // prepare query
-        $this->db->query('INSERT INTO driver (nic, ntcNo, fname, lname,email,mobileNo,dob,address,owner_nic,pic) VALUES (:nic,:ntcNo, :fname, :lname,:email, :mobileNo, :dob, :address,:owner_nic,:pic)');
+        $this->db->query('INSERT INTO driver (nic, ntcNo, fname, lname,email,mobileNo,dob,address,owner_nic) VALUES (:nic,:ntcNo, :fname, :lname,:email, :mobileNo, :dob, :address,:owner_nic)');
 
         $id = $_SESSION['user_id'];
         // bind values
@@ -23,7 +23,7 @@ class M_owner_drivers{
         $this->db->bind(':mobileNo', $data['mobileNo']);
         $this->db->bind(':dob', $data['dob']);
         $this->db->bind(':address', $data['address']);
-        $this->db->bind(':pic', $data['dr_image']);
+        // $this->db->bind(':pic', $data['dr_image']);
         $this->db->bind(':owner_nic', $id);
        
         // execute

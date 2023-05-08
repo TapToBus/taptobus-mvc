@@ -42,7 +42,6 @@ class Owner_conductors extends Controller{
                 'dob' => $_POST['dob'],
                 'address' => $_POST['address'],
                 'con_image' => "",
-               
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',
@@ -59,15 +58,16 @@ class Owner_conductors extends Controller{
                 // $fileName = "user";
                 $msg = upload_file("con_image", "profile-pic", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
                 if (!empty($msg)) {
-                    $image = "default.jpg";
-                    $data['con_image'] = $image;
+                    $image = "";
                 } else {
                     $target_file = basename($_FILES["con_image"]["name"]);
                     $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
                     $image = $data['ntcNo'] . '.' . $extension;
                     $data['con_image'] = $image;
                 }
-            }        
+            }          
+
+            // echo($data['con_image']);
 
             // validate
 

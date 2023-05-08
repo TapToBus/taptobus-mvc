@@ -83,7 +83,7 @@
                     <div class="field5">
                         <div class="con_image">
                             <label for="con_image">Conductor Image</label> <br>
-                            <input type="file" name="con_image"  > <br>
+                            <input type="file" name="con_image" id="con_image" accept="image/*" > <br>
                             
                         </div>
 
