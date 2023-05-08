@@ -52,8 +52,8 @@
 
                 <?php foreach ($data['buses'] as $buses) : ?>
                     <tr>
-                        <td><?php echo $buses->root_no ?></td>
                         <td><?php echo $buses->bus_no ?></td>
+                        <td><?php echo $buses->root_no ?></td>
                         <td><?php echo $buses->capacity ?></td>
                         <td><?php echo $buses->con_ntc ?></td>
                         <td><?php echo $buses->dri_ntc ?></td>

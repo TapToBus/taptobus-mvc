@@ -27,7 +27,7 @@
             <div class="report-sub-container">
                 <form action="<?php echo URLROOT; ?>/Admin_reports/adminReportSearch" method="GET" class="report-container-form">
 
-                    <h2 class="report-container-heading">Profit Report</h2>
+                    <h2 class="report-container-heading">Income Report</h2>
 
                     <div class="report-container-form-input-labels">
                         <label for="Date_From" class="report_date_la">Date From :</label>
@@ -90,7 +90,7 @@
                             <th>Bus Number</th>
                             <th>Bookings Count</th>
                             <th>Date</th>
-                            <th>Profit</th>
+                            <th>Income</th>
                         </tr>
 
                         <?php foreach($data['reportData'] as $reportData) :?>
