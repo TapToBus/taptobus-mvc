@@ -53,12 +53,13 @@
                         <div class="b">
                             <input type="text" name="amount" id="amount" required>
                         </div>
+                        <span><?php echo $data['amount_err']; ?></span>
                     </div>
 
 
                     <script>
                         const today = new Date().toISOString().split('T')[0];
-                        document.getElementById('date').setAttribute('min', today);
+                        document.getElementById('date').setAttribute('max', today);
                     </script>
 
                 </div>
