@@ -85,8 +85,8 @@
                     <table class="full-table">
 
                         <tr>
-                            <th>Start</th>
-                            <th>Destination</th>
+                            <th>From</th>
+                            <th>To</th>
                             <th>Bus Number</th>
                             <th>Bookings Count</th>
                             <th>Date</th>

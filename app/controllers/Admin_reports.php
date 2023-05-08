@@ -128,8 +128,8 @@ class Admin_reports extends Controller{
     $pdf->SetTitle('TapToBus Profit Details Report');
     $pdf->SetTextColor(255, 255, 255);
    
-    $pdf->Cell(46.5, 10, 'Start', 1 , 0, 'C',1);
-    $pdf->Cell(46.5, 10, 'Destination', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'From', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'To', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Bus Number', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Booking Count', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Date', 1 , 0, 'C',1);
