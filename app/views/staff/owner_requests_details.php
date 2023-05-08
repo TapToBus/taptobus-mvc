@@ -23,7 +23,7 @@
 
       
         
-            <h2>Bus Owner:- <?php echo ' '.$result->fname.' '.$result->lname?></h2>
+            <h2>Bus Owner: <?php echo '  '.$result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="Owner Pic" srcset="">
+                            <!-- <img src="" alt="Owner Pic" srcset=""> -->
                         </div>                       
                     </div>
                     <div class="details-bottom">

@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="btn">
-                        <button class="delete">Delete profile</button>
+                        <!-- <button class="delete">Delete profile</button> -->
                         <a href="<?= URLROOT; ?>/passenger_profile/edit_profile"><button class="edit">Edit profile</button></a>
                     </div>
                 </div>

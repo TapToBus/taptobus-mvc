@@ -74,7 +74,13 @@
     </div>
 
 
-    <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-details-js.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/passenger-js/bookings-details-js.js"></script> -->
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 
 </html>
