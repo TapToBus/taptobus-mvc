@@ -108,7 +108,7 @@
 
                 <div class="words">
                     <p class="word1">Total Buses</p>
-                    <p class="word2">8</p>
+                    <p class="word2">5</p>
                     <hr>
                 </div>
 
@@ -122,7 +122,7 @@
 
                 <div class="words">
                     <p class="word1">Total Drivers</p>
-                    <p class="word2">9</p>
+                    <p class="word2">6</p>
                     <hr>
                 </div>
 
@@ -138,7 +138,7 @@
 
                 <div class="words">
                     <p class="word1">Total Conductors</p>
-                    <p class="word2">9</p>
+                    <p class="word2">6</p>
                     <hr>
                 </div>
             </div>

@@ -39,11 +39,7 @@
                         <label for=""><b>Mobile No.  - </b> <?php echo $row->mobileNo; ?></label>
                         <label for=""><b>Email  - </b> <?php echo $row->email; ?></label>
                     </div>
-                    <div class="row">
-
-                           <input type="submit" value="Remove">
-
-                    </div>
+                    
                 </div>
                 
             </div>

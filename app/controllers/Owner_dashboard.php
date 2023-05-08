@@ -28,5 +28,5 @@ class Owner_dashboard extends Controller{
       $data1['dr_count'] = $Noofdr;
     
       $this->view('owner/view_dashboard',$data,$data1);
-    }
+    }  
 }
