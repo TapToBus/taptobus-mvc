@@ -136,7 +136,7 @@ class Owner_conductors extends Controller{
 
                 // register conductor
                 if( $this->ownerModel->register($data) && $this->requestModel->add_con_request($data) ){
-                    direct('owner/view_condcutors');
+                    direct('owner_conductors/view_conductors');
                    
                 }else{
                     die('Sorry! Something went wrong');

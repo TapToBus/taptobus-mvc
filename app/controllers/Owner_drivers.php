@@ -137,7 +137,7 @@ class Owner_drivers extends Controller{
 
                 // register driver
                 if( $this->ownerModel->register($data) && $this->requestModel->add_dr_request($data) ){
-                    direct('owner/view_drivers');
+                    direct('owner_drivers/view_drivers');
                    
                 }else{
                     die('Sorry! Something went wrong');
