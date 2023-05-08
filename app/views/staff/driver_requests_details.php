@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="driver pic" srcset="">
+                            <!-- <img src="" alt="driver pic" srcset=""> -->
                         </div>                       
                     </div>
                     <div class="details-bottom">
