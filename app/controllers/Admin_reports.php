@@ -112,11 +112,11 @@ class Admin_reports extends Controller{
 
     $pdf->SetFont('Arial', 'B', 16);
     $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Income Details', 0, 1, 'C');
-    $pdf->Cell(0, 10,' ', 0, 1, 'C');
+    $pdf->Cell(0, 5,' ', 0, 1, 'C');
 
-    $pdf->Cell(0, 8,'Total Income = '.$totalprofit->sum_profit, 0, 1, 'C');
+    $pdf->Cell(0, 8,'Total Income = LKR '.$totalprofit->sum_profit, 0, 1, 'C');
 
-    $pdf->Cell(0, 10,' ', 0, 1, 'C');
+    $pdf->Cell(0, 5,' ', 0, 1, 'C');
    
    
     $pdfWidth = $pdf->GetPageWidth();

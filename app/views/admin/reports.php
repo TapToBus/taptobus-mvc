@@ -85,8 +85,7 @@
                     <table class="full-table">
 
                         <tr>
-                            <th>Start</th>
-                            <th>Destination</th>
+                            <th>Journey</th>
                             <th>Bus Number</th>
                             <th>Bookings Count</th>
                             <th>Date</th>
@@ -95,8 +94,7 @@
 
                         <?php foreach($data['reportData'] as $reportData) :?>
                             <tr>
-                                <td><?php echo $reportData->from ?></td>
-                                <td><?php echo $reportData->to ?></td>
+                                <td><?php echo $reportData->from ?> - <?php echo $reportData->to ?></td>
                                 <td><?php echo $reportData->bus_no ?></td>
                                 <td><?php echo $reportData->passenger_count ?></td>
                                 <td><?php echo $reportData->date ?></td>

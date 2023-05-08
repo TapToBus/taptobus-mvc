@@ -48,6 +48,7 @@
                     <th>Rating</th>
                     <th>Total Ratings</th>
                     <th>Responses</th>
+                    <th></th>
                 </tr>
 
                 <?php foreach ($data['buses'] as $buses) : ?>

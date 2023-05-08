@@ -12,7 +12,7 @@ class M_Admin_report{
     public function get_income_records(){
 
         // $this->db->query('SELECT record_id, bus_no, date, (5*amount)/100 AS profit FROM incomerecords');
-        $this->db->query('SELECT `from`, `to`, bus_no, passenger_count, DATE(booked_datetime) AS date, (5*price)/100 AS profit FROM bookings ');
+        $this->db->query('SELECT `from`, `to`, bus_no, SUM(passenger_count) as passenger_count, DATE(booked_datetime) AS date, SUM((5*price)/100) AS profit FROM bookings GROUP BY bus_no,DATE(booked_datetime) ORDER BY DATE(booked_datetime)');
 
         return $this->db->resultSet();
         
