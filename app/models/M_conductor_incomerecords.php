@@ -86,7 +86,7 @@ class M_conductor_incomerecords
 
         $id = $_SESSION['user_id'];
         // prepare query
-        $this->db->query('SELECT ir.date, ir.bus_no, COALESCE(SUM(b.price), 0) + ir.amount AS amount
+        $this->db->query('SELECT ir.date, ir.bus_no, COALESCE(SUM(b.price), 0)*0.95 + ir.amount AS amount
         FROM incomerecords ir
         LEFT JOIN bookings b ON b.bus_no = ir.bus_no AND DATE_FORMAT(b.booked_datetime,"%Y-%m-%d") = ir.date
         WHERE ir.date BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE()
