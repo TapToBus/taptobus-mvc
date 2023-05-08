@@ -23,8 +23,9 @@ class M_owner_drivers{
         $this->db->bind(':mobileNo', $data['mobileNo']);
         $this->db->bind(':dob', $data['dob']);
         $this->db->bind(':address', $data['address']);
+        // $this->db->bind(':pic', $data['dr_image']);
         $this->db->bind(':owner_nic', $id);
-
+       
         // execute
         if($this->db->execute()){
             return true;

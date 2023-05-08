@@ -39,6 +39,10 @@ class Conductor_incomerecords extends Controller
                 $data['bus_no_err'] = 'A valid bus number is required';
             }
 
+            if ( $data['amount'] < 0) {
+                $data['amount_err'] = 'Please enter a valid amount';
+            }
+
             //  if(! preg_match('/^[4-5][0-9]$|^60$/', $data['capacity'])){
             //     $data['capacity_err'] = 'A valid capacity is required';
             // }

@@ -55,8 +55,8 @@ background-size: cover;
     display: flex;
     background-position: right bottom;
     justify-content: center;
-    margin: 10px;
-    /* margin-bottom: 10px; */
+    margin-top: -18px;
+    margin-left: 22px;
   }
 
 

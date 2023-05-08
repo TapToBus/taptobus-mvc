@@ -99,6 +99,7 @@
 
         <div class="boxes">
 
+        
             <div class="box">
 
                 <div class="images">
@@ -107,7 +108,7 @@
 
                 <div class="words">
                     <p class="word1">Total Buses</p>
-                    <p class="word2">4</p>
+                    <p class="word2">5</p>
                     <hr>
                 </div>
 
@@ -121,7 +122,7 @@
 
                 <div class="words">
                     <p class="word1">Total Drivers</p>
-                    <p class="word2">5</p>
+                    <p class="word2">6</p>
                     <hr>
                 </div>
 

@@ -21,7 +21,7 @@
 
         <div class="bus_no">
             <h2><?php echo $data->bus_no; ?></h2>
-            <div class="ratings">
+            <!-- <div class="ratings">
                 <a>(</a>
                 <i class="fa-solid fa-star "></i>
                 <i class="fa-solid fa-star "></i>
@@ -29,7 +29,7 @@
                 <i class="fa-solid fa-star "></i>
                 <i class="fa-solid fa-star "></i>
                 <a>)</a>
-            </div>
+            </div> -->
         </div>
 
         <div class="full">

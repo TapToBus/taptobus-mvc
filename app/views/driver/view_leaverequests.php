@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/conductor-style/view_incomerecords-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/driver-style/view_leaverequests-style.css">
     <title><?php echo SITENAME; ?></title>
 
 
@@ -14,53 +14,64 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/conductor_navbar.php' ?>
+    <?php require APPROOT . '/views/inc/driver_navbar.php' ?>
 
     <div class="outer">
 
         <div class="container">
 
 
-            <form action="" method="post" name="add_incomerecords-form" onsubmit="return isValid()">
+            <form action="" method="post" name="add_leaverequests-form" onsubmit="return isValid()">
 
-                <h2>Add Income Records</h2>
+                <h2>Add Leave Requests</h2>
 
                 <div class="big">
                     <div class="row">
                         <div class="a">
-                            <label>Bus No</label>
+                            <label>Date from</label>
                         </div>
                         <div class="b">
-                            <input type="text" name="bus_no" id="bus_no" required>
-                        </div>
-                        <span><?php echo $data['bus_no_err']; ?></span>
-                    </div>
-
-                    <div class="row">
-                        <div class="a">
-                            <label>Date</label>
-                        </div>
-                        <div class="b">
-                            <input type="date" name="date" id="date" required>
+                            <input type="date" class="form-control" name="date_from" id="date_from" required>
                         </div>
 
                     </div>
 
                     <div class="row">
                         <div class="a">
-                            <label>Amount</label>
+                            <label>Date to</label>
                         </div>
                         <div class="b">
-                            <input type="text" name="amount" id="amount" required>
+                            <input type="date" class="form-control" name="date_to" id="date_to" required>
                         </div>
-                        <span><?php echo $data['amount_err']; ?></span>
+
                     </div>
 
+                    <div class="row">
+                        <div class="a">
+                            <label>reason</label>
+                        </div>
+                        <div class="b">
+                            <textarea class="form-control" name="reason" id="reason" required></textarea>
+                        </div>
+                    </div>
 
                     <script>
                         const today = new Date().toISOString().split('T')[0];
-                        document.getElementById('date').setAttribute('max', today);
+                        const dateFrom = document.getElementById('date_from');
+                        const dateTo = document.getElementById('date_to');
+                        document.getElementById('date_from').setAttribute('min', today);
+
+                        dateTo.disabled = true;
+                        dateFrom.addEventListener("change", function() {
+
+                            dateTo.disabled = false; // enable dateTo once a date is selected in dateFrom
+                            dateTo.min = this.value; 
+                            dateTo.value = "";
+                        });
+
+                      
                     </script>
+
 
                 </div>
 
@@ -85,8 +96,9 @@
 
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Amount</th>
+                        <th>Request ID</th>
+                        <th>Date From</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
 
@@ -98,9 +110,9 @@
                     ?>
 
                         <tr>
-                            <td><?php echo $row->date; ?></td>
-                            <td><?php echo $row->amount; ?></td>
-                            <td><a href="<?php echo URLROOT; ?>/conductor_incomerecords/delete_incomerecords?record_id=<?php echo $row->record_id; ?>"> <button>Delete</button> </a> </td>
+                            <td><?php echo $row->request_id; ?></td>
+                            <td><?php echo $row->date_from; ?></td>
+                            <td><?php echo $row->status; ?></td>
                         </tr>
 
                     <?php

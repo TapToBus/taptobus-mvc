@@ -12,7 +12,7 @@ class M_owner_driver_requests{
 
         $id = $_SESSION['user_id'];
         // prepare query 
-        $this->db->query('INSERT INTO dr_request (owner_nic,driver_ntc) VALUES (:owner_nic, :driver_ntc)');
+        $this->db->query('INSERT INTO driver_request (owner_nic,driver_ntc) VALUES (:owner_nic, :driver_ntc)');
 
         // bind values
         $this->db->bind(':owner_nic', $id);

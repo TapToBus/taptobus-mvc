@@ -23,7 +23,8 @@ class M_owner_conductors{
         $this->db->bind(':mobileNo', $data['mobileNo']);
         $this->db->bind(':dob', $data['dob']);
         $this->db->bind(':address', $data['address']);
-        $this->db->bind(':owner_nic', $id);
+        // $this->db->bind(':pic', $data['con_image']);
+        $this->db->bind(':owner_nic', $id); 
 
         // execute
         if($this->db->execute()){
