@@ -94,6 +94,7 @@ class Admin_reports extends Controller{
     }
 
     $reportData = $this->profitTableModel->get_search_income_records($_SESSION['date_from'],$_SESSION['date_to']);
+    $totalprofit = $this->profitTableModel->get_total_income($_SESSION['date_from'],$_SESSION['date_to']);
 
     $pdf = new FPDF();
        
@@ -110,8 +111,12 @@ class Admin_reports extends Controller{
     $pdf->Cell(0, 5,' ', 0, 1, 'C');
 
     $pdf->SetFont('Arial', 'B', 16);
-    $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Profit Details', 0, 1, 'C');
-    $pdf->Cell(0, 10,' ', 0, 1, 'C');
+    $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Income Details', 0, 1, 'C');
+    $pdf->Cell(0, 5,' ', 0, 1, 'C');
+
+    $pdf->Cell(0, 8,'Total Income = LKR '.$totalprofit->sum_profit, 0, 1, 'C');
+
+    $pdf->Cell(0, 5,' ', 0, 1, 'C');
    
    
     $pdfWidth = $pdf->GetPageWidth();
@@ -123,12 +128,12 @@ class Admin_reports extends Controller{
     $pdf->SetTitle('TapToBus Profit Details Report');
     $pdf->SetTextColor(255, 255, 255);
    
-    $pdf->Cell(46.5, 10, 'Start', 1 , 0, 'C',1);
-    $pdf->Cell(46.5, 10, 'Destination', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'From', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'To', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Bus Number', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Booking Count', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Date', 1 , 0, 'C',1);
-    $pdf->Cell(46.5, 10, 'Profit', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Income', 1 , 0, 'C',1);
 
      $pdf->Ln();
     

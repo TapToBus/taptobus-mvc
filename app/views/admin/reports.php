@@ -12,7 +12,10 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php 
+        $active = "Report";
+        require APPROOT . '/views/inc/admin_navbar.php' 
+    ?>
 
     <div class="main">
         <div class="content-heading">
@@ -24,7 +27,7 @@
             <div class="report-sub-container">
                 <form action="<?php echo URLROOT; ?>/Admin_reports/adminReportSearch" method="GET" class="report-container-form">
 
-                    <h2 class="report-container-heading">Profit Report</h2>
+                    <h2 class="report-container-heading">Income Report</h2>
 
                     <div class="report-container-form-input-labels">
                         <label for="Date_From" class="report_date_la">Date From :</label>
@@ -82,12 +85,12 @@
                     <table class="full-table">
 
                         <tr>
-                            <th>Start</th>
-                            <th>Destination</th>
+                            <th>From</th>
+                            <th>To</th>
                             <th>Bus Number</th>
                             <th>Bookings Count</th>
                             <th>Date</th>
-                            <th>Profit</th>
+                            <th>Income</th>
                         </tr>
 
                         <?php foreach($data['reportData'] as $reportData) :?>

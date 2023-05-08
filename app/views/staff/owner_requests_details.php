@@ -23,7 +23,7 @@
 
       
         
-            <h2>Bus Owner:- <?php echo ' '.$result->fname.' '.$result->lname?></h2>
+            <h2>Bus Owner: <?php echo '  '.$result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
@@ -41,14 +41,14 @@
                             </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="Owner Pic" srcset="">
+                            <!-- <img src="" alt="Owner Pic" srcset=""> -->
                         </div>                       
                     </div>
                     <div class="details-bottom">
                         <div class="download-pic">
-                            Bus permit <br><br>
+                            <!-- Bus permit <br><br>
                             <i class="fa-solid fa-download"></i>
-                            <a href="#">Download here</a>
+                            <a href="#">Download here</a> -->
                         </div>
                         <div class="action-btn">
                             <button id ="accept" class="accept" onclick="showConfirmation()">Accept</button>

@@ -12,7 +12,10 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php 
+        $active = "Dashboard";
+        require APPROOT . '/views/inc/admin_navbar.php'
+     ?>
 
     <div class="main">
         <div class="content-heading">
@@ -213,14 +216,14 @@
 
         <div class="admin-chart-heading">
             <div class="admin-chart">
-                <h2> PROFIT OVERVIEW </h2>
+                <h2> INCOME OVERVIEW </h2>
             </div>
         </div>
 
 
         <div class="admin-chart-box">
             <div class="admin-chart">
-                <h2> Profit (Monthly) </h2>
+                <h2> Income (Monthly) </h2>
                 <canvas id="monthly-profit-line-chart"></canvas>
 
                 <script>
@@ -232,7 +235,7 @@
                             const profits = result.map(item=>item.profit)
 
                             const lineChart = new Chart(document.getElementById('monthly-profit-line-chart'),{
-                                type: 'line',
+                                type: 'bar',
                                 data: {
                                     labels:months,
                                     datasets:[{
@@ -256,7 +259,7 @@
 
         <div class="admin-chart-box">
             <div class="admin-chart">
-                <h2> Profit  </h2>
+                <h2> Income  </h2>
 
                 <div class="content-table">
                     <table class="full-table">

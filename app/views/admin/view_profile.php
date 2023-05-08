@@ -12,7 +12,10 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php 
+        $active = "Profile";
+        require APPROOT . '/views/inc/admin_navbar.php' 
+    ?>
 
     <div class="main">
 
@@ -41,13 +44,13 @@
                     <div class="parent-row">
                         <div class="row">
                             <label for="First_name" class="col1">First Name: </label>
-                            <input type="text" id="First_name" name="first_name" class="col2" value="   <?php echo $data['firstname']; ?>">
+                            <input type="text" id="First_name" name="first_name" class="col2" value="   <?php echo $data['firstname']; ?>"disabled = "true">
                             <span><?php echo $data['fname_err'] ?></span>
                         </div>
 
                         <div class="row-1">
                             <label for="Last_name" class="col1">Last Name: </label>
-                            <input type="text" id="Last_name"  name="last_name" class="col2" value="   <?php echo $data['lastname']; ?>">
+                            <input type="text" id="Last_name"  name="last_name" class="col2" value="   <?php echo $data['lastname']; ?>"disabled = "true">
                             <span><?php echo $data['lname_err'] ?></span>
                         </div>
                     </div>
@@ -59,22 +62,22 @@
 
                     <div class="row">
                         <label for="Mobile_number" class="col1">Mobile Number: </label>
-                        <input type="text" id="Mobile_no" name="mobile" class="col2" value="   <?php echo $data['mobile']; ?>">
+                        <input type="text" id="Mobile_no" name="mobile" class="col2" value="   <?php echo $data['mobile']; ?>"disabled = "true">
                         <span><?php echo $data['mobile_err'] ?></span>
 
                     </div>
 
                     <div class="row">
                         <label for="Telephone_number" class="col1">Telephone Number: </label>
-                        <input type="text" id="Telephone_no"  name="tele" class="col2" value="   <?php echo $data['tele']; ?>">
+                        <input type="text" id="Telephone_no"  name="tele" class="col2" value="   <?php echo $data['tele']; ?>"disabled = "true">
                         <span><?php echo $data['tele_err'] ?></span>
 
                     </div>
 
-                    <div class="edit-profile-buttons">
+                    <!-- <div class="edit-profile-buttons">
                         <div class="btn">
                             <button type="submit" class="edit">Edit profile</button></a>
-                        </div>
+                        </div> -->
 
                     </div>
 

@@ -20,7 +20,7 @@
     <div class="container">
             <?php $result = $data['driverRequestDetails']?>
 
-            <h2>Driver:- <?php echo ' '. $result->fname.' '.$result->lname?></h2>
+            <h2>Driver: <?php echo ' '. $result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="driver pic" srcset="">
+                            <!-- <img src="" alt="driver pic" srcset=""> -->
                         </div>                       
                     </div>
                     <div class="details-bottom">

@@ -240,3 +240,14 @@
         color: var(--clr-bg);
     }
 }
+
+/* side bar active  */
+.side-menu .active{
+    background-color: var(--clr-bg);
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+.side-menu .active i {
+    color: #fff;
+}

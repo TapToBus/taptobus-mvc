@@ -22,7 +22,7 @@
     ?>
 
             
-            <h2>Conductor:- <?php echo ' '. $result->fname.' '.$result->lname?></h2>
+            <h2>Conductor: <?php echo ' '. $result->fname.' '.$result->lname?></h2>
             <div class="container-2">
                     <div class="details-top">
                         <div class="top-left">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="top-right">
-                            <img src="" alt="conductor pic" srcset="">
+                            <!-- <img src="" alt="conductor pic" srcset=""> -->
                         </div>                       
                     </div>
                     <div class="details-bottom">
