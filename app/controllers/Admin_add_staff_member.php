@@ -47,7 +47,7 @@ class Admin_add_staff_member extends Controller
                 'firstname' => trim($_POST['first_name']),
                 'lastname' => trim($_POST['last_name']),
                 'nic' => trim($_POST['nic']),
-                'dob' => trim($_POST['dob']),
+                // 'dob' => trim($_POST['dob']),
                 'email' => trim($_POST['email']),
                 'mobile' => trim($_POST['mobile']),
                 'tele' => trim($_POST['tele']),

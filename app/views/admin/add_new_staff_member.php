@@ -35,8 +35,8 @@
             <input type="text" id="lastname" name="last_name" class="add_new_staff_member_input">
             <span><?php echo $data['lname_err'] ?></span>
 
-            <label for="dob" class="add_new_staff_member_label">Date Of Birth</label>
-            <input type="date" id="dob" name="dob" class="add_new_staff_member_input">
+            <!-- <label for="dob" class="add_new_staff_member_label">Date Of Birth</label>
+            <input type="date" id="dob" name="dob" class="add_new_staff_member_input"> -->
 
             <label for="email" class="add_new_staff_member_label">Email</label>
             <input type="email" id="email" name="email" class="add_new_staff_member_input">
