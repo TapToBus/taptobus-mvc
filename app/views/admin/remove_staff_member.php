@@ -13,7 +13,10 @@
 <body>
 
     <!-- fro request the up navigation bar and side dashboard -->
-    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php 
+        $active = "Restore";
+        require APPROOT . '/views/inc/admin_navbar.php' 
+    ?>
 
     <div class="main">
         <div class="content-heading">

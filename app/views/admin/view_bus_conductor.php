@@ -12,7 +12,10 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/admin_navbar.php' ?>
+    <?php 
+        $active = "Users";
+        require APPROOT . '/views/inc/admin_navbar.php' 
+    ?>
 
     <div class="main">
         <div class="content-heading">
@@ -41,7 +44,7 @@
                     <!-- <th>License no</th> -->
                     <th>First name</th>
                     <th>Last name</th>
-                    <th>DOB</th>
+                    <!-- <th>DOB</th> -->
                     <th>Email</th>
                     <th>Mobile no</th>
                     <th>Tele no</th>
@@ -57,7 +60,6 @@
                         <td><?php echo $conductors->nic; ?></td>
                         <td><?php echo $conductors->fname; ?></td>
                         <td><?php echo $conductors->lname; ?></td>
-                        <td><?php echo $conductors->dob; ?></td>
                         <td><?php echo $conductors->email; ?></td>
                         <td><?php echo $conductors->mobileNo; ?></td>
                         <td><?php echo $conductors->telNo; ?></td>
