@@ -42,6 +42,7 @@ class Owner_conductors extends Controller{
                 'dob' => $_POST['dob'],
                 'address' => $_POST['address'],
                 'con_image' => "",
+                
                 'fname_err' => '',
                 'lname_err' => '',
                 'nic_err' => '',

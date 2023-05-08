@@ -41,7 +41,7 @@ class Owner_drivers extends Controller{
                 'mobileNo' => $_POST['mobileNo'],
                 'dob' => $_POST['dob'],
                 'address' => $_POST['address'],
-                'dr_image' => $_POST['dr_image'],
+                'dr_image' =>  "",
                
                 'fname_err' => '',
                 'lname_err' => '',
