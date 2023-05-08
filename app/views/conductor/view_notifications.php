@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php require APPROOT . '/views/inc/condcutor_navbar.php' ?>
+    <?php require APPROOT . '/views/inc/conductor_navbar.php' ?>
 
     <div class="container">
         <div class="content">

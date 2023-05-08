@@ -1,6 +1,6 @@
 <?php
 
-class M_owner_notifications{
+class M_conductor_notifications{
     private $db;
 
 
@@ -46,7 +46,7 @@ class M_owner_notifications{
                 FROM special_notices s
                 INNER JOIN notice_available_users nau
                 ON s.notice_id = nau.notice_id 
-                WHERE nau.user = \'owner\'
+                WHERE nau.user = \'conductor\'
                 ORDER BY time_stamp DESC;');
     
         return $this->db->resultSet();
