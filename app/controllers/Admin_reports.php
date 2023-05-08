@@ -111,10 +111,10 @@ class Admin_reports extends Controller{
     $pdf->Cell(0, 5,' ', 0, 1, 'C');
 
     $pdf->SetFont('Arial', 'B', 16);
-    $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Profit Details', 0, 1, 'C');
+    $pdf->Cell(0, 10,$_SESSION['date_from'].' to '.$_SESSION['date_to']. ' Income Details', 0, 1, 'C');
     $pdf->Cell(0, 10,' ', 0, 1, 'C');
 
-    $pdf->Cell(0, 8,'Total profit = '.$totalprofit->sum_profit, 0, 1, 'C');
+    $pdf->Cell(0, 8,'Total Income = '.$totalprofit->sum_profit, 0, 1, 'C');
 
     $pdf->Cell(0, 10,' ', 0, 1, 'C');
    
@@ -133,7 +133,7 @@ class Admin_reports extends Controller{
     $pdf->Cell(46.5, 10, 'Bus Number', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Booking Count', 1 , 0, 'C',1);
     $pdf->Cell(46.5, 10, 'Date', 1 , 0, 'C',1);
-    $pdf->Cell(46.5, 10, 'Profit', 1 , 0, 'C',1);
+    $pdf->Cell(46.5, 10, 'Income', 1 , 0, 'C',1);
 
      $pdf->Ln();
     
