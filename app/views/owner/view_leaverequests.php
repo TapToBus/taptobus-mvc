@@ -32,7 +32,7 @@
           ?>
             <div class="card">
                 <div class="images">
-                    <img src="<?php echo URLROOT; ?>/img/owner_img/con3.jpg" alt="">
+                    <img src="<?php echo URLROOT; ?>/img/owner_img/request.png" alt="">
                 </div>
 
                 <div class="caption">
@@ -57,7 +57,7 @@
     </div>
 
 
-    <div class="container2">
+    <!-- <div class="container2">
 
             <table>
 
@@ -96,7 +96,7 @@
 
             </table>
 
-        </div>
+        </div> -->
 
 
 </body>
