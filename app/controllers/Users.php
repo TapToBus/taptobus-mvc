@@ -121,7 +121,7 @@ class Users extends Controller{
             };
 
             case 'driver': {
-                //
+                direct('driver_schedule/view_schedule');
                 break;
             };
 
