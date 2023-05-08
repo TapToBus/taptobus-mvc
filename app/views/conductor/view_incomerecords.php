@@ -100,7 +100,7 @@
                         <tr>
                             <td><?php echo $row->date; ?></td>
                             <td><?php echo $row->amount; ?></td>
-                            <td><a href="<?php echo URLROOT; ?>/conductor_incomerecords/delete_incomerecords?record_id=<?php echo $row->record_id; ?>"> <button>Delete</button> </a> </td>
+                            
                         </tr>
 
                     <?php

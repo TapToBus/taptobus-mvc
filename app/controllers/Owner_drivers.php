@@ -56,18 +56,18 @@ class Owner_drivers extends Controller{
             ];
  
 
-            if (!empty($_FILES["dr_image"]) && is_uploaded_file($_FILES['dr_image']['tmp_name'])) {
-                // $fileName = "user";
-                $msg = upload_file("dr_image", "profile-pic", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
-                if (!empty($msg)) {
-                    $image = "";
-                } else {
-                    $target_file = basename($_FILES["dr_image"]["name"]);
-                    $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-                    $image = $data['ntcNo'] . '.' . $extension;
-                    $data['dr_image'] = $image;
-                }
-            }    
+            // if (!empty($_FILES["dr_image"]) && is_uploaded_file($_FILES['dr_image']['tmp_name'])) {
+            //     // $fileName = "user";
+            //     $msg = upload_file("dr_image", "profile-pic", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
+            //     if (!empty($msg)) {
+            //         $image = "";
+            //     } else {
+            //         $target_file = basename($_FILES["dr_image"]["name"]);
+            //         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            //         $image = $data['ntcNo'] . '.' . $extension;
+            //         $data['dr_image'] = $image;
+            //     }
+            // }    
 
             // validate
 
