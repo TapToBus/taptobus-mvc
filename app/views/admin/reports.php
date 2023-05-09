@@ -37,25 +37,6 @@
                         <input type="date" name="date_to" id="date_to" class="datapicker_report" >
 
 
-
-
-                        <!-- <select name="busNo" id="busNo">
-                            <?php
-                            if(isset($busno) && empty($busno)){
-                                echo "<option value = ''>No bus found</option>";
-                            }else{
-                                foreach($busno as $busNo){
-                            ?>
-                                    <option value='<?php echo $busNo['bus_no'] ?>'><?php echo $busNo['bus_no'] ?> </option>    
-                            <?php
-                                }    
-                            }  
-                            ?>
-                        </select> -->
-
-
-
-
                         <div class="two-button">
 
                             <div class="search-button">

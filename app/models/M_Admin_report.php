@@ -48,13 +48,7 @@ class M_Admin_report{
         return $result;
 
     }
-    // public function get_search_income_records($date_from,$date_to){
 
-    //     $this->db->query("SELECT location_from, location_to, bus_no, passenger_count, DATE(booked_datetime) AS date, (5*price)/100 AS profit FROM bookings WHERE DATE(booked_datetime) BETWEEN '$date_from' AND '$date_to'");
-    //     $result = $this->db->resultSet();
-    //     return $result;
-
-    // }
 }
 
 ?>
