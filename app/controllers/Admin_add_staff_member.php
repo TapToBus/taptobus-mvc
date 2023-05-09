@@ -115,26 +115,8 @@ class Admin_add_staff_member extends Controller
             $password = substr($password, -10);
             $hash = password_hash($password, PASSWORD_DEFAULT);  // get the hash of the password
 
-            // $mailer = new Mailer(TAPTOBUS_EMAIL, TAPTOBUS_PASS, SITENAME);
 
-            // $Subject = 'Successfully added to TapToBus';
 
-            // $email_data = [
-            //     'fname' => $fname,
-            //     'password' => $password,
-            //     'type' => 'staff member'
-            // ];
-
-            // //email body
-            // $Body = temporery_password_email($email_data['fname'], $email_data['password'], $email_data['type']);
-
-            // // if ($mailer->send($staffmemberemail, $Subject,$Body)){
-            // //     die("successfully send");
-
-            // // }
-            // // else{
-            // //     die("Mail failed to send");
-            // // }
             if (empty($data['fname_err']) && empty($data['lname_err']) && empty($data['nic_err']) && empty($data['email_err']) && empty($data['mobile_err']) && empty($data['tele_err'])) {
 
 
@@ -165,11 +147,7 @@ class Admin_add_staff_member extends Controller
                             die("Mail failed to send");
                         }
                     }
-                    // else{
 
-                    //     $this
-
-                    // }
                 }
             }
 
