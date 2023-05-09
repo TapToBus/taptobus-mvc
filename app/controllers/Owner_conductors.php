@@ -54,18 +54,18 @@ class Owner_conductors extends Controller{
                
             ];
  
-            if (!empty($_FILES["con_image"]) && is_uploaded_file($_FILES['con_image']['tmp_name'])) {
-                // $fileName = "user";
-                $msg = upload_file("con_image", "owner_img", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
-                if (!empty($msg)) {
-                    $image = "";
-                } else {
-                    $target_file = basename($_FILES["con_image"]["name"]);
-                    $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-                    $image = $data['ntcNo'] . '.' . $extension;
-                    $data['con_image'] = $image;
-                }
-            }          
+            // if (!empty($_FILES["con_image"]) && is_uploaded_file($_FILES['con_image']['tmp_name'])) {
+            //     // $fileName = "user";
+            //     $msg = upload_file("con_image", "owner_img", $data['ntcNo'], ['png', 'jpeg', 'jpg'], 50000000, TRUE, TRUE);
+            //     if (!empty($msg)) {
+            //         $image = "";
+            //     } else {
+            //         $target_file = basename($_FILES["con_image"]["name"]);
+            //         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            //         $image = $data['ntcNo'] . '.' . $extension;
+            //         $data['con_image'] = $image;
+            //     }
+            // }          
 
             // echo($data['con_image']);
 
