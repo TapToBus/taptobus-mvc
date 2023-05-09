@@ -174,7 +174,7 @@ class Admin_view_user_dashboard extends Controller{
         $this->view('admin/view_bus_owner', $data);
     }
 
-    //delete bus conductor from users
+    //delete bus bus owner from users
 
     public function delete_bus_owner(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
